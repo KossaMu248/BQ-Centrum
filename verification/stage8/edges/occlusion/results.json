@@ -1,0 +1,373 @@
+{
+  "stage": 8,
+  "scenario": "occlusion",
+  "preparedFixtures": true,
+  "checks": [
+    {
+      "name": "Native approach behind bench uses ground foot depth and grounded shadow",
+      "passed": true,
+      "details": {
+        "depth": 524.7190100000001,
+        "order": [
+          "front-metro",
+          "front-arcade",
+          "front-pizzeria",
+          "planter",
+          "player",
+          "bench-west",
+          "parked-player-bicycle",
+          "bench-east",
+          "service-gate"
+        ]
+      },
+      "state": {
+        "health": 63,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 0
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": null,
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Visit Billy\u2019s Food Shop with the baby.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "metro-square",
+        "revision": 21,
+        "checkpointReason": "edge-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 63,
+          "disabledReason": "Your bag is empty."
+        }
+      }
+    },
+    {
+      "name": "Live jump changes actor height while shadow/sort stay on floor and native baby stays continuous",
+      "passed": true,
+      "details": {
+        "jump": 31.710675999999985,
+        "shadow": {
+          "x": 488.4242200000011,
+          "y": 524.7190100000001
+        },
+        "baby": {
+          "mood": "terror",
+          "source": "assets/baby_pose_terror.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            64,
+            104
+          ],
+          "anatomicalWaist": [
+            67,
+            112
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -81.29527677853426
+          },
+          "headHeight": 39.97581295350712,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            99,
+            105
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            99,
+            155
+          ],
+          "seamY": 104,
+          "occludeFrom": 97,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -80.50606267530432
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -82.0844908817642
+            },
+            "occludeFrom": {
+              "x": 19.734435373640682,
+              "y": -85.25450086307112
+            }
+          },
+          "head": [
+            18,
+            7,
+            72,
+            70
+          ],
+          "chin": [
+            {
+              "x": 24.311877172374327,
+              "y": -102.03845412509447
+            },
+            {
+              "x": 20.181656698804314,
+              "y": -98.57906563926991
+            },
+            {
+              "x": 13.473336821349836,
+              "y": -97.06640527474586
+            }
+          ],
+          "neck": [
+            {
+              "x": 6.44933130260338,
+              "y": -97.81615867281431
+            }
+          ],
+          "collar": [
+            {
+              "x": 8.132988056160585,
+              "y": -94.01477740892344
+            },
+            {
+              "x": 15.314836395553028,
+              "y": -92.13381712955875
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              301.6395246603764
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 11.889524660376399
+          }
+        }
+      },
+      "state": {
+        "health": 63,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 0
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": null,
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Visit Billy\u2019s Food Shop with the baby.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "metro-square",
+        "revision": 21,
+        "checkpointReason": "edge-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 63,
+          "disabledReason": "Stop on the ground before eating."
+        }
+      }
+    },
+    {
+      "name": "Bench collision refuses crossing; walking around reaches front sorting",
+      "passed": true,
+      "details": {
+        "blockedY": 543.3892600000001,
+        "frontY": 613.5023700000005,
+        "order": [
+          "front-metro",
+          "front-arcade",
+          "front-pizzeria",
+          "planter",
+          "bench-west",
+          "player",
+          "parked-player-bicycle",
+          "bench-east",
+          "service-gate"
+        ]
+      },
+      "state": {
+        "health": 63,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 0
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": null,
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Visit Billy\u2019s Food Shop with the baby.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "metro-square",
+        "revision": 41,
+        "checkpointReason": "edge-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 63,
+          "disabledReason": "Your bag is empty."
+        }
+      }
+    },
+    {
+      "name": "Planter foliage fades for baby; opaque collidable stone and actual floor remain fixed",
+      "passed": true,
+      "details": {
+        "id": "planter",
+        "faded": true,
+        "foliageAlpha": 0.35,
+        "stoneAlpha": 1,
+        "swayPx": 0.14491568454644913
+      },
+      "state": {
+        "health": 63,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 0
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": null,
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Visit Billy\u2019s Food Shop with the baby.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "metro-square",
+        "revision": 63,
+        "checkpointReason": "edge-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 63,
+          "disabledReason": "Your bag is empty."
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "httpFailures": [],
+  "passed": true
+}

@@ -1,0 +1,458 @@
+{
+  "test": "real source combat defeat and coherent retry",
+  "conditions": {
+    "browser": "Chromium /usr/bin/chromium",
+    "viewport": [
+      1280,
+      720
+    ],
+    "physicalDevice": false
+  },
+  "fixtureDisclosure": "Secondary isolated factory save: health20, one pizza,0kr, normal road start. Existing BearlyVisits.practice supplies nonessential source NPCs. After setup actual keyboard/pointer input provokes attacks; no health setter/forced hit/death creates defeat. This is not the separate fresh native complete route.",
+  "checks": [
+    {
+      "name": "actual J and repeated J provoke/damage source NPCs and real aggression",
+      "passed": true,
+      "damagedNPCs": [
+        {
+          "id": "practice-a",
+          "x": 319,
+          "depth": 0,
+          "variant": 0,
+          "civilian": false,
+          "hostile": false,
+          "home": 303,
+          "homeDepth": 0,
+          "sidewalkDepth": 0,
+          "patrolVariant": 0,
+          "state": "stagger",
+          "age": 0.19329999999999928,
+          "hp": 38,
+          "maxHp": 60,
+          "face": 1,
+          "distance": 0,
+          "speed": 0,
+          "moving": false,
+          "running": false,
+          "angryUntil": 20.731500000000764,
+          "nextHit": 9.848200000000764,
+          "hitUntil": 9.231500000000766,
+          "alertUntil": 8.981500000000766,
+          "activity": "cower",
+          "activityAge": 0.1532999999999993,
+          "activityProp": null,
+          "fearUntil": 0,
+          "screamUntil": 0,
+          "screamReady": 0,
+          "fearReactionUntil": 0,
+          "hiding": false,
+          "hideTarget": null,
+          "hideUntil": 0,
+          "routeMin": 18,
+          "routeMax": 588,
+          "routeDirection": 1,
+          "routeIndex": null,
+          "restUntil": 0,
+          "departing": false,
+          "active": true,
+          "visible": true,
+          "crewId": null,
+          "homeFace": 1,
+          "gangAggressive": false,
+          "gangAlert": false,
+          "pressure": 0,
+          "warnUntil": 0,
+          "warnReady": 0,
+          "warningText": "",
+          "behindCover": false,
+          "coverRetreatUntil": 0,
+          "routineExplicit": false,
+          "restSpots": [],
+          "hideSpots": [],
+          "coverSpots": [],
+          "coverTarget": null,
+          "routePoints": [
+            {
+              "id": "route-left",
+              "x": 18,
+              "depth": 0,
+              "kind": "idle",
+              "duration": 3
+            },
+            {
+              "id": "route-right",
+              "x": 588,
+              "depth": 0,
+              "kind": "idle",
+              "duration": 3
+            }
+          ],
+          "fear": false,
+          "screaming": false,
+          "aggressive": true,
+          "mood": "aggressive",
+          "punching": false
+        }
+      ],
+      "stats": {
+        "grabs": 0,
+        "throws": 0,
+        "mauls": 1,
+        "frenzyMauls": 0,
+        "transformations": 0,
+        "witnesses": 2,
+        "defeats": 0,
+        "enemyShots": 0,
+        "screenImpacts": 0,
+        "screams": 0,
+        "civilianScares": 0,
+        "hides": 0,
+        "departures": 0,
+        "arrivals": 4,
+        "gangWarnings": 0,
+        "gangProvocations": 0
+      }
+    },
+    {
+      "name": "combat Eat is disabled; repeated real pointer attempts grant no health or item loss",
+      "passed": true,
+      "health": 20,
+      "food": 1,
+      "reason": "Wait until the danger has passed."
+    },
+    {
+      "name": "production NPC attacks cause sampled health loss to zero; old defeat delay grants no health",
+      "passed": true,
+      "damageHealthSequence": [
+        20,
+        12,
+        4,
+        0
+      ],
+      "damagedNPCsPersistUntilRetry": [
+        {
+          "id": "practice-a",
+          "hp": 38
+        },
+        {
+          "id": "practice-b",
+          "hp": 60
+        },
+        {
+          "id": "practice-c",
+          "hp": 60
+        }
+      ]
+    },
+    {
+      "name": "defeated Eat/spam refuses healing and keeps food",
+      "passed": true,
+      "reason": "Retry or rest at a safe checkpoint first."
+    },
+    {
+      "name": "C restores complete checkpoint health/supplies/flags and discards damaged fight",
+      "passed": true,
+      "health": 20,
+      "inventory": {
+        "billys": 1
+      },
+      "wallet": {
+        "kr": 0
+      },
+      "collectedIDs": [],
+      "questClaims": {},
+      "sourceNPCsAfterRetry": [
+        "promenade-walker",
+        "civilian-reader",
+        "civilian-smoker",
+        "civilian-bench",
+        "civilian-workshop",
+        "walker-workshop",
+        "neighbour-workshop",
+        "civilian-arcade",
+        "walker-arcade",
+        "civilian-metro",
+        "walker-metro",
+        "civilian-civic-hall",
+        "walker-civic-hall",
+        "civilian-pizzeria",
+        "walker-pizzeria",
+        "neighbour-pizzeria",
+        "civilian-library",
+        "walker-library",
+        "civilian-castle",
+        "walker-castle",
+        "civilian-greenhouse",
+        "walker-greenhouse",
+        "civilian-boathouse",
+        "walker-boathouse",
+        "neighbour-boathouse",
+        "civilian-cafe",
+        "walker-cafe",
+        "gang-4080-0",
+        "gang-4080-1",
+        "gang-7545-0",
+        "gang-7545-1",
+        "gang-7545-2",
+        "gang-11730-0",
+        "gang-11730-1",
+        "gang-18600-0",
+        "gang-18600-1",
+        "gang-18600-2",
+        "gang-24000-0",
+        "gang-24000-1",
+        "gang-28350-0",
+        "gang-28350-1",
+        "gang-28350-2",
+        "gang-36450-0",
+        "gang-36450-1"
+      ]
+    }
+  ],
+  "damageSamples": [
+    {
+      "health": 20,
+      "combatTime": 9.01470000000076,
+      "hurt": false,
+      "effects": [
+        {
+          "id": 0,
+          "kind": "claws",
+          "x": 319,
+          "depth": 0,
+          "age": 0.2831999999999989
+        }
+      ],
+      "npcs": [
+        {
+          "id": "practice-a",
+          "hp": 38,
+          "state": "stagger",
+          "aggressive": true,
+          "punching": false
+        },
+        {
+          "id": "practice-b",
+          "hp": 60,
+          "state": "idle",
+          "aggressive": true,
+          "punching": false
+        },
+        {
+          "id": "practice-c",
+          "hp": 60,
+          "state": "idle",
+          "aggressive": true,
+          "punching": false
+        }
+      ]
+    },
+    {
+      "health": 12,
+      "combatTime": 9.914600000000751,
+      "hurt": true,
+      "effects": [
+        {
+          "id": 0,
+          "kind": "claws",
+          "x": 319,
+          "depth": 0,
+          "age": 1.1831000000000007
+        },
+        {
+          "id": 1,
+          "kind": "hurt",
+          "x": 238,
+          "depth": 0,
+          "age": 0.08
+        },
+        {
+          "id": 2,
+          "kind": "counter",
+          "x": 287,
+          "depth": 0,
+          "age": 0.08
+        },
+        {
+          "id": 3,
+          "kind": "counter",
+          "x": 287,
+          "depth": 0,
+          "age": 0.08
+        }
+      ],
+      "npcs": [
+        {
+          "id": "practice-a",
+          "hp": 38,
+          "state": "idle",
+          "aggressive": true,
+          "punching": true
+        },
+        {
+          "id": "practice-b",
+          "hp": 60,
+          "state": "idle",
+          "aggressive": true,
+          "punching": true
+        },
+        {
+          "id": "practice-c",
+          "hp": 60,
+          "state": "idle",
+          "aggressive": true,
+          "punching": false
+        }
+      ]
+    },
+    {
+      "health": 4,
+      "combatTime": 11.054400000000737,
+      "hurt": true,
+      "effects": [
+        {
+          "id": 4,
+          "kind": "counter",
+          "x": 301.04499999999996,
+          "depth": 0,
+          "age": 0.9231999999999991
+        },
+        {
+          "id": 5,
+          "kind": "hurt",
+          "x": 238,
+          "depth": 0,
+          "age": 0.08329999999999928
+        },
+        {
+          "id": 6,
+          "kind": "counter",
+          "x": 287,
+          "depth": 0,
+          "age": 0.08329999999999928
+        },
+        {
+          "id": 7,
+          "kind": "counter",
+          "x": 287,
+          "depth": 0,
+          "age": 0.08329999999999928
+        }
+      ],
+      "npcs": [
+        {
+          "id": "practice-a",
+          "hp": 38,
+          "state": "idle",
+          "aggressive": true,
+          "punching": true
+        },
+        {
+          "id": "practice-b",
+          "hp": 60,
+          "state": "idle",
+          "aggressive": true,
+          "punching": true
+        },
+        {
+          "id": "practice-c",
+          "hp": 60,
+          "state": "idle",
+          "aggressive": true,
+          "punching": false
+        }
+      ]
+    },
+    {
+      "health": 0,
+      "combatTime": 12.121100000000727,
+      "hurt": false,
+      "effects": [
+        {
+          "id": 5,
+          "kind": "hurt",
+          "x": 238,
+          "depth": 0,
+          "age": 1.149999999999998
+        },
+        {
+          "id": 6,
+          "kind": "counter",
+          "x": 287,
+          "depth": 0,
+          "age": 1.149999999999998
+        },
+        {
+          "id": 7,
+          "kind": "counter",
+          "x": 287,
+          "depth": 0,
+          "age": 1.149999999999998
+        },
+        {
+          "id": 8,
+          "kind": "counter",
+          "x": 287,
+          "depth": 0,
+          "age": 0.8832999999999991
+        },
+        {
+          "id": 9,
+          "kind": "hurt",
+          "x": 238,
+          "depth": 0,
+          "age": 0.033299999999999275
+        },
+        {
+          "id": 10,
+          "kind": "faint",
+          "x": 238,
+          "depth": 0,
+          "age": 0.033299999999999275
+        },
+        {
+          "id": 11,
+          "kind": "counter",
+          "x": 287,
+          "depth": 0,
+          "age": 0.033299999999999275
+        }
+      ],
+      "npcs": [
+        {
+          "id": "practice-a",
+          "hp": 38,
+          "state": "idle",
+          "aggressive": true,
+          "punching": true
+        },
+        {
+          "id": "practice-b",
+          "hp": 60,
+          "state": "idle",
+          "aggressive": true,
+          "punching": false
+        },
+        {
+          "id": "practice-c",
+          "hp": 60,
+          "state": "idle",
+          "aggressive": true,
+          "punching": false
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "httpFailures": [],
+  "recording": {
+    "file": "real-enemy-defeat.webm",
+    "kind": "actual browser gameplay",
+    "speed": 2,
+    "frames": 191,
+    "nativeSeconds": 18.782957077026367,
+    "captureWaitGapCapSeconds": 1,
+    "generatedArtwork": false
+  },
+  "passed": true
+}

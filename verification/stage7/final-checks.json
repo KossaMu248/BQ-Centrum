@@ -1,0 +1,19 @@
+{
+  "build": "BQ_CENTRUM_STAGE7",
+  "visualInputChecks": 18,
+  "economyReactionChecks": 19,
+  "finalGameplayCaptures": 24,
+  "sourceCharacterArtworkRendererHashes": 84,
+  "javascriptSyntaxFiles": 32,
+  "unitSuites": 14,
+  "pinnedOriginalFiles": 944,
+  "bothHtmlEntriesMatch": true,
+  "gitConfigAndRemotesUnchanged": true,
+  "evidencePngHashesVerified": 41,
+  "runtimeEvidenceHashesMatchFinalFiles": true,
+  "limitations": [
+    "Physical devices and non-Chromium browsers untested.",
+    "Matched gate/passage/cage artwork remains missing and labelled.",
+    "Source depth walking gait remains unchanged."
+  ]
+}

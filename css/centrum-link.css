@@ -1,0 +1,4 @@
+#centrumRouteEntryBtn[hidden]{display:none!important}
+#centrumRouteEntryBtn{position:absolute;left:50%;bottom:108px;transform:translateX(-50%);z-index:14;padding:12px 18px;min-height:44px;border:1px solid #f3d48c;border-radius:5px;background:#254633e8;color:#fff2ce;font:700 12px Arial,sans-serif;cursor:pointer;touch-action:manipulation}
+#centrumRouteEntryBtn:disabled{background:#233d2cce;color:#e3d9b8;cursor:default}
+.centrum-square-active #centrumRouteEntryBtn{display:none!important}

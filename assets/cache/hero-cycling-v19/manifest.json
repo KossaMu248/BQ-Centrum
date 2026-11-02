@@ -1,0 +1,188 @@
+{
+  "rendererSHA256": "d8eca39f1ab358f6a5e0a63612009a5972f54924e0831c440704ec39523b2c53",
+  "entries": [
+    {
+      "source": "assets/bear_pedal_3.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_pedal_3.png",
+      "width": 291,
+      "height": 309,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 359676,
+      "sourceSHA256": "8d413682e97eebb7d6e7e55919eadae1d210245fce0b1dc26f26f1f14d3981d6",
+      "sha256": "fa24a5bc1a040f73900f655580229134b7b3b09778c31904c6009f82e3e805e8"
+    },
+    {
+      "source": "assets/bear_pose_pedal.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_pose_pedal.png",
+      "width": 291,
+      "height": 309,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 359676,
+      "sourceSHA256": "823e9ae67eda85a34bcbd5a51725a0cbce28ae421b876ac2c93edd32e7ba74bf",
+      "sha256": "b083bbbb1fd2ccae3b610a0ee76c0058dd26271786fe2fc92a823c0717b9234a"
+    },
+    {
+      "source": "assets/bear_pose_coast.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_pose_coast.png",
+      "width": 291,
+      "height": 309,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 359676,
+      "sourceSHA256": "9fea86a157a5a95e84220a7d542825cf6e57349710d3951bbaad68a7c3548358",
+      "sha256": "5b7f97733b924cac40f8f3e67a856cca7ef83a6dc3ac019a05b310edc9887bbe"
+    },
+    {
+      "source": "assets/bear_pose_brake.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_pose_brake.png",
+      "width": 291,
+      "height": 309,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 359676,
+      "sourceSHA256": "bf83b8cf5467e4099452bc4f955908c8cb4aad81055f38fa8a13f14aa090356e",
+      "sha256": "bd1d4faa13742f8e89d525bda5d2dc17266b3fc2d2fac490523ba6d6db297ab9"
+    },
+    {
+      "source": "assets/bear_pose_wheelie.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_pose_wheelie.png",
+      "width": 291,
+      "height": 309,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 359676,
+      "sourceSHA256": "70c2eef82c019c5d348b91284decd3c7ad7d0af65be310c390e4b4c89e2c9afd",
+      "sha256": "320bed29e9d5b36a5cba1cd0dd9a7260ff0891ec862a5c3f0f6f212923b52161"
+    },
+    {
+      "source": "assets/bear_pose_jump.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_pose_jump.png",
+      "width": 291,
+      "height": 309,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 359676,
+      "sourceSHA256": "49309d45d69a7d421754046e5954fd235642353155d9dd2824396023b246dfe8",
+      "sha256": "be214c97bd9466d40f51542e41b202a363ea7de62731bcc13535ded536a9f268"
+    },
+    {
+      "source": "assets/bear_pose_land.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_pose_land.png",
+      "width": 291,
+      "height": 309,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 359676,
+      "sourceSHA256": "9d551bb44662ec9d88671213e86b159186e8e294a64f2740cc7d647ea532ce44",
+      "sha256": "bf83bbf5f5c25203fdfb636a94040d4cdfd72b3c5ed4ca77104b4ffcbaa8f800"
+    },
+    {
+      "source": "assets/bear_pose_hurt.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_pose_hurt.png",
+      "width": 291,
+      "height": 309,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 359676,
+      "sourceSHA256": "bb462f611348eda8fc9f43883b76feb8237bbee72aec1ed6f59032451978d00a",
+      "sha256": "213157b987c13d4f199eea9fb38fe4f385f9d838b6f8984cc3f62cef9c0bd0a5"
+    },
+    {
+      "source": "assets/bear_pedal_0.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_pedal_0.png",
+      "width": 291,
+      "height": 309,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 359676,
+      "sourceSHA256": "a38e27c15f91b43284f845a44f57a97cce21fe187768dd77f0ef70c81952d860",
+      "sha256": "a75bcb14af87bae0178b32faac90fccc3ca9379314f147556304cc74624ab36a"
+    },
+    {
+      "source": "assets/bear_pedal_1.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_pedal_1.png",
+      "width": 291,
+      "height": 309,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 359676,
+      "sourceSHA256": "a549413c58273c47cf71ca9b470c487cf4dd2363c0185abd538273a0d56f463c",
+      "sha256": "579b104eb61b7f07f26817427912c2c6cd31cdeb8603d27656065fd05c35f5ea"
+    },
+    {
+      "source": "assets/bear_pedal_2.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_pedal_2.png",
+      "width": 291,
+      "height": 309,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 359676,
+      "sourceSHA256": "8d8921d6851b4378ba3771aec1624ac03bece5705cc65ea311c8f2439ed6753a",
+      "sha256": "4f7b7f56c879ce404f1ce494da70f582ea0c0f13f141154906cfcf48af7ab0ee"
+    },
+    {
+      "source": "assets/bear_upper.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_upper.png",
+      "width": 291,
+      "height": 309,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 359676,
+      "sourceSHA256": "f7099afb1a4fc6bc57106788cea7497f817a33728c1d1d7189640802ecef10d2",
+      "sha256": "6ffe53e7a2d81fb34605c7db1afa05ac67fcbc3c0285c7d1fd4b429198dbebe9"
+    },
+    {
+      "source": "assets/bear_upper_rightarm_injured.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_upper_rightarm_injured.png",
+      "width": 291,
+      "height": 309,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 359676,
+      "sourceSHA256": "3e008fe191e41c1665a679e16bb48319dc463937f697eef3792534fb26e35b25",
+      "sha256": "f645e490916378b089a79f50d40c42e1960e06f66ba4da9f4609480ab9df1148"
+    },
+    {
+      "source": "assets/bear_leg_clean.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_leg_clean.png",
+      "width": 83,
+      "height": 69,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 22908,
+      "sourceSHA256": "824862514983de72a8af10ee99f55a8a43516de7220f02b79904c8acb9e2c8f7",
+      "sha256": "90c8b43b2487e4f7a207ac072d5e6b100b0123aa2a207229bc04c59ee6ce6d30"
+    },
+    {
+      "source": "assets/bear_leg_original.webp",
+      "file": "assets/cache/hero-cycling-v19/bear_leg_original.png",
+      "width": 83,
+      "height": 69,
+      "differentChannels": 0,
+      "maxError": 0,
+      "channels": 22908,
+      "sourceSHA256": "8101690d0ebc5d6d7766f9be55c8bb1f21ba89244f825383dc7396fc289b4fa5",
+      "sha256": "c627e77a1b3f35668f5f341358c67fa82e82366031c7d25710382a33a2c090ec"
+    }
+  ],
+  "aliases": {
+    "bear_pose_idle": "assets/bear_pedal_3.webp",
+    "bear_pose_pedal": "assets/bear_pose_pedal.webp",
+    "bear_pose_coast": "assets/bear_pose_coast.webp",
+    "bear_pose_brake": "assets/bear_pose_brake.webp",
+    "bear_pose_wheelie": "assets/bear_pose_wheelie.webp",
+    "bear_pose_jump": "assets/bear_pose_jump.webp",
+    "bear_pose_land": "assets/bear_pose_land.webp",
+    "bear_pose_hurt": "assets/bear_pose_hurt.webp",
+    "bear_pedal_0": "assets/bear_pedal_0.webp",
+    "bear_pedal_1": "assets/bear_pedal_1.webp",
+    "bear_pedal_2": "assets/bear_pedal_2.webp",
+    "bear_pedal_3": "assets/bear_pedal_3.webp",
+    "bear_upper": "assets/bear_upper.webp",
+    "bear_upper_rightarm_injured": "assets/bear_upper_rightarm_injured.webp",
+    "bear_leg_clean": "assets/bear_leg_clean.webp",
+    "bear_leg_original": "assets/bear_leg_original.webp"
+  }
+}

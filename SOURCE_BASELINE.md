@@ -1,0 +1,119 @@
+# Source baseline — BQ-Centrum stage 1
+
+Inspected on 2026-11-02 (UTC). Source was read successfully; no historical standalone HTML or reconstructed game was substituted.
+
+## Pin and workspace boundaries
+
+- Donor: https://github.com/KossaMu248/BQ-Autumn, branch `main`.
+- Pinned commit: `da109213fdf24947c2ac0b85de900214cc72e44f`, returned by `git ls-remote … refs/heads/main` before download.
+- Current donor manifest: `autumn-version.json`, edition/build **AUTUMN_RIDE_ART_V19**, entry **autumn-v19.html**. `js/game.js` confirms that build; donor `index.html` is byte-identical to that active entry. V19 was discovered from the manifest, not assumed.
+- Read the pinned README, manifest, active HTML, loader, game, visits, neighbourhood, quests, baby-passenger, hero-rig, locomotion and their loaded dependencies. No donor `AGENTS.md` was present, and no parent workspace instruction file existed. This project now has its own AGENTS.md.
+- Actual initial working directory: `/workspace`; `git rev-parse` and `git remote -v` confirmed it was not a Git repository. There were no existing target files or remotes. Created `/workspace/BQ-Centrum` and initialized a new `main` repository with **no remotes**. No donor Git metadata or credentials were copied. Its own `.git/config` has remained unchanged (SHA256 `cfe7ba1238c9a78be7535d7c63bcaf5a4d5011d46b07c9b45d3bbf7d6c312dfe`).
+- A commit-addressed GitHub archive was extracted only into ignored `.baseline/source/` under the target for read-only inspection. The independent runtime uses ordinary copies at the target root; `.baseline` is neither shipped in Git nor required for play or checks. No donor checkout, donor repository, remote branch or website was edited, pushed, published or deployed. KossaMu248/BQ was not needed or modified.
+- The donor README attributes its original game/code/art to KossaMu248/BQ commit `65313c9e708e420999cd10c209f1b6fda1d29f31`. This is upstream attribution, not the stage-1 source pin. Original code and artwork retain their original ownership.
+
+## Copied runtime and loader precedence
+
+Copied both active HTML entries, two CSS files, all 19 JS modules and all **919 asset files**, including lossless V19 caches and original artwork for lazy loading/fallback. Older HTML editions, donor screenshots and donor Git history are not runtime inputs. Development tests/tools were retained for reference.
+
+Styles remain `game.css` → `illustrated.css`. Scripts remain:
+
+`assets` → `illustrated-atlas` → `illustrated-props` → `illustrated-world` → `illustrated-neighbourhood` → `illustrated-kids` → `illustrated-hero` → `fullscreen` → `autumn-quests` → `locomotion` → `weapon-effects` → `brawler` → `baby-passenger` → `hero-rig` → `npc-motion` → `brawler-art` → `street-life` → `illustrated-visits` → `game`.
+
+Existing IIFEs and their `window` APIs are retained. `assets.js` seeds the registry; later overrides in game.js run before `load()` registers image paths. Resolution remains `BEARLY_V163_ASSETS[name]` → `BEARLY_ASSETS[name]` → `assets/${name}.png`. Bear material assets then pass through `BearlyHero.source()`, selecting prepared lossless V19 PNGs. The lazy image proxy, critical riding preload and idle reaction preparation are unchanged. Local atlas, scene, tree and actor caches retain their original source fallback and load order. No external runtime URL or donor dependency was found; all runtime image/manifest requests are relative local paths. The only inline imagery is the source’s small percent-encoded SVG heart CSS, not base64 game artwork.
+
+`illustrated-neighbourhood` retains twelve authored stops, shallow depth, terrain-supported doors and shared resident routes. `illustrated-visits` uses neighbourhood doors, quests, hero/baby/locomotion, brawler, NPC, street-life and weapon modules to stop/park the bike, animate transfer, walk, enter rooms, exit and remount. The original cycling simulation is held while visiting. Room/dock/garden/boat artwork is loaded as needed. Quest state remains independent of cycling score. The donor’s existing civic-hall square remains; **no new square was added**.
+
+## Active character artwork
+
+- Riding baby: original `assets/baby_pose_{idle,laugh,terror,leanBack,leanForward,point,brace,sick}.webp` with original anchors and constant 1.08 mounting scale. At draw time, excited and sick expressions use `v151_baby_pose_excited.png` and `v151_baby_pose_sick.png`. All other source expressions and attachment are unchanged.
+- Carrier baby: `baby-passenger.js` uses those continuous source head/chin/neck/collar/shirt/upper-torso pixels. `hero-rig.js` masks the painted head/upper body from carrier sheets, overlays the source baby, and hides the lower cut beneath the pouch. Whole-body carrier motion and front/back/action/transfer/boat attachments are preserved.
+- Riding bear: `bear_pose_*` / `bear_pedal_*` artwork, with idle mapped to `bear_pedal_3.webp`, uses prepared `assets/cache/hero-cycling-v19/*.png` through `illustrated-hero.js`. Original bear parts and reaction art remain available. Preserve jersey, helmet, limbs and material treatment.
+- Bicycle: the active mounted blue bike is canvas drawing in `wheel()`, `frame()` and `bicycleDrive()` in `game.js`, not a guessed bicycle sprite. `v89_bike_crashed.webp` is used after crashes. Initial transfer frames come from `assets/art/bike-transfer-v7.png`; later transfer poses use hero-rig plus the source baby.
+- On-foot bear: `front-carrier-v7.png`, `back-carrier-v11.png`, `carrier-reactions-v11.png`, boat/transfer sheets and their v11-2 background repairs plus `matched-legs-v11.png`, `bear-near-contact-v18.png`, `bear-near-support-v18.png`, `bear-far-poses-v18.png` and `bear-idle-lower-v18.png` retain the integrated carrier and measured legs/boots. `locomotion.js` retains its alternating planted/swing legs and original proportions.
+- `v149_mounted_*` and `sheet_pose_*` are not substituted for the current riding likeness: the mounted source path and `selectedSheetPose()` behaviour determine what actually draws. NPC identities/wardrobe caches and autumn scenery were copied intact rather than selected by filename age.
+
+See [references/source/](references/source/) for captures and a detailed character trace. [donor-files.sha256.json](references/source/donor-files.sha256.json) records **944 original file hashes** (active HTML, manifest, README, CSS, JS and assets). `tools/verify-source-integrity.py` checks the independent copy against them, allowing only the explicit substitutions below. Character-specific hashes and rendered-frame hashes accompany the captures. Rendered reference boards are labeled as such; browser gameplay captures are actual screenshots, never generated illustrations.
+
+## Intentional stage-1 differences
+
+1. Target build ID is `BQ_CENTRUM_STAGE1`; browser tab title is BQ-Centrum. The title-screen design and art remain unchanged. The target manifest identifies the local project and pinned source.
+2. Score reads/writes use `bq-centrum:best-score:v1`; adventure reads/writes use `bq-centrum:adventure:v1`. No legacy-key read, automatic migration, removal or clearing. Settings/sound/fullscreen are memory-only; future persistence must use `bq-centrum:`.
+3. Added permanent project rules, local run instructions, baseline/hash references, a focused browser verification and this stage’s progress report. No physics, crash rules, damage, character/art changes, framework or engine migration.
+
+Actual verification results and limits are in [PROGRESS.md](PROGRESS.md).
+
+Pinned archive SHA256: `c1a427ccdc64e79605df33a0ada71619bdabfaf233437ceb49f3132ffa2d0d89`.
+
+## Stage 2 evolution — source pin unchanged
+
+The user authorized **one Centrum Square prototype** after the stage-1 baseline. No donor was recopied or used at runtime, and no character or source artwork was regenerated. All 919 source asset hashes, both original CSS files, the production bear/baby/locomotion/visits renderers and their dependency modules remain identical to the pin.
+
+New `js/centrum-square-world.js`, `js/centrum-square.js` and `css/centrum-square.css` contain the authored floor/solids, independent movement/camera/render controller and scoped UI. Both active HTML entries load the new CSS last and the two new scripts immediately before visits; all original scripts retain their relative order and override precedence. A labeled F3 entry opens the square. Minimal `game.js` hooks render/update the active square while holding the original ride/visit intact, clear held input at scene switches and close it on explicit reset/debug navigation. No cycling simulation, crash or damage function was changed. The target build is now `BQ_CENTRUM_STAGE2`.
+
+Square art uses the existing `BearlyAtlas` arcade/library/pizzeria fronts, `BearlyStreetProps` bench, `assets/v98_clean_planter.webp` and `BearlyWorld` paving/grass materials. The original `BearlyHeroRig` draws at fixed height 200, with its continuous source passenger and contextual idle/laugh/jump/talking expressions. Original source reference frames/hashes remain preserved in `references/source/`. The integrity verifier removes only documented identity/save substitutions and integration hooks before comparing original-file hashes; it does not contact either donor.
+
+The square uses its own 1500×1000 coordinate space, bounded camera (0–340 horizontally, 0–360 vertically), floor and AABB solid footprints. Ground-foot Y determines draw order and shadows; jump height moves only the actor artwork. There are no tree canopies or trunks in this prototype. See PROGRESS.md and `verification/stage2/` for actual review captures and animation/device limits.
+
+## Stage 3 evolution — compact connected scenes
+
+The same pinned local source remains the baseline; neither donor was recopied or modified. The target build is `BQ_CENTRUM_STAGE3`. No original character renderer, source artwork, cycling simulation, crash rule or damage balance was changed. The accepted 200-pixel bear/baby rig, shallow side/front projection, square furniture geometry and bounded camera remain in use.
+
+`js/centrum-scenes.js` now declares exactly five stable scene IDs, floors, solids (including conditional gate leaves and permanent posts), occlusion layers, interaction/exit anchors and named destination entrance IDs/facing. `js/centrum-square-world.js` reuses distinct local source façades, the metro entrance, utility art and painted food/workshop rooms; only Metro Square contains a station in this network. `js/centrum-square.js` transfers through those named anchors and requires body-clear proximity plus explicit E, with a movement guard after arrivals. The discovered map derives its links from scene exit data and offers no fast travel.
+
+`js/centrum-save.js` owns `bq-centrum:scene-network:v1` (schema 1 / layout 3). It validates scene/entrance IDs, finite safe positions, ±1 facing, current solids and gate state. Incompatible positions fall back to the named Metro Square `start` anchor; valid gate/discovery/Billy’s metadata survive. No donor save key is read, cleared or migrated. Transfers do not reset health or existing inventory. The Billy’s counter grants a persistent prototype pack, without currency or healing.
+
+Both active entries load scene data before the world, and persistence before the controller; all original scripts retain their relative order and original override precedence. The only stage-3 change inside the game IIFE is the build ID; the earlier isolated prototype hooks are retained. `tools/verify-source-integrity.py` still checks all 944 pinned original files, allowing only the documented entry/build/save substitutions and prototype hooks. Current browser evidence is in `verification/stage3/`; earlier source and camera-review frames remain preserved.
+
+## Stage 4 evolution — single cycling/parking owner
+
+The target build is `BQ_CENTRUM_STAGE4`; the source pin is unchanged. No donor was recopied. New `centrum-link.js` coordinates one marked source-route entry, production transfer, linked exploration and valid remount from the original game loop. `centrum-parking-save.js` owns the namespaced parking record. The existing prototype controller gained named parking anchors and same-scene collision-aware return walking; remote scenes show a walking route without teleporting.
+
+A narrow game bridge exposes the original route terrain, empty bicycle renderer and exact shared state. It derives grounded wheel positions without changing the physics update. The existing Visits module gained guarded context/transfer adapters and a linked presentation branch using the same six source poses with one passenger owner, avoiding duplicate chair/carrier blends. Existing non-linked visits keep their original behaviour. The quest module gained an exact serialized-state restore method, without replaying quest actions or rewards. Route pickup flags, score/checkpoint and one-time reward ledgers restore directly. Original character modules/assets and cycling/crash/damage simulation remain unchanged.
+
+Both entries add the parking-save/link scripts before the existing scene controller/visits and a scoped route-button stylesheet. Original script ordering and asset overrides remain intact. The strict verifier hashes reviewed adapter blocks before reversing those precise additions and comparing all original-file hashes. Tests/evidence in `verification/stage4/` cover actual source transfers, repeated desktop/touch cycles, frozen background state, ownership, reload, safe remount and saved reward continuity.
+
+## Stage 5 evolution — The Wrong Entrance
+
+The source pin remains unchanged; target build is `BQ_CENTRUM_STAGE5`. One modular quest is registered as `BearlyQuests.wrongEntrance`, using the project’s serialized quest-save pattern under `bq-centrum:quest:wrong-entrance:v1`. Existing source adventure and parking/reward saves are neither cleared nor migrated. The five requested states and supporting inspection/presentation/movement facts persist. Reporting records one stable pending entitlement; the current game installs no inventory redemption adapter and grants no reward item or health.
+
+`wrong-entrance-quest.js` supplies validated state transitions and state-sensitive dialogue. `centrum-story.js` connects those exchanges and choices to the existing E/proximity/clear-approach system and dialogue styling, with canonical local targets and paused movement during conversation. The former free-pack counter action is retired, preserving old counts. New `centrum-civilians.js` adapts existing peaceful Brawler routines and source NPC renderers for the shopkeeper (variant 8), caretaker (variant 6) and one arcade student (variant 9). Fear, defeat and recovery retain the source behaviour; availability requires a reachable floor point, and recovered offstage essential actors resume a safe home routine. No new combat controls or hostility rules were added.
+
+The existing commercial-crate art sits behind a labelled delivery cage. After approval, the caretaker’s source walking routine moves the parcel, followed by a visible signed-off acknowledgement. The player never carries cargo; it is not edible inventory. The existing square camera, character scale, source baby/hero likeness, gate independence, riding simulation and production parking transfers remain intact.
+
+Both entries add only the new modular story scripts and scoped stylesheet before the scene controller. The only original game-file change this stage is the build ID. Protected-file verification still reconstructs all 944 pinned originals exactly, including prior reviewed adapters; no original artwork or renderer was regenerated. Actual story evidence and recording are under `verification/stage5/`.
+
+
+## Stage 6 evolution — compact consumable economy
+
+The source pin remains `da109213fdf24947c2ac0b85de900214cc72e44f` / `AUTUMN_RIDE_ART_V19`; target build is `BQ_CENTRUM_STAGE6`. No donor was recopied or modified. All original artwork, character renderers, autumn CSS, cycling physics, crash rules and damage values remain preserved. The actual `assets/v142_pizza_wrapper.webp` supplies the small bag/eating UI.
+
+`centrum-balance.js` defines the requested prototype values. `centrum-save.js` extends the existing scene-network document to schema 2, with an atomic economy, component facade, latest-state and complete-checkpoint integrity checks. Existing project component IDs remain in use inside that document; only this project’s own previous namespaced values are imported once. No donor key is accessed. Named scene-anchor and solid-footprint validation still guards exploration restores; route restores validate progress, IDs and finite terrain positions.
+
+`centrum-economy.js` bridges the existing shared health/parking state and one game loop. `centrum-inventory.js` / its scoped CSS provide compact keyboard/touch browsing and a live, interruptible eating action. Shop transactions use the existing reachability/dialogue system; quest money and pizza claims are independent and idempotent. The accepted camera and 200-pixel source hero/carrier renderer remain intact; eating uses the source talking/idle presentation plus a small progress indicator.
+
+Narrow authorized source hooks change wild-pickup destination from immediate healing to the persistent bag, hold the single simulation during bag browsing, and connect coherent reload/retry. The old automatic on-foot defeat refill is replaced by explicit checkpoint/recovery controls so an unfinished fight cannot retain damage dealt while refilling health. Safe recovery reloads encounters and grants no takeaway pizza. The strict verifier pins the revised bridge and reverses only precise reviewed additions before checking all 944 original-file hashes; it does not contact either donor.
+
+Both HTML entries load balance/save before source quest initialization and inventory before existing scene/visit capture handlers. Original source scripts retain their relative order and asset-override precedence. Stage 6 real gameplay evidence is in `verification/stage6/`.
+
+
+## Stage 7 evolution — bounded autumn polish
+
+The unchanged source pin is `da109213fdf24947c2ac0b85de900214cc72e44f` / `AUTUMN_RIDE_ART_V19`; target build is `BQ_CENTRUM_STAGE7`. No source artwork, character renderer, cycling/crash/damage logic or title-screen design was replaced. No donor was recopied. Five scene IDs, footprints, floors, solids, resident identities and the 200-pixel hero remain intact.
+
+The existing world module reuses the original metro, distinct source fronts/rooms, planter, utility cabinet and market crates, plus `assets/v60_courtyard_fence.webp` for the rear service boundary. Wayfinding and thresholds align with actual rendered source doors; the square arcade’s named entrance is centred at x340, while the food shop remains at its painted x235 door. Gate sorting now uses actual post bases. Only planter foliage can sway/fade; its stone container and collision footprint remain fixed.
+
+New modular `centrum-atmosphere.js` runs from the existing scene update/render calls: seven small floor-level leaf motifs, isolated foliage wind and explicit reduced-motion support, with no RAF, timers, full-scene transforms or water effects. Dialogue/objective polish and brief event-driven baby reactions use existing source expression selection and native scale. Desktop camera bounds are unchanged; phone cover cropping stays within the same rendered frame and refreshes on resize/fullscreen, including pause.
+
+Both HTML entries load atmosphere before the existing world module; original source script order and asset overrides remain preserved. The original-file verifier permits only the new build/entry additions and still reconstructs all 944 original-file hashes exactly. Missing matched gate/passage/cage artwork is explicitly documented and labelled in gameplay. Real gameplay evidence and source-character comparison are under `verification/stage7/`.
+
+
+## Stage 8 validation and repair — source pin unchanged
+
+Validation keeps target build `BQ_CENTRUM_STAGE7` and the pinned donor commit/build unchanged. It adds tests, reports and a clean standalone package rather than features. All work remains inside BQ-Centrum; no donor checkout, donor save or deployment is a destination.
+
+Three narrow repairs were identified in actual browser review. `centrum-link.js` rejects another remount request once the production transfer has started, preserving the first request’s generation. In `illustrated-visits.js`, the existing three-line heart-label/fill update moves before the transition early return so a damaged rider’s HUD cannot display five full hearts during transfer. This is a display repair: shared health, animations, physics and damage values do not change. The strict source verifier reverses that precise UI move and still reconstructs all 944 pinned original-file hashes.
+
+The fresh acceptance route uses ordinary ride/walk/dialogue/inventory controls, without a debug teleport or health/item/quest fixture. Separate stress tests disclose their fixtures. The clean archive excludes `.baseline`, all Git metadata, secrets, disposable caches, raw frames and obsolete builds; required immutable prepared artwork in `assets/cache` remains runtime content. Root/subpath extraction tests do not use the donor inspection copy. TEST_REPORT.md and `verification/stage8/` distinguish actual conditions, evidence and untested devices. No push or deployment occurred.
+
+The final clean-server console audit also found an implicit `/favicon.ico`404 outside Page request hooks. Both active entries explicitly use an empty data favicon; this adds no game artwork and leaves the title-screen design intact. The original HTML verifier reverses that single explicit head tag before comparison.

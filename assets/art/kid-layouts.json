@@ -1,0 +1,329 @@
+{
+  "molotov": {
+    "src": "assets/art/kid-molotov.png",
+    "width": 1536,
+    "height": 1024,
+    "columns": 3,
+    "rows": 2,
+    "cellWidth": 512,
+    "cellHeight": 512,
+    "bodyHeight": 420,
+    "alphaNoiseThreshold": 25,
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 512,
+        "h": 512,
+        "footX": 256,
+        "footY": 491,
+        "visibleBounds": {
+          "x": 189,
+          "y": 72,
+          "w": 187,
+          "h": 420
+        },
+        "localFootX": 256,
+        "localFootY": 491
+      },
+      {
+        "x": 512,
+        "y": 0,
+        "w": 512,
+        "h": 512,
+        "footX": 768,
+        "footY": 487,
+        "visibleBounds": {
+          "x": 601,
+          "y": 124,
+          "w": 293,
+          "h": 364
+        },
+        "localFootX": 256,
+        "localFootY": 487
+      },
+      {
+        "x": 1024,
+        "y": 0,
+        "w": 512,
+        "h": 512,
+        "footX": 1280,
+        "footY": 489,
+        "visibleBounds": {
+          "x": 1100,
+          "y": 109,
+          "w": 338,
+          "h": 381
+        },
+        "localFootX": 256,
+        "localFootY": 489
+      },
+      {
+        "x": 0,
+        "y": 512,
+        "w": 512,
+        "h": 512,
+        "footX": 256,
+        "footY": 951,
+        "visibleBounds": {
+          "x": 95,
+          "y": 532,
+          "w": 356,
+          "h": 420
+        },
+        "localFootX": 256,
+        "localFootY": 439
+      },
+      {
+        "x": 512,
+        "y": 512,
+        "w": 512,
+        "h": 512,
+        "footX": 768,
+        "footY": 950,
+        "visibleBounds": {
+          "x": 585,
+          "y": 573,
+          "w": 423,
+          "h": 378
+        },
+        "localFootX": 256,
+        "localFootY": 438
+      },
+      {
+        "x": 1024,
+        "y": 512,
+        "w": 512,
+        "h": 512,
+        "footX": 1280,
+        "footY": 950,
+        "visibleBounds": {
+          "x": 1098,
+          "y": 589,
+          "w": 357,
+          "h": 362
+        },
+        "localFootX": 256,
+        "localFootY": 438
+      }
+    ]
+  },
+  "rock": {
+    "src": "assets/art/kid-rock.png",
+    "width": 1536,
+    "height": 1024,
+    "columns": 3,
+    "rows": 2,
+    "cellWidth": 512,
+    "cellHeight": 512,
+    "bodyHeight": 416,
+    "alphaNoiseThreshold": 25,
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 512,
+        "h": 512,
+        "footX": 256,
+        "footY": 490,
+        "visibleBounds": {
+          "x": 192,
+          "y": 75,
+          "w": 186,
+          "h": 416
+        },
+        "localFootX": 256,
+        "localFootY": 490
+      },
+      {
+        "x": 512,
+        "y": 0,
+        "w": 512,
+        "h": 512,
+        "footX": 768,
+        "footY": 491,
+        "visibleBounds": {
+          "x": 621,
+          "y": 88,
+          "w": 274,
+          "h": 403
+        },
+        "localFootX": 256,
+        "localFootY": 491
+      },
+      {
+        "x": 1024,
+        "y": 0,
+        "w": 512,
+        "h": 512,
+        "footX": 1280,
+        "footY": 491,
+        "visibleBounds": {
+          "x": 1109,
+          "y": 88,
+          "w": 323,
+          "h": 404
+        },
+        "localFootX": 256,
+        "localFootY": 491
+      },
+      {
+        "x": 0,
+        "y": 512,
+        "w": 512,
+        "h": 512,
+        "footX": 256,
+        "footY": 972,
+        "visibleBounds": {
+          "x": 121,
+          "y": 568,
+          "w": 317,
+          "h": 404
+        },
+        "localFootX": 256,
+        "localFootY": 460
+      },
+      {
+        "x": 512,
+        "y": 512,
+        "w": 512,
+        "h": 512,
+        "footX": 768,
+        "footY": 966,
+        "visibleBounds": {
+          "x": 581,
+          "y": 578,
+          "w": 418,
+          "h": 388
+        },
+        "localFootX": 256,
+        "localFootY": 454
+      },
+      {
+        "x": 1024,
+        "y": 512,
+        "w": 512,
+        "h": 512,
+        "footX": 1280,
+        "footY": 967,
+        "visibleBounds": {
+          "x": 1103,
+          "y": 593,
+          "w": 344,
+          "h": 374
+        },
+        "localFootX": 256,
+        "localFootY": 455
+      }
+    ]
+  },
+  "dynamite": {
+    "src": "assets/art/kid-dynamite.png",
+    "width": 1536,
+    "height": 1024,
+    "columns": 3,
+    "rows": 2,
+    "cellWidth": 512,
+    "cellHeight": 512,
+    "bodyHeight": 387,
+    "alphaNoiseThreshold": 25,
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 512,
+        "h": 512,
+        "footX": 256,
+        "footY": 469,
+        "visibleBounds": {
+          "x": 183,
+          "y": 82,
+          "w": 171,
+          "h": 387
+        },
+        "localFootX": 256,
+        "localFootY": 469
+      },
+      {
+        "x": 512,
+        "y": 0,
+        "w": 512,
+        "h": 512,
+        "footX": 768,
+        "footY": 469,
+        "visibleBounds": {
+          "x": 637,
+          "y": 119,
+          "w": 253,
+          "h": 350
+        },
+        "localFootX": 256,
+        "localFootY": 469
+      },
+      {
+        "x": 1024,
+        "y": 0,
+        "w": 512,
+        "h": 512,
+        "footX": 1280,
+        "footY": 469,
+        "visibleBounds": {
+          "x": 1127,
+          "y": 119,
+          "w": 296,
+          "h": 350
+        },
+        "localFootX": 256,
+        "localFootY": 469
+      },
+      {
+        "x": 0,
+        "y": 512,
+        "w": 512,
+        "h": 512,
+        "footX": 256,
+        "footY": 957,
+        "visibleBounds": {
+          "x": 129,
+          "y": 577,
+          "w": 311,
+          "h": 381
+        },
+        "localFootX": 256,
+        "localFootY": 445
+      },
+      {
+        "x": 512,
+        "y": 512,
+        "w": 512,
+        "h": 512,
+        "footX": 768,
+        "footY": 953,
+        "visibleBounds": {
+          "x": 589,
+          "y": 607,
+          "w": 398,
+          "h": 346
+        },
+        "localFootX": 256,
+        "localFootY": 441
+      },
+      {
+        "x": 1024,
+        "y": 512,
+        "w": 512,
+        "h": 512,
+        "footX": 1280,
+        "footY": 954,
+        "visibleBounds": {
+          "x": 1109,
+          "y": 618,
+          "w": 323,
+          "h": 337
+        },
+        "localFootX": 256,
+        "localFootY": 442
+      }
+    ]
+  }
+}

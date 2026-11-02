@@ -1,0 +1,1004 @@
+{
+  "stage": 7,
+  "build": "BQ_CENTRUM_STAGE7",
+  "passed": true,
+  "execution": "Four focused scenarios executed separately against the same stage, then consolidated; no need to replay passing scenarios after each added final-runtime assertion.",
+  "scenarios": [
+    "economy",
+    "interruptions",
+    "final-door",
+    "counter-reactions"
+  ],
+  "completedScenarios": [
+    "economy",
+    "interruptions",
+    "final-door",
+    "counter-reactions"
+  ],
+  "preparedFixtures": true,
+  "checks": [
+    {
+      "name": "full bag claims 40 kr once and keeps pizza entitlement",
+      "state": {
+        "health": 60,
+        "wallet": {
+          "kr": 40
+        },
+        "inventory": {
+          "billys": 3
+        },
+        "collectedIDs": [],
+        "rewardClaims": {
+          "wrong-entrance:completion:v1": {
+            "money": true,
+            "food": false
+          }
+        },
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": "reported",
+          "cageInspected": true,
+          "slipPresented": true,
+          "cargoMoved": true,
+          "entitlement": {
+            "id": "wrong-entrance:completion:v1",
+            "questId": "wrong-entrance",
+            "status": "pending"
+          },
+          "rewardReceipt": null,
+          "objective": "Redeem at the counter. Reserved Billy\u2019s waits for bag space.",
+          "slip": {
+            "id": "wrong-entrance-delivery-slip",
+            "parcelId": "B-04",
+            "format": "A5",
+            "text": "Door 7. Parcel B-04. Signature within rectangle.",
+            "kind": "quest-document"
+          },
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "food-shop",
+        "revision": 39,
+        "checkpointReason": "wrong-entrance-reward",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 3,
+          "wallet": 40,
+          "health": 60,
+          "disabledReason": ""
+        }
+      }
+    },
+    {
+      "name": "full bag purchase leaves wallet and bag untouched",
+      "state": {
+        "health": 60,
+        "wallet": {
+          "kr": 40
+        },
+        "inventory": {
+          "billys": 3
+        },
+        "collectedIDs": [],
+        "rewardClaims": {
+          "wrong-entrance:completion:v1": {
+            "money": true,
+            "food": false
+          }
+        },
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": "reported",
+          "cageInspected": true,
+          "slipPresented": true,
+          "cargoMoved": true,
+          "entitlement": {
+            "id": "wrong-entrance:completion:v1",
+            "questId": "wrong-entrance",
+            "status": "pending"
+          },
+          "rewardReceipt": null,
+          "objective": "Redeem at the counter. Reserved Billy\u2019s waits for bag space.",
+          "slip": {
+            "id": "wrong-entrance-delivery-slip",
+            "parcelId": "B-04",
+            "format": "A5",
+            "text": "Door 7. Parcel B-04. Signature within rectangle.",
+            "kind": "quest-document"
+          },
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "food-shop",
+        "revision": 46,
+        "checkpointReason": "wrong-entrance-reward",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 3,
+          "wallet": 40,
+          "health": 60,
+          "disabledReason": ""
+        }
+      }
+    },
+    {
+      "name": "one live eating action consumes one pizza and heals one heart",
+      "state": {
+        "health": 80,
+        "wallet": {
+          "kr": 40
+        },
+        "inventory": {
+          "billys": 2
+        },
+        "collectedIDs": [],
+        "rewardClaims": {
+          "wrong-entrance:completion:v1": {
+            "money": true,
+            "food": false
+          }
+        },
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": "reported",
+          "cageInspected": true,
+          "slipPresented": true,
+          "cargoMoved": true,
+          "entitlement": {
+            "id": "wrong-entrance:completion:v1",
+            "questId": "wrong-entrance",
+            "status": "pending"
+          },
+          "rewardReceipt": null,
+          "objective": "Redeem at the counter. Reserved Billy\u2019s waits for bag space.",
+          "slip": {
+            "id": "wrong-entrance-delivery-slip",
+            "parcelId": "B-04",
+            "format": "A5",
+            "text": "Door 7. Parcel B-04. Signature within rectangle.",
+            "kind": "quest-document"
+          },
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "food-shop",
+        "revision": 48,
+        "checkpointReason": "wrong-entrance-reward",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": {
+            "status": "completed",
+            "id": "eat:mvzf5mel-lichd3ne:1",
+            "healed": 20
+          },
+          "food": 2,
+          "wallet": 40,
+          "health": 80,
+          "disabledReason": ""
+        }
+      }
+    },
+    {
+      "name": "pending pizza redeemed independently and task completes",
+      "state": {
+        "health": 80,
+        "wallet": {
+          "kr": 40
+        },
+        "inventory": {
+          "billys": 3
+        },
+        "collectedIDs": [],
+        "rewardClaims": {
+          "wrong-entrance:completion:v1": {
+            "money": true,
+            "food": true
+          }
+        },
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": "reward_claimed",
+          "cageInspected": true,
+          "slipPresented": true,
+          "cargoMoved": true,
+          "entitlement": {
+            "id": "wrong-entrance:completion:v1",
+            "questId": "wrong-entrance",
+            "status": "claimed"
+          },
+          "rewardReceipt": {
+            "entitlementId": "wrong-entrance:completion:v1",
+            "consumer": "inventory",
+            "receiptId": "inventory:wrong-entrance:completion:v1"
+          },
+          "objective": "Delivery complete. The one-time reward is redeemed.",
+          "slip": {
+            "id": "wrong-entrance-delivery-slip",
+            "parcelId": "B-04",
+            "format": "A5",
+            "text": "Door 7. Parcel B-04. Signature within rectangle.",
+            "kind": "quest-document"
+          },
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "food-shop",
+        "revision": 55,
+        "checkpointReason": "wrong-entrance-reward",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": {
+            "status": "completed",
+            "id": "eat:mvzf5mel-lichd3ne:1",
+            "healed": 20
+          },
+          "food": 3,
+          "wallet": 40,
+          "health": 80,
+          "disabledReason": ""
+        }
+      }
+    },
+    {
+      "name": "purchase atomically spends 20 kr for one Billys; full health blocks waste",
+      "state": {
+        "health": 100,
+        "wallet": {
+          "kr": 20
+        },
+        "inventory": {
+          "billys": 3
+        },
+        "collectedIDs": [],
+        "rewardClaims": {
+          "wrong-entrance:completion:v1": {
+            "money": true,
+            "food": true
+          }
+        },
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": "reward_claimed",
+          "cageInspected": true,
+          "slipPresented": true,
+          "cargoMoved": true,
+          "entitlement": {
+            "id": "wrong-entrance:completion:v1",
+            "questId": "wrong-entrance",
+            "status": "claimed"
+          },
+          "rewardReceipt": {
+            "entitlementId": "wrong-entrance:completion:v1",
+            "consumer": "inventory",
+            "receiptId": "inventory:wrong-entrance:completion:v1"
+          },
+          "objective": "Delivery complete. The one-time reward is redeemed.",
+          "slip": {
+            "id": "wrong-entrance-delivery-slip",
+            "parcelId": "B-04",
+            "format": "A5",
+            "text": "Door 7. Parcel B-04. Signature within rectangle.",
+            "kind": "quest-document"
+          },
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "food-shop",
+        "revision": 64,
+        "checkpointReason": "wrong-entrance-reward",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": {
+            "status": "completed",
+            "id": "eat:mvzf68ej-9xvv7hlt:1",
+            "healed": 20
+          },
+          "food": 3,
+          "wallet": 20,
+          "health": 100,
+          "disabledReason": "Full health \u2014 food kept."
+        }
+      }
+    },
+    {
+      "name": "latest reload preserves purchased food, money, health and scene",
+      "state": {
+        "health": 100,
+        "wallet": {
+          "kr": 20
+        },
+        "inventory": {
+          "billys": 3
+        },
+        "collectedIDs": [],
+        "rewardClaims": {
+          "wrong-entrance:completion:v1": {
+            "money": true,
+            "food": true
+          }
+        },
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": "reward_claimed",
+          "cageInspected": true,
+          "slipPresented": true,
+          "cargoMoved": true,
+          "entitlement": {
+            "id": "wrong-entrance:completion:v1",
+            "questId": "wrong-entrance",
+            "status": "claimed"
+          },
+          "rewardReceipt": {
+            "entitlementId": "wrong-entrance:completion:v1",
+            "consumer": "inventory",
+            "receiptId": "inventory:wrong-entrance:completion:v1"
+          },
+          "objective": "Delivery complete. The one-time reward is redeemed.",
+          "slip": {
+            "id": "wrong-entrance-delivery-slip",
+            "parcelId": "B-04",
+            "format": "A5",
+            "text": "Door 7. Parcel B-04. Signature within rectangle.",
+            "kind": "quest-document"
+          },
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "shopping-arcade",
+        "revision": 108,
+        "checkpointReason": "wrong-entrance-reward",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 3,
+          "wallet": 20,
+          "health": 100,
+          "disabledReason": "Full health \u2014 food kept."
+        }
+      }
+    },
+    {
+      "name": "eating interrupted by movement grants neither healing nor loss",
+      "state": {
+        "health": 60,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 3
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": null,
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Visit Billy\u2019s Food Shop with the baby.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "metro-square",
+        "revision": 10,
+        "checkpointReason": "qa-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": {
+            "status": "cancelled",
+            "id": "eat:mvzf837b-gsqejhz9:1",
+            "reason": "Eating interrupted \u2014 food kept."
+          },
+          "food": 3,
+          "wallet": 0,
+          "health": 60,
+          "disabledReason": ""
+        }
+      }
+    },
+    {
+      "name": "eating interrupted by pause grants neither healing nor loss",
+      "state": {
+        "health": 60,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 3
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": null,
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Visit Billy\u2019s Food Shop with the baby.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "metro-square",
+        "revision": 12,
+        "checkpointReason": "qa-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": {
+            "status": "cancelled",
+            "id": "eat:mvzf837b-gsqejhz9:2",
+            "reason": "Eating interrupted \u2014 food kept."
+          },
+          "food": 3,
+          "wallet": 0,
+          "health": 60,
+          "disabledReason": ""
+        }
+      }
+    },
+    {
+      "name": "eating interrupted by cancel grants neither healing nor loss",
+      "state": {
+        "health": 60,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 3
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": null,
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Visit Billy\u2019s Food Shop with the baby.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "metro-square",
+        "revision": 12,
+        "checkpointReason": "qa-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": {
+            "status": "cancelled",
+            "id": "eat:mvzf837b-gsqejhz9:3",
+            "reason": "Eating cancelled \u2014 food kept."
+          },
+          "food": 3,
+          "wallet": 0,
+          "health": 60,
+          "disabledReason": ""
+        }
+      }
+    },
+    {
+      "name": "window focus loss cancels eating without item loss or healing",
+      "state": {
+        "health": 60,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 3
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": null,
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Visit Billy\u2019s Food Shop with the baby.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "metro-square",
+        "revision": 12,
+        "checkpointReason": "qa-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": {
+            "status": "cancelled",
+            "id": "eat:mvzf837b-gsqejhz9:4",
+            "reason": "Eating interrupted \u2014 food kept."
+          },
+          "food": 3,
+          "wallet": 0,
+          "health": 60,
+          "disabledReason": "Resume before eating."
+        }
+      }
+    },
+    {
+      "name": "health change interrupts eating with food untouched",
+      "state": {
+        "health": 56,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 3
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": null,
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Visit Billy\u2019s Food Shop with the baby.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "metro-square",
+        "revision": 14,
+        "checkpointReason": "qa-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": {
+            "status": "cancelled",
+            "id": "eat:mvzf837b-gsqejhz9:5",
+            "reason": "Eating interrupted \u2014 food kept."
+          },
+          "food": 3,
+          "wallet": 0,
+          "health": 56,
+          "disabledReason": ""
+        }
+      }
+    },
+    {
+      "name": "reload during eating does not commit unfinished action",
+      "state": {
+        "health": 56,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 3
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": null,
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Visit Billy\u2019s Food Shop with the baby.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "metro-square",
+        "revision": 19,
+        "checkpointReason": "qa-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 3,
+          "wallet": 0,
+          "health": 56,
+          "disabledReason": ""
+        }
+      }
+    },
+    {
+      "name": "real door scene change interrupts eating without item loss or healing",
+      "state": {
+        "health": 60,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 2
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": "discovered",
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Ask the shopkeeper about the delivery.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "shopping-arcade",
+        "revision": 12,
+        "checkpointReason": "qa-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": {
+            "status": "cancelled",
+            "id": "eat:mvzf8n8d-ooiz1lgw:1",
+            "reason": "Eating interrupted \u2014 food kept."
+          },
+          "food": 2,
+          "wallet": 0,
+          "health": 60,
+          "disabledReason": ""
+        }
+      }
+    },
+    {
+      "name": "healing caps at five hearts",
+      "state": {
+        "health": 100,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 0
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": "discovered",
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Ask the shopkeeper about the delivery.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "food-shop",
+        "revision": 10,
+        "checkpointReason": "qa-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": {
+            "status": "completed",
+            "id": "eat:mvzf8xt7-wyd4uin5:1",
+            "healed": 10
+          },
+          "food": 0,
+          "wallet": 0,
+          "health": 100,
+          "disabledReason": "Full health \u2014 food kept."
+        }
+      }
+    },
+    {
+      "name": "insufficient funds purchase is atomic",
+      "state": {
+        "health": 100,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 0
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": "discovered",
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Ask the shopkeeper about the delivery.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "food-shop",
+        "revision": 44,
+        "checkpointReason": "qa-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": {
+            "status": "completed",
+            "id": "eat:mvzf8xt7-wyd4uin5:1",
+            "healed": 10
+          },
+          "food": 0,
+          "wallet": 0,
+          "health": 100,
+          "disabledReason": "Full health \u2014 food kept."
+        }
+      }
+    },
+    {
+      "name": "final physical food door keeps the named arcade arrival and cancels eating atomically",
+      "arrival": {
+        "position": {
+          "sceneId": "shopping-arcade",
+          "entranceId": "from-food-shop",
+          "x": 235,
+          "y": 440,
+          "face": 1
+        },
+        "expected": {
+          "x": 235,
+          "y": 440,
+          "face": 1
+        },
+        "door": {
+          "id": "food-door",
+          "kind": "exit",
+          "label": "Enter Billy\u2019s food shop",
+          "x": 235,
+          "y": 382,
+          "radius": 68,
+          "toScene": "food-shop",
+          "toEntrance": "from-arcade"
+        }
+      },
+      "health": 60,
+      "food": 2
+    },
+    {
+      "name": "quest-reported uses one short native point reaction without changing health or baby scale",
+      "reaction": {
+        "kind": "quest-reported",
+        "remaining": 0.8999999999999999
+      },
+      "food": 0,
+      "wallet": 0,
+      "health": 60,
+      "baby": {
+        "mood": "point",
+        "source": "assets/baby_pose_point.webp",
+        "continuousUpperBody": true,
+        "originalCollar": true,
+        "headOnly": false,
+        "headHeight": 39.97581295350712,
+        "uniformScale": 0.5710830421929589
+      }
+    },
+    {
+      "name": "billys-reward uses one short native point reaction without changing health or baby scale",
+      "reaction": {
+        "kind": "billys-reward",
+        "remaining": 0.9
+      },
+      "food": 1,
+      "wallet": 40,
+      "health": 60,
+      "baby": {
+        "mood": "point",
+        "source": "assets/baby_pose_point.webp",
+        "continuousUpperBody": true,
+        "originalCollar": true,
+        "headOnly": false,
+        "headHeight": 39.97581295350712,
+        "uniformScale": 0.5710830421929589
+      }
+    },
+    {
+      "name": "billys-purchase uses one short native point reaction without changing health or baby scale",
+      "reaction": {
+        "kind": "billys-purchase",
+        "remaining": 0.8667000000000008
+      },
+      "food": 2,
+      "wallet": 20,
+      "health": 60,
+      "baby": {
+        "mood": "point",
+        "source": "assets/baby_pose_point.webp",
+        "continuousUpperBody": true,
+        "originalCollar": true,
+        "headOnly": false,
+        "headHeight": 39.97581295350712,
+        "uniformScale": 0.5710830421929589
+      }
+    }
+  ],
+  "errors": [],
+  "httpFailures": [],
+  "recording": {
+    "file": "consumable-loop.webm",
+    "kind": "actual browser gameplay recording",
+    "speed": 2,
+    "frames": 178,
+    "nativeSeconds": 51.76501417160034,
+    "reloadWaitGapsCappedSeconds": 2,
+    "generatedArtwork": false
+  },
+  "limits": [
+    "Desktop Chromium only; physical devices untested. Phone-landscape polish evidence is separate.",
+    "Starting food, health and reported/pre-report quest state use the production ledger factory; transactions, eating and exits use actual input.",
+    "Consumable captures are prepared-state regression evidence, not final environment-placement review. Fresh final-door context verifies the final235,440 food-shop entrance."
+  ]
+}

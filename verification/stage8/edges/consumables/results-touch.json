@@ -1,0 +1,120 @@
+{
+  "stage": 6,
+  "scenario": "touch",
+  "preparedFixtures": true,
+  "checks": [
+    {
+      "name": "emulated touch bag, eating and movement cancellation",
+      "state": {
+        "health": 80,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 1
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": null,
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Visit Billy\u2019s Food Shop with the baby.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "metro-square",
+        "revision": 14,
+        "checkpointReason": "qa-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": {
+            "status": "cancelled",
+            "id": "eat:mvzgt48y-diutixpy:2",
+            "reason": "Eating interrupted \u2014 food kept."
+          },
+          "food": 1,
+          "wallet": 0,
+          "health": 80,
+          "disabledReason": ""
+        }
+      }
+    },
+    {
+      "name": "emulated portrait inventory and eating",
+      "state": {
+        "health": 80,
+        "wallet": {
+          "kr": 0
+        },
+        "inventory": {
+          "billys": 1
+        },
+        "collectedIDs": [],
+        "rewardClaims": {},
+        "quest": {
+          "schemaVersion": 1,
+          "questId": "wrong-entrance",
+          "state": null,
+          "cageInspected": false,
+          "slipPresented": false,
+          "cargoMoved": false,
+          "entitlement": null,
+          "rewardReceipt": null,
+          "objective": "Visit Billy\u2019s Food Shop with the baby.",
+          "slip": null,
+          "parcel": {
+            "id": "B-04",
+            "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+            "kind": "quest-cargo",
+            "edible": false,
+            "carriedByPlayer": false
+          }
+        },
+        "mode": "exploring",
+        "scene": "metro-square",
+        "revision": 9,
+        "checkpointReason": "qa-prepared-state",
+        "loadStatus": "latest",
+        "ui": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": {
+            "status": "completed",
+            "id": "eat:mvzgtfzu-cocqro5x:1",
+            "healed": 20
+          },
+          "food": 1,
+          "wallet": 0,
+          "health": 80,
+          "disabledReason": ""
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "httpFailures": [],
+  "passed": true,
+  "limits": [
+    "Desktop Chromium and emulated touch Chromium only; physical devices and other browsers untested.",
+    "Delivery completion is an explicit prepared reported-save fixture; stage 5 separately records the full campaign."
+  ]
+}

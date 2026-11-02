@@ -1,0 +1,191 @@
+{
+  "corner-shop": {
+    "file": "centrum",
+    "x": 789,
+    "y": 516,
+    "w": 737,
+    "h": 437,
+    "footX": 1157.5,
+    "footY": 952
+  },
+  "arcade": {
+    "file": "centrum",
+    "x": 19,
+    "y": 51,
+    "w": 765,
+    "h": 384,
+    "footX": 401.5,
+    "footY": 434
+  },
+  "civic-hall": {
+    "file": "centrum",
+    "x": 18,
+    "y": 436,
+    "w": 754,
+    "h": 501,
+    "footX": 395.0,
+    "footY": 936
+  },
+  "library": {
+    "file": "centrum",
+    "x": 802,
+    "y": 58,
+    "w": 722,
+    "h": 379,
+    "footX": 1163.0,
+    "footY": 436
+  },
+  "apartment": {
+    "file": "neighbourhood",
+    "x": 16,
+    "y": 10,
+    "w": 807,
+    "h": 524,
+    "footX": 419.5,
+    "footY": 533
+  },
+  "courtyard": {
+    "file": "neighbourhood",
+    "x": 835,
+    "y": 58,
+    "w": 682,
+    "h": 471,
+    "footX": 1176.0,
+    "footY": 528
+  },
+  "boathouse": {
+    "file": "neighbourhood",
+    "x": 772,
+    "y": 554,
+    "w": 739,
+    "h": 410,
+    "footX": 1141.5,
+    "footY": 963
+  },
+  "greenhouse": {
+    "file": "neighbourhood",
+    "x": 41,
+    "y": 534,
+    "w": 695,
+    "h": 427,
+    "footX": 388.5,
+    "footY": 960
+  },
+  "castle": {
+    "file": "castle",
+    "x": 68,
+    "y": 9,
+    "w": 1404,
+    "h": 977,
+    "footX": 770.0,
+    "footY": 985
+  },
+  "resident-2": {
+    "file": "residents",
+    "x": 1020,
+    "y": 11,
+    "w": 475,
+    "h": 491,
+    "footX": 1257.5,
+    "footY": 501
+  },
+  "resident-3": {
+    "file": "residents",
+    "x": 28,
+    "y": 513,
+    "w": 467,
+    "h": 483,
+    "footX": 261.5,
+    "footY": 995
+  },
+  "resident-1": {
+    "file": "residents",
+    "x": 579,
+    "y": 19,
+    "w": 270,
+    "h": 478,
+    "footX": 714.0,
+    "footY": 496
+  },
+  "resident-5": {
+    "file": "residents",
+    "x": 1068,
+    "y": 516,
+    "w": 436,
+    "h": 476,
+    "footX": 1286.0,
+    "footY": 991
+  },
+  "resident-4": {
+    "file": "residents",
+    "x": 566,
+    "y": 514,
+    "w": 413,
+    "h": 477,
+    "footX": 772.5,
+    "footY": 990
+  },
+  "resident-0": {
+    "file": "residents",
+    "x": 124,
+    "y": 19,
+    "w": 227,
+    "h": 478,
+    "footX": 237.5,
+    "footY": 496
+  },
+  "hazard-scooter": {
+    "file": "hazards",
+    "x": 25,
+    "y": 208,
+    "w": 499,
+    "h": 377,
+    "footX": 274.5,
+    "footY": 584
+  },
+  "hazard-cart": {
+    "file": "hazards",
+    "x": 555,
+    "y": 143,
+    "w": 433,
+    "h": 434,
+    "footX": 771.5,
+    "footY": 576
+  },
+  "hazard-barrier": {
+    "file": "hazards",
+    "x": 1046,
+    "y": 211,
+    "w": 471,
+    "h": 362,
+    "footX": 1281.5,
+    "footY": 572
+  },
+  "hazard-cones": {
+    "file": "hazards",
+    "x": 16,
+    "y": 611,
+    "w": 534,
+    "h": 359,
+    "footX": 283.0,
+    "footY": 969
+  },
+  "hazard-glass": {
+    "file": "hazards",
+    "x": 583,
+    "y": 833,
+    "w": 403,
+    "h": 129,
+    "footX": 784.5,
+    "footY": 961
+  },
+  "hazard-pothole": {
+    "file": "hazards",
+    "x": 1017,
+    "y": 760,
+    "w": 502,
+    "h": 215,
+    "footX": 1268.0,
+    "footY": 974
+  }
+}

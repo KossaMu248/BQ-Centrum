@@ -1,0 +1,390 @@
+:root{--ink:#17242d;--navy:#122b38;--slate:#263f4b;--paper:#f6f5ed;--gold:#ffc044;--orange:#ff7044;--red:#fa5346;--blue:#46b2ed}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#111e27;color:#f9f7f0;font-family:Inter,Arial,sans-serif}body{background:radial-gradient(ellipse at top,#294453 0%,#101b24 80%)}.app{width:min(1275px,100%);margin:auto;padding:17px 20px 13px}.masthead{height:75px;display:flex;justify-content:space-between;align-items:center;gap:14px}.wordmark{display:flex;align-items:center;gap:13px}.paw{font-size:32px;filter:drop-shadow(1px 2px 0 #0006)}h1{font-family:'Barlow Condensed','Arial Narrow',Impact,sans-serif;font-size:clamp(29px,3.3vw,48px);font-weight:900;letter-spacing:.2px;line-height:.9;margin:0}h1 b{color:var(--gold);font-weight:900}.eyebrow{font-family:'Barlow Condensed',Impact,sans-serif;font-size:11px;letter-spacing:3px;color:#91a4a9}.top-actions{display:flex;align-items:center;gap:9px}.level-chip{color:#e8eee7;font-size:11px;letter-spacing:1px;font-weight:800;background:#233844;padding:11px 16px;border:1px solid #425766;border-radius:7px}.level-chip span{color:var(--gold);margin:0 7px}.top-actions button{background:#233844;border:1px solid #536973;color:white;font-family:inherit;font-weight:800;letter-spacing:.8px;padding:11px 13px;border-radius:7px;cursor:pointer}.top-actions button:hover{background:#365467}.game-shell{border-radius:14px;box-shadow:0 17px 42px #050e1466;overflow:hidden;border:5px solid #516877}.canvas-wrap{position:relative;aspect-ratio:1160/640;overflow:hidden;background:#c5e9ff}.canvas-wrap canvas{width:100%;height:100%;display:block;touch-action:none}.game-hud{pointer-events:none;position:absolute;left:0;right:0;top:0;display:flex;align-items:flex-start;justify-content:space-between;gap:15px;padding:17px 19px}.hud-left,.hud-right{border:2px solid #263c48;border-radius:9px;background:#f7f5ebed;color:#152936;box-shadow:3px 4px 0 #1626313b;padding:10px 14px;width:210px}.hud-eyebrow{font-family:'Barlow Condensed',Impact,sans-serif;font-size:12px;font-weight:800;letter-spacing:1.5px;color:#687781}.hud-left #distance{font-family:'Barlow Condensed',Impact,sans-serif;font-size:33px;font-weight:900;line-height:1.13}.hud-left small{font-size:14px}.meter-track,.panic-track{height:11px;border:2px solid #172e3b;background:#becad0;border-radius:3px;overflow:hidden}.meter-track div{height:100%;width:0;background:#42b3c7;transition:width .2s}.hud-right{width:225px}.hud-right .hud-eyebrow{display:flex;justify-content:space-between;font-size:11px}.panic-track{height:20px;margin:6px 0}.panic-track div{height:100%;width:1%;background:linear-gradient(90deg,#65c7a7 0%,#ffbd38 42%,#f4593d 95%);transition:width .2s}.hud-right #moodText{font-family:'Barlow Condensed',Impact,sans-serif;font-size:14px;font-weight:800;letter-spacing:.65px;text-align:right}.hud-center{position:absolute;top:19px;left:50%;transform:translateX(-50%);background:#263e4b;border:2px solid #142b36;border-radius:6px;box-shadow:4px 4px 0 #17252d66;color:#fff;padding:8px 15px;max-width:34%;text-align:center;font-family:'Barlow Condensed',Impact,sans-serif;font-weight:900;letter-spacing:1px;font-size:18px;opacity:0;transition:opacity .25s}.hud-center.show{opacity:1}.overlay{position:absolute;inset:0;display:flex;align-items:flex-start;justify-content:center;background:#132a3782;backdrop-filter:blur(2px);z-index:4;padding:18px 20px 20px}.overlay[hidden]{display:none}.overlay-panel{position:relative;width:min(390px,76%);padding:16px 18px 14px;text-align:center;border:4px solid #203744;border-radius:14px;background:linear-gradient(165deg,#fffef5,#e9ebdf);color:#1b2b35;box-shadow:9px 10px 0 #061a26a0;transform:rotate(-1deg)}.overlay-kicker{font-family:'Barlow Condensed',Impact,sans-serif;font-size:13px;font-weight:900;letter-spacing:3px;color:#62808b}.overlay h2{font-family:'Barlow Condensed',Impact,sans-serif;font-size:clamp(31px,4.2vw,52px);font-weight:900;line-height:.9;margin:11px 0 10px}.overlay h2 em{color:#e85835;font-style:normal}.overlay p{font-size:13px;line-height:1.45;margin:4px 0 12px;color:#48606e}.instructions-mini{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:16px}.instructions-mini span{background:#e4e8e7;border:2px solid #b6c7cb;border-radius:5px;font-family:'Barlow Condensed',Impact,sans-serif;padding:8px 1px;font-weight:800;font-size:13px}.instructions-mini strong{display:block;font-size:12px;color:#576e7a}.primary{display:flex;align-items:center;justify-content:center;gap:20px;width:100%;padding:14px 15px;border:2px solid #8d4c28;border-radius:7px;background:#ffb13b;color:#1f2c32;box-shadow:0 4px 0 #a35f29;font-family:'Barlow Condensed',Impact,sans-serif;font-weight:900;font-size:23px;letter-spacing:.8px;cursor:pointer}.primary:hover{background:#ffd26a}.primary span{font-size:25px}.tip{margin-top:13px;font-size:11px;color:#8a9799;font-style:italic}.toast{position:absolute;z-index:3;bottom:27px;left:50%;transform:translateX(-50%);padding:9px 15px;background:#142935;border:2px solid white;border-radius:7px;font-family:'Barlow Condensed',Impact,sans-serif;font-size:23px;font-weight:900;color:#ffda67;letter-spacing:1px;white-space:nowrap}.toast[hidden]{display:none}.touch-controls{display:flex;justify-content:space-between;padding:10px 15px;background:#243b48;touch-action:none}.control-pair{display:flex;gap:9px}.touch-controls button{height:52px;min-width:79px;background:#385c70;border:2px solid #718c9a;border-radius:8px;color:#fff;font-weight:900;font-size:20px;touch-action:none;user-select:none;cursor:pointer}.touch-controls button small{display:block;font-size:10px;letter-spacing:1px}.touch-controls .jump-control{background:#ac762f}.touch-controls .gas-control{background:#3e8e7c}.touch-controls button:active,.touch-controls button.held{transform:translateY(2px);filter:brightness(1.3)}.bottom-bar{display:flex;justify-content:space-between;align-items:center;gap:9px;padding:17px 4px;color:#a9bac4;font-size:11px;letter-spacing:1px;font-weight:700}.live-dot{width:7px;height:7px;background:#4bc391;display:inline-block;border-radius:50%;margin-right:5px;box-shadow:0 0 0 3px #4bc39122}.foot-info{display:flex;gap:20px}.foot-info b{color:var(--gold)}@media(max-width:770px){.app{padding:8px 4px}.masthead{height:67px;padding:0 7px}.wordmark{gap:5px}.paw{font-size:22px}h1{font-size:27px}.eyebrow{font-size:8px;letter-spacing:1px}.level-chip{display:none}.top-actions button{padding:9px 7px;font-size:10px}.game-shell{border-width:3px}.game-hud{padding:7px}.hud-left,.hud-right{padding:4px 6px;width:106px}.hud-left #distance{font-size:21px}.hud-eyebrow{font-size:8px!important}.hud-right #moodText{font-size:10px}.hud-center{top:44px;font-size:10px}.panic-track{margin:3px 0;height:11px}.meter-track{height:7px}.overlay-panel{padding:10px 12px}.overlay h2{font-size:32px;margin:6px 0}.overlay p{font-size:10px;margin-bottom:9px}.overlay-kicker{font-size:9px}.instructions-mini{margin-bottom:8px}.instructions-mini span{font-size:10px;padding:3px}.instructions-mini strong{font-size:8px}.primary{padding:9px;font-size:15px}.tip{font-size:8px;margin-top:8px}.touch-controls{padding:6px}.touch-controls button{height:45px;min-width:59px;font-size:17px}.bottom-bar{font-size:8px}.foot-info{gap:6px}}@media(max-width:500px){.foot-info span:last-child{display:none}.hud-center{display:none}.toast{font-size:15px}.overlay-panel{width:94%}}
+
+/* v8.4 crash review: compact retry panel, crash scene remains in view. */
+.overlay.crash-review{background:rgba(8,22,32,.21);backdrop-filter:none;align-items:flex-start;justify-content:flex-end;padding:17px 22px;}
+.overlay.crash-review .overlay-panel{width:min(340px,42%);padding:13px 15px 10px;border-width:3px;box-shadow:5px 6px 0 #0a243790;}
+.overlay.crash-review .overlay-kicker{font-size:10px;letter-spacing:1.2px;}
+.overlay.crash-review h2{font-size:clamp(25px,2.8vw,35px);margin:8px 0 8px;}
+.overlay.crash-review p{font-size:11px;line-height:1.3;margin:5px 0 9px;}
+.overlay.crash-review .instructions-mini{display:none;}
+.overlay.crash-review .primary{padding:8px 9px;font-size:17px;gap:7px;}
+.overlay.crash-review .secondary{font-size:11px;margin-top:5px;padding:4px;}
+.overlay.crash-review .tip{display:none;}
+@media(max-width:770px){.overlay.crash-review{padding:6px;}.overlay.crash-review .overlay-panel{width:min(252px,58%);padding:7px 8px;}.overlay.crash-review h2{font-size:22px;}.overlay.crash-review p{font-size:9px;}.overlay.crash-review .primary{font-size:12px;}}
+
+/* Episode 01 — readable comic timing, poster-card subtitles and live photoreal expression indicator. */
+.chapter-tag{position:absolute;top:11px;left:50%;transform:translateX(-50%);font-family:Impact,'Arial Narrow',sans-serif;font-size:13px;letter-spacing:1.4px;color:#274452;background:#ffffedc7;border:2px solid #244655;padding:4px 10px;border-radius:4px;white-space:nowrap}
+.hud-right{display:flex;align-items:center;gap:9px;width:267px;padding:7px 10px;min-height:84px}
+.baby-portrait{width:57px;height:64px;flex:0 0 57px;display:flex;justify-content:center;align-items:flex-end;background:#b9d7e1;border:2px solid #183642;border-radius:8px;overflow:hidden;box-shadow:2px 3px 0 #1d4254;transform:rotate(3deg)}
+.baby-portrait img{width:57px;height:64px;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 2px 0 #0002)}
+.panic-info{min-width:0;flex:1}.panic-info .hud-eyebrow{font-size:10px;letter-spacing:.7px}.panic-info .hud-eyebrow span{font-size:12px}
+.dialogue{z-index:2;position:absolute;left:22px;bottom:26px;width:min(445px,56%);display:flex;align-items:center;gap:9px;min-height:51px;opacity:0;transform:translateY(11px);transition:opacity .18s,transform .18s;pointer-events:none;padding:7px 13px 7px 7px;color:#1a2a31;border:3px solid #233945;border-radius:8px;background:#fffdf3;box-shadow:4px 5px 0 #1430415c}
+.dialogue.active{opacity:1;transform:translateY(0)}.dialogue-name{flex:0 0 86px;text-align:center;background:#f6c14f;padding:10px 6px;border:2px solid #243943;border-radius:5px;font-family:Impact,'Arial Narrow',sans-serif;font-size:19px;letter-spacing:.6px}
+.dialogue[data-who='baby'] .dialogue-name{background:#70c6e5}.dialogue[data-who='narrator'] .dialogue-name{background:#d5dad3}
+.dialogue-text{font-family:Impact,'Arial Narrow',sans-serif;font-weight:800;font-size:18px;line-height:1.1;letter-spacing:.2px}
+.toast{bottom:91px;max-width:90%;text-align:center}.hud-center.show{top:46px}
+.overlay .secondary{display:block;width:100%;background:transparent;color:#394f5b;border:0;font-family:'Barlow Condensed',Impact,sans-serif;font-weight:900;margin-top:11px;letter-spacing:1px;font-size:14px;cursor:pointer;padding:6px}
+.overlay .secondary[hidden]{display:none}
+.touch-controls .retry-control{background:#536a73;min-width:67px}
+@media(max-width:770px){.chapter-tag{font-size:9px;top:32px;padding:1px 5px}.hud-right{width:143px;min-height:46px;padding:3px;gap:4px}.baby-portrait{width:30px;height:38px;flex-basis:30px;border-width:1px}.baby-portrait img{width:34px;height:40px}.panic-info .hud-eyebrow{font-size:7px!important}.panic-info .hud-eyebrow span{font-size:8px}.dialogue{bottom:10px;left:8px;min-height:31px;padding:3px;gap:4px;width:60%}.dialogue-name{flex-basis:42px;font-size:10px;padding:5px 2px;border-width:1px}.dialogue-text{font-size:10px}.toast{bottom:43px;font-size:12px}.touch-controls .retry-control{min-width:44px}}
+@media(max-width:500px){.chapter-tag{display:none}.dialogue-text{font-size:8px}.dialogue-name{font-size:8px;flex-basis:32px}.touch-controls button{min-width:44px}.touch-controls .retry-control{min-width:38px}}
+
+/* v2.4 stunt-feedback strip; kept clear of dialogue and face HUD. */
+.stunt-hud{position:absolute;z-index:2;right:18px;bottom:112px;width:238px;
+ padding:10px 13px;border:3px solid #263b46;border-radius:8px;
+ background:#ffedbbf2;color:#203640;box-shadow:5px 6px 0 #132e3970;
+ transform:translateX(14px) rotate(1deg);opacity:0;pointer-events:none;
+ transition:opacity .15s,transform .15s;font-family:Impact,'Arial Narrow',sans-serif}
+.stunt-hud.active{opacity:1;transform:translateX(0) rotate(1deg)}
+.stunt-hud #stuntTitle{font-size:20px;line-height:1;letter-spacing:.6px}
+.stunt-hud #stuntDetail{font-size:13px;margin-top:6px;color:#405968;letter-spacing:1px}
+.stunt-bar{height:7px;margin-top:7px;border:1px solid #2a4555;border-radius:2px;overflow:hidden;background:#96acb7}
+.stunt-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#ef924b,#ffc447)}
+@media(max-width:770px){.stunt-hud{right:6px;bottom:80px;width:145px;padding:5px 7px;border-width:2px}
+.stunt-hud #stuntTitle{font-size:12px}.stunt-hud #stuntDetail{font-size:9px;margin-top:3px}
+.stunt-bar{height:4px;margin-top:3px}}
+
+/* v2.6 — staged movement showcase, separate from the score HUD */
+.demo-cue{position:absolute;z-index:3;top:100px;left:50%;transform:translateX(-50%);
+ display:none;min-width:315px;max-width:460px;padding:10px 17px 13px;text-align:center;
+ border:3px solid #1c3545;border-radius:10px;background:#fff8e9ee;color:#1a3546;
+ box-shadow:5px 5px 0 #0c273866;pointer-events:none}
+.demo-cue.visible{display:grid;gap:3px}
+.demo-cue .title{font-size:11px;letter-spacing:1.8px;font-weight:900;color:#65777e}
+.demo-cue .stage{font:900 31px Impact,Arial,sans-serif;color:#df5c31;letter-spacing:2px}
+.demo-cue .detail{font-size:11px;font-weight:900;letter-spacing:1px}
+.demo-track{height:7px;margin-top:5px;background:#cad7d7;border-radius:6px;overflow:hidden}
+.demo-track span{height:100%;width:0;display:block;background:#f0a731}
+@media(max-width:770px){.demo-cue{top:50px;min-width:195px;max-width:56%;padding:4px 8px 6px}.demo-cue .stage{font-size:19px}.demo-cue .detail{font-size:8px}.demo-cue .title{font-size:8px}#demoBtn{font-size:9px}}
+
+/* Keep the showcase label clear of the centered bicycle, even in high jumps. */
+.demo-cue{left:auto;right:18px;top:107px;transform:none;min-width:280px;max-width:350px}
+@media(max-width:770px){.demo-cue{right:7px;top:49px;min-width:180px;max-width:43%}}
+
+.velocity-readout{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:4px;font-weight:900;text-shadow:0 2px 5px #122b32}#speedValue{font-size:18px;color:#c6fff6;letter-spacing:1px}#brakeAlert{font-size:10px;letter-spacing:.4px;color:#f1e3b3}.velocity-readout .danger{color:#ff735e!important;animation:brakeFlash .65s alternate infinite}@keyframes brakeFlash{from{opacity:1}to{opacity:.35}}
+
+
+/* v9.9 C: distinct durable health meter; panic continues to be baby-only. */
+.health-header{display:flex;justify-content:space-between;font:900 11px 'Arial Narrow',Arial,sans-serif;letter-spacing:1px;margin:7px 0 3px;color:#faf4df}
+.health-header b{color:#fff;font-size:12px}
+.health-track{height:11px;border:2px solid #1c3a40;background:#864950;border-radius:4px;overflow:hidden}
+.health-track>div{height:100%;width:100%;background:#65caa2;transition:width .13s}
+@media(max-width:770px){.health-header{font-size:8px;margin:3px 0 2px}.health-track{height:7px}}
+/* v10.24: opt-in debug panel; isolated from the canvas renderer. */
+#debugOpenBtn{border-color:#efc36c;background:#4d4934;color:#ffeab8}
+#debugOpenBtn:hover,#debugOpenBtn[aria-expanded="true"]{background:#6f5c31}
+.debug-shortcut{margin-left:5px;opacity:.7;font-size:10px}
+#debugPanel[hidden],#debugMini[hidden]{display:none!important}
+#debugPanel{position:absolute;right:12px;top:12px;width:min(372px,calc(100% - 24px));max-height:calc(100% - 24px);z-index:9;background:rgba(13,27,38,.97);border:2px solid #dbb96c;border-radius:12px;box-shadow:0 8px 32px #071018bd;color:#edf5f6;font:12px Inter,Arial,sans-serif;overflow-y:auto;overscroll-behavior:contain;pointer-events:auto}
+#debugPanel button,#debugPanel input,#debugPanel select{font:inherit}
+#debugPanel .dbg-header{display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#182c39;padding:10px 13px;border-bottom:1px solid #46606d;z-index:2}
+#debugPanel h2{font-size:15px;letter-spacing:1px;margin:0;color:#ffe2a0}
+#debugPanel .dbg-x{background:#364e5b;border:1px solid #78909c;border-radius:5px;padding:4px 10px;color:white;cursor:pointer}
+#debugPanel .dbg-content{padding:9px 12px 13px}
+#debugPanel .dbg-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:8px}
+#debugPanel .dbg-metric{background:#203844;border:1px solid #385869;padding:8px 5px;border-radius:6px;text-align:center}
+#debugPanel .dbg-metric strong{display:block;font-size:17px;font-variant-numeric:tabular-nums;color:#ffdb8d}
+#debugPanel .dbg-metric span{display:block;font-size:10px;color:#bad0d9;margin-top:2px}
+#debugPanel .dbg-readout{font:11px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-line;color:#d5e5e8;background:#101d27;padding:8px;border-radius:5px;margin-bottom:8px}
+#debugPanel h3{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#f1ce8d;margin:13px 0 7px}
+#debugPanel .dbg-toggles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 8px}
+#debugPanel .dbg-toggles label{display:flex;align-items:center;gap:6px;background:#1b323e;border:1px solid #3a5360;padding:8px 5px;border-radius:5px;cursor:pointer}
+#debugPanel input[type=checkbox]{accent-color:#ffcc6c;width:15px;height:15px;margin:0}
+#debugPanel .dbg-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+#debugPanel .dbg-buttons button,#debugPanel .dbg-actions button{padding:8px 5px;background:#2c5263;border:1px solid #5b8295;border-radius:6px;color:white;font-weight:700;cursor:pointer}
+#debugPanel .dbg-buttons button:hover,#debugPanel .dbg-actions button:hover{background:#417486}
+#debugPanel .dbg-warp{display:flex;gap:6px;margin-top:8px;align-items:center}
+#debugPanel .dbg-warp input{min-width:0;flex:1;background:#ecf3f1;color:#1a303d;border:1px solid #a5b9c4;border-radius:5px;padding:8px}
+#debugPanel .dbg-warp button{background:#e6b454;color:#15252f;border:0;border-radius:5px;padding:9px 12px;font-weight:800;cursor:pointer}
+#debugPanel .dbg-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:9px}
+#debugPanel .dbg-actions .dbg-resume{background:#35795f;border-color:#57ae8a}
+#debugPanel .dbg-help{font-size:10px;color:#9fb6c3;margin-top:9px;line-height:1.4}
+#debugMini{position:absolute;bottom:12px;right:12px;z-index:5;background:#0d1c28d9;border:1px solid #efca80;border-radius:6px;padding:6px 9px;pointer-events:none;color:#ffdc9f;font:12px ui-monospace,Consolas,monospace;white-space:pre;box-shadow:0 3px 8px #0006}
+@media(max-width:770px){.debug-shortcut{display:none}#debugOpenBtn{font-size:10px}#debugPanel{top:3px;right:3px;width:min(340px,calc(100% - 6px));max-height:calc(100% - 6px)}#debugPanel .dbg-content{padding:6px}#debugPanel .dbg-metric{padding:4px}#debugPanel .dbg-metric strong{font-size:14px}}
+
+/* v10.25: transparent, compact crash retry; never darken the actual scene. */
+.overlay.crash-review{background:transparent!important;backdrop-filter:none!important;
+  align-items:flex-end;justify-content:flex-end;padding:14px 18px 22px;pointer-events:none;}
+.overlay.crash-review .overlay-panel{pointer-events:auto;transform:none;width:min(285px,41%);
+  padding:11px 13px;border-radius:12px;border:1px solid rgba(231,241,238,.58);
+  background:rgba(248,249,242,.75);backdrop-filter:blur(1.5px);
+  box-shadow:0 4px 15px rgba(17,36,43,.12);}
+.overlay.crash-review .overlay-kicker,.overlay.crash-review .tip,.overlay.crash-review .instructions-mini{display:none;}
+.overlay.crash-review h2{font-size:clamp(20px,2.1vw,29px);margin:1px 0 6px;line-height:1.05;letter-spacing:.4px;}
+.overlay.crash-review p{font-size:11px;line-height:1.2;margin:0 0 8px;color:#3f5960;}
+.overlay.crash-review .primary{font-size:15px;padding:7px 9px;min-height:0;}
+.overlay.crash-review .secondary{font-size:10px;padding:4px 6px;margin:6px 0 0;}
+@media(max-width:650px){.overlay.crash-review{align-items:flex-end;padding:6px 7px 11px}.overlay.crash-review .overlay-panel{width:min(220px,54%);padding:7px}.overlay.crash-review h2{font-size:19px}}
+
+/* v10.53: playable phone layout; keep desktop unchanged. */
+html,body{max-width:100%;overscroll-behavior-y:none}
+.touch-controls{position:relative;z-index:7;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;touch-action:none}
+.touch-controls button{-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;touch-action:none;overscroll-behavior:contain;white-space:nowrap;}
+.touch-controls button.held{box-shadow:0 0 0 2px #d6ffeca8 inset,0 0 12px #b5ffcb60;filter:brightness(1.23)}
+#mobilePauseBtn{display:none;position:absolute;top:49px;left:50%;transform:translateX(-50%);z-index:3;background:#203947de;color:#fff;border:1px solid #e0cca6;border-radius:5px;padding:5px 12px;font:800 11px Inter,Arial,sans-serif;letter-spacing:.5px;touch-action:manipulation}
+@media (hover:none) and (pointer:coarse){
+ .touch-controls button{min-height:52px;}
+ #mobilePauseBtn{display:block}
+ .touch-controls{background:#213947;}
+}
+@media (max-width:650px) and (orientation:portrait){
+ html,body{width:100%;overflow-x:hidden}
+ .app{width:100%;padding:4px 3px 7px;}
+ .masthead{height:46px;min-width:0;padding:0 3px;gap:3px;}
+ .wordmark{gap:3px;min-width:0;}
+ .wordmark .eyebrow{display:none}
+ .wordmark h1{font-size:clamp(17px,4.6vw,24px);white-space:nowrap;letter-spacing:-.4px;}
+ .wordmark .paw{font-size:17px}
+ .top-actions{gap:3px;flex:0 0 auto;}
+ .top-actions #demoBtn{display:none}
+ .top-actions button{padding:7px 5px;font-size:9px;letter-spacing:0;}
+ .top-actions .debug-shortcut{display:none}
+ .game-shell{width:100%;min-width:0;overflow:hidden;border-width:2px}
+ .canvas-wrap{width:100%;}
+ .touch-controls{width:100%;display:flex;gap:5px;justify-content:space-between;padding:7px 6px;}
+ .control-pair{min-width:0;display:flex;gap:4px;}
+ .touch-controls button{width:clamp(43px,12.5vw,60px);min-width:0!important;height:58px;min-height:58px;padding:2px 0;font-size:20px}
+ .touch-controls button small{font-size:8px;letter-spacing:.05px}
+ .touch-controls .retry-control{min-width:0!important;}
+ .game-hud{padding:4px 5px;gap:2px}
+ .hud-left,.hud-right{width:108px}
+ #mobilePauseBtn{top:4px;left:51%;padding:4px 7px;font-size:9px}
+ .bottom-bar{padding:7px 3px;gap:4px;flex-wrap:wrap}
+ .foot-info{gap:6px;flex-wrap:wrap}
+ .overlay{padding:7px 5px}
+ .overlay-panel{max-width:95%;width:95%;padding:7px 9px}
+ .overlay .instructions-mini{gap:2px}
+ .overlay .instructions-mini span{padding:3px 1px;font-size:9px}
+ .overlay h2{font-size:clamp(23px,7vw,32px)}
+ .overlay.crash-review{padding:4px 5px 7px}
+ .overlay.crash-review .overlay-panel{width:min(220px,67%)}
+ /* The introduction must fit *inside* the short portrait game view. */
+ .overlay:not(.crash-review){align-items:center;justify-content:center;padding:3px;}
+ .overlay:not(.crash-review) .overlay-panel{width:min(290px,82%);padding:7px 9px;max-height:97%;transform:none;}
+ .overlay:not(.crash-review) .overlay-kicker,.overlay:not(.crash-review) .tip,
+ .overlay:not(.crash-review) .instructions-mini,.overlay:not(.crash-review) p{display:none;}
+ .overlay:not(.crash-review) h2{font-size:clamp(19px,6vw,25px);margin:2px 0 8px;line-height:1.05;}
+ .overlay:not(.crash-review) .primary{font-size:13px;padding:7px 6px;}
+}
+/* Landscape: constrain the game to the visible phone viewport; place controls over
+   its bottom band rather than below the screen. No hidden scroll requirement. */
+@media (hover:none) and (pointer:coarse) and (orientation:landscape){
+ html,body{width:100%;height:100%;overflow:hidden;overscroll-behavior:none}
+ .app{width:100%;height:100dvh;max-width:none;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2px;}
+ .masthead,.bottom-bar{display:none!important}
+ .game-shell{position:relative;flex:none;width:min(calc(100vw - 4px),calc((100dvh - 4px) * 1.8125));height:min(calc(100dvh - 4px),calc((100vw - 4px) * .551724));border-width:2px;margin:0 auto;overflow:hidden;border-radius:6px;}
+ .canvas-wrap{width:100%;height:100%;aspect-ratio:auto;overflow:hidden;}
+ .canvas-wrap canvas{width:100%;height:100%;}
+ .touch-controls{position:absolute;inset:auto 0 0 0;z-index:7;height:clamp(52px,15dvh,70px);background:none;pointer-events:none;padding:0 clamp(7px,2vw,15px) 4px;align-items:flex-end;justify-content:space-between;}
+ .control-pair{display:flex;align-items:flex-end;gap:clamp(5px,1.5vw,10px);pointer-events:auto}
+ .touch-controls button{width:clamp(48px,11dvh,67px);min-width:0!important;height:clamp(48px,13dvh,62px);min-height:0;opacity:.92;background:#244656dc;border:2px solid #c7e4e2aa;backdrop-filter:blur(2px);padding:2px 1px;font-size:clamp(18px,5dvh,25px);box-shadow:0 2px 7px #101b2488;}
+ .touch-controls button small{font-size:clamp(8px,2.5dvh,10px);}
+ .touch-controls .gas-control{background:#287c66e8}.touch-controls .jump-control{background:#a16d2fe8}
+ #mobilePauseBtn{top:4px;left:50%;z-index:6;}
+ .overlay{padding:3px;align-items:center;justify-content:center}
+ .overlay-panel{width:min(460px,66%);padding:5px 9px;border-width:2px;border-radius:7px;transform:none}
+ .overlay h2{font-size:clamp(17px,6dvh,28px);margin:3px 0 4px}
+ .overlay p{font-size:clamp(8px,2.8dvh,11px);line-height:1.15;margin:2px 0 5px;max-height:38px;overflow:hidden}
+ .overlay .instructions-mini{margin-bottom:4px;gap:3px}
+ .overlay .instructions-mini span{padding:2px 1px;font-size:8px}
+ .overlay .primary{font-size:clamp(12px,3.5dvh,17px);padding:5px 8px}
+ .overlay .tip,.overlay-kicker{display:none}
+ .overlay.crash-review{align-items:flex-end;justify-content:center;padding:4px 5px calc(clamp(52px,15dvh,70px) + 6px)}
+ .overlay.crash-review .overlay-panel{width:min(220px,47%)}
+ .game-hud{padding:4px 5px;gap:4px}
+ .hud-left{transform-origin:top left;transform:scale(.75);margin-right:-48px}
+ .hud-right{transform-origin:top right;transform:scale(.75);margin-left:-60px}
+ .chapter-tag{display:none}
+ .dialogue{bottom:clamp(61px,17dvh,80px);left:50%;transform:translate(-50%,12px);width:min(48%,370px);padding:2px 5px;min-height:25px;border-width:1px}
+ .dialogue.active{transform:translate(-50%,0)}
+ .dialogue-name{font-size:10px;flex-basis:45px;padding:2px}.dialogue-text{font-size:10px}
+ #debugPanel{max-width:75%;max-height:95%;top:2px;right:2px}
+}
+
+
+/* v10.53 — quiet, modern game HUD. No more chapter card or incidental narrator panel. */
+.masthead{height:58px}.masthead .eyebrow,.masthead .level-chip{display:none!important}
+.masthead .paw{font-size:24px}.masthead h1{font-size:clamp(26px,2.8vw,38px)}
+.game-hud{padding:13px 15px;gap:10px}
+.hud-left,.hud-right{
+  color:#f9f5e9!important;background:rgba(18,38,51,.86)!important;
+  border:1px solid rgba(244,234,200,.58)!important;border-radius:13px!important;
+  box-shadow:0 4px 14px rgba(12,25,33,.20)!important;backdrop-filter:blur(3px);
+}
+.hud-left{width:174px!important;padding:9px 12px 10px!important}
+.hud-eyebrow,.health-header{font:700 10px Inter,Arial,sans-serif!important;letter-spacing:.9px!important;color:#bcd0d0!important}
+.hud-left #distance{font-size:27px!important;color:#fff5dc;line-height:1.05!important}
+.hud-left #distance small{font-size:11px!important;letter-spacing:0;color:#ccd9d8}
+.meter-track{height:5px!important;margin-top:4px;background:#405761!important;border:0!important;border-radius:7px}
+.meter-track div{background:linear-gradient(90deg,#61bdc3,#f2c270)!important}
+.velocity-readout{margin-top:4px!important;gap:2px!important;display:flex;align-items:center;flex-wrap:wrap}
+#speedValue{font:900 21px 'Barlow Condensed',Impact,sans-serif!important;letter-spacing:.3px!important;text-shadow:none!important;line-height:1.05}
+#brakeAlert{display:none!important}
+#brakeAlert.danger{display:block!important;font-size:9px!important;font-weight:900;color:#ffbc82!important;animation:none!important;width:100%}
+.health-header{margin:7px 0 3px!important}.health-header b{color:#f5e8cc!important;font-size:10px!important}
+.health-track{height:7px!important;border:0!important;border-radius:5px!important;background:#544850!important}
+.hud-right{display:flex!important;align-items:center!important;gap:9px!important;width:217px!important;min-height:74px!important;padding:8px 10px!important}
+.baby-portrait{width:53px!important;height:55px!important;flex:0 0 53px!important;background:#afced2!important;border:1px solid rgba(246,232,207,.82)!important;box-shadow:none!important;transform:none!important;border-radius:9px!important}
+.baby-portrait img{width:53px!important;height:55px!important}
+.panic-info{min-width:0!important;flex:1}
+.panic-info .hud-eyebrow{font-size:9px!important;white-space:nowrap}
+.panic-info .hud-eyebrow span{font-size:10px!important;color:#f3d6a4}
+.panic-track{height:9px!important;margin:6px 0 4px!important;border:0!important;background:#445d63!important;border-radius:6px!important}
+.panic-track div{height:100%;border-radius:6px}
+.hud-right #moodText{font:800 11px 'Barlow Condensed',Arial,sans-serif!important;color:#f5e9d8!important;text-align:left!important;letter-spacing:.5px!important;line-height:1.1!important}
+.chapter-tag,#regionLabel,.dialogue,#bubble{display:none!important}
+.toast{bottom:25px!important;max-width:65%;white-space:normal!important;text-align:center!important;
+  border:1px solid #d8d0b5!important;background:rgba(24,43,52,.88)!important;
+  font:800 13px 'Barlow Condensed',Arial,sans-serif!important;letter-spacing:.55px!important;
+  padding:6px 12px!important;border-radius:7px!important;color:#ffe5ac!important;box-shadow:none!important}
+.stunt-hud{width:174px!important;padding:7px 9px!important;border:1px solid #d6c5a4!important;border-radius:8px!important;
+  background:rgba(22,45,56,.88)!important;color:#f3e3b6!important;box-shadow:none!important;transform:none!important}
+.stunt-hud #stuntTitle{font-size:15px!important}.stunt-hud #stuntDetail{font-size:10px!important;color:#d1e1df!important}
+.overlay:not(.crash-review){background:rgba(18,35,47,.34)!important;backdrop-filter:none!important;align-items:center!important;justify-content:center!important}
+.overlay:not(.crash-review) .overlay-panel{width:min(314px,70%)!important;padding:14px 16px 13px!important;
+  border:1px solid rgba(248,235,204,.73)!important;border-radius:12px!important;
+  background:rgba(19,42,55,.92)!important;color:#f7efdd!important;box-shadow:0 10px 25px rgba(4,18,25,.22)!important;transform:none!important}
+.overlay:not(.crash-review) .overlay-kicker{font-size:10px!important;letter-spacing:2px!important;color:#e7c88d!important}
+.overlay:not(.crash-review) h2{font-size:30px!important;line-height:.97!important;margin:7px 0!important;letter-spacing:.35px!important;color:#fff3d6!important}
+.overlay:not(.crash-review) h2 em{color:#f1ba68!important}
+.overlay:not(.crash-review) p{font-size:11px!important;line-height:1.38!important;color:#d6e4e1!important;margin:6px 0 12px!important}
+.overlay:not(.crash-review) .instructions-mini{display:none!important}
+.overlay:not(.crash-review) .tip{display:block!important;margin-top:9px!important;font-size:9px!important;color:#b1c3c6!important}
+.overlay:not(.crash-review) .primary{border:1px solid rgba(244,218,166,.8)!important;background:#edba64!important;
+ box-shadow:none!important;border-radius:8px!important;padding:10px 12px!important;font-size:17px!important;gap:8px!important}
+.overlay:not(.crash-review) .primary span{font-size:18px!important}
+.overlay:not(.crash-review) .overlay-panel:after{content:'W / ↑ PEDAL     S / ↓ BRAKE     A / D LEAN     SPACE HOP';
+ display:block;margin-top:9px;font:800 9px Inter,Arial,sans-serif;letter-spacing:.15px;color:#c6d3d0}
+@media(max-width:770px){
+ .masthead{height:47px!important}.hud-left{width:130px!important;padding:6px 8px!important}
+ .hud-right{width:157px!important;min-height:52px!important;padding:5px 6px!important;gap:5px!important}
+ .hud-left #distance{font-size:19px!important}#speedValue{font-size:17px!important}
+ .health-header{margin:4px 0 2px!important}.hud-eyebrow,.health-header{font-size:8px!important}
+ .baby-portrait{width:39px!important;height:43px!important;flex:0 0 39px!important}.baby-portrait img{width:39px!important;height:43px!important}
+ .panic-info .hud-eyebrow{font-size:7px!important}.hud-right #moodText{font-size:9px!important}
+ .overlay:not(.crash-review) .overlay-panel{width:min(310px,79%)!important;padding:8px 10px!important}
+ .overlay:not(.crash-review) h2{font-size:22px!important;margin:3px 0!important}
+ .overlay:not(.crash-review) p{font-size:9px!important;margin:4px 0 6px!important}
+ .overlay:not(.crash-review) .primary{font-size:13px!important;padding:6px!important}
+ .overlay:not(.crash-review) .overlay-panel:after{font-size:7px!important}
+}
+@media (hover:none) and (pointer:coarse) and (orientation:landscape){
+ .hud-left,.hud-right{transform:scale(.82)!important;transform-origin:top left!important}
+ .hud-right{transform-origin:top right!important}
+ .toast{bottom:64px!important;font-size:10px!important;max-width:44%!important}
+}
+
+
+/* v10.53 footer: score and pizza only, hide debug shortcuts/status narration. */
+.bottom-bar{padding:7px 4px 4px!important;font-size:10px!important;justify-content:flex-end!important;min-height:25px!important}
+.bottom-bar .status,.bottom-bar .foot-info span:nth-child(n+3){display:none!important}
+.bottom-bar .foot-info{gap:22px!important}
+@media(max-width:500px){.bottom-bar{font-size:9px!important}.bottom-bar .foot-info{gap:12px!important}}
+
+/* V10.53: classic minimalist game typography. No condensed/melted fonts. */
+:root{--game-text:Verdana,'Trebuchet MS',Arial,sans-serif;--game-numbers:Consolas,'Lucida Console',monospace}
+html,body,.app,.game-shell,button,.touch-controls button{font-family:var(--game-text)!important}
+.masthead h1,.wordmark h1,.overlay h2,.overlay h2 em{
+ font-family:var(--game-text)!important;font-weight:800!important;letter-spacing:.02em!important;
+ line-height:1.17!important;text-shadow:none!important}
+.masthead h1{font-size:clamp(22px,2.25vw,30px)!important}
+.hud-left,.hud-right,.hud-eyebrow,.health-header,.health-header b,
+#speedValue,#moodText,#panicNumber,#healthNumber,#distance,
+.toast,.hud-center,.stunt-hud,.stunt-hud #stuntTitle,.stunt-hud #stuntDetail,
+.overlay .overlay-kicker,.overlay .primary,.overlay p,.overlay .tip,
+.overlay .instructions-mini,.overlay .instructions-mini span,.bottom-bar{
+ font-family:var(--game-text)!important;text-shadow:none!important;
+ -webkit-text-stroke:0!important;letter-spacing:.015em!important}
+.hud-eyebrow,.health-header,.panic-info .hud-eyebrow{font-size:10px!important;font-weight:700!important;line-height:1.3!important;letter-spacing:.055em!important}
+#distance,#speedValue,#panicNumber,#healthNumber{font-family:var(--game-numbers)!important;font-variant-numeric:tabular-nums!important;letter-spacing:.005em!important}
+.hud-left #distance{font-size:25px!important;line-height:1.25!important}
+#speedValue{font-size:19px!important;font-weight:700!important;line-height:1.32!important}
+.hud-right #moodText{font-size:10px!important;font-weight:700!important;line-height:1.4!important;letter-spacing:.025em!important}
+.hud-left,.hud-right{border-radius:9px!important;backdrop-filter:none!important;box-shadow:0 2px 10px rgba(10,25,37,.14)!important}
+.baby-portrait,.baby-portrait img{transform:none!important;width:53px!important;height:55px!important;min-width:53px!important;min-height:55px!important}
+.baby-portrait{overflow:hidden!important;align-items:center!important;justify-content:center!important;flex:0 0 53px!important;border-radius:6px!important}
+.baby-portrait img{object-fit:contain!important;object-position:center center!important;display:block!important;filter:none!important;flex:none!important}
+.toast{font-size:12px!important;font-weight:700!important;line-height:1.45!important;padding:7px 11px!important;letter-spacing:.03em!important}
+.overlay:not(.crash-review) h2{font-size:clamp(23px,2.7vw,31px)!important;line-height:1.2!important;margin:7px 0 9px!important}
+.overlay:not(.crash-review) p{font-size:12px!important;line-height:1.55!important}
+.overlay:not(.crash-review) .primary{font-size:14px!important;font-weight:800!important;letter-spacing:.025em!important}
+.overlay:not(.crash-review) .overlay-kicker{letter-spacing:.12em!important}
+.overlay:not(.crash-review) .overlay-panel:after{font:600 9px var(--game-text)!important;letter-spacing:.01em!important;line-height:1.5!important}
+.overlay.crash-review .overlay-panel{transform:none!important}
+.overlay.crash-review h2{font-size:23px!important;line-height:1.2!important}
+.overlay.crash-review .primary{font:700 14px var(--game-text)!important}
+#brakeAlert.danger{font:700 10px var(--game-text)!important}
+@media(max-width:770px){
+ .baby-portrait,.baby-portrait img{width:39px!important;height:43px!important;min-width:39px!important;min-height:43px!important}
+ .baby-portrait{flex:0 0 39px!important}
+ .hud-left #distance{font-size:18px!important}#speedValue{font-size:15px!important}
+ .hud-right #moodText{font-size:8px!important}
+ .overlay:not(.crash-review) h2{font-size:21px!important}
+}
+
+
+
+/* V10.54: minimalist clean UI – normal letterforms, no squeezed display type */
+:root{--game-text:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--game-numbers:'Consolas','Courier New',monospace}
+html,body,.app,.game-shell,.toast,.stunt-hud,.hud-left,.hud-right,.overlay,
+button,.primary,.top-actions button,.bottom-bar,.health-header,.hud-eyebrow,
+#speedValue,#moodText,#brakeAlert,.panic-info,#scoreCount{
+ font-family:var(--game-text)!important;font-stretch:normal!important;
+ text-shadow:none!important;-webkit-text-stroke:0!important;letter-spacing:.015em!important}
+.hud-left,.hud-right{background:rgba(18,35,46,.83)!important;border:1px solid rgba(216,231,228,.44)!important;
+ border-radius:8px!important;box-shadow:0 2px 9px #11222b22!important;filter:none!important}
+.hud-eyebrow,.health-header,.panic-info .hud-eyebrow{font-size:10px!important;font-weight:600!important;
+ line-height:1.45!important;letter-spacing:.045em!important}
+#distance,#speedValue,#healthNumber,#panicNumber{font-family:var(--game-numbers)!important;
+ font-variant-numeric:tabular-nums!important;font-weight:700!important;letter-spacing:0!important}
+.hud-left #distance{font-size:24px!important;line-height:1.3!important}
+#speedValue{font-size:17px!important;line-height:1.45!important}
+.hud-right #moodText{font-size:10px!important;line-height:1.45!important;font-weight:600!important}
+.baby-portrait{width:53px!important;height:55px!important;flex:0 0 53px!important;transform:none!important;
+ border-radius:6px!important;background:#b9d7e1!important;overflow:hidden!important}
+.baby-portrait img{width:53px!important;height:55px!important;min-width:53px!important;
+ min-height:55px!important;object-fit:contain!important;object-position:center!important;
+ transform:none!important;filter:none!important}
+.toast{font-size:11px!important;line-height:1.5!important;font-weight:600!important;
+ letter-spacing:.02em!important;padding:6px 10px!important;border-radius:6px!important}
+.overlay:not(.crash-review) .overlay-panel,.overlay.crash-review .overlay-panel{
+ transform:none!important;border-radius:9px!important;box-shadow:0 8px 22px #08192239!important}
+.overlay h2,.overlay h2 em,.overlay .overlay-kicker,.overlay .primary,.overlay .tip{
+ font-family:var(--game-text)!important;text-shadow:none!important;-webkit-text-stroke:0!important;
+ font-stretch:normal!important}
+.overlay:not(.crash-review) h2{font-size:25px!important;line-height:1.25!important;letter-spacing:0!important;
+ font-weight:750!important;margin:6px 0!important}
+.overlay:not(.crash-review) p{font-size:11px!important;line-height:1.5!important;font-weight:400!important}
+.overlay .primary{font-size:13px!important;font-weight:700!important;letter-spacing:.02em!important;
+ box-shadow:none!important;padding:9px 12px!important}
+.overlay:not(.crash-review) .overlay-panel:after{font:500 9px var(--game-text)!important;
+ letter-spacing:0!important;line-height:1.6!important}
+#brakeAlert{font-size:10px!important;line-height:1.4!important;font-weight:600!important}
+.stunt-hud #stuntTitle,.stunt-hud #stuntDetail{font-family:var(--game-text)!important;
+ line-height:1.5!important;letter-spacing:.01em!important}
+@media(max-width:770px){.baby-portrait{width:39px!important;height:43px!important;flex:0 0 39px!important}
+.baby-portrait img{width:39px!important;height:43px!important;min-width:39px!important;min-height:43px!important}
+.hud-eyebrow,.health-header{font-size:8px!important}.hud-left #distance{font-size:18px!important}
+#speedValue{font-size:15px!important}.hud-right #moodText{font-size:8px!important}}
+
+
+/* v10.58: face fills the SAME existing HUD box; HUD footprint unchanged. */
+.baby-portrait img{width:57px;height:64px;object-fit:contain;object-position:center center;transform:none}
+@media(max-width:770px){.baby-portrait img{width:34px;height:38px;object-fit:contain;transform:none}}
+@media(max-width:500px){.baby-portrait img{width:26px;height:31px;object-fit:contain;transform:none}}
+
+
+/* v10.61 integrated animated intro */
+.intro-overlay{position:absolute;inset:0;z-index:8;background:#0f1825;display:grid;place-items:center}
+.intro-overlay[hidden]{display:none}
+.intro-screen{position:relative;width:100%;height:100%;overflow:hidden;isolation:isolate;background:#121b31}
+.intro-screen img,.intro-screen canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
+.intro-screen img{object-fit:contain}
+.intro-screen canvas{z-index:1}
+.intro-start{z-index:2;position:absolute;inset:0;border:0;background:transparent;cursor:pointer;font-size:0;color:transparent;outline:none}
+.intro-start:focus-visible{outline:4px solid #ffeeb8;outline-offset:-6px}
+.intro-badge{z-index:3;position:absolute;left:50%;bottom:12%;transform:translateX(-50%);padding:.8rem 1.1rem;color:#fff;font-size:clamp(12px,1.4vw,18px);background:#162239d9;border:1px solid #e3c992;border-radius:9px;box-shadow:0 8px 20px rgba(0,0,0,.35);text-align:center;pointer-events:none}
+.intro-badge strong{display:block;font-family:'Barlow Condensed',Impact,sans-serif;font-size:clamp(18px,2vw,28px);letter-spacing:1px;color:#ffe7a9}
+.intro-badge span{display:block;opacity:.95}
+@media(prefers-reduced-motion:reduce){.intro-screen canvas{display:none}}
+@media(max-width:900px){.intro-badge{bottom:8%}}

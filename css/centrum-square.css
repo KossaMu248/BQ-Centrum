@@ -1,0 +1,39 @@
+/* Scoped to the single walking prototype; copied ride/visit controls retain their CSS. */
+.square-panel[hidden],.square-controls[hidden]{display:none!important}
+.square-panel{position:absolute;inset:14px;z-index:12;pointer-events:none;color:#fff8e7;font-family:Arial,sans-serif;text-shadow:0 1px 4px #142219}
+.square-heading{display:flex;justify-content:space-between;align-items:start;gap:12px}
+.square-heading strong{font-size:15px;letter-spacing:.6px}.square-heading strong span{color:#ffd27d;font-size:12px}.square-heading small{display:block;margin-top:5px;font-size:12px}
+.square-actions{display:flex;gap:5px;align-items:center}
+.square-panel button,.square-controls button{pointer-events:auto;background:#203429b5;border:1px solid #f2e7cd99;border-radius:4px;color:#fff8e7;font:500 11px Arial,sans-serif;min-height:42px;padding:8px 12px;touch-action:none;cursor:pointer;text-shadow:0 1px 2px #16291d}
+.square-panel button:hover,.square-controls button:hover,.square-controls button.held{background:#596746d9}
+.square-panel button:focus-visible,.square-controls button:focus-visible{outline:3px solid #ffce76;outline-offset:2px}
+.square-controls button:disabled{opacity:.45}
+.square-message{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);width:min(680px,90%);text-align:center;font-size:14px;line-height:1.5;margin:0;pointer-events:none}
+.square-controls{position:absolute;inset:auto 14px 14px;z-index:13;display:flex;justify-content:space-between;align-items:end;pointer-events:none}
+.square-dpad{display:grid;width:144px;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,44px);gap:4px}
+.square-dpad button{font-size:22px;padding:4px}.square-dpad [data-square-dir=up]{grid-column:2}.square-dpad [data-square-dir=left]{grid-column:1;grid-row:2}.square-dpad [data-square-dir=down]{grid-column:2;grid-row:2}.square-dpad [data-square-dir=right]{grid-column:3;grid-row:2}
+.square-moves{display:flex;gap:5px}.square-moves button{min-width:104px}
+.square-moves .square-interact{max-width:230px}
+.square-map[hidden]{display:none!important}
+.square-map{position:absolute;inset:0;z-index:18;background:#15261cce;display:grid;place-items:center;padding:16px;pointer-events:auto;color:#f6ecd2;font:14px Arial,sans-serif}
+.square-map-card{width:min(900px,100%);max-height:95%;overflow:auto;background:#243c2e;border:1px solid #c0b389;border-radius:8px;padding:18px;box-sizing:border-box}
+.square-map h2{font-size:21px;margin:0 0 8px}.square-map p{line-height:1.5;margin:6px 0 12px}
+.square-map svg{width:100%;display:block}.square-map line{stroke:#c9bd98;stroke-width:3}.square-map .map-locked{stroke:#d0a65f;stroke-dasharray:6 5}
+.square-map rect{fill:#34463b;stroke:#83917c;stroke-width:1.5}.square-map .map-discovered rect{fill:#526543;stroke:#d8c78c}.square-map .map-current rect{stroke:#ffdc83;stroke-width:4}
+.square-map text{fill:#fff1ca;text-anchor:middle;font-size:14px}.square-map text.map-detail{font-size:11px;fill:#d0d6bd}
+.square-map button{padding:10px 16px;background:#e3c47f;color:#233327;border:1px solid #fff0c3;border-radius:4px;cursor:pointer;font:600 12px Arial,sans-serif;min-height:42px}
+.square-map button:focus-visible{outline:3px solid #fff3c8;outline-offset:3px}
+.square-title{font-weight:inherit}
+.centrum-square-active .game-hud,.centrum-square-active #introOverlay,.centrum-square-active #overlay,.centrum-square-active .dialogue,.centrum-square-active .toast,.centrum-square-active .stunt-hud,.centrum-square-active .demo-cue,.centrum-square-active .touch-controls,.centrum-square-active .ride-utilities,.centrum-square-active .visit-prompt,.centrum-square-active .area-panel,.centrum-square-active .area-controls,.centrum-square-active .adventure-journal,.centrum-square-active #mobilePauseBtn{display:none!important}
+.centrum-square-active .fullscreen-tools{top:72px;right:14px}
+.centrum-square-active #restartBtn,.centrum-square-active #demoBtn{visibility:hidden;pointer-events:none}
+@media(max-width:700px),(max-height:500px) and (orientation:landscape){
+ .centrum-square-active .masthead,.centrum-square-active .bottom-bar,.centrum-square-active .portrait-hint{display:none!important}
+ .centrum-square-active .app{padding:0!important;width:100%!important;height:100dvh;display:block}
+ .centrum-square-active .game-shell{width:100%!important;height:100dvh!important;margin:0!important;border:0!important;border-radius:0!important}
+ .centrum-square-active .canvas-wrap{width:100%!important;height:100dvh!important;aspect-ratio:auto!important}
+ .centrum-square-active #game{width:100%!important;height:100%!important;object-fit:cover!important;object-position:var(--square-pan,50%) var(--square-pan-y,50%)!important}
+ .square-panel{inset:10px}.square-heading strong{font-size:12px}.square-heading strong span{font-size:10px}.square-heading small{font-size:10px;max-width:160px}
+ .square-panel button{padding:6px;font-size:10px;min-height:36px}.square-actions{gap:4px}.square-controls{inset:auto 10px max(10px,env(safe-area-inset-bottom))}.square-message{font-size:12px;bottom:95px}
+}
+@media(max-width:500px) and (orientation:portrait){.square-heading{flex-wrap:wrap}.square-actions{width:100%;justify-content:end}.square-heading small{max-width:none}.square-moves{flex-direction:column}.square-moves button{min-width:94px}.square-message{bottom:105px}}

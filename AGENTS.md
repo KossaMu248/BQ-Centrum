@@ -1,0 +1,16 @@
+# BQ-Centrum project rules
+
+- Work only in this independent project. KossaMu248/BQ-Autumn and KossaMu248/BQ are read-only donors. Preserve this repository’s own Git configuration; never copy donor Git metadata or credentials, force-push, publish or deploy without explicit authorization.
+- The baby and his love of Billy’s are central. Preserve his exact source likeness, continuous head/neck/clothing, proportions, expressions and attachment in riding and carrier states.
+- Preserve the current bear, jersey, bicycle, NPC identities and autumn art direction. No replacement cartoon baby, pixel-art conversion, photorealistic remake or new title-screen design.
+- Exploration uses upright side/front characters and shallow ground depth, not a fully overhead or isometric world.
+- Borrow exploration structure from South Park: The Fractured but Whole, not its artwork, characters or combat system.
+- Cycling physics, crash rules and damage balance are not redesigned during this prototype.
+- New work stays modular. Do not broadly refactor the existing game IIFE. Preserve split files, IIFE boundaries, load order and asset-override precedence.
+- All persistent reads/writes use the `bq-centrum:` namespace, including any future settings. Never automatically clear, migrate, read or overwrite donor saves.
+- Each stage ends with playable work, actual verification and an honest report. Never present a generated illustration as an in-game screenshot.
+- Keep SOURCE_BASELINE.md and reference hashes current when deliberately changing the source baseline. Stage 4 connects the compact Metro Square / Shopping Arcade / Service Courtyard / Billy’s Food Shop / Bicycle Workshop network to one marked cycling stop. Keep one player bicycle and one baby passenger, use production transfers, freeze background simulation and preserve shared health/rewards. Preserve the accepted square camera and character scale. Stage 5 adds only The Wrong Entrance: ordered persistent story states, source peaceful residents, commercial cargo handled by the caretaker and a one-time entitlement. Stage 6 authorizes only the compact Billy’s consumable economy: five hearts, three food slots, counter purchases, independently claimed quest rewards, persistent pickups, live interruptible eating and coherent checkpoint/recovery. Keep the balance in centrum-balance.js and all value changes in the existing adventure ledger; no competing wallet or quest save. Add no extra scenes, districts, campaign tasks or character redesigns without a new user instruction.
+
+- Stage 7 is polish only: keep the five existing footprints and accepted camera/actor scale. Reuse source environment art, label missing functional scenery as development placeholders, confine wind to foliage/floor leaves, respect reduced motion, and record real desktop/phone-landscape evidence. Do not add districts, scenes, character replacements or a title-screen redesign.
+
+- Stage 8 validates and repairs the completed prototype only. Preserve features/footprints/source physics; keep primary acceptance free of debug teleports or state grants, disclose secondary fixtures, test clean root/subpath delivery and exclude transient caches/secrets/Git metadata. No remote push or Pages deployment without explicit approval.

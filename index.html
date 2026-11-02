@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>BQ-Centrum — Autumn Ride</title>
+<link rel="icon" href="data:,"/>
+<link rel="stylesheet" href="css/game.css?edition=autumn-v19"/>
+<link rel="stylesheet" href="css/illustrated.css?edition=autumn-v19"/>
+<link rel="stylesheet" href="css/centrum-square.css?edition=centrum-stage7"/>
+<link rel="stylesheet" href="css/centrum-link.css?edition=centrum-stage4"/>
+<link rel="stylesheet" href="css/centrum-story.css?edition=centrum-stage7"/>
+<link rel="stylesheet" href="css/centrum-inventory.css?edition=centrum-stage6"/>
+</head>
+<body>
+<div class="app">
+  <header class="masthead">
+    <div class="wordmark"><span class="paw" aria-hidden="true">BQ</span><div><h1>BEARLY <b>QUALIFIED</b></h1><span class="eyebrow">ONE BEAR. ONE BABY. VERY BAD IDEAS.</span></div></div>
+    <div class="top-actions"><div class="level-chip">AUTUMN RIDE <span>·</span> HÄSSELBY</div><button id="debugOpenBtn" title="Open developer debug menu (F3)" aria-controls="debugPanel" aria-expanded="false">⚙ <span class="debug-label">SETTINGS</span> <span class="debug-shortcut">F3</span></button><button id="fullscreenBtn" type="button" aria-label="Enter fullscreen" aria-pressed="false" title="Fullscreen (F)">⛶ <span class="fullscreen-label">FULLSCREEN</span></button><button id="demoBtn" title="Show all major moves">▶ DEMO</button><button id="soundBtn" aria-label="Toggle sound">♪ ON</button><button id="restartBtn" aria-label="Restart">↻ <span class="restart-label">RESTART</span></button></div>
+  </header>
+  <main class="game-shell">
+    <div class="canvas-wrap">
+
+      <div class="intro-overlay" id="introOverlay">
+        <div class="intro-screen" id="introScreen" aria-label="Bearly Qualified animated intro">
+          <img id="introStill" alt="Bearly Qualified title screen" src="assets/introStill.png">
+          <canvas id="introMotion" aria-hidden="true"></canvas>
+          <div class="intro-copy">
+            <span class="edition-tag">THE AUTUMN RIDE</span>
+            <h2>BEARLY<br><em>QUALIFIED.</em></h2>
+            <p>A little fresh air.<br>A lot of questionable decisions.</p>
+            <button id="introStart" class="intro-start" aria-label="Start the autumn ride">LET’S RIDE <span aria-hidden="true">→</span></button>
+            <div class="intro-keys"><span><kbd>↑</kbd> Pedal</span><span><kbd>← →</kbd> Lean</span><span><kbd>SPACE</kbd> Hop</span></div>
+          </div>
+          <div class="intro-badge"><strong>HÄSSELBY, STOCKHOLM</strong><span>Two passengers. Zero qualifications.</span></div>
+        </div>
+      </div>
+
+      <button type="button" id="mobilePauseBtn" aria-label="Pause game">Ⅱ PAUSE</button>
+      <canvas id="game" width="1160" height="640" aria-label="Side-scrolling cycling game. Use arrow keys or W A S D, space to hop, R to restart."></canvas>
+      <aside id="debugPanel" role="dialog" aria-label="Bearly Qualified debug menu" aria-modal="false" hidden>
+        <div class="dbg-header"><h2>⚙ AUTUMN RIDE · V19 LAB</h2><button id="debugCloseBtn" class="dbg-x" aria-label="Close debug menu">✕</button></div>
+        <div class="dbg-content">
+          <div class="dbg-metrics"><div class="dbg-metric"><strong id="debugFps">--</strong><span>FPS</span></div><div class="dbg-metric"><strong id="debugMs">--</strong><span>Draw ms</span></div><div class="dbg-metric"><strong id="debugSim">--</strong><span>Physics steps</span></div></div>
+          <div class="dbg-readout" id="debugReadout">Loading world state…</div>
+          <h3>Visual layers</h3>
+          <div class="dbg-toggles">
+            <label><input data-dbg-setting="foreground" type="checkbox" checked/>Foreground</label>
+            <label><input data-dbg-setting="backdrop" type="checkbox" checked/>Backdrop</label>
+            <label><input data-dbg-setting="metro" type="checkbox" checked/>Metro & shops</label>
+            <label><input data-dbg-setting="particles" type="checkbox" checked/>Particles</label>
+            <label><input data-dbg-setting="hitboxes" type="checkbox"/>Collision boxes</label>
+            <label><input data-dbg-setting="miniStats" type="checkbox"/>Live mini HUD</label>
+            <label><input data-dbg-setting="godMode" type="checkbox"/>No damage</label>
+            <label><input data-dbg-setting="hideHud" type="checkbox"/>Hide game HUD</label>
+          </div>
+          <h3>BQ-Centrum prototype</h3>
+          <div class="dbg-actions"><button id="centrumSquareBtn" type="button">CENTRUM PARKING STOP · DEBUG SHORTCUT</button></div>
+          <p class="dbg-help">Places connect from the marked cycling stop. Stop and press E to park; M opens the discovered map on foot.</p>
+          <h3>V19 buildings &amp; adventures</h3>
+          <div class="dbg-buttons">
+            <button data-dbg-place="workshop">Bike workshop</button><button data-dbg-place="pizzeria">Pizza &amp; Kebab</button><button data-dbg-place="library">Library</button><button data-dbg-place="boathouse">Boathouse</button><button data-dbg-place="greenhouse">Garden</button>
+          </div>
+          <div class="dbg-actions"><button id="debugEntryBtn">Preview dismount → shop</button><button id="debugBoatBtn">Prepare dinghy quest (test)</button><button id="debugLifeBtn">Neighbourhood life</button><button id="debugBrawlBtn">On-foot brawler practice</button><button id="debugFullscreenBtn">⛶ Toggle fullscreen</button></div>
+          <h3>Cycling route</h3>
+          <div class="dbg-buttons">
+            <button data-dbg-warp="210">Start</button>
+            <button data-dbg-warp="7550">Metro</button>
+            <button data-dbg-warp="11800">Torget</button>
+            <button data-dbg-warp="16000">Grimsta</button>
+            <button data-dbg-warp="21500">Stranden</button>
+            <button data-dbg-warp="27000">Finish</button>
+          </div>
+          <div class="dbg-warp"><input id="debugWarpMeters" type="number" min="0" max="28000" step="100" value="7550" aria-label="World x coordinate before stretch"/><button id="debugWarpBtn">Go to X</button></div>
+          <div class="dbg-actions"><button id="debugHealBtn">♥ Heal + calm</button><button id="debugSpeedBtn">➤ Give speed</button><button id="debugCrashBtn">🧸 Test baby crash</button><button id="debugRestartBtn">↻ Restart level</button><button id="debugResumeBtn" class="dbg-resume">▶ Resume</button></div>
+          <div class="dbg-help">F3 or Settings opens/closes · Esc closes · F fullscreen. The menu holds cycling, walking and transitions. Building buttons place the bike outside an entrance. The dinghy test button completes its lunch/repair requirements in your local quest save. X is the original map coordinate (0–28000).</div>
+        </div>
+      </aside>
+      <div id="debugMini" hidden aria-live="off"></div>
+
+      <div class="game-hud">
+        <div class="hud-left"><div class="hud-eyebrow">THE RIDE</div><div id="distance">0000 <small>m</small></div><div class="meter-track"><div id="progressFill"></div></div><div class="velocity-readout"><b id="speedValue">0 KM/H</b><span id="brakeAlert">BUILD SPEED · HOLD ↑ / W</span></div><div class="health-header">BEAR HEALTH <b id="healthNumber">100%</b></div><div class="health-track"><div id="healthFill"></div></div></div>
+        <div class="hud-center" id="bubble"><div class="bubble-arrow"></div><span id="bubbleText">THIS IS FINE.</span></div>
+        <div class="chapter-tag" id="regionLabel">1 · HÄSSELBY GÅRD</div>
+        <div class="hud-right"><div class="baby-portrait"><img id="babyReaction" alt="Baby's current facial expression" src="assets/babyReaction.webp" /></div>
+          <div class="panic-info"><div class="hud-eyebrow">BABY PANIC <span id="panicNumber">0%</span></div><div class="panic-track"><div id="panicFill"></div></div><div id="moodText">SUSPICIOUSLY HAPPY</div></div></div>
+      </div>
+      <div class="dialogue" id="dialogue" aria-live="polite"><span class="dialogue-name" id="dialogueName">BABY</span><span class="dialogue-text" id="dialogueText">THIS IS A BAD IDEA.</span></div>
+      <div class="toast" id="toast" hidden></div>
+      <div class="demo-cue" id="demoCue"><span class="title">ANIMATION TEST</span><span class="stage">RIDE</span><span class="detail">SHOWCASE</span><div class="demo-track"><span id="demoProgress"></span></div></div>
+      <div class="stunt-hud" id="stuntHud" aria-live="off"><div id="stuntTitle">ACCIDENTAL WHEELIE</div><div id="stuntDetail">0 SEC</div><div class="stunt-bar"><span id="stuntFill"></span></div></div>
+      <div class="overlay" id="overlay">
+        <div class="overlay-panel" id="overlayPanel">
+          <div class="overlay-kicker">HÄSSELBY · THE AUTUMN RIDE</div>
+          <h2 id="overlayTitle">BEARLY<br/><em>QUALIFIED.</em></h2>
+          <p id="overlayDesc">One bear, one baby and a very questionable ride to Mälaren.</p>
+          <div class="instructions-mini"><span>↑ / W <strong>PEDAL</strong></span><span>↓ / S <strong>BRAKE / REVERSE</strong></span><span>← → <strong>LEAN</strong></span><span>SPACE <strong>HOP</strong></span></div>
+          <button class="primary" id="startBtn">BACK TO THE RIDE <span>→</span></button>
+          <button id="gameoverRestart" class="secondary" hidden>↻ RESTART THE WHOLE DISASTER</button>
+          <div class="tip">C RETRY · R RESTART · F3 SETTINGS</div>
+        </div>
+      </div>
+    </div>
+    <div class="touch-controls" aria-label="Touch game controls">
+      <div class="control-pair"><button type="button" data-key="ArrowLeft" aria-label="Lean backward">↶ <small>LEAN</small></button><button type="button" data-key="ArrowRight" aria-label="Lean forward">↷ <small>LEAN</small></button></div>
+      <div class="control-pair"><button type="button" id="retryBtn" class="retry-control" aria-label="Retry from checkpoint">↻ <small>RETRY</small></button><button type="button" data-key="ArrowDown" aria-label="Brake or reverse">⌄ <small>BRAKE/REV</small></button><button type="button" data-key="Space" aria-label="Hop" class="jump-control">⤊ <small>HOP</small></button><button type="button" data-key="ArrowUp" aria-label="Pedal" class="gas-control">↑ <small>PEDAL</small></button></div>
+    </div>
+    <p class="portrait-hint"><span aria-hidden="true">↻</span> A little more room to ride — turn your phone sideways.</p>
+  </main>
+  <footer class="bottom-bar"><div class="status"><span class="live-dot"></span><span class="edition-note">AUTUMN RIDE · VERSION 19</span> <span id="statusLine">V19 · RESPONSIVE STARTUP</span></div><div class="foot-info"><span>🍕 PIZZA <b id="starsCount">0 / 20</b></span><span>SCORE <b id="scoreCount">0</b></span><span id="checkpointLabel">NO CHECKPOINT</span><span>↑ PEDAL · ↓ BRAKE · SPACE HOP · C RETRY</span></div></footer>
+</div>
+<script src="js/assets.js?edition=autumn-v19"></script>
+<script src="js/illustrated-atlas.js?edition=autumn-v19"></script>
+<script src="js/illustrated-props.js?edition=autumn-v19"></script>
+<script src="js/illustrated-world.js?edition=autumn-v19"></script>
+<script src="js/illustrated-neighbourhood.js?edition=autumn-v19"></script>
+<script src="js/illustrated-kids.js?edition=autumn-v19"></script>
+<script src="js/illustrated-hero.js?edition=autumn-v19"></script>
+<script src="js/fullscreen.js?edition=autumn-v19"></script>
+<script src="js/centrum-balance.js?edition=centrum-stage6"></script>
+<script src="js/centrum-save.js?edition=centrum-stage6"></script>
+<script src="js/autumn-quests.js?edition=autumn-v19"></script>
+<script src="js/locomotion.js?edition=autumn-v19"></script>
+<script src="js/weapon-effects.js?edition=autumn-v19"></script>
+<script src="js/brawler.js?edition=autumn-v19"></script>
+<script src="js/baby-passenger.js?edition=autumn-v19"></script>
+<script src="js/hero-rig.js?edition=autumn-v19"></script>
+<script src="js/npc-motion.js?edition=autumn-v19"></script>
+<script src="js/brawler-art.js?edition=autumn-v19"></script>
+<script src="js/street-life.js?edition=autumn-v19"></script>
+<script src="js/centrum-scenes.js?edition=centrum-stage7"></script>
+<script src="js/centrum-atmosphere.js?edition=centrum-stage7"></script>
+<script src="js/centrum-square-world.js?edition=centrum-stage7"></script>
+<script src="js/centrum-parking-save.js?edition=centrum-stage4"></script>
+<script src="js/centrum-link.js?edition=centrum-stage4"></script>
+<script src="js/wrong-entrance-quest.js?edition=centrum-stage7"></script>
+<script src="js/centrum-civilians.js?edition=centrum-stage5"></script>
+<script src="js/centrum-economy.js?edition=centrum-stage6"></script>
+<script src="js/centrum-inventory.js?edition=centrum-stage6"></script>
+<script src="js/centrum-story.js?edition=centrum-stage7"></script>
+<script src="js/centrum-square.js?edition=centrum-stage7"></script>
+<script src="js/illustrated-visits.js?edition=autumn-v19"></script>
+<script src="js/game.js?edition=autumn-v19"></script>
+</body>
+</html>

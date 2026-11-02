@@ -1,0 +1,179 @@
+{
+  "format": 1,
+  "revision": 19,
+  "producer": "tools/build-scene-render-cache.py",
+  "sources": {
+    "assets/art/centrum-buildings-v5.png": "64fce901f2da9cde4661035316142ec02c09f9cd84c5977d9fa891348adf0fcf",
+    "assets/art/neighbourhood-buildings-v5.png": "6aacc20a1390bdceb44eac2bd4bb631d3ce4d28a3667900934089837fc200307",
+    "assets/art/painted-hazards-v5.png": "9a3b14ce8424c2a55056e573238a6b695dfce48ade4ab79aec24b7a709fb224c",
+    "assets/art/residents-v5.png": "ac8128e9ec9dc346b532c2664df69315012f95d1df81bf5d501fef9ba45d3a10",
+    "assets/art/slott-manor-v5.png": "c2ea7796c0d057da5592736a31bc72ac851cb26fad54bb96aa7776be98bcec53",
+    "assets/art/workshop-pizzeria-v6.png": "ac582dd2e78fa89e230d44a01478c41d6fd767e9ac18f987f13b38acf04c782c",
+    "assets/art/autumn-tree.png": "65b6c108cb371cbfb1d8ceeb1cc773ad802b6cf8581f8fc30b165169a9e925d2"
+  },
+  "textures": {
+    "assets/cache/scene-v19-centrum.png": {
+      "width": 1536,
+      "height": 1024,
+      "kind": "atlas",
+      "id": "centrum",
+      "scale": 1,
+      "source": "assets/art/centrum-buildings-v5.png",
+      "alphaThreshold": 25,
+      "bytes": 2732918,
+      "sha256": "4293828fa2f2238b7454abffa5073ae9f209bb9b4849ba0aa455e4d960862a0f"
+    },
+    "assets/cache/scene-v19-neighbourhood.png": {
+      "width": 1536,
+      "height": 1024,
+      "kind": "atlas",
+      "id": "neighbourhood",
+      "scale": 1,
+      "source": "assets/art/neighbourhood-buildings-v5.png",
+      "alphaThreshold": 25,
+      "bytes": 2858001,
+      "sha256": "e1a444df43d8bcbfcd346f1dfc2f24012ac4a0e0e588da626037a39110feb33a"
+    },
+    "assets/cache/scene-v19-hazards.png": {
+      "width": 768,
+      "height": 512,
+      "kind": "atlas",
+      "id": "hazards",
+      "scale": 0.5,
+      "source": "assets/art/painted-hazards-v5.png",
+      "alphaThreshold": 25,
+      "bytes": 376190,
+      "sha256": "7c81715c6a3e77d516a25ba06ea91cda1a56fd490838cb0f7fb3cb05a41b06ce"
+    },
+    "assets/cache/scene-v19-residents.png": {
+      "width": 768,
+      "height": 512,
+      "kind": "atlas",
+      "id": "residents",
+      "scale": 0.5,
+      "source": "assets/art/residents-v5.png",
+      "alphaThreshold": 25,
+      "bytes": 408434,
+      "sha256": "a09ae58f7bc68cfd1a3ed1ad8c363b40009a8573cb8b072bf9650ddfea7a88c8"
+    },
+    "assets/cache/scene-v19-castle.png": {
+      "width": 1536,
+      "height": 1024,
+      "kind": "atlas",
+      "id": "castle",
+      "scale": 1,
+      "source": "assets/art/slott-manor-v5.png",
+      "alphaThreshold": 25,
+      "bytes": 2253365,
+      "sha256": "908613266403d7fa7a10fb2f1c9c7ce4d9e7740111d621517a6f23c979f9c4bd"
+    },
+    "assets/cache/scene-v19-shops.png": {
+      "width": 1983,
+      "height": 793,
+      "kind": "atlas",
+      "id": "shops",
+      "scale": 1,
+      "source": "assets/art/workshop-pizzeria-v6.png",
+      "alphaThreshold": 25,
+      "bytes": 3148398,
+      "sha256": "5e8a76d7dfdb47c2344a6d6673281db15aa6a2270dd0c626186bf5e57d4046ba"
+    },
+    "assets/cache/tree-v19-0.png": {
+      "width": 466,
+      "height": 700,
+      "kind": "tree",
+      "variant": 0,
+      "source": "assets/art/autumn-tree.png",
+      "sourceWidth": 1024,
+      "sourceHeight": 1536,
+      "filter": "none",
+      "bytes": 515921,
+      "sha256": "0e117a02d57462ee5af6869d57ab37fe3a34973ab184f4eb787b188252e37404"
+    },
+    "assets/cache/tree-v19-1.png": {
+      "width": 466,
+      "height": 700,
+      "kind": "tree",
+      "variant": 1,
+      "source": "assets/art/autumn-tree.png",
+      "sourceWidth": 1024,
+      "sourceHeight": 1536,
+      "filter": "saturate(.84) hue-rotate(-12deg)",
+      "bytes": 523127,
+      "sha256": "1d785f4b2d57070c0f42ac3599da471c83a3e06e342be52fb7cf664b0299519a"
+    },
+    "assets/cache/tree-v19-2.png": {
+      "width": 466,
+      "height": 700,
+      "kind": "tree",
+      "variant": 2,
+      "source": "assets/art/autumn-tree.png",
+      "sourceWidth": 1024,
+      "sourceHeight": 1536,
+      "filter": "saturate(1.1) hue-rotate(7deg)",
+      "bytes": 501399,
+      "sha256": "c805ec6248a2591798bec12c7b7eb618ce86fde386b50708eae65517b02a7923"
+    },
+    "assets/cache/tile-v19-road.png": {
+      "width": 256,
+      "height": 256,
+      "kind": "tile",
+      "id": "road",
+      "count": 12500,
+      "base": "#79766b",
+      "palette": [
+        "#cec0a31f",
+        "#161f1c19",
+        "#e9dabb16",
+        "#383c351d"
+      ],
+      "bytes": 110698,
+      "sha256": "0dc9108a4e707bb64f18cc83c6e14a2cc6310a9f85feede04f0b895e935be965"
+    },
+    "assets/cache/tile-v19-wood.png": {
+      "width": 256,
+      "height": 256,
+      "kind": "tile",
+      "id": "wood",
+      "count": 4500,
+      "base": "#6f7150",
+      "palette": [
+        "#f4d3911d",
+        "#252f2428",
+        "#b7ab7130"
+      ],
+      "bytes": 69341,
+      "sha256": "f2f04ed4c4ceb74b63180d558ed0a7668095dded269c49e8396481d236c38e20"
+    },
+    "assets/cache/tile-v19-grass.png": {
+      "width": 256,
+      "height": 256,
+      "kind": "tile",
+      "id": "grass",
+      "count": 6500,
+      "base": "#647447",
+      "palette": [
+        "#d4ac5b40",
+        "#263c2930",
+        "#b6b05d40"
+      ],
+      "bytes": 94591,
+      "sha256": "2fe002d7dcc2e869887d0b6f16067bf5be63e071b0c5ccba683bb65f41e69a3c"
+    },
+    "assets/cache/tile-v19-paving.png": {
+      "width": 256,
+      "height": 256,
+      "kind": "tile",
+      "id": "paving",
+      "count": 5500,
+      "base": "#a39b83",
+      "palette": [
+        "#f0dfbc20",
+        "#3a392d1c",
+        "#e1cb9c22"
+      ],
+      "bytes": 75929,
+      "sha256": "931fb4147e203827d9b20af819fc7b9a90f642b6429a25810ae097d2ae38f18b"
+    }
+  }
+}

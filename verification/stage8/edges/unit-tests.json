@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "suites": [
+    {
+      "file": "tests/brawler.cjs",
+      "passed": true,
+      "seconds": 0.086,
+      "stdout": "Brawler checks passed: persistent residents, witness aggression, hostile throws, staged screen impact, damage/death/recovery, attached baby and timed Apex/Madness states.",
+      "stderr": ""
+    },
+    {
+      "file": "tests/building-visits.cjs",
+      "passed": true,
+      "seconds": 0.048,
+      "stdout": "Placement and quest checks passed: access, terrain, walking, inventory requirements, boat unlock, buoy/seed objectives, persistence and unavailable storage.\nLocomotion checks passed: opposing legs, alternating planted/swing feet, stable stance and continuous two-bone joints.",
+      "stderr": ""
+    },
+    {
+      "file": "tests/centrum_civilians.cjs",
+      "passed": true,
+      "seconds": 0.258,
+      "stdout": "PASS: sparse source civilians, fear/defeat/reload recovery, peaceful identities, held dialogue, one-time delivery walk and namespaced/denied storage.",
+      "stderr": ""
+    },
+    {
+      "file": "tests/centrum_economy.cjs",
+      "passed": true,
+      "seconds": 0.118,
+      "stdout": "PASS: 15 economy cases; atomic values, one-time rewards/pickups, coherent latest/checkpoint recovery, safe recovery and donor isolation.",
+      "stderr": ""
+    },
+    {
+      "file": "tests/centrum_inventory.cjs",
+      "passed": true,
+      "seconds": 0.042,
+      "stdout": "centrum inventory action checks passed",
+      "stderr": ""
+    },
+    {
+      "file": "tests/centrum_parking_save.cjs",
+      "passed": true,
+      "seconds": 0.044,
+      "stdout": "PASS: single namespaced parking record, exact route/health/quest/reward ledger, stable transfer reload, impossible-target rejection and no duplicated reward writes.",
+      "stderr": ""
+    },
+    {
+      "file": "tests/centrum_quest_reload.cjs",
+      "passed": true,
+      "seconds": 0.043,
+      "stdout": "centrum quest facade/reload checks passed",
+      "stderr": ""
+    },
+    {
+      "file": "tests/centrum_save.cjs",
+      "passed": true,
+      "seconds": 0.055,
+      "stdout": "PASS: namespaced scene persistence, gate/discovery/inventory continuity, safe named fallback, schema/layout/position validation and denied storage.",
+      "stderr": ""
+    },
+    {
+      "file": "tests/centrum_scenes.cjs",
+      "passed": true,
+      "seconds": 0.064,
+      "stdout": "PASS: scene graph, named safe entrances/facing, occlusion data, body-clear proximity, furniture sweep and closed/open gate/post footprints.",
+      "stderr": ""
+    },
+    {
+      "file": "tests/centrum_validation.cjs",
+      "passed": true,
+      "seconds": 3.417,
+      "stdout": "PASS: 7 stage8 validation groups: every exit and named arrival is body-clear in both gate states; locked shortcut never isolates a task, room or bicycle; sweeps cannot tunnel through furniture, floors or closed gate; opened posts stay solid; furniture/gate occlusion anchors follow floor footprints, not actor jumps; each stable story prefix reloads through the canonical ledger and denied progress rolls back; transaction model: random purchases/pickups/eat/damage/reload/retry preserve one coherent state; stale scene and quest component saves cannot erase paid rewards or resurrect food",
+      "stderr": ""
+    },
+    {
+      "file": "tests/gang-encounters.cjs",
+      "passed": true,
+      "seconds": 0.248,
+      "stdout": "Gang encounters passed: calm hangouts, warning/pressure, crew provocation, real cover, cycling ownership, exact weapon contacts, fire duration, shared health and bounded history.",
+      "stderr": ""
+    },
+    {
+      "file": "tests/hero-gait.cjs",
+      "passed": true,
+      "seconds": 1.886,
+      "stdout": "{\"result\":\"passed\",\"rigCases\":1152,\"streetCycle\":104.39999999999999,\"cyclesPerSecond\":1.149425287356322,\"cacheBytes\":4025684}\nZero-budget idle preparation completes all seven source pieces.",
+      "stderr": ""
+    },
+    {
+      "file": "tests/npc-life.cjs",
+      "passed": true,
+      "seconds": 0.104,
+      "stdout": "NPC life checks passed: peaceful fear/flee/hide, witness safety, sidewalk routes, prop rests, running pursuit, schedules, stable IDs/health and combat visibility.",
+      "stderr": ""
+    },
+    {
+      "file": "tests/weapons.cjs",
+      "passed": true,
+      "seconds": 0.116,
+      "stdout": "{\"result\":\"passed\",\"renderCases\":192,\"damage\":{\"rock\":10,\"molotov\":30,\"firecracker\":20},\"heartHP\":20,\"maxEffects\":32}",
+      "stderr": ""
+    },
+    {
+      "file": "tests/wrong_entrance_quest.cjs",
+      "passed": true,
+      "seconds": 0.057,
+      "stdout": "PASS: Wrong Entrance ordered states, slip/label/parcel prerequisites, persistent one-time entitlement, future-only idempotent redemption, corruption/unavailability and no food/health/source-save writes.",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "stage": 7,
+  "scenario": "final-door",
+  "preparedFixtures": true,
+  "checks": [
+    {
+      "name": "final physical food door keeps the named arcade arrival and cancels eating atomically",
+      "arrival": {
+        "position": {
+          "sceneId": "shopping-arcade",
+          "entranceId": "from-food-shop",
+          "x": 235,
+          "y": 440,
+          "face": 1
+        },
+        "expected": {
+          "x": 235,
+          "y": 440,
+          "face": 1
+        },
+        "door": {
+          "id": "food-door",
+          "kind": "exit",
+          "label": "Enter Billy\u2019s food shop",
+          "x": 235,
+          "y": 382,
+          "radius": 68,
+          "toScene": "food-shop",
+          "toEntrance": "from-arcade"
+        }
+      },
+      "health": 60,
+      "food": 2
+    }
+  ],
+  "errors": [],
+  "httpFailures": [],
+  "passed": true
+}

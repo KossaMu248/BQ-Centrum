@@ -1,0 +1,530 @@
+{
+  "result": "passed",
+  "environment": "Headless system Chromium desktop1440\u00d71000, native time.",
+  "setup": "Original debug warp shortens travel only. Actual pedal/brake/E establishes a noncanonical stop position; reload fixtures are produced by production transitions, not storage writes.",
+  "movingDeniedThenParked": {
+    "stopped": {
+      "pressed": [],
+      "contacts": [],
+      "state": "playing",
+      "speed": 4.189698723535066,
+      "x": 11406.81390851056,
+      "y": 1186.2549450777417,
+      "contact": true,
+      "canvas": {
+        "x": 29,
+        "y": 89,
+        "width": 1382,
+        "height": 762.46875,
+        "top": 89,
+        "right": 1411,
+        "bottom": 851.46875,
+        "left": 29
+      },
+      "viewport": [
+        1440,
+        1000
+      ]
+    },
+    "atEntry": {
+      "pressed": [],
+      "contacts": [],
+      "state": "playing",
+      "speed": 3.852139960039977,
+      "x": 11408.922244600113,
+      "y": 1186.4348493051693,
+      "contact": true,
+      "canvas": {
+        "x": 29,
+        "y": 89,
+        "width": 1382,
+        "height": 762.46875,
+        "top": 89,
+        "right": 1411,
+        "bottom": 851.46875,
+        "left": 29
+      },
+      "viewport": [
+        1440,
+        1000
+      ]
+    },
+    "parking": {
+      "schemaVersion": 1,
+      "routeId": "autumn-main",
+      "routeSceneId": "route:autumn-main",
+      "entryId": "centrum-stop",
+      "bikeId": "centrum-family-bike",
+      "phase": "dismount",
+      "parked": {
+        "x": 11408.922244600113,
+        "y": 1186.5470417035376
+      },
+      "remount": {
+        "sceneId": "metro-square",
+        "anchorId": "bicycle-parking"
+      },
+      "health": 63,
+      "adventure": {
+        "started": true,
+        "lunch": true,
+        "kit": false,
+        "delivered": false,
+        "repaired": false,
+        "chart": false,
+        "voyage": false,
+        "garden": false,
+        "buoys": [],
+        "seeds": []
+      },
+      "routeProgress": {
+        "collectedPickups": [
+          "route-pizza-0"
+        ],
+        "score": 100,
+        "bonus": 100,
+        "maxDist": 11408.922244600113,
+        "seconds": 1.8749999999999958,
+        "checkpoint": 0,
+        "panic": 4.835402550507463,
+        "trickHazards": [
+          "scooter:5100",
+          "firebin:10275",
+          "pothole:2865",
+          "glass:6990",
+          "scooter:8970"
+        ],
+        "oneTime": [
+          "district:metro",
+          "episode0",
+          "episode1",
+          "episode2",
+          "episode3",
+          "episode4",
+          "tutorialJump",
+          "safetyCouncil",
+          "district:homes"
+        ],
+        "lostParts": []
+      },
+      "exploration": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 248,
+        "y": 730,
+        "face": 1
+      }
+    }
+  },
+  "reloadDuringDismount": {
+    "state": {
+      "phase": "exploring",
+      "holding": true,
+      "busy": false,
+      "error": null,
+      "entry": {
+        "id": "centrum-stop",
+        "routeId": "autumn-main",
+        "routeSceneId": "route:autumn-main",
+        "x": 11325,
+        "radius": 90
+      },
+      "parking": {
+        "schemaVersion": 1,
+        "routeId": "autumn-main",
+        "routeSceneId": "route:autumn-main",
+        "entryId": "centrum-stop",
+        "bikeId": "centrum-family-bike",
+        "phase": "exploring",
+        "parked": {
+          "x": 11408.922244600113,
+          "y": 1186.5470417035376
+        },
+        "remount": {
+          "sceneId": "metro-square",
+          "anchorId": "bicycle-parking"
+        },
+        "health": 63,
+        "adventure": {
+          "started": true,
+          "lunch": true,
+          "kit": false,
+          "delivered": false,
+          "repaired": false,
+          "chart": false,
+          "voyage": false,
+          "garden": false,
+          "buoys": [],
+          "seeds": []
+        },
+        "routeProgress": {
+          "collectedPickups": [
+            "route-pizza-0"
+          ],
+          "score": 100,
+          "bonus": 100,
+          "maxDist": 11408.922244600113,
+          "seconds": 1.8749999999999958,
+          "checkpoint": 0,
+          "panic": 4.835402550507463,
+          "trickHazards": [
+            "scooter:5100",
+            "firebin:10275",
+            "pothole:2865",
+            "glass:6990",
+            "scooter:8970"
+          ],
+          "oneTime": [
+            "district:metro",
+            "episode0",
+            "episode1",
+            "episode2",
+            "episode3",
+            "episode4",
+            "tutorialJump",
+            "safetyCouncil",
+            "district:homes"
+          ],
+          "lostParts": []
+        },
+        "exploration": {
+          "sceneId": "metro-square",
+          "entranceId": "from-cycle-route",
+          "x": 248,
+          "y": 730,
+          "face": 1
+        }
+      },
+      "route": {
+        "routeId": "autumn-main",
+        "routeSceneId": "route:autumn-main",
+        "x": 11408.922244600113,
+        "y": 1186.5470417035376,
+        "speed": 0,
+        "angle": 0.08512710747733324,
+        "grounded": true,
+        "state": "playing",
+        "introHidden": true,
+        "debugOpen": false,
+        "demo": false,
+        "health": 63,
+        "bikeFrame": {
+          "x": 11408.922244600113,
+          "y": 1186.5470417035376,
+          "vx": 0,
+          "vy": 0,
+          "a": 0.08512710747733324,
+          "va": 0,
+          "contact": true,
+          "cycle": 0,
+          "expression": "original_photo",
+          "broken": false,
+          "lean": 0
+        },
+        "adventure": {
+          "started": true,
+          "lunch": true,
+          "kit": false,
+          "delivered": false,
+          "repaired": false,
+          "chart": false,
+          "buoys": [],
+          "voyage": false,
+          "seeds": [],
+          "garden": false,
+          "boatReady": false
+        },
+        "simTime": 1.8749999999999958,
+        "projectiles": 0,
+        "projectilePositions": [],
+        "lifeTime": 0,
+        "babyMounted": true,
+        "routeProgress": {
+          "collectedPickups": [
+            "route-pizza-0"
+          ],
+          "score": 100,
+          "bonus": 100,
+          "maxDist": 11408.922244600113,
+          "seconds": 1.8749999999999958,
+          "checkpoint": 0,
+          "panic": 4.835402550507463,
+          "trickHazards": [
+            "scooter:5100",
+            "firebin:10275",
+            "pothole:2865",
+            "glass:6990",
+            "scooter:8970"
+          ],
+          "oneTime": [
+            "district:metro",
+            "episode0",
+            "episode1",
+            "episode2",
+            "episode3",
+            "episode4",
+            "tutorialJump",
+            "safetyCouncil",
+            "district:homes"
+          ],
+          "lostParts": []
+        },
+        "wheels": [
+          {
+            "x": 11357.475297461995,
+            "y": 1219.2512253834211,
+            "clearance": 2.5011104298755527e-12
+          },
+          {
+            "x": 11440.21459926882,
+            "y": 1226.3116458042696,
+            "clearance": 2.9558577807620168e-12
+          }
+        ]
+      },
+      "ownership": {
+        "bikeId": "centrum-family-bike",
+        "bicycles": 1,
+        "passengers": 1,
+        "passenger": "carrier"
+      },
+      "listeners": 3,
+      "loops": 0
+    },
+    "position": {
+      "sceneId": "metro-square",
+      "entranceId": "from-cycle-route",
+      "x": 248,
+      "y": 730,
+      "face": 1
+    }
+  },
+  "reloadDuringRemount": {
+    "state": {
+      "phase": "exploring",
+      "holding": true,
+      "busy": false,
+      "error": null,
+      "entry": {
+        "id": "centrum-stop",
+        "routeId": "autumn-main",
+        "routeSceneId": "route:autumn-main",
+        "x": 11325,
+        "radius": 90
+      },
+      "parking": {
+        "schemaVersion": 1,
+        "routeId": "autumn-main",
+        "routeSceneId": "route:autumn-main",
+        "entryId": "centrum-stop",
+        "bikeId": "centrum-family-bike",
+        "phase": "exploring",
+        "parked": {
+          "x": 11408.922244600113,
+          "y": 1186.5470417035376
+        },
+        "remount": {
+          "sceneId": "metro-square",
+          "anchorId": "bicycle-parking"
+        },
+        "health": 63,
+        "adventure": {
+          "started": true,
+          "lunch": true,
+          "kit": false,
+          "delivered": false,
+          "repaired": false,
+          "chart": false,
+          "voyage": false,
+          "garden": false,
+          "buoys": [],
+          "seeds": []
+        },
+        "routeProgress": {
+          "collectedPickups": [
+            "route-pizza-0"
+          ],
+          "score": 100,
+          "bonus": 100,
+          "maxDist": 11408.922244600113,
+          "seconds": 1.8749999999999958,
+          "checkpoint": 0,
+          "panic": 4.835402550507463,
+          "trickHazards": [
+            "scooter:5100",
+            "firebin:10275",
+            "pothole:2865",
+            "glass:6990",
+            "scooter:8970"
+          ],
+          "oneTime": [
+            "district:metro",
+            "episode0",
+            "episode1",
+            "episode2",
+            "episode3",
+            "episode4",
+            "tutorialJump",
+            "safetyCouncil",
+            "district:homes"
+          ],
+          "lostParts": []
+        },
+        "exploration": {
+          "sceneId": "metro-square",
+          "entranceId": "from-cycle-route",
+          "x": 248,
+          "y": 730,
+          "face": 1
+        }
+      },
+      "route": {
+        "routeId": "autumn-main",
+        "routeSceneId": "route:autumn-main",
+        "x": 11408.922244600113,
+        "y": 1186.5470417035376,
+        "speed": 0,
+        "angle": 0.08512710747733324,
+        "grounded": true,
+        "state": "playing",
+        "introHidden": true,
+        "debugOpen": false,
+        "demo": false,
+        "health": 63,
+        "bikeFrame": {
+          "x": 11408.922244600113,
+          "y": 1186.5470417035376,
+          "vx": 0,
+          "vy": 0,
+          "a": 0.08512710747733324,
+          "va": 0,
+          "contact": true,
+          "cycle": 0,
+          "expression": "original_photo",
+          "broken": false,
+          "lean": 0
+        },
+        "adventure": {
+          "started": true,
+          "lunch": true,
+          "kit": false,
+          "delivered": false,
+          "repaired": false,
+          "chart": false,
+          "buoys": [],
+          "voyage": false,
+          "seeds": [],
+          "garden": false,
+          "boatReady": false
+        },
+        "simTime": 1.8749999999999958,
+        "projectiles": 0,
+        "projectilePositions": [],
+        "lifeTime": 0,
+        "babyMounted": true,
+        "routeProgress": {
+          "collectedPickups": [
+            "route-pizza-0"
+          ],
+          "score": 100,
+          "bonus": 100,
+          "maxDist": 11408.922244600113,
+          "seconds": 1.8749999999999958,
+          "checkpoint": 0,
+          "panic": 4.835402550507463,
+          "trickHazards": [
+            "scooter:5100",
+            "firebin:10275",
+            "pothole:2865",
+            "glass:6990",
+            "scooter:8970"
+          ],
+          "oneTime": [
+            "district:metro",
+            "episode0",
+            "episode1",
+            "episode2",
+            "episode3",
+            "episode4",
+            "tutorialJump",
+            "safetyCouncil",
+            "district:homes"
+          ],
+          "lostParts": []
+        },
+        "wheels": [
+          {
+            "x": 11357.475297461995,
+            "y": 1219.2512253834211,
+            "clearance": 2.5011104298755527e-12
+          },
+          {
+            "x": 11440.21459926882,
+            "y": 1226.3116458042696,
+            "clearance": 2.9558577807620168e-12
+          }
+        ]
+      },
+      "ownership": {
+        "bikeId": "centrum-family-bike",
+        "bicycles": 1,
+        "passengers": 1,
+        "passenger": "carrier"
+      },
+      "listeners": 3,
+      "loops": 0
+    },
+    "position": {
+      "sceneId": "metro-square",
+      "entranceId": "from-cycle-route",
+      "x": 248,
+      "y": 730,
+      "face": 1
+    }
+  },
+  "riding": {
+    "pressed": [],
+    "contacts": [],
+    "state": "playing",
+    "speed": 0,
+    "x": 11408.922244600113,
+    "y": 1186.5437073552876,
+    "contact": true,
+    "canvas": {
+      "x": 29,
+      "y": 89,
+      "width": 1382,
+      "height": 762.46875,
+      "top": 89,
+      "right": 1411,
+      "bottom": 851.46875,
+      "left": 29
+    },
+    "viewport": [
+      1440,
+      1000
+    ],
+    "measuredGroundedWheels": [
+      {
+        "x": 11357.484804150357,
+        "y": 1219.250477876948,
+        "clearance": 0.001558743882469571
+      },
+      {
+        "x": 11440.226154368054,
+        "y": 1226.2868522382507,
+        "clearance": 0.025779601156500576
+      }
+    ]
+  },
+  "pageErrors": [],
+  "httpFailures": [],
+  "phaseMaxPassengerWeight": {
+    "exploring": 1,
+    "remount": 1,
+    "riding": 1
+  },
+  "currentFoodExpectation": "The one source pickup enters inventory (1), rather than old immediate healing. All transfers preserve that one food.",
+  "fixtureDisclosure": "Source debug placement/health/legacy quest flag are prepared sentinels; actual pedal/brake/E, reload during both animated transfers, Q/remount and grounded wheels use live input. Separate from the primary no-debug route.",
+  "stage": 8
+}

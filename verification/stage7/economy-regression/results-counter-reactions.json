@@ -1,0 +1,67 @@
+{
+  "stage": 7,
+  "scenario": "counter-reactions",
+  "preparedFixtures": true,
+  "checks": [
+    {
+      "name": "quest-reported uses one short native point reaction without changing health or baby scale",
+      "reaction": {
+        "kind": "quest-reported",
+        "remaining": 0.8999999999999999
+      },
+      "food": 0,
+      "wallet": 0,
+      "health": 60,
+      "baby": {
+        "mood": "point",
+        "source": "assets/baby_pose_point.webp",
+        "continuousUpperBody": true,
+        "originalCollar": true,
+        "headOnly": false,
+        "headHeight": 39.97581295350712,
+        "uniformScale": 0.5710830421929589
+      }
+    },
+    {
+      "name": "billys-reward uses one short native point reaction without changing health or baby scale",
+      "reaction": {
+        "kind": "billys-reward",
+        "remaining": 0.9
+      },
+      "food": 1,
+      "wallet": 40,
+      "health": 60,
+      "baby": {
+        "mood": "point",
+        "source": "assets/baby_pose_point.webp",
+        "continuousUpperBody": true,
+        "originalCollar": true,
+        "headOnly": false,
+        "headHeight": 39.97581295350712,
+        "uniformScale": 0.5710830421929589
+      }
+    },
+    {
+      "name": "billys-purchase uses one short native point reaction without changing health or baby scale",
+      "reaction": {
+        "kind": "billys-purchase",
+        "remaining": 0.8667000000000008
+      },
+      "food": 2,
+      "wallet": 20,
+      "health": 60,
+      "baby": {
+        "mood": "point",
+        "source": "assets/baby_pose_point.webp",
+        "continuousUpperBody": true,
+        "originalCollar": true,
+        "headOnly": false,
+        "headHeight": 39.97581295350712,
+        "uniformScale": 0.5710830421929589
+      }
+    }
+  ],
+  "errors": [],
+  "httpFailures": [],
+  "passed": true
+}
