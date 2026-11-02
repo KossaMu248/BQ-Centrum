@@ -9,13 +9,14 @@ import argparse
 import hashlib
 import json
 import re
+import struct
 import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTORIES = ('assets', 'css', 'js', 'references/source')
 DOCUMENTS = ('README.md', 'AGENTS.md', 'SOURCE_BASELINE.md', 'PROGRESS.md',
-             'TEST_REPORT.md', 'index.html', 'autumn-v19.html', 'autumn-version.json', '.nojekyll')
+             'TEST_REPORT.md', 'GITHUB_PUBLICATION.md', 'index.html', 'autumn-v19.html', 'autumn-version.json', '.nojekyll')
 FORBIDDEN_PARTS = {'.git', '.baseline', '__pycache__', 'node_modules', '.pytest_cache', '.mypy_cache', '.DS_Store'}
 SECRET_NAMES = {'.env', '.env.local', 'credentials', 'credentials.json', 'id_rsa', 'id_ed25519', '.netrc', '.npmrc'}
 SECRET_PATTERNS = {
@@ -25,6 +26,8 @@ SECRET_PATTERNS = {
     'google-api-key': re.compile(r'\bAIza[0-9A-Za-z_-]{35}\b'),
 }
 TEXT_EXTENSIONS = {'.js', '.css', '.html', '.json', '.md', '.txt', '.py', '.cjs', '.yml', '.yaml'}
+EVIDENCE_STAGES = (7, 8, 9)
+VALIDATION_STAGE = 9
 
 
 def valid_file(path):
@@ -43,6 +46,22 @@ def valid_file(path):
     return True
 
 
+def scenery_audit():
+    """Keep new scenery provenance separate from the pinned donor asset set."""
+    directory=ROOT/'assets/centrum'
+    files=sorted(directory.glob('*.png')) if directory.exists() else []
+    if not files:return {}
+    provenance=directory/'PROVENANCE.md'
+    if not provenance.is_file():raise ValueError('New scenery requires assets/centrum/PROVENANCE.md')
+    text=provenance.read_text();result={}
+    for path in files:
+        data=path.read_bytes();digest=hashlib.sha256(data).hexdigest()
+        if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid scenery PNG: '+path.name)
+        if digest not in text or path.name not in text:raise ValueError('Scenery provenance hash is stale: '+path.name)
+        result[path.relative_to(ROOT).as_posix()]={'sha256':digest,'nativePixels':list(struct.unpack('>II',data[16:24]))}
+    return result
+
+
 def included_files():
     files = set()
     for name in DOCUMENTS:
@@ -57,19 +76,25 @@ def included_files():
     for name in ['tools/verify-source-integrity.py', 'tools/package-project.py', 'tests/wrong_entrance.py']:
         if (ROOT / name).is_file():
             files.add(ROOT / name)
-    # Stage 7 is the final art review; Stage 8 is the current delivery validation.
-    for stage in [7, 8]:
+    # Preserve source/art review and validation alongside current final evidence
+    # and the honest pre-generation environmental-art audit.
+    for stage in EVIDENCE_STAGES:
         folder = ROOT / 'verification' / ('stage' + str(stage))
         if folder.exists():
             files.update(p for p in folder.rglob('*') if p.is_file())
     # Intermediate work products and large raw frame sequences are not evidence.
-    files = {p for p in files if not any(part in {'raw-video', 'raw-frames', 'frames', 'work', 'unpacked', 'server-root'} for part in p.relative_to(ROOT).parts)
+    files = {p for p in files if not any(part in {'raw-video', 'raw-frames', 'frames', 'work', 'unpacked', 'server-root', 'scratch', 'drafts', 'browser-cache', 'browser-profile', 'user-data-dir', 'recordings'} for part in p.relative_to(ROOT).parts)
              and not any(part.startswith('.') and part!='.nojekyll' for part in p.relative_to(ROOT).parts)
              and p.suffix not in {'.log', '.tmp'} and p.name not in {'package-audit.json','live-progress.json'} and not p.name.startswith('.DS_Store')}
     # The certificate for testing this ZIP is external to that same ZIP. Keep
     # its explanatory page, but never ship a stale earlier-package certificate.
-    certificate=ROOT/'verification/stage8/standalone'
-    files={p for p in files if not p.is_relative_to(certificate) or p.name=='README.md'}
+    for stage in EVIDENCE_STAGES:
+        certificate=ROOT/'verification'/('stage'+str(stage))/'standalone'
+        files={p for p in files if not p.is_relative_to(certificate) or p.name=='README.md'}
+    stage9=ROOT/'verification/stage9'
+    files={p for p in files if not p.is_relative_to(stage9) or (
+        p.suffix in {'.md','.json','.png','.webp','.webm','.mp4','.sha256'} and
+        not any(label in p.name for label in ['-provisional','-attempt']))}
     return sorted((p for p in files if valid_file(p)), key=lambda p:p.relative_to(ROOT).as_posix())
 
 
@@ -82,15 +107,16 @@ def main():
     if not output.is_relative_to(ROOT) or output.suffix != '.zip':
         raise SystemExit('Output must be a .zip inside BQ-Centrum')
     files = included_files()
+    scenery=scenery_audit()
     hashes = {p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
     total = sum(p.stat().st_size for p in files)
-    docs = '''# Standalone package contents\n\nExtract this archive, enter BQ-Centrum, then run `python3 -m http.server 8000 --bind 127.0.0.1` and open http://127.0.0.1:8000/. No install/build/donor checkout is required. Read README.md for controls and TEST_REPORT.md for current validation conditions/limits.\n\nThis package includes the split local runtime, both small active HTML entry files, all required source artwork, attribution/baseline references, selected tests and the latest art/delivery evidence. Earlier development evidence remains in the workspace, outside this delivery. The standalone ZIP-validation certificate, screenshots and archive SHA sidecar are external to the ZIP they validate, avoiding stale/self-referential certificates; the included TEST_REPORT.md summarizes the actual test conditions.\n\nExcluded: donor inspection archive/copy (.baseline), all Git metadata, credentials, Python/browser/build caches, obsolete HTML builds and temporary/raw recording frames. The `assets/cache` directory is intentionally retained: its immutable source-authored prepared PNGs/manifests are runtime assets, with original-art fallbacks; it is not a disposable development cache. No source characters were replaced.\n\nOriginal game/code/art remain attributable to KossaMu248/BQ and the pinned KossaMu248/BQ-Autumn commit in SOURCE_BASELINE.md. This package neither grants new rights nor alters that attribution. No remote push, publication or deployment was performed.\n'''
+    docs = '''# Standalone package contents\n\nExtract this archive, enter BQ-Centrum, then run `python3 -m http.server 8000 --bind 127.0.0.1` and open http://127.0.0.1:8000/. No install/build/donor checkout is required. Read README.md for controls and TEST_REPORT.md for current validation conditions/limits.\n\nThis package includes the split local runtime, both small active HTML entry files, all required source artwork, attribution/baseline references, selected tests and the latest art/delivery evidence. Earlier development evidence remains in the workspace, outside this delivery. The standalone ZIP-validation certificate, screenshots and archive SHA sidecar are external to the ZIP they validate, avoiding stale/self-referential certificates; the included TEST_REPORT.md summarizes the actual test conditions.\n\nExcluded: donor inspection archive/copy (.baseline), all Git metadata, credentials, Python/browser/build caches, obsolete HTML builds and temporary/raw recording frames. The `assets/cache` directory is intentionally retained: its immutable source-authored prepared PNGs/manifests are runtime assets, with original-art fallbacks; it is not a disposable development cache. No source characters were replaced. New independent environmental artwork is documented in assets/centrum/PROVENANCE.md.\n\nOriginal game/code/art remain attributable to KossaMu248/BQ and the pinned KossaMu248/BQ-Autumn commit in SOURCE_BASELINE.md. This package neither grants new rights nor alters that attribution. This packaging tool performs no remote or deployment operation. Authorized target-repository publication history is recorded in README.md and PROGRESS.md; neither donor is a destination.\n'''
     package_manifest = {'format':1, 'project':'BQ-Centrum', 'root':'BQ-Centrum/', 'runtimeFilesAndReviewEvidence':len(files), 'uncompressedBytes':total,
                         'files':hashes, 'excludes':['.git','.baseline','development caches','obsolete HTML','raw recording frames'],
-                        'requiredPreparedRuntimeAssetsRetained':'assets/cache/'}
+                        'requiredPreparedRuntimeAssetsRetained':'assets/cache/','evidenceStages':list(EVIDENCE_STAGES),'independentScenery':scenery}
     if args.audit_only:
         print(json.dumps({'passed':True,'files':len(files),'uncompressedBytes':total,'htmlFiles':[x for x in hashes if x.endswith('.html')],
-                          'forbiddenPaths':[],'credentialPatterns':[],'requiredPreparedAssets':sum(x.startswith('assets/cache/') for x in hashes)},indent=2))
+                          'forbiddenPaths':[],'credentialPatterns':[],'requiredPreparedAssets':sum(x.startswith('assets/cache/') for x in hashes),'independentScenery':scenery},indent=2))
         return
     output.parent.mkdir(parents=True,exist_ok=True)
     with zipfile.ZipFile(output,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as archive:
@@ -113,8 +139,8 @@ def main():
     digest=hasher.hexdigest()
     output.with_suffix('.zip.sha256').write_text(digest+'  '+output.name+'\n')
     report={'passed':True,'archive':str(output.relative_to(ROOT)),'sha256':digest,'zipBytes':output.stat().st_size,'uncompressedBytes':total,
-            'files':len(files)+2,'htmlFiles':[x for x in hashes if x.endswith('.html')],'forbiddenPaths':[],'credentialPatterns':[]}
-    report_path=ROOT/'verification/stage8/standalone/package-audit.json';report_path.parent.mkdir(parents=True,exist_ok=True);report_path.write_text(json.dumps(report,indent=2)+'\n')
+            'files':len(files)+2,'htmlFiles':[x for x in hashes if x.endswith('.html')],'forbiddenPaths':[],'credentialPatterns':[],'independentScenery':scenery}
+    report_path=ROOT/'verification'/('stage'+str(VALIDATION_STAGE))/'standalone/package-audit.json';report_path.parent.mkdir(parents=True,exist_ok=True);report_path.write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps(report,indent=2))
 
 

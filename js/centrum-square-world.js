@@ -31,7 +31,7 @@
   function prepare(id='metro-square'){
     const scene=get(id);if(!scene)return Promise.reject(new Error('Unknown scene '+id));
     const keys=scene.kind==='room'?[scene.roomArt,...(id==='food-shop'?['billys']:[])]:id==='metro-square'?['planter','metro']:id==='shopping-arcade'?['planter']:['utility','crates','fence'];
-    return Promise.all([window.BearlyAtlas.loaded,window.BearlyWorld.loaded,window.BearlyStreetProps.loaded,...keys.map(load)]).catch(e=>{error=String(e);throw e;});
+    return Promise.all([window.BearlyAtlas.loaded,window.BearlyWorld.loaded,window.BearlyStreetProps.loaded,window.BearlyCentrumScenery?.prepare(id),...keys.map(load)]).catch(e=>{error=String(e);throw e;});
   }
   function ellipse(c,x,y,rx,ry,color){c.fillStyle=color;c.beginPath();c.ellipse(x,y,rx,ry,0,0,TAU);c.fill();}
   function text(c,value,x,y,size=14,color='#435044'){
@@ -80,12 +80,16 @@
     }
     if(id==='metro-square'){text(c,'T · METRO ↑',752,826,23,'#405b588c');text(c,'SHOPPING ARCADE ↑',340,426,12,'#4c5b4e');}
     if(id==='shopping-arcade'){
-      // The navigable gap is still a development passage, pending matched art.
-      c.fillStyle='#465046';c.fillRect(995,405,105,200);c.fillStyle='#aa9f7f';c.fillRect(1006,420,94,185);
-      const shade=c.createLinearGradient(1006,420,1006,605);shade.addColorStop(0,'#41504470');shade.addColorStop(1,'#c7b99412');c.fillStyle=shade;c.fillRect(1006,420,94,185);
-      c.strokeStyle='#716d58';c.lineWidth=2;for(let y=435;y<605;y+=22){c.beginPath();c.moveTo(1006,y);c.lineTo(1100,y);c.stroke();}
-      threshold(c,1053,602,90);sign(c,'DELIVERIES · DOOR 7 →',1016,396,232);
-      text(c,'Courtyard · caretaker',1045,446,11,'#f0dbb6');development(c,'PASSAGE',1047,466);
+      const passageDrawn=window.BearlyCentrumScenery?.drawPassage(c,969,196,180,354)===true;
+      if(!passageDrawn){
+        // Honest fallback while a sprite is unavailable; never call this finished art.
+        c.fillStyle='#465046';c.fillRect(995,405,105,200);c.fillStyle='#aa9f7f';c.fillRect(1006,420,94,185);
+        const shade=c.createLinearGradient(1006,420,1006,605);shade.addColorStop(0,'#41504470');shade.addColorStop(1,'#c7b99412');c.fillStyle=shade;c.fillRect(1006,420,94,185);
+        c.strokeStyle='#716d58';c.lineWidth=2;for(let y=435;y<605;y+=22){c.beginPath();c.moveTo(1006,y);c.lineTo(1100,y);c.stroke();}
+        development(c,'PASSAGE',1047,466);
+      }
+      threshold(c,1060,550,90);sign(c,'DELIVERIES · DOOR 7 →',893,405,232);
+      text(c,'Courtyard · caretaker',893,434,11,'#f0dbb6');
       sign(c,'← METRO SQUARE',165,660,190);
     }
     if(id==='service-courtyard'){
@@ -121,16 +125,25 @@
   }
   function gate(c,id,state){
     const square=id==='metro-square',x=square?1360:1025,y=square?795:625,w=112;
-    c.save();c.translate(x,y);c.fillStyle='#707362';c.fillRect(-66,-110,14,118);c.fillRect(52,-110,14,118);
-    c.strokeStyle='#2c463c';c.lineWidth=4;
-    if(state.gateOpened){for(const side of [-1,1]){c.beginPath();c.moveTo(side*50,-102);c.lineTo(side*70,-75);c.lineTo(side*70,2);c.lineTo(side*50,2);c.stroke();}}
-    else{c.strokeRect(-50,-104,100,106);for(let xx=-40;xx<=40;xx+=16){c.beginPath();c.moveTo(xx,-100);c.lineTo(xx,0);c.stroke();}c.fillStyle='#d8bc6c';c.fillRect(-9,-42,18,17);}
-    c.restore();sign(c,state.gateOpened?(square?'COURTYARD ↗':'METRO SQUARE ↗'):(square?'GATE LOCKED · LATCH INSIDE':'GATE LATCH · OPEN TO SQUARE'),x,y-122,square?242:256);development(c,'GATE',x,y-95);
+    const gateDrawn=window.BearlyCentrumScenery?.drawGate(c,x,y+8,state.gateOpened)===true;
+    if(!gateDrawn){
+      c.save();c.translate(x,y);c.fillStyle='#707362';c.fillRect(-66,-110,14,118);c.fillRect(52,-110,14,118);
+      c.strokeStyle='#2c463c';c.lineWidth=4;
+      if(state.gateOpened){for(const side of [-1,1]){c.beginPath();c.moveTo(side*50,-102);c.lineTo(side*70,-75);c.lineTo(side*70,2);c.lineTo(side*50,2);c.stroke();}}
+      else{c.strokeRect(-50,-104,100,106);for(let xx=-40;xx<=40;xx+=16){c.beginPath();c.moveTo(xx,-100);c.lineTo(xx,0);c.stroke();}c.fillStyle='#d8bc6c';c.fillRect(-9,-42,18,17);}
+      c.restore();development(c,'GATE',x,y-95);
+    }
+    sign(c,state.gateOpened?(square?'COURTYARD ↗':'METRO SQUARE ↗'):(square?'GATE LOCKED · LATCH INSIDE':'GATE LATCH · OPEN TO SQUARE'),x,y-122,square?242:256);
   }
   function drawables(id='metro-square',state={},options={}){
     lastPlanters=[];const s=get(id),list=[...s.buildings.map(b=>({id:b.id,kind:b.kind,x:b.x+b.w/2,y:b.footY,footY:b.footY,draw:c=>drawBuilding(c,b)})),...s.furniture.map(p=>({id:p.id,kind:p.kind,x:p.anchorX,y:p.footY,footY:p.footY,foliageOnlyOcclusion:p.kind==='planter',draw:c=>drawFurniture(c,p,id,options)}))];
     if(id==='metro-square'||id==='service-courtyard')list.push({id:'service-gate',kind:'gate',x:id==='metro-square'?1360:1025,footY:id==='metro-square'?803:633,draw:c=>gate(c,id,state)});
+    if(id==='shopping-arcade')list.push({id:'service-passage-jamb',kind:'post',x:996.5,footY:550,draw:c=>window.BearlyCentrumScenery?.drawPassageJamb(c)});
     return list;
   }
-  window.BearlyCentrumSquareWorld={layout:get,blocked:(x,y,rx=22,ry=12,id='metro-square',state={})=>!!hits(x,y,rx,ry,id,state).length,move,approach,prepare,drawBase,drawables,audit:()=>({error,loaded:Object.keys(art),art:'existing local source environments and shop rooms',canopies:'source planter foliage only; stone remains opaque',developmentPlaceholders:['functional service gate','navigable side passage','B-04 delivery cage overlay'],missingArt:['matched open/closed service-gate leaves and posts','matched side-passage doorway facade','matched B-04 delivery cage front/open states'],foliageCut:{asset:files.planter,sourceY:80},wind:'isolated planter foliage; floor leaves only',planters:lastPlanters.map(p=>({...p}))})};
+  function sceneryGaps(){
+    const files=window.BearlyCentrumScenery?.audit().files||{};
+    return [['gate','functional service gate','matched open/closed service-gate leaves and posts'],['passage','navigable side passage','matched side-passage doorway facade'],['cage','B-04 delivery cage overlay','matched B-04 delivery cage front/open states']].filter(([kind])=>!files[kind]?.reviewed);
+  }
+  window.BearlyCentrumSquareWorld={layout:get,blocked:(x,y,rx=22,ry=12,id='metro-square',state={})=>!!hits(x,y,rx,ry,id,state).length,move,approach,prepare,drawBase,drawables,audit:()=>({error,loaded:Object.keys(art),art:'original source environments/rooms plus an independent illustrated Centrum scenery kit',canopies:'source planter foliage only; stone remains opaque',developmentPlaceholders:sceneryGaps().map(g=>g[1]),missingArt:sceneryGaps().map(g=>g[2]),scenery:window.BearlyCentrumScenery?.audit()||null,foliageCut:{asset:files.planter,sourceY:80},wind:'isolated planter foliage; floor leaves only',planters:lastPlanters.map(p=>({...p}))})};
 })();

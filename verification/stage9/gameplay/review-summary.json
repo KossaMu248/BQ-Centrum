@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "mainGroups": 9,
+  "finalPassageGroups": 7,
+  "actualScreenshots": 36,
+  "javascriptExceptions": 0,
+  "httpFailures": 0,
+  "sourceCharacterArtHashCount": 83,
+  "renderedLegSamples": {
+    "passed": true,
+    "actualRenderedLegSamples": 160,
+    "sourceShoeOrientationPreserved": true,
+    "noncollapsedShoeArea": true,
+    "stanceContactLocalDepthMin": -11.278524590163927,
+    "stanceContactLocalDepthMax": 8.280000000000001,
+    "method": "Verify every recorded actual render-audit heel/toe/cuff triangle against its original source triangle, plus each stance contact against the shallow collider depth."
+  },
+  "gaitMetrics": [
+    {
+      "name": "pure depth down",
+      "midstanceSamples": 2,
+      "meanContactWorldSlipPxPerSec": 1.711471315919872,
+      "meanRenderedSoleWorldSlipPxPerSec": 1.7114713159210235,
+      "stanceContactLocalDepthMin": -11.278524590163927,
+      "stanceContactLocalDepthMax": 8.280000000000001
+    },
+    {
+      "name": "pure depth up",
+      "midstanceSamples": 2,
+      "meanContactWorldSlipPxPerSec": 3.7573462915759466,
+      "meanRenderedSoleWorldSlipPxPerSec": 3.7573462915759466,
+      "stanceContactLocalDepthMin": -9.898524590163934,
+      "stanceContactLocalDepthMax": 7.589999999999995
+    },
+    {
+      "name": "diagonal southeast",
+      "midstanceSamples": 0,
+      "meanContactWorldSlipPxPerSec": null,
+      "meanRenderedSoleWorldSlipPxPerSec": null,
+      "stanceContactLocalDepthMin": null,
+      "stanceContactLocalDepthMax": null
+    },
+    {
+      "name": "diagonal northwest",
+      "midstanceSamples": 0,
+      "meanContactWorldSlipPxPerSec": null,
+      "meanRenderedSoleWorldSlipPxPerSec": null,
+      "stanceContactLocalDepthMin": 2.2402427579233755,
+      "stanceContactLocalDepthMax": 2.948738447992729
+    }
+  ],
+  "clip": {
+    "file": "after/walking-review.webm",
+    "sha256": "92854336a647fc2c9850c0aeea6b5d48f7f1c534fa509be8e01d281f880545e6",
+    "frames": 204,
+    "nativeSeconds": 57.135350942611694,
+    "speed": 2,
+    "actualGameplay": true,
+    "captureIsGeneratedIllustration": false
+  },
+  "finalRuntimeHashes": {
+    "js/centrum-square.js": "401891996a629a861753cc341321119811b6268e99b8c444ace785fa0cf7be6e",
+    "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+    "js/hero-rig.js": "12c96e458c66854b10f1a6ed50fdd7b09791cff8c20733f31c584e43aa2932a8",
+    "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+    "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15"
+  },
+  "fixtureDisclosure": "Production parking/save factories and named default entrances prepare scene overviews. Source debug warp 7550 shortens only initial parking preparation; subsequent travel/motion uses normal keys/touch. This is a focused regression review; stage8/full-route supplies the no-debug earned full route.",
+  "limits": [
+    "Chromium Linux phone emulation, not physical iPhone/Safari.",
+    "The before follow-up was incomplete after depth-speed integration; only completed native first-page gait/clip is the before renderer baseline.",
+    "Midstance numeric sample counts are small; no numerical settled diagonal slip result.",
+    "Upright shallow side/front animation uses projected source legs, not authored overhead/rear character poses.",
+    "Phone cover framing crops upper facades and the fixed HUD can overlap the bear helmet near the far-right passage; baby stays clear."
+  ]
+}

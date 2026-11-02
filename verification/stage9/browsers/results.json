@@ -1,0 +1,270 @@
+{
+  "scope": "Actual Firefox153 and Linux headless WebKit26.5; not physical iPhone/Safari. Disclosed prepared exploration fixtures, native input thereafter. Primary fresh ride acceptance belongs to the separate Chromium evidence.",
+  "status": "partial: both engine smoke/focused suites passed; original uninterrupted WebKit functional flow timed out after13 successful executions",
+  "passed": false,
+  "suites": [
+    {
+      "engine": "firefox",
+      "version": "153.0",
+      "suite": "smoke",
+      "file": "firefox-smoke-results.json",
+      "passed": true,
+      "successfulExecutions": 30,
+      "errors": 0,
+      "consoleErrors": 0,
+      "httpFailures": 0,
+      "externalRequests": 0,
+      "failure": null
+    },
+    {
+      "engine": "firefox",
+      "version": "153.0",
+      "suite": "functional",
+      "file": "firefox-functional-results.json",
+      "passed": true,
+      "successfulExecutions": 15,
+      "errors": 0,
+      "consoleErrors": 0,
+      "httpFailures": 0,
+      "externalRequests": 0,
+      "failure": null
+    },
+    {
+      "engine": "firefox",
+      "version": "153.0",
+      "suite": "final",
+      "file": "firefox-final-results.json",
+      "passed": true,
+      "successfulExecutions": 5,
+      "errors": 0,
+      "consoleErrors": 0,
+      "httpFailures": 0,
+      "externalRequests": 0,
+      "failure": null
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "suite": "smoke",
+      "file": "webkit-smoke-results.json",
+      "passed": true,
+      "successfulExecutions": 30,
+      "errors": 0,
+      "consoleErrors": 0,
+      "httpFailures": 0,
+      "externalRequests": 0,
+      "failure": null
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "suite": "functional",
+      "file": "webkit-functional-results.json",
+      "passed": false,
+      "successfulExecutions": 13,
+      "errors": 0,
+      "consoleErrors": 0,
+      "httpFailures": 0,
+      "externalRequests": 0,
+      "failure": "TimeoutError('Page.wait_for_function: Timeout 35000ms exceeded.')"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "suite": "final",
+      "file": "webkit-final-results.json",
+      "passed": true,
+      "successfulExecutions": 5,
+      "errors": 0,
+      "consoleErrors": 0,
+      "httpFailures": 0,
+      "externalRequests": 0,
+      "failure": null
+    }
+  ],
+  "finalFocusedBothEnginesPassed": true,
+  "captures": [
+    {
+      "file": "firefox/courtyard-delivery.png",
+      "sha256": "888278293c39ed035280e00ecd627974278c036ee18cfa78a242b6f43575a2a8",
+      "bytes": 1019460
+    },
+    {
+      "file": "firefox/food-reload-native-baby.png",
+      "sha256": "6aba2d815c903f272334d2dce921a64dc218b1bf4eed63a129706eeec42ec8a9",
+      "bytes": 1555053
+    },
+    {
+      "file": "firefox/last-steps/final-passage-jamb-collision.png",
+      "sha256": "e84c6ccdb311dad62cf135dc566e9948e80d8e83087a9f5806d4efdb822cd50c",
+      "bytes": 1134539
+    },
+    {
+      "file": "firefox/last-steps/final-q-return-remounted.png",
+      "sha256": "5de29f05a3647477abb2ac6291b88cff401134fd5df6b92a65c3a1cefaedaea9",
+      "bytes": 1212462
+    },
+    {
+      "file": "firefox/last-steps/root-desktop-ride.png",
+      "sha256": "492485bec26c5e4a8dfa97e5ba2ad31db502675867e28dfd5323868bf51eebf6",
+      "bytes": 1194690
+    },
+    {
+      "file": "firefox/remounted-original-bike.png",
+      "sha256": "731bec8c89f568dbf094240834db9f1b3252517bb965784cf2f97208a50da07e",
+      "bytes": 1207665
+    },
+    {
+      "file": "firefox/root-desktop-food-shop.png",
+      "sha256": "5251941e8b911705d0b7c69057e04cf1de78df6a0d485e3e3b3aa1b54dfb7ed1",
+      "bytes": 1567173
+    },
+    {
+      "file": "firefox/root-desktop-metro-square.png",
+      "sha256": "c530f1498ec6cbc3025773c781120a2e8a8373050ab4b86f2d6b1c24fd615c7d",
+      "bytes": 1145601
+    },
+    {
+      "file": "firefox/root-desktop-ride.png",
+      "sha256": "28dca549e3e37155295da33aa47ac24e16dd4a8e2210311d2eed553dd9b64796",
+      "bytes": 1203362
+    },
+    {
+      "file": "firefox/root-touch-viewport-food-shop.png",
+      "sha256": "1ea9c416eb4ec9cbd821744a7e86d014d66e2a9ca3e7e3066227486d0849350b",
+      "bytes": 705183
+    },
+    {
+      "file": "firefox/root-touch-viewport-metro-square.png",
+      "sha256": "54d1b5c533161a799a98976f0be722b7092141df07fec464c4e6079857c58ef3",
+      "bytes": 524485
+    },
+    {
+      "file": "firefox/subpath-desktop-food-shop.png",
+      "sha256": "7e50aa79089f6a99632eeeaca8a06e76e8a1bf9a8eae6283c67e3defcf35d707",
+      "bytes": 1566225
+    },
+    {
+      "file": "firefox/subpath-desktop-metro-square.png",
+      "sha256": "ee493c166a908f5f992b01d7efdd31eb9ca3be868f038d21eda5f5e995ddb10e",
+      "bytes": 1145678
+    },
+    {
+      "file": "firefox/subpath-desktop-ride.png",
+      "sha256": "7e41a6ecfb9fef20d6d1c54e0602400002651811c05b68efe7adcdb16667aa99",
+      "bytes": 1209608
+    },
+    {
+      "file": "firefox/subpath-touch-viewport-food-shop.png",
+      "sha256": "ff1f00fe341b94d3e2d7d6819dd0dd2b43e51ea0a47c0f8336088204682b54b6",
+      "bytes": 705416
+    },
+    {
+      "file": "firefox/subpath-touch-viewport-metro-square.png",
+      "sha256": "4ad3cf75de9b99ee4a9312033fa418ad2c7107146958ee13c0920cd63c78ff8f",
+      "bytes": 528027
+    },
+    {
+      "file": "firefox/workshop-native-arrival.png",
+      "sha256": "1dd133893332ebbb7e89d06a8520b6c162bd4583ea9b0c1f9f1392af52850048",
+      "bytes": 1505367
+    },
+    {
+      "file": "webkit/courtyard-delivery.png",
+      "sha256": "89a00ddfdc56918535123bfc15ce5b22a60288f3c10f12aa387c1e3546e8c7ce",
+      "bytes": 918977
+    },
+    {
+      "file": "webkit/food-reload-native-baby.png",
+      "sha256": "f5bbaba0be1ba5e573a52ec9e01a805317686b96fd6a5f4a3bf3eea7c7d832be",
+      "bytes": 1362508
+    },
+    {
+      "file": "webkit/last-steps/final-passage-jamb-collision.png",
+      "sha256": "5fd3f0bbf4ebe8b970f3ffe3f57a2ac8560c54073e4c324cb378b8317b4f36ce",
+      "bytes": 1016140
+    },
+    {
+      "file": "webkit/last-steps/final-q-return-remounted.png",
+      "sha256": "94d8e36ae79d6d035190d2610248ab99629c62f3a63a9f9af7f48fb2fefad050",
+      "bytes": 1036783
+    },
+    {
+      "file": "webkit/last-steps/root-desktop-ride.png",
+      "sha256": "7a1cba58a5a7aaace8a8d2c246ade005a238c965cf0f83dca0850a132e1f1246",
+      "bytes": 1041535
+    },
+    {
+      "file": "webkit/root-desktop-food-shop.png",
+      "sha256": "37b357d9fd840a0e4c618f481d24f4f46285d1a6453e1de27991c233561ee65e",
+      "bytes": 1367299
+    },
+    {
+      "file": "webkit/root-desktop-metro-square.png",
+      "sha256": "29aea1249129f23e181bfc848d110a5a370ca482da6d793c80563d7228932130",
+      "bytes": 1017524
+    },
+    {
+      "file": "webkit/root-desktop-ride.png",
+      "sha256": "5fe8dc48b272d1ef8cdbc043e923c956af0faeefb1e717d6eeb782324e283d12",
+      "bytes": 1060743
+    },
+    {
+      "file": "webkit/root-touch-viewport-food-shop.png",
+      "sha256": "6858dc165b43cd5c8d16651fd2bcae4ea1ed804d346645e27f8b52af12b47170",
+      "bytes": 608880
+    },
+    {
+      "file": "webkit/root-touch-viewport-metro-square.png",
+      "sha256": "9cec60ddde9fe1e7567ab13f89ffabba36425c83c81ed96fa48a21c0f9abf2ca",
+      "bytes": 487725
+    },
+    {
+      "file": "webkit/subpath-desktop-food-shop.png",
+      "sha256": "4e06320fd5d34e214a79347df6d995f23f8c86e891f8a4a52e9ee6b44fa65851",
+      "bytes": 1367266
+    },
+    {
+      "file": "webkit/subpath-desktop-metro-square.png",
+      "sha256": "4971f3a732e016223d8b6d76feb6300f262f802031ca575956dd1069e2ca1ad7",
+      "bytes": 1017359
+    },
+    {
+      "file": "webkit/subpath-desktop-ride.png",
+      "sha256": "c5956aeebe9e1038cfc02753beaa9f08b72b2cc0a845779d24728786d0afbd65",
+      "bytes": 1085387
+    },
+    {
+      "file": "webkit/subpath-touch-viewport-food-shop.png",
+      "sha256": "e1af52eb1f10dd631e36b48e2983fa16e46f11b1fac4784b879de9776920d567",
+      "bytes": 635226
+    },
+    {
+      "file": "webkit/subpath-touch-viewport-metro-square.png",
+      "sha256": "7302ac74b1eeb9efbedb47ea3a06f30247ad0a85c9dc442b04bf5703656a75c5",
+      "bytes": 487618
+    },
+    {
+      "file": "webkit/workshop-native-arrival.png",
+      "sha256": "cfb936d4d501d6b1a5ad2895657cc909ff8f03dca4c83981b6a7a2ff991b1271",
+      "bytes": 1313085
+    }
+  ],
+  "media": [
+    {
+      "file": "firefox/native-network-loop.webm",
+      "sha256": "67c099dc1c988b5159a0ce90cf0cb9a38b1a450a6b9ef2e08d19c2f08f58bc10",
+      "bytes": 28094203,
+      "durationSeconds": 238.68,
+      "speed": 1,
+      "description": "Actual Firefox native network/task/economy/remount flow; starts from disclosed prepared parking/exploration state, not a fresh whole-road run."
+    }
+  ],
+  "recordingLimit": "WebKit failed-flow recording had no finalized duration metadata and was discarded; screenshots and native input/state records remain.",
+  "limitations": [
+    "Physical hardware testing explicitly skipped.",
+    "Firefox touch viewport is has_touch emulation, not mobile Firefox hardware. D-pad sustained holds use real mouse PointerEvents; inventory menu uses native touch tap.",
+    "Original WebKit35secondQtimeout actor state was not captured because the failure audit referenced an already closed outer page. Separate identical post-quest Q fixture passed in about12seconds; original cause remains unknown.",
+    "No sustained mobile or thermal-performance guarantee; shared headless CPU cold stalls are substantial."
+  ]
+}

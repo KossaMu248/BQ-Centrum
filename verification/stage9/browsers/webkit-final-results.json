@@ -1,0 +1,794 @@
+{
+  "engine": "webkit",
+  "checks": [
+    {
+      "name": "root-desktop fresh startup and actual ride input",
+      "passed": true,
+      "data": {
+        "startup": {
+          "beganAt": 151,
+          "ready": true,
+          "requested": true,
+          "readyAt": 1525,
+          "firstFrameAt": 1698,
+          "errors": [],
+          "state": "playing",
+          "x": 315.0701369590628,
+          "speed": 133.83278590131258,
+          "renderScale": 1,
+          "backingWidth": 1160,
+          "backingHeight": 640,
+          "requestedImages": 64,
+          "registeredImages": 733,
+          "readyImages": 63
+        },
+        "metrics": {
+          "writes": [
+            "bq-centrum:scene-network:v1"
+          ],
+          "reads": [
+            "bq-centrum:adventure:v1",
+            "bq-centrum:best-score:v1",
+            "bq-centrum:civilians:v1",
+            "bq-centrum:parking:v1",
+            "bq-centrum:quest:wrong-entrance:v1",
+            "bq-centrum:scene-network:v1"
+          ],
+          "listenerCounts": {
+            "document:fullscreenchange": 1,
+            "window:keydown": 6,
+            "window:pagehide": 3,
+            "window:pointerdown": 2,
+            "window:blur": 5,
+            "document:visibilitychange": 5,
+            "window:keyup": 3,
+            "window:centrum-square-change": 1,
+            "window:pointerup": 2,
+            "window:pointercancel": 1,
+            "window:touchend": 2,
+            "window:touchcancel": 2,
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:touchstart": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1
+          },
+          "loopFrames": 46,
+          "pending": 1,
+          "maxPending": 1,
+          "audioContexts": 1,
+          "frameTimeMs": {
+            "samples": 45,
+            "median": 41,
+            "p95": 92,
+            "maximum": 134
+          }
+        }
+      }
+    },
+    {
+      "name": "root-desktop active alias entry",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Bounded native Q from1300,820 post-quest fixture reaches original bike/remount",
+      "passed": true,
+      "data": {
+        "samples": [
+          {
+            "elapsed": 0.02,
+            "x": 1299.039,
+            "y": 819.8414536696421,
+            "stride": 1.182666237170806,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 0.57,
+            "x": 1220.8670053418277,
+            "y": 817.0302481618706,
+            "stride": 80.34400674550552,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 1.15,
+            "x": 1139.0603090643149,
+            "y": 814.126413293145,
+            "stride": 163.11944221434402,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 1.71,
+            "x": 1067.0111330024547,
+            "y": 811.430768776523,
+            "stride": 236.11585587716067,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 2.23,
+            "x": 988.371681832154,
+            "y": 808.3166462837117,
+            "stride": 315.91273402590093,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 2.77,
+            "x": 939.0571104434149,
+            "y": 806.2599641297046,
+            "stride": 366.0315858989954,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 3.33,
+            "x": 866.0586477667019,
+            "y": 803.04358551553,
+            "stride": 440.35794415737035,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 3.96,
+            "x": 793.5941382797048,
+            "y": 799.6119834044301,
+            "stride": 514.3431743892528,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 4.5,
+            "x": 750.5582768196757,
+            "y": 797.4405027022309,
+            "stride": 558.4026738778203,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 5.13,
+            "x": 695.28584310518,
+            "y": 794.4779062162985,
+            "stride": 615.1567386514944,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 5.73,
+            "x": 640.0981920832066,
+            "y": 791.2875180063887,
+            "stride": 672.0617881356754,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 6.28,
+            "x": 585.0235390086173,
+            "y": 787.8172716739456,
+            "stride": 729.1670807547833,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 6.85,
+            "x": 530.1059624347763,
+            "y": 783.9928731757542,
+            "stride": 786.5488667377651,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 7.4,
+            "x": 469.5138101288385,
+            "y": 779.2026808197662,
+            "stride": 850.6258746386773,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 7.95,
+            "x": 392.37134599582544,
+            "y": 771.7594610138111,
+            "stride": 934.3111291244227,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 8.49,
+            "x": 322.63408295307147,
+            "y": 762.4896603505423,
+            "stride": 1014.9559346291744,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 9.02,
+            "x": 261.32112765859574,
+            "y": 747.2483988958483,
+            "stride": 1106.1063378290348,
+            "returning": {
+              "sceneId": "metro-square",
+              "anchorId": "bicycle-parking",
+              "waypoints": 1
+            },
+            "paused": false,
+            "phase": "exploring"
+          },
+          {
+            "elapsed": 9.59,
+            "x": 257.531432334071,
+            "y": 745.3489323663242,
+            "stride": 1115.1928905788652,
+            "returning": null,
+            "paused": false,
+            "phase": "remount"
+          },
+          {
+            "elapsed": 10.17,
+            "x": 257.531432334071,
+            "y": 745.3489323663242,
+            "stride": 1115.1928905788652,
+            "returning": null,
+            "paused": false,
+            "phase": "remount"
+          },
+          {
+            "elapsed": 10.74,
+            "x": 257.531432334071,
+            "y": 745.3489323663242,
+            "stride": 1115.1928905788652,
+            "returning": null,
+            "paused": false,
+            "phase": "remount"
+          },
+          {
+            "elapsed": 11.3,
+            "x": 257.531432334071,
+            "y": 745.3489323663242,
+            "stride": 1115.1928905788652,
+            "returning": null,
+            "paused": false,
+            "phase": "remount"
+          },
+          {
+            "elapsed": 11.82,
+            "x": 257.531432334071,
+            "y": 745.3489323663242,
+            "stride": 1115.1928905788652,
+            "returning": null,
+            "paused": false,
+            "phase": "remount"
+          }
+        ],
+        "health": 80,
+        "metrics": {
+          "writes": [
+            "bq-centrum:cross-browser-fixture",
+            "bq-centrum:scene-network:v1"
+          ],
+          "reads": [
+            "bq-centrum:cross-browser-fixture",
+            "bq-centrum:scene-network:v1"
+          ],
+          "listenerCounts": {
+            "document:fullscreenchange": 1,
+            "window:keydown": 6,
+            "window:pagehide": 3,
+            "window:pointerdown": 2,
+            "window:blur": 5,
+            "document:visibilitychange": 5,
+            "window:keyup": 3,
+            "window:centrum-square-change": 1,
+            "window:pointerup": 2,
+            "window:pointercancel": 1,
+            "window:touchend": 2,
+            "window:touchcancel": 2,
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:touchstart": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1
+          },
+          "loopFrames": 254,
+          "pending": 1,
+          "maxPending": 1,
+          "audioContexts": 0,
+          "frameTimeMs": {
+            "samples": 253,
+            "median": 45,
+            "p95": 79,
+            "maximum": 371
+          }
+        },
+        "fixtureDisclosure": "Post-quest80HP/food2/20kr prepared through production ledger, same source parking/arrival as the timed first flow. No mid-walk teleport/fast-forward."
+      }
+    },
+    {
+      "name": "Final illustrated side-passage return uses clear1048,586 named arrival",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Final illustrated jamb blocks native movement at its ground footprint",
+      "passed": true,
+      "data": {
+        "x": 993.4030000000005,
+        "y": 563.4600000000002,
+        "hero": {
+          "pose": "walking",
+          "carrier": "front",
+          "integratedCarrier": true,
+          "babyFace": {
+            "mood": "laugh",
+            "source": "assets/baby_pose_laugh.webp",
+            "continuousUpperBody": true,
+            "originalCollar": true,
+            "headOnly": false,
+            "uniformScale": 0.5710830421929589,
+            "angle": -0.13863973713415806,
+            "flip": 1,
+            "alpha": 1,
+            "pivot": [
+              57,
+              103
+            ],
+            "anatomicalWaist": [
+              57,
+              111
+            ],
+            "waist": {
+              "x": 20.28688524590164,
+              "y": -82.37894462710226
+            },
+            "headHeight": 37.12039774254233,
+            "referenceHeadHeight": 61,
+            "sourceRect": [
+              0,
+              0,
+              88,
+              104
+            ],
+            "sourceBounds": [
+              0,
+              0,
+              88,
+              154
+            ],
+            "seamY": 103,
+            "occludeFrom": 97,
+            "seam": {
+              "start": {
+                "x": 14.630850839420411,
+                "y": -81.58973052387232
+              },
+              "end": {
+                "x": 25.94291965238287,
+                "y": -83.1681587303322
+              },
+              "occludeFrom": {
+                "x": 19.813356783963677,
+                "y": -85.772565270991
+              }
+            },
+            "head": [
+              8,
+              14,
+              65,
+              65
+            ],
+            "chin": [
+              {
+                "x": 21.720624200102698,
+                "y": -101.03070460010314
+              },
+              {
+                "x": 19.129371227831065,
+                "y": -98.9392872265438
+              },
+              {
+                "x": 14.683465112969078,
+                "y": -97.74231250331174
+              }
+            ],
+            "neck": [
+              {
+                "x": 10.000794767138105,
+                "y": -98.24214810202403
+              }
+            ],
+            "collar": [
+              {
+                "x": 11.03992666972419,
+                "y": -94.92744886845827
+              },
+              {
+                "x": 17.011646717497392,
+                "y": -93.45424920909572
+              },
+              {
+                "x": 20.970870802034252,
+                "y": -94.00669908135669
+              }
+            ],
+            "pose": "front",
+            "pouch": {
+              "lip": [
+                [
+                  198,
+                  288
+                ],
+                [
+                  226,
+                  293
+                ],
+                [
+                  264,
+                  285
+                ]
+              ],
+              "depth": 32,
+              "seam": [
+                228.5,
+                298.9953751098705
+              ],
+              "origin": [
+                179,
+                500
+              ],
+              "scale": 0.4098360655737705,
+              "bob": 0,
+              "source": "frontBackground",
+              "textureMap": null,
+              "padding": 9.245375109870515
+            }
+          },
+          "height": 200,
+          "source": "front",
+          "sourceRect": [
+            51,
+            13,
+            256,
+            377
+          ],
+          "lowerPose": "far-contact",
+          "lowerSourceRect": [
+            6,
+            122,
+            428,
+            326
+          ],
+          "authoredLowerBody": true,
+          "stature": 488,
+          "landmarks": {
+            "near": {
+              "hip": {
+                "x": -15.620642666235918,
+                "y": -61.53513037251292
+              },
+              "knee": {
+                "x": -10.471563928734389,
+                "y": -32.75069933213298
+              },
+              "cuff": {
+                "x": -13.146617329397305,
+                "y": -20.089798290068007
+              },
+              "heel": {
+                "x": -27.80622967744534,
+                "y": -11.055231207243079
+              },
+              "toe": {
+                "x": 3.5317854026795157,
+                "y": -0.8547679591714844
+              },
+              "sole": {
+                "x": -7.7363065614932305,
+                "y": 8.2038809037651
+              },
+              "renderedFromSource": true,
+              "source": {
+                "image": "bear-far-poses-v18.png",
+                "pose": "far-contact",
+                "hip": [
+                  150,
+                  220
+                ],
+                "knee": [
+                  125,
+                  300
+                ],
+                "cuff": [
+                  100,
+                  340
+                ],
+                "heel": [
+                  30,
+                  350
+                ],
+                "toe": [
+                  150,
+                  420
+                ],
+                "sole": [
+                  85,
+                  423
+                ]
+              },
+              "plannedSole": {
+                "x": -8.986742284599575,
+                "y": 1.805875029300843
+              },
+              "plannedCuff": {
+                "x": -9.168678878155152,
+                "y": -24.435806733123908
+              },
+              "angle": 0.24562127201052597,
+              "stance": false,
+              "kneeFlex": 0.2325920534401707,
+              "contact": {
+                "x": -4.193739924584332,
+                "y": 3.007398673093001
+              },
+              "bootWidth": 32.956344451977564,
+              "rigidShoe": true
+            },
+            "far": {
+              "hip": {
+                "x": 11.883954423340153,
+                "y": -62.36175337427442
+              },
+              "knee": {
+                "x": 4.462392499412776,
+                "y": -39.85855535757202
+              },
+              "cuff": {
+                "x": 7.2511706157720495,
+                "y": -29.304235604800933
+              },
+              "heel": {
+                "x": -3.3887301401522425,
+                "y": -11.608731875321615
+              },
+              "toe": {
+                "x": 38.038218669355956,
+                "y": -12.652320846757108
+              },
+              "sole": {
+                "x": 14.968035313541169,
+                "y": -6.479000853893286
+              },
+              "renderedFromSource": true,
+              "source": {
+                "image": "bear-far-poses-v18.png",
+                "pose": "far-contact",
+                "hip": [
+                  270,
+                  215
+                ],
+                "knee": [
+                  285,
+                  310
+                ],
+                "cuff": [
+                  310,
+                  350
+                ],
+                "heel": [
+                  275,
+                  420
+                ],
+                "toe": [
+                  430,
+                  400
+                ],
+                "sole": [
+                  350,
+                  430
+                ]
+              },
+              "plannedSole": {
+                "x": 16.10010325259527,
+                "y": -6.960967575656183
+              },
+              "plannedCuff": {
+                "x": 10.217882722447763,
+                "y": -30.600382727335663
+              },
+              "angle": -0.02338441273912796,
+              "stance": true,
+              "kneeFlex": 0,
+              "contact": {
+                "x": 8.207731189234886,
+                "y": -6.77637544172355
+              },
+              "bootWidth": 41.44009128376668,
+              "rigidShoe": true
+            }
+          },
+          "gait": {
+            "far": {
+              "x": 0,
+              "y": -3.0878508515596153,
+              "angle": -0.02338441273912796,
+              "shinAngle": -0.10216702884275204,
+              "kneeFlex": 0,
+              "contactOffset": -7.894530451041485,
+              "stance": true,
+              "groundDepth": -3.0878508515596153,
+              "nativeLift": 0
+            },
+            "near": {
+              "x": 0,
+              "y": 3.007398673093001,
+              "angle": 0.24562127201052597,
+              "shinAngle": 0.27836026281057674,
+              "kneeFlex": 0.2325920534401707,
+              "contactOffset": 4.941308600937942,
+              "stance": false,
+              "groundDepth": 4.625321618332486,
+              "nativeLift": -1.6179229452394852
+            },
+            "phase": 0.572854166666658,
+            "cycleLength": 144,
+            "bob": 0.705584472871965,
+            "sway": -0.9009026034501532,
+            "roll": 0.013879258325935971,
+            "pelvisSway": 0.5582209282564095,
+            "pelvisRoll": -0.0055822092825640966,
+            "groundMotion": {
+              "x": 0,
+              "y": -1,
+              "depthScale": 0.23,
+              "cacheKey": "depth:0:-32"
+            },
+            "depthProjected": true
+          },
+          "body": {
+            "pivot": {
+              "x": -2.8688524590163933,
+              "y": -67.62295081967213
+            },
+            "sway": -0.9009026034501532,
+            "bob": -8.27719229430566,
+            "roll": 0.013879258325935971,
+            "pelvisSway": 0.5582209282564095,
+            "pelvisRoll": -0.0055822092825640966,
+            "slope": 0,
+            "opaque": true,
+            "surfaces": 1,
+            "continuous": true,
+            "triangles": 400,
+            "canonicalHeight": 280,
+            "lowerHeight": 190,
+            "cachePhase": 0.572854166666658
+          },
+          "cache": {
+            "frames": 1,
+            "hits": 20,
+            "misses": 47
+          }
+        }
+      }
+    }
+  ],
+  "captures": [
+    {
+      "file": "webkit/last-steps/root-desktop-ride.png",
+      "sha256": "7a1cba58a5a7aaace8a8d2c246ade005a238c965cf0f83dca0850a132e1f1246"
+    },
+    {
+      "file": "webkit/last-steps/final-q-return-remounted.png",
+      "sha256": "94d8e36ae79d6d035190d2610248ab99629c62f3a63a9f9af7f48fb2fefad050"
+    },
+    {
+      "file": "webkit/last-steps/final-passage-jamb-collision.png",
+      "sha256": "5fd3f0bbf4ebe8b970f3ffe3f57a2ac8560c54073e4c324cb378b8317b4f36ce"
+    }
+  ],
+  "suite": "last-steps",
+  "errors": [],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "externalRequests": [],
+  "outsidePrefixRequests": [],
+  "conditions": {
+    "headless": true,
+    "OS": "Linux Debian13",
+    "physicalDevice": false,
+    "fixtureDisclosure": "Production factory prepares only valid parking/scene starting positions and60HP/onefood for the functional flow; walking, quest steps, transactions and remount use actual controls. This is separate from the Chromium fresh native road acceptance.",
+    "touchLimits": "Firefox has no Playwright is_mobile emulation; phone viewport+has_touch are tested. Sustained dpad input uses native mouse pointer holds; touch menus use native tap where supported. No physical Safari/iPhone claim."
+  },
+  "version": "26.5",
+  "passed": true
+}

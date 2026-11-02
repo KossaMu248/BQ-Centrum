@@ -96,12 +96,13 @@ def hold(page, key, ms, touch=False):
 
 
 def move_axis(page, axis, target, touch=False):
-    for _ in range(15):
+    speed=page.evaluate("axis=>axis==='y'?(window.BearlyCentrumDepthGait?.depthSpeed||155):155",axis)
+    for _ in range(24):
         delta = target-sq(page)[axis]
         if abs(delta) <= 8:
             return
         key = ('ArrowRight' if delta>0 else 'ArrowLeft') if axis=='x' else ('ArrowDown' if delta>0 else 'ArrowUp')
-        hold(page, key, min(2400,max(60,abs(delta)/155*1000-80)), touch)
+        hold(page, key, min(2400,max(60,abs(delta)/speed*1000-80)), touch)
     raise AssertionError(('blocked walking waypoint', axis, target, sq(page)))
 
 

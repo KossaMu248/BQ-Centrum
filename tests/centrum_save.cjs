@@ -98,4 +98,10 @@ const realScenes=realWindow.BearlyCentrumScenes,realSave=api.create(null,realSce
 for(const s of realScenes.all())for(const [entranceId,anchor]of Object.entries(s.anchors)){
  assert.ok(realSave.validPosition({sceneId:s.id,entranceId,...anchor}),`unsafe real entrance ${s.id}.${entranceId}`);
 }
+const oldPassageArrival={sceneId:'shopping-arcade',entranceId:'from-courtyard',x:985,y:550,face:-1};
+assert.equal(realSave.validPosition(oldPassageArrival),false,'old painted-jamb position is now rejected');
+const passageRecovery=api.create(memory({...good,position:oldPassageArrival}),realScenes);
+assert.deepEqual(serialize(passageRecovery.loadPosition()),{sceneId:'metro-square',entranceId:'start',x:260,y:540,face:1},'an old jamb save uses the existing safe fallback');
+assert.equal(passageRecovery.snapshot().inventory.billys,3,'geometry repair preserves saved supplies');
+assert.equal(passageRecovery.snapshot().gateOpened,true,'geometry repair preserves shortcut progress');
 console.log('PASS: namespaced scene persistence, gate/discovery/inventory continuity, safe named fallback, schema/layout/position validation and denied storage.');

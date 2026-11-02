@@ -1,0 +1,8 @@
+{
+  "capturedBeforeIntegration": true,
+  "files": {
+    "js/centrum-square.js": "a88c4de9fe60d2daad2a00baae9598a6b2227964f4365ae252075c7080cf969c",
+    "js/hero-rig.js": "6464f9c8e9d267a01cb7437b64ccab1ac8485d0e65a6c805249b4189d1cdf56c"
+  },
+  "scope": "The first movement samples and walking clip use the already loaded native runtime. Subsequent overview contexts may load the integrated stage9 runtime; do not use those as an old-renderer image baseline."
+}

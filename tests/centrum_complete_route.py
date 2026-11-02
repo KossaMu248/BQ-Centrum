@@ -70,12 +70,22 @@ def road_to_stop(page,result):
       else:raise AssertionError('Road sample budget exhausted')
     finally:controls(set())
     result['roadSamples']=samples
-    # Braking changes into reverse on the next source physics step. A sampled
-    # release can straddle a frame, so coast normally inside the stop radius.
-    for _ in range(100):
+    # Source braking can become reverse between sampled frames. Settle with
+    # ordinary controls and short feedback instead of coasting backwards out
+    # of the marked stop during a slow/shared-CPU browser run.
+    stable=0
+    for _ in range(240):
         r=ride_audit(page)
-        if abs(r['speed'])<7:break
-        page.wait_for_timeout(100)
+        if 11265<=r['x']<=11385 and abs(r['speed'])<7:
+            controls(set());stable+=1
+            if stable>=3:break
+        else:
+            stable=0
+            if r['speed']>7:controls({'ArrowDown'})
+            elif r['speed']<-7:controls({'ArrowUp'})
+            else:controls({'ArrowUp'} if r['x']<11325 else {'ArrowDown'})
+        page.wait_for_timeout(25)
+    controls(set())
     r=ride_audit(page)
     assert r['x']>=11235 and r['x']<=11415 and abs(r['speed'])<8 and r['babyMounted'],r
     assert r['health']>0,r

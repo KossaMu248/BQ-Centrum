@@ -18,11 +18,12 @@
     'shopping-arcade':{
       id:'shopping-arcade',label:'Shopping Arcade',kind:'outdoor',landmark:'Covered arcade and its visible service side passage',width:1160,height:800,
       floor:{left:60,right:1100,top:320,bottom:750},defaultEntrance:'from-square',
-      anchors:{'from-square':anchor(165,650),'from-courtyard':anchor(985,550,-1),'from-food-shop':anchor(235,440),'from-workshop':anchor(760,440,-1)},
+      anchors:{'from-square':anchor(165,650),'from-courtyard':anchor(1048,586,-1),'from-food-shop':anchor(235,440),'from-workshop':anchor(760,440,-1)},
       buildings:[rect('food-front','building',70,0,430,350,{key:'corner-shop',doorX:235,label:"BILLY’S · MATBUTIK"}),rect('workshop-front','building',550,0,430,350,{key:'workshop',doorX:760,label:'CYKELVERKSTAD'})],
       furniture:[rect('arcade-planter','planter',490,650,100,35,{anchorX:540,artWidth:120})],
+      extraSolids:[rect('service-passage-jamb','post',979,537,35,13)],
       exits:[exit('to-square','Back to Metro Square',105,650,'metro-square','from-arcade'),exit('courtyard-passage','Side passage to service courtyard',1060,550,'service-courtyard','from-arcade'),exit('food-door',"Enter Billy’s food shop",235,382,'food-shop','from-arcade'),exit('workshop-door','Enter bicycle workshop',760,382,'bicycle-workshop','from-arcade')],
-      interactions:[],occlusionLayers:[{id:'facades',type:'foot-sorted'},{id:'planter',type:'foot-sorted'},{id:'awning',type:'background'}],
+      interactions:[],occlusionLayers:[{id:'facades',type:'foot-sorted'},{id:'planter',type:'foot-sorted'},{id:'service-passage-jamb',type:'foot-sorted'},{id:'awning',type:'background'}],
     },
     'service-courtyard':{
       id:'service-courtyard',label:'Service Courtyard',kind:'outdoor',landmark:'Utility courtyard and the latch on the square gate',width:1160,height:800,

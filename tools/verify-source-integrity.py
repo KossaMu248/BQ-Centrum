@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 HASHES = json.loads((ROOT / 'references/source/donor-files.sha256.json').read_text())
 INTENTIONAL = {
     'README.md', 'autumn-version.json', 'index.html', 'autumn-v19.html',
-    'js/game.js', 'js/autumn-quests.js', 'js/illustrated-visits.js',
+    'js/game.js', 'js/autumn-quests.js', 'js/illustrated-visits.js', 'js/hero-rig.js',
 }
 
 
@@ -39,6 +39,8 @@ def replace_reviewed(text, added, original='', count=1):
 def restore_donor(path):
     text = (ROOT / path).read_text()
     if path.endswith('.html'):
+        text = replace_reviewed(text, '<script src="js/centrum-depth-gait.js?edition=centrum-stage9"></script>\n')
+        text = replace_reviewed(text, '<script src="js/centrum-scenery.js?edition=centrum-stage9"></script>\n')
         text = replace_reviewed(text, '<link rel="icon" href="data:,"/>\n')
         text = replace_reviewed(text, '<script src="js/centrum-atmosphere.js?edition=centrum-stage7"></script>\n')
         text = replace_reviewed(text, '<link rel="stylesheet" href="css/centrum-square.css?edition=centrum-stage7"/>\n')
@@ -53,8 +55,21 @@ def restore_donor(path):
         text = text.replace('<link rel="stylesheet" href="css/centrum-story.css?edition=centrum-stage5"/>\n', '')
         text = text.replace('          <h3>BQ-Centrum prototype</h3>\n          <div class="dbg-actions"><button id="centrumSquareBtn" type="button">CENTRUM PARKING STOP · DEBUG SHORTCUT</button></div>\n          <p class="dbg-help">Places connect from the marked cycling stop. Stop and press E to park; M opens the discovered map on foot.</p>\n', '')
         for name in ['centrum-square-world', 'centrum-square', 'centrum-scenes', 'centrum-save', 'centrum-parking-save', 'centrum-link', 'wrong-entrance-quest', 'centrum-civilians', 'centrum-story']:
-            for stage in [2, 3, 4, 5, 7]:
+            for stage in [2, 3, 4, 5, 7, 9]:
                 text = text.replace(f'<script src="js/{name}.js?edition=centrum-stage{stage}"></script>\n', '')
+    if path.endswith('.html'):
+        for name in ['hero-rig', 'game']:
+            text = replace_reviewed(text, f'js/{name}.js?edition=centrum-stage9', f'js/{name}.js?edition=autumn-v19')
+    if path == 'js/hero-rig.js':
+        # Optional ground projection is used only by the independent square.
+        # Default source calls, source locomotion, torso and baby pixels remain
+        # intact. Reverse each complete, exact edit before the donor-file hash.
+        text = replace_reviewed(text, '  function projectGroundGait(gait,motion){return window.BearlyCentrumDepthGait?.project(gait,motion)||gait;}\n')
+        text = replace_reviewed(text, 'function bodyFrame(profile,name,distance,h,weight,groundMotion=null)', 'function bodyFrame(profile,name,distance,h,weight)')
+        text = replace_reviewed(text, "+(groundMotion?.y?':'+groundMotion.cacheKey:'')")
+        text = replace_reviewed(text, 'projectGroundGait(window.BearlyLocomotion.pose(window.BearlyLocomotion.cycleLength(BODY_HEIGHT)*effectivePhase,BODY_HEIGHT,weight),groundMotion)', 'window.BearlyLocomotion.pose(window.BearlyLocomotion.cycleLength(BODY_HEIGHT)*effectivePhase,BODY_HEIGHT,weight)')
+        text = replace_reviewed(text, 'bodyFrame(profile,name,options.distance||0,h,weight,options.groundMotion)', 'bodyFrame(profile,name,options.distance||0,h,weight)')
+        text = replace_reviewed(text, 'projectGroundGait(window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,weight),frame.gait.groundMotion||options.groundMotion)', 'window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,weight)')
     if path == 'js/game.js':
         text = replace_reviewed(text, 'if(startup.requested&&!window.BearlyCentrumLink?.holding()&&!window.BearlyCentrumEconomy?.ready())enterReadyRide();', 'if(startup.requested&&!window.BearlyCentrumLink?.holding())enterReadyRide();')
         # Stage 6 changes the pickup destination and adds narrow ledger/action
@@ -115,7 +130,7 @@ def restore_donor(path):
         text = text.replace('    if(window.BearlyCentrumLink?.holding()){e.preventDefault();return;}\n', '')
         text = text.replace('if(debugOpen||window.BearlyCentrumLink?.holding())return;', 'if(debugOpen)return;')
         text = text.replace('&&!window.BearlyCentrumLink?.holding()', '')
-        text = text.replace("window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE7';",
+        text = text.replace("window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE9';",
                             "window.BEARLY_BUILD_ID='AUTUMN_RIDE_ART_V19';")
         text = text.replace('bq-centrum:best-score:v1', 'bearBestAutumn')
         text = text.replace('    window.BearlyCentrumSquare?.close();\n', '')
@@ -170,6 +185,6 @@ assert not failures, '\n'.join(failures)
 assert (ROOT / 'index.html').read_bytes() == (ROOT / 'autumn-v19.html').read_bytes()
 manifest = json.loads((ROOT / 'autumn-version.json').read_text())
 assert manifest['source']['commit'] == 'da109213fdf24947c2ac0b85de900214cc72e44f'
-assert manifest['edition'] == 'BQ_CENTRUM_STAGE7'
+assert manifest['edition'] == 'BQ_CENTRUM_STAGE9'
 print(f'PASS: {len(HASHES)} pinned original files verified; all source assets/CSS and original protected code match;')
-print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action and state-restore additions differ.')
+print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional shallow-foot projection additions differ.')

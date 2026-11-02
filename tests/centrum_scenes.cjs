@@ -21,6 +21,9 @@ for(const scene of scenes.all()){
 }
 assert.equal(world.approach('metro-square',500,650,{x:500,y:520,radius:160}),false,'west bench interrupts approach segment');
 assert.equal(world.move(500,650,0,-180,'metro-square').y>=592,true,'sweep stops at bench including body radius');
+assert.equal(world.move(996,610,0,-100,'shopping-arcade').y>=562,true,'painted passage jamb has a grounded solid footprint');
+assert.ok(world.move(1060,610,0,-100,'shopping-arcade').y<530,'the passage opening remains clear');
+assert.deepEqual(JSON.parse(JSON.stringify(scenes.get('shopping-arcade').anchors['from-courtyard'])),{x:1048,y:586,face:-1},'named return lands on the clear approach');
 for(const [id,x,y,leftX] of [['metro-square',1360,820,1300],['service-courtyard',1025,650,965]]){
   const closed=world.move(x,y,0,-80,id,{gateOpened:false});
   const opened=world.move(x,y,0,-80,id,{gateOpened:true});

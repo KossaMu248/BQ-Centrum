@@ -174,12 +174,15 @@
       if(!s.cargoMoved&&crate){const p=motion.progress;list.push({id:'story-moving-commercial-parcel',footY:575+p*20,draw:c=>{c.save();c.translate(p*200,p*20);crate.draw(c);c.restore();label(c,'CARETAKER · B-04 TO FOOD SHOP',785+p*200,495+p*20);}});}
     }
     list.push({id:'story-delivery-cage',footY:575,draw:c=>{
-      c.save();c.strokeStyle='#415047';c.lineWidth=3;c.strokeRect(720,466,130,110);
-      if(!s.cargoMoved&&s.state!=='delivery_confirmed')for(let x=735;x<850;x+=19){c.beginPath();c.moveTo(x,466);c.lineTo(x,575);c.stroke();}
-      // Source crates are finished artwork; a matching delivery-cage asset is
-      // absent, so the functional bar overlay remains explicitly provisional.
-      c.fillStyle='#284635e6';c.fillRect(722,558,126,16);c.fillStyle='#fff1cc';c.font='9px Arial';c.textAlign='center';c.fillText('DEV · DELIVERY CAGE',785,569);
-      c.restore();label(c,s.cargoMoved?'B-04 · RELEASED TO FOOD SHOP':'B-04 · FOOD SHOP · DOOR 7',785,454);
+      const opened=s.cargoMoved||s.state==='delivery_confirmed';
+      const cageDrawn=window.BearlyCentrumScenery?.drawCage(c,785,575,opened)===true;
+      if(!cageDrawn){
+        c.save();c.strokeStyle='#415047';c.lineWidth=3;c.strokeRect(720,466,130,110);
+        if(!opened)for(let x=735;x<850;x+=19){c.beginPath();c.moveTo(x,466);c.lineTo(x,575);c.stroke();}
+        // The fallback stays explicitly provisional until matched art is reviewed.
+        c.fillStyle='#284635e6';c.fillRect(722,558,126,16);c.fillStyle='#fff1cc';c.font='9px Arial';c.textAlign='center';c.fillText('DEV · DELIVERY CAGE',785,569);c.restore();
+      }
+      label(c,s.cargoMoved?'B-04 · RELEASED TO FOOD SHOP':'B-04 · FOOD SHOP · DOOR 7',785,454);
       if(s.cargoMoved)label(c,'CARETAKER: MOVED AND SIGNED FOR',785,545);
     }});
     return list;

@@ -21,7 +21,7 @@ from urllib.parse import urlparse
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'verification/stage8/standalone'
+OUT=ROOT/'verification/stage9/standalone'
 WORK=OUT/'work'
 SCENES=['metro-square','shopping-arcade','service-courtyard','food-shop','bicycle-workshop']
 KEY='bq-centrum:scene-network:v1'
@@ -180,9 +180,13 @@ def main():
               a=page.evaluate('BearlyCentrumSquare.audit()');assert a['sceneId']==scene_id and a['height']==200 and a['health']==73,a
               assert a['hero']['babyFace']['continuousUpperBody'] and a['hero']['babyFace']['originalCollar'] and not a['hero']['babyFace']['headOnly']
               assert page.evaluate('BearlyCentrumLink.audit().ownership.bicycles')==1
+              scenery=page.evaluate('window.BearlyCentrumScenery?.audit()||null')
+              assert scenery and not scenery['errors'] and scenery['loops']==0,scenery
+              required={'metro-square':['gate'],'shopping-arcade':['passage'],'service-courtyard':['gate','cage']}.get(scene_id,[])
+              for kind in required:assert scenery['files'][kind]['ready'],(scene_id,kind,scenery)
               sample=metrics(page);assert sample['maxPending']<=1 and sample['loopFrames']>5
               assert all(k.startswith('bq-centrum:') for k in sample['reads']+sample['writes']),sample
-              result['checks'].append({'name':label+' '+scene_id+' scene load','passed':True,'health':a['health'],'hero':a['hero'],'metrics':sample})
+              result['checks'].append({'name':label+' '+scene_id+' scene load','passed':True,'health':a['health'],'hero':a['hero'],'scenery':scenery,'metrics':sample})
               if scene_id in ['metro-square','food-shop']:page.screenshot(path=str(OUT/(label+'-'+scene_id+'.png')))
               context.close()
             # Active alias entry is tested separately without borrowed browser state.
