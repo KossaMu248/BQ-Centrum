@@ -21,7 +21,7 @@ from urllib.parse import urlparse
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'verification/stage10/standalone'
+OUT=ROOT/'verification/stage11/standalone'
 WORK=OUT/'work'
 SCENES=['metro-square','shopping-arcade','service-courtyard','food-shop','bicycle-workshop']
 KEY='bq-centrum:scene-network:v1'
@@ -72,29 +72,33 @@ def ready(page):
 
 def inventory_layout(page):
     return page.evaluate(r'''()=>{
-      const audit=BearlyCentrumInventory.audit(),hud=document.querySelector('.centrum-inventory-hud'),button=document.querySelector('#inventoryOpenBtn'),canvas=document.querySelector('#game'),fit=getComputedStyle(canvas);
-      const box=button.getBoundingClientRect(),hit=document.elementFromPoint(box.x+box.width/2,box.y+box.height/2);
+      const audit=BearlyCentrumInventory.audit(),hud=document.querySelector('.centrum-health-hud'),canvas=document.querySelector('#game'),fit=getComputedStyle(canvas),wallet=document.querySelector('.inventory-wallet');
       return{layout:audit.layout,health:audit.health,food:audit.food,wallet:audit.wallet,quest:BearlyQuests.wrongEntrance.snapshot(),rewardClaims:BearlyCentrumSave.adventure.snapshot().rewardClaims,browsing:audit.browsing,canvasFit:{objectFit:fit.objectFit,objectPosition:fit.objectPosition,rectangle:canvas.getBoundingClientRect().toJSON()},
         sceneDock:hud.hasAttribute('data-scene-dock'),scenePanel:document.querySelector('.centrum-inventory-panel').hasAttribute('data-scene-float'),sceneEating:document.querySelector('.inventory-eating').hasAttribute('data-scene-float'),
-        bagButton:{visible:!hud.hidden&&box.width>0&&box.height>0&&box.left>=0&&box.top>=0&&box.right<=innerWidth+.1&&box.bottom<=innerHeight+.1,
-          receivesPointer:!!hit&&(hit===button||button.contains(hit)),rectangle:box.toJSON()}};
+        healthRowVisible:!hud.hidden,heartCount:hud.querySelectorAll('.foot-heart').length,oldBagButtons:document.querySelectorAll('#inventoryOpenBtn').length,walletVisible:!!wallet.getBoundingClientRect().width&&!!wallet.getBoundingClientRect().height};
     }''')
+
+
+def open_bag(page,touch):
+    if touch:
+        mode=page.evaluate('BearlyCentrumEconomy.context().mode')
+        gear='.square-settings' if mode=='centrum' else '.area-settings' if mode=='source-foot' else '.ride-settings'
+        page.locator(gear).tap();page.locator('#debugPanel').wait_for(state='visible');page.locator('#inventoryMenuBtn').tap()
+    else:page.keyboard.press('i')
+    page.wait_for_function('BearlyCentrumInventory.isBrowsing()&&!BEARLY_DEBUG_MENU.isOpen()')
 
 
 def verify_scene_bag(page,touch):
     arrival=page.evaluate('BearlyCentrumStory.audit().dialogue')
     if arrival['open']:
         # Fresh food-shop arrival intentionally opens the baby's discovery
-        # exchange. The bag must refuse browsing until that exchange is closed.
+        # exchange. I must refuse browsing until that exchange is closed.
         assert arrival['target']=='discovery',arrival
-        blocked=inventory_layout(page)
-        button=page.locator('#inventoryOpenBtn')
-        button.tap() if touch else button.click()
+        blocked=inventory_layout(page);page.keyboard.press('i')
         assert not page.evaluate('BearlyCentrumInventory.isBrowsing()')
         message=page.locator('.inventory-feedback').inner_text()
         assert message=='Finish the current interaction before opening the bag.',message
-        close=page.locator('[data-dialogue-close]')
-        close.tap() if touch else close.click()
+        close=page.locator('[data-dialogue-close]');close.tap() if touch else close.click()
         page.wait_for_function('!BearlyCentrumStory.blocking()')
         cleared=inventory_layout(page)
         for key in ['health','food','wallet','quest','rewardClaims']:assert cleared[key]==blocked[key],(key,blocked,cleared)
@@ -102,21 +106,36 @@ def verify_scene_bag(page,touch):
     else:arrival=None
     before=inventory_layout(page)
     assert before['layout'] and before['layout']['clear'] and before['sceneDock'],before
-    assert before['bagButton']['visible'] and before['bagButton']['receivesPointer'],before
+    assert before['heartCount']==5 and before['oldBagButtons']==0 and not before['walletVisible'],before
     if touch:assert before['canvasFit']['objectFit']=='cover',before
-    button=page.locator('#inventoryOpenBtn')
-    button.tap() if touch else button.click()
-    page.wait_for_function('BearlyCentrumInventory.isBrowsing()')
-    opened=inventory_layout(page)
+    open_bag(page,touch);opened=inventory_layout(page)
     for key in ['health','food','wallet','quest','rewardClaims']:assert opened[key]==before[key],(key,before,opened)
-    assert opened['layout'] and opened['layout']['clear'],opened
-    close=page.locator('#inventoryCloseBtn')
-    close.tap() if touch else close.click()
-    page.wait_for_function('!BearlyCentrumInventory.isBrowsing()')
-    closed=inventory_layout(page)
+    assert opened['layout'] and opened['layout']['clear'] and opened['walletVisible'],opened
+    close=page.locator('#inventoryCloseBtn');close.tap() if touch else close.click()
+    page.wait_for_function('!BearlyCentrumInventory.isBrowsing()');closed=inventory_layout(page)
     for key in ['health','food','wallet','quest','rewardClaims']:assert closed[key]==before[key],(key,before,closed)
-    assert closed['layout'] and closed['layout']['clear'],closed
+    assert closed['layout'] and closed['layout']['clear'] and not closed['walletVisible'],closed
     return{'arrivalDialogue':arrival,'before':before,'opened':opened,'closed':closed,'nativeOpenClose':True,'healthUnchanged':True,'foodUnchanged':True,'questAndRewardsUnchanged':True}
+
+
+def verify_square_walk(page,touch):
+    samples=[]
+    for key,direction,axis,sign in [('ArrowRight','right','x',1),('ArrowLeft','left','x',-1),('ArrowUp','up','y',-1),('ArrowDown','down','y',1)]:
+        before=page.evaluate('BearlyCentrumSquare.audit()')
+        if touch:
+            button=page.locator('[data-square-dir="'+direction+'"]');box=button.bounding_box();assert box
+            session=page.context.new_cdp_session(page)
+            session.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[{'x':box['x']+box['width']/2,'y':box['y']+box['height']/2}]})
+        else:page.keyboard.down(key)
+        page.wait_for_timeout(450);moving=page.evaluate('BearlyCentrumSquare.audit()')
+        if touch:session.send('Input.dispatchTouchEvent',{'type':'touchEnd','touchPoints':[]});session.detach()
+        else:page.keyboard.up(key)
+        assert (moving[axis]-before[axis])*sign>4,(direction,before,moving)
+        hero=moving['hero'];assert hero['height']==200 and hero['integratedCarrier'] and hero['babyFace']['continuousUpperBody'] and hero['babyFace']['originalCollar']
+        assert moving['health']==73 and page.evaluate('BearlyCentrumLink.audit().ownership.bicycles')==1
+        samples.append({'direction':direction,'nativeInput':'touch hold' if touch else 'keyboard hold','position':{k:moving[k] for k in ['x','y','face','weight','groundMotion']},'hero':hero,'raster':page.evaluate('BearlyHeroRig.centrumCacheStats()')})
+        page.wait_for_timeout(180)
+    return samples
 
 
 def fixture(page,scene_id):
@@ -221,7 +240,8 @@ def main():
             page.keyboard.down('ArrowDown');page.wait_for_timeout(500);page.keyboard.up('ArrowDown');page.wait_for_timeout(700)
             riding_layout=inventory_layout(page)
             assert riding_layout['layout'] is None and not any(riding_layout[k] for k in ['sceneDock','scenePanel','sceneEating']),riding_layout
-            assert riding_layout['bagButton']['visible'] and riding_layout['bagButton']['receivesPointer'],riding_layout
+            assert riding_layout['heartCount']==5 and riding_layout['oldBagButtons']==0 and not riding_layout['walletVisible'],riding_layout
+            open_bag(page,touch);page.keyboard.press('i');assert not page.evaluate('BearlyCentrumInventory.isBrowsing()')
             templates={scene_id:fixture(page,scene_id) for scene_id in SCENES}
             sample=metrics(page);assert sample['maxPending']<=1 and sample['loopFrames']>10,sample
             assert all(k.startswith('bq-centrum:') for k in sample['reads']+sample['writes']),sample
@@ -238,9 +258,10 @@ def main():
               required={'metro-square':['gate'],'shopping-arcade':['passage'],'service-courtyard':['gate','cage']}.get(scene_id,[])
               for kind in required:assert scenery['files'][kind]['ready'],(scene_id,kind,scenery)
               bag=verify_scene_bag(page,touch)
+              walking=verify_square_walk(page,touch) if scene_id=='metro-square' else None
               sample=metrics(page);assert sample['maxPending']<=1 and sample['loopFrames']>5
               assert all(k.startswith('bq-centrum:') for k in sample['reads']+sample['writes']),sample
-              result['checks'].append({'name':label+' '+scene_id+' scene load and native bag interaction','passed':True,'health':a['health'],'hero':a['hero'],'scenery':scenery,'inventory':bag,'metrics':sample})
+              result['checks'].append({'name':label+' '+scene_id+' scene load and native bag interaction','passed':True,'health':a['health'],'hero':a['hero'],'scenery':scenery,'inventory':bag,'walking':walking,'metrics':sample})
               if scene_id in ['metro-square','food-shop']:page.screenshot(path=str(OUT/(label+'-'+scene_id+'.png')))
               context.close()
             # Active alias entry is tested separately without borrowed browser state.

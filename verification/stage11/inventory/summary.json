@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "reports": [
+    "results.json",
+    "presentation-results.json"
+  ],
+  "actualScreenshots": 27,
+  "groups": 9,
+  "errors": 0,
+  "httpFailures": 0,
+  "contexts": [
+    "riding",
+    "source-foot",
+    "centrum"
+  ],
+  "inputs": [
+    "I/repeat/close",
+    "Settings\u2192Bag",
+    "I from Settings",
+    "paused I",
+    "live Eat/cancel/complete",
+    "map/dialogue guard"
+  ],
+  "finalUiAndEntryHashes": {
+    "js/centrum-inventory.js": "b57ee93a98de53d86d567518cae65be5703dcd575a6117f4ffa610904cfd8903",
+    "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+    "index.html": "0245e50f80396361d4c22976ee025316ef91960207cc72ef2bdbb97adbf4a22d",
+    "autumn-v19.html": "0245e50f80396361d4c22976ee025316ef91960207cc72ef2bdbb97adbf4a22d"
+  },
+  "completeRunEntryHashTiming": "Initial HTML hashes precede root edition/load metadata edits during setup; every captured view actually reports Stage11. Inventory JS/CSS hashes stayed current throughout. Final presentation report records final entry hashes.",
+  "conditions": {
+    "browser": "154.0.8037.57",
+    "os": "Linux",
+    "desktop": [
+      1280,
+      720
+    ],
+    "touchEmulation": [
+      844,
+      390
+    ],
+    "physicalDeviceTesting": false
+  },
+  "scope": "Inventory access/presentation only; deliberate save and secondary prototype-entry fixtures are disclosed. No economy/save/art/physics implementation changes."
+}

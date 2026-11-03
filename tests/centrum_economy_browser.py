@@ -164,7 +164,12 @@ def counter_action(page, action):
 def open_bag(page,touch=False):
     close_dialogue(page)
     if not ui(page)['browsing']:
-        page.locator('#inventoryOpenBtn').tap() if touch else page.keyboard.press('i')
+        if touch:
+            mode=page.evaluate('BearlyCentrumEconomy.context().mode')
+            gear='.square-settings' if mode=='centrum' else '.area-settings' if mode=='source-foot' else '.ride-settings'
+            page.locator(gear).tap();page.locator('#debugPanel').wait_for(state='visible');page.locator('#inventoryMenuBtn').tap()
+        else:page.keyboard.press('i')
+    page.wait_for_function('BearlyCentrumInventory.isBrowsing()&&!BEARLY_DEBUG_MENU.isOpen()')
     page.locator('.centrum-inventory-panel').wait_for(state='visible')
     assert ui(page)['browsing']
 

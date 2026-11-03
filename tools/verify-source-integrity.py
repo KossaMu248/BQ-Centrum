@@ -1,7 +1,7 @@
 """Verify protected source files, reversing explicit reviewed integration additions.
 
 The saved donor manifest is local provenance; this tool never reads a donor checkout.
-Added bridge/transfer/restore blocks are themselves pinned below, then removed.
+Added bridge/transfer/restore blocks and reviewed rig inverse hunks are SHA-pinned, then removed.
 The complete reconstructed original files must still match their donor hashes.
 """
 import hashlib
@@ -36,8 +36,30 @@ def replace_reviewed(text, added, original='', count=1):
     return text.replace(added, original)
 
 
+def reverse_stage11_rig(text):
+    """Reverse exact SHA-pinned context hunks before older donor reconstruction."""
+    path = ROOT / 'references/source/stage11-hero-integration.json'
+    raw = path.read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == '6ed48030cf3e2862d7a0412fdc47de260b248daf9a41718a2cecb72a0370333f', 'Changed Stage11 rig inverse manifest'
+    spec = json.loads(raw)
+    assert spec['path'] == 'js/hero-rig.js' and spec['previousProjectCommit'] == '69ab19a79736eddb47a2988bb71787c538545cbc'
+    for edit in reversed(spec['changes']):
+        text = replace_reviewed(text, edit['current'], edit['previous'])
+    assert hashlib.sha256(text.encode()).hexdigest() == '12c96e458c66854b10f1a6ed50fdd7b09791cff8c20733f31c584e43aa2932a8', 'Unexpected rig edits beyond reviewed Stage11 integration'
+    return text
+
+
 def restore_donor(path):
     text = (ROOT / path).read_text()
+    if path.endswith('.html'):
+        # Stage 11 changes only the project menu/status markup and script editions.
+        for resource, previous in [('css/centrum-inventory.css', 10), ('js/centrum-inventory.js', 10),
+                                   ('js/centrum-square.js', 10), ('js/game.js', 10),
+                                   ('js/centrum-depth-gait.js', 9), ('js/hero-rig.js', 9)]:
+            text = replace_reviewed(text, f'{resource}?edition=centrum-stage11', f'{resource}?edition=centrum-stage{previous}')
+        text = replace_reviewed(text, '<script src="js/centrum-hero-cache.js?edition=centrum-stage11"></script>\n')
+        text = replace_reviewed(text, '<button id="inventoryMenuBtn" class="dbg-x" type="button" aria-haspopup="dialog" aria-controls="centrumInventoryPanel">BAG · I</button>')
+        text = replace_reviewed(text, '<span hidden>🍕 PIZZA <b id="starsCount">', '<span>🍕 PIZZA <b id="starsCount">')
     if path.endswith('.html'):
         text = replace_reviewed(text, 'css/centrum-square.css?edition=centrum-stage10', 'css/centrum-square.css?edition=centrum-stage7')
         for resource in ['css/centrum-inventory.css', 'js/centrum-inventory.js']:
@@ -64,6 +86,7 @@ def restore_donor(path):
         for name, stage in [('hero-rig', 9), ('game', 10)]:
             text = replace_reviewed(text, f'js/{name}.js?edition=centrum-stage{stage}', f'js/{name}.js?edition=autumn-v19')
     if path == 'js/hero-rig.js':
+        text = reverse_stage11_rig(text)
         # Optional ground projection is used only by the independent square.
         # Default source calls, source locomotion, torso and baby pixels remain
         # intact. Reverse each complete, exact edit before the donor-file hash.
@@ -74,6 +97,7 @@ def restore_donor(path):
         text = replace_reviewed(text, 'bodyFrame(profile,name,options.distance||0,h,weight,options.groundMotion)', 'bodyFrame(profile,name,options.distance||0,h,weight)')
         text = replace_reviewed(text, 'projectGroundGait(window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,weight),frame.gait.groundMotion||options.groundMotion)', 'window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,weight)')
     if path == 'js/game.js':
+        text = replace_reviewed(text, "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE11';", "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE10';")
         text = replace_reviewed(text, 'if(startup.requested&&!window.BearlyCentrumLink?.holding()&&!window.BearlyCentrumEconomy?.ready())enterReadyRide();', 'if(startup.requested&&!window.BearlyCentrumLink?.holding())enterReadyRide();')
         # Stage 6 changes the pickup destination and adds narrow ledger/action
         # hooks. All other source physics, damage and renderer code is hashed.
@@ -188,6 +212,6 @@ assert not failures, '\n'.join(failures)
 assert (ROOT / 'index.html').read_bytes() == (ROOT / 'autumn-v19.html').read_bytes()
 manifest = json.loads((ROOT / 'autumn-version.json').read_text())
 assert manifest['source']['commit'] == 'da109213fdf24947c2ac0b85de900214cc72e44f'
-assert manifest['edition'] == 'BQ_CENTRUM_STAGE10'
+assert manifest['edition'] == 'BQ_CENTRUM_STAGE11'
 print(f'PASS: {len(HASHES)} pinned original files verified; all source assets/CSS and original protected code match;')
-print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional shallow-foot projection additions differ.')
+print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional Centrum walking/worker additions differ.')

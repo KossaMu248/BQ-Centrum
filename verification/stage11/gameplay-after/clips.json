@@ -1,0 +1,32 @@
+[
+  {
+    "file": "walking-after.webm",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "28.500000"
+    }
+  },
+  {
+    "file": "walking-after-phone.webm",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 844,
+        "height": 390,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "25.709000"
+    }
+  }
+]

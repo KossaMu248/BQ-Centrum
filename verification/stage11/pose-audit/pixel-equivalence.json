@@ -1,0 +1,2577 @@
+{
+  "disclosure": "Paused offscreen backend raster comparison AFTER all actual gameplay screenshots/video; not gameplay, physical-device or FPS evidence. Phone Chromium context, offscreen320x300/logical200.",
+  "conditions": {
+    "browser": "154.0.8037.57",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "build": "BQ_CENTRUM_STAGE11",
+    "depthScale": 0.3,
+    "depthSpeed": 52,
+    "walkSpeed": 130,
+    "strideScale": 0.7,
+    "device": "Linux headless Chromium CDP-touch phone emulation; not physical iPhone/Safari"
+  },
+  "runtimeHashesAtStart": {
+    "index.html": "0245e50f80396361d4c22976ee025316ef91960207cc72ef2bdbb97adbf4a22d",
+    "js/hero-rig.js": "f5fb15663af2dc871962aa5e0d834876bc3d5c2ad2069b134ca2c534f6e2b1fb",
+    "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+    "js/centrum-square.js": "dedd5c1ee31312dcde4dd96cbf15814aa35b3b9e7d0a039d21f53224ce36f4ca",
+    "js/centrum-hero-cache.js": "8e292fa343074be831a0d04bb2198e528c3168c254972ee24be18031347d3706"
+  },
+  "comparison": {
+    "width": 320,
+    "height": 300,
+    "heightLogical": 200,
+    "comparisonPolicy": {
+      "rawRgbaEquality": "reported, not assumed across DOMCanvas and OffscreenCanvas bitmap paths",
+      "visible": "8-bit premultiplied RGB plus alpha, and source-over black/white/autumn-floor mattes",
+      "maxChannelTolerance": 2,
+      "toleranceReason": "at most two 8-bit quantization steps for source tile bitmap transfer and raster snapshot; transparent RGB is not visible",
+      "scope": "backend raster equivalence only; does not certify anatomy or animation"
+    },
+    "cases": [
+      {
+        "heading": "horizontal",
+        "phase": 0,
+        "differentPixels": 3954,
+        "differentChannels": 9636,
+        "maxChannelDelta": 255,
+        "meanAbsoluteChannelDelta": 0.09743229166666667,
+        "paintedPixels": 14484,
+        "opaquePixels": 2766,
+        "maxAlphaDelta": 73,
+        "meanPaintedAlphaDelta": 1.347555923777962,
+        "maxPremultipliedDelta": 58,
+        "opaqueMaxRgbDelta": 47,
+        "mattes": [
+          {
+            "name": "black",
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "maxDelta": 58,
+            "totalDelta": 18904,
+            "channelsOver2": 2014,
+            "meanPaintedChannelDelta": 0.4350547730829421
+          },
+          {
+            "name": "white",
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "maxDelta": 70,
+            "totalDelta": 53322,
+            "channelsOver2": 5184,
+            "meanPaintedChannelDelta": 1.2271471969069319
+          },
+          {
+            "name": "autumn-floor",
+            "rgb": [
+              181,
+              179,
+              144
+            ],
+            "maxDelta": 57,
+            "totalDelta": 35370,
+            "channelsOver2": 4139,
+            "meanPaintedChannelDelta": 0.8140016570008285
+          }
+        ],
+        "rawByteEqual": false,
+        "visibleWithin8BitTolerance": false,
+        "nativeRgbaSha256": "2782b3db24b630275cce91192c96690e407163d0328e427d79d17fe54f32d00c",
+        "workerRgbaSha256": "04364bc7656e55885f3bc94dbd57e2598193fa9106877607ea749f1484a8b393",
+        "baby": {
+          "mood": "laugh",
+          "source": "assets/baby_pose_laugh.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            57,
+            103
+          ],
+          "anatomicalWaist": [
+            57,
+            111
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -82.37894462710226
+          },
+          "headHeight": 37.12039774254233,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            88,
+            104
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            88,
+            154
+          ],
+          "seamY": 103,
+          "occludeFrom": 97,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -81.58973052387232
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -83.1681587303322
+            },
+            "occludeFrom": {
+              "x": 19.813356783963677,
+              "y": -85.772565270991
+            }
+          },
+          "head": [
+            8,
+            14,
+            65,
+            65
+          ],
+          "chin": [
+            {
+              "x": 21.720624200102698,
+              "y": -101.03070460010314
+            },
+            {
+              "x": 19.129371227831065,
+              "y": -98.9392872265438
+            },
+            {
+              "x": 14.683465112969078,
+              "y": -97.74231250331174
+            }
+          ],
+          "neck": [
+            {
+              "x": 10.000794767138105,
+              "y": -98.24214810202403
+            }
+          ],
+          "collar": [
+            {
+              "x": 11.03992666972419,
+              "y": -94.92744886845827
+            },
+            {
+              "x": 17.011646717497392,
+              "y": -93.45424920909572
+            },
+            {
+              "x": 20.970870802034252,
+              "y": -94.00669908135669
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              298.9953751098705
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 9.245375109870515
+          }
+        },
+        "anatomy": {
+          "source": "fixed-native-idle",
+          "skinning": "independent-affine-source-patches",
+          "ikTargetsDiagnosticOnly": true,
+          "near": {
+            "hip": {
+              "x": -19.226812172482393,
+              "y": -91.06170027571261
+            },
+            "knee": {
+              "x": -2.406806740953261,
+              "y": -49.123542693597344
+            },
+            "cuff": {
+              "x": -0.6276019754586839,
+              "y": -28.707867996194935
+            },
+            "thigh": 45.185414063600234,
+            "shin": 20.493055968979267,
+            "hipShift": 0,
+            "bootWidth": 48.34992116420195
+          },
+          "far": {
+            "hip": {
+              "x": 16.640091174528298,
+              "y": -90.59337839040292
+            },
+            "knee": {
+              "x": -5.199275950170881,
+              "y": -56.32441619962629
+            },
+            "cuff": {
+              "x": -16.437703905717783,
+              "y": -41.96650600264642
+            },
+            "thigh": 40.63643348080967,
+            "shin": 18.233262136451533,
+            "hipShift": 0.3581338347732981,
+            "bootWidth": 58.987079215796165
+          }
+        }
+      },
+      {
+        "heading": "horizontal",
+        "phase": 0.25,
+        "differentPixels": 4127,
+        "differentChannels": 10114,
+        "maxChannelDelta": 255,
+        "meanAbsoluteChannelDelta": 0.12387760416666667,
+        "paintedPixels": 15291,
+        "opaquePixels": 2175,
+        "maxAlphaDelta": 107,
+        "meanPaintedAlphaDelta": 2.06788306847165,
+        "maxPremultipliedDelta": 46,
+        "opaqueMaxRgbDelta": 20,
+        "mattes": [
+          {
+            "name": "black",
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "maxDelta": 46,
+            "totalDelta": 24640,
+            "channelsOver2": 2780,
+            "meanPaintedChannelDelta": 0.5371351339567938
+          },
+          {
+            "name": "white",
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "maxDelta": 96,
+            "totalDelta": 77148,
+            "channelsOver2": 6443,
+            "meanPaintedChannelDelta": 1.6817735923092014
+          },
+          {
+            "name": "autumn-floor",
+            "rgb": [
+              181,
+              179,
+              144
+            ],
+            "maxDelta": 59,
+            "totalDelta": 46675,
+            "channelsOver2": 5224,
+            "meanPaintedChannelDelta": 1.0174830510321975
+          }
+        ],
+        "rawByteEqual": false,
+        "visibleWithin8BitTolerance": false,
+        "nativeRgbaSha256": "3c8e346f05de4002467c70386db6ec521b506ff282a99094184c6d82571fb604",
+        "workerRgbaSha256": "8737f63e11e9f7563723f597f4665c8f17c6eccea14152f0d54517e124be3283",
+        "baby": {
+          "mood": "laugh",
+          "source": "assets/baby_pose_laugh.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            57,
+            103
+          ],
+          "anatomicalWaist": [
+            57,
+            111
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -82.37894462710226
+          },
+          "headHeight": 37.12039774254233,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            88,
+            104
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            88,
+            154
+          ],
+          "seamY": 103,
+          "occludeFrom": 97,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -81.58973052387232
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -83.1681587303322
+            },
+            "occludeFrom": {
+              "x": 19.813356783963677,
+              "y": -85.772565270991
+            }
+          },
+          "head": [
+            8,
+            14,
+            65,
+            65
+          ],
+          "chin": [
+            {
+              "x": 21.720624200102698,
+              "y": -101.03070460010314
+            },
+            {
+              "x": 19.129371227831065,
+              "y": -98.9392872265438
+            },
+            {
+              "x": 14.683465112969078,
+              "y": -97.74231250331174
+            }
+          ],
+          "neck": [
+            {
+              "x": 10.000794767138105,
+              "y": -98.24214810202403
+            }
+          ],
+          "collar": [
+            {
+              "x": 11.03992666972419,
+              "y": -94.92744886845827
+            },
+            {
+              "x": 17.011646717497392,
+              "y": -93.45424920909572
+            },
+            {
+              "x": 20.970870802034252,
+              "y": -94.00669908135669
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              298.9953751098705
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 9.245375109870515
+          }
+        },
+        "anatomy": {
+          "source": "fixed-native-idle",
+          "skinning": "independent-affine-source-patches",
+          "ikTargetsDiagnosticOnly": true,
+          "near": {
+            "hip": {
+              "x": -19.933665237383085,
+              "y": -92.80399158908025
+            },
+            "knee": {
+              "x": -27.930586889465445,
+              "y": -48.33185550153147
+            },
+            "cuff": {
+              "x": -33.484658026317135,
+              "y": -28.605790593534554
+            },
+            "thigh": 45.185414063600234,
+            "shin": 20.493055968979267,
+            "hipShift": 1.4704691998832544,
+            "bootWidth": 48.349921164201945
+          },
+          "far": {
+            "hip": {
+              "x": 17.29377067333861,
+              "y": -105.83964300666855
+            },
+            "knee": {
+              "x": 19.51540519619931,
+              "y": -65.26398446503669
+            },
+            "cuff": {
+              "x": 13.176628750619008,
+              "y": -48.16802700985116
+            },
+            "thigh": 40.63643348080967,
+            "shin": 18.233262136451533,
+            "hipShift": 12.040144913485499,
+            "bootWidth": 58.98707921579617
+          }
+        }
+      },
+      {
+        "heading": "horizontal",
+        "phase": 0.5,
+        "differentPixels": 4522,
+        "differentChannels": 11020,
+        "maxChannelDelta": 255,
+        "meanAbsoluteChannelDelta": 0.1373203125,
+        "paintedPixels": 15951,
+        "opaquePixels": 2168,
+        "maxAlphaDelta": 109,
+        "meanPaintedAlphaDelta": 2.0979248949909097,
+        "maxPremultipliedDelta": 69,
+        "opaqueMaxRgbDelta": 17,
+        "mattes": [
+          {
+            "name": "black",
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "maxDelta": 69,
+            "totalDelta": 26649,
+            "channelsOver2": 2971,
+            "meanPaintedChannelDelta": 0.5568929847658454
+          },
+          {
+            "name": "white",
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "maxDelta": 106,
+            "totalDelta": 82975,
+            "channelsOver2": 7035,
+            "meanPaintedChannelDelta": 1.7339560738093744
+          },
+          {
+            "name": "autumn-floor",
+            "rgb": [
+              181,
+              179,
+              144
+            ],
+            "maxDelta": 71,
+            "totalDelta": 50768,
+            "channelsOver2": 5596,
+            "meanPaintedChannelDelta": 1.0609157210624203
+          }
+        ],
+        "rawByteEqual": false,
+        "visibleWithin8BitTolerance": false,
+        "nativeRgbaSha256": "668dd34cb7d519d79651ea2752d86c7408107d095791430effe5b94f59641140",
+        "workerRgbaSha256": "c32c41227910e2e075c67102eedacb9c5cce68d5f4afd78ef51875c82c3a6cf0",
+        "baby": {
+          "mood": "laugh",
+          "source": "assets/baby_pose_laugh.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            57,
+            103
+          ],
+          "anatomicalWaist": [
+            57,
+            111
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -82.37894462710226
+          },
+          "headHeight": 37.12039774254233,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            88,
+            104
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            88,
+            154
+          ],
+          "seamY": 103,
+          "occludeFrom": 97,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -81.58973052387232
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -83.1681587303322
+            },
+            "occludeFrom": {
+              "x": 19.813356783963677,
+              "y": -85.772565270991
+            }
+          },
+          "head": [
+            8,
+            14,
+            65,
+            65
+          ],
+          "chin": [
+            {
+              "x": 21.720624200102698,
+              "y": -101.03070460010314
+            },
+            {
+              "x": 19.129371227831065,
+              "y": -98.9392872265438
+            },
+            {
+              "x": 14.683465112969078,
+              "y": -97.74231250331174
+            }
+          ],
+          "neck": [
+            {
+              "x": 10.000794767138105,
+              "y": -98.24214810202403
+            }
+          ],
+          "collar": [
+            {
+              "x": 11.03992666972419,
+              "y": -94.92744886845827
+            },
+            {
+              "x": 17.011646717497392,
+              "y": -93.45424920909572
+            },
+            {
+              "x": 20.970870802034252,
+              "y": -94.00669908135669
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              298.9953751098705
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 9.245375109870515
+          }
+        },
+        "anatomy": {
+          "source": "fixed-native-idle",
+          "skinning": "independent-affine-source-patches",
+          "ikTargetsDiagnosticOnly": true,
+          "near": {
+            "hip": {
+              "x": -22.68420203916306,
+              "y": -87.63705500809614
+            },
+            "knee": {
+              "x": -48.46044023817576,
+              "y": -50.524965489897895
+            },
+            "cuff": {
+              "x": -61.71872198206851,
+              "y": -34.89859968887823
+            },
+            "thigh": 45.185414063600234,
+            "shin": 20.493055968979267,
+            "hipShift": 4.374497605548555,
+            "bootWidth": 48.34992116420195
+          },
+          "far": {
+            "hip": {
+              "x": 18.2174238174051,
+              "y": -86.27972016490556
+            },
+            "knee": {
+              "x": 37.38975741375239,
+              "y": -50.4503837140216
+            },
+            "cuff": {
+              "x": 44.399322178816945,
+              "y": -33.618335414990305
+            },
+            "thigh": 40.63643348080967,
+            "shin": 18.233262136451533,
+            "hipShift": 5.014575012244201,
+            "bootWidth": 58.987079215796165
+          }
+        }
+      },
+      {
+        "heading": "horizontal",
+        "phase": 0.75,
+        "differentPixels": 4169,
+        "differentChannels": 10216,
+        "maxChannelDelta": 255,
+        "meanAbsoluteChannelDelta": 0.11769010416666667,
+        "paintedPixels": 15221,
+        "opaquePixels": 2257,
+        "maxAlphaDelta": 103,
+        "meanPaintedAlphaDelta": 2.0580119571644437,
+        "maxPremultipliedDelta": 75,
+        "opaqueMaxRgbDelta": 26,
+        "mattes": [
+          {
+            "name": "black",
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "maxDelta": 75,
+            "totalDelta": 25193,
+            "channelsOver2": 2777,
+            "meanPaintedChannelDelta": 0.5517158311981254
+          },
+          {
+            "name": "white",
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "maxDelta": 94,
+            "totalDelta": 76774,
+            "channelsOver2": 6337,
+            "meanPaintedChannelDelta": 1.6813174780456825
+          },
+          {
+            "name": "autumn-floor",
+            "rgb": [
+              181,
+              179,
+              144
+            ],
+            "maxDelta": 62,
+            "totalDelta": 46585,
+            "channelsOver2": 5111,
+            "meanPaintedChannelDelta": 1.020191402229376
+          }
+        ],
+        "rawByteEqual": false,
+        "visibleWithin8BitTolerance": false,
+        "nativeRgbaSha256": "d53e8dcbf055b477dd11d3bd6913d16ef4b8566286772a81344d915601a849c1",
+        "workerRgbaSha256": "8c940d55d644108768e4961cb5f6da4b8bcd951bbeb8250060e89115f457674f",
+        "baby": {
+          "mood": "laugh",
+          "source": "assets/baby_pose_laugh.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            57,
+            103
+          ],
+          "anatomicalWaist": [
+            57,
+            111
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -82.37894462710226
+          },
+          "headHeight": 37.12039774254233,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            88,
+            104
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            88,
+            154
+          ],
+          "seamY": 103,
+          "occludeFrom": 97,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -81.58973052387232
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -83.1681587303322
+            },
+            "occludeFrom": {
+              "x": 19.813356783963677,
+              "y": -85.772565270991
+            }
+          },
+          "head": [
+            8,
+            14,
+            65,
+            65
+          ],
+          "chin": [
+            {
+              "x": 21.720624200102698,
+              "y": -101.03070460010314
+            },
+            {
+              "x": 19.129371227831065,
+              "y": -98.9392872265438
+            },
+            {
+              "x": 14.683465112969078,
+              "y": -97.74231250331174
+            }
+          ],
+          "neck": [
+            {
+              "x": 10.000794767138105,
+              "y": -98.24214810202403
+            }
+          ],
+          "collar": [
+            {
+              "x": 11.03992666972419,
+              "y": -94.92744886845827
+            },
+            {
+              "x": 17.011646717497392,
+              "y": -93.45424920909572
+            },
+            {
+              "x": 20.970870802034252,
+              "y": -94.00669908135669
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              298.9953751098705
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 9.245375109870515
+          }
+        },
+        "anatomy": {
+          "source": "fixed-native-idle",
+          "skinning": "independent-affine-source-patches",
+          "ikTargetsDiagnosticOnly": true,
+          "near": {
+            "hip": {
+              "x": -17.102768075941306,
+              "y": -105.0370242973457
+            },
+            "knee": {
+              "x": -21.79013916427319,
+              "y": -60.09539330358589
+            },
+            "cuff": {
+              "x": -31.884581736858422,
+              "y": -42.26094427659056
+            },
+            "thigh": 45.185414063600234,
+            "shin": 20.493055968979267,
+            "hipShift": 11.23895293232674,
+            "bootWidth": 48.34992116420195
+          },
+          "far": {
+            "hip": {
+              "x": 16.29127927997475,
+              "y": -92.73836902429215
+            },
+            "knee": {
+              "x": 14.226980012290433,
+              "y": -52.154401813413095
+            },
+            "cuff": {
+              "x": 11.546327871385818,
+              "y": -34.11927075661119
+            },
+            "thigh": 40.63643348080967,
+            "shin": 18.233262136451533,
+            "hipShift": 1.2201159878049097,
+            "bootWidth": 58.987079215796165
+          }
+        }
+      },
+      {
+        "heading": "up",
+        "phase": 0,
+        "differentPixels": 4442,
+        "differentChannels": 10827,
+        "maxChannelDelta": 255,
+        "meanAbsoluteChannelDelta": 0.12790625,
+        "paintedPixels": 15382,
+        "opaquePixels": 2311,
+        "maxAlphaDelta": 100,
+        "meanPaintedAlphaDelta": 2.0676114939539723,
+        "maxPremultipliedDelta": 60,
+        "opaqueMaxRgbDelta": 20,
+        "mattes": [
+          {
+            "name": "black",
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "maxDelta": 60,
+            "totalDelta": 25954,
+            "channelsOver2": 2734,
+            "meanPaintedChannelDelta": 0.5624322801542929
+          },
+          {
+            "name": "white",
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "maxDelta": 100,
+            "totalDelta": 78538,
+            "channelsOver2": 6663,
+            "meanPaintedChannelDelta": 1.7019459974862394
+          },
+          {
+            "name": "autumn-floor",
+            "rgb": [
+              181,
+              179,
+              144
+            ],
+            "maxDelta": 67,
+            "totalDelta": 48001,
+            "channelsOver2": 5333,
+            "meanPaintedChannelDelta": 1.0401985004117367
+          }
+        ],
+        "rawByteEqual": false,
+        "visibleWithin8BitTolerance": false,
+        "nativeRgbaSha256": "c029d0b2958b40551d224b0018b8c091f6d75810959232114d87013fa729c31f",
+        "workerRgbaSha256": "3a93a420ded98205f94921f8f5f853ba3db7da89dea8d1be8d17a2e64e737067",
+        "baby": {
+          "mood": "leanForward",
+          "source": "assets/baby_pose_leanForward.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            43,
+            109
+          ],
+          "anatomicalWaist": [
+            46,
+            110
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -81.83446726467986
+          },
+          "headHeight": 43.973394248857836,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            88,
+            110
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            88,
+            153
+          ],
+          "seamY": 109,
+          "occludeFrom": 102,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -81.04525316144992
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -82.6236813679098
+            },
+            "occludeFrom": {
+              "x": 19.734435373640682,
+              "y": -85.79369134921672
+            }
+          },
+          "head": [
+            30,
+            14,
+            52,
+            77
+          ],
+          "chin": [
+            {
+              "x": 32.04617538402772,
+              "y": -96.73746024733853
+            }
+          ],
+          "neck": [
+            {
+              "x": 13.657486778770156,
+              "y": -104.55067986931493
+            }
+          ],
+          "collar": [
+            {
+              "x": 11.55291583682365,
+              "y": -103.1037873467267
+            },
+            {
+              "x": 23.798888005274865,
+              "y": -93.85682877054926
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              300.32389987418117
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 10.573899874181185
+          }
+        },
+        "anatomy": {
+          "source": "fixed-native-idle",
+          "skinning": "independent-affine-source-patches",
+          "ikTargetsDiagnosticOnly": true,
+          "near": {
+            "hip": {
+              "x": -19.039125688176945,
+              "y": -101.53970125666868
+            },
+            "knee": {
+              "x": -25.223629668121422,
+              "y": -56.77952303292774
+            },
+            "cuff": {
+              "x": -35.90760197545868,
+              "y": -39.29186799619493
+            },
+            "thigh": 45.185414063600234,
+            "shin": 20.493055968979267,
+            "hipShift": 11.832660641064003,
+            "bootWidth": 48.34992116420195
+          },
+          "far": {
+            "hip": {
+              "x": 14.016308523378628,
+              "y": -89.9949883724573
+            },
+            "knee": {
+              "x": 18.562125109111477,
+              "y": -49.613615468491474
+            },
+            "cuff": {
+              "x": 18.842296094282208,
+              "y": -31.382506002646423
+            },
+            "thigh": 40.63643348080967,
+            "shin": 18.233262136451533,
+            "hipShift": 1.1819340175419484,
+            "bootWidth": 58.98707921579617
+          }
+        }
+      },
+      {
+        "heading": "up",
+        "phase": 0.25,
+        "differentPixels": 4477,
+        "differentChannels": 11001,
+        "maxChannelDelta": 255,
+        "meanAbsoluteChannelDelta": 0.12940625,
+        "paintedPixels": 15372,
+        "opaquePixels": 2224,
+        "maxAlphaDelta": 104,
+        "meanPaintedAlphaDelta": 2.1742779078844654,
+        "maxPremultipliedDelta": 57,
+        "opaqueMaxRgbDelta": 47,
+        "mattes": [
+          {
+            "name": "black",
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "maxDelta": 57,
+            "totalDelta": 26644,
+            "channelsOver2": 2875,
+            "meanPaintedChannelDelta": 0.5777604302194466
+          },
+          {
+            "name": "white",
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "maxDelta": 99,
+            "totalDelta": 80989,
+            "channelsOver2": 6776,
+            "meanPaintedChannelDelta": 1.7562017521033915
+          },
+          {
+            "name": "autumn-floor",
+            "rgb": [
+              181,
+              179,
+              144
+            ],
+            "maxDelta": 59,
+            "totalDelta": 49017,
+            "channelsOver2": 5378,
+            "meanPaintedChannelDelta": 1.0629065833983866
+          }
+        ],
+        "rawByteEqual": false,
+        "visibleWithin8BitTolerance": false,
+        "nativeRgbaSha256": "82090796b8d7bd2bcd569d2719f56319a44ac969b2719cc318e34f249380d35c",
+        "workerRgbaSha256": "163e9bbe44a13daa3784636bf3f3ca24d65552bb130d0c63c3bc67b7276692c2",
+        "baby": {
+          "mood": "leanForward",
+          "source": "assets/baby_pose_leanForward.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            43,
+            109
+          ],
+          "anatomicalWaist": [
+            46,
+            110
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -81.83446726467986
+          },
+          "headHeight": 43.973394248857836,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            88,
+            110
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            88,
+            153
+          ],
+          "seamY": 109,
+          "occludeFrom": 102,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -81.04525316144992
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -82.6236813679098
+            },
+            "occludeFrom": {
+              "x": 19.734435373640682,
+              "y": -85.79369134921672
+            }
+          },
+          "head": [
+            30,
+            14,
+            52,
+            77
+          ],
+          "chin": [
+            {
+              "x": 32.04617538402772,
+              "y": -96.73746024733853
+            }
+          ],
+          "neck": [
+            {
+              "x": 13.657486778770156,
+              "y": -104.55067986931493
+            }
+          ],
+          "collar": [
+            {
+              "x": 11.55291583682365,
+              "y": -103.1037873467267
+            },
+            {
+              "x": 23.798888005274865,
+              "y": -93.85682877054926
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              300.32389987418117
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 10.573899874181185
+          }
+        },
+        "anatomy": {
+          "source": "fixed-native-idle",
+          "skinning": "independent-affine-source-patches",
+          "ikTargetsDiagnosticOnly": true,
+          "near": {
+            "hip": {
+              "x": -22.540156698704347,
+              "y": -93.25635210706302
+            },
+            "knee": {
+              "x": -28.356531420170416,
+              "y": -48.4468505566274
+            },
+            "cuff": {
+              "x": -33.484658026317135,
+              "y": -28.605790593534554
+            },
+            "thigh": 45.185414063600234,
+            "shin": 20.493055968979267,
+            "hipShift": 0,
+            "bootWidth": 48.349921164201945
+          },
+          "far": {
+            "hip": {
+              "x": 13.608388559614458,
+              "y": -105.98480427011978
+            },
+            "knee": {
+              "x": 18.412510709194855,
+              "y": -65.63334659617472
+            },
+            "cuff": {
+              "x": 13.176628750619008,
+              "y": -48.16802700985116
+            },
+            "thigh": 40.63643348080967,
+            "shin": 18.233262136451533,
+            "hipShift": 11.915220733682133,
+            "bootWidth": 58.98707921579617
+          }
+        }
+      },
+      {
+        "heading": "up",
+        "phase": 0.5,
+        "differentPixels": 4440,
+        "differentChannels": 10811,
+        "maxChannelDelta": 255,
+        "meanAbsoluteChannelDelta": 0.11947135416666667,
+        "paintedPixels": 15324,
+        "opaquePixels": 2313,
+        "maxAlphaDelta": 104,
+        "meanPaintedAlphaDelta": 2.0168363351605323,
+        "maxPremultipliedDelta": 55,
+        "opaqueMaxRgbDelta": 41,
+        "mattes": [
+          {
+            "name": "black",
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "maxDelta": 55,
+            "totalDelta": 24665,
+            "channelsOver2": 2820,
+            "meanPaintedChannelDelta": 0.5365222309231706
+          },
+          {
+            "name": "white",
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "maxDelta": 93,
+            "totalDelta": 75539,
+            "channelsOver2": 6680,
+            "meanPaintedChannelDelta": 1.643152353606543
+          },
+          {
+            "name": "autumn-floor",
+            "rgb": [
+              181,
+              179,
+              144
+            ],
+            "maxDelta": 62,
+            "totalDelta": 45919,
+            "channelsOver2": 5346,
+            "meanPaintedChannelDelta": 0.9988471243365526
+          }
+        ],
+        "rawByteEqual": false,
+        "visibleWithin8BitTolerance": false,
+        "nativeRgbaSha256": "2c7b7e92b0329902398415a57c722b30765a6fe0f3e4f7ea1ea489d97944a0d4",
+        "workerRgbaSha256": "cf1f4bb121da49a8ece07f8b9deb538f4445bf74189564d714fbb1b0d2d9c409",
+        "baby": {
+          "mood": "leanForward",
+          "source": "assets/baby_pose_leanForward.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            43,
+            109
+          ],
+          "anatomicalWaist": [
+            46,
+            110
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -81.83446726467986
+          },
+          "headHeight": 43.973394248857836,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            88,
+            110
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            88,
+            153
+          ],
+          "seamY": 109,
+          "occludeFrom": 102,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -81.04525316144992
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -82.6236813679098
+            },
+            "occludeFrom": {
+              "x": 19.734435373640682,
+              "y": -85.79369134921672
+            }
+          },
+          "head": [
+            30,
+            14,
+            52,
+            77
+          ],
+          "chin": [
+            {
+              "x": 32.04617538402772,
+              "y": -96.73746024733853
+            }
+          ],
+          "neck": [
+            {
+              "x": 13.657486778770156,
+              "y": -104.55067986931493
+            }
+          ],
+          "collar": [
+            {
+              "x": 11.55291583682365,
+              "y": -103.1037873467267
+            },
+            {
+              "x": 23.798888005274865,
+              "y": -93.85682877054926
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              300.32389987418117
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 10.573899874181185
+          }
+        },
+        "anatomy": {
+          "source": "fixed-native-idle",
+          "skinning": "independent-affine-source-patches",
+          "ikTargetsDiagnosticOnly": true,
+          "near": {
+            "hip": {
+              "x": -23.01134600204491,
+              "y": -89.83781321295523
+            },
+            "knee": {
+              "x": -24.01214855991946,
+              "y": -44.66348379525215
+            },
+            "cuff": {
+              "x": -26.43872198206851,
+              "y": -24.31459968887823
+            },
+            "thigh": 45.185414063600234,
+            "shin": 20.493055968979267,
+            "hipShift": 0.3705080956219007,
+            "bootWidth": 48.34992116420196
+          },
+          "far": {
+            "hip": {
+              "x": 13.974048644427052,
+              "y": -101.816550503285
+            },
+            "knee": {
+              "x": 15.67632642243526,
+              "y": -61.215787254218256
+            },
+            "cuff": {
+              "x": 9.119322178816958,
+              "y": -44.2023354149903
+            },
+            "thigh": 40.63643348080967,
+            "shin": 18.233262136451533,
+            "hipShift": 10.803880120947568,
+            "bootWidth": 58.98707921579618
+          }
+        }
+      },
+      {
+        "heading": "up",
+        "phase": 0.75,
+        "differentPixels": 4258,
+        "differentChannels": 10455,
+        "maxChannelDelta": 128,
+        "meanAbsoluteChannelDelta": 0.11281770833333334,
+        "paintedPixels": 15263,
+        "opaquePixels": 2354,
+        "maxAlphaDelta": 90,
+        "meanPaintedAlphaDelta": 1.9037541767673458,
+        "maxPremultipliedDelta": 70,
+        "opaqueMaxRgbDelta": 26,
+        "mattes": [
+          {
+            "name": "black",
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "maxDelta": 70,
+            "totalDelta": 24000,
+            "channelsOver2": 2664,
+            "meanPaintedChannelDelta": 0.5241433532071021
+          },
+          {
+            "name": "white",
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "maxDelta": 88,
+            "totalDelta": 71317,
+            "channelsOver2": 6252,
+            "meanPaintedChannelDelta": 1.5575138133612876
+          },
+          {
+            "name": "autumn-floor",
+            "rgb": [
+              181,
+              179,
+              144
+            ],
+            "maxDelta": 58,
+            "totalDelta": 43927,
+            "channelsOver2": 4964,
+            "meanPaintedChannelDelta": 0.9593352115136823
+          }
+        ],
+        "rawByteEqual": false,
+        "visibleWithin8BitTolerance": false,
+        "nativeRgbaSha256": "8b815ea64d76cfa7bdcf99c2ccf1e5f04f84de959cf5fc0d1a255fb112a7a85f",
+        "workerRgbaSha256": "acb62ecdd2b8e9312286704ef9481a5023c7cb5b99d7c1205f26c39f318ef07f",
+        "baby": {
+          "mood": "leanForward",
+          "source": "assets/baby_pose_leanForward.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            43,
+            109
+          ],
+          "anatomicalWaist": [
+            46,
+            110
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -81.83446726467986
+          },
+          "headHeight": 43.973394248857836,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            88,
+            110
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            88,
+            153
+          ],
+          "seamY": 109,
+          "occludeFrom": 102,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -81.04525316144992
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -82.6236813679098
+            },
+            "occludeFrom": {
+              "x": 19.734435373640682,
+              "y": -85.79369134921672
+            }
+          },
+          "head": [
+            30,
+            14,
+            52,
+            77
+          ],
+          "chin": [
+            {
+              "x": 32.04617538402772,
+              "y": -96.73746024733853
+            }
+          ],
+          "neck": [
+            {
+              "x": 13.657486778770156,
+              "y": -104.55067986931493
+            }
+          ],
+          "collar": [
+            {
+              "x": 11.55291583682365,
+              "y": -103.1037873467267
+            },
+            {
+              "x": 23.798888005274865,
+              "y": -93.85682877054926
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              300.32389987418117
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 10.573899874181185
+          }
+        },
+        "anatomy": {
+          "source": "fixed-native-idle",
+          "skinning": "independent-affine-source-patches",
+          "ikTargetsDiagnosticOnly": true,
+          "near": {
+            "hip": {
+              "x": -20.30135198704104,
+              "y": -105.70514831794704
+            },
+            "knee": {
+              "x": -22.70641129478088,
+              "y": -60.58378603991674
+            },
+            "cuff": {
+              "x": -31.884581736858422,
+              "y": -42.26094427659056
+            },
+            "thigh": 45.185414063600234,
+            "shin": 20.493055968979267,
+            "hipShift": 12.716392390717068,
+            "bootWidth": 48.34992116420195
+          },
+          "far": {
+            "hip": {
+              "x": 13.423169302381604,
+              "y": -92.90014104473133
+            },
+            "knee": {
+              "x": 13.343102383650134,
+              "y": -52.26378644286289
+            },
+            "cuff": {
+              "x": 11.546327871385818,
+              "y": -34.11927075661119
+            },
+            "thigh": 40.63643348080967,
+            "shin": 18.233262136451533,
+            "hipShift": 1.3795207265386011,
+            "bootWidth": 58.987079215796165
+          }
+        }
+      },
+      {
+        "heading": "down",
+        "phase": 0,
+        "differentPixels": 4383,
+        "differentChannels": 10788,
+        "maxChannelDelta": 255,
+        "meanAbsoluteChannelDelta": 0.1244765625,
+        "paintedPixels": 15291,
+        "opaquePixels": 2167,
+        "maxAlphaDelta": 106,
+        "meanPaintedAlphaDelta": 2.0895951867111373,
+        "maxPremultipliedDelta": 43,
+        "opaqueMaxRgbDelta": 29,
+        "mattes": [
+          {
+            "name": "black",
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "maxDelta": 43,
+            "totalDelta": 25132,
+            "channelsOver2": 2700,
+            "meanPaintedChannelDelta": 0.5478603971835284
+          },
+          {
+            "name": "white",
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "maxDelta": 86,
+            "totalDelta": 78730,
+            "channelsOver2": 6658,
+            "meanPaintedChannelDelta": 1.7162601094325638
+          },
+          {
+            "name": "autumn-floor",
+            "rgb": [
+              181,
+              179,
+              144
+            ],
+            "maxDelta": 54,
+            "totalDelta": 48048,
+            "channelsOver2": 5364,
+            "meanPaintedChannelDelta": 1.0474135112157479
+          }
+        ],
+        "rawByteEqual": false,
+        "visibleWithin8BitTolerance": false,
+        "nativeRgbaSha256": "4fefebed0070eea4ad16c2470d4749f1e41a43fd29c783acdf698fc18483140a",
+        "workerRgbaSha256": "035d2afea048d448dce6c2896b9d9556ae3d376f5cc64ee6caf2af549da4483b",
+        "baby": {
+          "mood": "leanBack",
+          "source": "assets/baby_pose_leanBack.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            65,
+            92
+          ],
+          "anatomicalWaist": [
+            65,
+            99
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -82.88934426229508
+          },
+          "headHeight": 35.97823165815641,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            106,
+            93
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            106,
+            140
+          ],
+          "seamY": 92,
+          "occludeFrom": 87,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -82.10013015906515
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -83.67855836552502
+            },
+            "occludeFrom": {
+              "x": 19.89227819428667,
+              "y": -85.7173614655357
+            }
+          },
+          "head": [
+            17,
+            9,
+            77,
+            63
+          ],
+          "chin": [
+            {
+              "x": 22.036309841394672,
+              "y": -99.27869047270347
+            }
+          ],
+          "neck": [
+            {
+              "x": 7.08070258518733,
+              "y": -94.88539863139016
+            }
+          ],
+          "collar": [
+            {
+              "x": 20.970870802034252,
+              "y": -94.51709871654951
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              297.75
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 8
+          }
+        },
+        "anatomy": {
+          "source": "fixed-native-idle",
+          "skinning": "independent-affine-source-patches",
+          "ikTargetsDiagnosticOnly": true,
+          "near": {
+            "hip": {
+              "x": -18.900816616979505,
+              "y": -81.49426856618382
+            },
+            "knee": {
+              "x": -29.29371473967892,
+              "y": -37.52030680800023
+            },
+            "cuff": {
+              "x": -35.90760197545868,
+              "y": -18.12386799619494
+            },
+            "thigh": 45.185414063600234,
+            "shin": 20.493055968979267,
+            "hipShift": 10.02798566884924,
+            "bootWidth": 48.34992116420195
+          },
+          "far": {
+            "hip": {
+              "x": 20.23609766425984,
+              "y": -110.35209306113217
+            },
+            "knee": {
+              "x": 24.36808516842637,
+              "y": -69.9262794600965
+            },
+            "cuff": {
+              "x": 18.842296094282208,
+              "y": -52.550506002646415
+            },
+            "thigh": 40.63643348080967,
+            "shin": 18.233262136451533,
+            "hipShift": 20.57672793523684,
+            "bootWidth": 58.98707921579617
+          }
+        }
+      },
+      {
+        "heading": "down",
+        "phase": 0.25,
+        "differentPixels": 4311,
+        "differentChannels": 10507,
+        "maxChannelDelta": 166,
+        "meanAbsoluteChannelDelta": 0.11800260416666666,
+        "paintedPixels": 15281,
+        "opaquePixels": 2185,
+        "maxAlphaDelta": 104,
+        "meanPaintedAlphaDelta": 2.071003206596427,
+        "maxPremultipliedDelta": 60,
+        "opaqueMaxRgbDelta": 15,
+        "mattes": [
+          {
+            "name": "black",
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "maxDelta": 60,
+            "totalDelta": 24686,
+            "channelsOver2": 2770,
+            "meanPaintedChannelDelta": 0.5384900639137927
+          },
+          {
+            "name": "white",
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "maxDelta": 97,
+            "totalDelta": 77479,
+            "channelsOver2": 6616,
+            "meanPaintedChannelDelta": 1.6900944528063173
+          },
+          {
+            "name": "autumn-floor",
+            "rgb": [
+              181,
+              179,
+              144
+            ],
+            "maxDelta": 59,
+            "totalDelta": 46997,
+            "channelsOver2": 5343,
+            "meanPaintedChannelDelta": 1.0251728726304998
+          }
+        ],
+        "rawByteEqual": false,
+        "visibleWithin8BitTolerance": false,
+        "nativeRgbaSha256": "0a840a69a7208666da3f6ba08912a7c62d1004132b2f94b26b24b1c54d1879f1",
+        "workerRgbaSha256": "121250d29b2fbec9e927ddbe8f76fa9be07c2b0adf682e1770d1ee0372f4a320",
+        "baby": {
+          "mood": "leanBack",
+          "source": "assets/baby_pose_leanBack.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            65,
+            92
+          ],
+          "anatomicalWaist": [
+            65,
+            99
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -82.88934426229508
+          },
+          "headHeight": 35.97823165815641,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            106,
+            93
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            106,
+            140
+          ],
+          "seamY": 92,
+          "occludeFrom": 87,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -82.10013015906515
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -83.67855836552502
+            },
+            "occludeFrom": {
+              "x": 19.89227819428667,
+              "y": -85.7173614655357
+            }
+          },
+          "head": [
+            17,
+            9,
+            77,
+            63
+          ],
+          "chin": [
+            {
+              "x": 22.036309841394672,
+              "y": -99.27869047270347
+            }
+          ],
+          "neck": [
+            {
+              "x": 7.08070258518733,
+              "y": -94.88539863139016
+            }
+          ],
+          "collar": [
+            {
+              "x": 20.970870802034252,
+              "y": -94.51709871654951
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              297.75
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 8
+          }
+        },
+        "anatomy": {
+          "source": "fixed-native-idle",
+          "skinning": "independent-affine-source-patches",
+          "ikTargetsDiagnosticOnly": true,
+          "near": {
+            "hip": {
+              "x": -17.267372441195256,
+              "y": -92.18281525559958
+            },
+            "knee": {
+              "x": -27.112530157997497,
+              "y": -48.08299083837212
+            },
+            "cuff": {
+              "x": -33.484658026317135,
+              "y": -28.605790593534554
+            },
+            "thigh": 45.185414063600234,
+            "shin": 20.493055968979267,
+            "hipShift": 2.2924470244220743,
+            "bootWidth": 48.349921164201945
+          },
+          "far": {
+            "hip": {
+              "x": 21.080221094007054,
+              "y": -105.44367085054245
+            },
+            "knee": {
+              "x": 20.62675070599034,
+              "y": -64.80976763355551
+            },
+            "cuff": {
+              "x": 13.176628750619008,
+              "y": -48.16802700985116
+            },
+            "thigh": 40.63643348080967,
+            "shin": 18.233262136451533,
+            "hipShift": 12.798151422352646,
+            "bootWidth": 58.98707921579617
+          }
+        }
+      },
+      {
+        "heading": "down",
+        "phase": 0.5,
+        "differentPixels": 4222,
+        "differentChannels": 10305,
+        "maxChannelDelta": 128,
+        "meanAbsoluteChannelDelta": 0.11018489583333334,
+        "paintedPixels": 15176,
+        "opaquePixels": 2314,
+        "maxAlphaDelta": 63,
+        "meanPaintedAlphaDelta": 1.8906826568265682,
+        "maxPremultipliedDelta": 47,
+        "opaqueMaxRgbDelta": 25,
+        "mattes": [
+          {
+            "name": "black",
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "maxDelta": 47,
+            "totalDelta": 24362,
+            "channelsOver2": 2752,
+            "meanPaintedChannelDelta": 0.5350992795642242
+          },
+          {
+            "name": "white",
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "maxDelta": 53,
+            "totalDelta": 70603,
+            "channelsOver2": 6274,
+            "meanPaintedChannelDelta": 1.5507599718854332
+          },
+          {
+            "name": "autumn-floor",
+            "rgb": [
+              181,
+              179,
+              144
+            ],
+            "maxDelta": 47,
+            "totalDelta": 43380,
+            "channelsOver2": 5073,
+            "meanPaintedChannelDelta": 0.9528202424881391
+          }
+        ],
+        "rawByteEqual": false,
+        "visibleWithin8BitTolerance": false,
+        "nativeRgbaSha256": "c96682baa68b91210a6ccf84f34ad562b4d902789c622cfbed55e913c37f8340",
+        "workerRgbaSha256": "2120dc86771139e31e98e891c984fe00e58ca141cc72cce3d3086968a33b67b1",
+        "baby": {
+          "mood": "leanBack",
+          "source": "assets/baby_pose_leanBack.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            65,
+            92
+          ],
+          "anatomicalWaist": [
+            65,
+            99
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -82.88934426229508
+          },
+          "headHeight": 35.97823165815641,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            106,
+            93
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            106,
+            140
+          ],
+          "seamY": 92,
+          "occludeFrom": 87,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -82.10013015906515
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -83.67855836552502
+            },
+            "occludeFrom": {
+              "x": 19.89227819428667,
+              "y": -85.7173614655357
+            }
+          },
+          "head": [
+            17,
+            9,
+            77,
+            63
+          ],
+          "chin": [
+            {
+              "x": 22.036309841394672,
+              "y": -99.27869047270347
+            }
+          ],
+          "neck": [
+            {
+              "x": 7.08070258518733,
+              "y": -94.88539863139016
+            }
+          ],
+          "collar": [
+            {
+              "x": 20.970870802034252,
+              "y": -94.51709871654951
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              297.75
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 8
+          }
+        },
+        "anatomy": {
+          "source": "fixed-native-idle",
+          "skinning": "independent-affine-source-patches",
+          "ikTargetsDiagnosticOnly": true,
+          "near": {
+            "hip": {
+              "x": -13.62182716691163,
+              "y": -108.68912977221325
+            },
+            "knee": {
+              "x": -16.9053728011898,
+              "y": -63.62317841016372
+            },
+            "cuff": {
+              "x": -26.43872198206851,
+              "y": -45.482599688878224
+            },
+            "thigh": 45.185414063600234,
+            "shin": 20.493055968979267,
+            "hipShift": 17.770003970717468,
+            "bootWidth": 48.34992116420196
+          },
+          "far": {
+            "hip": {
+              "x": 17.643149869129893,
+              "y": -81.22417651368863
+            },
+            "knee": {
+              "x": 12.960055206019396,
+              "y": -40.858493682642475
+            },
+            "cuff": {
+              "x": 9.119322178816958,
+              "y": -23.03433541499031
+            },
+            "thigh": 40.63643348080967,
+            "shin": 18.233262136451533,
+            "hipShift": 8.530412662526686,
+            "bootWidth": 58.98707921579618
+          }
+        }
+      },
+      {
+        "heading": "down",
+        "phase": 0.75,
+        "differentPixels": 4311,
+        "differentChannels": 10555,
+        "maxChannelDelta": 255,
+        "meanAbsoluteChannelDelta": 0.11660677083333333,
+        "paintedPixels": 15206,
+        "opaquePixels": 2257,
+        "maxAlphaDelta": 90,
+        "meanPaintedAlphaDelta": 1.9575167696961726,
+        "maxPremultipliedDelta": 69,
+        "opaqueMaxRgbDelta": 25,
+        "mattes": [
+          {
+            "name": "black",
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "maxDelta": 69,
+            "totalDelta": 24374,
+            "channelsOver2": 2727,
+            "meanPaintedChannelDelta": 0.534306633346486
+          },
+          {
+            "name": "white",
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "maxDelta": 88,
+            "totalDelta": 73832,
+            "channelsOver2": 6405,
+            "meanPaintedChannelDelta": 1.6184839317813144
+          },
+          {
+            "name": "autumn-floor",
+            "rgb": [
+              181,
+              179,
+              144
+            ],
+            "maxDelta": 68,
+            "totalDelta": 45237,
+            "channelsOver2": 4996,
+            "meanPaintedChannelDelta": 0.9916480336709194
+          }
+        ],
+        "rawByteEqual": false,
+        "visibleWithin8BitTolerance": false,
+        "nativeRgbaSha256": "00add96f3bdef2fee79ffeb6a9c39942fb31c2e08c9eb2c7f442ceb6ee4967dc",
+        "workerRgbaSha256": "c69da12dee815296c9ee75b92efafdaabf4bf529b83cc0e19afdf0b6a7d8423f",
+        "baby": {
+          "mood": "leanBack",
+          "source": "assets/baby_pose_leanBack.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            65,
+            92
+          ],
+          "anatomicalWaist": [
+            65,
+            99
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -82.88934426229508
+          },
+          "headHeight": 35.97823165815641,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            106,
+            93
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            106,
+            140
+          ],
+          "seamY": 92,
+          "occludeFrom": 87,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -82.10013015906515
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -83.67855836552502
+            },
+            "occludeFrom": {
+              "x": 19.89227819428667,
+              "y": -85.7173614655357
+            }
+          },
+          "head": [
+            17,
+            9,
+            77,
+            63
+          ],
+          "chin": [
+            {
+              "x": 22.036309841394672,
+              "y": -99.27869047270347
+            }
+          ],
+          "neck": [
+            {
+              "x": 7.08070258518733,
+              "y": -94.88539863139016
+            }
+          ],
+          "collar": [
+            {
+              "x": 20.970870802034252,
+              "y": -94.51709871654951
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              297.75
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 8
+          }
+        },
+        "anatomy": {
+          "source": "fixed-native-idle",
+          "skinning": "independent-affine-source-patches",
+          "ikTargetsDiagnosticOnly": true,
+          "near": {
+            "hip": {
+              "x": -13.839575785569666,
+              "y": -104.17795323290467
+            },
+            "knee": {
+              "x": -20.871147395585538,
+              "y": -59.54300454029139
+            },
+            "cuff": {
+              "x": -31.884581736858422,
+              "y": -42.26094427659056
+            },
+            "thigh": 45.185414063600234,
+            "shin": 20.493055968979267,
+            "hipShift": 10.420038695588879,
+            "bootWidth": 48.34992116420195
+          },
+          "far": {
+            "hip": {
+              "x": 19.237509926528652,
+              "y": -92.42500773146261
+            },
+            "knee": {
+              "x": 15.131887168723132,
+              "y": -51.996508033714015
+            },
+            "cuff": {
+              "x": 11.546327871385818,
+              "y": -34.11927075661119
+            },
+            "thigh": 40.63643348080967,
+            "shin": 18.233262136451533,
+            "hipShift": 0.38362742631287716,
+            "bootWidth": 58.987079215796165
+          }
+        }
+      }
+    ]
+  }
+}

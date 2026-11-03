@@ -189,7 +189,11 @@ def complete_centrum(page,result):
     note(result,'Riding resumed after the complete earned Centrum path',page);shot(result,page,'11-ride-resumed')
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--road-only',action='store_true');args=parser.parse_args()
+    global OUT
+    parser=argparse.ArgumentParser();parser.add_argument('--road-only',action='store_true');parser.add_argument('--out',type=Path,default=OUT,help='Evidence path within this project; use stage11/full-route for current checks.');args=parser.parse_args()
+    OUT=args.out.resolve()
+    if not OUT.is_relative_to(ROOT):parser.error('--out must stay inside BQ-Centrum')
+    OUT.mkdir(parents=True,exist_ok=True)
     server=ThreadingHTTPServer(('127.0.0.1',0),functools.partial(Quiet,directory=str(ROOT)));Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}'
     result={'result':'running','environment':'Headless system Chromium1280x720, fresh disposable storage, native time and ordinary keyboard/browser controls','noDebugTeleportOrSetters':True,'steps':[],'captures':[],'pageErrors':[],'httpFailures':[],'requests':0}
     try:

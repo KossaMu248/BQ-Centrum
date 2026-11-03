@@ -41,7 +41,7 @@
     panel.hidden=controls.hidden=!active;
     mapPanel.hidden=!active||!mapOpen;
     panel.querySelector('.square-title').textContent=layout().title||layout().label||'METRO SQUARE';
-    panel.querySelector('.square-subtitle').textContent=`Stylised Hässelby-inspired places · Billy’s ${snapshot().inventory?.billys||0}`;
+    panel.querySelector('.square-subtitle').textContent='Stylised Hässelby-inspired places';
     panel.querySelector('.square-exit').textContent=linked()?'BACK TO BIKE · Q':'RETURN TO RIDE ↗';
     pauseBtn.textContent=paused?'▶ RESUME':'Ⅱ PAUSE';pauseBtn.setAttribute('aria-pressed',String(paused));
     for(const b of controls.querySelectorAll('button'))b.disabled=loading||paused||menuHold||mapOpen||!!window.BearlyCentrumStory?.blocking();
@@ -69,7 +69,7 @@
     document.body.classList.add('centrum-square-active');window.dispatchEvent(new CustomEvent('centrum-square-change'));follow();sync();
     say('Preparing the original bear and baby…',60);
     try{
-      if(!prepareJob)prepareJob=hero().preload().then(()=>hero().warmupSources());
+      if(!prepareJob)prepareJob=hero().preload().then(()=>hero().prepareCentrumCache());
       await Promise.all([prepareJob,world().prepare(sceneId),window.BearlyCentrumStory?.prepare()]);if(!active||token!==session)return;
       if(!hero().ready())throw Error('Original character artwork is unavailable');
       loading=false;progress.discover(sceneId);say(linked()?'Arrows / WASD walk · E at doors · M map · Q returns to the parked bicycle.':'Arrows / WASD walk · E at a door or passage · M map · P pause · Q returns to the ride.',9);sync();notifyLink();window.BearlyCentrumStory?.sceneEntered(sceneId);
@@ -120,7 +120,7 @@
     const nodes=all.map(s=>{const [px,py]=points[s.id],known=seen.includes(s.id);return `<g class="${known?'map-discovered':''} ${sceneId===s.id?'map-current':''}"><rect x="${px-108}" y="${py-27}" width="216" height="54" rx="6"/><text x="${px}" y="${py-2}">${known?(s.title||s.label):'Undiscovered'}</text><text x="${px}" y="${py+17}" class="map-detail">${sceneId===s.id?'You are here':known?'Discovered':'Explore on foot'}</text></g>`;}).join('');
     mapPanel.querySelector('.square-map-graph').innerHTML=`<svg viewBox="0 0 790 235" role="img" aria-label="Walking connections between discovered areas">${lines}${nodes}</svg>`;
     mapPanel.querySelector('.square-map-gate').textContent=state.gateOpened?'Courtyard gate ↔ Metro Square: open both ways.':'Courtyard → Metro Square: open the gate from the courtyard first.';
-    mapPanel.querySelector('.square-map-bag').textContent=`Billy’s in your bag: ${state.inventory?.billys||0} · No fast travel.${linked()?' Bicycle parked in Metro Square.':''}${routeHint?' '+routeHint:''}`;
+    mapPanel.querySelector('.square-map-bag').textContent=`No fast travel.${linked()?' Bicycle parked in Metro Square.':''}${routeHint?' '+routeHint:''}`;
   }
   function toggleMap(next=!mapOpen){
     if(!active||loading)return;savePosition();clear();mapOpen=next;if(next)refreshMap();sync();
@@ -221,13 +221,13 @@
     // Same depth-walk starting point as visits: ease toward direction velocity.
     // Preserve side/front facing during vertical travel; never rotate the artwork.
     const depthGait=window.BearlyCentrumDepthGait,acceleration=1000*dt;
-    vx+=clamp(dx*155-vx,-acceleration,acceleration);vy+=clamp(dy*(depthGait?.depthSpeed||155)-vy,-acceleration,acceleration);
+    vx+=clamp(dx*(depthGait?.walkSpeed||155)-vx,-acceleration,acceleration);vy+=clamp(dy*(depthGait?.depthSpeed||155)-vy,-acceleration,acceleration);
     if(dx)face=Math.sign(dx);
     const moved=world().move(x,y,vx*dt,vy*dt,sceneId,snapshot());hits=moved.hit;
     const travelX=moved.x-x,travelY=moved.y-y,distance=Math.hypot(travelX,travelY),gaitDistance=depthGait?.distance(travelX,travelY)??distance;
     if(gaitDistance>1e-8)groundMotion=depthGait?.heading(travelX/Math.max(.001,dt),travelY/Math.max(.001,dt),face)||null;
     else if(groundMotion)groundMotion={...groundMotion,metricSpeed:0};
-    x=moved.x;y=moved.y;stride+=gaitDistance;
+    x=moved.x;y=moved.y;stride+=depthGait?.strideDistance(travelX,travelY)??gaitDistance;
     exitGuard=Math.max(0,exitGuard-distance);saveTimer+=dt;if(saveTimer>=1){savePosition();saveTimer=0;}
     weight+=(Math.min(1,gaitDistance/Math.max(.001,dt)/120)-weight)*(1-Math.exp(-16*dt));
     if(weight>.999)weight=1;if(weight<.0001){weight=0;groundMotion=null;}
@@ -247,7 +247,7 @@
     const list=window.BearlyCentrumStory?.decorate(sceneId,base)||base;
     const bicycle=linked()?link().bicycleNode?.(sceneId):null;if(bicycle)list.push(bicycle);
     list.push({id:'player',footY:y,draw:()=>{
-      if(!loading&&!error)hero().draw(c,x,y-jump,200,face,{distance:stride,weight,groundMotion,jump,talking:talking>0||window.BearlyCentrumStory?.babySpeaking()||window.BearlyCentrumStory?.babyReacting?.()||!!window.BearlyCentrumInventory?.isEating(),mode:'square',state:{hp:link()?.health()??100,baby:false}});
+      if(!loading&&!error)hero().draw(c,x,y-jump,200,face,{centrumCache:true,distance:stride,weight,groundMotion,jump,talking:talking>0||window.BearlyCentrumStory?.babySpeaking()||window.BearlyCentrumStory?.babyReacting?.()||!!window.BearlyCentrumInventory?.isEating(),mode:'square',state:{hp:link()?.health()??100,baby:false}});
     }});
     list.sort((a,b)=>a.footY-b.footY||a.id.localeCompare(b.id));
     drawOrder=list.map(o=>({id:o.id,footY:o.footY}));for(const o of list)o.draw(c,{time:stride/155});

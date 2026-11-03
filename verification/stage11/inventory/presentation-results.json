@@ -1,0 +1,560 @@
+{
+  "captures": [
+    {
+      "file": "presentation/ride-no-persistent-inventory.png",
+      "sha256": "ee74adbe932ce024311014218c0a32080cf21073d2fbaaf01d0b3245c3e465b2",
+      "actualGameplay": true,
+      "captureIsGeneratedIllustration": false,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "build": "BQ_CENTRUM_STAGE11",
+        "inventory": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "pendingOpen": null,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 100,
+          "disabledReason": "Full health \u2014 food kept.",
+          "layout": null
+        },
+        "context": {
+          "active": true,
+          "state": "playing",
+          "debugOpen": false,
+          "paused": false,
+          "danger": false,
+          "combat": false,
+          "speed": 0,
+          "jump": 0,
+          "grounded": true,
+          "transition": false,
+          "mode": "riding",
+          "sceneId": "route:autumn-main",
+          "health": 100,
+          "position": {
+            "x": 210,
+            "y": 399.1275225357753
+          },
+          "screenX": 210,
+          "recoveryAllowed": false,
+          "retryAllowed": true
+        },
+        "menuOpen": false,
+        "square": null,
+        "healthRowVisible": false,
+        "heartCount": 5,
+        "oldFloatingButtonCount": 0,
+        "walletVisible": false
+      }
+    },
+    {
+      "file": "presentation/map-no-bag-count.png",
+      "sha256": "ea035952be5c18273134de810927a484a921a61db34bdeb96ac5c11fa9e61701",
+      "actualGameplay": true,
+      "captureIsGeneratedIllustration": false,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "build": "BQ_CENTRUM_STAGE11",
+        "inventory": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "pendingOpen": null,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 100,
+          "disabledReason": "Finish the current interaction first.",
+          "layout": {
+            "mode": "centrum",
+            "x": 1120,
+            "y": 108,
+            "width": 88,
+            "height": 18,
+            "side": "right",
+            "clear": true,
+            "wholeActorClear": true,
+            "changes": 1,
+            "screenX": 273.8965517241379,
+            "footY": 444.9740625,
+            "fit": "fill",
+            "scaleX": 1.053448275862069,
+            "scaleY": 1.0534423828125,
+            "actor": {
+              "x": 200.15517241379308,
+              "y": 221.64427734375002,
+              "w": 147.48275862068965,
+              "h": 231.75732421874997
+            },
+            "protectedUpper": {
+              "x": 200.15517241379308,
+              "y": 221.64427734375002,
+              "w": 147.48275862068965,
+              "h": 168.55078125
+            },
+            "panels": {
+              "panel": null,
+              "eating": null
+            }
+          }
+        },
+        "context": {
+          "active": true,
+          "state": "playing",
+          "debugOpen": false,
+          "paused": true,
+          "danger": false,
+          "combat": false,
+          "speed": 0,
+          "jump": 0,
+          "grounded": true,
+          "transition": false,
+          "mode": "centrum",
+          "sceneId": "metro-square",
+          "health": 100,
+          "position": {
+            "x": 260,
+            "y": 540
+          },
+          "screenX": 260,
+          "menuHold": false,
+          "mapOpen": true,
+          "dialogue": false,
+          "recoveryAllowed": false,
+          "retryAllowed": true
+        },
+        "menuOpen": false,
+        "square": {
+          "position": {
+            "sceneId": "metro-square",
+            "entranceId": "start",
+            "x": 260,
+            "y": 540,
+            "face": 1
+          },
+          "height": 200,
+          "baby": {
+            "mood": "idle",
+            "source": "assets/baby_pose_idle.webp",
+            "continuousUpperBody": true,
+            "originalCollar": true,
+            "headOnly": false,
+            "uniformScale": 0.5710830421929589,
+            "angle": -0.13863973713415806,
+            "flip": 1,
+            "alpha": 1,
+            "pivot": [
+              52,
+              94
+            ],
+            "anatomicalWaist": [
+              48,
+              104
+            ],
+            "waist": {
+              "x": 20.28688524590164,
+              "y": -82.4068647689934
+            },
+            "headHeight": 35.40714861596345,
+            "referenceHeadHeight": 61,
+            "sourceRect": [
+              0,
+              0,
+              82,
+              95
+            ],
+            "sourceBounds": [
+              0,
+              0,
+              82,
+              146
+            ],
+            "seamY": 94,
+            "occludeFrom": 90,
+            "seam": {
+              "start": {
+                "x": 14.630850839420411,
+                "y": -81.61765066576346
+              },
+              "end": {
+                "x": 25.94291965238287,
+                "y": -83.19607887222334
+              },
+              "occludeFrom": {
+                "x": 19.971199604609666,
+                "y": -84.66927853158589
+              }
+            },
+            "head": [
+              15,
+              9,
+              57,
+              62
+            ],
+            "chin": [
+              {
+                "x": 23.496355932370058,
+                "y": -100.72978553231515
+              },
+              {
+                "x": 22.444070461396805,
+                "y": -100.00633927102103
+              },
+              {
+                "x": 20.905102960098425,
+                "y": -98.63836815875581
+              },
+              {
+                "x": 19.287214048477054,
+                "y": -97.8360004871387
+              },
+              {
+                "x": 17.669325136855676,
+                "y": -97.0336328155216
+              }
+            ],
+            "neck": [
+              {
+                "x": 16.0514362252343,
+                "y": -96.2312651439045
+              },
+              {
+                "x": 16.130357635557296,
+                "y": -95.66566170325638
+              }
+            ],
+            "collar": [
+              {
+                "x": 9.500959168425812,
+                "y": -93.5873978980842
+              },
+              {
+                "x": 13.85479030457764,
+                "y": -91.31183056710454
+              },
+              {
+                "x": 19.510824711058866,
+                "y": -92.10104467033447
+              }
+            ],
+            "pose": "front",
+            "pouch": {
+              "lip": [
+                [
+                  198,
+                  288
+                ],
+                [
+                  226,
+                  293
+                ],
+                [
+                  264,
+                  285
+                ]
+              ],
+              "depth": 32,
+              "seam": [
+                228.5,
+                298.9272499636561
+              ],
+              "origin": [
+                179,
+                500
+              ],
+              "scale": 0.4098360655737705,
+              "bob": 0,
+              "source": "frontBackground",
+              "textureMap": null,
+              "padding": 9.177249963656097
+            }
+          }
+        },
+        "healthRowVisible": true,
+        "heartCount": 5,
+        "oldFloatingButtonCount": 0,
+        "walletVisible": false
+      }
+    },
+    {
+      "file": "presentation/current-build-i-bag.png",
+      "sha256": "42e416b8f7333f675d959aaec26dea672078e6d90b0fd136ee79797a8caf3c63",
+      "actualGameplay": true,
+      "captureIsGeneratedIllustration": false,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "build": "BQ_CENTRUM_STAGE11",
+        "inventory": {
+          "bound": true,
+          "browsing": true,
+          "recovering": false,
+          "pendingOpen": null,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 100,
+          "disabledReason": "Full health \u2014 food kept.",
+          "layout": {
+            "mode": "centrum",
+            "x": 1120,
+            "y": 108,
+            "width": 88,
+            "height": 18,
+            "side": "right",
+            "clear": true,
+            "wholeActorClear": true,
+            "changes": 1,
+            "screenX": 273.8965517241379,
+            "footY": 444.9740625,
+            "fit": "fill",
+            "scaleX": 1.053448275862069,
+            "scaleY": 1.0534423828125,
+            "actor": {
+              "x": 200.15517241379308,
+              "y": 221.64427734375002,
+              "w": 147.48275862068965,
+              "h": 231.75732421874997
+            },
+            "protectedUpper": {
+              "x": 200.15517241379308,
+              "y": 221.64427734375002,
+              "w": 147.48275862068965,
+              "h": 168.55078125
+            },
+            "panels": {
+              "panel": {
+                "rect": {
+                  "x": 922,
+                  "y": 303.203125,
+                  "w": 286,
+                  "h": 259
+                },
+                "floating": false
+              },
+              "eating": null
+            }
+          }
+        },
+        "context": {
+          "active": true,
+          "state": "playing",
+          "debugOpen": false,
+          "paused": false,
+          "danger": false,
+          "combat": false,
+          "speed": 0,
+          "jump": 0,
+          "grounded": true,
+          "transition": false,
+          "mode": "centrum",
+          "sceneId": "metro-square",
+          "health": 100,
+          "position": {
+            "x": 260,
+            "y": 540
+          },
+          "screenX": 260,
+          "menuHold": false,
+          "mapOpen": false,
+          "dialogue": false,
+          "recoveryAllowed": false,
+          "retryAllowed": true
+        },
+        "menuOpen": false,
+        "square": {
+          "position": {
+            "sceneId": "metro-square",
+            "entranceId": "start",
+            "x": 260,
+            "y": 540,
+            "face": 1
+          },
+          "height": 200,
+          "baby": {
+            "mood": "idle",
+            "source": "assets/baby_pose_idle.webp",
+            "continuousUpperBody": true,
+            "originalCollar": true,
+            "headOnly": false,
+            "uniformScale": 0.5710830421929589,
+            "angle": -0.13863973713415806,
+            "flip": 1,
+            "alpha": 1,
+            "pivot": [
+              52,
+              94
+            ],
+            "anatomicalWaist": [
+              48,
+              104
+            ],
+            "waist": {
+              "x": 20.28688524590164,
+              "y": -82.4068647689934
+            },
+            "headHeight": 35.40714861596345,
+            "referenceHeadHeight": 61,
+            "sourceRect": [
+              0,
+              0,
+              82,
+              95
+            ],
+            "sourceBounds": [
+              0,
+              0,
+              82,
+              146
+            ],
+            "seamY": 94,
+            "occludeFrom": 90,
+            "seam": {
+              "start": {
+                "x": 14.630850839420411,
+                "y": -81.61765066576346
+              },
+              "end": {
+                "x": 25.94291965238287,
+                "y": -83.19607887222334
+              },
+              "occludeFrom": {
+                "x": 19.971199604609666,
+                "y": -84.66927853158589
+              }
+            },
+            "head": [
+              15,
+              9,
+              57,
+              62
+            ],
+            "chin": [
+              {
+                "x": 23.496355932370058,
+                "y": -100.72978553231515
+              },
+              {
+                "x": 22.444070461396805,
+                "y": -100.00633927102103
+              },
+              {
+                "x": 20.905102960098425,
+                "y": -98.63836815875581
+              },
+              {
+                "x": 19.287214048477054,
+                "y": -97.8360004871387
+              },
+              {
+                "x": 17.669325136855676,
+                "y": -97.0336328155216
+              }
+            ],
+            "neck": [
+              {
+                "x": 16.0514362252343,
+                "y": -96.2312651439045
+              },
+              {
+                "x": 16.130357635557296,
+                "y": -95.66566170325638
+              }
+            ],
+            "collar": [
+              {
+                "x": 9.500959168425812,
+                "y": -93.5873978980842
+              },
+              {
+                "x": 13.85479030457764,
+                "y": -91.31183056710454
+              },
+              {
+                "x": 19.510824711058866,
+                "y": -92.10104467033447
+              }
+            ],
+            "pose": "front",
+            "pouch": {
+              "lip": [
+                [
+                  198,
+                  288
+                ],
+                [
+                  226,
+                  293
+                ],
+                [
+                  264,
+                  285
+                ]
+              ],
+              "depth": 32,
+              "seam": [
+                228.5,
+                298.9272499636561
+              ],
+              "origin": [
+                179,
+                500
+              ],
+              "scale": 0.4098360655737705,
+              "bob": 0,
+              "source": "frontBackground",
+              "textureMap": null,
+              "padding": 9.177249963656097
+            }
+          }
+        },
+        "healthRowVisible": true,
+        "heartCount": 5,
+        "oldFloatingButtonCount": 0,
+        "walletVisible": true
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "Final current-build footer/subtitle/map presentation; retained source footer node is truly hidden; I bag/full-health rule works.",
+      "passed": true,
+      "footer": {
+        "nodeRetained": true,
+        "hidden": true,
+        "display": "none",
+        "width": 0,
+        "height": 0
+      },
+      "subtitle": "Stylised H\u00e4sselby-inspired places",
+      "mapParagraph": "No fast travel.",
+      "fixture": "Secondary public Square.open prototype entry for presentation only."
+    }
+  ],
+  "errors": [],
+  "httpFailures": [],
+  "physicalDeviceTesting": false,
+  "fixtureDisclosure": "Fresh source ride at default state, followed by public Square.open prototype entry solely for a secondary presentation check. This does not claim normal cycling/parking travel; the complete report uses production transfers.",
+  "runtimeHashes": {
+    "js/centrum-inventory.js": "b57ee93a98de53d86d567518cae65be5703dcd575a6117f4ffa610904cfd8903",
+    "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+    "index.html": "0245e50f80396361d4c22976ee025316ef91960207cc72ef2bdbb97adbf4a22d",
+    "autumn-v19.html": "0245e50f80396361d4c22976ee025316ef91960207cc72ef2bdbb97adbf4a22d"
+  },
+  "browser": "154.0.8037.57",
+  "passed": true
+}

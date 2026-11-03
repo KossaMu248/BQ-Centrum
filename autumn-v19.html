@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/centrum-square.css?edition=centrum-stage10"/>
 <link rel="stylesheet" href="css/centrum-link.css?edition=centrum-stage4"/>
 <link rel="stylesheet" href="css/centrum-story.css?edition=centrum-stage7"/>
-<link rel="stylesheet" href="css/centrum-inventory.css?edition=centrum-stage10"/>
+<link rel="stylesheet" href="css/centrum-inventory.css?edition=centrum-stage11"/>
 </head>
 <body>
 <div class="app">
@@ -39,7 +39,7 @@
       <button type="button" id="mobilePauseBtn" aria-label="Pause game">Ⅱ PAUSE</button>
       <canvas id="game" width="1160" height="640" aria-label="Side-scrolling cycling game. Use arrow keys or W A S D, space to hop, R to restart."></canvas>
       <aside id="debugPanel" role="dialog" aria-label="Bearly Qualified debug menu" aria-modal="false" hidden>
-        <div class="dbg-header"><h2>⚙ AUTUMN RIDE · V19 LAB</h2><button id="debugCloseBtn" class="dbg-x" aria-label="Close debug menu">✕</button></div>
+        <div class="dbg-header"><h2>⚙ AUTUMN RIDE · V19 LAB</h2><button id="inventoryMenuBtn" class="dbg-x" type="button" aria-haspopup="dialog" aria-controls="centrumInventoryPanel">BAG · I</button><button id="debugCloseBtn" class="dbg-x" aria-label="Close debug menu">✕</button></div>
         <div class="dbg-content">
           <div class="dbg-metrics"><div class="dbg-metric"><strong id="debugFps">--</strong><span>FPS</span></div><div class="dbg-metric"><strong id="debugMs">--</strong><span>Draw ms</span></div><div class="dbg-metric"><strong id="debugSim">--</strong><span>Physics steps</span></div></div>
           <div class="dbg-readout" id="debugReadout">Loading world state…</div>
@@ -107,7 +107,7 @@
     </div>
     <p class="portrait-hint"><span aria-hidden="true">↻</span> A little more room to ride — turn your phone sideways.</p>
   </main>
-  <footer class="bottom-bar"><div class="status"><span class="live-dot"></span><span class="edition-note">AUTUMN RIDE · VERSION 19</span> <span id="statusLine">V19 · RESPONSIVE STARTUP</span></div><div class="foot-info"><span>🍕 PIZZA <b id="starsCount">0 / 20</b></span><span>SCORE <b id="scoreCount">0</b></span><span id="checkpointLabel">NO CHECKPOINT</span><span>↑ PEDAL · ↓ BRAKE · SPACE HOP · C RETRY</span></div></footer>
+  <footer class="bottom-bar"><div class="status"><span class="live-dot"></span><span class="edition-note">AUTUMN RIDE · VERSION 19</span> <span id="statusLine">V19 · RESPONSIVE STARTUP</span></div><div class="foot-info"><span hidden>🍕 PIZZA <b id="starsCount">0 / 20</b></span><span>SCORE <b id="scoreCount">0</b></span><span id="checkpointLabel">NO CHECKPOINT</span><span>↑ PEDAL · ↓ BRAKE · SPACE HOP · C RETRY</span></div></footer>
 </div>
 <script src="js/assets.js?edition=autumn-v19"></script>
 <script src="js/illustrated-atlas.js?edition=autumn-v19"></script>
@@ -124,8 +124,9 @@
 <script src="js/weapon-effects.js?edition=autumn-v19"></script>
 <script src="js/brawler.js?edition=autumn-v19"></script>
 <script src="js/baby-passenger.js?edition=autumn-v19"></script>
-<script src="js/centrum-depth-gait.js?edition=centrum-stage9"></script>
-<script src="js/hero-rig.js?edition=centrum-stage9"></script>
+<script src="js/centrum-depth-gait.js?edition=centrum-stage11"></script>
+<script src="js/centrum-hero-cache.js?edition=centrum-stage11"></script>
+<script src="js/hero-rig.js?edition=centrum-stage11"></script>
 <script src="js/npc-motion.js?edition=autumn-v19"></script>
 <script src="js/brawler-art.js?edition=autumn-v19"></script>
 <script src="js/street-life.js?edition=autumn-v19"></script>
@@ -138,10 +139,10 @@
 <script src="js/wrong-entrance-quest.js?edition=centrum-stage7"></script>
 <script src="js/centrum-civilians.js?edition=centrum-stage5"></script>
 <script src="js/centrum-economy.js?edition=centrum-stage6"></script>
-<script src="js/centrum-inventory.js?edition=centrum-stage10"></script>
+<script src="js/centrum-inventory.js?edition=centrum-stage11"></script>
 <script src="js/centrum-story.js?edition=centrum-stage9"></script>
-<script src="js/centrum-square.js?edition=centrum-stage10"></script>
+<script src="js/centrum-square.js?edition=centrum-stage11"></script>
 <script src="js/illustrated-visits.js?edition=autumn-v19"></script>
-<script src="js/game.js?edition=centrum-stage10"></script>
+<script src="js/game.js?edition=centrum-stage11"></script>
 </body>
 </html>

@@ -32,7 +32,7 @@ from playwright.sync_api import sync_playwright
 from centrum_network import route, scene, exit_to
 from centrum_standalone import INSTRUMENT, fixture as scene_fixture, metrics
 
-OUT = ROOT / 'verification/stage10/browsers'
+OUT = ROOT / 'verification/stage11/browsers'
 SCENES = ['metro-square', 'shopping-arcade', 'service-courtyard', 'food-shop', 'bicycle-workshop']
 KEY = 'bq-centrum:scene-network:v1'
 
@@ -156,13 +156,19 @@ def shot(page,engine,name,result):
 
 
 def check_bag_control(page,touch):
-    """Use the rendered button and verify menu browsing leaves shared health intact."""
-    button=page.locator('#inventoryOpenBtn');box=button.bounding_box();assert box
+    """Use Settings→Bag and verify native browsing leaves shared health intact."""
+    mode=page.evaluate('BearlyCentrumEconomy.context().mode')
+    gear='.square-settings' if mode=='centrum' else '.area-settings' if mode=='source-foot' else '.ride-settings'
+    opener=page.locator(gear);opener.tap() if touch else opener.click()
+    page.locator('#debugPanel').wait_for(state='visible')
+    button=page.locator('#inventoryMenuBtn');box=button.bounding_box();assert box
     viewport=page.evaluate('({width:innerWidth,height:innerHeight})')
     assert 0<box['x']+box['width']/2<viewport['width'] and 0<box['y']+box['height']/2<viewport['height'],box
+    assert button.evaluate('(button)=>{const b=button.getBoundingClientRect(),hit=document.elementFromPoint(b.x+b.width/2,b.y+b.height/2);return !!hit&&(hit===button||button.contains(hit));}'),'Bag menu button is covered'
     before=health(page)
     if touch:button.tap()
     else:button.click()
+    page.wait_for_function('BearlyCentrumInventory.isBrowsing()&&!BEARLY_DEBUG_MENU.isOpen()')
     panel=page.locator('.centrum-inventory-panel');panel.wait_for(state='visible')
     panel_box=panel.bounding_box()
     close=page.locator('#inventoryCloseBtn')
@@ -170,10 +176,12 @@ def check_bag_control(page,touch):
     else:close.click()
     panel.wait_for(state='hidden')
     assert health(page)==before
-    return {'input':'native touch tap' if touch else 'native pointer click','button':box,'panel':panel_box,'healthBefore':before,'healthAfter':health(page),'inventoryAudit':page.evaluate('BearlyCentrumInventory.audit()')}
+    return {'input':'native touch tap' if touch else 'native pointer click','initiallyVisibleWithoutScroll':True,'button':box,'panel':panel_box,'healthBefore':before,'healthAfter':health(page),'inventoryAudit':page.evaluate('BearlyCentrumInventory.audit()')}
 
 
 def note(result,name,page,data=None):
+    worker=page.evaluate('''()=>({supported:!!window.BearlyCentrumHeroCache?.supported?.(),sceneActive:!!window.BearlyCentrumSquare?.active(),status:window.BearlyHeroRig?.centrumCacheStats?.()||null,raster:window.BearlyHeroRig?.audit?.()?.raster||null})''')
+    result.setdefault('workerSamples',[]).append({'step':name,**worker})
     result['checks'].append({'name':name,'passed':True,'data':data})
     (OUT/(result['engine']+'-results.json')).write_text(json.dumps(result,indent=2)+'\n')
     print(result['engine']+': '+name,flush=True)
@@ -390,7 +398,7 @@ def run(engine,p,servers,args):
 
 def main():
     global OUT
-    parser=argparse.ArgumentParser();parser.add_argument('--out',type=Path,default=OUT,help='Evidence directory inside this project (default:verification/stage10/browsers)');parser.add_argument('--engine',choices=['all','firefox','webkit'],default='all');parser.add_argument('--smoke-only',action='store_true');parser.add_argument('--functional-only',action='store_true');parser.add_argument('--final-geometry-only',action='store_true');parser.add_argument('--last-steps-only',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--out',type=Path,default=OUT,help='Evidence directory inside this project (default:verification/stage11/browsers)');parser.add_argument('--engine',choices=['all','firefox','webkit'],default='all');parser.add_argument('--smoke-only',action='store_true');parser.add_argument('--functional-only',action='store_true');parser.add_argument('--final-geometry-only',action='store_true');parser.add_argument('--last-steps-only',action='store_true');args=parser.parse_args()
     OUT=args.out.resolve()
     if not OUT.is_relative_to(ROOT):parser.error('--out must stay inside BQ-Centrum')
     OUT.mkdir(parents=True,exist_ok=True);servers=[];results=[]

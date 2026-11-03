@@ -74,3 +74,26 @@ Read-only profiling identified native source mesh baking as the main walking cos
 [Current test report](TEST_REPORT.md) · [Stage 10 evidence](verification/stage10/README.md) · [HUD review](verification/stage10/hud/README.md) · [browser flows](verification/stage10/browsers/README.md).
 
 The original side/front silhouettes and some upper-façade cropping are retained presentation constraints. Cold preparation/first-direction bakes remain a measured cost, without a mobile FPS guarantee. Code inspection confirms gamepad mapping is not implemented; only keyboard/touch controls are supported. Physical testing is skipped. Target-only GitHub authorization continues; no donor repository/save, deployment or Pages configuration is changed.
+
+
+# Stage 11 — Walking repair and on-demand inventory
+
+Implemented **BQ_CENTRUM_STAGE11** following reported FPS lag, scuffed bear legs, unchanged up/down poses and unwanted permanent bag information. The five scenes, accepted camera/actor scale, cycling physics/damage, original characters and ledger remain unchanged.
+
+Centrum now opts into one bounded OffscreenCanvas worker for production mesh rasterisation, sharing the 98-frame/32MiB cache, with one active and one latest request and synchronous fallback. Body/passenger use the returned pose together; no additional game RAF, input loop, simulation or audio was added. Shorter source steps follow actual collision-resolved travel at 130/52 walking speeds, stride ratio 0.70 and shallow projection 0.30, within the unchanged collision footprint. Fixed-size complete boots reuse the active v18 contact art; original pants and independent affine calf patches remove the old shrinkage/folds. Failed numeric-only leg prototypes were rejected after actual gameplay review. No character artwork was generated.
+
+Up/down now changes the bear's supporting posture and uses the baby's original continuous leanForward/leanBack poses. Scale, neck/collar/clothing and physical carrier remain original; no fake overhead rotation or hidden rear-facing baby. This is directional three-quarter posing, not a new authored front/rear walking row.
+
+**I** toggles the compact bag. Touch uses **Settings→BAG·I**, now in the sticky header rather than below the debug tools. Food/wallet appear only inside the bag; the five-heart health row remains. Existing pause/danger/live-eating/transaction/save rules are retained.9 groups / 27 real inventory views passed across riding, source-foot and Centrum; final WebKit verifies immediate top-header pointer access.
+
+Actual final verification:
+
+- 18 unit suites,35 JS syntax checks and944 strict source reconstructions passed, with two deliberately unreviewed in-memory source changes rejected. Original art/locomotion/road physics remain protected.160 anatomy cases check 12,480 painted triangles without inversions; numeric IK remains explicitly diagnostic.
+- 44 normal-size desktop/touch walking screenshots plus28.33/25.64-second 1× capture intervals passed visual review, including clear-lane up/down start/stop and diagonals. Original baby scale/collar/attachment remain intact. Source baseline references and rejected iterations stay distinctly labelled.
+- Four exclusive Chromium 154 baseline/current desktop/emulation profiles: main walking loop 11.0–13.2→2.9–3.3 ms, about 70–78% lower; current moving frame median 16.7 ms / p95 16.7–16.8 ms. One pending loop, bounded caches/worker queue, zero live main-thread hero bakes or NPC rebakes and no runtime/HTTP/console errors. These are measured host samples, not physical-mobile claims.
+- Fresh 15-step no-debug ride/task/reward/purchase/Eat/same-bike-remount route passed with three reloads, 825 requests, no errors or sampled passenger duplication and final 70 HP / food 2 / 20 kr. Only intentional Eats healed. Actual 3× route recording is separate from the 1× walking clips.
+- Linux WebKit 26.5 passed 16 native functional executions, all five scenes, top-header bag, full task/economy/reload/remount and copied source-foot, with worker ready, one loop, stable runtime hashes and no errors. Its prepared starting save is disclosed; it is not the fresh earned Chromium route or physical Safari.
+
+The optional raster-equivalence lab remains a **failed** check: all 12 pairs exceed its original raw-byte/2-LSB visible threshold, even after native bitmap settling. Numeric geometry matches exactly; paired 1× lab images show differences along clipped-triangle seams. No byte/pixel-equivalence claim is made, and the threshold was not loosened. Original asset hashes and the accepted normal-size gameplay likeness are separate evidence.
+
+Remaining limits: cold scene preparation around 15 seconds, brief first-heading idle fallback (~120ms extra in the recorded desktop sample), existing three-quarter silhouettes/facade cropping and synchronous fallback cost on unsupported workers. Physical-device/thermal tests remain skipped; no fresh Firefox claim. [Current report](TEST_REPORT.md) and [Stage11 evidence](verification/stage11/README.md) give actual conditions. Clean archive validation is recorded externally beside the delivery; publication remains limited to the authorized target main/Pages, with no donor/save/deployment changes.

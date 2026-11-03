@@ -26,8 +26,14 @@ The user authorized a further repair pass for the remaining software limits and 
 
 Actual final-code results and any remaining limitations belong to the current test report and evidence. No unrun test is implied by this publication note. Physical phones, Safari on an actual device and mobile thermal measurements are not claimed. The Stage 10 follow-up is pushed to the same target only after its review, documentation and delivery are frozen.
 
+## Stage 11 walking and on-demand inventory
+
+The approved follow-up repairs existing Centrum walking performance, source-based leg/direction posing and inventory access. Food/wallet now appear only in the I bag; its touch equivalent sits in the existing sticky Settings header. The accepted camera, five areas, original baby artwork/attachment, cycling physics, economy and project save namespace remain protected. Final actual gameplay, timing, source and engine results are recorded in [TEST_REPORT.md](TEST_REPORT.md) and [Stage 11 evidence](verification/stage11/README.md), including the retained failed strict renderer pixel-equivalence diagnostic and skipped physical-device testing.
+
+This follow-up is prepared for the same authorized target `main` only after clean-archive validation. Its commit is recorded by Git history, avoiding a self-referential identifier here. Neither donor is a push/deployment destination; no force push, source recopy or character generation is part of the change. The previously authorized branch-based Pages site is live; the Stage10 public-version observation below precedes the Stage11 push.
+
 ## Publication boundaries
 
 Only the scoped project source, required artwork, current tests/evidence and documentation are committed. Donor inspection archives, local browser engines/libraries, transient image work, disposable caches, credentials, raw recording frames and delivery ZIPs are excluded. Required immutable prepared artwork under `assets/cache` is runtime content, not a disposable cache.
 
-No force push, repository visibility change or GitHub Pages configuration/deployment action is part of this publication. A read-only GitHub repository check during the follow-up reported **`has_pages:false`** and **zero Actions workflows**. Pages deployment remains off unless separately requested.
+No force push or repository visibility change is authorized. The earlier Stage 9/10 read-only check reported **`has_pages:false`** and zero Actions workflows; that was the status at that time. The user subsequently explicitly approved GitHub Pages publication. The configured integration could push code but its Pages-setting request was rejected with HTTP 403, so it did not enable hosting. A read-only check on **2026-11-03 UTC** now confirms the public [playable project](https://kossamu248.github.io/BQ-Centrum/) returns HTTP 200 and serves **BQ_CENTRUM_STAGE10** from its version manifest. This observation does not claim that the blocked API request configured Pages. Later authorized pushes remain restricted to this independent target.
