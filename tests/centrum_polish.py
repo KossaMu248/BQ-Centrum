@@ -111,10 +111,10 @@ def projection(page):
     return page.evaluate(r'''()=>{
       const a=BearlyCentrumSquare.audit(),host=document.querySelector('.canvas-wrap'),box=host.getBoundingClientRect(),style=getComputedStyle(host),scale=Math.max(box.width/1160,box.height/640);
       const panX=parseFloat(style.getPropertyValue('--square-pan'))||0,rawY=parseFloat(style.getPropertyValue('--square-pan-y')),panY=Number.isFinite(rawY)?rawY:50;
-      const x=(a.x-a.camera.x)*scale-Math.max(0,1160*scale-box.width)*panX/100;
-      const foot=(a.y-a.camera.y)*scale-Math.max(0,640*scale-box.height)*panY/100;
+      const zoom=a.camera.zoom??1,x=(a.x-a.camera.x)*zoom*scale-Math.max(0,1160*scale-box.width)*panX/100;
+      const foot=(a.y-a.camera.y)*zoom*scale-Math.max(0,640*scale-box.height)*panY/100;
       const controls=[...document.querySelectorAll('.square-controls button')].map(b=>({id:b.className||b.dataset.squareDir,box:b.getBoundingClientRect().toJSON()}));
-      return {x,foot,head:foot-200*scale,scale,panX,panY,box:box.toJSON(),controls};
+      return {x,foot,head:foot-a.height*zoom*scale,scale,zoom,panX,panY,box:box.toJSON(),controls};
     }''')
 
 
@@ -145,7 +145,8 @@ def acceptance(browser,base,setup,template,fixtures,result,watch):
     page.keyboard.press('p');page.wait_for_timeout(100);paused=page.evaluate('BearlyCentrumAtmosphere.audit().clock');page.wait_for_timeout(500);assert page.evaluate('BearlyCentrumAtmosphere.audit().clock')==paused
     page.keyboard.press('p');note(result,'Restrained floor leaves advance in play and freeze on pause',page,atmosphere)
     walk_to(page,{'x':1380,'y':910});hold(page,'ArrowRight',600);hold(page,'ArrowDown',600);a=snapshot(page)
-    assert a['x']<=1418.01 and a['y']<=918.01 and 0<=a['camera']['x']<=340 and 0<=a['camera']['y']<=360
+    camera=a['camera'];bounds=camera['bounds']
+    assert a['x']<=1418.01 and a['y']<=918.01 and bounds['left']-1e-8<=camera['x']<=bounds['right']+1e-8 and bounds['top']-1e-8<=camera['y']<=bounds['bottom']+1e-8
     shot(result,page,'desktop/square-southeast-boundary.png');note(result,'Desktop southeast floor/camera boundaries remain bounded',page)
     walk_to(page,{'x':260,'y':540});use_exit(page,'shopping-arcade');shot(result,page,'desktop/discovered-arcade-reaction.png')
     assert not page.locator('.centrum-dialogue').is_visible();note(result,'New-area baby reaction uses source expression without movement dialogue',page,page.evaluate('BearlyCentrumStory.audit().reaction'))

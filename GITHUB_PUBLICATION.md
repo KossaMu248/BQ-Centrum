@@ -53,3 +53,8 @@ Current source, actual desktop/touch gameplay, frame-time observations and clean
 ## Stage14 remaining software limits
 
 The user asked to continue the remaining limits. This target-only stage reduces explicit first-entry preparation and improves the existing directional gait with authored rest joints and bounded swing-knee flex. It adds no artwork or scene and keeps the original baby, camera/scale, cycling/damage, economy and saves. Exact source guards, real motion, timing and browser/package evidence are versioned under verification/stage14. The same explicitly authorized main push and automatic Pages publication apply after verification; the resulting commit/deployment are read back and recorded outside the ZIP. No donor repository/save/deployment is modified.
+
+
+## Stage15 approved wider camera
+
+The user explicitly approved the proposed25% screen-size reduction for a wider exploration view. Stage15 applies uniform0.75 world projection with original world/character proportions, native baby art, collision/saves, source ride/transfers and shared health retained. Existing rooms center in a quiet matte; no scene/floor expansion or character regeneration. Normal desktop/phone-landscape moving-character evidence, interaction/source checks and exact standalone delivery are recorded under verification/stage15. The existing target-only main push and automatic Pages authorization persist; final commit/deployment are read back outside the ZIP. Donors remain read-only.

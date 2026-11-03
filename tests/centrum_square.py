@@ -325,9 +325,13 @@ def main():
             assert 1413.9 <= audit(page)['x'] <= 1418.1
             move_to(page, x=110)
             camera_west = audit(page)['camera']
-            assert camera_east['x'] > camera_west['x'] + 200, (camera_west, camera_east)
+            if camera_east['width'] >= audit(page)['world']['width']:
+                assert abs(camera_east['x']-camera_west['x'])<1e-8, (camera_west,camera_east)
+            else:
+                assert camera_east['x'] > camera_west['x'], (camera_west,camera_east)
             for camera in [camera_west, camera_east]:
-                assert 0 <= camera['x'] <= 340.1 and 0 <= camera['y'] <= 360.1, camera
+                bounds=camera['bounds']
+                assert bounds['left']-1e-8<=camera['x']<=bounds['right']+1e-8 and bounds['top']-1e-8<=camera['y']<=bounds['bottom']+1e-8, camera
             assert audit(page)['height'] == 200
             log('Cross square east to west; all outer boundaries solid and actor scale constant', compact(audit(page)))
             page.screenshot(path=str(OUT / '09-southwest-normal-size.png'))

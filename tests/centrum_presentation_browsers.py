@@ -32,8 +32,9 @@ def sample(page):
       const values=s.objectPosition.split(/\s+/),position=v=>v?.endsWith('%')?parseFloat(v)/100:.5;
       const px=position(values[0]),py=position(values[1]||values[0]);
       const ox=r.left-h.left+(r.width-logicalWidth*sx)*px,oy=r.top-h.top+(r.height-logicalHeight*sy)*py;
-      const expected={x:ox+(a.screenX-70)*sx,y:oy+(a.screenY-a.jump-(a.height+12))*sy,w:140*sx,h:(a.height+20)*sy};
-      return {fullscreen:BearlyFullscreen.state(),nativeEnabled:document.fullscreenEnabled,nativeElement:document.fullscreenElement?.className||null,viewport:{width:innerWidth,height:innerHeight},canvas:{backingWidth:canvas.width,backingHeight:canvas.height,logicalWidth,logicalHeight,box:{x:r.x,y:r.y,w:r.width,h:r.height},objectFit:fit,objectPosition:s.objectPosition,scaleX:sx,scaleY:sy,offsetX:ox,offsetY:oy},host:{x:h.x,y:h.y,w:h.width,h:h.height},expectedActor:expected,paintedActorHeight:a.height*sy,layout:l,square:BearlyCentrumSquare.audit(),sceneDock:document.querySelector('.centrum-inventory-hud').dataset.sceneDock||null};
+      const zoom=a.projectionScale??1,height=a.projectedHeight??a.height*zoom,jump=a.projectedJump??a.jump*zoom;
+      const expected={x:ox+(a.screenX-70*zoom)*sx,y:oy+(a.screenY-jump-height-12*zoom)*sy,w:140*zoom*sx,h:(height+20*zoom)*sy};
+      return {fullscreen:BearlyFullscreen.state(),nativeEnabled:document.fullscreenEnabled,nativeElement:document.fullscreenElement?.className||null,viewport:{width:innerWidth,height:innerHeight},canvas:{backingWidth:canvas.width,backingHeight:canvas.height,logicalWidth,logicalHeight,box:{x:r.x,y:r.y,w:r.width,h:r.height},objectFit:fit,objectPosition:s.objectPosition,scaleX:sx,scaleY:sy,offsetX:ox,offsetY:oy},host:{x:h.x,y:h.y,w:h.width,h:h.height},expectedActor:expected,paintedActorHeight:height*sy,projectionScale:zoom,layout:l,square:BearlyCentrumSquare.audit(),sceneDock:document.querySelector('.centrum-health-hud').dataset.sceneDock||null};
     }''')
 
 

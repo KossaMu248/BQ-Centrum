@@ -111,9 +111,9 @@
     if(m.fit==='cover'||m.fit==='contain')scaleX=scaleY=(m.fit==='cover'?Math.max:Math.min)(scaleX,scaleY);
     const panX=number(parseFloat(host.style.getPropertyValue('--square-pan')),50)/100,panY=number(parseFloat(host.style.getPropertyValue('--square-pan-y')),50)/100;
     const sx=square.screenX*scaleX+(box.width-1160*scaleX)*panX;
-    const foot=(square.screenY-number(square.jump))*scaleY+(box.height-640*scaleY)*panY;
-    const height=number(square.height,200),actor={x:sx-70*scaleX,y:foot-(height+12)*scaleY,w:140*scaleX,h:(height+20)*scaleY};
-    const upper={...actor,h:(height-40)*scaleY},pad=box.width<701||box.height<501?10:14;
+    const projection=number(square.projectionScale,1),foot=(square.screenY-number(square.projectedJump,number(square.jump)*projection))*scaleY+(box.height-640*scaleY)*panY;
+    const height=number(square.projectedHeight,number(square.height,200)*projection),actor={x:sx-70*projection*scaleX,y:foot-(height+12*projection)*scaleY,w:140*projection*scaleX,h:(height+20*projection)*scaleY};
+    const upper={...actor,h:(height-40*projection)*scaleY},pad=box.width<701||box.height<501?10:14;
     const side=sx>=box.width*.5?'left':'right',xs={left:pad,right:box.width-m.w-pad};
     const panels={panel:placePanel(m.panels.panel,side,actor,m,box,pad),eating:placePanel(m.panels.eating,side,actor,m,box,pad)};
     const obstacles=m.obstacles.map(o=>panels[o.role]?.rect||o);

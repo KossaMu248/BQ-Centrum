@@ -1,0 +1,157 @@
+{
+  "scope": "Independent review of actual Stage15 normal-size framing previews. This preview covers resting idle baby only, not animation, every expression, rooms, physical devices or complete interaction.",
+  "reviewedAtUtc": "2026-11-03T13:13:00.649871+00:00",
+  "captures": [
+    {
+      "file": "../camera-preview/desktop-side.png",
+      "sha256": "7396fd76ac1b84def57de774bbae13350143b1a093abe7a9e87d905aee530920",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "idle",
+      "worldHeight": 200,
+      "sceneZoom": 0.75,
+      "sourceBabyScale": 0.5710830421929589,
+      "sourceHeadHeightWorld": 35.40714861596345,
+      "projectedHeadBoxCssHeight": 27.974543254947633,
+      "screenMetricDisclosure": "Derived from original head-box audit, camera zoom and actual UI CSS fit; not a segmentation measurement of opaque face pixels.",
+      "reviewedAtOriginalSize": true,
+      "observations": [
+        "Original baby identity and continuous face/neck/collar/attachment remain recognisable.",
+        "Distinct source side, near-frontal and away-oblique parent silhouettes retained.",
+        "Paired boots and ground shadow remain coherent."
+      ]
+    },
+    {
+      "file": "../camera-preview/desktop-away.png",
+      "sha256": "21c0c0f3d00458af40217ea9b1008d80aeaace343b79d98299d233325fc35607",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "away",
+      "mood": "idle",
+      "worldHeight": 200,
+      "sceneZoom": 0.75,
+      "sourceBabyScale": 0.5710830421929589,
+      "sourceHeadHeightWorld": 35.40714861596345,
+      "projectedHeadBoxCssHeight": 27.974543254947633,
+      "screenMetricDisclosure": "Derived from original head-box audit, camera zoom and actual UI CSS fit; not a segmentation measurement of opaque face pixels.",
+      "reviewedAtOriginalSize": true,
+      "observations": [
+        "Original baby identity and continuous face/neck/collar/attachment remain recognisable.",
+        "Distinct source side, near-frontal and away-oblique parent silhouettes retained.",
+        "Paired boots and ground shadow remain coherent."
+      ]
+    },
+    {
+      "file": "../camera-preview/desktop-toward.png",
+      "sha256": "448c7d8192f128ac297058def36dff1c4840b659865b9a98d07711a7489ac2bf",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "toward",
+      "mood": "idle",
+      "worldHeight": 200,
+      "sceneZoom": 0.75,
+      "sourceBabyScale": 0.5710830421929589,
+      "sourceHeadHeightWorld": 35.40714861596345,
+      "projectedHeadBoxCssHeight": 27.974543254947633,
+      "screenMetricDisclosure": "Derived from original head-box audit, camera zoom and actual UI CSS fit; not a segmentation measurement of opaque face pixels.",
+      "reviewedAtOriginalSize": true,
+      "observations": [
+        "Original baby identity and continuous face/neck/collar/attachment remain recognisable.",
+        "Distinct source side, near-frontal and away-oblique parent silhouettes retained.",
+        "Paired boots and ground shadow remain coherent."
+      ]
+    },
+    {
+      "file": "../camera-preview/phone-landscape-side.png",
+      "sha256": "4743ff7440ea19c43769cc6a5faa385b60aa5628ac0fa91cd41d5f41642ee276",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "idle",
+      "worldHeight": 200,
+      "sceneZoom": 0.75,
+      "sourceBabyScale": 0.5710830421929589,
+      "sourceHeadHeightWorld": 35.40714861596345,
+      "projectedHeadBoxCssHeight": 19.321314718883503,
+      "screenMetricDisclosure": "Derived from original head-box audit, camera zoom and actual UI CSS fit; not a segmentation measurement of opaque face pixels.",
+      "reviewedAtOriginalSize": true,
+      "observations": [
+        "Original baby identity and continuous face/neck/collar/attachment remain recognisable.",
+        "Distinct source side, near-frontal and away-oblique parent silhouettes retained.",
+        "Paired boots and ground shadow remain coherent."
+      ]
+    },
+    {
+      "file": "../camera-preview/phone-landscape-away.png",
+      "sha256": "282e78a2eee75098a59ef826a28b5a4fddeaff40bf23275bc73b97f59321247c",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "away",
+      "mood": "idle",
+      "worldHeight": 200,
+      "sceneZoom": 0.75,
+      "sourceBabyScale": 0.5710830421929589,
+      "sourceHeadHeightWorld": 35.40714861596345,
+      "projectedHeadBoxCssHeight": 19.321314718883503,
+      "screenMetricDisclosure": "Derived from original head-box audit, camera zoom and actual UI CSS fit; not a segmentation measurement of opaque face pixels.",
+      "reviewedAtOriginalSize": true,
+      "observations": [
+        "Original baby identity and continuous face/neck/collar/attachment remain recognisable.",
+        "Distinct source side, near-frontal and away-oblique parent silhouettes retained.",
+        "Paired boots and ground shadow remain coherent."
+      ]
+    },
+    {
+      "file": "../camera-preview/phone-landscape-toward.png",
+      "sha256": "e48acd9d055909a00e76c2d9cfc7f3ca03777931dd4c7639bd19f232213a1b0c",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "toward",
+      "mood": "idle",
+      "worldHeight": 200,
+      "sceneZoom": 0.75,
+      "sourceBabyScale": 0.5710830421929589,
+      "sourceHeadHeightWorld": 35.40714861596345,
+      "projectedHeadBoxCssHeight": 19.321314718883503,
+      "screenMetricDisclosure": "Derived from original head-box audit, camera zoom and actual UI CSS fit; not a segmentation measurement of opaque face pixels.",
+      "reviewedAtOriginalSize": true,
+      "observations": [
+        "Original baby identity and continuous face/neck/collar/attachment remain recognisable.",
+        "Distinct source side, near-frontal and away-oblique parent silhouettes retained.",
+        "Paired boots and ground shadow remain coherent."
+      ]
+    }
+  ],
+  "baselineReferences": [
+    "verification/stage14/gameplay/down-2.png",
+    "verification/stage14/gameplay/up-2.png",
+    "verification/stage14/browsers/firefox/smoke/root-touch-viewport-toward.png",
+    "verification/stage14/browsers/firefox/smoke/root-touch-viewport-away.png",
+    "verification/stage13/phone-landscape/02-side-rest.png"
+  ],
+  "previewVerdict": "Accept the 0.75 framing trial for current square/resting views. Final moving-expression, room, controls and camera-boundary evidence remains separate.",
+  "composition": [
+    "Desktop now presents all three square fronts, both benches, planter, gate and same parked bicycle together.",
+    "Phone landscape reveals both benches, gate and paths with a recognisable original baby at roughly19px idle head-box height.",
+    "Original upright/shallow presentation and relative bear/baby/building/furniture proportions remain.",
+    "Phone upper facade/metro sign can still crop at the clear lane; approaching the north edge should reveal the front. Keep0.66 foot focus for now because lower framing risks the startup hint/control zone."
+  ],
+  "limitations": [
+    "At about19px phone idle head height, subtle expression detail is reduced. These six resting-idle views do not prove all nine source moods are easily readable.",
+    "No rooms or video reviewed in this preview.",
+    "No physical phone, Safari or thermal testing."
+  ]
+}

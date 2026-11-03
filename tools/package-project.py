@@ -26,8 +26,8 @@ SECRET_PATTERNS = {
     'google-api-key': re.compile(r'\bAIza[0-9A-Za-z_-]{35}\b'),
 }
 TEXT_EXTENSIONS = {'.js', '.css', '.html', '.json', '.md', '.txt', '.py', '.cjs', '.yml', '.yaml'}
-EVIDENCE_STAGES = (7, 8, 9, 10, 11, 12, 13, 14)
-VALIDATION_STAGE = 14
+EVIDENCE_STAGES = (7, 8, 9, 10, 11, 12, 13, 14, 15)
+VALIDATION_STAGE = 15
 
 
 def valid_file(path):

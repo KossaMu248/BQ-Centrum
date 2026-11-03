@@ -1,0 +1,5768 @@
+{
+  "scope": "Actual normal-scale Stage15 framing preview; one initial source route warp per viewport, then native transfer/walking. Not physical testing or performance evidence.",
+  "errors": [],
+  "httpFailures": [],
+  "captures": [
+    {
+      "file": "desktop-side.png",
+      "sha256": "7396fd76ac1b84def57de774bbae13350143b1a093abe7a9e87d905aee530920",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "active": true,
+        "loading": false,
+        "paused": false,
+        "menuHold": false,
+        "mapOpen": false,
+        "error": null,
+        "sceneId": "metro-square",
+        "sceneTitle": "Metro Square",
+        "entranceId": "from-cycle-route",
+        "transition": null,
+        "exitGuard": 0,
+        "returning": null,
+        "parkingNodeCount": 1,
+        "story": {
+          "quest": {
+            "schemaVersion": 1,
+            "questId": "wrong-entrance",
+            "state": null,
+            "cageInspected": false,
+            "slipPresented": false,
+            "cargoMoved": false,
+            "entitlement": null,
+            "rewardReceipt": null,
+            "objective": "Visit Billy\u2019s Food Shop with the baby.",
+            "slip": null,
+            "parcel": {
+              "id": "B-04",
+              "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+              "kind": "quest-cargo",
+              "edible": false,
+              "carriedByPlayer": false
+            }
+          },
+          "dialogue": {
+            "open": false,
+            "target": null,
+            "line": 0,
+            "descriptor": null
+          },
+          "npc": {
+            "ready": true,
+            "preparedScenes": [
+              "metro-square"
+            ],
+            "key": "bq-centrum:civilians:v1",
+            "height": 176,
+            "talking": null,
+            "delivery": {
+              "active": false,
+              "progress": 0,
+              "complete": false
+            },
+            "residents": [
+              {
+                "id": "food-shop-host",
+                "role": "shopkeeper",
+                "label": "SHOPKEEPER",
+                "sceneId": "food-shop",
+                "x": 894,
+                "y": 530,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 8,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              },
+              {
+                "id": "courtyard-caretaker",
+                "role": "caretaker",
+                "label": "CARETAKER",
+                "sceneId": "service-courtyard",
+                "x": 670,
+                "y": 600,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 6,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              },
+              {
+                "id": "arcade-student",
+                "role": "resident",
+                "label": "NEIGHBOUR",
+                "sceneId": "shopping-arcade",
+                "x": 432.4912152142931,
+                "y": 570,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 9,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "walk",
+                "hp": 60,
+                "bodyClear": true
+              }
+            ],
+            "facts": {
+              "food-shop-host": {
+                "event": null,
+                "elapsed": 0
+              },
+              "courtyard-caretaker": {
+                "event": null,
+                "elapsed": 0
+              },
+              "arcade-student": {
+                "event": null,
+                "elapsed": 0
+              }
+            },
+            "sourceStats": {
+              "food-shop-host": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              },
+              "courtyard-caretaker": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              },
+              "arcade-student": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              }
+            }
+          },
+          "cargoMotion": {
+            "active": false,
+            "progress": 0,
+            "complete": false
+          },
+          "sceneId": "metro-square",
+          "reaction": null
+        },
+        "save": {
+          "schemaVersion": 1,
+          "layoutVersion": 3,
+          "gateOpened": false,
+          "discovered": [
+            "metro-square"
+          ],
+          "position": {
+            "sceneId": "metro-square",
+            "entranceId": "from-cycle-route",
+            "x": 648.6518800000006,
+            "y": 723.6626999999999,
+            "face": 1
+          },
+          "inventory": {
+            "billys": 0
+          },
+          "wallet": {
+            "kr": 0
+          },
+          "rewardClaims": {}
+        },
+        "health": 100,
+        "x": 648.6518800000006,
+        "y": 723.6626999999999,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "jump": 0,
+        "stride": 602.5374476190483,
+        "weight": 0,
+        "view": "side",
+        "groundMotion": null,
+        "camera": {
+          "x": -23.33333333333337,
+          "y": 160.4626999999998,
+          "width": 1546.6666666666667,
+          "height": 853.3333333333334,
+          "zoom": 0.75,
+          "frameWidth": 1160,
+          "frameHeight": 640,
+          "bottomPadding": 24.666666666666742,
+          "bounds": {
+            "left": -23.33333333333337,
+            "right": 0,
+            "top": 0,
+            "bottom": 171.33333333333337
+          }
+        },
+        "height": 200,
+        "hero": {
+          "pose": "walking",
+          "carrier": "front",
+          "integratedCarrier": true,
+          "babyFace": {
+            "mood": "idle",
+            "source": "assets/baby_pose_idle.webp",
+            "continuousUpperBody": true,
+            "originalCollar": true,
+            "headOnly": false,
+            "uniformScale": 0.5710830421929589,
+            "angle": -0.13863973713415806,
+            "flip": 1,
+            "alpha": 1,
+            "pivot": [
+              52,
+              94
+            ],
+            "anatomicalWaist": [
+              48,
+              104
+            ],
+            "waist": {
+              "x": 20.28688524590164,
+              "y": -82.4068647689934
+            },
+            "headHeight": 35.40714861596345,
+            "referenceHeadHeight": 61,
+            "sourceRect": [
+              0,
+              0,
+              82,
+              95
+            ],
+            "sourceBounds": [
+              0,
+              0,
+              82,
+              146
+            ],
+            "seamY": 94,
+            "occludeFrom": 90,
+            "seam": {
+              "start": {
+                "x": 14.630850839420411,
+                "y": -81.61765066576346
+              },
+              "end": {
+                "x": 25.94291965238287,
+                "y": -83.19607887222334
+              },
+              "occludeFrom": {
+                "x": 19.971199604609666,
+                "y": -84.66927853158589
+              }
+            },
+            "head": [
+              15,
+              9,
+              57,
+              62
+            ],
+            "chin": [
+              {
+                "x": 23.496355932370058,
+                "y": -100.72978553231515
+              },
+              {
+                "x": 22.444070461396805,
+                "y": -100.00633927102103
+              },
+              {
+                "x": 20.905102960098425,
+                "y": -98.63836815875581
+              },
+              {
+                "x": 19.287214048477054,
+                "y": -97.8360004871387
+              },
+              {
+                "x": 17.669325136855676,
+                "y": -97.0336328155216
+              }
+            ],
+            "neck": [
+              {
+                "x": 16.0514362252343,
+                "y": -96.2312651439045
+              },
+              {
+                "x": 16.130357635557296,
+                "y": -95.66566170325638
+              }
+            ],
+            "collar": [
+              {
+                "x": 9.500959168425812,
+                "y": -93.5873978980842
+              },
+              {
+                "x": 13.85479030457764,
+                "y": -91.31183056710454
+              },
+              {
+                "x": 19.510824711058866,
+                "y": -92.10104467033447
+              }
+            ],
+            "pose": "front",
+            "pouch": {
+              "lip": [
+                [
+                  198,
+                  288
+                ],
+                [
+                  226,
+                  293
+                ],
+                [
+                  264,
+                  285
+                ]
+              ],
+              "depth": 32,
+              "seam": [
+                228.5,
+                298.9272499636561
+              ],
+              "origin": [
+                179,
+                500
+              ],
+              "scale": 0.4098360655737705,
+              "bob": 0,
+              "source": "frontBackground",
+              "textureMap": null,
+              "padding": 9.177249963656097
+            }
+          },
+          "height": 200,
+          "source": "front",
+          "sourceRect": [
+            51,
+            13,
+            256,
+            377
+          ],
+          "lowerPose": "idle",
+          "lowerSourceRect": [
+            170,
+            94,
+            1021,
+            1085
+          ],
+          "authoredLowerBody": true,
+          "stature": 488,
+          "landmarks": {
+            "near": {
+              "hip": {
+                "x": -13.966927735675554,
+                "y": -68.4909788502394
+              },
+              "knee": {
+                "x": -21.258815767044776,
+                "y": -34.406945759093034
+              },
+              "cuff": {
+                "x": -25.593027706118907,
+                "y": -24.335131395148412
+              },
+              "heel": {
+                "x": -35.50575208737344,
+                "y": -2.1516216300149136
+              },
+              "toe": {
+                "x": 5.625839106678575,
+                "y": -2.151621630014913
+              },
+              "sole": {
+                "x": -15.145305514157972,
+                "y": 0
+              },
+              "renderedFromSource": true,
+              "source": {
+                "image": "bear-near-contact-v18.png",
+                "pose": "fixed-native-contact-boot",
+                "bootLegIndex": 0,
+                "furLegIndex": 1,
+                "hip": [
+                  510,
+                  315
+                ],
+                "knee": [
+                  430,
+                  650
+                ],
+                "cuff": [
+                  862,
+                  835
+                ],
+                "heel": [
+                  710,
+                  1110
+                ],
+                "toe": [
+                  1240,
+                  1155
+                ],
+                "sole": [
+                  970,
+                  1160
+                ]
+              },
+              "plannedSole": {
+                "x": -15.145305514157974,
+                "y": 0
+              },
+              "plannedCuff": {
+                "x": -21.7026825633383,
+                "y": -25.40983606557377
+              },
+              "angle": 0,
+              "stance": true,
+              "kneeFlex": 0,
+              "contact": {
+                "x": -15.145305514157974,
+                "y": 0
+              },
+              "bootWidth": 41.131591194052014,
+              "rigidShoe": true
+            },
+            "far": {
+              "hip": {
+                "x": 11.796461299426072,
+                "y": -68.4909788502394
+              },
+              "knee": {
+                "x": 12.183231880030874,
+                "y": -32.4640559024015
+              },
+              "cuff": {
+                "x": 10.417936583724373,
+                "y": -21.1331229459245
+              },
+              "heel": {
+                "x": -1.255028858791992,
+                "y": -9.762789940806707
+              },
+              "toe": {
+                "x": 34.28266593286895,
+                "y": -9.762789940806709
+              },
+              "sole": {
+                "x": 22.11251862891207,
+                "y": -3.6885245901639343
+              },
+              "renderedFromSource": true,
+              "source": {
+                "image": "bear-near-contact-v18.png",
+                "pose": "fixed-native-contact-boot",
+                "bootLegIndex": 1,
+                "furLegIndex": 0,
+                "hip": [
+                  835,
+                  315
+                ],
+                "knee": [
+                  790,
+                  690
+                ],
+                "cuff": [
+                  315,
+                  745
+                ],
+                "heel": [
+                  100,
+                  820
+                ],
+                "toe": [
+                  550,
+                  1030
+                ],
+                "sole": [
+                  360,
+                  1035
+                ]
+              },
+              "plannedSole": {
+                "x": 22.11251862891207,
+                "y": -3.6885245901639347
+              },
+              "plannedCuff": {
+                "x": 16.784649776453055,
+                "y": -27.459016393442624
+              },
+              "angle": 0,
+              "stance": false,
+              "kneeFlex": 0,
+              "contact": {
+                "x": 22.11251862891207,
+                "y": -3.6885245901639347
+              },
+              "bootWidth": 35.53769479166094,
+              "rigidShoe": true
+            }
+          },
+          "gait": {
+            "far": {
+              "x": 0,
+              "y": 0,
+              "angle": 0,
+              "shinAngle": 0,
+              "kneeFlex": 0,
+              "contactOffset": 0,
+              "stance": false,
+              "groundDepth": 0,
+              "nativeLift": 0
+            },
+            "near": {
+              "x": 0,
+              "y": 0,
+              "angle": 0,
+              "shinAngle": 0,
+              "kneeFlex": 0,
+              "contactOffset": 0,
+              "stance": true,
+              "groundDepth": 0,
+              "nativeLift": 0
+            },
+            "phase": 0,
+            "cycleLength": 144,
+            "bob": 0,
+            "sway": 0,
+            "roll": 0,
+            "pelvisSway": 0,
+            "pelvisRoll": 0,
+            "centrumWalk": true,
+            "groundMotion": {
+              "x": 1,
+              "y": 0,
+              "depthScale": 0.3,
+              "cacheKey": "horizontal",
+              "centrumWalk": true
+            },
+            "depthProjected": true
+          },
+          "body": {
+            "pivot": {
+              "x": -2.8688524590163933,
+              "y": -67.62295081967213
+            },
+            "sway": 0,
+            "bob": -10.245901639344263,
+            "roll": 0,
+            "pelvisSway": 0,
+            "pelvisRoll": 0,
+            "slope": 0,
+            "opaque": true,
+            "surfaces": 1,
+            "continuous": true,
+            "triangles": 216,
+            "canonicalHeight": 280,
+            "lowerHeight": 190,
+            "cachePhase": 0
+          },
+          "cache": {
+            "frames": 52,
+            "hits": 6,
+            "misses": 1
+          },
+          "anatomy": {
+            "source": "fixed-native-idle",
+            "skinning": "independent-affine-source-patches",
+            "ikTargetsDiagnosticOnly": true,
+            "near": {
+              "hip": {
+                "x": -19.409109131553475,
+                "y": -96.43652106700395
+              },
+              "knee": {
+                "x": -25.272095460847673,
+                "y": -51.63309446365684
+              },
+              "cuff": {
+                "x": -35.83023878856647,
+                "y": -34.06918395320778
+              },
+              "thigh": 45.185414063600234,
+              "shin": 20.493055968979267,
+              "hipShift": 0.5678667507144439,
+              "bootWidth": 57.584227671672814
+            },
+            "far": {
+              "hip": {
+                "x": 16.296291981202444,
+                "y": -88.3722982119121
+              },
+              "knee": {
+                "x": 16.330744657109204,
+                "y": -47.735879336063896
+              },
+              "cuff": {
+                "x": 14.585111217214122,
+                "y": -29.5863721242943
+              },
+              "thigh": 40.63643348080967,
+              "shin": 18.233262136451533,
+              "hipShift": 7.518255322117312,
+              "bootWidth": 49.75277270832532
+            }
+          },
+          "raster": {
+            "mode": "worker",
+            "requestedPhase": 0,
+            "renderedPhase": 0,
+            "requestedWeight": 0,
+            "renderedWeight": 0,
+            "heading": "horizontal"
+          }
+        },
+        "drawOrder": [
+          {
+            "id": "front-metro",
+            "footY": 320
+          },
+          {
+            "id": "front-arcade",
+            "footY": 350
+          },
+          {
+            "id": "front-pizzeria",
+            "footY": 350
+          },
+          {
+            "id": "planter",
+            "footY": 490
+          },
+          {
+            "id": "bench-west",
+            "footY": 580
+          },
+          {
+            "id": "player",
+            "footY": 723.6626999999999
+          },
+          {
+            "id": "parked-player-bicycle",
+            "footY": 730
+          },
+          {
+            "id": "bench-east",
+            "footY": 735
+          },
+          {
+            "id": "service-gate",
+            "footY": 803
+          }
+        ],
+        "shadow": {
+          "x": 648.6518800000006,
+          "y": 723.6626999999999
+        },
+        "hits": [],
+        "world": {
+          "id": "metro-square",
+          "label": "Metro Square",
+          "kind": "outdoor",
+          "landmark": "The single H\u00e4sselby metro entrance",
+          "width": 1500,
+          "height": 1000,
+          "floor": {
+            "left": 60,
+            "right": 1440,
+            "top": 320,
+            "bottom": 930
+          },
+          "defaultEntrance": "start",
+          "anchors": {
+            "start": {
+              "x": 260,
+              "y": 540,
+              "face": 1
+            },
+            "from-arcade": {
+              "x": 340,
+              "y": 440,
+              "face": 1
+            },
+            "from-courtyard-gate": {
+              "x": 1300,
+              "y": 820,
+              "face": -1
+            },
+            "bicycle-parking": {
+              "x": 220,
+              "y": 730,
+              "face": 1
+            },
+            "from-cycle-route": {
+              "x": 248,
+              "y": 730,
+              "face": 1
+            }
+          },
+          "buildings": [
+            {
+              "id": "front-arcade",
+              "kind": "building",
+              "x": 60,
+              "y": 0,
+              "w": 485,
+              "h": 350,
+              "footY": 350,
+              "key": "arcade",
+              "label": "SHOPPING ARCADE",
+              "doorX": 340
+            },
+            {
+              "id": "front-metro",
+              "kind": "building",
+              "x": 545,
+              "y": 0,
+              "w": 460,
+              "h": 320,
+              "footY": 320,
+              "key": "metro",
+              "label": "METRO",
+              "doorX": 765
+            },
+            {
+              "id": "front-pizzeria",
+              "kind": "building",
+              "x": 1005,
+              "y": 0,
+              "w": 435,
+              "h": 350,
+              "footY": 350,
+              "key": "pizzeria",
+              "label": "PIZZA & KEBAB",
+              "doorX": 1220
+            }
+          ],
+          "furniture": [
+            {
+              "id": "bench-west",
+              "kind": "bench",
+              "x": 402,
+              "y": 556,
+              "w": 196,
+              "h": 24,
+              "footY": 580,
+              "anchorX": 500,
+              "artWidth": 210
+            },
+            {
+              "id": "bench-east",
+              "kind": "bench",
+              "x": 982,
+              "y": 711,
+              "w": 196,
+              "h": 24,
+              "footY": 735,
+              "anchorX": 1080,
+              "artWidth": 210
+            },
+            {
+              "id": "planter",
+              "kind": "planter",
+              "x": 754,
+              "y": 448,
+              "w": 132,
+              "h": 42,
+              "footY": 490,
+              "anchorX": 820,
+              "artWidth": 190
+            }
+          ],
+          "extraSolids": [
+            {
+              "id": "square-gate-post-left",
+              "kind": "post",
+              "x": 1294,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-post-right",
+              "kind": "post",
+              "x": 1412,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-leaf",
+              "kind": "gate",
+              "x": 1310,
+              "y": 785,
+              "w": 100,
+              "h": 14,
+              "footY": 799,
+              "gateClosedOnly": true
+            }
+          ],
+          "exits": [
+            {
+              "id": "to-arcade",
+              "kind": "exit",
+              "label": "Enter shopping arcade",
+              "x": 340,
+              "y": 382,
+              "radius": 68,
+              "toScene": "shopping-arcade",
+              "toEntrance": "from-square"
+            },
+            {
+              "id": "square-gate",
+              "kind": "gate",
+              "label": "Service courtyard gate",
+              "x": 1360,
+              "y": 820,
+              "radius": 68,
+              "toScene": "service-courtyard",
+              "toEntrance": "from-square-gate",
+              "gateSide": "square"
+            }
+          ],
+          "interactions": [],
+          "occlusionLayers": [
+            {
+              "id": "facades",
+              "type": "foot-sorted"
+            },
+            {
+              "id": "furniture",
+              "type": "foot-sorted"
+            },
+            {
+              "id": "gate",
+              "type": "foot-sorted"
+            }
+          ],
+          "heroHeight": 200,
+          "radiusX": 22,
+          "radiusY": 12,
+          "solids": [
+            {
+              "id": "front-arcade",
+              "kind": "building",
+              "x": 60,
+              "y": 0,
+              "w": 485,
+              "h": 350,
+              "footY": 350,
+              "key": "arcade",
+              "label": "SHOPPING ARCADE",
+              "doorX": 340
+            },
+            {
+              "id": "front-metro",
+              "kind": "building",
+              "x": 545,
+              "y": 0,
+              "w": 460,
+              "h": 320,
+              "footY": 320,
+              "key": "metro",
+              "label": "METRO",
+              "doorX": 765
+            },
+            {
+              "id": "front-pizzeria",
+              "kind": "building",
+              "x": 1005,
+              "y": 0,
+              "w": 435,
+              "h": 350,
+              "footY": 350,
+              "key": "pizzeria",
+              "label": "PIZZA & KEBAB",
+              "doorX": 1220
+            },
+            {
+              "id": "bench-west",
+              "kind": "bench",
+              "x": 402,
+              "y": 556,
+              "w": 196,
+              "h": 24,
+              "footY": 580,
+              "anchorX": 500,
+              "artWidth": 210
+            },
+            {
+              "id": "bench-east",
+              "kind": "bench",
+              "x": 982,
+              "y": 711,
+              "w": 196,
+              "h": 24,
+              "footY": 735,
+              "anchorX": 1080,
+              "artWidth": 210
+            },
+            {
+              "id": "planter",
+              "kind": "planter",
+              "x": 754,
+              "y": 448,
+              "w": 132,
+              "h": 42,
+              "footY": 490,
+              "anchorX": 820,
+              "artWidth": 190
+            },
+            {
+              "id": "square-gate-post-left",
+              "kind": "post",
+              "x": 1294,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-post-right",
+              "kind": "post",
+              "x": 1412,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-leaf",
+              "kind": "gate",
+              "x": 1310,
+              "y": 785,
+              "w": 100,
+              "h": 14,
+              "footY": 799,
+              "gateClosedOnly": true
+            }
+          ],
+          "spawn": {
+            "x": 260,
+            "y": 540,
+            "face": 1
+          },
+          "doors": [
+            {
+              "id": "to-arcade",
+              "label": "Enter shopping arcade",
+              "x": 340,
+              "y": 382
+            },
+            {
+              "id": "square-gate",
+              "label": "Service courtyard gate",
+              "x": 1360,
+              "y": 820
+            }
+          ]
+        }
+      },
+      "inventory": {
+        "bound": true,
+        "browsing": false,
+        "recovering": false,
+        "pendingOpen": null,
+        "eating": null,
+        "lastOutcome": null,
+        "food": 0,
+        "wallet": 0,
+        "health": 100,
+        "disabledReason": "Full health \u2014 food kept.",
+        "layout": {
+          "mode": "centrum",
+          "x": 1120,
+          "y": 108,
+          "width": 88,
+          "height": 18,
+          "side": "right",
+          "clear": true,
+          "wholeActorClear": true,
+          "changes": 1,
+          "screenX": 530.926696230225,
+          "footY": 444.9740625,
+          "fit": "contain",
+          "scaleX": 1.0534423828125,
+          "scaleY": 1.0534423828125,
+          "actor": {
+            "x": 475.6209711325688,
+            "y": 277.47672363281254,
+            "w": 110.61145019531249,
+            "h": 173.81799316406247
+          },
+          "protectedUpper": {
+            "x": 475.6209711325688,
+            "y": 277.47672363281254,
+            "w": 110.61145019531249,
+            "h": 126.41308593749999
+          },
+          "panels": {
+            "panel": null,
+            "eating": null
+          }
+        }
+      }
+    },
+    {
+      "file": "desktop-away.png",
+      "sha256": "21c0c0f3d00458af40217ea9b1008d80aeaace343b79d98299d233325fc35607",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "active": true,
+        "loading": false,
+        "paused": false,
+        "menuHold": false,
+        "mapOpen": false,
+        "error": null,
+        "sceneId": "metro-square",
+        "sceneTitle": "Metro Square",
+        "entranceId": "from-cycle-route",
+        "transition": null,
+        "exitGuard": 0,
+        "returning": null,
+        "parkingNodeCount": 1,
+        "story": {
+          "quest": {
+            "schemaVersion": 1,
+            "questId": "wrong-entrance",
+            "state": null,
+            "cageInspected": false,
+            "slipPresented": false,
+            "cargoMoved": false,
+            "entitlement": null,
+            "rewardReceipt": null,
+            "objective": "Visit Billy\u2019s Food Shop with the baby.",
+            "slip": null,
+            "parcel": {
+              "id": "B-04",
+              "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+              "kind": "quest-cargo",
+              "edible": false,
+              "carriedByPlayer": false
+            }
+          },
+          "dialogue": {
+            "open": false,
+            "target": null,
+            "line": 0,
+            "descriptor": null
+          },
+          "npc": {
+            "ready": true,
+            "preparedScenes": [
+              "metro-square"
+            ],
+            "key": "bq-centrum:civilians:v1",
+            "height": 176,
+            "talking": null,
+            "delivery": {
+              "active": false,
+              "progress": 0,
+              "complete": false
+            },
+            "residents": [
+              {
+                "id": "food-shop-host",
+                "role": "shopkeeper",
+                "label": "SHOPKEEPER",
+                "sceneId": "food-shop",
+                "x": 894,
+                "y": 530,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 8,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              },
+              {
+                "id": "courtyard-caretaker",
+                "role": "caretaker",
+                "label": "CARETAKER",
+                "sceneId": "service-courtyard",
+                "x": 670,
+                "y": 600,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 6,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              },
+              {
+                "id": "arcade-student",
+                "role": "resident",
+                "label": "NEIGHBOUR",
+                "sceneId": "shopping-arcade",
+                "x": 440,
+                "y": 570,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 9,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              }
+            ],
+            "facts": {
+              "food-shop-host": {
+                "event": null,
+                "elapsed": 0
+              },
+              "courtyard-caretaker": {
+                "event": null,
+                "elapsed": 0
+              },
+              "arcade-student": {
+                "event": null,
+                "elapsed": 0
+              }
+            },
+            "sourceStats": {
+              "food-shop-host": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              },
+              "courtyard-caretaker": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              },
+              "arcade-student": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              }
+            }
+          },
+          "cargoMotion": {
+            "active": false,
+            "progress": 0,
+            "complete": false
+          },
+          "sceneId": "metro-square",
+          "reaction": null
+        },
+        "save": {
+          "schemaVersion": 1,
+          "layoutVersion": 3,
+          "gateOpened": false,
+          "discovered": [
+            "metro-square"
+          ],
+          "position": {
+            "sceneId": "metro-square",
+            "entranceId": "from-cycle-route",
+            "x": 648.6518800000006,
+            "y": 723.6626999999999,
+            "face": 1
+          },
+          "inventory": {
+            "billys": 0
+          },
+          "wallet": {
+            "kr": 0
+          },
+          "rewardClaims": {}
+        },
+        "health": 100,
+        "x": 648.6518800000006,
+        "y": 702.0009599999998,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "jump": 0,
+        "stride": 705.6885904761907,
+        "weight": 0.0019516809770063778,
+        "view": "away",
+        "groundMotion": {
+          "x": 0,
+          "y": -1.0000000000000002,
+          "metricSpeed": 0,
+          "cacheKey": "depth:0:-32",
+          "centrumWalk": true
+        },
+        "camera": {
+          "x": -23.33333333333337,
+          "y": 138.8009599999998,
+          "width": 1546.6666666666667,
+          "height": 853.3333333333334,
+          "zoom": 0.75,
+          "frameWidth": 1160,
+          "frameHeight": 640,
+          "bottomPadding": 24.666666666666742,
+          "bounds": {
+            "left": -23.33333333333337,
+            "right": 0,
+            "top": 0,
+            "bottom": 171.33333333333337
+          }
+        },
+        "height": 200,
+        "hero": {
+          "pose": "walking",
+          "view": "away",
+          "authoredView": true,
+          "sourceAsset": "assets/centrum/actors/bear-directions.png",
+          "source": "assets/centrum/actors/bear-directions.png",
+          "carrier": "front",
+          "integratedCarrier": true,
+          "height": 200,
+          "babyFace": {
+            "mood": "idle",
+            "source": "assets/baby_pose_idle.webp",
+            "continuousUpperBody": true,
+            "originalCollar": true,
+            "headOnly": false,
+            "uniformScale": 0.5710830421929589,
+            "angle": -0.13863973713415806,
+            "flip": 1,
+            "alpha": 1,
+            "pivot": [
+              52,
+              94
+            ],
+            "anatomicalWaist": [
+              48,
+              104
+            ],
+            "waist": {
+              "x": 45.39310806289728,
+              "y": -92.11661658307268
+            },
+            "headHeight": 35.40714861596345,
+            "referenceHeadHeight": 61,
+            "sourceRect": [
+              0,
+              0,
+              82,
+              95
+            ],
+            "sourceBounds": [
+              0,
+              0,
+              82,
+              146
+            ],
+            "seamY": 94,
+            "occludeFrom": 90,
+            "seam": {
+              "start": {
+                "x": 39.73707365641605,
+                "y": -91.32740247984275
+              },
+              "end": {
+                "x": 51.0491424693785,
+                "y": -92.90583068630262
+              },
+              "occludeFrom": {
+                "x": 45.0774224216053,
+                "y": -94.37903034566517
+              }
+            },
+            "head": [
+              15,
+              9,
+              57,
+              62
+            ],
+            "chin": [
+              {
+                "x": 48.60257874936569,
+                "y": -110.43953734639443
+              },
+              {
+                "x": 47.550293278392445,
+                "y": -109.71609108510032
+              },
+              {
+                "x": 46.01132577709406,
+                "y": -108.3481199728351
+              },
+              {
+                "x": 44.39343686547269,
+                "y": -107.54575230121799
+              },
+              {
+                "x": 42.77554795385131,
+                "y": -106.74338462960088
+              }
+            ],
+            "neck": [
+              {
+                "x": 41.15765904222994,
+                "y": -105.94101695798378
+              },
+              {
+                "x": 41.23658045255293,
+                "y": -105.37541351733566
+              }
+            ],
+            "collar": [
+              {
+                "x": 34.60718198542145,
+                "y": -103.29714971216349
+              },
+              {
+                "x": 38.961013121573274,
+                "y": -101.02158238118382
+              },
+              {
+                "x": 44.617047528054506,
+                "y": -101.81079648441376
+              }
+            ],
+            "pose": "centrum-away",
+            "pouch": {
+              "lip": [
+                [
+                  190.17142857142858,
+                  277.42040816326534
+                ],
+                [
+                  216.29387755102042,
+                  285.7795918367347
+                ],
+                [
+                  242.41632653061225,
+                  274.8081632653061
+                ]
+              ],
+              "depth": 32,
+              "seam": [
+                216.2938775510204,
+                289.8477004352619
+              ],
+              "origin": [
+                105.53469387755104,
+                514.6122448979593
+              ],
+              "scale": 0.4098360655737705,
+              "bob": 0,
+              "source": "assets/centrum/actors/bear-directions.png",
+              "textureMap": null,
+              "padding": 8.90076165975171
+            }
+          },
+          "landmarks": {
+            "far": {
+              "hip": {
+                "x": -20.555982333999136,
+                "y": -70.6588813741253
+              },
+              "knee": {
+                "x": -21.839500516703897,
+                "y": -51.383473441269864
+              },
+              "cuff": {
+                "x": -22.694993639400078,
+                "y": -35.53482292812266
+              },
+              "sole": {
+                "x": -21.6259618601539,
+                "y": -3.4170058141586144
+              },
+              "contact": {
+                "x": -21.6259618601539,
+                "y": -3.4170058141586144
+              },
+              "stance": true,
+              "sourceFoot": "far",
+              "rigidShoe": true,
+              "kneeBend": 0
+            },
+            "near": {
+              "hip": {
+                "x": 13.917073103608088,
+                "y": -69.58788748397822
+              },
+              "knee": {
+                "x": 14.773310589663925,
+                "y": -49.258746847353216
+              },
+              "cuff": {
+                "x": 14.77310419257341,
+                "y": -32.139459252107024
+              },
+              "sole": {
+                "x": 21.41184342589495,
+                "y": -0.4501546553591257
+              },
+              "contact": {
+                "x": 21.41184342589495,
+                "y": -0.4427887446683774
+              },
+              "stance": false,
+              "sourceFoot": "near",
+              "rigidShoe": true,
+              "kneeBend": 4.166438028605786e-06
+            }
+          },
+          "gait": {
+            "far": {
+              "x": 0,
+              "y": 0.008889133984597243,
+              "angle": 0.00013880976364463718,
+              "shinAngle": 0.00026893722034981453,
+              "kneeFlex": 0,
+              "contactOffset": 0.02732353367808929,
+              "stance": true,
+              "groundDepth": 0.008889133984597243,
+              "nativeLift": 0
+            },
+            "near": {
+              "x": 0,
+              "y": -0.02191778684121373,
+              "angle": -9.627110464778803e-05,
+              "shinAngle": 0.00023632006826182917,
+              "kneeFlex": 0.0011410573534837362,
+              "contactOffset": -0.0005356879653758967,
+              "stance": false,
+              "groundDepth": -0.014551876150471996,
+              "nativeLift": -0.007365910690741734
+            },
+            "phase": 0.9006152116402131,
+            "cycleLength": 144,
+            "bob": 0.0006791777808769502,
+            "sway": -0.001125244376637711,
+            "roll": 2.1187497650642062e-05,
+            "pelvisSway": 0.0015061957065985317,
+            "pelvisRoll": -1.5061957065985317e-05,
+            "centrumWalk": true,
+            "groundMotion": {
+              "x": 0,
+              "y": -1.0000000000000002,
+              "depthScale": 0.3,
+              "cacheKey": "depth:0:-32",
+              "centrumWalk": true
+            },
+            "depthProjected": true
+          },
+          "body": {
+            "continuous": true,
+            "surfaces": 1,
+            "roll": 1.1653123707853135e-05,
+            "bob": 0.00044146555757001765,
+            "sway": -0.0006188844071507412,
+            "authoredViewingAngle": true
+          },
+          "directional": {
+            "view": "away",
+            "asset": "assets/centrum/actors/bear-directions.png",
+            "framePhase": 0.9006152116402131,
+            "drawCalls": 11,
+            "preparedParts": 2,
+            "sourceBabyLower": "assets/art/front-carrier-v7.png",
+            "sourceBabyLowerScale": 0.4098360655737705,
+            "sourceBabyOriginalScale": 0.5710830421929589,
+            "groundAnchor": {
+              "x": 648.6518800000006,
+              "y": 702.0009599999998
+            }
+          }
+        },
+        "drawOrder": [
+          {
+            "id": "front-metro",
+            "footY": 320
+          },
+          {
+            "id": "front-arcade",
+            "footY": 350
+          },
+          {
+            "id": "front-pizzeria",
+            "footY": 350
+          },
+          {
+            "id": "planter",
+            "footY": 490
+          },
+          {
+            "id": "bench-west",
+            "footY": 580
+          },
+          {
+            "id": "player",
+            "footY": 702.0009599999998
+          },
+          {
+            "id": "parked-player-bicycle",
+            "footY": 730
+          },
+          {
+            "id": "bench-east",
+            "footY": 735
+          },
+          {
+            "id": "service-gate",
+            "footY": 803
+          }
+        ],
+        "shadow": {
+          "x": 648.6518800000006,
+          "y": 702.0009599999998
+        },
+        "hits": [],
+        "world": {
+          "id": "metro-square",
+          "label": "Metro Square",
+          "kind": "outdoor",
+          "landmark": "The single H\u00e4sselby metro entrance",
+          "width": 1500,
+          "height": 1000,
+          "floor": {
+            "left": 60,
+            "right": 1440,
+            "top": 320,
+            "bottom": 930
+          },
+          "defaultEntrance": "start",
+          "anchors": {
+            "start": {
+              "x": 260,
+              "y": 540,
+              "face": 1
+            },
+            "from-arcade": {
+              "x": 340,
+              "y": 440,
+              "face": 1
+            },
+            "from-courtyard-gate": {
+              "x": 1300,
+              "y": 820,
+              "face": -1
+            },
+            "bicycle-parking": {
+              "x": 220,
+              "y": 730,
+              "face": 1
+            },
+            "from-cycle-route": {
+              "x": 248,
+              "y": 730,
+              "face": 1
+            }
+          },
+          "buildings": [
+            {
+              "id": "front-arcade",
+              "kind": "building",
+              "x": 60,
+              "y": 0,
+              "w": 485,
+              "h": 350,
+              "footY": 350,
+              "key": "arcade",
+              "label": "SHOPPING ARCADE",
+              "doorX": 340
+            },
+            {
+              "id": "front-metro",
+              "kind": "building",
+              "x": 545,
+              "y": 0,
+              "w": 460,
+              "h": 320,
+              "footY": 320,
+              "key": "metro",
+              "label": "METRO",
+              "doorX": 765
+            },
+            {
+              "id": "front-pizzeria",
+              "kind": "building",
+              "x": 1005,
+              "y": 0,
+              "w": 435,
+              "h": 350,
+              "footY": 350,
+              "key": "pizzeria",
+              "label": "PIZZA & KEBAB",
+              "doorX": 1220
+            }
+          ],
+          "furniture": [
+            {
+              "id": "bench-west",
+              "kind": "bench",
+              "x": 402,
+              "y": 556,
+              "w": 196,
+              "h": 24,
+              "footY": 580,
+              "anchorX": 500,
+              "artWidth": 210
+            },
+            {
+              "id": "bench-east",
+              "kind": "bench",
+              "x": 982,
+              "y": 711,
+              "w": 196,
+              "h": 24,
+              "footY": 735,
+              "anchorX": 1080,
+              "artWidth": 210
+            },
+            {
+              "id": "planter",
+              "kind": "planter",
+              "x": 754,
+              "y": 448,
+              "w": 132,
+              "h": 42,
+              "footY": 490,
+              "anchorX": 820,
+              "artWidth": 190
+            }
+          ],
+          "extraSolids": [
+            {
+              "id": "square-gate-post-left",
+              "kind": "post",
+              "x": 1294,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-post-right",
+              "kind": "post",
+              "x": 1412,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-leaf",
+              "kind": "gate",
+              "x": 1310,
+              "y": 785,
+              "w": 100,
+              "h": 14,
+              "footY": 799,
+              "gateClosedOnly": true
+            }
+          ],
+          "exits": [
+            {
+              "id": "to-arcade",
+              "kind": "exit",
+              "label": "Enter shopping arcade",
+              "x": 340,
+              "y": 382,
+              "radius": 68,
+              "toScene": "shopping-arcade",
+              "toEntrance": "from-square"
+            },
+            {
+              "id": "square-gate",
+              "kind": "gate",
+              "label": "Service courtyard gate",
+              "x": 1360,
+              "y": 820,
+              "radius": 68,
+              "toScene": "service-courtyard",
+              "toEntrance": "from-square-gate",
+              "gateSide": "square"
+            }
+          ],
+          "interactions": [],
+          "occlusionLayers": [
+            {
+              "id": "facades",
+              "type": "foot-sorted"
+            },
+            {
+              "id": "furniture",
+              "type": "foot-sorted"
+            },
+            {
+              "id": "gate",
+              "type": "foot-sorted"
+            }
+          ],
+          "heroHeight": 200,
+          "radiusX": 22,
+          "radiusY": 12,
+          "solids": [
+            {
+              "id": "front-arcade",
+              "kind": "building",
+              "x": 60,
+              "y": 0,
+              "w": 485,
+              "h": 350,
+              "footY": 350,
+              "key": "arcade",
+              "label": "SHOPPING ARCADE",
+              "doorX": 340
+            },
+            {
+              "id": "front-metro",
+              "kind": "building",
+              "x": 545,
+              "y": 0,
+              "w": 460,
+              "h": 320,
+              "footY": 320,
+              "key": "metro",
+              "label": "METRO",
+              "doorX": 765
+            },
+            {
+              "id": "front-pizzeria",
+              "kind": "building",
+              "x": 1005,
+              "y": 0,
+              "w": 435,
+              "h": 350,
+              "footY": 350,
+              "key": "pizzeria",
+              "label": "PIZZA & KEBAB",
+              "doorX": 1220
+            },
+            {
+              "id": "bench-west",
+              "kind": "bench",
+              "x": 402,
+              "y": 556,
+              "w": 196,
+              "h": 24,
+              "footY": 580,
+              "anchorX": 500,
+              "artWidth": 210
+            },
+            {
+              "id": "bench-east",
+              "kind": "bench",
+              "x": 982,
+              "y": 711,
+              "w": 196,
+              "h": 24,
+              "footY": 735,
+              "anchorX": 1080,
+              "artWidth": 210
+            },
+            {
+              "id": "planter",
+              "kind": "planter",
+              "x": 754,
+              "y": 448,
+              "w": 132,
+              "h": 42,
+              "footY": 490,
+              "anchorX": 820,
+              "artWidth": 190
+            },
+            {
+              "id": "square-gate-post-left",
+              "kind": "post",
+              "x": 1294,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-post-right",
+              "kind": "post",
+              "x": 1412,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-leaf",
+              "kind": "gate",
+              "x": 1310,
+              "y": 785,
+              "w": 100,
+              "h": 14,
+              "footY": 799,
+              "gateClosedOnly": true
+            }
+          ],
+          "spawn": {
+            "x": 260,
+            "y": 540,
+            "face": 1
+          },
+          "doors": [
+            {
+              "id": "to-arcade",
+              "label": "Enter shopping arcade",
+              "x": 340,
+              "y": 382
+            },
+            {
+              "id": "square-gate",
+              "label": "Service courtyard gate",
+              "x": 1360,
+              "y": 820
+            }
+          ]
+        }
+      },
+      "inventory": {
+        "bound": true,
+        "browsing": false,
+        "recovering": false,
+        "pendingOpen": null,
+        "eating": null,
+        "lastOutcome": null,
+        "food": 0,
+        "wallet": 0,
+        "health": 100,
+        "disabledReason": "Full health \u2014 food kept.",
+        "layout": {
+          "mode": "centrum",
+          "x": 1120,
+          "y": 108,
+          "width": 88,
+          "height": 18,
+          "side": "right",
+          "clear": true,
+          "wholeActorClear": true,
+          "changes": 1,
+          "screenX": 530.926696230225,
+          "footY": 444.9740625,
+          "fit": "contain",
+          "scaleX": 1.0534423828125,
+          "scaleY": 1.0534423828125,
+          "actor": {
+            "x": 475.6209711325688,
+            "y": 277.47672363281254,
+            "w": 110.61145019531249,
+            "h": 173.81799316406247
+          },
+          "protectedUpper": {
+            "x": 475.6209711325688,
+            "y": 277.47672363281254,
+            "w": 110.61145019531249,
+            "h": 126.41308593749999
+          },
+          "panels": {
+            "panel": null,
+            "eating": null
+          }
+        }
+      }
+    },
+    {
+      "file": "desktop-toward.png",
+      "sha256": "448c7d8192f128ac297058def36dff1c4840b659865b9a98d07711a7489ac2bf",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "active": true,
+        "loading": false,
+        "paused": false,
+        "menuHold": false,
+        "mapOpen": false,
+        "error": null,
+        "sceneId": "metro-square",
+        "sceneTitle": "Metro Square",
+        "entranceId": "from-cycle-route",
+        "transition": null,
+        "exitGuard": 0,
+        "returning": null,
+        "parkingNodeCount": 1,
+        "story": {
+          "quest": {
+            "schemaVersion": 1,
+            "questId": "wrong-entrance",
+            "state": null,
+            "cageInspected": false,
+            "slipPresented": false,
+            "cargoMoved": false,
+            "entitlement": null,
+            "rewardReceipt": null,
+            "objective": "Visit Billy\u2019s Food Shop with the baby.",
+            "slip": null,
+            "parcel": {
+              "id": "B-04",
+              "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+              "kind": "quest-cargo",
+              "edible": false,
+              "carriedByPlayer": false
+            }
+          },
+          "dialogue": {
+            "open": false,
+            "target": null,
+            "line": 0,
+            "descriptor": null
+          },
+          "npc": {
+            "ready": true,
+            "preparedScenes": [
+              "metro-square"
+            ],
+            "key": "bq-centrum:civilians:v1",
+            "height": 176,
+            "talking": null,
+            "delivery": {
+              "active": false,
+              "progress": 0,
+              "complete": false
+            },
+            "residents": [
+              {
+                "id": "food-shop-host",
+                "role": "shopkeeper",
+                "label": "SHOPKEEPER",
+                "sceneId": "food-shop",
+                "x": 894,
+                "y": 530,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 8,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              },
+              {
+                "id": "courtyard-caretaker",
+                "role": "caretaker",
+                "label": "CARETAKER",
+                "sceneId": "service-courtyard",
+                "x": 660.6675999999993,
+                "y": 600,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 6,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "walk",
+                "hp": 60,
+                "bodyClear": true
+              },
+              {
+                "id": "arcade-student",
+                "role": "resident",
+                "label": "NEIGHBOUR",
+                "sceneId": "shopping-arcade",
+                "x": 440,
+                "y": 570,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 9,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              }
+            ],
+            "facts": {
+              "food-shop-host": {
+                "event": null,
+                "elapsed": 0
+              },
+              "courtyard-caretaker": {
+                "event": null,
+                "elapsed": 0
+              },
+              "arcade-student": {
+                "event": null,
+                "elapsed": 0
+              }
+            },
+            "sourceStats": {
+              "food-shop-host": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              },
+              "courtyard-caretaker": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              },
+              "arcade-student": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              }
+            }
+          },
+          "cargoMotion": {
+            "active": false,
+            "progress": 0,
+            "complete": false
+          },
+          "sceneId": "metro-square",
+          "reaction": null
+        },
+        "save": {
+          "schemaVersion": 1,
+          "layoutVersion": 3,
+          "gateOpened": false,
+          "discovered": [
+            "metro-square"
+          ],
+          "position": {
+            "sceneId": "metro-square",
+            "entranceId": "from-cycle-route",
+            "x": 648.6518800000006,
+            "y": 724.80959,
+            "face": 1
+          },
+          "inventory": {
+            "billys": 0
+          },
+          "wallet": {
+            "kr": 0
+          },
+          "rewardClaims": {}
+        },
+        "health": 100,
+        "x": 648.6518800000006,
+        "y": 724.80959,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "jump": 0,
+        "stride": 814.3011142857148,
+        "weight": 0.0025560008523427477,
+        "view": "toward",
+        "groundMotion": {
+          "x": 0,
+          "y": 1,
+          "metricSpeed": 0,
+          "cacheKey": "depth:0:32",
+          "centrumWalk": true
+        },
+        "camera": {
+          "x": -23.33333333333337,
+          "y": 161.6095899999999,
+          "width": 1546.6666666666667,
+          "height": 853.3333333333334,
+          "zoom": 0.75,
+          "frameWidth": 1160,
+          "frameHeight": 640,
+          "bottomPadding": 24.666666666666742,
+          "bounds": {
+            "left": -23.33333333333337,
+            "right": 0,
+            "top": 0,
+            "bottom": 171.33333333333337
+          }
+        },
+        "height": 200,
+        "hero": {
+          "pose": "walking",
+          "view": "toward",
+          "authoredView": true,
+          "sourceAsset": "assets/centrum/actors/bear-directions.png",
+          "source": "assets/centrum/actors/bear-directions.png",
+          "carrier": "front",
+          "integratedCarrier": true,
+          "height": 200,
+          "babyFace": {
+            "mood": "idle",
+            "source": "assets/baby_pose_idle.webp",
+            "continuousUpperBody": true,
+            "originalCollar": true,
+            "headOnly": false,
+            "uniformScale": 0.5710830421929589,
+            "angle": -0.13863973713415806,
+            "flip": 1,
+            "alpha": 1,
+            "pivot": [
+              52,
+              94
+            ],
+            "anatomicalWaist": [
+              48,
+              104
+            ],
+            "waist": {
+              "x": 12.060770808665339,
+              "y": -86.43716528433761
+            },
+            "headHeight": 35.40714861596345,
+            "referenceHeadHeight": 61,
+            "sourceRect": [
+              0,
+              0,
+              82,
+              95
+            ],
+            "sourceBounds": [
+              0,
+              0,
+              82,
+              146
+            ],
+            "seamY": 94,
+            "occludeFrom": 90,
+            "seam": {
+              "start": {
+                "x": 6.404736402184111,
+                "y": -85.64795118110767
+              },
+              "end": {
+                "x": 17.716805215146568,
+                "y": -87.22637938756755
+              },
+              "occludeFrom": {
+                "x": 11.745085167373363,
+                "y": -88.6995790469301
+              }
+            },
+            "head": [
+              15,
+              9,
+              57,
+              62
+            ],
+            "chin": [
+              {
+                "x": 15.270241495133758,
+                "y": -104.76008604765936
+              },
+              {
+                "x": 14.217956024160504,
+                "y": -104.03663978636524
+              },
+              {
+                "x": 12.678988522862126,
+                "y": -102.66866867410002
+              },
+              {
+                "x": 11.06109961124075,
+                "y": -101.86630100248291
+              },
+              {
+                "x": 9.443210699619376,
+                "y": -101.06393333086581
+              }
+            ],
+            "neck": [
+              {
+                "x": 7.825321787998001,
+                "y": -100.2615656592487
+              },
+              {
+                "x": 7.904243198320994,
+                "y": -99.69596221860058
+              }
+            ],
+            "collar": [
+              {
+                "x": 1.27484473118951,
+                "y": -97.61769841342841
+              },
+              {
+                "x": 5.628675867341339,
+                "y": -95.34213108244874
+              },
+              {
+                "x": 11.284710273822565,
+                "y": -96.13134518567868
+              }
+            ],
+            "pose": "centrum-toward",
+            "pouch": {
+              "lip": [
+                [
+                  127.08850457782299,
+                  288.03255340793487
+                ],
+                [
+                  171.881993896236,
+                  301.05391658189217
+                ],
+                [
+                  219.80061037639877,
+                  286.9908443540183
+                ]
+              ],
+              "depth": 32,
+              "seam": [
+                172.66327568667344,
+                303.69758934100764
+              ],
+              "origin": [
+                143.23499491353002,
+                514.6042726347914
+              ],
+              "scale": 0.4098360655737705,
+              "bob": 0,
+              "source": "assets/centrum/actors/bear-directions.png",
+              "textureMap": null,
+              "padding": 9.414781609573255
+            }
+          },
+          "landmarks": {
+            "far": {
+              "hip": {
+                "x": 20.704285018001702,
+                "y": -70.01668050836425
+              },
+              "knee": {
+                "x": 20.705254126423572,
+                "y": -51.22775069282405
+              },
+              "cuff": {
+                "x": 20.70610209629271,
+                "y": -34.78743710422637
+              },
+              "sole": {
+                "x": 23.694611677200935,
+                "y": -0.6330418938466571
+              },
+              "contact": {
+                "x": 23.694611677200935,
+                "y": -0.6330418938466571
+              },
+              "stance": true,
+              "sourceFoot": "far",
+              "rigidShoe": true,
+              "kneeBend": 0
+            },
+            "near": {
+              "hip": {
+                "x": -21.561773891670928,
+                "y": -70.23116535016057
+              },
+              "knee": {
+                "x": -21.983725235512587,
+                "y": -51.46194351382758
+              },
+              "cuff": {
+                "x": -22.619680158551486,
+                "y": -34.82553057289513
+              },
+              "sole": {
+                "x": -23.90807664726582,
+                "y": -0.6714214608323477
+              },
+              "contact": {
+                "x": -23.90807664726582,
+                "y": -0.6540362336704023
+              },
+              "stance": false,
+              "sourceFoot": "near",
+              "rigidShoe": true,
+              "kneeBend": -1.4285016604485295e-05
+            }
+          },
+          "gait": {
+            "far": {
+              "x": 0,
+              "y": 0.007353016347990358,
+              "angle": 0,
+              "shinAngle": -0.00022472682519391923,
+              "kneeFlex": 0,
+              "contactOffset": -0.02683800894959885,
+              "stance": true,
+              "groundDepth": 0.007353016347990358,
+              "nativeLift": 0
+            },
+            "near": {
+              "x": 0,
+              "y": -0.03102655063770935,
+              "angle": 0.0006363289080158274,
+              "shinAngle": 0.0017596466956119501,
+              "kneeFlex": 0.002112834041968667,
+              "contactOffset": 0,
+              "stance": false,
+              "groundDepth": -0.013641323475771969,
+              "nativeLift": -0.017385227161937383
+            },
+            "phase": 0.6548688492063528,
+            "cycleLength": 144,
+            "bob": -0.0010307095634472822,
+            "sway": -0.003299085143919103,
+            "roll": 4.387236883500565e-05,
+            "pelvisSway": 0.0027889409353986368,
+            "pelvisRoll": -2.7889409353986367e-05,
+            "centrumWalk": true,
+            "groundMotion": {
+              "x": 0,
+              "y": 1,
+              "depthScale": 0.3,
+              "cacheKey": "depth:0:32",
+              "centrumWalk": true
+            },
+            "depthProjected": true
+          },
+          "body": {
+            "continuous": true,
+            "surfaces": 1,
+            "roll": 2.412980285925311e-05,
+            "bob": -0.0006699612162407335,
+            "sway": -0.0018144968291555067,
+            "authoredViewingAngle": true
+          },
+          "directional": {
+            "view": "toward",
+            "asset": "assets/centrum/actors/bear-directions.png",
+            "framePhase": 0.6548688492063528,
+            "drawCalls": 11,
+            "preparedParts": 2,
+            "sourceBabyLower": "assets/art/front-carrier-v7.png",
+            "sourceBabyLowerScale": 0.4098360655737705,
+            "sourceBabyOriginalScale": 0.5710830421929589,
+            "groundAnchor": {
+              "x": 648.6518800000006,
+              "y": 724.80959
+            }
+          }
+        },
+        "drawOrder": [
+          {
+            "id": "front-metro",
+            "footY": 320
+          },
+          {
+            "id": "front-arcade",
+            "footY": 350
+          },
+          {
+            "id": "front-pizzeria",
+            "footY": 350
+          },
+          {
+            "id": "planter",
+            "footY": 490
+          },
+          {
+            "id": "bench-west",
+            "footY": 580
+          },
+          {
+            "id": "player",
+            "footY": 724.80959
+          },
+          {
+            "id": "parked-player-bicycle",
+            "footY": 730
+          },
+          {
+            "id": "bench-east",
+            "footY": 735
+          },
+          {
+            "id": "service-gate",
+            "footY": 803
+          }
+        ],
+        "shadow": {
+          "x": 648.6518800000006,
+          "y": 724.80959
+        },
+        "hits": [],
+        "world": {
+          "id": "metro-square",
+          "label": "Metro Square",
+          "kind": "outdoor",
+          "landmark": "The single H\u00e4sselby metro entrance",
+          "width": 1500,
+          "height": 1000,
+          "floor": {
+            "left": 60,
+            "right": 1440,
+            "top": 320,
+            "bottom": 930
+          },
+          "defaultEntrance": "start",
+          "anchors": {
+            "start": {
+              "x": 260,
+              "y": 540,
+              "face": 1
+            },
+            "from-arcade": {
+              "x": 340,
+              "y": 440,
+              "face": 1
+            },
+            "from-courtyard-gate": {
+              "x": 1300,
+              "y": 820,
+              "face": -1
+            },
+            "bicycle-parking": {
+              "x": 220,
+              "y": 730,
+              "face": 1
+            },
+            "from-cycle-route": {
+              "x": 248,
+              "y": 730,
+              "face": 1
+            }
+          },
+          "buildings": [
+            {
+              "id": "front-arcade",
+              "kind": "building",
+              "x": 60,
+              "y": 0,
+              "w": 485,
+              "h": 350,
+              "footY": 350,
+              "key": "arcade",
+              "label": "SHOPPING ARCADE",
+              "doorX": 340
+            },
+            {
+              "id": "front-metro",
+              "kind": "building",
+              "x": 545,
+              "y": 0,
+              "w": 460,
+              "h": 320,
+              "footY": 320,
+              "key": "metro",
+              "label": "METRO",
+              "doorX": 765
+            },
+            {
+              "id": "front-pizzeria",
+              "kind": "building",
+              "x": 1005,
+              "y": 0,
+              "w": 435,
+              "h": 350,
+              "footY": 350,
+              "key": "pizzeria",
+              "label": "PIZZA & KEBAB",
+              "doorX": 1220
+            }
+          ],
+          "furniture": [
+            {
+              "id": "bench-west",
+              "kind": "bench",
+              "x": 402,
+              "y": 556,
+              "w": 196,
+              "h": 24,
+              "footY": 580,
+              "anchorX": 500,
+              "artWidth": 210
+            },
+            {
+              "id": "bench-east",
+              "kind": "bench",
+              "x": 982,
+              "y": 711,
+              "w": 196,
+              "h": 24,
+              "footY": 735,
+              "anchorX": 1080,
+              "artWidth": 210
+            },
+            {
+              "id": "planter",
+              "kind": "planter",
+              "x": 754,
+              "y": 448,
+              "w": 132,
+              "h": 42,
+              "footY": 490,
+              "anchorX": 820,
+              "artWidth": 190
+            }
+          ],
+          "extraSolids": [
+            {
+              "id": "square-gate-post-left",
+              "kind": "post",
+              "x": 1294,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-post-right",
+              "kind": "post",
+              "x": 1412,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-leaf",
+              "kind": "gate",
+              "x": 1310,
+              "y": 785,
+              "w": 100,
+              "h": 14,
+              "footY": 799,
+              "gateClosedOnly": true
+            }
+          ],
+          "exits": [
+            {
+              "id": "to-arcade",
+              "kind": "exit",
+              "label": "Enter shopping arcade",
+              "x": 340,
+              "y": 382,
+              "radius": 68,
+              "toScene": "shopping-arcade",
+              "toEntrance": "from-square"
+            },
+            {
+              "id": "square-gate",
+              "kind": "gate",
+              "label": "Service courtyard gate",
+              "x": 1360,
+              "y": 820,
+              "radius": 68,
+              "toScene": "service-courtyard",
+              "toEntrance": "from-square-gate",
+              "gateSide": "square"
+            }
+          ],
+          "interactions": [],
+          "occlusionLayers": [
+            {
+              "id": "facades",
+              "type": "foot-sorted"
+            },
+            {
+              "id": "furniture",
+              "type": "foot-sorted"
+            },
+            {
+              "id": "gate",
+              "type": "foot-sorted"
+            }
+          ],
+          "heroHeight": 200,
+          "radiusX": 22,
+          "radiusY": 12,
+          "solids": [
+            {
+              "id": "front-arcade",
+              "kind": "building",
+              "x": 60,
+              "y": 0,
+              "w": 485,
+              "h": 350,
+              "footY": 350,
+              "key": "arcade",
+              "label": "SHOPPING ARCADE",
+              "doorX": 340
+            },
+            {
+              "id": "front-metro",
+              "kind": "building",
+              "x": 545,
+              "y": 0,
+              "w": 460,
+              "h": 320,
+              "footY": 320,
+              "key": "metro",
+              "label": "METRO",
+              "doorX": 765
+            },
+            {
+              "id": "front-pizzeria",
+              "kind": "building",
+              "x": 1005,
+              "y": 0,
+              "w": 435,
+              "h": 350,
+              "footY": 350,
+              "key": "pizzeria",
+              "label": "PIZZA & KEBAB",
+              "doorX": 1220
+            },
+            {
+              "id": "bench-west",
+              "kind": "bench",
+              "x": 402,
+              "y": 556,
+              "w": 196,
+              "h": 24,
+              "footY": 580,
+              "anchorX": 500,
+              "artWidth": 210
+            },
+            {
+              "id": "bench-east",
+              "kind": "bench",
+              "x": 982,
+              "y": 711,
+              "w": 196,
+              "h": 24,
+              "footY": 735,
+              "anchorX": 1080,
+              "artWidth": 210
+            },
+            {
+              "id": "planter",
+              "kind": "planter",
+              "x": 754,
+              "y": 448,
+              "w": 132,
+              "h": 42,
+              "footY": 490,
+              "anchorX": 820,
+              "artWidth": 190
+            },
+            {
+              "id": "square-gate-post-left",
+              "kind": "post",
+              "x": 1294,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-post-right",
+              "kind": "post",
+              "x": 1412,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-leaf",
+              "kind": "gate",
+              "x": 1310,
+              "y": 785,
+              "w": 100,
+              "h": 14,
+              "footY": 799,
+              "gateClosedOnly": true
+            }
+          ],
+          "spawn": {
+            "x": 260,
+            "y": 540,
+            "face": 1
+          },
+          "doors": [
+            {
+              "id": "to-arcade",
+              "label": "Enter shopping arcade",
+              "x": 340,
+              "y": 382
+            },
+            {
+              "id": "square-gate",
+              "label": "Service courtyard gate",
+              "x": 1360,
+              "y": 820
+            }
+          ]
+        }
+      },
+      "inventory": {
+        "bound": true,
+        "browsing": false,
+        "recovering": false,
+        "pendingOpen": null,
+        "eating": null,
+        "lastOutcome": null,
+        "food": 0,
+        "wallet": 0,
+        "health": 100,
+        "disabledReason": "Full health \u2014 food kept.",
+        "layout": {
+          "mode": "centrum",
+          "x": 1120,
+          "y": 108,
+          "width": 88,
+          "height": 18,
+          "side": "right",
+          "clear": true,
+          "wholeActorClear": true,
+          "changes": 1,
+          "screenX": 530.926696230225,
+          "footY": 444.9740625,
+          "fit": "contain",
+          "scaleX": 1.0534423828125,
+          "scaleY": 1.0534423828125,
+          "actor": {
+            "x": 475.6209711325688,
+            "y": 277.47672363281254,
+            "w": 110.61145019531249,
+            "h": 173.81799316406247
+          },
+          "protectedUpper": {
+            "x": 475.6209711325688,
+            "y": 277.47672363281254,
+            "w": 110.61145019531249,
+            "h": 126.41308593749999
+          },
+          "panels": {
+            "panel": null,
+            "eating": null
+          }
+        }
+      }
+    },
+    {
+      "file": "phone-landscape-side.png",
+      "sha256": "4743ff7440ea19c43769cc6a5faa385b60aa5628ac0fa91cd41d5f41642ee276",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": {
+        "active": true,
+        "loading": false,
+        "paused": false,
+        "menuHold": false,
+        "mapOpen": false,
+        "error": null,
+        "sceneId": "metro-square",
+        "sceneTitle": "Metro Square",
+        "entranceId": "from-cycle-route",
+        "transition": null,
+        "exitGuard": 0,
+        "returning": null,
+        "parkingNodeCount": 1,
+        "story": {
+          "quest": {
+            "schemaVersion": 1,
+            "questId": "wrong-entrance",
+            "state": null,
+            "cageInspected": false,
+            "slipPresented": false,
+            "cargoMoved": false,
+            "entitlement": null,
+            "rewardReceipt": null,
+            "objective": "Visit Billy\u2019s Food Shop with the baby.",
+            "slip": null,
+            "parcel": {
+              "id": "B-04",
+              "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+              "kind": "quest-cargo",
+              "edible": false,
+              "carriedByPlayer": false
+            }
+          },
+          "dialogue": {
+            "open": false,
+            "target": null,
+            "line": 0,
+            "descriptor": null
+          },
+          "npc": {
+            "ready": true,
+            "preparedScenes": [
+              "metro-square"
+            ],
+            "key": "bq-centrum:civilians:v1",
+            "height": 176,
+            "talking": null,
+            "delivery": {
+              "active": false,
+              "progress": 0,
+              "complete": false
+            },
+            "residents": [
+              {
+                "id": "food-shop-host",
+                "role": "shopkeeper",
+                "label": "SHOPKEEPER",
+                "sceneId": "food-shop",
+                "x": 894,
+                "y": 530,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 8,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              },
+              {
+                "id": "courtyard-caretaker",
+                "role": "caretaker",
+                "label": "CARETAKER",
+                "sceneId": "service-courtyard",
+                "x": 670,
+                "y": 600,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 6,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              },
+              {
+                "id": "arcade-student",
+                "role": "resident",
+                "label": "NEIGHBOUR",
+                "sceneId": "shopping-arcade",
+                "x": 424.7987999999987,
+                "y": 570,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 9,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "walk",
+                "hp": 60,
+                "bodyClear": true
+              }
+            ],
+            "facts": {
+              "food-shop-host": {
+                "event": null,
+                "elapsed": 0
+              },
+              "courtyard-caretaker": {
+                "event": null,
+                "elapsed": 0
+              },
+              "arcade-student": {
+                "event": null,
+                "elapsed": 0
+              }
+            },
+            "sourceStats": {
+              "food-shop-host": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              },
+              "courtyard-caretaker": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              },
+              "arcade-student": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              }
+            }
+          },
+          "cargoMotion": {
+            "active": false,
+            "progress": 0,
+            "complete": false
+          },
+          "sceneId": "metro-square",
+          "reaction": null
+        },
+        "save": {
+          "schemaVersion": 1,
+          "layoutVersion": 3,
+          "gateOpened": false,
+          "discovered": [
+            "metro-square"
+          ],
+          "position": {
+            "sceneId": "metro-square",
+            "entranceId": "from-cycle-route",
+            "x": 645.4966600000001,
+            "y": 725.9487599999999,
+            "face": 1
+          },
+          "inventory": {
+            "billys": 0
+          },
+          "wallet": {
+            "kr": 0
+          },
+          "rewardClaims": {}
+        },
+        "health": 100,
+        "x": 645.4966600000001,
+        "y": 725.9487599999999,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "jump": 0,
+        "stride": 587.143990476191,
+        "weight": 0,
+        "view": "side",
+        "groundMotion": null,
+        "camera": {
+          "x": -23.33333333333337,
+          "y": 162.74875999999983,
+          "width": 1546.6666666666667,
+          "height": 853.3333333333334,
+          "zoom": 0.75,
+          "frameWidth": 1160,
+          "frameHeight": 640,
+          "bottomPadding": 24.666666666666742,
+          "bounds": {
+            "left": -23.33333333333337,
+            "right": 0,
+            "top": 0,
+            "bottom": 171.33333333333337
+          }
+        },
+        "height": 200,
+        "hero": {
+          "pose": "walking",
+          "carrier": "front",
+          "integratedCarrier": true,
+          "babyFace": {
+            "mood": "idle",
+            "source": "assets/baby_pose_idle.webp",
+            "continuousUpperBody": true,
+            "originalCollar": true,
+            "headOnly": false,
+            "uniformScale": 0.5710830421929589,
+            "angle": -0.13863973713415806,
+            "flip": 1,
+            "alpha": 1,
+            "pivot": [
+              52,
+              94
+            ],
+            "anatomicalWaist": [
+              48,
+              104
+            ],
+            "waist": {
+              "x": 20.28688524590164,
+              "y": -82.4068647689934
+            },
+            "headHeight": 35.40714861596345,
+            "referenceHeadHeight": 61,
+            "sourceRect": [
+              0,
+              0,
+              82,
+              95
+            ],
+            "sourceBounds": [
+              0,
+              0,
+              82,
+              146
+            ],
+            "seamY": 94,
+            "occludeFrom": 90,
+            "seam": {
+              "start": {
+                "x": 14.630850839420411,
+                "y": -81.61765066576346
+              },
+              "end": {
+                "x": 25.94291965238287,
+                "y": -83.19607887222334
+              },
+              "occludeFrom": {
+                "x": 19.971199604609666,
+                "y": -84.66927853158589
+              }
+            },
+            "head": [
+              15,
+              9,
+              57,
+              62
+            ],
+            "chin": [
+              {
+                "x": 23.496355932370058,
+                "y": -100.72978553231515
+              },
+              {
+                "x": 22.444070461396805,
+                "y": -100.00633927102103
+              },
+              {
+                "x": 20.905102960098425,
+                "y": -98.63836815875581
+              },
+              {
+                "x": 19.287214048477054,
+                "y": -97.8360004871387
+              },
+              {
+                "x": 17.669325136855676,
+                "y": -97.0336328155216
+              }
+            ],
+            "neck": [
+              {
+                "x": 16.0514362252343,
+                "y": -96.2312651439045
+              },
+              {
+                "x": 16.130357635557296,
+                "y": -95.66566170325638
+              }
+            ],
+            "collar": [
+              {
+                "x": 9.500959168425812,
+                "y": -93.5873978980842
+              },
+              {
+                "x": 13.85479030457764,
+                "y": -91.31183056710454
+              },
+              {
+                "x": 19.510824711058866,
+                "y": -92.10104467033447
+              }
+            ],
+            "pose": "front",
+            "pouch": {
+              "lip": [
+                [
+                  198,
+                  288
+                ],
+                [
+                  226,
+                  293
+                ],
+                [
+                  264,
+                  285
+                ]
+              ],
+              "depth": 32,
+              "seam": [
+                228.5,
+                298.9272499636561
+              ],
+              "origin": [
+                179,
+                500
+              ],
+              "scale": 0.4098360655737705,
+              "bob": 0,
+              "source": "frontBackground",
+              "textureMap": null,
+              "padding": 9.177249963656097
+            }
+          },
+          "height": 200,
+          "source": "front",
+          "sourceRect": [
+            51,
+            13,
+            256,
+            377
+          ],
+          "lowerPose": "idle",
+          "lowerSourceRect": [
+            170,
+            94,
+            1021,
+            1085
+          ],
+          "authoredLowerBody": true,
+          "stature": 488,
+          "landmarks": {
+            "near": {
+              "hip": {
+                "x": -13.966927735675554,
+                "y": -68.4909788502394
+              },
+              "knee": {
+                "x": -21.258815767044776,
+                "y": -34.406945759093034
+              },
+              "cuff": {
+                "x": -25.593027706118907,
+                "y": -24.335131395148412
+              },
+              "heel": {
+                "x": -35.50575208737344,
+                "y": -2.1516216300149136
+              },
+              "toe": {
+                "x": 5.625839106678575,
+                "y": -2.151621630014913
+              },
+              "sole": {
+                "x": -15.145305514157972,
+                "y": 0
+              },
+              "renderedFromSource": true,
+              "source": {
+                "image": "bear-near-contact-v18.png",
+                "pose": "fixed-native-contact-boot",
+                "bootLegIndex": 0,
+                "furLegIndex": 1,
+                "hip": [
+                  510,
+                  315
+                ],
+                "knee": [
+                  430,
+                  650
+                ],
+                "cuff": [
+                  862,
+                  835
+                ],
+                "heel": [
+                  710,
+                  1110
+                ],
+                "toe": [
+                  1240,
+                  1155
+                ],
+                "sole": [
+                  970,
+                  1160
+                ]
+              },
+              "plannedSole": {
+                "x": -15.145305514157974,
+                "y": 0
+              },
+              "plannedCuff": {
+                "x": -21.7026825633383,
+                "y": -25.40983606557377
+              },
+              "angle": 0,
+              "stance": true,
+              "kneeFlex": 0,
+              "contact": {
+                "x": -15.145305514157974,
+                "y": 0
+              },
+              "bootWidth": 41.131591194052014,
+              "rigidShoe": true
+            },
+            "far": {
+              "hip": {
+                "x": 11.796461299426072,
+                "y": -68.4909788502394
+              },
+              "knee": {
+                "x": 12.183231880030874,
+                "y": -32.4640559024015
+              },
+              "cuff": {
+                "x": 10.417936583724373,
+                "y": -21.1331229459245
+              },
+              "heel": {
+                "x": -1.255028858791992,
+                "y": -9.762789940806707
+              },
+              "toe": {
+                "x": 34.28266593286895,
+                "y": -9.762789940806709
+              },
+              "sole": {
+                "x": 22.11251862891207,
+                "y": -3.6885245901639343
+              },
+              "renderedFromSource": true,
+              "source": {
+                "image": "bear-near-contact-v18.png",
+                "pose": "fixed-native-contact-boot",
+                "bootLegIndex": 1,
+                "furLegIndex": 0,
+                "hip": [
+                  835,
+                  315
+                ],
+                "knee": [
+                  790,
+                  690
+                ],
+                "cuff": [
+                  315,
+                  745
+                ],
+                "heel": [
+                  100,
+                  820
+                ],
+                "toe": [
+                  550,
+                  1030
+                ],
+                "sole": [
+                  360,
+                  1035
+                ]
+              },
+              "plannedSole": {
+                "x": 22.11251862891207,
+                "y": -3.6885245901639347
+              },
+              "plannedCuff": {
+                "x": 16.784649776453055,
+                "y": -27.459016393442624
+              },
+              "angle": 0,
+              "stance": false,
+              "kneeFlex": 0,
+              "contact": {
+                "x": 22.11251862891207,
+                "y": -3.6885245901639347
+              },
+              "bootWidth": 35.53769479166094,
+              "rigidShoe": true
+            }
+          },
+          "gait": {
+            "far": {
+              "x": 0,
+              "y": 0,
+              "angle": 0,
+              "shinAngle": 0,
+              "kneeFlex": 0,
+              "contactOffset": 0,
+              "stance": false,
+              "groundDepth": 0,
+              "nativeLift": 0
+            },
+            "near": {
+              "x": 0,
+              "y": 0,
+              "angle": 0,
+              "shinAngle": 0,
+              "kneeFlex": 0,
+              "contactOffset": 0,
+              "stance": true,
+              "groundDepth": 0,
+              "nativeLift": 0
+            },
+            "phase": 0,
+            "cycleLength": 144,
+            "bob": 0,
+            "sway": 0,
+            "roll": 0,
+            "pelvisSway": 0,
+            "pelvisRoll": 0,
+            "centrumWalk": true,
+            "groundMotion": {
+              "x": 1,
+              "y": 0,
+              "depthScale": 0.3,
+              "cacheKey": "horizontal",
+              "centrumWalk": true
+            },
+            "depthProjected": true
+          },
+          "body": {
+            "pivot": {
+              "x": -2.8688524590163933,
+              "y": -67.62295081967213
+            },
+            "sway": 0,
+            "bob": -10.245901639344263,
+            "roll": 0,
+            "pelvisSway": 0,
+            "pelvisRoll": 0,
+            "slope": 0,
+            "opaque": true,
+            "surfaces": 1,
+            "continuous": true,
+            "triangles": 216,
+            "canonicalHeight": 280,
+            "lowerHeight": 190,
+            "cachePhase": 0
+          },
+          "cache": {
+            "frames": 52,
+            "hits": 8,
+            "misses": 1
+          },
+          "anatomy": {
+            "source": "fixed-native-idle",
+            "skinning": "independent-affine-source-patches",
+            "ikTargetsDiagnosticOnly": true,
+            "near": {
+              "hip": {
+                "x": -19.409109131553475,
+                "y": -96.43652106700395
+              },
+              "knee": {
+                "x": -25.272095460847673,
+                "y": -51.63309446365684
+              },
+              "cuff": {
+                "x": -35.83023878856647,
+                "y": -34.06918395320778
+              },
+              "thigh": 45.185414063600234,
+              "shin": 20.493055968979267,
+              "hipShift": 0.5678667507144439,
+              "bootWidth": 57.584227671672814
+            },
+            "far": {
+              "hip": {
+                "x": 16.296291981202444,
+                "y": -88.3722982119121
+              },
+              "knee": {
+                "x": 16.330744657109204,
+                "y": -47.735879336063896
+              },
+              "cuff": {
+                "x": 14.585111217214122,
+                "y": -29.5863721242943
+              },
+              "thigh": 40.63643348080967,
+              "shin": 18.233262136451533,
+              "hipShift": 7.518255322117312,
+              "bootWidth": 49.75277270832532
+            }
+          },
+          "raster": {
+            "mode": "worker",
+            "requestedPhase": 0,
+            "renderedPhase": 0,
+            "requestedWeight": 0,
+            "renderedWeight": 0,
+            "heading": "horizontal"
+          }
+        },
+        "drawOrder": [
+          {
+            "id": "front-metro",
+            "footY": 320
+          },
+          {
+            "id": "front-arcade",
+            "footY": 350
+          },
+          {
+            "id": "front-pizzeria",
+            "footY": 350
+          },
+          {
+            "id": "planter",
+            "footY": 490
+          },
+          {
+            "id": "bench-west",
+            "footY": 580
+          },
+          {
+            "id": "player",
+            "footY": 725.9487599999999
+          },
+          {
+            "id": "parked-player-bicycle",
+            "footY": 730
+          },
+          {
+            "id": "bench-east",
+            "footY": 735
+          },
+          {
+            "id": "service-gate",
+            "footY": 803
+          }
+        ],
+        "shadow": {
+          "x": 645.4966600000001,
+          "y": 725.9487599999999
+        },
+        "hits": [],
+        "world": {
+          "id": "metro-square",
+          "label": "Metro Square",
+          "kind": "outdoor",
+          "landmark": "The single H\u00e4sselby metro entrance",
+          "width": 1500,
+          "height": 1000,
+          "floor": {
+            "left": 60,
+            "right": 1440,
+            "top": 320,
+            "bottom": 930
+          },
+          "defaultEntrance": "start",
+          "anchors": {
+            "start": {
+              "x": 260,
+              "y": 540,
+              "face": 1
+            },
+            "from-arcade": {
+              "x": 340,
+              "y": 440,
+              "face": 1
+            },
+            "from-courtyard-gate": {
+              "x": 1300,
+              "y": 820,
+              "face": -1
+            },
+            "bicycle-parking": {
+              "x": 220,
+              "y": 730,
+              "face": 1
+            },
+            "from-cycle-route": {
+              "x": 248,
+              "y": 730,
+              "face": 1
+            }
+          },
+          "buildings": [
+            {
+              "id": "front-arcade",
+              "kind": "building",
+              "x": 60,
+              "y": 0,
+              "w": 485,
+              "h": 350,
+              "footY": 350,
+              "key": "arcade",
+              "label": "SHOPPING ARCADE",
+              "doorX": 340
+            },
+            {
+              "id": "front-metro",
+              "kind": "building",
+              "x": 545,
+              "y": 0,
+              "w": 460,
+              "h": 320,
+              "footY": 320,
+              "key": "metro",
+              "label": "METRO",
+              "doorX": 765
+            },
+            {
+              "id": "front-pizzeria",
+              "kind": "building",
+              "x": 1005,
+              "y": 0,
+              "w": 435,
+              "h": 350,
+              "footY": 350,
+              "key": "pizzeria",
+              "label": "PIZZA & KEBAB",
+              "doorX": 1220
+            }
+          ],
+          "furniture": [
+            {
+              "id": "bench-west",
+              "kind": "bench",
+              "x": 402,
+              "y": 556,
+              "w": 196,
+              "h": 24,
+              "footY": 580,
+              "anchorX": 500,
+              "artWidth": 210
+            },
+            {
+              "id": "bench-east",
+              "kind": "bench",
+              "x": 982,
+              "y": 711,
+              "w": 196,
+              "h": 24,
+              "footY": 735,
+              "anchorX": 1080,
+              "artWidth": 210
+            },
+            {
+              "id": "planter",
+              "kind": "planter",
+              "x": 754,
+              "y": 448,
+              "w": 132,
+              "h": 42,
+              "footY": 490,
+              "anchorX": 820,
+              "artWidth": 190
+            }
+          ],
+          "extraSolids": [
+            {
+              "id": "square-gate-post-left",
+              "kind": "post",
+              "x": 1294,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-post-right",
+              "kind": "post",
+              "x": 1412,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-leaf",
+              "kind": "gate",
+              "x": 1310,
+              "y": 785,
+              "w": 100,
+              "h": 14,
+              "footY": 799,
+              "gateClosedOnly": true
+            }
+          ],
+          "exits": [
+            {
+              "id": "to-arcade",
+              "kind": "exit",
+              "label": "Enter shopping arcade",
+              "x": 340,
+              "y": 382,
+              "radius": 68,
+              "toScene": "shopping-arcade",
+              "toEntrance": "from-square"
+            },
+            {
+              "id": "square-gate",
+              "kind": "gate",
+              "label": "Service courtyard gate",
+              "x": 1360,
+              "y": 820,
+              "radius": 68,
+              "toScene": "service-courtyard",
+              "toEntrance": "from-square-gate",
+              "gateSide": "square"
+            }
+          ],
+          "interactions": [],
+          "occlusionLayers": [
+            {
+              "id": "facades",
+              "type": "foot-sorted"
+            },
+            {
+              "id": "furniture",
+              "type": "foot-sorted"
+            },
+            {
+              "id": "gate",
+              "type": "foot-sorted"
+            }
+          ],
+          "heroHeight": 200,
+          "radiusX": 22,
+          "radiusY": 12,
+          "solids": [
+            {
+              "id": "front-arcade",
+              "kind": "building",
+              "x": 60,
+              "y": 0,
+              "w": 485,
+              "h": 350,
+              "footY": 350,
+              "key": "arcade",
+              "label": "SHOPPING ARCADE",
+              "doorX": 340
+            },
+            {
+              "id": "front-metro",
+              "kind": "building",
+              "x": 545,
+              "y": 0,
+              "w": 460,
+              "h": 320,
+              "footY": 320,
+              "key": "metro",
+              "label": "METRO",
+              "doorX": 765
+            },
+            {
+              "id": "front-pizzeria",
+              "kind": "building",
+              "x": 1005,
+              "y": 0,
+              "w": 435,
+              "h": 350,
+              "footY": 350,
+              "key": "pizzeria",
+              "label": "PIZZA & KEBAB",
+              "doorX": 1220
+            },
+            {
+              "id": "bench-west",
+              "kind": "bench",
+              "x": 402,
+              "y": 556,
+              "w": 196,
+              "h": 24,
+              "footY": 580,
+              "anchorX": 500,
+              "artWidth": 210
+            },
+            {
+              "id": "bench-east",
+              "kind": "bench",
+              "x": 982,
+              "y": 711,
+              "w": 196,
+              "h": 24,
+              "footY": 735,
+              "anchorX": 1080,
+              "artWidth": 210
+            },
+            {
+              "id": "planter",
+              "kind": "planter",
+              "x": 754,
+              "y": 448,
+              "w": 132,
+              "h": 42,
+              "footY": 490,
+              "anchorX": 820,
+              "artWidth": 190
+            },
+            {
+              "id": "square-gate-post-left",
+              "kind": "post",
+              "x": 1294,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-post-right",
+              "kind": "post",
+              "x": 1412,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-leaf",
+              "kind": "gate",
+              "x": 1310,
+              "y": 785,
+              "w": 100,
+              "h": 14,
+              "footY": 799,
+              "gateClosedOnly": true
+            }
+          ],
+          "spawn": {
+            "x": 260,
+            "y": 540,
+            "face": 1
+          },
+          "doors": [
+            {
+              "id": "to-arcade",
+              "label": "Enter shopping arcade",
+              "x": 340,
+              "y": 382
+            },
+            {
+              "id": "square-gate",
+              "label": "Service courtyard gate",
+              "x": 1360,
+              "y": 820
+            }
+          ]
+        }
+      },
+      "inventory": {
+        "bound": true,
+        "browsing": false,
+        "recovering": false,
+        "pendingOpen": null,
+        "eating": null,
+        "lastOutcome": null,
+        "food": 0,
+        "wallet": 0,
+        "health": 100,
+        "disabledReason": "Full health \u2014 food kept.",
+        "layout": {
+          "mode": "centrum",
+          "x": 764,
+          "y": 105,
+          "width": 70,
+          "height": 18,
+          "side": "right",
+          "clear": true,
+          "wholeActorClear": true,
+          "changes": 1,
+          "screenX": 364.97360843103456,
+          "footY": 269.5048275862069,
+          "fit": "cover",
+          "scaleX": 0.7275862068965517,
+          "scaleY": 0.7275862068965517,
+          "actor": {
+            "x": 326.7753325689656,
+            "y": 153.81862068965518,
+            "w": 76.39655172413794,
+            "h": 120.05172413793103
+          },
+          "protectedUpper": {
+            "x": 326.7753325689656,
+            "y": 153.81862068965518,
+            "w": 76.39655172413794,
+            "h": 87.3103448275862
+          },
+          "panels": {
+            "panel": null,
+            "eating": null
+          }
+        }
+      }
+    },
+    {
+      "file": "phone-landscape-away.png",
+      "sha256": "282e78a2eee75098a59ef826a28b5a4fddeaff40bf23275bc73b97f59321247c",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": {
+        "active": true,
+        "loading": false,
+        "paused": false,
+        "menuHold": false,
+        "mapOpen": false,
+        "error": null,
+        "sceneId": "metro-square",
+        "sceneTitle": "Metro Square",
+        "entranceId": "from-cycle-route",
+        "transition": null,
+        "exitGuard": 0,
+        "returning": null,
+        "parkingNodeCount": 1,
+        "story": {
+          "quest": {
+            "schemaVersion": 1,
+            "questId": "wrong-entrance",
+            "state": null,
+            "cageInspected": false,
+            "slipPresented": false,
+            "cargoMoved": false,
+            "entitlement": null,
+            "rewardReceipt": null,
+            "objective": "Visit Billy\u2019s Food Shop with the baby.",
+            "slip": null,
+            "parcel": {
+              "id": "B-04",
+              "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+              "kind": "quest-cargo",
+              "edible": false,
+              "carriedByPlayer": false
+            }
+          },
+          "dialogue": {
+            "open": false,
+            "target": null,
+            "line": 0,
+            "descriptor": null
+          },
+          "npc": {
+            "ready": true,
+            "preparedScenes": [
+              "metro-square"
+            ],
+            "key": "bq-centrum:civilians:v1",
+            "height": 176,
+            "talking": null,
+            "delivery": {
+              "active": false,
+              "progress": 0,
+              "complete": false
+            },
+            "residents": [
+              {
+                "id": "food-shop-host",
+                "role": "shopkeeper",
+                "label": "SHOPKEEPER",
+                "sceneId": "food-shop",
+                "x": 894,
+                "y": 530,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 8,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              },
+              {
+                "id": "courtyard-caretaker",
+                "role": "caretaker",
+                "label": "CARETAKER",
+                "sceneId": "service-courtyard",
+                "x": 670,
+                "y": 600,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 6,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              },
+              {
+                "id": "arcade-student",
+                "role": "resident",
+                "label": "NEIGHBOUR",
+                "sceneId": "shopping-arcade",
+                "x": 440,
+                "y": 570,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 9,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              }
+            ],
+            "facts": {
+              "food-shop-host": {
+                "event": null,
+                "elapsed": 0
+              },
+              "courtyard-caretaker": {
+                "event": null,
+                "elapsed": 0
+              },
+              "arcade-student": {
+                "event": null,
+                "elapsed": 0
+              }
+            },
+            "sourceStats": {
+              "food-shop-host": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              },
+              "courtyard-caretaker": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              },
+              "arcade-student": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              }
+            }
+          },
+          "cargoMotion": {
+            "active": false,
+            "progress": 0,
+            "complete": false
+          },
+          "sceneId": "metro-square",
+          "reaction": null
+        },
+        "save": {
+          "schemaVersion": 1,
+          "layoutVersion": 3,
+          "gateOpened": false,
+          "discovered": [
+            "metro-square"
+          ],
+          "position": {
+            "sceneId": "metro-square",
+            "entranceId": "from-cycle-route",
+            "x": 645.4966600000001,
+            "y": 705.4925799999997,
+            "face": 1
+          },
+          "inventory": {
+            "billys": 0
+          },
+          "wallet": {
+            "kr": 0
+          },
+          "rewardClaims": {}
+        },
+        "health": 100,
+        "x": 645.4966600000001,
+        "y": 705.1487599999997,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "jump": 0,
+        "stride": 686.1916095238105,
+        "weight": 0.0019508963824550374,
+        "view": "away",
+        "groundMotion": {
+          "x": 0,
+          "y": -1,
+          "metricSpeed": 0,
+          "cacheKey": "depth:0:-32",
+          "centrumWalk": true
+        },
+        "camera": {
+          "x": -23.33333333333337,
+          "y": 141.94875999999965,
+          "width": 1546.6666666666667,
+          "height": 853.3333333333334,
+          "zoom": 0.75,
+          "frameWidth": 1160,
+          "frameHeight": 640,
+          "bottomPadding": 24.666666666666742,
+          "bounds": {
+            "left": -23.33333333333337,
+            "right": 0,
+            "top": 0,
+            "bottom": 171.33333333333337
+          }
+        },
+        "height": 200,
+        "hero": {
+          "pose": "walking",
+          "view": "away",
+          "authoredView": true,
+          "sourceAsset": "assets/centrum/actors/bear-directions.png",
+          "source": "assets/centrum/actors/bear-directions.png",
+          "carrier": "front",
+          "integratedCarrier": true,
+          "height": 200,
+          "babyFace": {
+            "mood": "idle",
+            "source": "assets/baby_pose_idle.webp",
+            "continuousUpperBody": true,
+            "originalCollar": true,
+            "headOnly": false,
+            "uniformScale": 0.5710830421929589,
+            "angle": -0.13863973713415806,
+            "flip": 1,
+            "alpha": 1,
+            "pivot": [
+              52,
+              94
+            ],
+            "anatomicalWaist": [
+              48,
+              104
+            ],
+            "waist": {
+              "x": 45.39310806289728,
+              "y": -92.11661658307268
+            },
+            "headHeight": 35.40714861596345,
+            "referenceHeadHeight": 61,
+            "sourceRect": [
+              0,
+              0,
+              82,
+              95
+            ],
+            "sourceBounds": [
+              0,
+              0,
+              82,
+              146
+            ],
+            "seamY": 94,
+            "occludeFrom": 90,
+            "seam": {
+              "start": {
+                "x": 39.73707365641605,
+                "y": -91.32740247984275
+              },
+              "end": {
+                "x": 51.0491424693785,
+                "y": -92.90583068630262
+              },
+              "occludeFrom": {
+                "x": 45.0774224216053,
+                "y": -94.37903034566517
+              }
+            },
+            "head": [
+              15,
+              9,
+              57,
+              62
+            ],
+            "chin": [
+              {
+                "x": 48.60257874936569,
+                "y": -110.43953734639443
+              },
+              {
+                "x": 47.550293278392445,
+                "y": -109.71609108510032
+              },
+              {
+                "x": 46.01132577709406,
+                "y": -108.3481199728351
+              },
+              {
+                "x": 44.39343686547269,
+                "y": -107.54575230121799
+              },
+              {
+                "x": 42.77554795385131,
+                "y": -106.74338462960088
+              }
+            ],
+            "neck": [
+              {
+                "x": 41.15765904222994,
+                "y": -105.94101695798378
+              },
+              {
+                "x": 41.23658045255293,
+                "y": -105.37541351733566
+              }
+            ],
+            "collar": [
+              {
+                "x": 34.60718198542145,
+                "y": -103.29714971216349
+              },
+              {
+                "x": 38.961013121573274,
+                "y": -101.02158238118382
+              },
+              {
+                "x": 44.617047528054506,
+                "y": -101.81079648441376
+              }
+            ],
+            "pose": "centrum-away",
+            "pouch": {
+              "lip": [
+                [
+                  190.17142857142858,
+                  277.42040816326534
+                ],
+                [
+                  216.29387755102042,
+                  285.7795918367347
+                ],
+                [
+                  242.41632653061225,
+                  274.8081632653061
+                ]
+              ],
+              "depth": 32,
+              "seam": [
+                216.2938775510204,
+                289.8477004352619
+              ],
+              "origin": [
+                105.53469387755104,
+                514.6122448979593
+              ],
+              "scale": 0.4098360655737705,
+              "bob": 0,
+              "source": "assets/centrum/actors/bear-directions.png",
+              "textureMap": null,
+              "padding": 8.90076165975171
+            }
+          },
+          "landmarks": {
+            "far": {
+              "hip": {
+                "x": -20.556797040536228,
+                "y": -70.66082407765194
+              },
+              "knee": {
+                "x": -21.840724372617707,
+                "y": -51.388711531431106
+              },
+              "cuff": {
+                "x": -22.69655403144865,
+                "y": -35.54276221033637
+              },
+              "sole": {
+                "x": -21.6259618601539,
+                "y": -3.424997071493933
+              },
+              "contact": {
+                "x": -21.6259618601539,
+                "y": -3.424997071493933
+              },
+              "stance": true,
+              "sourceFoot": "far",
+              "rigidShoe": true,
+              "kneeBend": 0
+            },
+            "near": {
+              "hip": {
+                "x": 13.916251530210785,
+                "y": -69.58960918044833
+              },
+              "knee": {
+                "x": 14.773857228452915,
+                "y": -49.25860128361091
+              },
+              "cuff": {
+                "x": 14.774788424623912,
+                "y": -32.13769578398383
+              },
+              "sole": {
+                "x": 21.41184342589495,
+                "y": -0.44803839638159876
+              },
+              "contact": {
+                "x": 21.41184342589495,
+                "y": -0.43002929416344
+              },
+              "stance": false,
+              "sourceFoot": "near",
+              "rigidShoe": true,
+              "kneeBend": 1.2068155602962061e-05
+            }
+          },
+          "gait": {
+            "far": {
+              "x": 0,
+              "y": 0.0008978766492687583,
+              "angle": 0,
+              "shinAngle": 3.734155668865968e-05,
+              "kneeFlex": 0,
+              "contactOffset": 0,
+              "stance": true,
+              "groundDepth": 0.0008978766492687583,
+              "nativeLift": 0
+            },
+            "near": {
+              "x": 0,
+              "y": -0.01980152786371632,
+              "angle": 5.558028013492521e-05,
+              "shinAngle": 0.0008883814638328243,
+              "kneeFlex": 0.0019419831682910241,
+              "contactOffset": 0,
+              "stance": false,
+              "groundDepth": -0.0017924256455302578,
+              "nativeLift": -0.018009102218186062
+            },
+            "phase": 0.7652195105820176,
+            "cycleLength": 144,
+            "bob": -0.0021068574678888047,
+            "sway": -0.0026127721645369468,
+            "roll": 3.2843878170524773e-05,
+            "pelvisSway": 0.002563417782144152,
+            "pelvisRoll": -2.5634177821441524e-05,
+            "centrumWalk": true,
+            "groundMotion": {
+              "x": 0,
+              "y": -1,
+              "depthScale": 0.3,
+              "cacheKey": "depth:0:-32",
+              "centrumWalk": true
+            },
+            "depthProjected": true
+          },
+          "body": {
+            "continuous": true,
+            "surfaces": 1,
+            "roll": 1.806413299378863e-05,
+            "bob": -0.0013694573541277232,
+            "sway": -0.001437024690495321,
+            "authoredViewingAngle": true
+          },
+          "directional": {
+            "view": "away",
+            "asset": "assets/centrum/actors/bear-directions.png",
+            "framePhase": 0.7652195105820176,
+            "drawCalls": 11,
+            "preparedParts": 2,
+            "sourceBabyLower": "assets/art/front-carrier-v7.png",
+            "sourceBabyLowerScale": 0.4098360655737705,
+            "sourceBabyOriginalScale": 0.5710830421929589,
+            "groundAnchor": {
+              "x": 645.4966600000001,
+              "y": 705.1487599999997
+            }
+          }
+        },
+        "drawOrder": [
+          {
+            "id": "front-metro",
+            "footY": 320
+          },
+          {
+            "id": "front-arcade",
+            "footY": 350
+          },
+          {
+            "id": "front-pizzeria",
+            "footY": 350
+          },
+          {
+            "id": "planter",
+            "footY": 490
+          },
+          {
+            "id": "bench-west",
+            "footY": 580
+          },
+          {
+            "id": "player",
+            "footY": 705.1487599999997
+          },
+          {
+            "id": "parked-player-bicycle",
+            "footY": 730
+          },
+          {
+            "id": "bench-east",
+            "footY": 735
+          },
+          {
+            "id": "service-gate",
+            "footY": 803
+          }
+        ],
+        "shadow": {
+          "x": 645.4966600000001,
+          "y": 705.1487599999997
+        },
+        "hits": [],
+        "world": {
+          "id": "metro-square",
+          "label": "Metro Square",
+          "kind": "outdoor",
+          "landmark": "The single H\u00e4sselby metro entrance",
+          "width": 1500,
+          "height": 1000,
+          "floor": {
+            "left": 60,
+            "right": 1440,
+            "top": 320,
+            "bottom": 930
+          },
+          "defaultEntrance": "start",
+          "anchors": {
+            "start": {
+              "x": 260,
+              "y": 540,
+              "face": 1
+            },
+            "from-arcade": {
+              "x": 340,
+              "y": 440,
+              "face": 1
+            },
+            "from-courtyard-gate": {
+              "x": 1300,
+              "y": 820,
+              "face": -1
+            },
+            "bicycle-parking": {
+              "x": 220,
+              "y": 730,
+              "face": 1
+            },
+            "from-cycle-route": {
+              "x": 248,
+              "y": 730,
+              "face": 1
+            }
+          },
+          "buildings": [
+            {
+              "id": "front-arcade",
+              "kind": "building",
+              "x": 60,
+              "y": 0,
+              "w": 485,
+              "h": 350,
+              "footY": 350,
+              "key": "arcade",
+              "label": "SHOPPING ARCADE",
+              "doorX": 340
+            },
+            {
+              "id": "front-metro",
+              "kind": "building",
+              "x": 545,
+              "y": 0,
+              "w": 460,
+              "h": 320,
+              "footY": 320,
+              "key": "metro",
+              "label": "METRO",
+              "doorX": 765
+            },
+            {
+              "id": "front-pizzeria",
+              "kind": "building",
+              "x": 1005,
+              "y": 0,
+              "w": 435,
+              "h": 350,
+              "footY": 350,
+              "key": "pizzeria",
+              "label": "PIZZA & KEBAB",
+              "doorX": 1220
+            }
+          ],
+          "furniture": [
+            {
+              "id": "bench-west",
+              "kind": "bench",
+              "x": 402,
+              "y": 556,
+              "w": 196,
+              "h": 24,
+              "footY": 580,
+              "anchorX": 500,
+              "artWidth": 210
+            },
+            {
+              "id": "bench-east",
+              "kind": "bench",
+              "x": 982,
+              "y": 711,
+              "w": 196,
+              "h": 24,
+              "footY": 735,
+              "anchorX": 1080,
+              "artWidth": 210
+            },
+            {
+              "id": "planter",
+              "kind": "planter",
+              "x": 754,
+              "y": 448,
+              "w": 132,
+              "h": 42,
+              "footY": 490,
+              "anchorX": 820,
+              "artWidth": 190
+            }
+          ],
+          "extraSolids": [
+            {
+              "id": "square-gate-post-left",
+              "kind": "post",
+              "x": 1294,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-post-right",
+              "kind": "post",
+              "x": 1412,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-leaf",
+              "kind": "gate",
+              "x": 1310,
+              "y": 785,
+              "w": 100,
+              "h": 14,
+              "footY": 799,
+              "gateClosedOnly": true
+            }
+          ],
+          "exits": [
+            {
+              "id": "to-arcade",
+              "kind": "exit",
+              "label": "Enter shopping arcade",
+              "x": 340,
+              "y": 382,
+              "radius": 68,
+              "toScene": "shopping-arcade",
+              "toEntrance": "from-square"
+            },
+            {
+              "id": "square-gate",
+              "kind": "gate",
+              "label": "Service courtyard gate",
+              "x": 1360,
+              "y": 820,
+              "radius": 68,
+              "toScene": "service-courtyard",
+              "toEntrance": "from-square-gate",
+              "gateSide": "square"
+            }
+          ],
+          "interactions": [],
+          "occlusionLayers": [
+            {
+              "id": "facades",
+              "type": "foot-sorted"
+            },
+            {
+              "id": "furniture",
+              "type": "foot-sorted"
+            },
+            {
+              "id": "gate",
+              "type": "foot-sorted"
+            }
+          ],
+          "heroHeight": 200,
+          "radiusX": 22,
+          "radiusY": 12,
+          "solids": [
+            {
+              "id": "front-arcade",
+              "kind": "building",
+              "x": 60,
+              "y": 0,
+              "w": 485,
+              "h": 350,
+              "footY": 350,
+              "key": "arcade",
+              "label": "SHOPPING ARCADE",
+              "doorX": 340
+            },
+            {
+              "id": "front-metro",
+              "kind": "building",
+              "x": 545,
+              "y": 0,
+              "w": 460,
+              "h": 320,
+              "footY": 320,
+              "key": "metro",
+              "label": "METRO",
+              "doorX": 765
+            },
+            {
+              "id": "front-pizzeria",
+              "kind": "building",
+              "x": 1005,
+              "y": 0,
+              "w": 435,
+              "h": 350,
+              "footY": 350,
+              "key": "pizzeria",
+              "label": "PIZZA & KEBAB",
+              "doorX": 1220
+            },
+            {
+              "id": "bench-west",
+              "kind": "bench",
+              "x": 402,
+              "y": 556,
+              "w": 196,
+              "h": 24,
+              "footY": 580,
+              "anchorX": 500,
+              "artWidth": 210
+            },
+            {
+              "id": "bench-east",
+              "kind": "bench",
+              "x": 982,
+              "y": 711,
+              "w": 196,
+              "h": 24,
+              "footY": 735,
+              "anchorX": 1080,
+              "artWidth": 210
+            },
+            {
+              "id": "planter",
+              "kind": "planter",
+              "x": 754,
+              "y": 448,
+              "w": 132,
+              "h": 42,
+              "footY": 490,
+              "anchorX": 820,
+              "artWidth": 190
+            },
+            {
+              "id": "square-gate-post-left",
+              "kind": "post",
+              "x": 1294,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-post-right",
+              "kind": "post",
+              "x": 1412,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-leaf",
+              "kind": "gate",
+              "x": 1310,
+              "y": 785,
+              "w": 100,
+              "h": 14,
+              "footY": 799,
+              "gateClosedOnly": true
+            }
+          ],
+          "spawn": {
+            "x": 260,
+            "y": 540,
+            "face": 1
+          },
+          "doors": [
+            {
+              "id": "to-arcade",
+              "label": "Enter shopping arcade",
+              "x": 340,
+              "y": 382
+            },
+            {
+              "id": "square-gate",
+              "label": "Service courtyard gate",
+              "x": 1360,
+              "y": 820
+            }
+          ]
+        }
+      },
+      "inventory": {
+        "bound": true,
+        "browsing": false,
+        "recovering": false,
+        "pendingOpen": null,
+        "eating": null,
+        "lastOutcome": null,
+        "food": 0,
+        "wallet": 0,
+        "health": 100,
+        "disabledReason": "Full health \u2014 food kept.",
+        "layout": {
+          "mode": "centrum",
+          "x": 764,
+          "y": 105,
+          "width": 70,
+          "height": 18,
+          "side": "right",
+          "clear": true,
+          "wholeActorClear": true,
+          "changes": 1,
+          "screenX": 364.97360843103456,
+          "footY": 269.5048275862069,
+          "fit": "cover",
+          "scaleX": 0.7275862068965517,
+          "scaleY": 0.7275862068965517,
+          "actor": {
+            "x": 326.7753325689656,
+            "y": 153.81862068965518,
+            "w": 76.39655172413794,
+            "h": 120.05172413793103
+          },
+          "protectedUpper": {
+            "x": 326.7753325689656,
+            "y": 153.81862068965518,
+            "w": 76.39655172413794,
+            "h": 87.3103448275862
+          },
+          "panels": {
+            "panel": null,
+            "eating": null
+          }
+        }
+      }
+    },
+    {
+      "file": "phone-landscape-toward.png",
+      "sha256": "e48acd9d055909a00e76c2d9cfc7f3ca03777931dd4c7639bd19f232213a1b0c",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": {
+        "active": true,
+        "loading": false,
+        "paused": false,
+        "menuHold": false,
+        "mapOpen": false,
+        "error": null,
+        "sceneId": "metro-square",
+        "sceneTitle": "Metro Square",
+        "entranceId": "from-cycle-route",
+        "transition": null,
+        "exitGuard": 0,
+        "returning": null,
+        "parkingNodeCount": 1,
+        "story": {
+          "quest": {
+            "schemaVersion": 1,
+            "questId": "wrong-entrance",
+            "state": null,
+            "cageInspected": false,
+            "slipPresented": false,
+            "cargoMoved": false,
+            "entitlement": null,
+            "rewardReceipt": null,
+            "objective": "Visit Billy\u2019s Food Shop with the baby.",
+            "slip": null,
+            "parcel": {
+              "id": "B-04",
+              "label": "B-04 \u00b7 FOOD SHOP \u00b7 DOOR 7",
+              "kind": "quest-cargo",
+              "edible": false,
+              "carriedByPlayer": false
+            }
+          },
+          "dialogue": {
+            "open": false,
+            "target": null,
+            "line": 0,
+            "descriptor": null
+          },
+          "npc": {
+            "ready": true,
+            "preparedScenes": [
+              "metro-square"
+            ],
+            "key": "bq-centrum:civilians:v1",
+            "height": 176,
+            "talking": null,
+            "delivery": {
+              "active": false,
+              "progress": 0,
+              "complete": false
+            },
+            "residents": [
+              {
+                "id": "food-shop-host",
+                "role": "shopkeeper",
+                "label": "SHOPKEEPER",
+                "sceneId": "food-shop",
+                "x": 894,
+                "y": 530,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 8,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              },
+              {
+                "id": "courtyard-caretaker",
+                "role": "caretaker",
+                "label": "CARETAKER",
+                "sceneId": "service-courtyard",
+                "x": 670,
+                "y": 600,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 6,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              },
+              {
+                "id": "arcade-student",
+                "role": "resident",
+                "label": "NEIGHBOUR",
+                "sceneId": "shopping-arcade",
+                "x": 440,
+                "y": 570,
+                "radius": 78,
+                "available": true,
+                "reason": "Ready to talk.",
+                "state": "idle",
+                "variant": 9,
+                "civilian": true,
+                "hostile": false,
+                "fear": false,
+                "activity": "idle",
+                "hp": 60,
+                "bodyClear": true
+              }
+            ],
+            "facts": {
+              "food-shop-host": {
+                "event": null,
+                "elapsed": 0
+              },
+              "courtyard-caretaker": {
+                "event": null,
+                "elapsed": 0
+              },
+              "arcade-student": {
+                "event": null,
+                "elapsed": 0
+              }
+            },
+            "sourceStats": {
+              "food-shop-host": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              },
+              "courtyard-caretaker": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              },
+              "arcade-student": {
+                "grabs": 0,
+                "throws": 0,
+                "mauls": 0,
+                "frenzyMauls": 0,
+                "transformations": 0,
+                "witnesses": 0,
+                "defeats": 0,
+                "enemyShots": 0,
+                "screenImpacts": 0,
+                "screams": 0,
+                "civilianScares": 0,
+                "hides": 0,
+                "departures": 0,
+                "arrivals": 0,
+                "gangWarnings": 0,
+                "gangProvocations": 0
+              }
+            }
+          },
+          "cargoMotion": {
+            "active": false,
+            "progress": 0,
+            "complete": false
+          },
+          "sceneId": "metro-square",
+          "reaction": null
+        },
+        "save": {
+          "schemaVersion": 1,
+          "layoutVersion": 3,
+          "gateOpened": false,
+          "discovered": [
+            "metro-square"
+          ],
+          "position": {
+            "sceneId": "metro-square",
+            "entranceId": "from-cycle-route",
+            "x": 645.4966600000001,
+            "y": 722.4168999999997,
+            "face": 1
+          },
+          "inventory": {
+            "billys": 0
+          },
+          "wallet": {
+            "kr": 0
+          },
+          "rewardClaims": {}
+        },
+        "health": 100,
+        "x": 645.4966600000001,
+        "y": 726.8186299999996,
+        "vx": 0,
+        "vy": 0,
+        "face": 1,
+        "jump": 0,
+        "stride": 789.3814666666668,
+        "weight": 0.0019513395211625604,
+        "view": "toward",
+        "groundMotion": {
+          "x": 0,
+          "y": 1,
+          "metricSpeed": 0,
+          "cacheKey": "depth:0:32",
+          "centrumWalk": true
+        },
+        "camera": {
+          "x": -23.33333333333337,
+          "y": 163.6186299999996,
+          "width": 1546.6666666666667,
+          "height": 853.3333333333334,
+          "zoom": 0.75,
+          "frameWidth": 1160,
+          "frameHeight": 640,
+          "bottomPadding": 24.666666666666742,
+          "bounds": {
+            "left": -23.33333333333337,
+            "right": 0,
+            "top": 0,
+            "bottom": 171.33333333333337
+          }
+        },
+        "height": 200,
+        "hero": {
+          "pose": "walking",
+          "view": "toward",
+          "authoredView": true,
+          "sourceAsset": "assets/centrum/actors/bear-directions.png",
+          "source": "assets/centrum/actors/bear-directions.png",
+          "carrier": "front",
+          "integratedCarrier": true,
+          "height": 200,
+          "babyFace": {
+            "mood": "idle",
+            "source": "assets/baby_pose_idle.webp",
+            "continuousUpperBody": true,
+            "originalCollar": true,
+            "headOnly": false,
+            "uniformScale": 0.5710830421929589,
+            "angle": -0.13863973713415806,
+            "flip": 1,
+            "alpha": 1,
+            "pivot": [
+              52,
+              94
+            ],
+            "anatomicalWaist": [
+              48,
+              104
+            ],
+            "waist": {
+              "x": 12.060770808665339,
+              "y": -86.43716528433761
+            },
+            "headHeight": 35.40714861596345,
+            "referenceHeadHeight": 61,
+            "sourceRect": [
+              0,
+              0,
+              82,
+              95
+            ],
+            "sourceBounds": [
+              0,
+              0,
+              82,
+              146
+            ],
+            "seamY": 94,
+            "occludeFrom": 90,
+            "seam": {
+              "start": {
+                "x": 6.404736402184111,
+                "y": -85.64795118110767
+              },
+              "end": {
+                "x": 17.716805215146568,
+                "y": -87.22637938756755
+              },
+              "occludeFrom": {
+                "x": 11.745085167373363,
+                "y": -88.6995790469301
+              }
+            },
+            "head": [
+              15,
+              9,
+              57,
+              62
+            ],
+            "chin": [
+              {
+                "x": 15.270241495133758,
+                "y": -104.76008604765936
+              },
+              {
+                "x": 14.217956024160504,
+                "y": -104.03663978636524
+              },
+              {
+                "x": 12.678988522862126,
+                "y": -102.66866867410002
+              },
+              {
+                "x": 11.06109961124075,
+                "y": -101.86630100248291
+              },
+              {
+                "x": 9.443210699619376,
+                "y": -101.06393333086581
+              }
+            ],
+            "neck": [
+              {
+                "x": 7.825321787998001,
+                "y": -100.2615656592487
+              },
+              {
+                "x": 7.904243198320994,
+                "y": -99.69596221860058
+              }
+            ],
+            "collar": [
+              {
+                "x": 1.27484473118951,
+                "y": -97.61769841342841
+              },
+              {
+                "x": 5.628675867341339,
+                "y": -95.34213108244874
+              },
+              {
+                "x": 11.284710273822565,
+                "y": -96.13134518567868
+              }
+            ],
+            "pose": "centrum-toward",
+            "pouch": {
+              "lip": [
+                [
+                  127.08850457782299,
+                  288.03255340793487
+                ],
+                [
+                  171.881993896236,
+                  301.05391658189217
+                ],
+                [
+                  219.80061037639877,
+                  286.9908443540183
+                ]
+              ],
+              "depth": 32,
+              "seam": [
+                172.66327568667344,
+                303.69758934100764
+              ],
+              "origin": [
+                143.23499491353002,
+                514.6042726347914
+              ],
+              "scale": 0.4098360655737705,
+              "bob": 0,
+              "source": "assets/centrum/actors/bear-directions.png",
+              "textureMap": null,
+              "padding": 9.414781609573255
+            }
+          },
+          "landmarks": {
+            "far": {
+              "hip": {
+                "x": 20.70597232710826,
+                "y": -70.01493949845282
+              },
+              "knee": {
+                "x": 20.705012396941505,
+                "y": -51.22264170479684
+              },
+              "cuff": {
+                "x": 20.70417216109975,
+                "y": -34.77938113536303
+              },
+              "sole": {
+                "x": 23.694611677200935,
+                "y": -0.6251548492571146
+              },
+              "contact": {
+                "x": 23.694611677200935,
+                "y": -0.6247982265831599
+              },
+              "stance": false,
+              "sourceFoot": "far",
+              "rigidShoe": true,
+              "kneeBend": 1.5837112813413298e-07
+            },
+            "near": {
+              "hip": {
+                "x": -21.560089560603576,
+                "y": -70.22883668728518
+              },
+              "knee": {
+                "x": -21.984316959743012,
+                "y": -51.45169191581603
+              },
+              "cuff": {
+                "x": -22.622316335065623,
+                "y": -34.80828246573081
+              },
+              "sole": {
+                "x": -23.90807664726582,
+                "y": -0.6540740109826272
+              },
+              "contact": {
+                "x": -23.90807664726582,
+                "y": -0.6540740109826272
+              },
+              "stance": true,
+              "sourceFoot": "near",
+              "rigidShoe": true,
+              "kneeBend": 0
+            }
+          },
+          "gait": {
+            "far": {
+              "x": 0,
+              "y": 0.015240060937536928,
+              "angle": -0.0001614466938158816,
+              "shinAngle": -0.0002957178774004492,
+              "kneeFlex": 0.00022246567722216512,
+              "contactOffset": -0.018994420398554986,
+              "stance": false,
+              "groundDepth": 0.015596683611461623,
+              "nativeLift": -0.00035662267392469536
+            },
+            "near": {
+              "x": 0,
+              "y": -0.013679100788017894,
+              "angle": 0.0004158013599202089,
+              "shinAngle": 0.00033405618837712195,
+              "kneeFlex": 0,
+              "contactOffset": 0.027318753296275845,
+              "stance": true,
+              "groundDepth": -0.013679100788017894,
+              "nativeLift": 0
+            },
+            "phase": 0.48181574074074174,
+            "cycleLength": 144,
+            "bob": 0.0020906758279119306,
+            "sway": -0.00023395752769439835,
+            "roll": 1.8592985698938698e-05,
+            "pelvisSway": -0.00029365469393325777,
+            "pelvisRoll": 2.9365469393325776e-06,
+            "centrumWalk": true,
+            "groundMotion": {
+              "x": 0,
+              "y": 1,
+              "depthScale": 0.3,
+              "cacheKey": "depth:0:32",
+              "centrumWalk": true
+            },
+            "depthProjected": true
+          },
+          "body": {
+            "continuous": true,
+            "surfaces": 1,
+            "roll": 1.0226142134416285e-05,
+            "bob": 0.0013589392881427549,
+            "sway": -0.0001286766402319191,
+            "authoredViewingAngle": true
+          },
+          "directional": {
+            "view": "toward",
+            "asset": "assets/centrum/actors/bear-directions.png",
+            "framePhase": 0.48181574074074174,
+            "drawCalls": 11,
+            "preparedParts": 2,
+            "sourceBabyLower": "assets/art/front-carrier-v7.png",
+            "sourceBabyLowerScale": 0.4098360655737705,
+            "sourceBabyOriginalScale": 0.5710830421929589,
+            "groundAnchor": {
+              "x": 645.4966600000001,
+              "y": 726.8186299999996
+            }
+          }
+        },
+        "drawOrder": [
+          {
+            "id": "front-metro",
+            "footY": 320
+          },
+          {
+            "id": "front-arcade",
+            "footY": 350
+          },
+          {
+            "id": "front-pizzeria",
+            "footY": 350
+          },
+          {
+            "id": "planter",
+            "footY": 490
+          },
+          {
+            "id": "bench-west",
+            "footY": 580
+          },
+          {
+            "id": "player",
+            "footY": 726.8186299999996
+          },
+          {
+            "id": "parked-player-bicycle",
+            "footY": 730
+          },
+          {
+            "id": "bench-east",
+            "footY": 735
+          },
+          {
+            "id": "service-gate",
+            "footY": 803
+          }
+        ],
+        "shadow": {
+          "x": 645.4966600000001,
+          "y": 726.8186299999996
+        },
+        "hits": [],
+        "world": {
+          "id": "metro-square",
+          "label": "Metro Square",
+          "kind": "outdoor",
+          "landmark": "The single H\u00e4sselby metro entrance",
+          "width": 1500,
+          "height": 1000,
+          "floor": {
+            "left": 60,
+            "right": 1440,
+            "top": 320,
+            "bottom": 930
+          },
+          "defaultEntrance": "start",
+          "anchors": {
+            "start": {
+              "x": 260,
+              "y": 540,
+              "face": 1
+            },
+            "from-arcade": {
+              "x": 340,
+              "y": 440,
+              "face": 1
+            },
+            "from-courtyard-gate": {
+              "x": 1300,
+              "y": 820,
+              "face": -1
+            },
+            "bicycle-parking": {
+              "x": 220,
+              "y": 730,
+              "face": 1
+            },
+            "from-cycle-route": {
+              "x": 248,
+              "y": 730,
+              "face": 1
+            }
+          },
+          "buildings": [
+            {
+              "id": "front-arcade",
+              "kind": "building",
+              "x": 60,
+              "y": 0,
+              "w": 485,
+              "h": 350,
+              "footY": 350,
+              "key": "arcade",
+              "label": "SHOPPING ARCADE",
+              "doorX": 340
+            },
+            {
+              "id": "front-metro",
+              "kind": "building",
+              "x": 545,
+              "y": 0,
+              "w": 460,
+              "h": 320,
+              "footY": 320,
+              "key": "metro",
+              "label": "METRO",
+              "doorX": 765
+            },
+            {
+              "id": "front-pizzeria",
+              "kind": "building",
+              "x": 1005,
+              "y": 0,
+              "w": 435,
+              "h": 350,
+              "footY": 350,
+              "key": "pizzeria",
+              "label": "PIZZA & KEBAB",
+              "doorX": 1220
+            }
+          ],
+          "furniture": [
+            {
+              "id": "bench-west",
+              "kind": "bench",
+              "x": 402,
+              "y": 556,
+              "w": 196,
+              "h": 24,
+              "footY": 580,
+              "anchorX": 500,
+              "artWidth": 210
+            },
+            {
+              "id": "bench-east",
+              "kind": "bench",
+              "x": 982,
+              "y": 711,
+              "w": 196,
+              "h": 24,
+              "footY": 735,
+              "anchorX": 1080,
+              "artWidth": 210
+            },
+            {
+              "id": "planter",
+              "kind": "planter",
+              "x": 754,
+              "y": 448,
+              "w": 132,
+              "h": 42,
+              "footY": 490,
+              "anchorX": 820,
+              "artWidth": 190
+            }
+          ],
+          "extraSolids": [
+            {
+              "id": "square-gate-post-left",
+              "kind": "post",
+              "x": 1294,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-post-right",
+              "kind": "post",
+              "x": 1412,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-leaf",
+              "kind": "gate",
+              "x": 1310,
+              "y": 785,
+              "w": 100,
+              "h": 14,
+              "footY": 799,
+              "gateClosedOnly": true
+            }
+          ],
+          "exits": [
+            {
+              "id": "to-arcade",
+              "kind": "exit",
+              "label": "Enter shopping arcade",
+              "x": 340,
+              "y": 382,
+              "radius": 68,
+              "toScene": "shopping-arcade",
+              "toEntrance": "from-square"
+            },
+            {
+              "id": "square-gate",
+              "kind": "gate",
+              "label": "Service courtyard gate",
+              "x": 1360,
+              "y": 820,
+              "radius": 68,
+              "toScene": "service-courtyard",
+              "toEntrance": "from-square-gate",
+              "gateSide": "square"
+            }
+          ],
+          "interactions": [],
+          "occlusionLayers": [
+            {
+              "id": "facades",
+              "type": "foot-sorted"
+            },
+            {
+              "id": "furniture",
+              "type": "foot-sorted"
+            },
+            {
+              "id": "gate",
+              "type": "foot-sorted"
+            }
+          ],
+          "heroHeight": 200,
+          "radiusX": 22,
+          "radiusY": 12,
+          "solids": [
+            {
+              "id": "front-arcade",
+              "kind": "building",
+              "x": 60,
+              "y": 0,
+              "w": 485,
+              "h": 350,
+              "footY": 350,
+              "key": "arcade",
+              "label": "SHOPPING ARCADE",
+              "doorX": 340
+            },
+            {
+              "id": "front-metro",
+              "kind": "building",
+              "x": 545,
+              "y": 0,
+              "w": 460,
+              "h": 320,
+              "footY": 320,
+              "key": "metro",
+              "label": "METRO",
+              "doorX": 765
+            },
+            {
+              "id": "front-pizzeria",
+              "kind": "building",
+              "x": 1005,
+              "y": 0,
+              "w": 435,
+              "h": 350,
+              "footY": 350,
+              "key": "pizzeria",
+              "label": "PIZZA & KEBAB",
+              "doorX": 1220
+            },
+            {
+              "id": "bench-west",
+              "kind": "bench",
+              "x": 402,
+              "y": 556,
+              "w": 196,
+              "h": 24,
+              "footY": 580,
+              "anchorX": 500,
+              "artWidth": 210
+            },
+            {
+              "id": "bench-east",
+              "kind": "bench",
+              "x": 982,
+              "y": 711,
+              "w": 196,
+              "h": 24,
+              "footY": 735,
+              "anchorX": 1080,
+              "artWidth": 210
+            },
+            {
+              "id": "planter",
+              "kind": "planter",
+              "x": 754,
+              "y": 448,
+              "w": 132,
+              "h": 42,
+              "footY": 490,
+              "anchorX": 820,
+              "artWidth": 190
+            },
+            {
+              "id": "square-gate-post-left",
+              "kind": "post",
+              "x": 1294,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-post-right",
+              "kind": "post",
+              "x": 1412,
+              "y": 783,
+              "w": 14,
+              "h": 20,
+              "footY": 803
+            },
+            {
+              "id": "square-gate-leaf",
+              "kind": "gate",
+              "x": 1310,
+              "y": 785,
+              "w": 100,
+              "h": 14,
+              "footY": 799,
+              "gateClosedOnly": true
+            }
+          ],
+          "spawn": {
+            "x": 260,
+            "y": 540,
+            "face": 1
+          },
+          "doors": [
+            {
+              "id": "to-arcade",
+              "label": "Enter shopping arcade",
+              "x": 340,
+              "y": 382
+            },
+            {
+              "id": "square-gate",
+              "label": "Service courtyard gate",
+              "x": 1360,
+              "y": 820
+            }
+          ]
+        }
+      },
+      "inventory": {
+        "bound": true,
+        "browsing": false,
+        "recovering": false,
+        "pendingOpen": null,
+        "eating": null,
+        "lastOutcome": null,
+        "food": 0,
+        "wallet": 0,
+        "health": 100,
+        "disabledReason": "Full health \u2014 food kept.",
+        "layout": {
+          "mode": "centrum",
+          "x": 764,
+          "y": 105,
+          "width": 70,
+          "height": 18,
+          "side": "right",
+          "clear": true,
+          "wholeActorClear": true,
+          "changes": 1,
+          "screenX": 364.97360843103456,
+          "footY": 269.5048275862069,
+          "fit": "cover",
+          "scaleX": 0.7275862068965517,
+          "scaleY": 0.7275862068965517,
+          "actor": {
+            "x": 326.7753325689656,
+            "y": 153.81862068965518,
+            "w": 76.39655172413794,
+            "h": 120.05172413793103
+          },
+          "protectedUpper": {
+            "x": 326.7753325689656,
+            "y": 153.81862068965518,
+            "w": 76.39655172413794,
+            "h": 87.3103448275862
+          },
+          "panels": {
+            "panel": null,
+            "eating": null
+          }
+        }
+      }
+    }
+  ],
+  "passed": true
+}

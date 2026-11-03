@@ -14,7 +14,7 @@
   mapPanel.innerHTML='<div class="square-map-card"><h2>Places discovered</h2><p>Stylised Hässelby-inspired connections · walk between places.</p><div class="square-map-graph"></div><p class="square-map-gate"></p><p class="square-map-bag"></p><button type="button" class="square-map-close">BACK TO WALKING · M</button></div>';host.append(mapPanel);
   const messageEl=panel.querySelector('.square-message'),pauseBtn=panel.querySelector('#squarePauseBtn');
   const held=new Set(),touch=new Map();
-  const camera={x:0,y:0,width:1160,height:640};
+  const camera={x:0,y:0,width:1160,height:640,zoom:1};
   let active=false,loading=false,paused=false,menuHold=false,mapOpen=false,prepareJob=null,returnFocus=null;
   let sceneId='metro-square',entranceId='start',progress=null,transition=null,session=0,exitGuard=0,saveTimer=0;
   let returning=null,routeHint='';
@@ -48,17 +48,10 @@
   }
   function setPaused(next){paused=!!next;clear();sync();}
   function follow(){
-    const map=layout();camera.x=clamp(x-camera.width*.5,0,Math.max(0,map.width-camera.width));
-    camera.y=clamp(y-camera.height*.66,0,Math.max(0,map.height-camera.height));
-    // Portrait crops the same fixed-scale frame; pan that crop to the passenger.
-    const box=host.getBoundingClientRect(),scale=Math.max(box.width/1160,box.height/640),visible=box.width/scale,visibleHeight=box.height/scale;
-    host.style.setProperty('--square-pan',`${visible<1159?clamp((x-camera.x-visible*.5)/(1160-visible),0,1)*100:50}%`);
-    // Keep the accepted camera/scale. Only the phone's cover crop can slide
-    // within this same frame, protecting the head and boots at its boundaries.
-    const overflow=Math.max(0,640-visibleHeight),center=overflow*.5,foot=y-camera.y;
-    let crop=center;if(foot-center>visibleHeight-76)crop=foot-visibleHeight+76;
-    if(foot-200-crop<28)crop=foot-200-28;
-    host.style.setProperty('--square-pan-y',`${overflow?clamp(crop/overflow,0,1)*100:50}%`);
+    const lens=window.BearlyCentrumCamera;Object.assign(camera,lens.follow(layout(),{x,y}));
+    const crop=lens.cover(camera,{x,y,jump},host.getBoundingClientRect());
+    host.style.setProperty('--square-pan',`${crop.panX}%`);
+    host.style.setProperty('--square-pan-y',`${crop.panY}%`);
   }
   async function open(explicitPosition=null){
     if(active)return;const token=++session;returnFocus=document.activeElement;active=true;loading=true;paused=false;mapOpen=false;transition=null;error=null;clear();
@@ -239,8 +232,11 @@
   }
   function render(c,W,H){
     if(!active)return false;
-    c.save();c.scale(W/1160,H/640);c.fillStyle='#626b51';c.fillRect(0,0,1160,640);
-    c.save();c.translate(-camera.x,-camera.y);world().drawBase(c,sceneId,snapshot());
+    c.save();c.scale(W/1160,H/640);c.fillStyle=layout().kind==='room'?'#39362b':'#626b51';c.fillRect(0,0,1160,640);
+    c.save();c.scale(camera.zoom,camera.zoom);c.translate(-camera.x,-camera.y);
+    // A small room is centered inside the wider frame. Outside it is a quiet
+    // matte, not extra walkable floor or duplicated environment artwork.
+    c.beginPath();c.rect(0,0,layout().width,layout().height);c.clip();world().drawBase(c,sceneId,snapshot());
     window.BearlyCentrumAtmosphere?.drawFloor(c,sceneId,snapshot(),{player:{x,y,jump,height:200}});
     shadow={x,y};
     // All shadows stay on the floor. Jump affects only the painted actor.
@@ -298,5 +294,5 @@
   // Resize/fullscreen also recomputes the bounded crop while paused.
   new ResizeObserver(()=>{if(active)follow();}).observe(host);
   document.getElementById('mobilePauseBtn').addEventListener('click',e=>{if(active){e.stopImmediatePropagation();setPaused(!paused);}},true);
-  window.BearlyCentrumSquare={clearInput:clear,inventoryContext:()=>({active,loading,paused,menuHold,mapOpen,transition,sceneId,x,y,vx,vy,jump,screenX:x-camera.x,screenY:y-camera.y,height:200}),open,close,openFromBicycle,resumeLinked:openFromBicycle,position,requestBackToBike:backToBike,active:()=>active,update,render,audit:()=>({active,loading,paused,menuHold,mapOpen,error,sceneId,sceneTitle:layout().title||layout().label,entranceId,transition,exitGuard,returning:returning?{sceneId:returning.sceneId,anchorId:returning.anchorId,waypoints:returning.path.length}:null,parkingNodeCount:drawOrder.filter(n=>n.id==='parked-player-bicycle').length,story:window.BearlyCentrumStory?.audit(),save:snapshot(),health:linked()?link().health():window.BEARLY_DEBUG?.().health,x,y,vx,vy,face,jump,stride,weight,view,groundMotion:groundMotion?{...groundMotion}:null,camera:{...camera},height:200,hero:hero()?.audit(),drawOrder,shadow:{...shadow},hits:[...hits],world:layout()})};
+  window.BearlyCentrumSquare={clearInput:clear,inventoryContext:()=>({active,loading,paused,menuHold,mapOpen,transition,sceneId,x,y,vx,vy,jump,screenX:(x-camera.x)*camera.zoom,screenY:(y-camera.y)*camera.zoom,height:200,projectionScale:camera.zoom,projectedHeight:200*camera.zoom,projectedJump:jump*camera.zoom}),open,close,openFromBicycle,resumeLinked:openFromBicycle,position,requestBackToBike:backToBike,active:()=>active,update,render,audit:()=>({active,loading,paused,menuHold,mapOpen,error,sceneId,sceneTitle:layout().title||layout().label,entranceId,transition,exitGuard,returning:returning?{sceneId:returning.sceneId,anchorId:returning.anchorId,waypoints:returning.path.length}:null,parkingNodeCount:drawOrder.filter(n=>n.id==='parked-player-bicycle').length,story:window.BearlyCentrumStory?.audit(),save:snapshot(),health:linked()?link().health():window.BEARLY_DEBUG?.().health,x,y,vx,vy,face,jump,stride,weight,view,groundMotion:groundMotion?{...groundMotion}:null,camera:{...camera},height:200,hero:hero()?.audit(),drawOrder,shadow:{...shadow},hits:[...hits],world:layout()})};
 })();

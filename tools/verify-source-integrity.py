@@ -102,6 +102,10 @@ def restore_donor(path):
     if path in STAGE14_PREVIOUS:
         text = reverse_stage14_source(path, text)
     if path.endswith('.html'):
+        text = replace_reviewed(text, '<script src="js/centrum-camera.js?edition=centrum-stage15"></script>\n')
+        for resource, previous in [('js/centrum-square.js',14),('js/centrum-inventory.js',11),('js/game.js',14)]:
+            text = replace_reviewed(text, f'{resource}?edition=centrum-stage15', f'{resource}?edition=centrum-stage{previous}')
+    if path.endswith('.html'):
         for resource, previous in [
             ('js/hero-rig.js', 'centrum-stage13'),
             ('js/centrum-directional-rig.js', 'centrum-stage13'),
@@ -169,6 +173,7 @@ def restore_donor(path):
         text = replace_reviewed(text, 'bodyFrame(profile,name,options.distance||0,h,weight,options.groundMotion)', 'bodyFrame(profile,name,options.distance||0,h,weight)')
         text = replace_reviewed(text, 'projectGroundGait(window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,weight),frame.gait.groundMotion||options.groundMotion)', 'window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,weight)')
     if path == 'js/game.js':
+        text = replace_reviewed(text, "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE15';", "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE14';")
         text = replace_reviewed(text, "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE14';", "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE13';")
         text = replace_reviewed(text, "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE13';", "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE12';")
         text = replace_reviewed(text, "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE12';", "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE11';")
@@ -287,6 +292,6 @@ assert not failures, '\n'.join(failures)
 assert (ROOT / 'index.html').read_bytes() == (ROOT / 'autumn-v19.html').read_bytes()
 manifest = json.loads((ROOT / 'autumn-version.json').read_text())
 assert manifest['source']['commit'] == 'da109213fdf24947c2ac0b85de900214cc72e44f'
-assert manifest['edition'] == 'BQ_CENTRUM_STAGE14'
+assert manifest['edition'] == 'BQ_CENTRUM_STAGE15'
 print(f'PASS: {len(HASHES)} pinned original files verified; all source assets/CSS and original protected code match;')
 print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional Centrum walking/worker/preparation additions differ.')

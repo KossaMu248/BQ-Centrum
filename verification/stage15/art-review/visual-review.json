@@ -1,0 +1,702 @@
+{
+  "scope": "Independent final visual review of actual Stage15 gameplay at original desktop/phone screenshot sizes, distinct from code, performance and clean-package certification.",
+  "reviewedAtUtc": "2026-11-03T13:23:57.445287+00:00",
+  "build": "BQ_CENTRUM_STAGE15",
+  "accepted": true,
+  "allScreenshotHashesAndNativeBabyAuditsChecked": [
+    {
+      "file": "camera/desktop/square-arrival.png",
+      "sha256": "9d345a6aa62bf7faacd9f613a61b73688d5c445db0510fffc058b1080422de62",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/desktop/moving-away.png",
+      "sha256": "bb750225ded7c74c39ba836932633ba54add9c0e6a9b7815bce27a251a98f3ca",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "away",
+      "mood": "leanForward"
+    },
+    {
+      "file": "camera/desktop/moving-toward.png",
+      "sha256": "c0d223837694a6126e779d098a0dfa3882f6545baf227a5b9cad683bb9f60784",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "toward",
+      "mood": "leanBack"
+    },
+    {
+      "file": "camera/desktop/square-toward.png",
+      "sha256": "5b28196f4771b0d5fb9e5dc86626d2ea38441ef19b3ab507d2775a82f556f51e",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "toward",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/desktop/east-crossing.png",
+      "sha256": "cda7800ed847e8147b729f91aa4a1df2b105232fc6773014d5da1fc1b030e34c",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/desktop/west-crossing.png",
+      "sha256": "5071d917b75da6a86855ba6f2bc3d38108cc2bd521d685b6de40ba1b49bed219",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/desktop/behind-bench.png",
+      "sha256": "775e6804f42eb8cc8d31add75c109a6c750e37b671d418fecedc91a0a8f9a8e5",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/desktop/front-of-bench.png",
+      "sha256": "a2780ba739d60c99ec28c7c0c439f50db85b2cdf076e07c330ed5f8d3a0ddbe6",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/desktop/jump-shadow.png",
+      "sha256": "005db8662f0001615f27b9470867d452e94ebe0ede2f3c6f07c5c23cee438856",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "terror"
+    },
+    {
+      "file": "camera/desktop/bag.png",
+      "sha256": "4a8ab83b469f95eb1d7f895415c3885c53e0580e57b00e4aa15c3a0051674aa2",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/desktop/paused-fullscreen.png",
+      "sha256": "2a4edf09b72633973ea90750d30050439064496118a540c029d74446d95532ef",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/desktop/2-shopping-arcade.png",
+      "sha256": "3a04b1c31465d3867246869a9ec433514e85474ba0f6ea0f372fc6f3e48a78f7",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "point"
+    },
+    {
+      "file": "camera/desktop/natural-billys-discovery.png",
+      "sha256": "5932621b2abf929862a8eaa01c85bdd1ef1d56919cef77e3229172602a031248",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "point"
+    },
+    {
+      "file": "camera/desktop/3-food-shop.png",
+      "sha256": "1eaf3b7749851506f06fbbe3ae4ecee117cd7851e5dbe285323b2164e21a4929",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "point"
+    },
+    {
+      "file": "camera/desktop/4-shopping-arcade.png",
+      "sha256": "ebf948b021998664a2ea8940c54507b337dcc6cdb075397a99e4cb01c4b69dd5",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/desktop/5-bicycle-workshop.png",
+      "sha256": "b46f2518a26114aed2c36c3ce31fb0e3fbfeda309320d0e71bada30b3e1e7836",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "point"
+    },
+    {
+      "file": "camera/desktop/6-shopping-arcade.png",
+      "sha256": "045f84b24efb8c3a0f71f62338b21043600ba112a0ba63f85dd3512df4a603f5",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/desktop/7-service-courtyard.png",
+      "sha256": "beb970213811bd2a117b2fbe362df63fa1dcd1fcf6a6c9c2933d3d4ed18c52c2",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "point"
+    },
+    {
+      "file": "camera/desktop/8-metro-square.png",
+      "sha256": "e49083ba97b1e38ee030e9dbcde08d0b8f77787c7e434308d7410e167bba9744",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/phone-landscape/square-arrival.png",
+      "sha256": "d8237738346d6f673a89af52ef1f6e8839de94f5a48e9b98f2e57b2827ac88a5",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/phone-landscape/moving-away.png",
+      "sha256": "43e831ad8b0385fb04537645b1b50a1c19eca638c17ef809a0f078eaa22bac54",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "away",
+      "mood": "leanForward"
+    },
+    {
+      "file": "camera/phone-landscape/moving-toward.png",
+      "sha256": "de554ef1047e29edbea1a2ef33a8073074ca0615402b6387993ae9eb49da3a8f",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "toward",
+      "mood": "leanBack"
+    },
+    {
+      "file": "camera/phone-landscape/square-toward.png",
+      "sha256": "4dd47eea45cb2897a4919a5e8fdfd87ff1827bd5abea09232de8a85003cedd04",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "toward",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/phone-landscape/east-crossing.png",
+      "sha256": "389bd524f4466d654dd75aa0da4e370f0fdf0bff0e74a8cdfa59614e9e43d871",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/phone-landscape/west-crossing.png",
+      "sha256": "8db1815855ea60a720b4ca2d24835309142928322fddc1cc42209686ac2ef78f",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/phone-landscape/behind-bench.png",
+      "sha256": "ef948390e7535f6413631127af3d66fdb9ead0a2fcee9d76f387956a6ebe0941",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/phone-landscape/front-of-bench.png",
+      "sha256": "c47c7a8600055737fc2837479dc5b5ddbabe91fa006c24256425423626f0f34a",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/phone-landscape/jump-shadow.png",
+      "sha256": "5959034d32faa1912298aca12ebbcfa36f7b3f834ab6859529b85ac4063dd5be",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "terror"
+    },
+    {
+      "file": "camera/phone-landscape/bag.png",
+      "sha256": "04abdf1e25681ed6261230d577fda8abfec25b7f70dbe8d7e7c1968aac4179c8",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/phone-landscape/paused-fullscreen.png",
+      "sha256": "f9167dbcb95cfc0761ee8016156a380e04af9bdc8d1e5886db704c5faa264cc5",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/phone-landscape/portrait-resize.png",
+      "sha256": "d7756e006ed7aac0cee6f37de4d9ad4821ed0f84351163b6b311970cb94162d4",
+      "nativePixels": [
+        390,
+        844
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/phone-landscape/portrait-bag.png",
+      "sha256": "dc397e01b94ab645dd7146e943b1383fe0e5c7538cba1f5f5302020893db4051",
+      "nativePixels": [
+        390,
+        844
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/phone-landscape/landscape-return.png",
+      "sha256": "576d3bd2bb8e581af12e27bd151e493b44ae5f703b3f90e56666eff0d9ac387d",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/phone-landscape/2-shopping-arcade.png",
+      "sha256": "24e6bd4981bed70f3fe10a6b7b49c1faa2d7d9cffd9955d4d2ebbdc9c7982db9",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "point"
+    },
+    {
+      "file": "camera/phone-landscape/natural-billys-discovery.png",
+      "sha256": "84e39a227374c807de52b9fbb57ea741107069ae5646b02f0197010e37eac970",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "point"
+    },
+    {
+      "file": "camera/phone-landscape/3-food-shop.png",
+      "sha256": "9c9a22605491bd78cbfc0a48b4bd0ca4a573774de5b75a7dc665898da759b316",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "point"
+    },
+    {
+      "file": "camera/phone-landscape/4-shopping-arcade.png",
+      "sha256": "1eaa0e0e437185345adea60d543ae2294ef95ac636dc139c187d07e0fc371734",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/phone-landscape/5-bicycle-workshop.png",
+      "sha256": "8af233e16a79a5b7dab9b335c35116fed26eb3bae80a3294b07ef0e27da068e4",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "point"
+    },
+    {
+      "file": "camera/phone-landscape/6-shopping-arcade.png",
+      "sha256": "8bb974c63d8fd69750ea11cdf6145187ebef3c3ec3d303996f86b5294d0b309a",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "camera/phone-landscape/7-service-courtyard.png",
+      "sha256": "951dc3920224cb17a1b25520cec967f94eb78e5d99b507ec9198d805f6f3dedc",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "point"
+    },
+    {
+      "file": "camera/phone-landscape/8-metro-square.png",
+      "sha256": "fb9be7920ff6d2c6ecefdd78f283cb1552c5325b49ddf5b8a88b8fcb9be15fd7",
+      "nativePixels": [
+        844,
+        390
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "gameplay/rest.png",
+      "sha256": "9d45fbc0f5a1b0c0787e47821715e16dfcbd877959dff90ddc4784fb940e4f87",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "idle"
+    },
+    {
+      "file": "gameplay/right-1.png",
+      "sha256": "264c3674628d5f6bc2426b474f4d7de644114ae8636def5b9ac16794c1d01506",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "laugh"
+    },
+    {
+      "file": "gameplay/right-2.png",
+      "sha256": "e3711f5b183ec3e26e4fdea06113bb0ee78ff76f1ba3cbb4b85f5ad82648c56e",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "laugh"
+    },
+    {
+      "file": "gameplay/right-3.png",
+      "sha256": "bc72b64ed688ac8039aa6c92de84354ffdabf5e486f2eebdd5a87eb7a7374e67",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "laugh"
+    },
+    {
+      "file": "gameplay/left-1.png",
+      "sha256": "3299475c675b5772f47bbf7e1c472b50491b5352200824cb1e296b066c3b9322",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "laugh"
+    },
+    {
+      "file": "gameplay/left-2.png",
+      "sha256": "f52199cf2ba764279ca8d80fa0cfcf0547379a945278cb6542cee5a64ea81cd5",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "laugh"
+    },
+    {
+      "file": "gameplay/left-3.png",
+      "sha256": "96c9134fc5f367d0669a991a0350c8ee53385b855a0e2ed6efbc5acf7d73ffa2",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "side",
+      "mood": "laugh"
+    },
+    {
+      "file": "gameplay/up-1.png",
+      "sha256": "598bda5bf5f39f30ae330ba0a82d081bd19beabc14f7368845623de3f4163a43",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "away",
+      "mood": "leanForward"
+    },
+    {
+      "file": "gameplay/up-2.png",
+      "sha256": "e3334c6cb3640bdd348ae209319834d0da8aef866e15ce6bd006138423cc0c30",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "away",
+      "mood": "leanForward"
+    },
+    {
+      "file": "gameplay/up-3.png",
+      "sha256": "fd7b4ddaf7aa88e12a2cbe16a00d92a97e3ab576b187ca9d408db00071edd6b7",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "away",
+      "mood": "leanForward"
+    },
+    {
+      "file": "gameplay/down-1.png",
+      "sha256": "964c480d86f3c441be02b711e937013d0a535945e0fa9e615181cfb6194459c5",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "toward",
+      "mood": "leanBack"
+    },
+    {
+      "file": "gameplay/down-2.png",
+      "sha256": "df944fcd6afdefeda7f2e6d7d33226e437ca63231d8d44188563587a607c1878",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "toward",
+      "mood": "leanBack"
+    },
+    {
+      "file": "gameplay/down-3.png",
+      "sha256": "159faf06c3a2cf47bcfb9c3c60ac3f0cdc3ff8dfdbe30ebedd64f3de77fb627f",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "toward",
+      "mood": "leanBack"
+    },
+    {
+      "file": "gameplay/away-rest.png",
+      "sha256": "fca6aae59ca5a052e98dcad2cc7592c38f8697d82f5895535dbe817f21537b29",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "away",
+      "mood": "idle"
+    },
+    {
+      "file": "gameplay/toward-rest.png",
+      "sha256": "39217c69bfeac7d3fda72c80c24adc79b236b5d40b9cff40eabf04dc6c0d2e5b",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "toward",
+      "mood": "idle"
+    },
+    {
+      "file": "gameplay/south-east-rest.png",
+      "sha256": "6759662a9a5694c8ab5b6374f0d30d518998282a830f80dd024c0b48e2609758",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "toward",
+      "mood": "idle"
+    },
+    {
+      "file": "gameplay/north-west-rest.png",
+      "sha256": "4b7adc63670c51cd1644af7905bfdc86b669d793fd1c7cac5a1cc4002adcfc17",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "away",
+      "mood": "idle"
+    },
+    {
+      "file": "gameplay/south-west-rest.png",
+      "sha256": "d307d3709086f783b29d00d2c73e288ae2dc55492ec084ee3ac33ee00fa937aa",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "toward",
+      "mood": "idle"
+    },
+    {
+      "file": "gameplay/north-east-rest.png",
+      "sha256": "1026392c9cc7dfc54a38080649023695a73652ef4da63de774c9e48fde9605ae",
+      "nativePixels": [
+        1280,
+        720
+      ],
+      "view": "away",
+      "mood": "idle"
+    }
+  ],
+  "runtimeHashesMatched": 46,
+  "reviewedFullSizeFocusedFiles": [
+    "camera/desktop/2-shopping-arcade.png",
+    "camera/desktop/3-food-shop.png",
+    "camera/desktop/5-bicycle-workshop.png",
+    "camera/desktop/7-service-courtyard.png",
+    "camera/desktop/natural-billys-discovery.png",
+    "camera/desktop/jump-shadow.png",
+    "camera/phone-landscape/moving-away.png",
+    "camera/phone-landscape/moving-toward.png",
+    "camera/phone-landscape/natural-billys-discovery.png",
+    "camera/phone-landscape/3-food-shop.png",
+    "camera/phone-landscape/5-bicycle-workshop.png",
+    "camera/phone-landscape/2-shopping-arcade.png",
+    "camera/phone-landscape/portrait-bag.png",
+    "camera/phone-landscape/landscape-return.png",
+    "camera/phone-landscape/7-service-courtyard.png",
+    "camera/phone-landscape/front-of-bench.png",
+    "camera/phone-landscape/behind-bench.png",
+    "camera/phone-landscape/jump-shadow.png"
+  ],
+  "reviewedFullSizeGaitFiles": [
+    "gameplay/up-2.png",
+    "gameplay/down-2.png",
+    "gameplay/rest.png"
+  ],
+  "initialPreviewFullSizeFiles": [
+    "camera-preview/desktop-side.png",
+    "camera-preview/desktop-away.png",
+    "camera-preview/desktop-toward.png",
+    "camera-preview/phone-landscape-side.png",
+    "camera-preview/phone-landscape-away.png",
+    "camera-preview/phone-landscape-toward.png"
+  ],
+  "clips": [
+    {
+      "file": "camera/phone-native-walking.webm",
+      "nativeSeconds": 5.664263963699341,
+      "frames": 161,
+      "playbackSpeed": 1,
+      "encodingFps": 24,
+      "gameFpsClaim": false,
+      "actualGameplay": true,
+      "sha256": "e4f247abca1782ba87e20055510323b399568a9b8380af1c9372159d176e0c3f",
+      "wholeClipDecodedWithoutErrors": true,
+      "visualSampling": "Phone:2fps12normal-pixelactorcrops. Desktop:3-second intervals8normal-pixelactorcrops; independent full-size moving screenshots also inspected."
+    },
+    {
+      "file": "gameplay/walking.webm",
+      "nativeSeconds": 22.767179012298584,
+      "playbackSpeed": 1,
+      "frames": 387,
+      "encodingFps": 24,
+      "gameFpsClaim": false,
+      "actualGameplay": true,
+      "sha256": "ba11338b39c0b470bb9a60dc681eeff683bc447759eda27420203973efecd0e4",
+      "wholeClipDecodedWithoutErrors": true,
+      "visualSampling": "Phone:2fps12normal-pixelactorcrops. Desktop:3-second intervals8normal-pixelactorcrops; independent full-size moving screenshots also inspected."
+    }
+  ],
+  "sourceAndRuntimeHashes": {
+    "assets/centrum/actors/bear-directions.png": "334a329ab35f7adeae1407e1223d702c27eb1ecf1d57a35ac61477d8dce21749",
+    "assets/art/front-carrier-v7.png": "3ebe5734b486736887c674f4676eb69f24aad260a94c26457b57688676c5ebd6",
+    "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+    "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+    "js/hero-rig.js": "91a818f5af58263951f686f6554b7b8927d65d1360b6e34a7909ca9b34f9ec4f",
+    "js/centrum-camera.js": "0f47d322de4350ecb4e4d3a2c3e103cd0057920811e66d946b1537029d7b9c10",
+    "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf"
+  },
+  "headMetrics": {
+    "actualRotationAwareHeadBoxCssRangeAll41FocusedCaptures": [
+      21.589399999867965,
+      39.1331831351564
+    ],
+    "worldActorHeight": 200,
+    "worldBabyUniformScale": 0.5710830421929589,
+    "sceneProjectionZoom": 0.75,
+    "disclosure": "Native artwork/proportions remain unchanged. Rotated submitted-Canvas head bounds differ from the unrotated head-height estimate in preview-review.json. Neither numerical threshold alone proves recognisability."
+  },
+  "findings": [
+    "The wider scene framing shows the square as a place: both benches, planter, gate, bicycle and three fronts fit together on desktop; phone landscape exposes the paths and their relations.",
+    "Baby remains recognisable in all three views and in actual native leanForward, leanBack, point and terror frames reviewed; continuous neck/collar/shirt, blue lower legs/shoes and front carrier remain attached.",
+    "Paired parent boots remain distinct and grounded through sampled movement; native angled views retain real head/helmet/shoulder differences. Jump shadow stays on the floor, and furniture overlap follows ground anchors.",
+    "Compact rooms and secondary outdoor scenes are centered with quiet visible matte margins; these are outside the existing scene bounds, not new walking floor or generated scenery. Door/counter/passage/cage/gate alignment remains legible.",
+    "Phone natural Billy discovery and portrait bag do not cover the baby. Returning to landscape retains the wider framing and original scale relationships.",
+    "Original warm windows, autumn palette, source buildings/residents, character outlines and relative bear/baby/building proportions remain."
+  ],
+  "limits": [
+    "Phone baby heads are small at this framing; broad lean/mouth/reaction changes are readable, while tiny finger and subtle eye details are reduced. This is not a claim that all nine original moods are equally easy to distinguish.",
+    "The phone may crop upper facade details at the clear lane; walking north reveals the metro landmark.",
+    "Character animation remains articulated painted pieces.",
+    "Chromium touch emulation is not physical iPhone/Safari or thermal testing.",
+    "No new source-worker pixel equivalence or exclusive performance result is claimed by visual review."
+  ]
+}

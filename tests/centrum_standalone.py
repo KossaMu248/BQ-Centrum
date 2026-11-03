@@ -21,8 +21,8 @@ from urllib.parse import urlparse
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'verification/stage14/standalone'
-EXPECTED_BUILD='BQ_CENTRUM_STAGE14'
+OUT=ROOT/'verification/stage15/standalone'
+EXPECTED_BUILD='BQ_CENTRUM_STAGE15'
 WORK=OUT/'work'
 SCENES=['metro-square','shopping-arcade','service-courtyard','food-shop','bicycle-workshop']
 KEY='bq-centrum:scene-network:v1'
@@ -78,6 +78,26 @@ def inventory_layout(page):
         sceneDock:hud.hasAttribute('data-scene-dock'),scenePanel:document.querySelector('.centrum-inventory-panel').hasAttribute('data-scene-float'),sceneEating:document.querySelector('.inventory-eating').hasAttribute('data-scene-float'),
         healthRowVisible:!hud.hidden,heartCount:hud.querySelectorAll('.foot-heart').length,oldBagButtons:document.querySelectorAll('#inventoryOpenBtn').length,walletVisible:!!wallet.getBoundingClientRect().width&&!!wallet.getBoundingClientRect().height};
     }''')
+
+
+def camera_projection(page):
+    sample=page.evaluate(r'''()=>{
+      const square=BearlyCentrumSquare.audit();
+      return{camera:square.camera,context:BearlyCentrumSquare.inventoryContext(),
+        logicalHeight:square.height,heroHeight:square.hero.height,nativeBabyScale:square.hero.babyFace.uniformScale};
+    }''')
+    camera=sample['camera'];context=sample['context']
+    assert context['active'] and sample['logicalHeight']==sample['heroHeight']==context['height']==200,sample
+    assert math.isclose(camera['zoom'],.75,abs_tol=1e-9),sample
+    assert math.isclose(context['projectionScale'],.75,abs_tol=1e-9),sample
+    assert math.isclose(context['projectedHeight'],150,abs_tol=1e-9),sample
+    assert math.isclose(sample['nativeBabyScale'],.5710830421929589,rel_tol=1e-9),sample
+    assert math.isclose(camera['width']*camera['zoom'],1160,abs_tol=1e-9),sample
+    assert math.isclose(camera['height']*camera['zoom'],640,abs_tol=1e-9),sample
+    assert math.isclose(context['screenX'],(context['x']-camera['x'])*camera['zoom'],abs_tol=1e-9),sample
+    assert math.isclose(context['screenY'],(context['y']-camera['y'])*camera['zoom'],abs_tol=1e-9),sample
+    assert math.isclose(context['projectedJump'],context['jump']*camera['zoom'],abs_tol=1e-9),sample
+    return sample
 
 
 def open_bag(page,touch):
@@ -143,7 +163,7 @@ def verify_square_walk(page,touch):
             assert math.isclose(directional.get('sourceBabyOriginalScale',0),.5710830421929589,rel_tol=1e-9),hero
             assert math.isclose(hero['babyFace']['uniformScale'],.5710830421929589,rel_tol=1e-9),hero
         assert moving['health']==73 and page.evaluate('BearlyCentrumLink.audit().ownership.bicycles')==1
-        samples.append({'direction':direction,'nativeInput':'touch hold' if touch else 'keyboard hold','position':{k:moving[k] for k in ['x','y','face','weight','groundMotion']},'hero':hero,'raster':page.evaluate('BearlyHeroRig.centrumCacheStats()')})
+        samples.append({'direction':direction,'nativeInput':'touch hold' if touch else 'keyboard hold','position':{k:moving[k] for k in ['x','y','face','weight','groundMotion']},'hero':hero,'cameraProjection':camera_projection(page),'raster':page.evaluate('BearlyHeroRig.centrumCacheStats()')})
         page.wait_for_timeout(180)
     return samples
 
@@ -204,7 +224,7 @@ def main():
     result={'scope':'Extracted standalone delivery, clean local root and /BQ-Centrum/ repository subpath','conditions':{'browser':'system Chromium /usr/bin/chromium, headless','desktopViewport':[1280,720],'phoneEmulationViewport':[844,390],'physicalDevices':False,'sceneFixtures':'Production-factory sealed named-entrance/parking fixtures; primary native route is a separate test.'},'checks':[],'errors':[],'consoleErrors':[],'httpFailures':[],'serverHttpFailures':[],'serverOutsideSubpathRequests':[],'externalRequests':[],'outsideSubpathRequests':[],'limits':['Chromium emulation is not physical iPhone/Safari testing.','Frame times were sampled on this shared container and are not physical-device performance promises.']}
     result['testedArchiveSha256']=file_hash(package)
     runtime,manifest=extract_package(package)
-    assert json.loads((runtime/'autumn-version.json').read_text())['edition']==EXPECTED_BUILD,'Archive is not the intended Stage14 build'
+    assert json.loads((runtime/'autumn-version.json').read_text())['edition']==EXPECTED_BUILD,'Archive is not the intended Stage15 build'
     integrity=subprocess.run(['python3','tools/verify-source-integrity.py'],cwd=runtime,capture_output=True,text=True)
     assert integrity.returncode==0,integrity.stdout+integrity.stderr
     result['extractedSourceIntegrity']=integrity.stdout.strip()
@@ -263,6 +283,7 @@ def main():
               context,page=open_page(browser,base+prefix+'index.html',touch,watch,templates[scene_id]);page.wait_for_timeout(700)
               a=page.evaluate('BearlyCentrumSquare.audit()');assert a['sceneId']==scene_id and a['height']==200 and a['health']==73,a
               assert a['hero']['babyFace']['continuousUpperBody'] and a['hero']['babyFace']['originalCollar'] and not a['hero']['babyFace']['headOnly']
+              projection=camera_projection(page)
               assert page.evaluate('BearlyCentrumLink.audit().ownership.bicycles')==1
               scenery=page.evaluate('window.BearlyCentrumScenery?.audit()||null')
               assert scenery and not scenery['errors'] and scenery['loops']==0,scenery
@@ -272,7 +293,7 @@ def main():
               walking=verify_square_walk(page,touch) if scene_id=='metro-square' else None
               sample=metrics(page);assert sample['maxPending']<=1 and sample['loopFrames']>5
               assert all(k.startswith('bq-centrum:') for k in sample['reads']+sample['writes']),sample
-              result['checks'].append({'name':label+' '+scene_id+' scene load and native bag interaction','passed':True,'health':a['health'],'hero':a['hero'],'scenery':scenery,'inventory':bag,'walking':walking,'metrics':sample})
+              result['checks'].append({'name':label+' '+scene_id+' scene load and native bag interaction','passed':True,'health':a['health'],'hero':a['hero'],'cameraProjection':projection,'scenery':scenery,'inventory':bag,'walking':walking,'metrics':sample})
               if scene_id in ['metro-square','food-shop']:page.screenshot(path=str(OUT/(label+'-'+scene_id+'.png')))
               context.close()
             # Active alias entry is tested separately without borrowed browser state.
