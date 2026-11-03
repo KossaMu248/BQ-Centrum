@@ -19,7 +19,7 @@
   let sceneId='metro-square',entranceId='start',progress=null,transition=null,session=0,exitGuard=0,saveTimer=0;
   let returning=null,routeHint='';
   let x=0,y=0,vx=0,vy=0,face=1,jump=0,jumpVelocity=0,stride=0,weight=0,talking=0,messageTime=0;
-  let groundMotion=null;
+  let groundMotion=null,view='side';
   let drawOrder=[],shadow={x,y},hits=[],error=null;
   const keyDirections={ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'right',ArrowUp:'up',KeyW:'up',ArrowDown:'down',KeyS:'down'};
   const layout=()=>world().layout(sceneId),snapshot=()=>progress?.snapshot()||{};
@@ -65,14 +65,14 @@
     ensureProgress();
     const saved=explicitPosition&&progress.validPosition(explicitPosition)?explicitPosition:progress.loadPosition();
     ({sceneId,entranceId,x,y,face}=saved);if(explicitPosition)progress.setPosition(saved);
-    jump=jumpVelocity=stride=weight=talking=0;groundMotion=null;hits=[];exitGuard=0;returning=null;routeHint='';
+    jump=jumpVelocity=stride=weight=talking=0;groundMotion=null;view='side';hits=[];exitGuard=0;returning=null;routeHint='';
     document.body.classList.add('centrum-square-active');window.dispatchEvent(new CustomEvent('centrum-square-change'));follow();sync();
     say('Preparing the original bear and baby…',60);
     try{
       if(!prepareJob)prepareJob=hero().preload().then(()=>hero().prepareCentrumCache());
-      await Promise.all([prepareJob,world().prepare(sceneId),window.BearlyCentrumStory?.prepare()]);if(!active||token!==session)return;
+      await Promise.all([prepareJob,world().prepare(sceneId),window.BearlyCentrumStory?.prepare(),window.BearlyCentrumDirectionalRig?.preload()]);if(!active||token!==session)return;
       if(!hero().ready())throw Error('Original character artwork is unavailable');
-      loading=false;progress.discover(sceneId);say(linked()?'Arrows / WASD walk · E at doors · M map · Q returns to the parked bicycle.':'Arrows / WASD walk · E at a door or passage · M map · P pause · Q returns to the ride.',9);sync();notifyLink();window.BearlyCentrumStory?.sceneEntered(sceneId);
+      loading=false;progress.discover(sceneId);say(window.BearlyCentrumDirectionalRig&&!window.BearlyCentrumDirectionalRig.ready()?'New viewing-angle artwork is unavailable; using the original side view. Walking and the route back to the bicycle remain available.':linked()?'Arrows / WASD walk · E at doors · M map · Q returns to the parked bicycle.':'Arrows / WASD walk · E at a door or passage · M map · P pause · Q returns to the ride.',9);sync();notifyLink();window.BearlyCentrumStory?.sceneEntered(sceneId);
     }catch(e){if(token!==session)return;prepareJob=null;error=String(e);loading=false;say('This place could not load. Return to the ride and try again.',60);sync();}
   }
   function close(){
@@ -92,7 +92,7 @@
     try{
       await world().prepare(exit.toScene);if(!active||token!==session)return;
       // One named destination anchor is the only place scene transfers set position.
-      sceneId=exit.toScene;entranceId=exit.toEntrance;({x,y,face}=arrival);jump=jumpVelocity=weight=0;groundMotion=null;
+      sceneId=exit.toScene;entranceId=exit.toEntrance;({x,y,face}=arrival);jump=jumpVelocity=weight=0;groundMotion=null;view='side';
       exitGuard=35;loading=false;transition=null;progress.discover(sceneId);savePosition();follow();sync();window.BearlyCentrumStory?.sceneEntered(sceneId);
       say(`${destination.title||destination.label} · ${exit.gateSide==='courtyard'?'Gate opened from the courtyard. ':''}Walk clear of the entrance, then E to use a door or passage.`,5);
     }catch(e){if(token!==session)return;loading=false;transition=null;say('The next place could not load. Your current place is still available.');sync();}
@@ -225,7 +225,9 @@
     if(dx)face=Math.sign(dx);
     const moved=world().move(x,y,vx*dt,vy*dt,sceneId,snapshot());hits=moved.hit;
     const travelX=moved.x-x,travelY=moved.y-y,distance=Math.hypot(travelX,travelY),gaitDistance=depthGait?.distance(travelX,travelY)??distance;
-    if(gaitDistance>1e-8)groundMotion=depthGait?.heading(travelX/Math.max(.001,dt),travelY/Math.max(.001,dt),face)||null;
+    if(gaitDistance>1e-8){groundMotion=depthGait?.heading(travelX/Math.max(.001,dt),travelY/Math.max(.001,dt),face)||null;
+      // Depth velocity brakes first. Preserve the driven view through release.
+      if(length>1e-8)view=window.BearlyCentrumDirectionalRig?.viewForMotion(groundMotion,view)||'side';}
     else if(groundMotion)groundMotion={...groundMotion,metricSpeed:0};
     x=moved.x;y=moved.y;stride+=depthGait?.strideDistance(travelX,travelY)??gaitDistance;
     exitGuard=Math.max(0,exitGuard-distance);saveTimer+=dt;if(saveTimer>=1){savePosition();saveTimer=0;}
@@ -247,7 +249,7 @@
     const list=window.BearlyCentrumStory?.decorate(sceneId,base)||base;
     const bicycle=linked()?link().bicycleNode?.(sceneId):null;if(bicycle)list.push(bicycle);
     list.push({id:'player',footY:y,draw:()=>{
-      if(!loading&&!error)hero().draw(c,x,y-jump,200,face,{centrumCache:true,distance:stride,weight,groundMotion,jump,talking:talking>0||window.BearlyCentrumStory?.babySpeaking()||window.BearlyCentrumStory?.babyReacting?.()||!!window.BearlyCentrumInventory?.isEating(),mode:'square',state:{hp:link()?.health()??100,baby:false}});
+      if(!loading&&!error)hero().draw(c,x,y-jump,200,face,{centrumView:view,centrumCache:true,distance:stride,weight,groundMotion,jump,talking:talking>0||window.BearlyCentrumStory?.babySpeaking()||window.BearlyCentrumStory?.babyReacting?.()||!!window.BearlyCentrumInventory?.isEating(),mode:'square',state:{hp:link()?.health()??100,baby:false}});
     }});
     list.sort((a,b)=>a.footY-b.footY||a.id.localeCompare(b.id));
     drawOrder=list.map(o=>({id:o.id,footY:o.footY}));for(const o of list)o.draw(c,{time:stride/155});
@@ -296,5 +298,5 @@
   // Resize/fullscreen also recomputes the bounded crop while paused.
   new ResizeObserver(()=>{if(active)follow();}).observe(host);
   document.getElementById('mobilePauseBtn').addEventListener('click',e=>{if(active){e.stopImmediatePropagation();setPaused(!paused);}},true);
-  window.BearlyCentrumSquare={clearInput:clear,inventoryContext:()=>({active,loading,paused,menuHold,mapOpen,transition,sceneId,x,y,vx,vy,jump,screenX:x-camera.x,screenY:y-camera.y,height:200}),open,close,openFromBicycle,resumeLinked:openFromBicycle,position,requestBackToBike:backToBike,active:()=>active,update,render,audit:()=>({active,loading,paused,menuHold,mapOpen,error,sceneId,sceneTitle:layout().title||layout().label,entranceId,transition,exitGuard,returning:returning?{sceneId:returning.sceneId,anchorId:returning.anchorId,waypoints:returning.path.length}:null,parkingNodeCount:drawOrder.filter(n=>n.id==='parked-player-bicycle').length,story:window.BearlyCentrumStory?.audit(),save:snapshot(),health:linked()?link().health():window.BEARLY_DEBUG?.().health,x,y,vx,vy,face,jump,stride,weight,groundMotion:groundMotion?{...groundMotion}:null,camera:{...camera},height:200,hero:hero()?.audit(),drawOrder,shadow:{...shadow},hits:[...hits],world:layout()})};
+  window.BearlyCentrumSquare={clearInput:clear,inventoryContext:()=>({active,loading,paused,menuHold,mapOpen,transition,sceneId,x,y,vx,vy,jump,screenX:x-camera.x,screenY:y-camera.y,height:200}),open,close,openFromBicycle,resumeLinked:openFromBicycle,position,requestBackToBike:backToBike,active:()=>active,update,render,audit:()=>({active,loading,paused,menuHold,mapOpen,error,sceneId,sceneTitle:layout().title||layout().label,entranceId,transition,exitGuard,returning:returning?{sceneId:returning.sceneId,anchorId:returning.anchorId,waypoints:returning.path.length}:null,parkingNodeCount:drawOrder.filter(n=>n.id==='parked-player-bicycle').length,story:window.BearlyCentrumStory?.audit(),save:snapshot(),health:linked()?link().health():window.BEARLY_DEBUG?.().health,x,y,vx,vy,face,jump,stride,weight,view,groundMotion:groundMotion?{...groundMotion}:null,camera:{...camera},height:200,hero:hero()?.audit(),drawOrder,shadow:{...shadow},hits:[...hits],world:layout()})};
 })();

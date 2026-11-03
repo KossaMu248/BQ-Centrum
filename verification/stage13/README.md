@@ -1,0 +1,14 @@
+# Stage13 — Real parent angles, original baby
+
+The user explicitly approved two matching bear-only views after rejecting the prior lean. The new near-frontal toward and away-oblique poses change actual head/helmet, shoulders and paired boots. Original baby artwork, continuous neck/clothing, native scale/expressions and original lower legs/shoes remain separate and untouched. Side/riding/transfers retain original renderers; camera, five scenes, physics/damage and saves are unchanged. [Asset provenance](../../assets/centrum/actors/PROVENANCE.md).
+
+- [Actual normal desktop gameplay and 1× walking clip](gameplay/README.md):19 screenshots, four directions, all diagonals/stops. One disclosed initial route-stop setup, then native transfer/walking.
+- [Actual normal touch-emulated gameplay and walking/remount clips](phone-landscape/README.md):17 screenshots, nine groups, all five scenes, both rooms, reload/pause/bag/same-bike return. Independent final review checked screenshot/clip/runtime hashes and sampled motion.
+- [Source-baby reference lab and independent art review](art-review/README.md):54 original-expression cases; labelled references, not gameplay or generated illustrations presented as screenshots.
+- [Core results](core-checks.json):20 CJS suites,36 syntax checks,944 original source reconstructions and negative guards; exact runtime hashes.
+- [Primary desktop](performance/desktop.json), [primary phone-emulation](performance/phone-emulation.json) and [repeat touch](performance/touch.json) exclusive profiles:all12 error/direction/cache/loop checks pass. No recording/CPU throttle; shared Linux host, Chromium154. Warm median frame16.7ms/p95 16.7–33.3ms and median instrumented main loop2.8–4.0ms in primary moving phases. Cold transfer/preparation remains~16seconds. These are not physical-device/thermal benchmarks.
+- [Exact standalone archive protocol/result locations](standalone/README.md):separate clean-server root/subpath matrix after packaging; certificate is external to its ZIP.
+
+The diagonal-release snap found during real walking was fixed and tested against the actual Square update. Fixed prepared parent parts make11 drawing calls with no new RAF/listeners/per-frame canvas allocation. Optional art failure leaves original side walking playable and can retry at explicit entry.
+
+The gait uses articulated painted pieces, not a fully redrawn sequence. Up remains oblique so the baby is visible. Full-health touch checks cannot establish absence of capped healing; earlier damaged-state quest/economy coverage is distinct. Historical failed source-worker raw-pixel equivalence remains failed. No new full earned story/WebKit/Firefox claim. Physical devices/Safari/thermal are skipped. Intermediate `*-attempt` evidence and raw frames remain development-only and are excluded from clean delivery. [Current report](../../TEST_REPORT.md).

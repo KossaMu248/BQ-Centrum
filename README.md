@@ -1,12 +1,12 @@
 # BQ-Centrum
 
-An independent, locally runnable prototype based on pinned **KossaMu248/BQ-Autumn** source. It retains the illustrated autumn ride and original bear, baby and bicycle, connected to five compact walking areas and one complete task, **The Wrong Entrance**.
+An independent, locally runnable prototype based on pinned **KossaMu248/BQ-Autumn** source. It retains the illustrated autumn ride, original baby and bicycle, connected to five compact walking areas and one complete task, **The Wrong Entrance**. Centrum adds two approved matching bear-only viewing angles while retaining the original baby renderer.
 
 Play the published HTML: **https://kossamu248.github.io/BQ-Centrum/**.
 
 ## Start exactly
 
-Get the source from [KossaMu248/BQ-Centrum](https://github.com/KossaMu248/BQ-Centrum), or build a fresh delivery with the package tool. The existing local `delivery/BQ-Centrum-validated.zip` is the historical Stage11 archive; use the current source for the Stage12 leg repair. For a fresh checkout:
+Get the source from [KossaMu248/BQ-Centrum](https://github.com/KossaMu248/BQ-Centrum), or build a fresh delivery with the package tool. A fresh `delivery/BQ-Centrum-validated.zip` is produced by `python3 tools/package-project.py`; its exact archive test certificate is external to that ZIP. For a fresh checkout:
 
 ```sh
 git clone https://github.com/KossaMu248/BQ-Centrum.git
@@ -29,7 +29,7 @@ python3 -m http.server 8001 --bind 127.0.0.1
 
 Open **http://127.0.0.1:8001/BQ-Centrum/**. Both `index.html` and the manifest’s `autumn-v19.html` entry are active, matching small HTML files. The clean package is checked at the root and under this subpath.
 
-Stage12 corrects swapped foreground/background shoe sizing, calf ownership and leg overlap. **Genuine up/down viewing angles are still pending permission for new matching bear-only artwork.** The old lean is not an angle change.
+Stage13 implements genuine near-frontal walking down and away-oblique walking up, including distinct helmet/head, shoulders and paired boots. The view stays selected after stopping, including diagonals. Original baby face, continuous neck/clothing, native expressions, lower legs and blue shoes remain attached at their source scale. See [bear-only artwork provenance](assets/centrum/actors/PROVENANCE.md).
 
 ## Implemented scope
 
@@ -40,7 +40,7 @@ Stage12 corrects swapped foreground/background shoe sizing, calf ownership and l
 - One quest: accept the shopkeeper’s A5 slip, inspect B-04, present the slip to the caretaker, confirm the parcel, wait for the caretaker to move it, and report to the shop. Commercial cargo and documents are separate from edible food.
 - A compact consumable economy: **five hearts / 100 HP**, **3 Billy’s maximum**, **+1 heart / 20 HP per pizza**, **20 fictional kr** per purchase. Redeem the task’s **40 kr + 1 Billy’s once** at the counter. Full bags keep the food entitlement reserved independently of money.
 - Persistent authored wild pickups, atomic purchases/eating/rewards, coherent latest saves and complete retry checkpoints. No inventory/economy expansion or extra campaign was added.
-- Restrained floor leaves, reduced-motion support, source foliage occlusion, small quest text and brief original baby expressions. Three environment-only gate, passage and cage assets now fill the reviewed gaps; see [provenance](assets/centrum/PROVENANCE.md). Original character artwork remains intact. Shallow depth steps now follow actual floor travel without changing actor scale or facing. The five-heart health row and compact bag/eating panels choose clear positions around the player, including narrow portrait views. Food and money appear only while the bag is open; I toggles it, and Settings → Bag provides touch access. Phone fullscreen retains that same readable scene presentation.
+- Restrained floor leaves, reduced-motion support, source foliage occlusion, small quest text and brief original baby expressions. Three environment-only gate, passage and cage assets now fill the reviewed gaps; see [provenance](assets/centrum/PROVENANCE.md). Original source character files remain intact; the approved new parent views are separate. Shallow depth steps now follow actual floor travel without changing actor scale or facing. The five-heart health row and compact bag/eating panels choose clear positions around the player, including narrow portrait views. Food and money appear only while the bag is open; I toggles it, and Settings → Bag provides touch access. Phone fullscreen retains that same readable scene presentation.
 
 ## Controls and route
 
@@ -71,7 +71,7 @@ The existing `bq-centrum:scene-network:v1` document owns the adventure (schema 2
 
 ## Verification and package
 
-Read the compact [TEST_REPORT.md](TEST_REPORT.md) for actual test conditions, repairs, results and limitations. [Stage 11 evidence](verification/stage11/README.md) covers walking performance/poses and on-demand inventory; [Stage 10 evidence](verification/stage10/README.md) preserves its HUD and browser checks; [Stage 9 evidence](verification/stage9/README.md) keeps the earned ride and gait review; the [Stage 8 full-route evidence](verification/stage8/README.md) remains available. Prior [Stage 7 art review](verification/stage7/README.md) remains available. Historical earlier evidence stays in the development workspace, outside the clean delivery.
+Read the compact [TEST_REPORT.md](TEST_REPORT.md) for actual test conditions, repairs, results and limitations. [Stage13 evidence](verification/stage13/README.md) contains normal-size desktop/touch gameplay, walking and remount clips, source-baby reference checks and frame-time profiles. [Stage 11 evidence](verification/stage11/README.md) covers walking performance/poses and on-demand inventory; [Stage 10 evidence](verification/stage10/README.md) preserves its HUD and browser checks; [Stage 9 evidence](verification/stage9/README.md) keeps the earned ride and gait review; the [Stage 8 full-route evidence](verification/stage8/README.md) remains available. Prior [Stage 7 art review](verification/stage7/README.md) remains available. Historical earlier evidence stays in the development workspace, outside the clean delivery.
 
 Development verification needs Python Playwright, system Chromium at `/usr/bin/chromium`, Node.js and ffmpeg for recordings; the game itself needs none of those beyond a static server/browser. The cross-browser check additionally expects Playwright Firefox/WebKit binaries in `.test-browsers` (`PLAYWRIGHT_BROWSERS_PATH=.test-browsers python3 -m playwright install firefox webkit`) and the host libraries required by those engines. Test-browser binaries/libraries are excluded from delivery.
 
@@ -88,7 +88,10 @@ python3 tests/centrum_cross_browser.py --engine webkit --functional-only --out v
 python3 tests/centrum_cross_browser.py --engine firefox --smoke-only --out verification/stage11/browsers
 node tests/centrum_hero_cache.cjs
 python3 tests/centrum_inventory_access.py
-python3 tests/centrum_walk_performance.py --label current-desktop
+node tests/centrum_directional_rig.cjs
+python3 tests/centrum_actor_provenance.py
+python3 tests/centrum_directional_gameplay.py --clip
+python3 tests/centrum_walk_performance.py --out verification/stage13/performance --label desktop
 python3 tools/package-project.py
 python3 tests/centrum_standalone.py
 ```
@@ -101,6 +104,8 @@ Source: **KossaMu248/BQ-Autumn/main**, commit `da109213fdf24947c2ac0b85de900214c
 
 System Chromium 154, Firefox 153 and Linux WebKit 26.5 were exercised as detailed in the test report. Physical-device and thermal testing were **skipped at the user’s request**. Linux WebKit and touch emulation do not constitute physical iPhone/Safari tests. Keyboard and touch controls are supported; gamepad mapping is not implemented.
 
-The full Linux WebKit quest/economy/return flow now passed, including riding/source-visit bag checks; the old Stage 9 timeout was not reproduced and its cause remains unproven. HUD and portrait bag overlaps were repaired without changing the accepted camera, actors or artwork. The source side/front silhouettes and upper-façade cropping in phone cover framing remain as designed. Centrum uses an optional bounded worker for live source mesh rasterisation, fixed-size source boots/separate calf patches, shorter steps and original baby lean poses. Depth walking still uses the source three-quarter viewing angle; the lean does not satisfy the requested real angle change. New matching bear-only angle artwork is pending approval. No authored front/rear walking row is supplied. Cold scene preparation remains about15seconds in the measured setup, and a newly seen heading can briefly use idle while its frame is prepared. Unsupported worker browsers use a synchronous fallback. Headless timings are observations, not a physical mobile performance guarantee.
+The latest Stage13 rendered tests use Chromium 154 on Linux, desktop and phone-landscape touch emulation. Earlier full quest/economy and Linux WebKit results are preserved with their own versions, not relabelled as fresh Stage13 runs. The new views use articulated painted parts, not a fully redrawn frame-by-frame gait. The away view deliberately stays oblique so the baby remains visible. The accepted shallow camera and some upper-façade cropping in phone cover framing remain.
+
+Warm Stage13 moving samples had median frame intervals of 16.7 ms, with p95 16.7–33.3 ms and median instrumented main-loop work of 2.8–4.0 ms in the two primary profiles. Initial scene preparation/transfer still takes about 16 seconds on this host and stutters during cold bakes. These observations are not a physical-mobile FPS guarantee. Unsupported worker browsers retain a synchronous source-side fallback. Optional missing angle art warns and keeps original side walking/exits usable. The earlier source-worker raw-pixel equivalence diagnostic remains failed; original asset integrity, new baby-only probes and actual visual review are separate checks.
 
 The user authorized publication to the independent **KossaMu248/BQ-Centrum** repository. This project retains its own Git history/configuration; no donor Git metadata, repository, save keys or deployment was modified. The user also approved branch-based GitHub Pages; the playable target is linked above. Publication details and observed versions are recorded in GITHUB_PUBLICATION.md.

@@ -41,3 +41,10 @@ No force push or repository visibility change is authorized. The earlier Stage 9
 ## Stage12 focused leg repair
 
 The user reported inverted/duplicated-looking legs and rejected the prior lean as a viewing-angle change. This target-only update repairs source boot sizing, calf ownership, extra fur sampling and leg overlap, with focused actual gameplay and core/source verification recorded in Stage12. Genuine up/down viewing angles remain pending approval for matching bear-only art; no new character artwork is included or claimed. The existing Stage11 archive/certificate is historical. Main push and automatic branch-based Pages authorization persist; donors remain read-only.
+
+
+## Stage13 approved true viewing angles
+
+The user explicitly approved creating two matched bear-only toward/away poses after rejecting the prior lean. Stage13 adds those separate assets and a modular optional renderer, retaining the original baby pixels/expressions/scale/attachment, side/riding/transfer renderers, accepted camera, five scenes, physics/damage, inventory rules and save namespace. The up/down silhouette now changes actual head/helmet, shoulders and feet. The diagonal braking view-snap found during verification was repaired.
+
+Current source, actual desktop/touch gameplay, frame-time observations and clean-package checks are documented in TEST_REPORT.md and verification/stage13. Historical Stage12 pending-art statements describe the state before the explicit approval and are resolved by this stage. The existing target-only main push and automatic Pages authorization persist. This file records scope before publication; the exact resulting commit and deployment are read back after the push and recorded outside the ZIP. Neither donor is modified or published.

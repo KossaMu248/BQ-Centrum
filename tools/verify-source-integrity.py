@@ -36,6 +36,19 @@ def replace_reviewed(text, added, original='', count=1):
     return text.replace(added, original)
 
 
+def reverse_stage13_rig(text):
+    """Restore Stage12 through exact SHA-pinned approved directional-render hook hunks."""
+    path = ROOT / 'references/source/stage13-hero-integration.json'
+    raw = path.read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == '25838b098e4bf6ec7fed63655717fb77951ad176e7de326eba5734bb19317379', 'Changed Stage13 rig inverse manifest'
+    spec = json.loads(raw)
+    assert spec['path'] == 'js/hero-rig.js' and spec['previousProjectCommit'] == '3f230dbbba0b57a7c9672dc62c258e9a207fd47c'
+    for edit in reversed(spec['changes']):
+        text = replace_reviewed(text, edit['current'], edit['previous'])
+    assert hashlib.sha256(text.encode()).hexdigest() == 'c89a1cba364486ba9fa9e1e18c3b1a8148e604d1da8530af8f7adb099bc1f1aa', 'Unexpected rig edits beyond reviewed Stage13 integration'
+    return text
+
+
 def reverse_stage12_rig(text):
     """Restore Stage11 through exact SHA-pinned Stage12 source-only context hunks."""
     path = ROOT / 'references/source/stage12-hero-integration.json'
@@ -64,6 +77,11 @@ def reverse_stage11_rig(text):
 
 def restore_donor(path):
     text = (ROOT / path).read_text()
+    if path.endswith('.html'):
+        for resource in ['js/hero-rig.js', 'js/game.js']:
+            text = replace_reviewed(text, f'{resource}?edition=centrum-stage13', f'{resource}?edition=centrum-stage12')
+        text = replace_reviewed(text, 'js/centrum-square.js?edition=centrum-stage13', 'js/centrum-square.js?edition=centrum-stage11')
+        text = replace_reviewed(text, '<script src="js/centrum-directional-rig.js?edition=centrum-stage13"></script>\n')
     if path.endswith('.html'):
         for resource in ['js/hero-rig.js', 'js/game.js']:
             text = replace_reviewed(text, f'{resource}?edition=centrum-stage12', f'{resource}?edition=centrum-stage11')
@@ -102,6 +120,7 @@ def restore_donor(path):
         for name, stage in [('hero-rig', 9), ('game', 10)]:
             text = replace_reviewed(text, f'js/{name}.js?edition=centrum-stage{stage}', f'js/{name}.js?edition=autumn-v19')
     if path == 'js/hero-rig.js':
+        text = reverse_stage13_rig(text)
         text = reverse_stage12_rig(text)
         text = reverse_stage11_rig(text)
         # Optional ground projection is used only by the independent square.
@@ -114,6 +133,7 @@ def restore_donor(path):
         text = replace_reviewed(text, 'bodyFrame(profile,name,options.distance||0,h,weight,options.groundMotion)', 'bodyFrame(profile,name,options.distance||0,h,weight)')
         text = replace_reviewed(text, 'projectGroundGait(window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,weight),frame.gait.groundMotion||options.groundMotion)', 'window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,weight)')
     if path == 'js/game.js':
+        text = replace_reviewed(text, "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE13';", "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE12';")
         text = replace_reviewed(text, "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE12';", "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE11';")
         text = replace_reviewed(text, "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE11';", "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE10';")
         text = replace_reviewed(text, 'if(startup.requested&&!window.BearlyCentrumLink?.holding()&&!window.BearlyCentrumEconomy?.ready())enterReadyRide();', 'if(startup.requested&&!window.BearlyCentrumLink?.holding())enterReadyRide();')
@@ -230,6 +250,6 @@ assert not failures, '\n'.join(failures)
 assert (ROOT / 'index.html').read_bytes() == (ROOT / 'autumn-v19.html').read_bytes()
 manifest = json.loads((ROOT / 'autumn-version.json').read_text())
 assert manifest['source']['commit'] == 'da109213fdf24947c2ac0b85de900214cc72e44f'
-assert manifest['edition'] == 'BQ_CENTRUM_STAGE12'
+assert manifest['edition'] == 'BQ_CENTRUM_STAGE13'
 print(f'PASS: {len(HASHES)} pinned original files verified; all source assets/CSS and original protected code match;')
 print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional Centrum walking/worker additions differ.')

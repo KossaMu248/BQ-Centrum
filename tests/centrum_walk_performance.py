@@ -96,12 +96,17 @@ def summarize(raw):
 
 
 def main():
+    global OUT
     parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--out',type=Path,help='Evidence path within this project; preserve historical runs.')
     parser.add_argument('--label',default='results',help='Evidence filename stem; preserve before/after measurements separately.')
     parser.add_argument('--pixel-equivalence',action='store_true',help='After gameplay timings, compare identical source/worker raster pixels in a paused renderer lab.')
     parser.add_argument('--baseline',action='store_true',help='Serve tracked Stage10 runtime bytes from fixed target commit; target artwork remains local.')
     parser.add_argument('--touch',action='store_true',help='Chromium landscape touch emulation; not a physical phone.')
     args=parser.parse_args()
+    if args.out:
+        OUT=args.out.resolve()
+        if not OUT.is_relative_to(ROOT):parser.error('--out must stay inside BQ-Centrum')
     if args.baseline:
         for folder,ext in [('js','js'),('css','css')]:
             for path in (ROOT/folder).glob('*.'+ext):
@@ -150,7 +155,8 @@ def main():
             page.wait_for_timeout(ms)
             for key in keys:page.keyboard.up(key)
             after=page.evaluate('BearlyCentrumSquare.position()')
-            result['movements'].append({'phase':label,'keys':keys,'requestedMs':ms,'before':before,'after':after,'heroCacheBefore':cache_before,'heroCacheAfter':page.evaluate('BearlyHeroRig.cacheStats()')})
+            pose_review=page.evaluate('({selected:BearlyCentrumSquare.audit().view||"side",painted:BearlyHeroRig.audit().view||"side",authored:!!BearlyHeroRig.audit().authoredView,directional:window.BearlyCentrumDirectionalRig?.stats()||null})')
+            result['movements'].append({'poseReview':pose_review,'phase':label,'keys':keys,'requestedMs':ms,'before':before,'after':after,'heroCacheBefore':cache_before,'heroCacheAfter':page.evaluate('BearlyHeroRig.cacheStats()')})
         page.evaluate("__perfReview.phase='readout'")
         result['afterCaches']=page.evaluate('({hero:BearlyHeroRig.cacheStats(),npc:BearlyNpcMotion.cacheStats(),world:BearlyWorld.cacheStats(),worker:BearlyHeroRig.centrumCacheStats?.()||null})')
         result['stats']=page.evaluate('BEARLY_DEBUG_MENU.stats()')
@@ -167,6 +173,9 @@ def main():
             'noNpcRebakesDuringWalk':npc['bakes']==result['beforeCaches']['npc']['bakes'],
             'allRequestedDirectionsMove':all(math.hypot(m['after']['x']-m['before']['x'],m['after']['y']-m['before']['y'])>20 for m in result['movements'] if m['keys']),
         }
+        if not args.baseline and page.evaluate('!!window.BearlyCentrumDirectionalRig'):
+            result['directional']=page.evaluate('BearlyCentrumDirectionalRig.stats()')
+            result['checks']['actualAuthoredAngles']=all(m['poseReview']['authored'] and m['poseReview']['painted']==('away' if m['phase'] in ['depth-up','diagonal-right-up'] else 'toward') for m in result['movements'] if m['phase'] in ['depth-up','depth-down','diagonal-right-up','diagonal-left-down'])
         if not args.baseline:
             worker=result['afterCaches']['worker'] or {}
             result['checks'].update({'workerReady':bool(worker.get('ready')) and not worker.get('failure'),'noLiveMainBodyBakes':hero['buildMs']==result['beforeCaches']['hero']['buildMs']})

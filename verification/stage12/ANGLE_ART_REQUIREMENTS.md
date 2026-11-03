@@ -7,3 +7,5 @@ Required scope is two matching bear-only views: toward-camera three-quarter and 
 The baby's original continuous face, neck, collar, clothing, expression assets and native scale remain untouched and use the production renderer. Keep the same physical front-carrier attachment; no direction-driven baby transfer. Source riding and transfer animations remain unchanged. New parent art would need measured anchors/occlusion, a small modular renderer extension, normal-size in-game comparison and actual walking clips before acceptance.
 
 Earlier user instructions prohibit regenerating characters; the explicit artwork question is pending. A posture lean will not be described as completing this requirement.
+
+Resolved by the user’s explicit “yes create them” approval in Stage13. The requirements above remain the acceptance criteria; see Stage13 for implementation/evidence.

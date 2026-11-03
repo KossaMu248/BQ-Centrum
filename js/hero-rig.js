@@ -109,8 +109,8 @@
   function paintCarrierBody(c,image,rect,origin,s,name,bob=0){
     const [sx,sy,sw,sh]=rect;c.drawImage(carrierBody(image,rect,name),(sx-origin[0])*s,(sy-origin[1])*s+bob,sw*s,sh*s);
   }
-  function paintPassenger(c,image,rect,origin,s,name,options={},bob=0){
-    const head=heads[name],upper=upperBodies[name],u=head.box[3]/85;
+  function paintPassenger(c,image,rect,origin,s,name,options={},bob=0,layout=null){
+    const head=layout?.head||heads[name],upper=layout?.upper||upperBodies[name],u=head.box[3]/85;
     const lip=upper.lip.map(([x,y])=>[x,y-(upper.raise||0)*u]),[a,q,b]=lip;
     const middle=[(a[0]+2*q[0]+b[0])/4,(a[1]+2*q[1]+b[1])/4];
     const angle=clamp(Math.atan2(head.neck[0]-upper.waist[0],upper.waist[1]-head.neck[1]),-.2,.2);
@@ -371,6 +371,8 @@
     if(steady||idle){bodyFrames.set(key,frame);bodyCacheBytes+=frame.width*frame.height*4;while(bodyCacheBytes>BODY_CACHE_LIMIT||bodyFrames.size>98){const oldest=bodyFrames.keys().next().value,evicted=bodyFrames.get(oldest);bodyCacheBytes-=evicted.width*evicted.height*4;evicted.disposed=true;if(evicted.bitmap){evicted.image.close();bodyBitmaps--;}if(evicted.canvas){evicted.canvas.width=1;evicted.canvas.height=1;}bodyFrames.delete(oldest);}}return frame;
   }
   function draw(c,px,py,h,face,options={}){
+    const directional=options.centrumView&&window.BearlyCentrumDirectionalRig?.draw(c,px,py,h,face,options);
+    if(directional){lastAudit=directional;return true;}
     if(!ready())return false;const state=options.state||{},back=!!state.baby,name=back?'back':'front',profile=profiles[name],s=h/profile.stature,weight=clamp(options.weight||0,0,1);
     c.save();c.translate(px,py);if(face<0)c.scale(-1,1);
     const action=state.hp===0?(state.defeatAge<.55?'collapse':'defeated'):state.hurt?(back?'backHurt':'frontHurt'):state.attack?'maul':state.held?'grab':null;
@@ -407,5 +409,10 @@
     const babyFace=drawCarrier(c,image,rect,origin,scale,pose,options);
     lastAudit={pose,carrier:'front',integratedCarrier:true,babyFace};return true;
   }
-  window.BearlyHeroRig={ready,preload,warmupSources,prepareCentrumCache,centrumCacheStats,draw,drawAuthored,babyMood,cacheStats,layout:()=>JSON.parse(JSON.stringify(upperBodies)),audit:()=>JSON.parse(JSON.stringify(lastAudit)),profiles:()=>JSON.parse(JSON.stringify(profiles))};
+  // Optional project-only carrier layouts keep the original passenger painter.
+  function drawPassengerLayout(c,image,layout,s,options={}){
+    if(!ready()||!layout?.head||!layout?.upper)return false;
+    return paintPassenger(c,image,layout.rect,layout.origin,s,layout.name||'centrum-directional',options,0,layout);
+  }
+  window.BearlyHeroRig={drawPassengerLayout,ready,preload,warmupSources,prepareCentrumCache,centrumCacheStats,draw,drawAuthored,babyMood,cacheStats,layout:()=>JSON.parse(JSON.stringify(upperBodies)),audit:()=>JSON.parse(JSON.stringify(lastAudit)),profiles:()=>JSON.parse(JSON.stringify(profiles))};
 })();

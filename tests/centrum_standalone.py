@@ -21,7 +21,7 @@ from urllib.parse import urlparse
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'verification/stage11/standalone'
+OUT=ROOT/'verification/stage13/standalone'
 WORK=OUT/'work'
 SCENES=['metro-square','shopping-arcade','service-courtyard','food-shop','bicycle-workshop']
 KEY='bq-centrum:scene-network:v1'
@@ -132,6 +132,15 @@ def verify_square_walk(page,touch):
         else:page.keyboard.up(key)
         assert (moving[axis]-before[axis])*sign>4,(direction,before,moving)
         hero=moving['hero'];assert hero['height']==200 and hero['integratedCarrier'] and hero['babyFace']['continuousUpperBody'] and hero['babyFace']['originalCollar']
+        if direction in ['up','down']:
+            expected='away' if direction=='up' else 'toward'
+            assert hero.get('view')==expected and hero.get('authoredView') is True,(direction,hero)
+            assert 'assets/centrum/actors/' in hero.get('sourceAsset',''),hero
+            directional=hero.get('directional',{})
+            assert directional.get('sourceBabyLower')=='assets/art/front-carrier-v7.png',hero
+            assert math.isclose(directional.get('sourceBabyLowerScale',0),200/488,rel_tol=1e-9),hero
+            assert math.isclose(directional.get('sourceBabyOriginalScale',0),.5710830421929589,rel_tol=1e-9),hero
+            assert math.isclose(hero['babyFace']['uniformScale'],.5710830421929589,rel_tol=1e-9),hero
         assert moving['health']==73 and page.evaluate('BearlyCentrumLink.audit().ownership.bicycles')==1
         samples.append({'direction':direction,'nativeInput':'touch hold' if touch else 'keyboard hold','position':{k:moving[k] for k in ['x','y','face','weight','groundMotion']},'hero':hero,'raster':page.evaluate('BearlyHeroRig.centrumCacheStats()')})
         page.wait_for_timeout(180)

@@ -1,0 +1,10 @@
+{
+  "scope": "Exact delivery payload compared with current frozen target worktree. External standalone certificate/output subtree excluded except frozen README.",
+  "manifestPayloads": 1812,
+  "currentSelectedPayloads": 1812,
+  "missing": [],
+  "hashMismatches": [],
+  "selectedButNotArchived": [],
+  "archivedButNotSelected": [],
+  "passed": true
+}

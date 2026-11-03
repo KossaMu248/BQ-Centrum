@@ -1,0 +1,189 @@
+{
+  "scope": "External exact-archive Stage13 delivery review; excluded from its own ZIP. Production named-entrance scene fixtures are disclosed. This is not a fresh earned quest route or physical-device test.",
+  "atUtc": "2026-11-03T11:20:18+00:00",
+  "passed": true,
+  "archive": "delivery/BQ-Centrum-validated.zip",
+  "archiveSha256": "8d7f5149140a90fcf132d8aa5f8fefa31c10b2f0c8ec713d09aaa412eec824a0",
+  "archiveBytes": 826346498,
+  "manifestPayloadsCompared": 1812,
+  "archiveEntries": 1814,
+  "worktreePayloadComparison": {
+    "scope": "Exact delivery payload compared with current frozen target worktree. External standalone certificate/output subtree excluded except frozen README.",
+    "manifestPayloads": 1812,
+    "currentSelectedPayloads": 1812,
+    "missing": [],
+    "hashMismatches": [],
+    "selectedButNotArchived": [],
+    "archivedButNotSelected": [],
+    "passed": true
+  },
+  "conditions": {
+    "browser": "system Chromium /usr/bin/chromium, headless",
+    "desktopViewport": [
+      1280,
+      720
+    ],
+    "phoneEmulationViewport": [
+      844,
+      390
+    ],
+    "physicalDevices": false,
+    "sceneFixtures": "Production-factory sealed named-entrance/parking fixtures; primary native route is a separate test.",
+    "browserVersion": "154.0.8037.57",
+    "systemPathFirefoxExecutable": null,
+    "engineScope": "This archive run uses system Chromium only; Firefox and Linux WebKit evidence is separate."
+  },
+  "groupsPassed": 28,
+  "sceneLoadsAndNativeBagInteractions": 20,
+  "scenes": [
+    "metro-square",
+    "shopping-arcade",
+    "service-courtyard",
+    "food-shop",
+    "bicycle-workshop"
+  ],
+  "freshRidePedalGroups": 4,
+  "independentAliasStartupGroups": 4,
+  "nativeCardinalWalkSamples": 16,
+  "authoredViewAssertions": [
+    {
+      "group": "root-desktop metro-square scene load and native bag interaction",
+      "direction": "up",
+      "view": "away",
+      "originalBabyUpper": true,
+      "originalBabyLower": "assets/art/front-carrier-v7.png",
+      "originalBabyUniformScale": 0.5710830421929589
+    },
+    {
+      "group": "root-desktop metro-square scene load and native bag interaction",
+      "direction": "down",
+      "view": "toward",
+      "originalBabyUpper": true,
+      "originalBabyLower": "assets/art/front-carrier-v7.png",
+      "originalBabyUniformScale": 0.5710830421929589
+    },
+    {
+      "group": "root-phone-emulation metro-square scene load and native bag interaction",
+      "direction": "up",
+      "view": "away",
+      "originalBabyUpper": true,
+      "originalBabyLower": "assets/art/front-carrier-v7.png",
+      "originalBabyUniformScale": 0.5710830421929589
+    },
+    {
+      "group": "root-phone-emulation metro-square scene load and native bag interaction",
+      "direction": "down",
+      "view": "toward",
+      "originalBabyUpper": true,
+      "originalBabyLower": "assets/art/front-carrier-v7.png",
+      "originalBabyUniformScale": 0.5710830421929589
+    },
+    {
+      "group": "subpath-desktop metro-square scene load and native bag interaction",
+      "direction": "up",
+      "view": "away",
+      "originalBabyUpper": true,
+      "originalBabyLower": "assets/art/front-carrier-v7.png",
+      "originalBabyUniformScale": 0.5710830421929589
+    },
+    {
+      "group": "subpath-desktop metro-square scene load and native bag interaction",
+      "direction": "down",
+      "view": "toward",
+      "originalBabyUpper": true,
+      "originalBabyLower": "assets/art/front-carrier-v7.png",
+      "originalBabyUniformScale": 0.5710830421929589
+    },
+    {
+      "group": "subpath-phone-emulation metro-square scene load and native bag interaction",
+      "direction": "up",
+      "view": "away",
+      "originalBabyUpper": true,
+      "originalBabyLower": "assets/art/front-carrier-v7.png",
+      "originalBabyUniformScale": 0.5710830421929589
+    },
+    {
+      "group": "subpath-phone-emulation metro-square scene load and native bag interaction",
+      "direction": "down",
+      "view": "toward",
+      "originalBabyUpper": true,
+      "originalBabyLower": "assets/art/front-carrier-v7.png",
+      "originalBabyUniformScale": 0.5710830421929589
+    }
+  ],
+  "allSceneFixtureHealthRemained": 73,
+  "singlePendingMainLoopChecks": 24,
+  "storageKeysObserved": [
+    "bq-centrum:adventure:v1",
+    "bq-centrum:best-score:v1",
+    "bq-centrum:civilians:v1",
+    "bq-centrum:parking:v1",
+    "bq-centrum:quest:wrong-entrance:v1",
+    "bq-centrum:scene-network:v1"
+  ],
+  "allStorageKeysProjectNamespaced": true,
+  "errorCounts": {
+    "errors": 0,
+    "consoleErrors": 0,
+    "httpFailures": 0,
+    "serverHttpFailures": 0,
+    "serverOutsideSubpathRequests": 0,
+    "externalRequests": 0,
+    "outsideSubpathRequests": 0
+  },
+  "requestsObserved": {
+    "root": 2326,
+    "subpath": 2370
+  },
+  "extractedSourceIntegrity": "PASS: 944 pinned original files verified; all source assets/CSS and original protected code match;\nonly reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional Centrum walking/worker additions differ.",
+  "forbiddenPackagePaths": [],
+  "secretPatternMatches": [],
+  "independentScenery": {
+    "assets/centrum/delivery-cage.png": {
+      "sha256": "969ed1af10111cf56208e6fe362b3c2788c09cf6f21cb0ea02e11d2950bcb5ac",
+      "nativePixels": [
+        2172,
+        724
+      ]
+    },
+    "assets/centrum/service-gate.png": {
+      "sha256": "570c2238cb0d0e5a339d191581313ed5071504773bd5ae4378e4a478b3fb5f68",
+      "nativePixels": [
+        1877,
+        838
+      ]
+    },
+    "assets/centrum/service-passage.png": {
+      "sha256": "65b1829a4be6e71344b30d964682d2413debf17c6b987664a6a8bfd6ac6be18b",
+      "nativePixels": [
+        912,
+        1724
+      ]
+    }
+  },
+  "approvedBearArtworkMetadata": {
+    "assets/centrum/actors/bear-directions.png": {
+      "sha256": "334a329ab35f7adeae1407e1223d702c27eb1ecf1d57a35ac61477d8dce21749",
+      "nativePixels": [
+        1536,
+        1024
+      ],
+      "pngColorType": 6,
+      "alphaChannel": true,
+      "provenance": "assets/centrum/actors/PROVENANCE.md",
+      "scope": "User-approved additional bear-only views; original baby remains source artwork. Metadata validation is separate from visual/gameplay acceptance."
+    }
+  },
+  "metadataIsNotVisualProof": true,
+  "screenshots": 12,
+  "externalCertificate": "delivery/BQ-Centrum-validated.validation.json",
+  "externalResult": "verification/stage13/standalone/results.json",
+  "externalScreenshotHashes": "verification/stage13/standalone/frames.sha256",
+  "limits": [
+    "System Chromium 154 on Linux, headless.844\u00d7390 touch emulation is not physical iPhone/Safari.",
+    "Alias startup is independent; identical-byte entry assertion supports shared runtime behavior rather than duplicating every interaction.",
+    "Named production save-factory fixtures test scene loading, bag behavior and authored walking; separate native route evidence covers the earned story flow.",
+    "Frame samples from this functional run are not controlled performance or thermal guarantees.",
+    "No additional WebKit/Firefox run was performed for this exact ZIP."
+  ]
+}

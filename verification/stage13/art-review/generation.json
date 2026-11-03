@@ -1,0 +1,24 @@
+{
+  "approvedByUser": "yes create them",
+  "scope": "two bear-only real toward/away views; original baby art/attachment unchanged",
+  "dateClient": "2026-11-03",
+  "timezone": "Europe/Oslo",
+  "generator": "image_gen.imagegen",
+  "finalRuntime": "assets/centrum/actors/bear-directions.png",
+  "sha256": "334a329ab35f7adeae1407e1223d702c27eb1ecf1d57a35ac61477d8dce21749",
+  "reference": "assets/art/front-background-v11-2.png",
+  "referenceSHA256": "cda0c3c087261469b6367651241bb955afadb3bd7f66f9cef693c869357a7c5a",
+  "transparent": true,
+  "containsGeneratedBaby": false,
+  "iterations": [
+    {
+      "file": ".image-work/stage13/bear-angles-initial.png",
+      "status": "Rejected toward head/boots insufficiently frontal"
+    },
+    {
+      "file": ".image-work/stage13/bear-angles-refined.png",
+      "status": "Accepted bear asset for integration; in-game verification separate"
+    }
+  ],
+  "imageIsGameplayScreenshot": false
+}

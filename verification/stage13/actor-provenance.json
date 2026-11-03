@@ -1,0 +1,18 @@
+{
+  "scope": "Actual approved actor asset provenance/hash/PNG-header metadata only; no likeness, animation or gameplay pass is implied.",
+  "atUtc": "2026-11-03T06:50:45Z",
+  "actors": {
+    "assets/centrum/actors/bear-directions.png": {
+      "sha256": "334a329ab35f7adeae1407e1223d702c27eb1ecf1d57a35ac61477d8dce21749",
+      "nativePixels": [
+        1536,
+        1024
+      ],
+      "pngColorType": 6,
+      "alphaChannel": true,
+      "provenance": "assets/centrum/actors/PROVENANCE.md",
+      "scope": "User-approved additional bear-only views; original baby remains source artwork. Metadata validation is separate from visual/gameplay acceptance."
+    }
+  },
+  "passed": true
+}
