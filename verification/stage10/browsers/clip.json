@@ -1,0 +1,10 @@
+{
+  "file": "final/webkit/return-remount-1x.webm",
+  "source": "final/webkit/native-network-loop.webm",
+  "sourceStartSeconds": 123.6,
+  "durationSeconds": 30.0,
+  "bytes": 6670804,
+  "timeScale": 1,
+  "description": "Last30seconds of actual final WebKit recording, real1x gameplay: courtyard/square return, original-bike remount and copied source-foot/bag regression. Fast VP8 segment encode; no frame synthesis or game-speed changes.",
+  "sha256": "00e4e182dd758c13eede8cf44fbe0fb7965a8a27490b57899d5ba47b02a164de"
+}

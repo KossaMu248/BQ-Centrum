@@ -26,8 +26,8 @@ SECRET_PATTERNS = {
     'google-api-key': re.compile(r'\bAIza[0-9A-Za-z_-]{35}\b'),
 }
 TEXT_EXTENSIONS = {'.js', '.css', '.html', '.json', '.md', '.txt', '.py', '.cjs', '.yml', '.yaml'}
-EVIDENCE_STAGES = (7, 8, 9)
-VALIDATION_STAGE = 9
+EVIDENCE_STAGES = (7, 8, 9, 10)
+VALIDATION_STAGE = 10
 
 
 def valid_file(path):
@@ -91,10 +91,15 @@ def included_files():
     for stage in EVIDENCE_STAGES:
         certificate=ROOT/'verification'/('stage'+str(stage))/'standalone'
         files={p for p in files if not p.is_relative_to(certificate) or p.name=='README.md'}
-    stage9=ROOT/'verification/stage9'
-    files={p for p in files if not p.is_relative_to(stage9) or (
-        p.suffix in {'.md','.json','.png','.webp','.webm','.mp4','.sha256'} and
-        not any(label in p.name for label in ['-provisional','-attempt']))}
+    # Modern review stages retain only final evidence/art audits/docs. Source
+    # capture helpers and renderer HTML fixtures remain development-only.
+    for stage in EVIDENCE_STAGES:
+        if stage<9:continue
+        review=ROOT/'verification'/('stage'+str(stage))
+        files={p for p in files if not p.is_relative_to(review) or (
+            p.suffix in {'.md','.json','.png','.webp','.webm','.mp4','.sha256'} and
+            not any(label in part.lower() for part in p.relative_to(review).parts for label in ['-provisional','-attempt']) and
+            not any(part.lower() in {'setup','calibration'} for part in p.relative_to(review).parts))}
     return sorted((p for p in files if valid_file(p)), key=lambda p:p.relative_to(ROOT).as_posix())
 
 

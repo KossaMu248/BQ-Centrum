@@ -1,0 +1,659 @@
+{
+  "scope": "Stage10 phase-labelled acceptance: pre-fullscreen-refinement native task/economy flows; eight fullscreen scene geometry groups per engine; final CSS-only source-foot toolbar repair verified by two grouped executions per engine. Physical devices skipped.",
+  "passed": true,
+  "runs": [
+    {
+      "label": "baseline-webkit",
+      "engine": "webkit",
+      "version": "26.5",
+      "file": "baseline-webkit/webkit-results.json",
+      "passed": true,
+      "groupedExecutions": 15,
+      "errors": {
+        "errors": 0,
+        "consoleErrors": 0,
+        "httpFailures": 0,
+        "externalRequests": 0,
+        "outsidePrefixRequests": 0
+      },
+      "runtimeDrift": null,
+      "fixtureDisclosure": "Production factory prepares only valid parking/scene starting positions and60HP/onefood for the functional flow; walking, quest steps, transactions and remount use actual controls. This is separate from the Chromium fresh native road acceptance.",
+      "codePhase": "baseline-before-main-HUD-repair"
+    },
+    {
+      "label": "final-webkit",
+      "engine": "webkit",
+      "version": "26.5",
+      "file": "final/webkit-functional-results.json",
+      "passed": true,
+      "groupedExecutions": 16,
+      "errors": {
+        "errors": 0,
+        "consoleErrors": 0,
+        "httpFailures": 0,
+        "externalRequests": 0,
+        "outsidePrefixRequests": 0
+      },
+      "runtimeDrift": [],
+      "fixtureDisclosure": "Production factory prepares only valid parking/scene starting positions and60HP/onefood for the functional flow; walking, quest steps, transactions and remount use actual controls. This is separate from the Chromium fresh native road acceptance.",
+      "codePhase": "pre-fullscreen-refinement"
+    },
+    {
+      "label": "final-firefox",
+      "engine": "firefox",
+      "version": "153.0",
+      "file": "final/firefox-smoke-results.json",
+      "passed": true,
+      "groupedExecutions": 30,
+      "errors": {
+        "errors": 0,
+        "consoleErrors": 0,
+        "httpFailures": 0,
+        "externalRequests": 0,
+        "outsidePrefixRequests": 0
+      },
+      "runtimeDrift": [],
+      "fixtureDisclosure": "Production factory prepares only valid parking/scene starting positions and60HP/onefood for the functional flow; walking, quest steps, transactions and remount use actual controls. This is separate from the Chromium fresh native road acceptance.",
+      "codePhase": "pre-fullscreen-refinement"
+    }
+  ],
+  "captures": [
+    {
+      "file": "baseline-webkit/webkit/functional/courtyard-delivery.png",
+      "sha256": "cf0035175e1b4a8567a1a67aec07938031f699153344a95ca92d300d055a50c7",
+      "bytes": 919340,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "baseline-webkit"
+    },
+    {
+      "file": "baseline-webkit/webkit/functional/food-reload-native-baby.png",
+      "sha256": "abca9a5afe4870d9202c1cd6ea5e023f6cec4b691006764ef5ed3eebb2ef3a3c",
+      "bytes": 1358275,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "baseline-webkit"
+    },
+    {
+      "file": "baseline-webkit/webkit/functional/remounted-original-bike.png",
+      "sha256": "a999b6c4d80d16f5d4ba6a8b1463149b81f0ef9f1b88afcb5e64a1d657e146f5",
+      "bytes": 1036146,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "baseline-webkit"
+    },
+    {
+      "file": "baseline-webkit/webkit/functional/root-desktop-food-shop.png",
+      "sha256": "213b98454d34915bdca728d334008d65dbb2723a2e75967ad54709a696374835",
+      "bytes": 1367079,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "baseline-webkit"
+    },
+    {
+      "file": "baseline-webkit/webkit/functional/root-desktop-metro-square.png",
+      "sha256": "0568d9355fc838ccbf098beb13be356f7e86a4cc7f755c02d289b21cb6660475",
+      "bytes": 1017216,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "baseline-webkit"
+    },
+    {
+      "file": "baseline-webkit/webkit/functional/root-desktop-ride.png",
+      "sha256": "8719039216ad48124ecd10f09f38697a69767750b99edf0e0041774181227861",
+      "bytes": 1039664,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "baseline-webkit"
+    },
+    {
+      "file": "baseline-webkit/webkit/functional/workshop-native-arrival.png",
+      "sha256": "cfb936d4d501d6b1a5ad2895657cc909ff8f03dca4c83981b6a7a2ff991b1271",
+      "bytes": 1313085,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "baseline-webkit"
+    },
+    {
+      "file": "final/firefox/smoke/root-desktop-food-shop.png",
+      "sha256": "d1bf288189ee9aac58d74339e399a5de0dfe7b1e1ac0ce77e585ab75b44af64f",
+      "bytes": 1566797,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/firefox/smoke/root-desktop-metro-square.png",
+      "sha256": "0e6f27fc339f54b66929ea7f60f9fa27cfcd7f5159355dd2c6c4dea07e9054a3",
+      "bytes": 1145553,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/firefox/smoke/root-desktop-ride.png",
+      "sha256": "4027b180968b945e1f4c7ca77deee94f303a54bf73cc4fe1a60ec6270cf31b46",
+      "bytes": 1196410,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/firefox/smoke/root-touch-viewport-food-shop.png",
+      "sha256": "c644e07cc1bed6bba2ac288feec5fec42ecb71004fc420f807cbb57270e86069",
+      "bytes": 705994,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/firefox/smoke/root-touch-viewport-metro-square.png",
+      "sha256": "30f8e75cb7705edb19d3dd7c5ba619a8f45eb4437010c97230889bd2bd19cc83",
+      "bytes": 543981,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/firefox/smoke/subpath-desktop-food-shop.png",
+      "sha256": "8839729ce823983664effa03d6d5ccd1f623dafa5d0be5f293240ee9428712c2",
+      "bytes": 1567087,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/firefox/smoke/subpath-desktop-metro-square.png",
+      "sha256": "7fb9f00a36d08945d283d36f25f4792a47bfff90f9d3087f6771ba3b96c30273",
+      "bytes": 1145327,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/firefox/smoke/subpath-desktop-ride.png",
+      "sha256": "70e05bea8b143fcb3a675cdb2d6205aed806a55133f3ce7c43d9f49f024f00da",
+      "bytes": 1197143,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/firefox/smoke/subpath-touch-viewport-food-shop.png",
+      "sha256": "af1f6e236d0546ef397fee6c271f58e1c115a6f74af29462bba7c3e07353da98",
+      "bytes": 706020,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/firefox/smoke/subpath-touch-viewport-metro-square.png",
+      "sha256": "1770103f53d587a94377b7cbad65919ad854cb06c44b10d38e7cbf6d8b6a714b",
+      "bytes": 542015,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/webkit/functional/courtyard-delivery.png",
+      "sha256": "f46c3f00b1e88080922ad385ed118b5a61ea46f3304b899ff109097eeed20835",
+      "bytes": 919873,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/webkit/functional/food-reload-native-baby.png",
+      "sha256": "6c47e2f5e7426d730ad34264c6e15ab85c73bde41de15fb74ca3cf08faf6a400",
+      "bytes": 1357869,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/webkit/functional/remounted-original-bike.png",
+      "sha256": "e715fd1159fb479640cd1a5df937c87a0bd786ff78d67cf5f41b9477b8758d82",
+      "bytes": 1036948,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/webkit/functional/return-walking-frame.png",
+      "sha256": "93a6633b8e440a3a5eb17192e9e010c8b4873495066035623bb80936ab8ce2fb",
+      "bytes": 751855,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/webkit/functional/root-desktop-food-shop.png",
+      "sha256": "a8008c9efd865cf3996060fea9ca0e448cc9f22496fd5740da76f3f6afcd9859",
+      "bytes": 1367177,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/webkit/functional/root-desktop-metro-square.png",
+      "sha256": "fc369877fa788700764b3464d2292a8a8a00ecca51de59b41ddd64ebf4c97bcd",
+      "bytes": 1017613,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/webkit/functional/root-desktop-ride.png",
+      "sha256": "84d0497b298fc09f931b682e7bf3e18216be75c8744c251b64a047a9c89cde82",
+      "bytes": 1051956,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/webkit/functional/source-foot-cleared-scene-hud.png",
+      "sha256": "bfc706af5f550bfd0d7aea975002a56b3a3d5cd377b59826c8f3002f31792411",
+      "bytes": 1065073,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "final/webkit/functional/workshop-native-arrival.png",
+      "sha256": "cfb936d4d501d6b1a5ad2895657cc909ff8f03dca4c83981b6a7a2ff991b1271",
+      "bytes": 1313085,
+      "pixelSize": [
+        1280,
+        720
+      ],
+      "codePhase": "final"
+    },
+    {
+      "file": "fullscreen-final/firefox/presentation/desktop-letterbox-metro-square-native-request.png",
+      "sha256": "0cd91e387d4a5751b5392e54e836c237314d36604a9dbdf82791aa9f10f9ba85",
+      "bytes": 1323133,
+      "pixelSize": [
+        1280,
+        900
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/firefox/presentation/failure-render.png",
+      "sha256": "3b2aed9115527136c4a541e851a59f27537f673fd8142f3619b82a85fbcf5ae6",
+      "bytes": 409170,
+      "pixelSize": [
+        390,
+        844
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/firefox/presentation/phone-landscape-bicycle-workshop-native-request.png",
+      "sha256": "ec16153ff253a2dc1008b8cee00c8e10bf251a02d166270c13f9c377805a6d0e",
+      "bytes": 775905,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/firefox/presentation/phone-landscape-food-shop-native-request.png",
+      "sha256": "91bb5acb24c09640656024389fa60439c1be79e1ff3b7f62408f667419febaf9",
+      "bytes": 747874,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/firefox/presentation/phone-landscape-metro-square-native-request.png",
+      "sha256": "86f818c02c9e69d74bf60a2a1b0ea79a30ae0a53dbe41df1b7d33c6ce0af4321",
+      "bytes": 534540,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/firefox/presentation/phone-landscape-service-courtyard-native-request.png",
+      "sha256": "89c3d69921a7799b225624025aa95dbc2ff03eade43d110afcf84f0904624457",
+      "bytes": 475608,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/firefox/presentation/phone-landscape-shopping-arcade-native-request.png",
+      "sha256": "596e45382fa5ef510008fc19a0fb307e36a8bca9a54f69d225cf20cb96343f4f",
+      "bytes": 502647,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/firefox/presentation/phone-portrait-metro-square-native-request.png",
+      "sha256": "5083eec74ed2ffe772e8e715056f5b1524c25781887a0804f6b1c5dfa950413b",
+      "bytes": 423515,
+      "pixelSize": [
+        390,
+        844
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/firefox/presentation/phone-portrait-metro-square-viewport-fallback.png",
+      "sha256": "32e1f078aa51f9db4badda227acf54ac49622f400b60e56500774c990911f6bb",
+      "bytes": 489847,
+      "pixelSize": [
+        390,
+        844
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/firefox/presentation/phone-portrait-shopping-arcade-native-request.png",
+      "sha256": "bff2fc38684cca7287a742324df0c83a3f7df0286d9365fc2cab4c7698b72f23",
+      "bytes": 386193,
+      "pixelSize": [
+        390,
+        844
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/webkit/presentation/desktop-letterbox-metro-square-native-request.png",
+      "sha256": "3920f7c377fc201c90878d2c2840569b8a281a41579218951dadfd4f081d66f9",
+      "bytes": 1105555,
+      "pixelSize": [
+        1280,
+        900
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/webkit/presentation/phone-landscape-bicycle-workshop-native-request.png",
+      "sha256": "bf18f1100bbdc28c97b69ddfb7fa1e3a59ce378534fe5704e048a6f2c10d3148",
+      "bytes": 612460,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/webkit/presentation/phone-landscape-food-shop-native-request.png",
+      "sha256": "fc9e0980653e788a216774d4b4ed6769a75f8a337df6e8425c085f99dedc1c2b",
+      "bytes": 635122,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/webkit/presentation/phone-landscape-metro-square-native-request.png",
+      "sha256": "8fe43bee0cfdee8900c473ddb0999a27ef2da9197e58b16da0081e0837b81a67",
+      "bytes": 503365,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/webkit/presentation/phone-landscape-service-courtyard-native-request.png",
+      "sha256": "0e6631f0abb8e38ad1900033588833002f657706484a278a6a32febc7692b149",
+      "bytes": 483821,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/webkit/presentation/phone-landscape-shopping-arcade-native-request.png",
+      "sha256": "cf6e1b50eac9c0373935dcd6e2a78718b85c03d75f567e748c51866bf7103941",
+      "bytes": 488250,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/webkit/presentation/phone-portrait-expanded-source-foot-reset.png",
+      "sha256": "1aadd30c981dfc87174cdcbffa216d083632e7bf5a1d5ca70dfbc63643bdc04f",
+      "bytes": 204009,
+      "pixelSize": [
+        390,
+        844
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/webkit/presentation/phone-portrait-metro-square-native-request.png",
+      "sha256": "71905c265e2a1106e4b1ba76ec90286b953ff2bd5380364d7a18696f68d4e4ba",
+      "bytes": 438375,
+      "pixelSize": [
+        390,
+        844
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/webkit/presentation/phone-portrait-metro-square-viewport-fallback.png",
+      "sha256": "6e81ce4821ca9516c767b1daddec4ddbbcac2cd40dfe931afe00209328e9bd7a",
+      "bytes": 438132,
+      "pixelSize": [
+        390,
+        844
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "fullscreen-final/webkit/presentation/phone-portrait-shopping-arcade-native-request.png",
+      "sha256": "e6f3e00ead4deb5716d01be0db6670a3a9b6800f4137f65d761d656cff1565cf",
+      "bytes": 386455,
+      "pixelSize": [
+        390,
+        844
+      ],
+      "codePhase": "fullscreen-final"
+    },
+    {
+      "file": "source-fullscreen-final/firefox/presentation/expanded-source-foot-reset.png",
+      "sha256": "435d90ada3885240223cd8c76fb3dd8baae5fdedefd0e1589b42b03c23abc622",
+      "bytes": 409034,
+      "pixelSize": [
+        390,
+        844
+      ],
+      "codePhase": "source-fullscreen-final"
+    },
+    {
+      "file": "source-fullscreen-final/webkit/presentation/expanded-source-foot-reset.png",
+      "sha256": "e84552a9e4936347dd6db3169c5b6e629300ec71823c475142ce6ebf1c0e5218",
+      "bytes": 462605,
+      "pixelSize": [
+        844,
+        390
+      ],
+      "codePhase": "source-fullscreen-final"
+    }
+  ],
+  "media": [
+    {
+      "file": "baseline-webkit/webkit/native-network-loop.webm",
+      "sha256": "22e672bcf2dc1e5cf2092b5a2e008d17bfba5377d66b2d0eb19463f344976b00",
+      "bytes": 16940124,
+      "timeScale": 1
+    },
+    {
+      "file": "final/webkit/native-network-loop.webm",
+      "sha256": "3c335355e308e4c4ee01ec24ac0a116d7e6851f334d16676c40a85016a9dec51",
+      "bytes": 18240184,
+      "timeScale": 1
+    },
+    {
+      "file": "final/webkit/return-remount-1x.webm",
+      "sha256": "00e4e182dd758c13eede8cf44fbe0fb7965a8a27490b57899d5ba47b02a164de",
+      "bytes": 6670804,
+      "timeScale": 1
+    }
+  ],
+  "historicalFailure": "Stage9 original35secondWebKit Qtimeout not reproduced in two complete Stage10 native runs. Historical evidence retained; cause unproved.",
+  "postVerification": {
+    "allCurrentCaptureHashesMatch": true,
+    "allRecordedStorageIOProjectNamespace": true,
+    "finalRuntimeDrift": false,
+    "mainFlowHashesMatchedAtTheirRunFreeze": true,
+    "finalSourceSupplementHashesMatchCurrentRuntime": true,
+    "noRuntimeDriftWithinEachRecordedSuite": true,
+    "historicalFirefoxSourceObstructionRetained": true
+  },
+  "limits": [
+    "Prepared parking/exploration starting fixtures are disclosed; no teleports between subsequent native functional steps.",
+    "Final engine timings include concurrent shared-host Chromium HUD gallery load, not isolated performance benchmarking.",
+    "Firefox844x390 has_touch viewport is desktop-engine emulation; held dpad contacts use mouse PointerEvents, menu actions native touch taps.",
+    "LinuxWebKit26.5 is WPE headless, notSafari/iPhone.",
+    "Physicaldevices/Safari/gamepads/sustainedmobilethermalperformance untested.",
+    "Raw fullscreen Firefox run preserves the genuine pre-repair source-toolbar obstruction; source-only followups verify its final CSS repair without rerunning the full quest.",
+    "Firefox native image buffers can retain the configured viewport and crop its larger1366x768virtualdesktop. Actual viewport/projection/hit metadata is recorded; those PNGs are not whole-desktop phone screenshots."
+  ],
+  "shortClip": {
+    "file": "final/webkit/return-remount-1x.webm",
+    "source": "final/webkit/native-network-loop.webm",
+    "sourceStartSeconds": 123.6,
+    "durationSeconds": 30.0,
+    "bytes": 6670804,
+    "timeScale": 1,
+    "description": "Last30seconds of actual final WebKit recording, real1x gameplay: courtyard/square return, original-bike remount and copied source-foot/bag regression. Fast VP8 segment encode; no frame synthesis or game-speed changes.",
+    "sha256": "00e4e182dd758c13eede8cf44fbe0fb7965a8a27490b57899d5ba47b02a164de"
+  },
+  "derivedVideoFrame": {
+    "file": "final/webkit/functional/return-walking-frame.png",
+    "source": "final/webkit/return-remount-1x.webm",
+    "sourceTimeSeconds": 10,
+    "fullSourceTimeSeconds": 133.6,
+    "type": "Actual decoded recording frame, no generated artwork"
+  },
+  "fullscreenGeometry": {
+    "codePhase": "object-fit/mobile-fullscreen refinement before final source-toolbar CSS offset",
+    "firefox": {
+      "file": "fullscreen-final/firefox-results.json",
+      "successfulGroupedExecutions": 9,
+      "sceneGeometryGroupsPassed": 8,
+      "rawRunPassed": false,
+      "failure": "Source-foot native fullscreen toolbar intercepted the bag; repaired and retested in the next phase."
+    },
+    "webkit": {
+      "file": "fullscreen-final/webkit-results.json",
+      "successfulGroupedExecutions": 10,
+      "sceneGeometryGroupsPassed": 8,
+      "rawRunPassed": true
+    },
+    "actualModes": "Firefox native expands to virtual desktop1366x768; explicit fallback390x844 is phone-sized. WebKit phone requests use viewport fallback844x390 or390x844; desktop1280x900 is native. No native mobile Safari/physical claim."
+  },
+  "finalSourceToolbarRepair": {
+    "codePhase": "final",
+    "sourceChangeFromGeometry": [
+      "css/centrum-inventory.css"
+    ],
+    "firefox": {
+      "file": "source-fullscreen-final/firefox-results.json",
+      "passed": true,
+      "groupedExecutions": 2
+    },
+    "webkit": {
+      "file": "source-fullscreen-final/webkit-results.json",
+      "passed": true,
+      "groupedExecutions": 2
+    },
+    "checks": "Actual bag hit below toolbar, native touch open/close, no scene dock, same grounded bike/passenger, zero chair alpha while carried, exact73HP/food0/money0, successful source exit."
+  },
+  "runtimeDeltaSinceFullFlow": [
+    {
+      "file": "autumn-v19.html",
+      "preRefinementSHA256": "400c3d6674d35ffc84ecff17bb743ac2fe64dacd1f333a98fe72a136ee9159dd",
+      "finalSHA256": "2bafb676b65051ff25b3f7e466ed64cf883ff74182afec11329835f308a3d6c7"
+    },
+    {
+      "file": "css/centrum-inventory.css",
+      "preRefinementSHA256": "97e59850e9a1979dfeb3144535e9350e21ed50c23f4673164b914714316a04b9",
+      "finalSHA256": "539e5313c37dd03158c3b799088f92adb3a5c340cc14f771e599736431781309"
+    },
+    {
+      "file": "css/centrum-square.css",
+      "preRefinementSHA256": "62990f7fc7b76e72a31960f0ec9e75132427695c5132a341a36ec18d20b48e26",
+      "finalSHA256": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c"
+    },
+    {
+      "file": "index.html",
+      "preRefinementSHA256": "400c3d6674d35ffc84ecff17bb743ac2fe64dacd1f333a98fe72a136ee9159dd",
+      "finalSHA256": "2bafb676b65051ff25b3f7e466ed64cf883ff74182afec11329835f308a3d6c7"
+    },
+    {
+      "file": "js/centrum-inventory.js",
+      "preRefinementSHA256": "0c3e1355246685510b9c8293c016e24abd177a2c07baded5a85701e11f234207",
+      "finalSHA256": "a1ad2d457577ecd3e176eaef3a7e824667b6f7474d9f6f5b3216f94486344b9c"
+    }
+  ]
+}

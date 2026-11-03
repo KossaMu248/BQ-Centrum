@@ -1,0 +1,24 @@
+{
+  "engine": "Linux WebKit26.5 WPE headless",
+  "disclosedStartingFixture": "Parked Metro Square,60HP,one collected Billys; native inputs only between all subsequent functional steps",
+  "passed": true,
+  "executions": 15,
+  "returnSamples": 19,
+  "lastReturnSample": {
+    "elapsed": 10.01,
+    "x": 257.55281826538624,
+    "y": 745.3429442158986,
+    "stride": 4409.229492195413,
+    "returning": null,
+    "paused": false,
+    "phase": "remount"
+  },
+  "recording": {
+    "file": "webkit/native-network-loop.webm",
+    "durationSeconds": 141.36,
+    "bytes": 16940124,
+    "speed": 1
+  },
+  "runtimeChangesNeeded": false,
+  "historicalFailure": "Stage9 original35secondQtimeout not reproduced; cause cannot be established from this run."
+}

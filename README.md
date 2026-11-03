@@ -36,7 +36,7 @@ Open **http://127.0.0.1:8001/BQ-Centrum/**. Both `index.html` and the manifest�
 - One quest: accept the shopkeeper’s A5 slip, inspect B-04, present the slip to the caretaker, confirm the parcel, wait for the caretaker to move it, and report to the shop. Commercial cargo and documents are separate from edible food.
 - A compact consumable economy: **five hearts / 100 HP**, **3 Billy’s maximum**, **+1 heart / 20 HP per pizza**, **20 fictional kr** per purchase. Redeem the task’s **40 kr + 1 Billy’s once** at the counter. Full bags keep the food entitlement reserved independently of money.
 - Persistent authored wild pickups, atomic purchases/eating/rewards, coherent latest saves and complete retry checkpoints. No inventory/economy expansion or extra campaign was added.
-- Restrained floor leaves, reduced-motion support, source foliage occlusion, small quest text and brief original baby expressions. Three environment-only gate, passage and cage assets now fill the reviewed gaps; see [provenance](assets/centrum/PROVENANCE.md). Original character artwork remains intact. Shallow depth steps now follow actual floor travel without changing actor scale or facing.
+- Restrained floor leaves, reduced-motion support, source foliage occlusion, small quest text and brief original baby expressions. Three environment-only gate, passage and cage assets now fill the reviewed gaps; see [provenance](assets/centrum/PROVENANCE.md). Original character artwork remains intact. Shallow depth steps now follow actual floor travel without changing actor scale or facing. The exploration HUD and compact bag/eating panels choose clear positions around the player, including narrow portrait views, while restoring riding/source-visit placement; in source-foot fullscreen, the project bag bar sits below the existing toolbar so both remain clickable. Phone fullscreen retains that same readable scene presentation.
 
 ## Controls and route
 
@@ -67,7 +67,7 @@ The existing `bq-centrum:scene-network:v1` document owns the adventure (schema 2
 
 ## Verification and package
 
-Read the compact [TEST_REPORT.md](TEST_REPORT.md) for actual test conditions, repairs, results and limitations. [Stage 9 evidence](verification/stage9/README.md) includes the latest real gameplay, browser and gait checks; the [Stage 8 full-route evidence](verification/stage8/README.md) remains available. Prior [Stage 7 art review](verification/stage7/README.md) remains available. Historical earlier evidence stays in the development workspace, outside the clean delivery.
+Read the compact [TEST_REPORT.md](TEST_REPORT.md) for actual test conditions, repairs, results and limitations. [Stage 10 evidence](verification/stage10/README.md) covers the current HUD, browser and performance checks; [Stage 9 evidence](verification/stage9/README.md) keeps the earned ride and gait review; the [Stage 8 full-route evidence](verification/stage8/README.md) remains available. Prior [Stage 7 art review](verification/stage7/README.md) remains available. Historical earlier evidence stays in the development workspace, outside the clean delivery.
 
 Development verification needs Python Playwright, system Chromium at `/usr/bin/chromium`, Node.js and ffmpeg for recordings; the game itself needs none of those beyond a static server/browser. The cross-browser check additionally expects Playwright Firefox/WebKit binaries in `.test-browsers` (`PLAYWRIGHT_BROWSERS_PATH=.test-browsers python3 -m playwright install firefox webkit`) and the host libraries required by those engines. Test-browser binaries/libraries are excluded from delivery.
 
@@ -80,7 +80,11 @@ python3 tests/centrum_edge_browser.py
 python3 tests/centrum_remount_race.py
 python3 tests/centrum_combat_validation.py
 python3 tests/centrum_remaining_review.py
-python3 tests/centrum_cross_browser.py
+python3 tests/centrum_hud_review.py
+python3 tests/centrum_presentation_browsers.py
+python3 tests/centrum_cross_browser.py --engine webkit --functional-only
+python3 tests/centrum_cross_browser.py --engine firefox --smoke-only
+python3 tests/centrum_performance_review.py --label after-hud
 python3 tools/package-project.py
 python3 tests/centrum_standalone.py
 ```
@@ -91,6 +95,8 @@ python3 tests/centrum_standalone.py
 
 Source: **KossaMu248/BQ-Autumn/main**, commit `da109213fdf24947c2ac0b85de900214cc72e44f`, build `AUTUMN_RIDE_ART_V19`. Upstream attribution also identifies **KossaMu248/BQ**, commit `65313c9e708e420999cd10c209f1b6fda1d29f31`. Original game/code/art retain their original ownership. [SOURCE_BASELINE.md](SOURCE_BASELINE.md) records provenance, loader precedence, character references and the precise integration changes.
 
-System Chromium 154, Firefox 153 and Linux WebKit 26.5 were exercised as detailed in the test report. Physical iPhone/Android and Safari testing was **skipped at the user’s request**; gamepads and sustained mobile/thermal performance remain untested. Linux WebKit and touch emulation do not constitute physical iPhone/Safari tests. The source side/front presentation remains: depth foot placement is improved, but no dedicated toward/away artwork is claimed. Phone cover views can crop upper facades while retaining the accepted actor scale; the far-right passage HUD can overlap the bear’s helmet while the baby remains visible. One uninterrupted WebKit quest run timed out at Q; a separate native return/remount check passed, as disclosed in the report. Headless/shared-CPU frame timings are observations, not a mobile performance guarantee.
+System Chromium 154, Firefox 153 and Linux WebKit 26.5 were exercised as detailed in the test report. Physical-device and thermal testing were **skipped at the user’s request**. Linux WebKit and touch emulation do not constitute physical iPhone/Safari tests. Keyboard and touch controls are supported; gamepad mapping is not implemented.
+
+The full Linux WebKit quest/economy/return flow now passed, including riding/source-visit bag checks; the old Stage 9 timeout was not reproduced and its cause remains unproven. HUD and portrait bag overlaps were repaired without changing the accepted camera, actors or artwork. The source side/front silhouettes and upper-façade cropping in phone cover framing remain as designed. Cold preparation and first-direction source mesh bakes can still stall; measured headless timings are observations, not a mobile performance guarantee.
 
 The user authorized publication to the independent **KossaMu248/BQ-Centrum** repository. This project retains its own Git history/configuration; no donor Git metadata, repository, save keys or deployment was modified. **GitHub Pages remains off; no deployment was performed.**

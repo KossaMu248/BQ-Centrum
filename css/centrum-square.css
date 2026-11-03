@@ -33,6 +33,10 @@
  .centrum-square-active .game-shell{width:100%!important;height:100dvh!important;margin:0!important;border:0!important;border-radius:0!important}
  .centrum-square-active .canvas-wrap{width:100%!important;height:100dvh!important;aspect-ratio:auto!important}
  .centrum-square-active #game{width:100%!important;height:100%!important;object-fit:cover!important;object-position:var(--square-pan,50%) var(--square-pan-y,50%)!important}
+ /* Keep the accepted phone presentation when the original fullscreen shell
+    supplies its more specific contain rule. Source riding/visits stay scoped out. */
+ .centrum-square-active .game-shell.is-expanded #game{object-fit:cover!important;object-position:var(--square-pan,50%) var(--square-pan-y,50%)!important}
+ .centrum-square-active .fullscreen-tools{display:none!important}
  .square-panel{inset:10px}.square-heading strong{font-size:12px}.square-heading strong span{font-size:10px}.square-heading small{font-size:10px;max-width:160px}
  .square-panel button{padding:6px;font-size:10px;min-height:36px}.square-actions{gap:4px}.square-controls{inset:auto 10px max(10px,env(safe-area-inset-bottom))}.square-message{font-size:12px;bottom:95px}
 }

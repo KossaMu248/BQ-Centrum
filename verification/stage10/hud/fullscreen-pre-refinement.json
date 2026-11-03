@@ -1,0 +1,929 @@
+{
+  "phase": "after",
+  "captures": [
+    {
+      "file": "pre-fullscreen/fullscreen/paused-native.png",
+      "sha256": "8afd397e50437b374663ec5c6d4650afff92d33c89143b5c3cc53efcaddd5247",
+      "actualGameplay": true,
+      "captureIsGeneratedIllustration": false,
+      "overlap": {
+        "baby": false,
+        "helmet": false,
+        "body": false
+      },
+      "state": {
+        "sceneId": "shopping-arcade",
+        "x": 1043.3876999999984,
+        "y": 544.7763400000005,
+        "height": 200,
+        "face": 1,
+        "camera": {
+          "x": 0,
+          "y": 122.37634000000043,
+          "width": 1160,
+          "height": 640
+        },
+        "health": 80,
+        "baby": {
+          "mood": "idle",
+          "source": "assets/baby_pose_idle.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            52,
+            94
+          ],
+          "anatomicalWaist": [
+            48,
+            104
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -82.4068647689934
+          },
+          "headHeight": 35.40714861596345,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            82,
+            95
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            82,
+            146
+          ],
+          "seamY": 94,
+          "occludeFrom": 90,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -81.61765066576346
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -83.19607887222334
+            },
+            "occludeFrom": {
+              "x": 19.971199604609666,
+              "y": -84.66927853158589
+            }
+          },
+          "head": [
+            15,
+            9,
+            57,
+            62
+          ],
+          "chin": [
+            {
+              "x": 23.496355932370058,
+              "y": -100.72978553231515
+            },
+            {
+              "x": 22.444070461396805,
+              "y": -100.00633927102103
+            },
+            {
+              "x": 20.905102960098425,
+              "y": -98.63836815875581
+            },
+            {
+              "x": 19.287214048477054,
+              "y": -97.8360004871387
+            },
+            {
+              "x": 17.669325136855676,
+              "y": -97.0336328155216
+            }
+          ],
+          "neck": [
+            {
+              "x": 16.0514362252343,
+              "y": -96.2312651439045
+            },
+            {
+              "x": 16.130357635557296,
+              "y": -95.66566170325638
+            }
+          ],
+          "collar": [
+            {
+              "x": 9.500959168425812,
+              "y": -93.5873978980842
+            },
+            {
+              "x": 13.85479030457764,
+              "y": -91.31183056710454
+            },
+            {
+              "x": 19.510824711058866,
+              "y": -92.10104467033447
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              298.9272499636561
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 9.177249963656097
+          }
+        },
+        "painted": {
+          "body": {
+            "left": 1091.4228756157636,
+            "right": 1211.225831280788,
+            "top": 239.69263777709355,
+            "bottom": 484.0276131465517,
+            "source": "front-carrier-v7.png",
+            "age": 15.899999998509884
+          },
+          "baby": {
+            "left": 1133.1132848585335,
+            "right": 1192.5654861734317,
+            "top": 309.4807945603505,
+            "bottom": 375.9140649689855,
+            "source": "baby_pose_idle.webp",
+            "age": 15.799999997019768
+          },
+          "helmet": {
+            "left": 1091.4228756157636,
+            "right": 1211.225831280788,
+            "top": 239.69263777709355,
+            "bottom": 312.993130387931,
+            "source": "front-carrier-v7.png",
+            "age": 15.899999998509884
+          }
+        },
+        "projection": {
+          "fit": "contain",
+          "position": "50% 50%",
+          "scaleX": 1.103448275862069,
+          "scaleY": 1.103448275862069
+        },
+        "rectangles": {
+          "hud": {
+            "left": 14,
+            "right": 276.9375,
+            "top": 108,
+            "bottom": 144,
+            "width": 262.9375,
+            "height": 36
+          },
+          "bag": {
+            "left": 109,
+            "right": 233.390625,
+            "top": 108,
+            "bottom": 144,
+            "width": 124.390625,
+            "height": 36
+          },
+          "panel": null,
+          "eating": null,
+          "eat": null,
+          "close": null,
+          "dialogue": null,
+          "pause": {
+            "left": 961.359375,
+            "right": 1052.53125,
+            "top": 14,
+            "bottom": 56,
+            "width": 91.171875,
+            "height": 42
+          }
+        },
+        "layout": {
+          "mode": "centrum",
+          "x": 14,
+          "y": 108,
+          "width": 262.9375,
+          "height": 36,
+          "side": "left",
+          "clear": true,
+          "wholeActorClear": true,
+          "changes": 2,
+          "screenX": 1148.8111624999983,
+          "footY": 475.20000000000005,
+          "actor": {
+            "x": 1070.0611624999983,
+            "y": 236.70000000000005,
+            "w": 157.5,
+            "h": 247.5
+          },
+          "protectedUpper": {
+            "x": 1070.0611624999983,
+            "y": 236.70000000000005,
+            "w": 157.5,
+            "h": 180
+          },
+          "panels": {
+            "panel": null,
+            "eating": null
+          }
+        },
+        "inventory": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 1,
+          "wallet": 0,
+          "health": 80,
+          "disabledReason": "Resume before eating.",
+          "layout": {
+            "mode": "centrum",
+            "x": 14,
+            "y": 108,
+            "width": 262.9375,
+            "height": 36,
+            "side": "left",
+            "clear": true,
+            "wholeActorClear": true,
+            "changes": 2,
+            "screenX": 1148.8111624999983,
+            "footY": 475.20000000000005,
+            "actor": {
+              "x": 1070.0611624999983,
+              "y": 236.70000000000005,
+              "w": 157.5,
+              "h": 247.5
+            },
+            "protectedUpper": {
+              "x": 1070.0611624999983,
+              "y": 236.70000000000005,
+              "w": 157.5,
+              "h": 180
+            },
+            "panels": {
+              "panel": null,
+              "eating": null
+            }
+          }
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "controls": [
+          {
+            "label": "MAP \u00b7 M",
+            "disabled": false,
+            "rect": {
+              "x": 886.625,
+              "y": 14,
+              "width": 69.734375,
+              "height": 42,
+              "top": 14,
+              "right": 956.359375,
+              "bottom": 56,
+              "left": 886.625
+            }
+          },
+          {
+            "label": "\u25b6 RESUME",
+            "disabled": false,
+            "rect": {
+              "x": 961.359375,
+              "y": 14,
+              "width": 91.171875,
+              "height": 42,
+              "top": 14,
+              "right": 1052.53125,
+              "bottom": 56,
+              "left": 961.359375
+            }
+          },
+          {
+            "label": "\u26f6",
+            "disabled": false,
+            "rect": {
+              "x": 1057.53125,
+              "y": 14,
+              "width": 35.59375,
+              "height": 42,
+              "top": 14,
+              "right": 1093.125,
+              "bottom": 56,
+              "left": 1057.53125
+            }
+          },
+          {
+            "label": "\u2699",
+            "disabled": false,
+            "rect": {
+              "x": 1098.125,
+              "y": 14,
+              "width": 39.890625,
+              "height": 42,
+              "top": 14,
+              "right": 1138.015625,
+              "bottom": 56,
+              "left": 1098.125
+            }
+          },
+          {
+            "label": "BACK TO BIKE \u00b7 Q",
+            "disabled": false,
+            "rect": {
+              "x": 1143.015625,
+              "y": 14,
+              "width": 122.984375,
+              "height": 42,
+              "top": 14,
+              "right": 1266,
+              "bottom": 56,
+              "left": 1143.015625
+            }
+          },
+          {
+            "label": "\u2191",
+            "disabled": true,
+            "rect": {
+              "x": 63.328125,
+              "y": 614,
+              "width": 45.328125,
+              "height": 44,
+              "top": 614,
+              "right": 108.65625,
+              "bottom": 658,
+              "left": 63.328125
+            }
+          },
+          {
+            "label": "\u2190",
+            "disabled": true,
+            "rect": {
+              "x": 14,
+              "y": 662,
+              "width": 45.328125,
+              "height": 44,
+              "top": 662,
+              "right": 59.328125,
+              "bottom": 706,
+              "left": 14
+            }
+          },
+          {
+            "label": "\u2193",
+            "disabled": true,
+            "rect": {
+              "x": 63.328125,
+              "y": 662,
+              "width": 45.328125,
+              "height": 44,
+              "top": 662,
+              "right": 108.65625,
+              "bottom": 706,
+              "left": 63.328125
+            }
+          },
+          {
+            "label": "\u2192",
+            "disabled": true,
+            "rect": {
+              "x": 112.65625,
+              "y": 662,
+              "width": 45.328125,
+              "height": 44,
+              "top": 662,
+              "right": 157.984375,
+              "bottom": 706,
+              "left": 112.65625
+            }
+          },
+          {
+            "label": "JUMP \u00b7 SPACE",
+            "disabled": true,
+            "rect": {
+              "x": 942.078125,
+              "y": 664,
+              "width": 104,
+              "height": 42,
+              "top": 664,
+              "right": 1046.078125,
+              "bottom": 706,
+              "left": 942.078125
+            }
+          },
+          {
+            "label": "Side passage to service courtyard \u00b7 E",
+            "disabled": true,
+            "rect": {
+              "x": 1051.078125,
+              "y": 664,
+              "width": 214.921875,
+              "height": 42,
+              "top": 664,
+              "right": 1266,
+              "bottom": 706,
+              "left": 1051.078125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "pre-fullscreen/fullscreen/window-after-exit.png",
+      "sha256": "121d7f5a3c14cc3f1ba38b1144a84efdf11485851c81d0f7b5be89790c8c1636",
+      "actualGameplay": true,
+      "captureIsGeneratedIllustration": false,
+      "overlap": {
+        "baby": false,
+        "helmet": false,
+        "body": false
+      },
+      "state": {
+        "sceneId": "shopping-arcade",
+        "x": 1036.0051399999986,
+        "y": 544.7763400000005,
+        "height": 200,
+        "face": -1,
+        "camera": {
+          "x": 0,
+          "y": 122.37634000000043,
+          "width": 1160,
+          "height": 640
+        },
+        "health": 80,
+        "baby": {
+          "mood": "idle",
+          "source": "assets/baby_pose_idle.webp",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.5710830421929589,
+          "angle": -0.13863973713415806,
+          "flip": 1,
+          "alpha": 1,
+          "pivot": [
+            52,
+            94
+          ],
+          "anatomicalWaist": [
+            48,
+            104
+          ],
+          "waist": {
+            "x": 20.28688524590164,
+            "y": -82.4068647689934
+          },
+          "headHeight": 35.40714861596345,
+          "referenceHeadHeight": 61,
+          "sourceRect": [
+            0,
+            0,
+            82,
+            95
+          ],
+          "sourceBounds": [
+            0,
+            0,
+            82,
+            146
+          ],
+          "seamY": 94,
+          "occludeFrom": 90,
+          "seam": {
+            "start": {
+              "x": 14.630850839420411,
+              "y": -81.61765066576346
+            },
+            "end": {
+              "x": 25.94291965238287,
+              "y": -83.19607887222334
+            },
+            "occludeFrom": {
+              "x": 19.971199604609666,
+              "y": -84.66927853158589
+            }
+          },
+          "head": [
+            15,
+            9,
+            57,
+            62
+          ],
+          "chin": [
+            {
+              "x": 23.496355932370058,
+              "y": -100.72978553231515
+            },
+            {
+              "x": 22.444070461396805,
+              "y": -100.00633927102103
+            },
+            {
+              "x": 20.905102960098425,
+              "y": -98.63836815875581
+            },
+            {
+              "x": 19.287214048477054,
+              "y": -97.8360004871387
+            },
+            {
+              "x": 17.669325136855676,
+              "y": -97.0336328155216
+            }
+          ],
+          "neck": [
+            {
+              "x": 16.0514362252343,
+              "y": -96.2312651439045
+            },
+            {
+              "x": 16.130357635557296,
+              "y": -95.66566170325638
+            }
+          ],
+          "collar": [
+            {
+              "x": 9.500959168425812,
+              "y": -93.5873978980842
+            },
+            {
+              "x": 13.85479030457764,
+              "y": -91.31183056710454
+            },
+            {
+              "x": 19.510824711058866,
+              "y": -92.10104467033447
+            }
+          ],
+          "pose": "front",
+          "pouch": {
+            "lip": [
+              [
+                198,
+                288
+              ],
+              [
+                226,
+                293
+              ],
+              [
+                264,
+                285
+              ]
+            ],
+            "depth": 32,
+            "seam": [
+              228.5,
+              298.9272499636561
+            ],
+            "origin": [
+              179,
+              500
+            ],
+            "scale": 0.4098360655737705,
+            "bob": 0,
+            "source": "frontBackground",
+            "textureMap": null,
+            "padding": 9.177249963656097
+          }
+        },
+        "painted": {
+          "body": {
+            "left": 1063.188255302395,
+            "right": 1177.5619997220379,
+            "top": 311.246270138451,
+            "bottom": 544.5085120469332,
+            "source": "front-carrier-v7.png",
+            "age": 20.30000000447035
+          },
+          "baby": {
+            "left": 1081.0460046830833,
+            "right": 1137.8023395659063,
+            "top": 377.8674750727332,
+            "bottom": 441.2887994767078,
+            "source": "baby_pose_idle.webp",
+            "age": 20.30000000447035
+          },
+          "helmet": {
+            "left": 1063.188255302395,
+            "right": 1177.5619997220379,
+            "top": 311.246270138451,
+            "bottom": 381.22494271099566,
+            "source": "front-carrier-v7.png",
+            "age": 20.30000000447035
+          }
+        },
+        "projection": {
+          "fit": "contain",
+          "position": "50% 50%",
+          "scaleX": 1.0534423828125,
+          "scaleY": 1.0534423828125
+        },
+        "rectangles": {
+          "hud": {
+            "left": 43,
+            "right": 305.9375,
+            "top": 197,
+            "bottom": 233,
+            "width": 262.9375,
+            "height": 36
+          },
+          "bag": {
+            "left": 138,
+            "right": 262.390625,
+            "top": 197,
+            "bottom": 233,
+            "width": 124.390625,
+            "height": 36
+          },
+          "panel": null,
+          "eating": null,
+          "eat": null,
+          "close": null,
+          "dialogue": null,
+          "pause": {
+            "left": 948.59375,
+            "right": 1023.53125,
+            "top": 103,
+            "bottom": 145,
+            "width": 74.9375,
+            "height": 42
+          }
+        },
+        "layout": {
+          "mode": "centrum",
+          "x": 14,
+          "y": 108,
+          "width": 262.9375,
+          "height": 36,
+          "side": "left",
+          "clear": true,
+          "wholeActorClear": true,
+          "changes": 3,
+          "screenX": 1091.3778285172398,
+          "footY": 444.9746659482759,
+          "actor": {
+            "x": 1017.6364492068949,
+            "y": 221.6436314655173,
+            "w": 147.48275862068965,
+            "h": 231.75862068965515
+          },
+          "protectedUpper": {
+            "x": 1017.6364492068949,
+            "y": 221.6436314655173,
+            "w": 147.48275862068965,
+            "h": 168.55172413793102
+          },
+          "panels": {
+            "panel": null,
+            "eating": null
+          }
+        },
+        "inventory": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 1,
+          "wallet": 0,
+          "health": 80,
+          "disabledReason": "",
+          "layout": {
+            "mode": "centrum",
+            "x": 14,
+            "y": 108,
+            "width": 262.9375,
+            "height": 36,
+            "side": "left",
+            "clear": true,
+            "wholeActorClear": true,
+            "changes": 3,
+            "screenX": 1091.3778285172398,
+            "footY": 444.9746659482759,
+            "actor": {
+              "x": 1017.6364492068949,
+              "y": 221.6436314655173,
+              "w": 147.48275862068965,
+              "h": 231.75862068965515
+            },
+            "protectedUpper": {
+              "x": 1017.6364492068949,
+              "y": 221.6436314655173,
+              "w": 147.48275862068965,
+              "h": 168.55172413793102
+            },
+            "panels": {
+              "panel": null,
+              "eating": null
+            }
+          }
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "controls": [
+          {
+            "label": "MAP \u00b7 M",
+            "disabled": false,
+            "rect": {
+              "x": 873.859375,
+              "y": 103,
+              "width": 69.734375,
+              "height": 42,
+              "top": 103,
+              "right": 943.59375,
+              "bottom": 145,
+              "left": 873.859375
+            }
+          },
+          {
+            "label": "\u2161 PAUSE",
+            "disabled": false,
+            "rect": {
+              "x": 948.59375,
+              "y": 103,
+              "width": 74.9375,
+              "height": 42,
+              "top": 103,
+              "right": 1023.53125,
+              "bottom": 145,
+              "left": 948.59375
+            }
+          },
+          {
+            "label": "\u26f6",
+            "disabled": false,
+            "rect": {
+              "x": 1028.53125,
+              "y": 103,
+              "width": 35.59375,
+              "height": 42,
+              "top": 103,
+              "right": 1064.125,
+              "bottom": 145,
+              "left": 1028.53125
+            }
+          },
+          {
+            "label": "\u2699",
+            "disabled": false,
+            "rect": {
+              "x": 1069.125,
+              "y": 103,
+              "width": 39.890625,
+              "height": 42,
+              "top": 103,
+              "right": 1109.015625,
+              "bottom": 145,
+              "left": 1069.125
+            }
+          },
+          {
+            "label": "BACK TO BIKE \u00b7 Q",
+            "disabled": false,
+            "rect": {
+              "x": 1114.015625,
+              "y": 103,
+              "width": 122.984375,
+              "height": 42,
+              "top": 103,
+              "right": 1237,
+              "bottom": 145,
+              "left": 1114.015625
+            }
+          },
+          {
+            "label": "\u2191",
+            "disabled": false,
+            "rect": {
+              "x": 92.328125,
+              "y": 657.203125,
+              "width": 45.328125,
+              "height": 44,
+              "top": 657.203125,
+              "right": 137.65625,
+              "bottom": 701.203125,
+              "left": 92.328125
+            }
+          },
+          {
+            "label": "\u2190",
+            "disabled": false,
+            "rect": {
+              "x": 43,
+              "y": 705.203125,
+              "width": 45.328125,
+              "height": 44,
+              "top": 705.203125,
+              "right": 88.328125,
+              "bottom": 749.203125,
+              "left": 43
+            }
+          },
+          {
+            "label": "\u2193",
+            "disabled": false,
+            "rect": {
+              "x": 92.328125,
+              "y": 705.203125,
+              "width": 45.328125,
+              "height": 44,
+              "top": 705.203125,
+              "right": 137.65625,
+              "bottom": 749.203125,
+              "left": 92.328125
+            }
+          },
+          {
+            "label": "\u2192",
+            "disabled": false,
+            "rect": {
+              "x": 141.65625,
+              "y": 705.203125,
+              "width": 45.328125,
+              "height": 44,
+              "top": 705.203125,
+              "right": 186.984375,
+              "bottom": 749.203125,
+              "left": 141.65625
+            }
+          },
+          {
+            "label": "JUMP \u00b7 SPACE",
+            "disabled": false,
+            "rect": {
+              "x": 913.078125,
+              "y": 707.203125,
+              "width": 104,
+              "height": 42,
+              "top": 707.203125,
+              "right": 1017.078125,
+              "bottom": 749.203125,
+              "left": 913.078125
+            }
+          },
+          {
+            "label": "Side passage to service courtyard \u00b7 E",
+            "disabled": false,
+            "rect": {
+              "x": 1022.078125,
+              "y": 707.203125,
+              "width": 214.921875,
+              "height": 42,
+              "top": 707.203125,
+              "right": 1237,
+              "bottom": 749.203125,
+              "left": 1022.078125
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "Existing fullscreen button, pause/resume and visible exit preserve fixed actor/camera on entry and shared health.",
+      "passed": true,
+      "fullscreenImplementation": "native"
+    }
+  ],
+  "errors": [],
+  "httpFailures": [],
+  "fixtureDisclosure": "Production parking/save factory and named entrances prepare scenes. Existing source debug stop only shortens setup. All approach movement, UI interactions and viewport changes use live runtime controls. Before freezes original inventory JS/CSS responses in memory at run start.",
+  "uiHashes": {
+    "js/centrum-inventory.js": "0c3e1355246685510b9c8293c016e24abd177a2c07baded5a85701e11f234207",
+    "css/centrum-inventory.css": "97e59850e9a1979dfeb3144535e9350e21ed50c23f4673164b914714316a04b9"
+  },
+  "physicalDeviceTesting": false,
+  "browser": "154.0.8037.57",
+  "passed": true,
+  "scopeNote": "Successful desktop native fullscreen proof before the subsequent cached actual-fit refinement; original exact UI hashes are preserved."
+}

@@ -32,9 +32,13 @@ from playwright.sync_api import sync_playwright
 from centrum_network import route, scene, exit_to
 from centrum_standalone import INSTRUMENT, fixture as scene_fixture, metrics
 
-OUT = ROOT / 'verification/stage9/browsers'
+OUT = ROOT / 'verification/stage10/browsers'
 SCENES = ['metro-square', 'shopping-arcade', 'service-courtyard', 'food-shop', 'bicycle-workshop']
 KEY = 'bq-centrum:scene-network:v1'
+
+
+def runtime_hashes():
+    return {str(path.relative_to(ROOT)):hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted([*ROOT.glob('*.html'),*ROOT.glob('*.css'),*ROOT.glob('js/*.js'),*ROOT.glob('css/*.css')])}
 
 
 def square(page):
@@ -151,6 +155,24 @@ def shot(page,engine,name,result):
     result['captures'].append({'file':str(target.relative_to(OUT)),'sha256':hashlib.sha256(target.read_bytes()).hexdigest()})
 
 
+def check_bag_control(page,touch):
+    """Use the rendered button and verify menu browsing leaves shared health intact."""
+    button=page.locator('#inventoryOpenBtn');box=button.bounding_box();assert box
+    viewport=page.evaluate('({width:innerWidth,height:innerHeight})')
+    assert 0<box['x']+box['width']/2<viewport['width'] and 0<box['y']+box['height']/2<viewport['height'],box
+    before=health(page)
+    if touch:button.tap()
+    else:button.click()
+    panel=page.locator('.centrum-inventory-panel');panel.wait_for(state='visible')
+    panel_box=panel.bounding_box()
+    close=page.locator('#inventoryCloseBtn')
+    if touch:close.tap()
+    else:close.click()
+    panel.wait_for(state='hidden')
+    assert health(page)==before
+    return {'input':'native touch tap' if touch else 'native pointer click','button':box,'panel':panel_box,'healthBefore':before,'healthAfter':health(page),'inventoryAudit':page.evaluate('BearlyCentrumInventory.audit()')}
+
+
 def note(result,name,page,data=None):
     result['checks'].append({'name':name,'passed':True,'data':data})
     (OUT/(result['engine']+'-results.json')).write_text(json.dumps(result,indent=2)+'\n')
@@ -164,10 +186,12 @@ def gameplay_fixture(page,scene_id='metro-square'):
 
 def wait_for_remount(page,engine,result):
     """Observe native progress for at most120seconds; preserve the live page on failure."""
-    samples=[];start=time.monotonic()
+    samples=[];start=time.monotonic();last_report=-10
     try:
         while page.evaluate('BearlyCentrumLink.audit().phase')!='riding':
             a=square(page);samples.append({'elapsed':round(time.monotonic()-start,2),'x':a['x'],'y':a['y'],'stride':a['stride'],'returning':a['returning'],'paused':a['paused'],'phase':page.evaluate('BearlyCentrumLink.audit().phase')})
+            if time.monotonic()-start-last_report>=10:
+                last_report=time.monotonic()-start;print(engine+' Q progress '+json.dumps(samples[-1]),flush=True)
             if time.monotonic()-start>120:raise AssertionError(('Q return did not complete in120seconds',samples[-12:]))
             page.wait_for_timeout(500)
     except BaseException:
@@ -218,8 +242,23 @@ def functional_flow(browser,engine,base,watch,result,prepared):
     ride=page.evaluate('BearlyCentrumLink.audit().route');assert ride['babyMounted'] and ride['grounded'] and health(page)==80
     shot(page,engine,'remounted-original-bike',result)
     note(result,'Actual Q walks to same bike, production remount completes grounded',page,{'x':ride['x'],'health':ride['health'],'wheels':ride['wheels']})
+    riding_bag=check_bag_control(page,False)
+    assert riding_bag['inventoryAudit']['layout'] is None and page.locator('.centrum-inventory-hud').get_attribute('data-scene-dock') is None
     audit=metrics(page);assert audit['maxPending']<=1 and all(k.startswith('bq-centrum:') for k in audit['reads']+audit['writes'])
-    note(result,'One main loop and project-only storage after complete interaction flow',page,audit)
+    note(result,'One main loop and project-only storage after complete interaction flow',page,{**audit,'ridingBagControl':riding_bag})
+    # A separate source-foot regression follows the completed centrum flow.
+    # Native Q uses the copied production street transfer, not a new scene.
+    page.keyboard.press('q')
+    page.wait_for_function("BearlyVisits.audit().mode==='street'&&!BearlyVisits.audit().transition",timeout=90000)
+    assert not page.evaluate('BearlyCentrumSquare.active()')
+    source_bag=check_bag_control(page,False)
+    assert source_bag['inventoryAudit']['layout'] is None and page.locator('.centrum-inventory-hud').get_attribute('data-scene-dock') is None
+    source_audit=page.evaluate('BearlyVisits.audit()')
+    shot(page,engine,'source-foot-cleared-scene-hud',result)
+    page.keyboard.press('q');page.wait_for_function('!BearlyVisits.active()',timeout=90000)
+    assert page.evaluate("BearlyCentrumLink.audit().phase==='riding'&&BearlyCentrumLink.audit().route.babyMounted")
+    assert health(page)<=80 and ledger(page)['inventory']['billys']==2 and ledger(page)['wallet']['kr']==20
+    note(result,'Native source-foot visit and bag retain cleared scene HUD after remount',page,{'bagControl':source_bag,'sourceMode':source_audit['mode'],'healthAfter':health(page),'metrics':metrics(page)})
     ctx.close()
     if video:
         original=Path(video.path());target=OUT/engine/'native-network-loop.webm';original.replace(target)
@@ -266,7 +305,9 @@ def focused_return(browser,engine,base,watch,result,prepared):
 
 
 def run(engine,p,servers,args):
+    started=time.monotonic();active_page=None
     result={'engine':engine,'checks':[],'captures':[],'suite':('last-steps' if args.last_steps_only else 'geometry' if args.final_geometry_only else 'smoke' if args.smoke_only else 'functional' if args.functional_only else 'complete'),'errors':[],'consoleErrors':[],'httpFailures':[],'externalRequests':[],'outsidePrefixRequests':[],
+      'runtimeHashes':runtime_hashes(),'harnessSHA256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
       'conditions':{'headless':True,'OS':'Linux Debian13','physicalDevice':False,'fixtureDisclosure':'Production factory prepares only valid parking/scene starting positions and60HP/onefood for the functional flow; walking, quest steps, transactions and remount use actual controls. This is separate from the Chromium fresh native road acceptance.','touchLimits':'Firefox has no Playwright is_mobile emulation; phone viewport+has_touch are tested. Sustained dpad input uses native mouse pointer holds; touch menus use native tap where supported. No physical Safari/iPhone claim.'}}
     try:
         browser=getattr(p,engine).launch(headless=True);result['version']=browser.version
@@ -282,6 +323,8 @@ def run(engine,p,servers,args):
             server=ThreadingHTTPServer(('127.0.0.1',0),functools.partial(Handler,directory=str(directory)));Thread(target=server.serve_forever,daemon=True).start();servers.append(server)
             base=f'http://127.0.0.1:{server.server_port}';url=base+prefix+'index.html'
             def watch(page):
+                nonlocal active_page
+                active_page=page
                 page.on('pageerror',lambda e:result['errors'].append(str(e)))
                 page.on('console',lambda m:result['consoleErrors'].append({'text':m.text,'location':m.location}) if m.type=='error' else None)
                 page.on('response',lambda r:result['httpFailures'].append({'status':r.status,'url':r.url}) if r.status>=400 else None)
@@ -309,11 +352,11 @@ def run(engine,p,servers,args):
                         # Real PointerEvent input from mouse driver; cross-engine
                         # Playwright touchscreen API only exposes instantaneous tap.
                         b=page.locator('[data-square-dir="down"]').bounding_box();old=square(page)['y'];page.mouse.move(b['x']+b['width']/2,b['y']+b['height']/2);page.mouse.down();page.wait_for_function('y=>BearlyCentrumSquare.audit().y>y+4',arg=old,timeout=15000);page.mouse.up();page.wait_for_timeout(150);assert square(page)['y']>old+3
-                        try:page.locator('#inventoryOpenBtn').tap();page.locator('.centrum-inventory-panel').wait_for(state='visible');page.locator('#inventoryCloseBtn').tap();tap='native tap passed'
-                        except Exception as e:tap='native tap unsupported: '+str(e).splitlines()[0];page.keyboard.press('Escape')
-                        note(result,label+' native dpad pointer hold and bag touch tap',page,{'touchTap':tap})
+                        bag_control=check_bag_control(page,touch)
+                        note(result,label+' native dpad pointer hold and bag touch tap',page,{'bagControl':bag_control})
+                    else:bag_control=check_bag_control(page,touch)
                     a=square(page);q=metrics(page);assert q['maxPending']<=1
-                    note(result,label+' '+scene_id+' rendered scene and movement',page,{'health':a['health'],'hero':a['hero'],'metrics':q})
+                    note(result,label+' '+scene_id+' rendered scene and movement',page,{'health':a['health'],'hero':a['hero'],'bagControl':bag_control,'metrics':q})
                     if scene_id in ['metro-square','food-shop']:shot(page,engine,label+'-'+scene_id,result)
                     ctx.close()
                 ctx,page=context(browser,engine,base+prefix+'autumn-v19.html',watch,touch=touch);assert page.evaluate('BEARLY_BUILD_ID')
@@ -327,15 +370,29 @@ def run(engine,p,servers,args):
     except BaseException as e:
         result['passed']=False;result['failure']=repr(e);result['traceback']=traceback.format_exc();
         try:
-            result['failureAudit']={'square':square(page),'metrics':metrics(page)};shot(page,engine,'failure-render',result)
+            failure_page=active_page if active_page and not active_page.is_closed() else page
+            result['failureAudit']={'square':square(failure_page),'link':failure_page.evaluate('BearlyCentrumLink.audit()'),'visits':failure_page.evaluate('BearlyVisits.audit()'),'metrics':metrics(failure_page)}
+            shot(failure_page,engine,'failure-render',result)
+            failure_video=failure_page.video;failure_page.context.close()
+            if failure_video:
+                target=OUT/engine/'native-network-failed.webm';Path(failure_video.path()).replace(target)
+                result['recording']={'file':str(target.relative_to(OUT)),'kind':'Actual failed flow recording; see failure/audit, not a completed acceptance','timeScale':1}
+        except Exception:pass
+        try:browser.close()
         except Exception:pass
         print(engine+' FAILURE '+result['traceback'],flush=True)
+    result['elapsedSeconds']=round(time.monotonic()-started,3)
+    result['runtimeHashesAfter']=runtime_hashes()
+    result['changedRuntimeFiles']=[name for name,sha in result['runtimeHashes'].items() if result['runtimeHashesAfter'].get(name)!=sha]
     (OUT/(engine+'-results.json')).write_text(json.dumps(result,indent=2)+'\n')
     return result
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--engine',choices=['all','firefox','webkit'],default='all');parser.add_argument('--smoke-only',action='store_true');parser.add_argument('--functional-only',action='store_true');parser.add_argument('--final-geometry-only',action='store_true');parser.add_argument('--last-steps-only',action='store_true');args=parser.parse_args()
+    global OUT
+    parser=argparse.ArgumentParser();parser.add_argument('--out',type=Path,default=OUT,help='Evidence directory inside this project (default:verification/stage10/browsers)');parser.add_argument('--engine',choices=['all','firefox','webkit'],default='all');parser.add_argument('--smoke-only',action='store_true');parser.add_argument('--functional-only',action='store_true');parser.add_argument('--final-geometry-only',action='store_true');parser.add_argument('--last-steps-only',action='store_true');args=parser.parse_args()
+    OUT=args.out.resolve()
+    if not OUT.is_relative_to(ROOT):parser.error('--out must stay inside BQ-Centrum')
     OUT.mkdir(parents=True,exist_ok=True);servers=[];results=[]
     with sync_playwright() as p:
         for engine in ['firefox','webkit'] if args.engine=='all' else [args.engine]:results.append(run(engine,p,servers,args))

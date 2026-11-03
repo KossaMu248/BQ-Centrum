@@ -39,6 +39,9 @@ def replace_reviewed(text, added, original='', count=1):
 def restore_donor(path):
     text = (ROOT / path).read_text()
     if path.endswith('.html'):
+        text = replace_reviewed(text, 'css/centrum-square.css?edition=centrum-stage10', 'css/centrum-square.css?edition=centrum-stage7')
+        for resource in ['css/centrum-inventory.css', 'js/centrum-inventory.js']:
+            text = replace_reviewed(text, f'{resource}?edition=centrum-stage10', f'{resource}?edition=centrum-stage6')
         text = replace_reviewed(text, '<script src="js/centrum-depth-gait.js?edition=centrum-stage9"></script>\n')
         text = replace_reviewed(text, '<script src="js/centrum-scenery.js?edition=centrum-stage9"></script>\n')
         text = replace_reviewed(text, '<link rel="icon" href="data:,"/>\n')
@@ -55,11 +58,11 @@ def restore_donor(path):
         text = text.replace('<link rel="stylesheet" href="css/centrum-story.css?edition=centrum-stage5"/>\n', '')
         text = text.replace('          <h3>BQ-Centrum prototype</h3>\n          <div class="dbg-actions"><button id="centrumSquareBtn" type="button">CENTRUM PARKING STOP · DEBUG SHORTCUT</button></div>\n          <p class="dbg-help">Places connect from the marked cycling stop. Stop and press E to park; M opens the discovered map on foot.</p>\n', '')
         for name in ['centrum-square-world', 'centrum-square', 'centrum-scenes', 'centrum-save', 'centrum-parking-save', 'centrum-link', 'wrong-entrance-quest', 'centrum-civilians', 'centrum-story']:
-            for stage in [2, 3, 4, 5, 7, 9]:
+            for stage in [2, 3, 4, 5, 7, 9, 10]:
                 text = text.replace(f'<script src="js/{name}.js?edition=centrum-stage{stage}"></script>\n', '')
     if path.endswith('.html'):
-        for name in ['hero-rig', 'game']:
-            text = replace_reviewed(text, f'js/{name}.js?edition=centrum-stage9', f'js/{name}.js?edition=autumn-v19')
+        for name, stage in [('hero-rig', 9), ('game', 10)]:
+            text = replace_reviewed(text, f'js/{name}.js?edition=centrum-stage{stage}', f'js/{name}.js?edition=autumn-v19')
     if path == 'js/hero-rig.js':
         # Optional ground projection is used only by the independent square.
         # Default source calls, source locomotion, torso and baby pixels remain
@@ -130,7 +133,7 @@ def restore_donor(path):
         text = text.replace('    if(window.BearlyCentrumLink?.holding()){e.preventDefault();return;}\n', '')
         text = text.replace('if(debugOpen||window.BearlyCentrumLink?.holding())return;', 'if(debugOpen)return;')
         text = text.replace('&&!window.BearlyCentrumLink?.holding()', '')
-        text = text.replace("window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE9';",
+        text = text.replace("window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE10';",
                             "window.BEARLY_BUILD_ID='AUTUMN_RIDE_ART_V19';")
         text = text.replace('bq-centrum:best-score:v1', 'bearBestAutumn')
         text = text.replace('    window.BearlyCentrumSquare?.close();\n', '')
@@ -185,6 +188,6 @@ assert not failures, '\n'.join(failures)
 assert (ROOT / 'index.html').read_bytes() == (ROOT / 'autumn-v19.html').read_bytes()
 manifest = json.loads((ROOT / 'autumn-version.json').read_text())
 assert manifest['source']['commit'] == 'da109213fdf24947c2ac0b85de900214cc72e44f'
-assert manifest['edition'] == 'BQ_CENTRUM_STAGE9'
+assert manifest['edition'] == 'BQ_CENTRUM_STAGE10'
 print(f'PASS: {len(HASHES)} pinned original files verified; all source assets/CSS and original protected code match;')
 print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional shallow-foot projection additions differ.')

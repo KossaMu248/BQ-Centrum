@@ -1,0 +1,2411 @@
+{
+  "scope": "Actual Firefox and Linux WebKit, not physical Safari/iPhone",
+  "results": [
+    {
+      "engine": "webkit",
+      "checks": [
+        {
+          "name": "root-desktop fresh startup and actual ride input",
+          "passed": true,
+          "data": {
+            "startup": {
+              "beganAt": 455,
+              "ready": true,
+              "requested": true,
+              "readyAt": 3655,
+              "firstFrameAt": 3967,
+              "errors": [],
+              "state": "playing",
+              "x": 313.81114705316423,
+              "speed": 141.90847382399335,
+              "renderScale": 1,
+              "backingWidth": 1160,
+              "backingHeight": 640,
+              "requestedImages": 62,
+              "registeredImages": 733,
+              "readyImages": 62
+            },
+            "metrics": {
+              "writes": [
+                "bq-centrum:scene-network:v1"
+              ],
+              "reads": [
+                "bq-centrum:adventure:v1",
+                "bq-centrum:best-score:v1",
+                "bq-centrum:civilians:v1",
+                "bq-centrum:parking:v1",
+                "bq-centrum:quest:wrong-entrance:v1",
+                "bq-centrum:scene-network:v1"
+              ],
+              "listenerCounts": {
+                "document:fullscreenchange": 1,
+                "window:keydown": 6,
+                "window:pagehide": 3,
+                "window:pointerdown": 2,
+                "window:blur": 5,
+                "document:visibilitychange": 5,
+                "window:keyup": 3,
+                "window:centrum-square-change": 1,
+                "window:pointerup": 2,
+                "window:pointercancel": 1,
+                "window:touchend": 2,
+                "window:touchcancel": 2,
+                "window:__playwright_global_listeners_check__": 1,
+                "window:mousemove": 1,
+                "window:touchstart": 1,
+                "window:mousedown": 1,
+                "window:mouseup": 1,
+                "window:click": 1,
+                "window:auxclick": 1,
+                "window:dblclick": 1,
+                "window:contextmenu": 1
+              },
+              "loopFrames": 46,
+              "pending": 1,
+              "maxPending": 1,
+              "audioContexts": 1,
+              "frameTimeMs": {
+                "samples": 45,
+                "median": 41,
+                "p95": 54,
+                "maximum": 159
+              }
+            }
+          }
+        },
+        {
+          "name": "root-desktop metro-square rendered scene and movement",
+          "passed": true,
+          "data": {
+            "health": 73,
+            "hero": {
+              "pose": "walking",
+              "carrier": "front",
+              "integratedCarrier": true,
+              "babyFace": {
+                "mood": "idle",
+                "source": "assets/baby_pose_idle.webp",
+                "continuousUpperBody": true,
+                "originalCollar": true,
+                "headOnly": false,
+                "uniformScale": 0.5710830421929589,
+                "angle": -0.13863973713415806,
+                "flip": 1,
+                "alpha": 1,
+                "pivot": [
+                  52,
+                  94
+                ],
+                "anatomicalWaist": [
+                  48,
+                  104
+                ],
+                "waist": {
+                  "x": 20.28688524590164,
+                  "y": -82.4068647689934
+                },
+                "headHeight": 35.40714861596345,
+                "referenceHeadHeight": 61,
+                "sourceRect": [
+                  0,
+                  0,
+                  82,
+                  95
+                ],
+                "sourceBounds": [
+                  0,
+                  0,
+                  82,
+                  146
+                ],
+                "seamY": 94,
+                "occludeFrom": 90,
+                "seam": {
+                  "start": {
+                    "x": 14.630850839420411,
+                    "y": -81.61765066576346
+                  },
+                  "end": {
+                    "x": 25.94291965238287,
+                    "y": -83.19607887222334
+                  },
+                  "occludeFrom": {
+                    "x": 19.971199604609666,
+                    "y": -84.66927853158589
+                  }
+                },
+                "head": [
+                  15,
+                  9,
+                  57,
+                  62
+                ],
+                "chin": [
+                  {
+                    "x": 23.496355932370058,
+                    "y": -100.72978553231515
+                  },
+                  {
+                    "x": 22.444070461396805,
+                    "y": -100.00633927102103
+                  },
+                  {
+                    "x": 20.905102960098425,
+                    "y": -98.63836815875581
+                  },
+                  {
+                    "x": 19.287214048477054,
+                    "y": -97.8360004871387
+                  },
+                  {
+                    "x": 17.669325136855676,
+                    "y": -97.0336328155216
+                  }
+                ],
+                "neck": [
+                  {
+                    "x": 16.0514362252343,
+                    "y": -96.2312651439045
+                  },
+                  {
+                    "x": 16.130357635557296,
+                    "y": -95.66566170325638
+                  }
+                ],
+                "collar": [
+                  {
+                    "x": 9.500959168425812,
+                    "y": -93.5873978980842
+                  },
+                  {
+                    "x": 13.85479030457764,
+                    "y": -91.31183056710454
+                  },
+                  {
+                    "x": 19.510824711058866,
+                    "y": -92.10104467033447
+                  }
+                ],
+                "pose": "front",
+                "pouch": {
+                  "lip": [
+                    [
+                      198,
+                      288
+                    ],
+                    [
+                      226,
+                      293
+                    ],
+                    [
+                      264,
+                      285
+                    ]
+                  ],
+                  "depth": 32,
+                  "seam": [
+                    228.5,
+                    298.9272499636561
+                  ],
+                  "origin": [
+                    179,
+                    500
+                  ],
+                  "scale": 0.4098360655737705,
+                  "bob": 0,
+                  "source": "frontBackground",
+                  "textureMap": null,
+                  "padding": 9.177249963656097
+                }
+              },
+              "height": 200,
+              "source": "front",
+              "sourceRect": [
+                51,
+                13,
+                256,
+                377
+              ],
+              "lowerPose": "idle",
+              "lowerSourceRect": [
+                170,
+                94,
+                1021,
+                1085
+              ],
+              "authoredLowerBody": true,
+              "stature": 488,
+              "landmarks": {
+                "near": {
+                  "hip": {
+                    "x": -13.60685647384754,
+                    "y": -67.48099173400846
+                  },
+                  "knee": {
+                    "x": -10.355761966679156,
+                    "y": -36.772483266030164
+                  },
+                  "cuff": {
+                    "x": -12.924368720029701,
+                    "y": -22.29551443010123
+                  },
+                  "heel": {
+                    "x": -25.759482418523422,
+                    "y": -2.254429302110889
+                  },
+                  "toe": {
+                    "x": -5.092333737010672,
+                    "y": -7.047372380781101
+                  },
+                  "sole": {
+                    "x": -4.090644566781235,
+                    "y": -0.02186051196384994
+                  },
+                  "renderedFromSource": true,
+                  "source": {
+                    "image": "bear-idle-lower-v18.png",
+                    "pose": "idle",
+                    "hip": [
+                      510,
+                      315
+                    ],
+                    "knee": [
+                      430,
+                      650
+                    ],
+                    "cuff": [
+                      405,
+                      790
+                    ],
+                    "heel": [
+                      205,
+                      1010
+                    ],
+                    "toe": [
+                      635,
+                      1080
+                    ],
+                    "sole": [
+                      470,
+                      1083
+                    ]
+                  },
+                  "plannedSole": {
+                    "x": -4.090644566781237,
+                    "y": -0.02186051196384424
+                  },
+                  "plannedCuff": {
+                    "x": -10.810573064461158,
+                    "y": -25.38919233126482
+                  },
+                  "angle": -0.006402519084507285,
+                  "stance": true,
+                  "kneeFlex": 0,
+                  "contact": {
+                    "x": -7.5049589906246865,
+                    "y": 0
+                  },
+                  "bootWidth": 21.215638995305486,
+                  "rigidShoe": true
+                },
+                "far": {
+                  "hip": {
+                    "x": 10.826559143781486,
+                    "y": -67.68076578461498
+                  },
+                  "knee": {
+                    "x": 0.28911838774824417,
+                    "y": -40.16019695562196
+                  },
+                  "cuff": {
+                    "x": -0.14818936772727767,
+                    "y": -28.463133450059928
+                  },
+                  "heel": {
+                    "x": -10.20891891317664,
+                    "y": -7.361423544079909
+                  },
+                  "toe": {
+                    "x": 27.053340758277926,
+                    "y": -4.503043121752702
+                  },
+                  "sole": {
+                    "x": 8.025472858493197,
+                    "y": -4.744528693523855
+                  },
+                  "renderedFromSource": true,
+                  "source": {
+                    "image": "bear-idle-lower-v18.png",
+                    "pose": "idle",
+                    "hip": [
+                      835,
+                      315
+                    ],
+                    "knee": [
+                      790,
+                      690
+                    ],
+                    "cuff": [
+                      820,
+                      850
+                    ],
+                    "heel": [
+                      650,
+                      1110
+                    ],
+                    "toe": [
+                      1180,
+                      1150
+                    ],
+                    "sole": [
+                      940,
+                      1155
+                    ]
+                  },
+                  "plannedSole": {
+                    "x": 8.025472858493208,
+                    "y": -4.7445286935238675
+                  },
+                  "plannedCuff": {
+                    "x": 5.31143994122767,
+                    "y": -28.953132379047354
+                  },
+                  "angle": 0.1088496819835331,
+                  "stance": false,
+                  "kneeFlex": 0.11459464170808081,
+                  "contact": {
+                    "x": 9.62008976337362,
+                    "y": -4.57026637159421
+                  },
+                  "bootWidth": 37.37173175625733,
+                  "rigidShoe": true
+                }
+              },
+              "gait": {
+                "far": {
+                  "x": -8.48410953251641,
+                  "y": -0.8817417814302753,
+                  "angle": 0.1088496819835331,
+                  "shinAngle": 0.1367186403172515,
+                  "kneeFlex": 0.11459464170808081,
+                  "contactOffset": 1.6041104794167718,
+                  "stance": false
+                },
+                "near": {
+                  "x": 5.442301116349502,
+                  "y": 0,
+                  "angle": -0.006402519084507285,
+                  "shinAngle": -0.04238190514262096,
+                  "kneeFlex": 0,
+                  "contactOffset": -3.41438440525503,
+                  "stance": true
+                },
+                "phase": 0.08396527777777774,
+                "cycleLength": 144,
+                "bob": 0.2469363300840017,
+                "sway": 0.42387489330359807,
+                "roll": 0.0001699910198652733,
+                "pelvisSway": -0.27502714009939394,
+                "pelvisRoll": 0.0027502714009939393
+              },
+              "body": {
+                "pivot": {
+                  "x": -2.8688524590163933,
+                  "y": -67.62295081967213
+                },
+                "sway": 0.42387489330359807,
+                "bob": -9.452663804419457,
+                "roll": 0.0001699910198652733,
+                "pelvisSway": -0.27502714009939394,
+                "pelvisRoll": 0.0027502714009939393,
+                "slope": 0,
+                "opaque": true,
+                "surfaces": 1,
+                "continuous": true,
+                "triangles": 400,
+                "canonicalHeight": 280,
+                "lowerHeight": 190,
+                "cachePhase": 0.08396527777777774
+              },
+              "cache": {
+                "frames": 1,
+                "hits": 8,
+                "misses": 7
+              }
+            },
+            "metrics": {
+              "writes": [
+                "bq-centrum:cross-browser-fixture",
+                "bq-centrum:scene-network:v1"
+              ],
+              "reads": [
+                "bq-centrum:cross-browser-fixture",
+                "bq-centrum:scene-network:v1"
+              ],
+              "listenerCounts": {
+                "document:fullscreenchange": 1,
+                "window:keydown": 6,
+                "window:pagehide": 3,
+                "window:pointerdown": 2,
+                "window:blur": 5,
+                "document:visibilitychange": 5,
+                "window:keyup": 3,
+                "window:centrum-square-change": 1,
+                "window:pointerup": 2,
+                "window:pointercancel": 1,
+                "window:touchend": 2,
+                "window:touchcancel": 2,
+                "window:__playwright_global_listeners_check__": 1,
+                "window:mousemove": 1,
+                "window:touchstart": 1,
+                "window:mousedown": 1,
+                "window:mouseup": 1,
+                "window:click": 1,
+                "window:auxclick": 1,
+                "window:dblclick": 1,
+                "window:contextmenu": 1
+              },
+              "loopFrames": 15,
+              "pending": 1,
+              "maxPending": 1,
+              "audioContexts": 0,
+              "frameTimeMs": {
+                "samples": 14,
+                "median": 40.0,
+                "p95": 71,
+                "maximum": 71
+              }
+            }
+          }
+        },
+        {
+          "name": "root-desktop shopping-arcade rendered scene and movement",
+          "passed": true,
+          "data": {
+            "health": 73,
+            "hero": {
+              "pose": "walking",
+              "carrier": "front",
+              "integratedCarrier": true,
+              "babyFace": {
+                "mood": "point",
+                "source": "assets/baby_pose_point.webp",
+                "continuousUpperBody": true,
+                "originalCollar": true,
+                "headOnly": false,
+                "uniformScale": 0.5710830421929589,
+                "angle": -0.13863973713415806,
+                "flip": 1,
+                "alpha": 1,
+                "pivot": [
+                  56,
+                  92
+                ],
+                "anatomicalWaist": [
+                  54,
+                  99
+                ],
+                "waist": {
+                  "x": 20.28688524590164,
+                  "y": -82.86922736022677
+                },
+                "headHeight": 39.97581295350712,
+                "referenceHeadHeight": 61,
+                "sourceRect": [
+                  0,
+                  0,
+                  97,
+                  93
+                ],
+                "sourceBounds": [
+                  0,
+                  0,
+                  97,
+                  142
+                ],
+                "seamY": 92,
+                "occludeFrom": 88,
+                "seam": {
+                  "start": {
+                    "x": 14.630850839420411,
+                    "y": -82.08001325699684
+                  },
+                  "end": {
+                    "x": 25.94291965238287,
+                    "y": -83.65844146345671
+                  },
+                  "occludeFrom": {
+                    "x": 19.971199604609666,
+                    "y": -85.13164112281926
+                  }
+                },
+                "head": [
+                  24,
+                  6,
+                  54,
+                  70
+                ],
+                "chin": [
+                  {
+                    "x": 24.206648625277005,
+                    "y": -96.10171715771541
+                  }
+                ],
+                "neck": [
+                  {
+                    "x": 9.106352116810841,
+                    "y": -96.8777776925582
+                  }
+                ],
+                "collar": [
+                  {
+                    "x": 20.799874413001103,
+                    "y": -91.5900432009176
+                  }
+                ],
+                "pose": "front",
+                "pouch": {
+                  "lip": [
+                    [
+                      198,
+                      288
+                    ],
+                    [
+                      226,
+                      293
+                    ],
+                    [
+                      264,
+                      285
+                    ]
+                  ],
+                  "depth": 32,
+                  "seam": [
+                    228.5,
+                    297.79908524104667
+                  ],
+                  "origin": [
+                    179,
+                    500
+                  ],
+                  "scale": 0.4098360655737705,
+                  "bob": 0,
+                  "source": "frontBackground",
+                  "textureMap": null,
+                  "padding": 8.04908524104664
+                }
+              },
+              "height": 200,
+              "source": "front",
+              "sourceRect": [
+                51,
+                13,
+                256,
+                377
+              ],
+              "lowerPose": "idle",
+              "lowerSourceRect": [
+                170,
+                94,
+                1021,
+                1085
+              ],
+              "authoredLowerBody": true,
+              "stature": 488,
+              "landmarks": {
+                "near": {
+                  "hip": {
+                    "x": -13.689333198823713,
+                    "y": -67.93766554116597
+                  },
+                  "knee": {
+                    "x": -12.512544087265638,
+                    "y": -36.383798330590544
+                  },
+                  "cuff": {
+                    "x": -15.661501706543188,
+                    "y": -22.20757915948203
+                  },
+                  "heel": {
+                    "x": -28.599023317745903,
+                    "y": -2.2866262402584976
+                  },
+                  "toe": {
+                    "x": -4.0360852670098195,
+                    "y": -6.0443023337027695
+                  },
+                  "sole": {
+                    "x": -6.93800164984452,
+                    "y": -0.006768358336327289
+                  },
+                  "renderedFromSource": true,
+                  "source": {
+                    "image": "bear-idle-lower-v18.png",
+                    "pose": "idle",
+                    "hip": [
+                      510,
+                      315
+                    ],
+                    "knee": [
+                      430,
+                      650
+                    ],
+                    "cuff": [
+                      405,
+                      790
+                    ],
+                    "heel": [
+                      205,
+                      1010
+                    ],
+                    "toe": [
+                      635,
+                      1080
+                    ],
+                    "sole": [
+                      470,
+                      1083
+                    ]
+                  },
+                  "plannedSole": {
+                    "x": -6.938001649844522,
+                    "y": -0.006768358336321709
+                  },
+                  "plannedCuff": {
+                    "x": -13.598566789739824,
+                    "y": -25.389751529383453
+                  },
+                  "angle": -0.004063092000294358,
+                  "stance": true,
+                  "kneeFlex": 0,
+                  "contact": {
+                    "x": -8.603807171883853,
+                    "y": 0
+                  },
+                  "bootWidth": 24.84870329227546,
+                  "rigidShoe": true
+                },
+                "far": {
+                  "hip": {
+                    "x": 11.311558814855244,
+                    "y": -68.11495109628856
+                  },
+                  "knee": {
+                    "x": 2.906180888349886,
+                    "y": -40.14511720468566
+                  },
+                  "cuff": {
+                    "x": 2.8596259990339368,
+                    "y": -27.714632537980904
+                  },
+                  "heel": {
+                    "x": -7.288790633442692,
+                    "y": -5.783909512622417
+                  },
+                  "toe": {
+                    "x": 31.468976507603823,
+                    "y": -4.948564338492913
+                  },
+                  "sole": {
+                    "x": 12.457664792682833,
+                    "y": -4.119047026353203
+                  },
+                  "renderedFromSource": true,
+                  "source": {
+                    "image": "bear-idle-lower-v18.png",
+                    "pose": "idle",
+                    "hip": [
+                      835,
+                      315
+                    ],
+                    "knee": [
+                      790,
+                      690
+                    ],
+                    "cuff": [
+                      820,
+                      850
+                    ],
+                    "heel": [
+                      650,
+                      1110
+                    ],
+                    "toe": [
+                      1180,
+                      1150
+                    ],
+                    "sole": [
+                      940,
+                      1155
+                    ]
+                  },
+                  "plannedSole": {
+                    "x": 12.457664792682838,
+                    "y": -4.119047026353217
+                  },
+                  "plannedCuff": {
+                    "x": 8.385812248274314,
+                    "y": -28.13659236169788
+                  },
+                  "angle": 0.052554040068241825,
+                  "stance": false,
+                  "kneeFlex": 0.052290945828307726,
+                  "contact": {
+                    "x": 13.3767374477675,
+                    "y": -4.070701528100384
+                  },
+                  "bootWidth": 38.76676818254943,
+                  "rigidShoe": true
+                }
+              },
+              "gait": {
+                "far": {
+                  "x": -4.198963453694798,
+                  "y": -0.38217693793644947,
+                  "angle": 0.052554040068241825,
+                  "shinAngle": 0.06243987846948155,
+                  "kneeFlex": 0.052290945828307726,
+                  "contactOffset": 0.9203433231819976,
+                  "stance": false
+                },
+                "near": {
+                  "x": 2.7501565639319017,
+                  "y": 0,
+                  "angle": -0.004063092000294358,
+                  "shinAngle": -0.021160726964320253,
+                  "kneeFlex": 0,
+                  "contactOffset": -1.6658192722895526,
+                  "stance": true
+                },
+                "phase": 0.07802777777777758,
+                "cycleLength": 144,
+                "bob": 0.1359850950023668,
+                "sway": 0.19799616537975945,
+                "roll": 0.00013441048170398595,
+                "pelvisSway": -0.12549826998793853,
+                "pelvisRoll": 0.0012549826998793855
+              },
+              "body": {
+                "pivot": {
+                  "x": -2.8688524590163933,
+                  "y": -67.62295081967213
+                },
+                "sway": 0.19799616537975945,
+                "bob": -9.843385460775568,
+                "roll": 0.00013441048170398595,
+                "pelvisSway": -0.12549826998793853,
+                "pelvisRoll": 0.0012549826998793855,
+                "slope": 0,
+                "opaque": true,
+                "surfaces": 1,
+                "continuous": true,
+                "triangles": 400,
+                "canonicalHeight": 280,
+                "lowerHeight": 190,
+                "cachePhase": 0.07802777777777758
+              },
+              "cache": {
+                "frames": 1,
+                "hits": 11,
+                "misses": 8
+              }
+            },
+            "metrics": {
+              "writes": [
+                "bq-centrum:cross-browser-fixture",
+                "bq-centrum:scene-network:v1"
+              ],
+              "reads": [
+                "bq-centrum:cross-browser-fixture",
+                "bq-centrum:scene-network:v1"
+              ],
+              "listenerCounts": {
+                "document:fullscreenchange": 1,
+                "window:keydown": 6,
+                "window:pagehide": 3,
+                "window:pointerdown": 2,
+                "window:blur": 5,
+                "document:visibilitychange": 5,
+                "window:keyup": 3,
+                "window:centrum-square-change": 1,
+                "window:pointerup": 2,
+                "window:pointercancel": 1,
+                "window:touchend": 2,
+                "window:touchcancel": 2,
+                "window:__playwright_global_listeners_check__": 1,
+                "window:mousemove": 1,
+                "window:touchstart": 1,
+                "window:mousedown": 1,
+                "window:mouseup": 1,
+                "window:click": 1,
+                "window:auxclick": 1,
+                "window:dblclick": 1,
+                "window:contextmenu": 1
+              },
+              "loopFrames": 19,
+              "pending": 1,
+              "maxPending": 1,
+              "audioContexts": 0,
+              "frameTimeMs": {
+                "samples": 18,
+                "median": 31.0,
+                "p95": 55,
+                "maximum": 55
+              }
+            }
+          }
+        },
+        {
+          "name": "root-desktop service-courtyard rendered scene and movement",
+          "passed": true,
+          "data": {
+            "health": 73,
+            "hero": {
+              "pose": "walking",
+              "carrier": "front",
+              "integratedCarrier": true,
+              "babyFace": {
+                "mood": "point",
+                "source": "assets/baby_pose_point.webp",
+                "continuousUpperBody": true,
+                "originalCollar": true,
+                "headOnly": false,
+                "uniformScale": 0.5710830421929589,
+                "angle": -0.13863973713415806,
+                "flip": 1,
+                "alpha": 1,
+                "pivot": [
+                  56,
+                  92
+                ],
+                "anatomicalWaist": [
+                  54,
+                  99
+                ],
+                "waist": {
+                  "x": 20.28688524590164,
+                  "y": -82.86922736022677
+                },
+                "headHeight": 39.97581295350712,
+                "referenceHeadHeight": 61,
+                "sourceRect": [
+                  0,
+                  0,
+                  97,
+                  93
+                ],
+                "sourceBounds": [
+                  0,
+                  0,
+                  97,
+                  142
+                ],
+                "seamY": 92,
+                "occludeFrom": 88,
+                "seam": {
+                  "start": {
+                    "x": 14.630850839420411,
+                    "y": -82.08001325699684
+                  },
+                  "end": {
+                    "x": 25.94291965238287,
+                    "y": -83.65844146345671
+                  },
+                  "occludeFrom": {
+                    "x": 19.971199604609666,
+                    "y": -85.13164112281926
+                  }
+                },
+                "head": [
+                  24,
+                  6,
+                  54,
+                  70
+                ],
+                "chin": [
+                  {
+                    "x": 24.206648625277005,
+                    "y": -96.10171715771541
+                  }
+                ],
+                "neck": [
+                  {
+                    "x": 9.106352116810841,
+                    "y": -96.8777776925582
+                  }
+                ],
+                "collar": [
+                  {
+                    "x": 20.799874413001103,
+                    "y": -91.5900432009176
+                  }
+                ],
+                "pose": "front",
+                "pouch": {
+                  "lip": [
+                    [
+                      198,
+                      288
+                    ],
+                    [
+                      226,
+                      293
+                    ],
+                    [
+                      264,
+                      285
+                    ]
+                  ],
+                  "depth": 32,
+                  "seam": [
+                    228.5,
+                    297.79908524104667
+                  ],
+                  "origin": [
+                    179,
+                    500
+                  ],
+                  "scale": 0.4098360655737705,
+                  "bob": 0,
+                  "source": "frontBackground",
+                  "textureMap": null,
+                  "padding": 8.04908524104664
+                }
+              },
+              "height": 200,
+              "source": "front",
+              "sourceRect": [
+                51,
+                13,
+                256,
+                377
+              ],
+              "lowerPose": "idle",
+              "lowerSourceRect": [
+                170,
+                94,
+                1021,
+                1085
+              ],
+              "authoredLowerBody": true,
+              "stature": 488,
+              "landmarks": {
+                "near": {
+                  "hip": {
+                    "x": -13.678257962220565,
+                    "y": -67.89124063089156
+                  },
+                  "knee": {
+                    "x": -12.262956103007351,
+                    "y": -36.42055701127382
+                  },
+                  "cuff": {
+                    "x": -15.357319349673467,
+                    "y": -22.209866356473185
+                  },
+                  "heel": {
+                    "x": -28.275002400721153,
+                    "y": -2.269347285807984
+                  },
+                  "toe": {
+                    "x": -4.1267057659323365,
+                    "y": -6.114365896016338
+                  },
+                  "sole": {
+                    "x": -6.611821655033622,
+                    "y": -0.009088523360374991
+                  },
+                  "renderedFromSource": true,
+                  "source": {
+                    "image": "bear-idle-lower-v18.png",
+                    "pose": "idle",
+                    "hip": [
+                      510,
+                      315
+                    ],
+                    "knee": [
+                      430,
+                      650
+                    ],
+                    "cuff": [
+                      405,
+                      790
+                    ],
+                    "heel": [
+                      205,
+                      1010
+                    ],
+                    "toe": [
+                      635,
+                      1080
+                    ],
+                    "sole": [
+                      470,
+                      1083
+                    ]
+                  },
+                  "plannedSole": {
+                    "x": -6.611821655033624,
+                    "y": -0.009088523360369315
+                  },
+                  "plannedCuff": {
+                    "x": -13.295740466849269,
+                    "y": -25.38593214035709
+                  },
+                  "angle": -0.0049832555134625,
+                  "stance": true,
+                  "kneeFlex": 0,
+                  "contact": {
+                    "x": -8.435618990816094,
+                    "y": 0
+                  },
+                  "bootWidth": 24.452492684276613,
+                  "rigidShoe": true
+                },
+                "far": {
+                  "hip": {
+                    "x": 11.266021393074315,
+                    "y": -68.07280715494765
+                  },
+                  "knee": {
+                    "x": 2.62193103345745,
+                    "y": -40.13601199549064
+                  },
+                  "cuff": {
+                    "x": 2.5335535324132725,
+                    "y": -27.75553495837015
+                  },
+                  "heel": {
+                    "x": -7.5798868137317985,
+                    "y": -5.894974253533618
+                  },
+                  "toe": {
+                    "x": 31.032229622004166,
+                    "y": -4.88612236890364
+                  },
+                  "sole": {
+                    "x": 12.01733106831402,
+                    "y": -4.143353841094196
+                  },
+                  "renderedFromSource": true,
+                  "source": {
+                    "image": "bear-idle-lower-v18.png",
+                    "pose": "idle",
+                    "hip": [
+                      835,
+                      315
+                    ],
+                    "knee": [
+                      790,
+                      690
+                    ],
+                    "cuff": [
+                      820,
+                      850
+                    ],
+                    "heel": [
+                      650,
+                      1110
+                    ],
+                    "toe": [
+                      1180,
+                      1150
+                    ],
+                    "sole": [
+                      940,
+                      1155
+                    ]
+                  },
+                  "plannedSole": {
+                    "x": 12.01733106831403,
+                    "y": -4.143353841094209
+                  },
+                  "plannedCuff": {
+                    "x": 8.055102271016835,
+                    "y": -28.17922723975836
+                  },
+                  "angle": 0.05711661063362913,
+                  "stance": false,
+                  "kneeFlex": 0.055265964518759314,
+                  "contact": {
+                    "x": 13.098873283195433,
+                    "y": -4.081512552465519
+                  },
+                  "bootWidth": 38.62529375644867,
+                  "rigidShoe": true
+                }
+              },
+              "gait": {
+                "far": {
+                  "x": -4.625762955069209,
+                  "y": -0.39298796230158417,
+                  "angle": 0.05711661063362913,
+                  "shinAngle": 0.06606178254941467,
+                  "kneeFlex": 0.055265964518759314,
+                  "contactOffset": 1.0833087775652082,
+                  "stance": false
+                },
+                "near": {
+                  "x": 3.0623153361756446,
+                  "y": 0,
+                  "angle": -0.0049832555134625,
+                  "shinAngle": -0.023417304666458038,
+                  "kneeFlex": 0,
+                  "contactOffset": -1.8238199810464053,
+                  "stance": true
+                },
+                "phase": 0.07509722222222259,
+                "cycleLength": 144,
+                "bob": 0.15696428338906715,
+                "sway": 0.21190568753619166,
+                "roll": 0.00017577779874485529,
+                "pelvisSway": -0.13263831484502236,
+                "pelvisRoll": 0.0013263831484502237
+              },
+              "body": {
+                "pivot": {
+                  "x": -2.8688524590163933,
+                  "y": -67.62295081967213
+                },
+                "sway": 0.21190568753619166,
+                "bob": -9.797126158987771,
+                "roll": 0.00017577779874485529,
+                "pelvisSway": -0.13263831484502236,
+                "pelvisRoll": 0.0013263831484502237,
+                "slope": 0,
+                "opaque": true,
+                "surfaces": 1,
+                "continuous": true,
+                "triangles": 400,
+                "canonicalHeight": 280,
+                "lowerHeight": 190,
+                "cachePhase": 0.07509722222222259
+              },
+              "cache": {
+                "frames": 1,
+                "hits": 9,
+                "misses": 8
+              }
+            },
+            "metrics": {
+              "writes": [
+                "bq-centrum:cross-browser-fixture",
+                "bq-centrum:scene-network:v1"
+              ],
+              "reads": [
+                "bq-centrum:cross-browser-fixture",
+                "bq-centrum:scene-network:v1"
+              ],
+              "listenerCounts": {
+                "document:fullscreenchange": 1,
+                "window:keydown": 6,
+                "window:pagehide": 3,
+                "window:pointerdown": 2,
+                "window:blur": 5,
+                "document:visibilitychange": 5,
+                "window:keyup": 3,
+                "window:centrum-square-change": 1,
+                "window:pointerup": 2,
+                "window:pointercancel": 1,
+                "window:touchend": 2,
+                "window:touchcancel": 2,
+                "window:__playwright_global_listeners_check__": 1,
+                "window:mousemove": 1,
+                "window:touchstart": 1,
+                "window:mousedown": 1,
+                "window:mouseup": 1,
+                "window:click": 1,
+                "window:auxclick": 1,
+                "window:dblclick": 1,
+                "window:contextmenu": 1
+              },
+              "loopFrames": 17,
+              "pending": 1,
+              "maxPending": 1,
+              "audioContexts": 0,
+              "frameTimeMs": {
+                "samples": 16,
+                "median": 36.5,
+                "p95": 50,
+                "maximum": 50
+              }
+            }
+          }
+        },
+        {
+          "name": "root-desktop food-shop rendered scene and movement",
+          "passed": true,
+          "data": {
+            "health": 73,
+            "hero": {
+              "pose": "walking",
+              "carrier": "front",
+              "integratedCarrier": true,
+              "babyFace": {
+                "mood": "point",
+                "source": "assets/baby_pose_point.webp",
+                "continuousUpperBody": true,
+                "originalCollar": true,
+                "headOnly": false,
+                "uniformScale": 0.5710830421929589,
+                "angle": -0.13863973713415806,
+                "flip": 1,
+                "alpha": 1,
+                "pivot": [
+                  56,
+                  92
+                ],
+                "anatomicalWaist": [
+                  54,
+                  99
+                ],
+                "waist": {
+                  "x": 20.28688524590164,
+                  "y": -82.86922736022677
+                },
+                "headHeight": 39.97581295350712,
+                "referenceHeadHeight": 61,
+                "sourceRect": [
+                  0,
+                  0,
+                  97,
+                  93
+                ],
+                "sourceBounds": [
+                  0,
+                  0,
+                  97,
+                  142
+                ],
+                "seamY": 92,
+                "occludeFrom": 88,
+                "seam": {
+                  "start": {
+                    "x": 14.630850839420411,
+                    "y": -82.08001325699684
+                  },
+                  "end": {
+                    "x": 25.94291965238287,
+                    "y": -83.65844146345671
+                  },
+                  "occludeFrom": {
+                    "x": 19.971199604609666,
+                    "y": -85.13164112281926
+                  }
+                },
+                "head": [
+                  24,
+                  6,
+                  54,
+                  70
+                ],
+                "chin": [
+                  {
+                    "x": 24.206648625277005,
+                    "y": -96.10171715771541
+                  }
+                ],
+                "neck": [
+                  {
+                    "x": 9.106352116810841,
+                    "y": -96.8777776925582
+                  }
+                ],
+                "collar": [
+                  {
+                    "x": 20.799874413001103,
+                    "y": -91.5900432009176
+                  }
+                ],
+                "pose": "front",
+                "pouch": {
+                  "lip": [
+                    [
+                      198,
+                      288
+                    ],
+                    [
+                      226,
+                      293
+                    ],
+                    [
+                      264,
+                      285
+                    ]
+                  ],
+                  "depth": 32,
+                  "seam": [
+                    228.5,
+                    297.79908524104667
+                  ],
+                  "origin": [
+                    179,
+                    500
+                  ],
+                  "scale": 0.4098360655737705,
+                  "bob": 0,
+                  "source": "frontBackground",
+                  "textureMap": null,
+                  "padding": 8.04908524104664
+                }
+              },
+              "height": 200,
+              "source": "front",
+              "sourceRect": [
+                51,
+                13,
+                256,
+                377
+              ],
+              "lowerPose": "idle",
+              "lowerSourceRect": [
+                170,
+                94,
+                1021,
+                1085
+              ],
+              "authoredLowerBody": true,
+              "stature": 488,
+              "landmarks": {
+                "near": {
+                  "hip": {
+                    "x": -13.70210411943874,
+                    "y": -68.03538674578276
+                  },
+                  "knee": {
+                    "x": -12.906424327446308,
+                    "y": -36.298237036801005
+                  },
+                  "cuff": {
+                    "x": -16.188783936548653,
+                    "y": -22.17695974172306
+                  },
+                  "heel": {
+                    "x": -29.12639166440892,
+                    "y": -2.264565669237662
+                  },
+                  "toe": {
+                    "x": -3.7607192153255076,
+                    "y": -5.772905971954583
+                  },
+                  "sole": {
+                    "x": -7.464063935564147,
+                    "y": -0.006331293226526449
+                  },
+                  "renderedFromSource": true,
+                  "source": {
+                    "image": "bear-idle-lower-v18.png",
+                    "pose": "idle",
+                    "hip": [
+                      510,
+                      315
+                    ],
+                    "knee": [
+                      430,
+                      650
+                    ],
+                    "cuff": [
+                      405,
+                      790
+                    ],
+                    "heel": [
+                      205,
+                      1010
+                    ],
+                    "toe": [
+                      635,
+                      1080
+                    ],
+                    "sole": [
+                      470,
+                      1083
+                    ]
+                  },
+                  "plannedSole": {
+                    "x": -7.464063935564148,
+                    "y": -0.0063312932265208255
+                  },
+                  "plannedCuff": {
+                    "x": -14.148996295010116,
+                    "y": -25.382907933783905
+                  },
+                  "angle": -0.005023195585483004,
+                  "stance": true,
+                  "kneeFlex": 0,
+                  "contact": {
+                    "x": -8.7244647834406,
+                    "y": 0
+                  },
+                  "bootWidth": 25.607143348563056,
+                  "rigidShoe": true
+                },
+                "far": {
+                  "hip": {
+                    "x": 11.420842526912425,
+                    "y": -68.21279132586737
+                  },
+                  "knee": {
+                    "x": 3.4373178175482533,
+                    "y": -40.13280179764538
+                  },
+                  "cuff": {
+                    "x": 3.4620521047787856,
+                    "y": -27.484946487963384
+                  },
+                  "heel": {
+                    "x": -6.633183638932726,
+                    "y": -5.354283987313463
+                  },
+                  "toe": {
+                    "x": 32.430511632715145,
+                    "y": -5.037651632309705
+                  },
+                  "sole": {
+                    "x": 13.4334766271228,
+                    "y": -3.928267528704898
+                  },
+                  "renderedFromSource": true,
+                  "source": {
+                    "image": "bear-idle-lower-v18.png",
+                    "pose": "idle",
+                    "hip": [
+                      835,
+                      315
+                    ],
+                    "knee": [
+                      790,
+                      690
+                    ],
+                    "cuff": [
+                      820,
+                      850
+                    ],
+                    "heel": [
+                      650,
+                      1110
+                    ],
+                    "toe": [
+                      1180,
+                      1150
+                    ],
+                    "sole": [
+                      940,
+                      1155
+                    ]
+                  },
+                  "plannedSole": {
+                    "x": 13.43347662712281,
+                    "y": -3.9282675287049105
+                  },
+                  "plannedCuff": {
+                    "x": 9.008388073960967,
+                    "y": -27.883247352854593
+                  },
+                  "angle": 0.03782770978435308,
+                  "stance": false,
+                  "kneeFlex": 0.03250460809076489,
+                  "contact": {
+                    "x": 14.394849056098579,
+                    "y": -3.8918836554843628
+                  },
+                  "bootWidth": 39.064978488723106,
+                  "rigidShoe": true
+                }
+              },
+              "gait": {
+                "far": {
+                  "x": -3.2585680504186345,
+                  "y": -0.20335906532042802,
+                  "angle": 0.03782770978435308,
+                  "shinAngle": 0.03932643074527843,
+                  "kneeFlex": 0.03250460809076489,
+                  "contactOffset": 0.9620606703453265,
+                  "stance": false
+                },
+                "near": {
+                  "x": 2.260095287549171,
+                  "y": 0,
+                  "angle": -0.005023195585483004,
+                  "shinAngle": -0.0168256840146254,
+                  "kneeFlex": 0,
+                  "contactOffset": -1.2604167495719816,
+                  "stance": true
+                },
+                "phase": 0.06321527777777791,
+                "cycleLength": 144,
+                "bob": 0.12953635062330512,
+                "sway": 0.13230229962950285,
+                "roll": 0.00020526033618404875,
+                "pelvisSway": -0.07801105941783575,
+                "pelvisRoll": 0.0007801105941783574
+              },
+              "body": {
+                "pivot": {
+                  "x": -2.8688524590163933,
+                  "y": -67.62295081967213
+                },
+                "sway": 0.13230229962950285,
+                "bob": -9.91469860878944,
+                "roll": 0.00020526033618404875,
+                "pelvisSway": -0.07801105941783575,
+                "pelvisRoll": 0.0007801105941783574,
+                "slope": 0,
+                "opaque": true,
+                "surfaces": 1,
+                "continuous": true,
+                "triangles": 400,
+                "canonicalHeight": 280,
+                "lowerHeight": 190,
+                "cachePhase": 0.06321527777777791
+              },
+              "cache": {
+                "frames": 1,
+                "hits": 15,
+                "misses": 9
+              }
+            },
+            "metrics": {
+              "writes": [
+                "bq-centrum:cross-browser-fixture",
+                "bq-centrum:scene-network:v1"
+              ],
+              "reads": [
+                "bq-centrum:cross-browser-fixture",
+                "bq-centrum:scene-network:v1"
+              ],
+              "listenerCounts": {
+                "document:fullscreenchange": 1,
+                "window:keydown": 6,
+                "window:pagehide": 3,
+                "window:pointerdown": 2,
+                "window:blur": 5,
+                "document:visibilitychange": 5,
+                "window:keyup": 3,
+                "window:centrum-square-change": 1,
+                "window:pointerup": 2,
+                "window:pointercancel": 1,
+                "window:touchend": 2,
+                "window:touchcancel": 2,
+                "window:__playwright_global_listeners_check__": 1,
+                "window:mousemove": 1,
+                "window:touchstart": 1,
+                "window:mousedown": 1,
+                "window:mouseup": 1,
+                "window:click": 1,
+                "window:auxclick": 1,
+                "window:dblclick": 1,
+                "window:contextmenu": 1
+              },
+              "loopFrames": 24,
+              "pending": 1,
+              "maxPending": 1,
+              "audioContexts": 0,
+              "frameTimeMs": {
+                "samples": 23,
+                "median": 26,
+                "p95": 53,
+                "maximum": 65
+              }
+            }
+          }
+        },
+        {
+          "name": "root-desktop bicycle-workshop rendered scene and movement",
+          "passed": true,
+          "data": {
+            "health": 73,
+            "hero": {
+              "pose": "walking",
+              "carrier": "front",
+              "integratedCarrier": true,
+              "babyFace": {
+                "mood": "point",
+                "source": "assets/baby_pose_point.webp",
+                "continuousUpperBody": true,
+                "originalCollar": true,
+                "headOnly": false,
+                "uniformScale": 0.5710830421929589,
+                "angle": -0.13863973713415806,
+                "flip": 1,
+                "alpha": 1,
+                "pivot": [
+                  56,
+                  92
+                ],
+                "anatomicalWaist": [
+                  54,
+                  99
+                ],
+                "waist": {
+                  "x": 20.28688524590164,
+                  "y": -82.86922736022677
+                },
+                "headHeight": 39.97581295350712,
+                "referenceHeadHeight": 61,
+                "sourceRect": [
+                  0,
+                  0,
+                  97,
+                  93
+                ],
+                "sourceBounds": [
+                  0,
+                  0,
+                  97,
+                  142
+                ],
+                "seamY": 92,
+                "occludeFrom": 88,
+                "seam": {
+                  "start": {
+                    "x": 14.630850839420411,
+                    "y": -82.08001325699684
+                  },
+                  "end": {
+                    "x": 25.94291965238287,
+                    "y": -83.65844146345671
+                  },
+                  "occludeFrom": {
+                    "x": 19.971199604609666,
+                    "y": -85.13164112281926
+                  }
+                },
+                "head": [
+                  24,
+                  6,
+                  54,
+                  70
+                ],
+                "chin": [
+                  {
+                    "x": 24.206648625277005,
+                    "y": -96.10171715771541
+                  }
+                ],
+                "neck": [
+                  {
+                    "x": 9.106352116810841,
+                    "y": -96.8777776925582
+                  }
+                ],
+                "collar": [
+                  {
+                    "x": 20.799874413001103,
+                    "y": -91.5900432009176
+                  }
+                ],
+                "pose": "front",
+                "pouch": {
+                  "lip": [
+                    [
+                      198,
+                      288
+                    ],
+                    [
+                      226,
+                      293
+                    ],
+                    [
+                      264,
+                      285
+                    ]
+                  ],
+                  "depth": 32,
+                  "seam": [
+                    228.5,
+                    297.79908524104667
+                  ],
+                  "origin": [
+                    179,
+                    500
+                  ],
+                  "scale": 0.4098360655737705,
+                  "bob": 0,
+                  "source": "frontBackground",
+                  "textureMap": null,
+                  "padding": 8.04908524104664
+                }
+              },
+              "height": 200,
+              "source": "front",
+              "sourceRect": [
+                51,
+                13,
+                256,
+                377
+              ],
+              "lowerPose": "idle",
+              "lowerSourceRect": [
+                170,
+                94,
+                1021,
+                1085
+              ],
+              "authoredLowerBody": true,
+              "stature": 488,
+              "landmarks": {
+                "near": {
+                  "hip": {
+                    "x": -13.712689117481846,
+                    "y": -68.09845546588052
+                  },
+                  "knee": {
+                    "x": -13.18062789396882,
+                    "y": -36.246352053165076
+                  },
+                  "cuff": {
+                    "x": -16.543676552417708,
+                    "y": -22.162746375357244
+                  },
+                  "heel": {
+                    "x": -29.488988435180232,
+                    "y": -2.2616695838540473
+                  },
+                  "toe": {
+                    "x": -3.593791121216376,
+                    "y": -5.625509641107076
+                  },
+                  "sole": {
+                    "x": -7.826933127357435,
+                    "y": -0.0051798271811614215
+                  },
+                  "renderedFromSource": true,
+                  "source": {
+                    "image": "bear-idle-lower-v18.png",
+                    "pose": "idle",
+                    "hip": [
+                      510,
+                      315
+                    ],
+                    "knee": [
+                      430,
+                      650
+                    ],
+                    "cuff": [
+                      405,
+                      790
+                    ],
+                    "heel": [
+                      205,
+                      1010
+                    ],
+                    "toe": [
+                      635,
+                      1080
+                    ],
+                    "sole": [
+                      470,
+                      1083
+                    ]
+                  },
+                  "plannedSole": {
+                    "x": -7.8269331273574405,
+                    "y": -0.005179827181155826
+                  },
+                  "plannedCuff": {
+                    "x": -14.51331449312252,
+                    "y": -25.381374712860925
+                  },
+                  "angle": -0.00508029616443239,
+                  "stance": true,
+                  "kneeFlex": 0,
+                  "contact": {
+                    "x": -8.846515933293764,
+                    "y": 0
+                  },
+                  "bootWidth": 26.112768215183564,
+                  "rigidShoe": true
+                },
+                "far": {
+                  "hip": {
+                    "x": 11.486979149140689,
+                    "y": -68.27433869420807
+                  },
+                  "knee": {
+                    "x": 3.7972350311186975,
+                    "y": -40.13469950765687
+                  },
+                  "cuff": {
+                    "x": 3.868676031308634,
+                    "y": -27.368100952688458
+                  },
+                  "heel": {
+                    "x": -6.213550861377385,
+                    "y": -5.120321412878812
+                  },
+                  "toe": {
+                    "x": 33.04221810197835,
+                    "y": -5.112043119820015
+                  },
+                  "sole": {
+                    "x": 14.055365712808824,
+                    "y": -3.84023006558632
+                  },
+                  "renderedFromSource": true,
+                  "source": {
+                    "image": "bear-idle-lower-v18.png",
+                    "pose": "idle",
+                    "hip": [
+                      835,
+                      315
+                    ],
+                    "knee": [
+                      790,
+                      690
+                    ],
+                    "cuff": [
+                      820,
+                      850
+                    ],
+                    "heel": [
+                      650,
+                      1110
+                    ],
+                    "toe": [
+                      1180,
+                      1150
+                    ],
+                    "sole": [
+                      940,
+                      1155
+                    ]
+                  },
+                  "plannedSole": {
+                    "x": 14.05536571280883,
+                    "y": -3.840230065586333
+                  },
+                  "plannedCuff": {
+                    "x": 9.425567331741357,
+                    "y": -27.756488845533653
+                  },
+                  "angle": 0.02927524337291065,
+                  "stance": false,
+                  "kneeFlex": 0.022617170589770495,
+                  "contact": {
+                    "x": 14.963890556785449,
+                    "y": -3.8136251787513267
+                  },
+                  "bootWidth": 39.2557698362228,
+                  "rigidShoe": true
+                }
+              },
+              "gait": {
+                "far": {
+                  "x": -2.6577645428667998,
+                  "y": -0.125100588587392,
+                  "angle": 0.02927524337291065,
+                  "shinAngle": 0.028049340033363086,
+                  "kneeFlex": 0.022617170589770495,
+                  "contactOffset": 0.9089143040607525,
+                  "stance": false
+                },
+                "near": {
+                  "x": 1.9186077110363375,
+                  "y": 0,
+                  "angle": -0.00508029616443239,
+                  "shinAngle": -0.013961297972283071,
+                  "kneeFlex": 0,
+                  "contactOffset": -1.0195959634927039,
+                  "stance": true
+                },
+                "phase": 0.05398611111111107,
+                "cycleLength": 144,
+                "bob": 0.11642821049517837,
+                "sway": 0.09772286502585874,
+                "roll": 0.00022172590572331802,
+                "pelvisSway": -0.05428120941544919,
+                "pelvisRoll": 0.0005428120941544919
+              },
+              "body": {
+                "pivot": {
+                  "x": -2.8688524590163933,
+                  "y": -67.62295081967213
+                },
+                "sway": 0.09772286502585874,
+                "bob": -9.966338074690253,
+                "roll": 0.00022172590572331802,
+                "pelvisSway": -0.05428120941544919,
+                "pelvisRoll": 0.0005428120941544919,
+                "slope": 0,
+                "opaque": true,
+                "surfaces": 1,
+                "continuous": true,
+                "triangles": 400,
+                "canonicalHeight": 280,
+                "lowerHeight": 190,
+                "cachePhase": 0.05398611111111107
+              },
+              "cache": {
+                "frames": 1,
+                "hits": 11,
+                "misses": 9
+              }
+            },
+            "metrics": {
+              "writes": [
+                "bq-centrum:cross-browser-fixture",
+                "bq-centrum:scene-network:v1"
+              ],
+              "reads": [
+                "bq-centrum:cross-browser-fixture",
+                "bq-centrum:scene-network:v1"
+              ],
+              "listenerCounts": {
+                "document:fullscreenchange": 1,
+                "window:keydown": 6,
+                "window:pagehide": 3,
+                "window:pointerdown": 2,
+                "window:blur": 5,
+                "document:visibilitychange": 5,
+                "window:keyup": 3,
+                "window:centrum-square-change": 1,
+                "window:pointerup": 2,
+                "window:pointercancel": 1,
+                "window:touchend": 2,
+                "window:touchcancel": 2,
+                "window:__playwright_global_listeners_check__": 1,
+                "window:mousemove": 1,
+                "window:touchstart": 1,
+                "window:mousedown": 1,
+                "window:mouseup": 1,
+                "window:click": 1,
+                "window:auxclick": 1,
+                "window:dblclick": 1,
+                "window:contextmenu": 1
+              },
+              "loopFrames": 19,
+              "pending": 1,
+              "maxPending": 1,
+              "audioContexts": 0,
+              "frameTimeMs": {
+                "samples": 18,
+                "median": 25.0,
+                "p95": 39,
+                "maximum": 39
+              }
+            }
+          }
+        },
+        {
+          "name": "root-desktop active alias entry",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Native walking and pause/resize/resume hold the source road",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Actual shop dialogue accepts slip; reload retains state/health",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Native passage/inspection/approval completes production delivery movement",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Report/reward/purchase commit once through real counter choices",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Live Eat heals atomically; movement interrupts the next action without loss",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Latest reload preserves food/wallet/claims/gate/health coherently",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Actual Q walks to same bike, production remount completes grounded",
+          "passed": true,
+          "data": {
+            "x": 11407.047949269978,
+            "health": 80,
+            "wheels": [
+              {
+                "x": 11355.635132962834,
+                "y": 1219.0861840466516,
+                "clearance": 0.008013966176804388
+              },
+              {
+                "x": 11438.381752162797,
+                "y": 1226.0603227731388,
+                "clearance": 0.0949200780864885
+              }
+            ]
+          }
+        },
+        {
+          "name": "One main loop and project-only storage after complete interaction flow",
+          "passed": true,
+          "data": {
+            "writes": [
+              "bq-centrum:scene-network:v1"
+            ],
+            "reads": [
+              "bq-centrum:cross-browser-fixture",
+              "bq-centrum:scene-network:v1"
+            ],
+            "listenerCounts": {
+              "document:fullscreenchange": 1,
+              "window:keydown": 6,
+              "window:pagehide": 3,
+              "window:pointerdown": 2,
+              "window:blur": 5,
+              "document:visibilitychange": 5,
+              "window:keyup": 3,
+              "window:centrum-square-change": 1,
+              "window:pointerup": 2,
+              "window:pointercancel": 1,
+              "window:touchend": 2,
+              "window:touchcancel": 2,
+              "window:__playwright_global_listeners_check__": 1,
+              "window:mousemove": 1,
+              "window:touchstart": 1,
+              "window:mousedown": 1,
+              "window:mouseup": 1,
+              "window:click": 1,
+              "window:auxclick": 1,
+              "window:dblclick": 1,
+              "window:contextmenu": 1
+            },
+            "loopFrames": 986,
+            "pending": 1,
+            "maxPending": 1,
+            "audioContexts": 0,
+            "frameTimeMs": {
+              "samples": 360,
+              "median": 38.0,
+              "p95": 57,
+              "maximum": 343
+            }
+          }
+        }
+      ],
+      "captures": [
+        {
+          "file": "webkit/functional/root-desktop-ride.png",
+          "sha256": "8719039216ad48124ecd10f09f38697a69767750b99edf0e0041774181227861"
+        },
+        {
+          "file": "webkit/functional/root-desktop-metro-square.png",
+          "sha256": "0568d9355fc838ccbf098beb13be356f7e86a4cc7f755c02d289b21cb6660475"
+        },
+        {
+          "file": "webkit/functional/root-desktop-food-shop.png",
+          "sha256": "213b98454d34915bdca728d334008d65dbb2723a2e75967ad54709a696374835"
+        },
+        {
+          "file": "webkit/functional/courtyard-delivery.png",
+          "sha256": "cf0035175e1b4a8567a1a67aec07938031f699153344a95ca92d300d055a50c7"
+        },
+        {
+          "file": "webkit/functional/workshop-native-arrival.png",
+          "sha256": "cfb936d4d501d6b1a5ad2895657cc909ff8f03dca4c83981b6a7a2ff991b1271"
+        },
+        {
+          "file": "webkit/functional/food-reload-native-baby.png",
+          "sha256": "abca9a5afe4870d9202c1cd6ea5e023f6cec4b691006764ef5ed3eebb2ef3a3c"
+        },
+        {
+          "file": "webkit/functional/remounted-original-bike.png",
+          "sha256": "a999b6c4d80d16f5d4ba6a8b1463149b81f0ef9f1b88afcb5e64a1d657e146f5"
+        }
+      ],
+      "suite": "functional",
+      "errors": [],
+      "consoleErrors": [],
+      "httpFailures": [],
+      "externalRequests": [],
+      "outsidePrefixRequests": [],
+      "runtimeHashes": {
+        "autumn-v19.html": "b9f5856dd1c315ec691b2f9a403254f7c9fb3783858b458708456867fc7c640d",
+        "index.html": "b9f5856dd1c315ec691b2f9a403254f7c9fb3783858b458708456867fc7c640d",
+        "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+        "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+        "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+        "js/brawler-art.js": "042627f4a89564bce96c26a7a8499ce06d1e691c6ca168e8c7dfa37950b930ee",
+        "js/brawler.js": "83f40b2a50fa24c3534adc9b90cb1ba3ee4076133a523a3d93d2fc96c05f3294",
+        "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+        "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+        "js/centrum-civilians.js": "86d294ff75a2915d830e81369ecd9aef213bfbbe0292cc0dcefe0fa13e709eb6",
+        "js/centrum-depth-gait.js": "31f744b4a13c80452a85a02a5e4bc48c0ba2f4346a6e71c58a0663677073004f",
+        "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+        "js/centrum-inventory.js": "0585ec84da21cfdc75c9c5518f2c09f1360417116116d9ca285f43ec513d27e2",
+        "js/centrum-link.js": "d1a695bb2ea5bf1e7117caa900498838170eaf8ca6b3afaaadcff21e877be98d",
+        "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+        "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+        "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+        "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+        "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+        "js/centrum-square.js": "401891996a629a861753cc341321119811b6268e99b8c444ace785fa0cf7be6e",
+        "js/centrum-story.js": "c625d40ea5366285ed67d4140b3f1765a89181aa112901b17627385e1996d333",
+        "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+        "js/game.js": "92234e0e907260beeb6456fff28c08f102695588cb49cad9ebc4d1aeb365a592",
+        "js/hero-rig.js": "12c96e458c66854b10f1a6ed50fdd7b09791cff8c20733f31c584e43aa2932a8",
+        "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+        "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+        "js/illustrated-kids.js": "ae3a7dd4d5409ae8562f427bc655c494f8a46ef2c1862ea2bb640449a0f03444",
+        "js/illustrated-neighbourhood.js": "71417eda5219cc410288dee15034cea96ca82d0c107e9f1cfd458dfe664609b0",
+        "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+        "js/illustrated-visits.js": "1fd3a8f60a019b1529db6859d16be51ca8b35c2bb82ada9c4ef1dedab58c9003",
+        "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+        "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+        "js/npc-motion.js": "ddc5a88e1cd653243bdd98c44fc5bf2bd97f70ada2f81c8bf7cce88d5174d766",
+        "js/street-life.js": "8547a6829602b9c2070add14e2d89083299fa3c6e01d15885fe5f6b07d46f994",
+        "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+        "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+      },
+      "conditions": {
+        "headless": true,
+        "OS": "Linux Debian13",
+        "physicalDevice": false,
+        "fixtureDisclosure": "Production factory prepares only valid parking/scene starting positions and60HP/onefood for the functional flow; walking, quest steps, transactions and remount use actual controls. This is separate from the Chromium fresh native road acceptance.",
+        "touchLimits": "Firefox has no Playwright is_mobile emulation; phone viewport+has_touch are tested. Sustained dpad input uses native mouse pointer holds; touch menus use native tap where supported. No physical Safari/iPhone claim."
+      },
+      "version": "26.5",
+      "returnProgress": [
+        {
+          "elapsed": 0.04,
+          "x": 1299.1,
+          "y": 819.8465680673955,
+          "stride": 3295.171622889714,
+          "returning": {
+            "sceneId": "metro-square",
+            "anchorId": "bicycle-parking",
+            "waypoints": 1
+          },
+          "paused": false,
+          "phase": "exploring"
+        },
+        {
+          "elapsed": 0.59,
+          "x": 1219.6578056357969,
+          "y": 816.9720796740277,
+          "stride": 3375.6401840693334,
+          "returning": {
+            "sceneId": "metro-square",
+            "anchorId": "bicycle-parking",
+            "waypoints": 1
+          },
+          "paused": false,
+          "phase": "exploring"
+        },
+        {
+          "elapsed": 1.16,
+          "x": 1131.5248527753772,
+          "y": 813.8344609115603,
+          "stride": 3464.822960533209,
+          "returning": {
+            "sceneId": "metro-square",
+            "anchorId": "bicycle-parking",
+            "waypoints": 1
+          },
+          "paused": false,
+          "phase": "exploring"
+        },
+        {
+          "elapsed": 1.73,
+          "x": 1044.6737186849837,
+          "y": 810.548990614169,
+          "stride": 3552.8413490922003,
+          "returning": {
+            "sceneId": "metro-square",
+            "anchorId": "bicycle-parking",
+            "waypoints": 1
+          },
+          "paused": false,
+          "phase": "exploring"
+        },
+        {
+          "elapsed": 2.26,
+          "x": 964.1995203863136,
+          "y": 807.3032121542249,
+          "stride": 3634.5439527654826,
+          "returning": {
+            "sceneId": "metro-square",
+            "anchorId": "bicycle-parking",
+            "waypoints": 1
+          },
+          "paused": false,
+          "phase": "exploring"
+        },
+        {
+          "elapsed": 2.8,
+          "x": 885.9446451934731,
+          "y": 803.9256748528114,
+          "stride": 3714.165303115684,
+          "returning": {
+            "sceneId": "metro-square",
+            "anchorId": "bicycle-parking",
+            "waypoints": 1
+          },
+          "paused": false,
+          "phase": "exploring"
+        },
+        {
+          "elapsed": 3.34,
+          "x": 806.8448848427955,
+          "y": 800.2434008876164,
+          "stride": 3794.869838891259,
+          "returning": {
+            "sceneId": "metro-square",
+            "anchorId": "bicycle-parking",
+            "waypoints": 1
+          },
+          "paused": false,
+          "phase": "exploring"
+        },
+        {
+          "elapsed": 3.89,
+          "x": 722.0172821246455,
+          "y": 795.9209184439542,
+          "stride": 3881.7559485314346,
+          "returning": {
+            "sceneId": "metro-square",
+            "anchorId": "bicycle-parking",
+            "waypoints": 1
+          },
+          "paused": false,
+          "phase": "exploring"
+        },
+        {
+          "elapsed": 4.45,
+          "x": 640.8895638141706,
+          "y": 791.3191486972685,
+          "stride": 3965.3168633072673,
+          "returning": {
+            "sceneId": "metro-square",
+            "anchorId": "bicycle-parking",
+            "waypoints": 1
+          },
+          "paused": false,
+          "phase": "exploring"
+        },
+        {
+          "elapsed": 5.01,
+          "x": 562.6016762869,
+          "y": 786.2903678328,
+          "stride": 4046.604707084242,
+          "returning": {
+            "sceneId": "metro-square",
+            "anchorId": "bicycle-parking",
+            "waypoints": 1
+          },
+          "paused": false,
+          "phase": "exploring"
+        },
+        {
+          "elapsed": 5.57,
+          "x": 484.99264123672015,
+          "y": 780.4812877149363,
+          "stride": 4128.228824110065,
+          "returning": {
+            "sceneId": "metro-square",
+            "anchorId": "bicycle-parking",
+            "waypoints": 1
+          },
+          "paused": false,
+          "phase": "exploring"
+        },
+        {
+          "elapsed": 6.14,
+          "x": 413.17290322201643,
+          "y": 773.9539564116715,
+          "stride": 4205.470422794535,
+          "returning": {
+            "sceneId": "metro-square",
+            "anchorId": "bicycle-parking",
+            "waypoints": 1
+          },
+          "paused": false,
+          "phase": "exploring"
+        },
+        {
+          "elapsed": 6.68,
+          "x": 343.8540397874947,
+          "y": 765.7126537609608,
+          "stride": 4283.560095842116,
+          "returning": {
+            "sceneId": "metro-square",
+            "anchorId": "bicycle-parking",
+            "waypoints": 1
+          },
+          "paused": false,
+          "phase": "exploring"
+        },
+        {
+          "elapsed": 7.24,
+          "x": 274.60060760947533,
+          "y": 752.1033127744793,
+          "stride": 4375.162262992459,
+          "returning": {
+            "sceneId": "metro-square",
+            "anchorId": "bicycle-parking",
+            "waypoints": 1
+          },
+          "paused": false,
+          "phase": "exploring"
+        },
+        {
+          "elapsed": 7.8,
+          "x": 257.55281826538624,
+          "y": 745.3429442158986,
+          "stride": 4409.229492195413,
+          "returning": null,
+          "paused": false,
+          "phase": "remount"
+        },
+        {
+          "elapsed": 8.37,
+          "x": 257.55281826538624,
+          "y": 745.3429442158986,
+          "stride": 4409.229492195413,
+          "returning": null,
+          "paused": false,
+          "phase": "remount"
+        },
+        {
+          "elapsed": 8.9,
+          "x": 257.55281826538624,
+          "y": 745.3429442158986,
+          "stride": 4409.229492195413,
+          "returning": null,
+          "paused": false,
+          "phase": "remount"
+        },
+        {
+          "elapsed": 9.44,
+          "x": 257.55281826538624,
+          "y": 745.3429442158986,
+          "stride": 4409.229492195413,
+          "returning": null,
+          "paused": false,
+          "phase": "remount"
+        },
+        {
+          "elapsed": 10.01,
+          "x": 257.55281826538624,
+          "y": 745.3429442158986,
+          "stride": 4409.229492195413,
+          "returning": null,
+          "paused": false,
+          "phase": "remount"
+        }
+      ],
+      "recording": {
+        "file": "webkit/native-network-loop.webm",
+        "kind": "Actual browser video: native network interaction flow after disclosed parking/health/food fixture",
+        "timeScale": 1
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

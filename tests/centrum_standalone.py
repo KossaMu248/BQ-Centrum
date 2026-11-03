@@ -21,7 +21,7 @@ from urllib.parse import urlparse
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'verification/stage9/standalone'
+OUT=ROOT/'verification/stage10/standalone'
 WORK=OUT/'work'
 SCENES=['metro-square','shopping-arcade','service-courtyard','food-shop','bicycle-workshop']
 KEY='bq-centrum:scene-network:v1'
@@ -68,6 +68,55 @@ def metrics(page):
 
 def ready(page):
     page.wait_for_function('window.BEARLY_STARTUP?.().firstFrameAt!==null&&window.BearlyCentrumInventory?.audit().bound',timeout=60000)
+
+
+def inventory_layout(page):
+    return page.evaluate(r'''()=>{
+      const audit=BearlyCentrumInventory.audit(),hud=document.querySelector('.centrum-inventory-hud'),button=document.querySelector('#inventoryOpenBtn'),canvas=document.querySelector('#game'),fit=getComputedStyle(canvas);
+      const box=button.getBoundingClientRect(),hit=document.elementFromPoint(box.x+box.width/2,box.y+box.height/2);
+      return{layout:audit.layout,health:audit.health,food:audit.food,wallet:audit.wallet,quest:BearlyQuests.wrongEntrance.snapshot(),rewardClaims:BearlyCentrumSave.adventure.snapshot().rewardClaims,browsing:audit.browsing,canvasFit:{objectFit:fit.objectFit,objectPosition:fit.objectPosition,rectangle:canvas.getBoundingClientRect().toJSON()},
+        sceneDock:hud.hasAttribute('data-scene-dock'),scenePanel:document.querySelector('.centrum-inventory-panel').hasAttribute('data-scene-float'),sceneEating:document.querySelector('.inventory-eating').hasAttribute('data-scene-float'),
+        bagButton:{visible:!hud.hidden&&box.width>0&&box.height>0&&box.left>=0&&box.top>=0&&box.right<=innerWidth+.1&&box.bottom<=innerHeight+.1,
+          receivesPointer:!!hit&&(hit===button||button.contains(hit)),rectangle:box.toJSON()}};
+    }''')
+
+
+def verify_scene_bag(page,touch):
+    arrival=page.evaluate('BearlyCentrumStory.audit().dialogue')
+    if arrival['open']:
+        # Fresh food-shop arrival intentionally opens the baby's discovery
+        # exchange. The bag must refuse browsing until that exchange is closed.
+        assert arrival['target']=='discovery',arrival
+        blocked=inventory_layout(page)
+        button=page.locator('#inventoryOpenBtn')
+        button.tap() if touch else button.click()
+        assert not page.evaluate('BearlyCentrumInventory.isBrowsing()')
+        message=page.locator('.inventory-feedback').inner_text()
+        assert message=='Finish the current interaction before opening the bag.',message
+        close=page.locator('[data-dialogue-close]')
+        close.tap() if touch else close.click()
+        page.wait_for_function('!BearlyCentrumStory.blocking()')
+        cleared=inventory_layout(page)
+        for key in ['health','food','wallet','quest','rewardClaims']:assert cleared[key]==blocked[key],(key,blocked,cleared)
+        arrival={'target':arrival['target'],'blockedUntilNativeClose':True,'notification':message,'stateUnchanged':True}
+    else:arrival=None
+    before=inventory_layout(page)
+    assert before['layout'] and before['layout']['clear'] and before['sceneDock'],before
+    assert before['bagButton']['visible'] and before['bagButton']['receivesPointer'],before
+    if touch:assert before['canvasFit']['objectFit']=='cover',before
+    button=page.locator('#inventoryOpenBtn')
+    button.tap() if touch else button.click()
+    page.wait_for_function('BearlyCentrumInventory.isBrowsing()')
+    opened=inventory_layout(page)
+    for key in ['health','food','wallet','quest','rewardClaims']:assert opened[key]==before[key],(key,before,opened)
+    assert opened['layout'] and opened['layout']['clear'],opened
+    close=page.locator('#inventoryCloseBtn')
+    close.tap() if touch else close.click()
+    page.wait_for_function('!BearlyCentrumInventory.isBrowsing()')
+    closed=inventory_layout(page)
+    for key in ['health','food','wallet','quest','rewardClaims']:assert closed[key]==before[key],(key,before,closed)
+    assert closed['layout'] and closed['layout']['clear'],closed
+    return{'arrivalDialogue':arrival,'before':before,'opened':opened,'closed':closed,'nativeOpenClose':True,'healthUnchanged':True,'foodUnchanged':True,'questAndRewardsUnchanged':True}
 
 
 def fixture(page,scene_id):
@@ -135,7 +184,8 @@ def main():
       with sync_playwright() as p:
         browser=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox'])
         result['conditions']['browserVersion']=browser.version
-        result['conditions']['otherInstalledEngine']=shutil.which('firefox')
+        result['conditions']['systemPathFirefoxExecutable']=shutil.which('firefox')
+        result['conditions']['engineScope']='This archive run uses system Chromium only; Firefox and Linux WebKit evidence is separate.'
         for subpath in [False,True]:
           directory=WORK if subpath else runtime;prefix='/BQ-Centrum/' if subpath else '/'
           class RecordedHandler(Quiet):
@@ -169,11 +219,14 @@ def main():
             else:page.keyboard.down('ArrowUp');page.wait_for_timeout(650);page.keyboard.up('ArrowUp')
             assert page.evaluate('BEARLY_TOUCH_STATUS().x')>start+1
             page.keyboard.down('ArrowDown');page.wait_for_timeout(500);page.keyboard.up('ArrowDown');page.wait_for_timeout(700)
+            riding_layout=inventory_layout(page)
+            assert riding_layout['layout'] is None and not any(riding_layout[k] for k in ['sceneDock','scenePanel','sceneEating']),riding_layout
+            assert riding_layout['bagButton']['visible'] and riding_layout['bagButton']['receivesPointer'],riding_layout
             templates={scene_id:fixture(page,scene_id) for scene_id in SCENES}
             sample=metrics(page);assert sample['maxPending']<=1 and sample['loopFrames']>10,sample
             assert all(k.startswith('bq-centrum:') for k in sample['reads']+sample['writes']),sample
             page.screenshot(path=str(OUT/(label+'-ride.png')))
-            result['checks'].append({'name':label+' fresh startup and actual pedal input','passed':True,'startup':page.evaluate('BEARLY_STARTUP()'),'metrics':sample})
+            result['checks'].append({'name':label+' fresh startup and actual pedal input','passed':True,'startup':page.evaluate('BEARLY_STARTUP()'),'ridingInventoryLayout':riding_layout,'metrics':sample})
             context.close()
             for scene_id in SCENES:
               context,page=open_page(browser,base+prefix+'index.html',touch,watch,templates[scene_id]);page.wait_for_timeout(700)
@@ -184,9 +237,10 @@ def main():
               assert scenery and not scenery['errors'] and scenery['loops']==0,scenery
               required={'metro-square':['gate'],'shopping-arcade':['passage'],'service-courtyard':['gate','cage']}.get(scene_id,[])
               for kind in required:assert scenery['files'][kind]['ready'],(scene_id,kind,scenery)
+              bag=verify_scene_bag(page,touch)
               sample=metrics(page);assert sample['maxPending']<=1 and sample['loopFrames']>5
               assert all(k.startswith('bq-centrum:') for k in sample['reads']+sample['writes']),sample
-              result['checks'].append({'name':label+' '+scene_id+' scene load','passed':True,'health':a['health'],'hero':a['hero'],'scenery':scenery,'metrics':sample})
+              result['checks'].append({'name':label+' '+scene_id+' scene load and native bag interaction','passed':True,'health':a['health'],'hero':a['hero'],'scenery':scenery,'inventory':bag,'metrics':sample})
               if scene_id in ['metro-square','food-shop']:page.screenshot(path=str(OUT/(label+'-'+scene_id+'.png')))
               context.close()
             # Active alias entry is tested separately without borrowed browser state.

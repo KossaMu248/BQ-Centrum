@@ -1,0 +1,27 @@
+{
+  "scope": "Final Stage10 current HUD; actual Firefox153 desktop/touch-view root/subpath and LinuxWebKit26.5 uninterrupted native functional flow plus original source-foot controls. Not physical Safari/iPhone.",
+  "passed": true,
+  "suites": [
+    {
+      "engine": "firefox",
+      "version": "153.0",
+      "suite": "root/subpath desktop/touch scenes and native bag regression",
+      "file": "firefox-smoke-results.json",
+      "passed": true,
+      "groupedExecutions": 30,
+      "elapsedSeconds": 112.854,
+      "changedRuntimeFiles": []
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "suite": "uninterrupted native quest/economy/reload/Q/remount plus source-foot bag regression",
+      "file": "webkit-functional-results.json",
+      "passed": true,
+      "groupedExecutions": 16,
+      "elapsedSeconds": 192.671,
+      "changedRuntimeFiles": []
+    }
+  ],
+  "timingCondition": "Concurrent Chromium HUD gallery shared-host functional conditions, not isolated performance benchmark."
+}

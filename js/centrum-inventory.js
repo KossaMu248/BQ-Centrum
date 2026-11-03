@@ -67,16 +67,84 @@
   host.append(hud,panel,eating,feedback);
   const heartRow=hud.querySelector('.inventory-hearts');for(let i=0;i<5;i++){const h=document.createElement('span');h.className='foot-heart';h.innerHTML='<i></i>';heartRow.append(h);}
   let adapter=null,controller=null,browsing=false,recovering=false,returnFocus=null,browseMode=null,browseScene=null,noticeTime=0,shownOutcome=null;
+  let sceneDock=null,sceneMeasurements=null,layoutAudit=null,dockChanges=0;
   const config=()=>({...defaults,...(window.BearlyCentrumBalance||{})});
   function read(){return controller?.context()||{active:false,health:0,food:0,wallet:0};}
   function notify(message,seconds=3){feedback.textContent=message;feedback.hidden=false;noticeTime=seconds;}
+  const overlaps=(a,b,pad=0)=>a.x<b.x+b.w+pad&&a.x+a.w>b.x-pad&&a.y<b.y+b.h+pad&&a.y+a.h>b.y-pad;
+  function measureScene(box){
+    const elements=[...host.querySelectorAll('.square-heading,.square-controls button,.centrum-story-objective,.centrum-dialogue,.centrum-inventory-panel,.inventory-eating')];
+    const key=[box.width,box.height,window.BearlyFullscreen?.state?.()||'window',hud.textContent,...elements.map(e=>e.hidden?'hidden':e.className+':'+e.textContent+':'+(e.dataset.side||'')+':'+(e.dataset.sceneFloat||''))].join('|');
+    if(sceneMeasurements?.key===key)return sceneMeasurements;
+    const local=e=>{const r=e.getBoundingClientRect();return{x:r.left-box.left,y:r.top-box.top,w:r.width,h:r.height};};
+    const size=local(hud),style=getComputedStyle(hud),home=number(parseFloat(style.getPropertyValue('--inventory-hud-home-top')),108);
+    const obstacles=elements.filter(e=>!e.hidden).map(e=>({...local(e),role:e===panel?'panel':e===eating?'eating':e.classList.contains('centrum-story-objective')?'objective':'other'})).filter(r=>r.w>0&&r.h>0);
+    const heading=local(host.querySelector('.square-heading')),controls=local(host.querySelector('.square-controls'));
+    const panels={};for(const [name,e]of [['panel',panel],['eating',eating]])if(!e.hidden){
+      const r=local(e),s=getComputedStyle(e);panels[name]={w:r.w,naturalHeight:Math.max(r.h,e.scrollHeight+2),bottom:parseFloat(s.getPropertyValue('--inventory-panel-home-bottom'))||112,clearance:parseFloat(s.getPropertyValue('--inventory-panel-clearance'))||0};
+    }
+    const fit=getComputedStyle(host.querySelector('#game')).objectFit;
+    sceneMeasurements={key,w:size.w,h:size.h,home,obstacles,heading,controls,panels,fit};return sceneMeasurements;
+  }
+  function placePanel(info,side,actor,m,box,pad){
+    if(!info)return null;
+    const h=Math.min(info.naturalHeight,box.height-info.clearance),rect={x:side==='left'?pad:box.width-info.w-pad,y:box.height-info.bottom-h,w:info.w,h};
+    if(!overlaps(rect,actor,12))return{rect,floating:false};
+    let top=m.heading.y+m.heading.h+8;
+    for(const o of m.obstacles)if(o.role==='objective'&&overlaps({...rect,y:o.y,h:o.h},o))top=Math.max(top,o.y+o.h+8);
+    const above={y:top,h:actor.y-12-top},below={y:actor.y+actor.h+12,h:m.controls.y-8-actor.y-actor.h-12};
+    const spaces=[above,below].filter(r=>r.h>=100),space=spaces.find(r=>r.h>=h)||spaces.sort((a,b)=>b.h-a.h)[0];
+    if(!space)return{rect,floating:false};
+    const limit=Math.min(h,space.h);return{rect:{...rect,y:space===above?actor.y-12-limit:space.y,h:limit},floating:true,limit};
+  }
   function align(c){
-    let sx=number(c.screenX,371);
-    if(c.screenX==null&&window.BearlyCentrumSquare?.active()){const a=window.BearlyCentrumSquare.audit();sx=a.x-a.camera.x;}
-    const side=sx>580?'left':'right';panel.dataset.side=side;eating.dataset.side=side;
+    const square=window.BearlyCentrumSquare?.inventoryContext?.();
+    if(!square?.active){
+      const side=number(c.screenX,371)>580?'left':'right';panel.dataset.side=eating.dataset.side=side;
+      delete hud.dataset.sceneDock;delete panel.dataset.sceneFloat;delete eating.dataset.sceneFloat;sceneDock=sceneMeasurements=layoutAudit=null;return;
+    }
+    // Read geometry before the existing paint writes. Canvas fit is presentation
+    // only: neither the camera nor actor scale/position changes to make UI room.
+    const box=host.getBoundingClientRect(),m=measureScene(box);
+    let scaleX=box.width/1160,scaleY=box.height/640;
+    if(m.fit==='cover'||m.fit==='contain')scaleX=scaleY=(m.fit==='cover'?Math.max:Math.min)(scaleX,scaleY);
+    const panX=number(parseFloat(host.style.getPropertyValue('--square-pan')),50)/100,panY=number(parseFloat(host.style.getPropertyValue('--square-pan-y')),50)/100;
+    const sx=square.screenX*scaleX+(box.width-1160*scaleX)*panX;
+    const foot=(square.screenY-number(square.jump))*scaleY+(box.height-640*scaleY)*panY;
+    const height=number(square.height,200),actor={x:sx-70*scaleX,y:foot-(height+12)*scaleY,w:140*scaleX,h:(height+20)*scaleY};
+    const upper={...actor,h:(height-40)*scaleY},pad=box.width<701||box.height<501?10:14;
+    const side=sx>=box.width*.5?'left':'right',xs={left:pad,right:box.width-m.w-pad};
+    const panels={panel:placePanel(m.panels.panel,side,actor,m,box,pad),eating:placePanel(m.panels.eating,side,actor,m,box,pad)};
+    const obstacles=m.obstacles.map(o=>panels[o.role]?.rect||o);
+    const ys=[m.home,m.heading.y+m.heading.h+8,m.controls.y-m.h-8,...obstacles.flatMap(r=>[r.y+r.h+8,r.y-m.h-8])];
+    const candidates=[];
+    for(const y of [...new Set(ys.map(y=>Math.round(clamp(y,pad,box.height-m.h-pad))))])for(const s of [side,side==='left'?'right':'left'])candidates.push({x:xs[s],y,w:m.w,h:m.h,side:s});
+    // Inventory updates before the existing scene step. A source-sized margin
+    // covers that next movement/jump frame without predicting or moving actors.
+    const actorMargin=24*Math.max(scaleX,scaleY);
+    const fits=(r,protectedActor)=>r.x>=0&&r.y>=0&&r.x+r.w<=box.width&&r.y+r.h<=box.height&&!overlaps(r,protectedActor,actorMargin)&&obstacles.every(o=>!overlaps(r,o,3));
+    const sameScene=sceneDock?.sceneId===square.sceneId&&sceneDock?.width===box.width&&sceneDock?.height===box.height;
+    const current=sameScene?{...sceneDock,w:m.w,h:m.h}:null;
+    // A retained clear dock prevents threshold jitter. Prefer the whole actor;
+    // the upper-body fallback also protects the original baby and helmet in a
+    // narrow portrait view when the bag is open below the character.
+    const next=current&&fits(current,actor)?current:candidates.find(r=>fits(r,actor))||
+      (current&&fits(current,upper)?current:candidates.find(r=>fits(r,upper)))||candidates[0];
+    const changed=!current||next.x!==current.x||next.y!==current.y;
+    if(changed){dockChanges++;hud.style.setProperty('--inventory-hud-x',next.x+'px');hud.style.setProperty('--inventory-hud-y',next.y+'px');}
+    hud.dataset.sceneDock='true';panel.dataset.side=eating.dataset.side=side;
+    for(const [name,e]of [['panel',panel],['eating',eating]]){
+      const placed=panels[name];if(placed?.floating){
+        e.dataset.sceneFloat='true';
+        for(const [property,value]of [['--inventory-panel-y',placed.rect.y+'px'],['--inventory-panel-limit',placed.limit+'px']])if(e.style.getPropertyValue(property)!==value)e.style.setProperty(property,value);
+      }else delete e.dataset.sceneFloat;
+    }
+    sceneDock={...next,sceneId:square.sceneId,width:box.width,height:box.height};
+    layoutAudit={mode:'centrum',x:next.x,y:next.y,width:m.w,height:m.h,side:next.side,clear:fits(next,upper),wholeActorClear:!overlaps(next,actor),changes:dockChanges,screenX:sx,footY:foot,fit:m.fit,scaleX,scaleY,actor,protectedUpper:upper,panels};
   }
   function paint(){
     const c=read(),b=config(),state=controller?.audit();hud.hidden=!adapter||c.active===false;panel.hidden=!browsing;eating.hidden=!state?.eating;
+    if(!hud.hidden)align(c);
     hud.querySelector('.inventory-count').textContent=`BAG ${c.food} / ${b.capacity}`;hud.querySelector('.inventory-wallet').textContent=`${c.wallet} kr`;
     heartRow.setAttribute('aria-label',`Health ${Math.max(0,c.health)} out of ${b.maxHealth}`);
     [...heartRow.children].forEach((h,i)=>{h.firstElementChild.style.width=`${clamp((c.health-i*b.maxHealth/b.hearts)/(b.maxHealth/b.hearts),0,1)*100}%`;});
@@ -90,7 +158,7 @@
     panel.querySelector('.inventory-safe-actions small').hidden=!c.recoveryAllowed;
     panel.querySelector('#inventoryRetryBtn').disabled=recovering||c.retryAllowed===false;
     const action=state?.eating;eating.querySelector('i').style.width=`${action?clamp(action.elapsed/action.duration,0,1)*100:0}%`;
-    hud.querySelector('#inventoryOpenBtn').setAttribute('aria-expanded',String(browsing));align(c);
+    hud.querySelector('#inventoryOpenBtn').setAttribute('aria-expanded',String(browsing));
   }
   function close(restoreFocus=true){
     if(!browsing)return;browsing=false;adapter?.setBrowsing?.(false);panel.hidden=true;
@@ -159,5 +227,5 @@
   document.addEventListener('visibilitychange',()=>{if(document.hidden)background();});
   window.BearlyCentrumInventory={createActionController,bind(next){if(adapter)return false;adapter=next;controller=createActionController(adapter,config());paint();return true;},
     update,open,close,cancel,notify,isBrowsing:()=>browsing,isEating:()=>!!controller?.audit().eating,
-    audit:()=>({bound:!!adapter,browsing,recovering,...(controller?.audit()||{eating:null,lastOutcome:null}),food:read().food,wallet:read().wallet,health:read().health,disabledReason:controller?.reason(read())||''})};
+    audit:()=>({bound:!!adapter,browsing,recovering,...(controller?.audit()||{eating:null,lastOutcome:null}),food:read().food,wallet:read().wallet,health:read().health,disabledReason:controller?.reason(read())||'',layout:layoutAudit?JSON.parse(JSON.stringify(layoutAudit)):null})};
 })();
