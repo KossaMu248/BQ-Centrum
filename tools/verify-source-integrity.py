@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 HASHES = json.loads((ROOT / 'references/source/donor-files.sha256.json').read_text())
 INTENTIONAL = {
     'README.md', 'autumn-version.json', 'index.html', 'autumn-v19.html',
-    'js/game.js', 'js/autumn-quests.js', 'js/illustrated-visits.js', 'js/hero-rig.js',
+    'js/game.js', 'js/autumn-quests.js', 'js/illustrated-visits.js', 'js/hero-rig.js', 'js/npc-motion.js',
 }
 
 
@@ -34,6 +34,28 @@ def replace_reviewed(text, added, original='', count=1):
     """Reverse only a complete, exact integration edit before donor hashing."""
     assert text.count(added) == count, 'Missing or repeated reviewed edit: ' + added
     return text.replace(added, original)
+
+
+
+STAGE14_PREVIOUS = {
+    'js/hero-rig.js': 'f6412df50749c6bff95b259910421b1fb6f76c6d81a9743d424d90b9f1641dad',
+    'js/npc-motion.js': 'ddc5a88e1cd653243bdd98c44fc5bf2bd97f70ada2f81c8bf7cce88d5174d766',
+}
+
+
+def reverse_stage14_source(path, text):
+    """Restore exact Stage13 source through pinned optional preparation hunks."""
+    raw = (ROOT / 'references/source/stage14-source-integration.json').read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == 'b694c394902b071abbc523650fec5a76547f0bcee0e4f5b9c67e6e788d35dadf', 'Changed Stage14 source inverse manifest'
+    spec = json.loads(raw)
+    assert spec['previousProjectCommit'] == '46c670135347dcd6cc1bc60f8cba069a4aa2df6b'
+    assert set(spec['files']) == set(STAGE14_PREVIOUS), 'Unexpected Stage14 protected paths'
+    edits = spec['files'][path]
+    assert edits['previousSha256'] == STAGE14_PREVIOUS[path]
+    for edit in reversed(edits['changes']):
+        text = replace_reviewed(text, edit['current'], edit['previous'])
+    assert hashlib.sha256(text.encode()).hexdigest() == STAGE14_PREVIOUS[path], 'Unexpected source edits beyond reviewed Stage14 integration: ' + path
+    return text
 
 
 def reverse_stage13_rig(text):
@@ -77,6 +99,20 @@ def reverse_stage11_rig(text):
 
 def restore_donor(path):
     text = (ROOT / path).read_text()
+    if path in STAGE14_PREVIOUS:
+        text = reverse_stage14_source(path, text)
+    if path.endswith('.html'):
+        for resource, previous in [
+            ('js/hero-rig.js', 'centrum-stage13'),
+            ('js/centrum-directional-rig.js', 'centrum-stage13'),
+            ('js/centrum-square.js', 'centrum-stage13'),
+            ('js/npc-motion.js', 'autumn-v19'),
+            ('js/centrum-civilians.js', 'centrum-stage5'),
+            ('js/centrum-story.js', 'centrum-stage9'),
+            ('js/centrum-link.js', 'centrum-stage4'),
+            ('js/game.js', 'centrum-stage13'),
+        ]:
+            text = replace_reviewed(text, f'{resource}?edition=centrum-stage14', f'{resource}?edition={previous}')
     if path.endswith('.html'):
         for resource in ['js/hero-rig.js', 'js/game.js']:
             text = replace_reviewed(text, f'{resource}?edition=centrum-stage13', f'{resource}?edition=centrum-stage12')
@@ -133,6 +169,7 @@ def restore_donor(path):
         text = replace_reviewed(text, 'bodyFrame(profile,name,options.distance||0,h,weight,options.groundMotion)', 'bodyFrame(profile,name,options.distance||0,h,weight)')
         text = replace_reviewed(text, 'projectGroundGait(window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,weight),frame.gait.groundMotion||options.groundMotion)', 'window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,weight)')
     if path == 'js/game.js':
+        text = replace_reviewed(text, "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE14';", "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE13';")
         text = replace_reviewed(text, "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE13';", "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE12';")
         text = replace_reviewed(text, "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE12';", "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE11';")
         text = replace_reviewed(text, "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE11';", "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE10';")
@@ -250,6 +287,6 @@ assert not failures, '\n'.join(failures)
 assert (ROOT / 'index.html').read_bytes() == (ROOT / 'autumn-v19.html').read_bytes()
 manifest = json.loads((ROOT / 'autumn-version.json').read_text())
 assert manifest['source']['commit'] == 'da109213fdf24947c2ac0b85de900214cc72e44f'
-assert manifest['edition'] == 'BQ_CENTRUM_STAGE13'
+assert manifest['edition'] == 'BQ_CENTRUM_STAGE14'
 print(f'PASS: {len(HASHES)} pinned original files verified; all source assets/CSS and original protected code match;')
-print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional Centrum walking/worker additions differ.')
+print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional Centrum walking/worker/preparation additions differ.')

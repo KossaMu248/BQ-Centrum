@@ -344,8 +344,9 @@
   }
   function prepareCentrumCache(){
     if(centrumPreparePromise)return centrumPreparePromise;
-    if(!window.BearlyCentrumHeroCache?.supported()){centrumPrepareFailure='Worker raster unavailable';return warmupSources().then(()=>false);}
-    centrumPreparePromise=warmupSources().then(async()=>{
+    centrumPrepareFailure=null;
+    if(!window.BearlyCentrumHeroCache?.supported()){centrumPrepareFailure='Worker raster unavailable';return warmupSources({foreground:true}).then(()=>false);}
+    centrumPreparePromise=warmupSources({foreground:true}).then(async()=>{
       const lower=lowerKeys.map((_,index)=>({index,...prepareLower(index)}));
       const upper=['front','back'].map(name=>({name,...upperSource(profiles[name],name)}));
       centrumCache=await window.BearlyCentrumHeroCache.create({functions:{surfacePose,centrumBoot,centrumLowerTargets,centrumLowerMesh,lowerTargets,lowerMesh,surfaceTriangle,bakeBody},lower,upper,
@@ -358,7 +359,7 @@
       for(const name of ['front','back'])await centrumCache.ensure(centrumJob(profiles[name],name,0,BODY_HEIGHT,0,motion));
       for(let index=0;index<BODY_PHASES;index++)await centrumCache.ensure(centrumJob(profiles.front,'front',window.BearlyLocomotion.cycleLength(BODY_HEIGHT)*index/BODY_PHASES,BODY_HEIGHT,1,motion));
       return centrumCache.available();
-    }).catch(error=>{centrumPrepareFailure=String(error?.message||error);centrumCache?.close();return false;});
+    }).catch(error=>{centrumPrepareFailure=String(error?.message||error);centrumCache?.close();centrumCache=null;centrumPreparePromise=null;return false;});
     return centrumPreparePromise;
   }
   function centrumCacheStats(){return{...(centrumCache?.stats()||{ready:false,pending:0,queued:0,frames:0,bytes:0}),failure:centrumPrepareFailure||centrumCache?.stats().failure||null};}
@@ -387,23 +388,35 @@
     lastAudit={pose:'walking',carrier:name,integratedCarrier:true,babyFace,height:h,source:profile.image,sourceRect:frame.rect,lowerPose:frame.lowerPose,lowerSourceRect:frame.lowerRect,authoredLowerBody:true,stature:profile.stature,landmarks,gait,body:{pivot:pose.pivot,sway:pose.shift.x,bob:pose.shift.y,roll:pose.angle,pelvisSway:gait.pelvisSway,pelvisRoll:gait.pelvisRoll,slope,opaque:true,surfaces:1,continuous:true,triangles:frame.triangles,canonicalHeight:BODY_HEIGHT,lowerHeight:LOWER_HEIGHT,cachePhase:frame.gait.phase},cache:{frames:bodyFrames.size,hits:bodyCacheHits,misses:bodyCacheMisses}};if(gait.centrumWalk)lastAudit.anatomy={source:'fixed-native-idle',skinning:'independent-affine-source-patches',ikTargetsDiagnosticOnly:true,near:frame.knees.near.ik,far:frame.knees.far.ik};if(frame.centrum)lastAudit.raster={mode:'worker',requestedPhase:request?.gait.phase,renderedPhase:frame.gait.phase,requestedWeight:weight,renderedWeight,heading:frame.centrum.heading};c.restore();return true;
   }
   let sourceWarmupPromise=null,sourceWarmupDone=0,sourceWarmupMs=0,sourceWarmupMaxMs=0;
-  function warmupSources(){
-    if(sourceWarmupPromise)return sourceWarmupPromise;
+  let sourceWarmupForeground=false,sourceWarmupSchedule=null,sourceWarmupPending=null,sourceWarmupFailure=null,sourceWarmupRetries=0;
+  function warmupSources(options={}){
+    const promote=options?.foreground===true&&!sourceWarmupForeground;
+    if(options?.foreground===true)sourceWarmupForeground=true;
+    if(sourceWarmupFailure&&sourceWarmupForeground){sourceWarmupPromise=null;sourceWarmupFailure=null;sourceWarmupRetries++;}
+    if(sourceWarmupPromise){if(promote)sourceWarmupSchedule?.();return sourceWarmupPromise;}
     sourceWarmupPromise=preload().then(()=>new Promise((resolve,reject)=>{
-      const tasks=[...lowerKeys.map((_,index)=>()=>prepareLower(index)),()=>upperSource(profiles.front,'front'),()=>upperSource(profiles.back,'back')];
-      const schedule=()=>{if(typeof window.requestIdleCallback==='function')window.requestIdleCallback(run,{timeout:1000});else window.setTimeout(()=>run(null),32);};
-      const run=deadline=>{
-        // Make progress even when a busy device only grants tiny idle windows.
-        // Rescheduling a fresh deadline here can starve every requested visit.
-        // Each callback prepares exactly one source piece, never the full rig.
-        const began=bodyNow();try{tasks.shift()();}catch(error){reject(error);return;}const elapsed=bodyNow()-began;sourceWarmupDone++;sourceWarmupMs+=elapsed;sourceWarmupMaxMs=Math.max(sourceWarmupMaxMs,elapsed);
-        if(tasks.length)schedule();else resolve();
+      const tasks=[...lowerKeys.map((_,index)=>()=>prepareLower(index)),()=>upperSource(profiles.front,'front'),()=>upperSource(profiles.back,'back')].slice(sourceWarmupDone);
+      if(!tasks.length){resolve();return;}
+      let generation=0;
+      const schedule=()=>{
+        const ticket=++generation;
+        if(sourceWarmupPending){const p=sourceWarmupPending;if(p.kind==='idle')window.cancelIdleCallback?.(p.id);else window.clearTimeout(p.id);}
+        const invoke=deadline=>{if(ticket!==generation)return;sourceWarmupPending=null;run(deadline);};
+        if(!sourceWarmupForeground&&typeof window.requestIdleCallback==='function')sourceWarmupPending={kind:'idle',id:window.requestIdleCallback(invoke,{timeout:1000})};
+        else sourceWarmupPending={kind:'timer',id:window.setTimeout(()=>invoke(null),sourceWarmupForeground?0:32)};
       };
-      schedule();
-    }));
+      const run=deadline=>{
+        // Native background callers keep idle scheduling. A validated Centrum
+        // request promotes the same seven pieces, one bounded task per turn.
+        const began=bodyNow();try{tasks[0]();}catch(error){sourceWarmupSchedule=null;reject(error);return;}
+        tasks.shift();const elapsed=bodyNow()-began;sourceWarmupDone++;sourceWarmupMs+=elapsed;sourceWarmupMaxMs=Math.max(sourceWarmupMaxMs,elapsed);
+        if(tasks.length)schedule();else{sourceWarmupSchedule=null;resolve();}
+      };
+      sourceWarmupSchedule=schedule;schedule();
+    })).catch(error=>{sourceWarmupFailure=String(error?.message||error);throw error;});
     return sourceWarmupPromise;
   }
-  function cacheStats(){return {frames:bodyFrames.size,bytes:bodyCacheBytes,limitBytes:BODY_CACHE_LIMIT,frameLimit:98,phases:BODY_PHASES,canonicalHeight:BODY_HEIGHT,hits:bodyCacheHits,misses:bodyCacheMisses,transientBuilds,bitmapFrames:bodyBitmaps,bitmapFailures,mode:window.createImageBitmap?'bitmap':'raster-canvas',pendingBitmaps:[...bodyFrames.values()].filter(f=>f.pending).length,buildMs:bodyBuildMs,maxBuildMs:maxBodyBuildMs,scratchBytes:[...bodyScratch.values()].reduce((n,c)=>n+c.width*c.height*4,0),sourceWarmup:{prepared:sourceWarmupDone,total:7,complete:sourceWarmupDone===7,buildMs:sourceWarmupMs,maxTaskMs:sourceWarmupMaxMs}};}
+  function cacheStats(){return {frames:bodyFrames.size,bytes:bodyCacheBytes,limitBytes:BODY_CACHE_LIMIT,frameLimit:98,phases:BODY_PHASES,canonicalHeight:BODY_HEIGHT,hits:bodyCacheHits,misses:bodyCacheMisses,transientBuilds,bitmapFrames:bodyBitmaps,bitmapFailures,mode:window.createImageBitmap?'bitmap':'raster-canvas',pendingBitmaps:[...bodyFrames.values()].filter(f=>f.pending).length,buildMs:bodyBuildMs,maxBuildMs:maxBodyBuildMs,scratchBytes:[...bodyScratch.values()].reduce((n,c)=>n+c.width*c.height*4,0),sourceWarmup:{prepared:sourceWarmupDone,total:7,complete:sourceWarmupDone===7,buildMs:sourceWarmupMs,maxTaskMs:sourceWarmupMaxMs,foreground:sourceWarmupForeground,pending:sourceWarmupPending?1:0,failure:sourceWarmupFailure,retries:sourceWarmupRetries}};}
   function drawAuthored(c,image,rect,origin,scale,pose,options={}){
     if(!ready()||!heads[pose])return false;
     const babyFace=drawCarrier(c,image,rect,origin,scale,pose,options);

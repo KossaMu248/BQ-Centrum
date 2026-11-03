@@ -21,7 +21,8 @@ from urllib.parse import urlparse
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'verification/stage13/standalone'
+OUT=ROOT/'verification/stage14/standalone'
+EXPECTED_BUILD='BQ_CENTRUM_STAGE14'
 WORK=OUT/'work'
 SCENES=['metro-square','shopping-arcade','service-courtyard','food-shop','bicycle-workshop']
 KEY='bq-centrum:scene-network:v1'
@@ -203,6 +204,7 @@ def main():
     result={'scope':'Extracted standalone delivery, clean local root and /BQ-Centrum/ repository subpath','conditions':{'browser':'system Chromium /usr/bin/chromium, headless','desktopViewport':[1280,720],'phoneEmulationViewport':[844,390],'physicalDevices':False,'sceneFixtures':'Production-factory sealed named-entrance/parking fixtures; primary native route is a separate test.'},'checks':[],'errors':[],'consoleErrors':[],'httpFailures':[],'serverHttpFailures':[],'serverOutsideSubpathRequests':[],'externalRequests':[],'outsideSubpathRequests':[],'limits':['Chromium emulation is not physical iPhone/Safari testing.','Frame times were sampled on this shared container and are not physical-device performance promises.']}
     result['testedArchiveSha256']=file_hash(package)
     runtime,manifest=extract_package(package)
+    assert json.loads((runtime/'autumn-version.json').read_text())['edition']==EXPECTED_BUILD,'Archive is not the intended Stage14 build'
     integrity=subprocess.run(['python3','tools/verify-source-integrity.py'],cwd=runtime,capture_output=True,text=True)
     assert integrity.returncode==0,integrity.stdout+integrity.stderr
     result['extractedSourceIntegrity']=integrity.stdout.strip()
@@ -275,7 +277,7 @@ def main():
               context.close()
             # Active alias entry is tested separately without borrowed browser state.
             context,page=open_page(browser,base+prefix+'autumn-v19.html',touch,watch)
-            assert page.evaluate('BEARLY_BUILD_ID')==json.loads((runtime/'autumn-version.json').read_text())['edition']
+            assert page.evaluate('BEARLY_BUILD_ID')==EXPECTED_BUILD
             result['checks'].append({'name':label+' active manifest HTML alias','passed':True});context.close()
           result.setdefault('requestCounts',{})['subpath' if subpath else 'root']=len(request_urls)
         browser.close()

@@ -204,6 +204,12 @@
     return bank.loading;
   }
   function preloadAll(){startWalkCache();return Promise.all([...walkBanks.keys()].map(warmVariant));}
+  // Optional Centrum entry preparation: warm only the resident identities needed
+  // by that scene. Native callers keep the original preloadAll contract above.
+  function preloadVariants(variants=[]){
+    const selected=[...new Set(Array.isArray(variants)?variants:[])].filter(variant=>Number.isInteger(variant)&&variant>=0&&variant<profiles.length);
+    return loaded.then(()=>{startWalkCache();return Promise.all(selected.map(warmVariant));});
+  }
   function finishCache(){
     cacheState.complete=true;cacheState.completedMs=performance.now()-cacheState.startedAt;
     if(cacheWorker){cacheWorker.terminate();cacheWorker=null;}
@@ -300,5 +306,5 @@ onmessage=event=>{const m=event.data;if(m.type==='source'){const tile=new Offscr
     if(n.state==='held'){/* Supporting hands/throw motion is provided by the bear rig. */}
     c.restore();lastAudit={variant,activity,pose,phase,source:frame.source,sourceRect:frame.rect,height:h,heightScale:profile.heightScale,civilian:n.civilian===true,details};return true;
   }
-  window.BearlyNpcMotion={ready,loaded,preloadAll,frames,frame:(variant,pose)=>{const f=get(variant,pose);return f?publicFrame(f):null;},source,drawPose,draw,audit:motionAudit,cacheStats,diagnostics:()=>Object.fromEntries(Object.entries(atlases).map(([k,v])=>[k,{ready:v.ready,error:v.error}]))};
+  window.BearlyNpcMotion={ready,loaded,preloadAll,preloadVariants,frames,frame:(variant,pose)=>{const f=get(variant,pose);return f?publicFrame(f):null;},source,drawPose,draw,audit:motionAudit,cacheStats,diagnostics:()=>Object.fromEntries(Object.entries(atlases).map(([k,v])=>[k,{ready:v.ready,error:v.error}]))};
 })();

@@ -30,6 +30,7 @@
     const token=++generation;busy=true;
     try{
       if(!bridge.restoreParking(record))throw Error('Saved parking does not match the route terrain');
+      window.BearlyHeroRig?.prepareCentrumCache?.()?.catch(()=>false);
       visits().centrumContext(bridge.visitContext(0));
       if(!await visits().restoreCentrumStreet(token))throw Error('Could not restore the production carrier');
       if(token!==generation)return;phase='exploring';await square().resumeLinked(record.exploration);if(token===generation)persist();
@@ -46,6 +47,7 @@
     record={schemaVersion:1,...identity(),phase:'dismount',parked,remount:{sceneId:'metro-square',anchorId:'bicycle-parking'},health:health(),adventure:current().adventure,routeProgress:current().routeProgress,
       exploration:{sceneId:'metro-square',entranceId:'from-cycle-route',...anchor}};
     phase='dismount';busy=true;failed=null;persist();button.hidden=true;
+    window.BearlyHeroRig?.prepareCentrumCache?.()?.catch(()=>false);
     visits().centrumContext(bridge.visitContext(0));
     try{
       const ok=await visits().centrumTransfer('dismount',token);if(token!==generation)return false;if(!ok)throw Error('Stop with grounded wheels before parking');

@@ -69,8 +69,8 @@
     document.body.classList.add('centrum-square-active');window.dispatchEvent(new CustomEvent('centrum-square-change'));follow();sync();
     say('Preparing the original bear and baby…',60);
     try{
-      if(!prepareJob)prepareJob=hero().preload().then(()=>hero().prepareCentrumCache());
-      await Promise.all([prepareJob,world().prepare(sceneId),window.BearlyCentrumStory?.prepare(),window.BearlyCentrumDirectionalRig?.preload()]);if(!active||token!==session)return;
+      if(!prepareJob)prepareJob=hero().preload().then(()=>hero().prepareCentrumCache()).then(result=>{if(result===false)prepareJob=null;return result;});
+      await Promise.all([prepareJob,world().prepare(sceneId),window.BearlyCentrumStory?.prepare(sceneId),window.BearlyCentrumDirectionalRig?.preload()]);if(!active||token!==session)return;
       if(!hero().ready())throw Error('Original character artwork is unavailable');
       loading=false;progress.discover(sceneId);say(window.BearlyCentrumDirectionalRig&&!window.BearlyCentrumDirectionalRig.ready()?'New viewing-angle artwork is unavailable; using the original side view. Walking and the route back to the bicycle remain available.':linked()?'Arrows / WASD walk · E at doors · M map · Q returns to the parked bicycle.':'Arrows / WASD walk · E at a door or passage · M map · P pause · Q returns to the ride.',9);sync();notifyLink();window.BearlyCentrumStory?.sceneEntered(sceneId);
     }catch(e){if(token!==session)return;prepareJob=null;error=String(e);loading=false;say('This place could not load. Return to the ride and try again.',60);sync();}
@@ -90,7 +90,7 @@
     if(!arrival||![1,-1].includes(arrival.face)||world().blocked(arrival.x,arrival.y,22,12,exit.toScene,snapshot())){say('This entrance is unavailable. Please use another route.');return;}
     const token=session;savePosition();returning=null;routeHint='';clear();loading=true;transition={from:sceneId,to:exit.toScene,exit:exit.id,entrance:exit.toEntrance};sync();
     try{
-      await world().prepare(exit.toScene);if(!active||token!==session)return;
+      await Promise.all([world().prepare(exit.toScene),window.BearlyCentrumStory?.prepare(exit.toScene)]);if(!active||token!==session)return;
       // One named destination anchor is the only place scene transfers set position.
       sceneId=exit.toScene;entranceId=exit.toEntrance;({x,y,face}=arrival);jump=jumpVelocity=weight=0;groundMotion=null;view='side';
       exitGuard=35;loading=false;transition=null;progress.discover(sceneId);savePosition();follow();sync();window.BearlyCentrumStory?.sceneEntered(sceneId);

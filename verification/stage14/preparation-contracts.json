@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "atUtc": "2026-11-03T11:58:28.550053+00:00",
+  "node": "v24.19.0",
+  "runtimeHashes": {
+    "js/hero-rig.js": "91a818f5af58263951f686f6554b7b8927d65d1360b6e34a7909ca9b34f9ec4f",
+    "js/npc-motion.js": "290e13eae670e41784a0dc93b6f15dc88330a40e30a5c6e91c92f62f1cb5af07",
+    "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+    "js/centrum-civilians.js": "259847773c33b053170f41da2ec20df80c4fcf51a865765ac4be2f2688735693",
+    "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+    "js/centrum-square.js": "e5d53ac69fa032c852194ab58b39bf6333fe3202929edfcb1a5a16e3d3c8e903"
+  },
+  "contracts": [
+    {
+      "command": [
+        "node",
+        "tests/centrum_scene_preparation.cjs"
+      ],
+      "passed": true,
+      "stdout": "PASS: native preloadAll unchanged; optional variants validate/deduplicate/wait; scene-specific empty/three identities; concurrent coalescing; independent failure/retry; no save writes or identity changes.",
+      "stderr": "",
+      "testSha256": "037fc1073699ca73d8665260fe66b58e6246a58cfa63bb513f3fbb32831bdf43"
+    },
+    {
+      "command": [
+        "node",
+        "tests/centrum_warmup_scheduling.cjs"
+      ],
+      "passed": true,
+      "stdout": "PASS: native idle/32ms scheduling; seven once-only tasks; foreground coalescing and cancel/stale guards; bounded pending work; partial failure resumes remaining tasks on explicit retry; no added RAF or listeners.",
+      "stderr": "",
+      "testSha256": "0826bf8904845403421e9499b297060e0874dc743f074dde17027853b4a44be3"
+    }
+  ]
+}

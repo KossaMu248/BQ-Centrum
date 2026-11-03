@@ -1,0 +1,2568 @@
+{
+  "scope": "read-only Chromium Linux desktop profiling; source debug warp to stop, native E transfer and keyboard walking",
+  "conditions": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "observedAtUtc": "2026-11-03T11:57:12Z",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "deviceScaleFactor": 1,
+    "headless": true,
+    "physicalDevice": false,
+    "cpuThrottle": null,
+    "sharedHost": true,
+    "screenRecording": false,
+    "instrumentation": "named main RAF/function timings and JSON clones; inclusive overlapping totals; not CPU trace or thermal benchmark",
+    "browser": "154.0.8037.57",
+    "touchEmulation": true
+  },
+  "errors": [],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "runtimeHashes": {
+    "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+    "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+    "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+    "js/brawler-art.js": "042627f4a89564bce96c26a7a8499ce06d1e691c6ca168e8c7dfa37950b930ee",
+    "js/brawler.js": "83f40b2a50fa24c3534adc9b90cb1ba3ee4076133a523a3d93d2fc96c05f3294",
+    "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+    "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+    "js/centrum-civilians.js": "259847773c33b053170f41da2ec20df80c4fcf51a865765ac4be2f2688735693",
+    "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+    "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+    "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+    "js/centrum-hero-cache.js": "8e292fa343074be831a0d04bb2198e528c3168c254972ee24be18031347d3706",
+    "js/centrum-inventory.js": "b57ee93a98de53d86d567518cae65be5703dcd575a6117f4ffa610904cfd8903",
+    "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+    "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+    "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+    "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+    "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+    "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+    "js/centrum-square.js": "e5d53ac69fa032c852194ab58b39bf6333fe3202929edfcb1a5a16e3d3c8e903",
+    "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+    "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+    "js/game.js": "248aec12aff399f0c0d3c3506b00c9fa989ecbe08af4484e37840a36cc5ecec0",
+    "js/hero-rig.js": "91a818f5af58263951f686f6554b7b8927d65d1360b6e34a7909ca9b34f9ec4f",
+    "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+    "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+    "js/illustrated-kids.js": "ae3a7dd4d5409ae8562f427bc655c494f8a46ef2c1862ea2bb640449a0f03444",
+    "js/illustrated-neighbourhood.js": "71417eda5219cc410288dee15034cea96ca82d0c107e9f1cfd458dfe664609b0",
+    "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+    "js/illustrated-visits.js": "1fd3a8f60a019b1529db6859d16be51ca8b35c2bb82ada9c4ef1dedab58c9003",
+    "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+    "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+    "js/npc-motion.js": "290e13eae670e41784a0dc93b6f15dc88330a40e30a5c6e91c92f62f1cb5af07",
+    "js/street-life.js": "8547a6829602b9c2070add14e2d89083299fa3c6e01d15885fe5f6b07d46f994",
+    "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+    "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d",
+    "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+    "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+    "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+    "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+    "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+    "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a"
+  },
+  "coldReadyWallSeconds": 0.9422797810000247,
+  "build": "BQ_CENTRUM_STAGE14",
+  "baselineCommit": null,
+  "servedRuntimeHashes": {},
+  "startup": {
+    "beganAt": 271.10000000009313,
+    "ready": true,
+    "requested": false,
+    "readyAt": 861.3000000000466,
+    "firstFrameAt": 895.3000000000466,
+    "errors": [],
+    "state": "menu",
+    "x": 210,
+    "speed": 0,
+    "renderScale": 1,
+    "backingWidth": 1160,
+    "backingHeight": 640,
+    "requestedImages": 25,
+    "registeredImages": 733,
+    "readyImages": 25
+  },
+  "transferToExplorationWallSeconds": 3.7102917500000103,
+  "beforeCaches": {
+    "hero": {
+      "frames": 51,
+      "bytes": 9999384,
+      "limitBytes": 33554432,
+      "frameLimit": 98,
+      "phases": 48,
+      "canonicalHeight": 280,
+      "hits": 7,
+      "misses": 1,
+      "transientBuilds": 0,
+      "bitmapFrames": 51,
+      "bitmapFailures": 0,
+      "mode": "bitmap",
+      "pendingBitmaps": 0,
+      "buildMs": 10.900000000023283,
+      "maxBuildMs": 10.900000000023283,
+      "scratchBytes": 0,
+      "sourceWarmup": {
+        "prepared": 7,
+        "total": 7,
+        "complete": true,
+        "buildMs": 138.09999999997672,
+        "maxTaskMs": 36.199999999953434,
+        "foreground": true,
+        "pending": 0,
+        "failure": null,
+        "retries": 0
+      }
+    },
+    "npc": {
+      "preparationMode": "compiled",
+      "cacheFailure": null,
+      "onDemand": true,
+      "visibleComplete": true,
+      "requestedVariants": [
+        4
+      ],
+      "phaseCount": 48,
+      "canonicalHeight": 144,
+      "frameCount": 48,
+      "capacity": 576,
+      "bytes": 3808512,
+      "limitBytes": 50331648,
+      "hits": 0,
+      "misses": 0,
+      "bakes": 48,
+      "buildMs": 410.89999999990687,
+      "maxBuildMs": 11.29999999993015,
+      "mainBuildMs": 0,
+      "maxMainBuildMs": 0,
+      "mode": "compiled",
+      "warmupMs": 4428.300000000047,
+      "complete": false,
+      "variants": [
+        {
+          "variant": 0,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 9,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 11,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 10,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 1,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 2,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 3,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 4,
+          "frames": 48,
+          "width": 116,
+          "height": 171,
+          "bytes": 3808512,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 5,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 6,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 7,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 8,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        }
+      ]
+    },
+    "world": {
+      "mode": "immutable-raster-chunks",
+      "chunkWidth": 512,
+      "overscan": 128,
+      "scale": 1.35,
+      "limitBytes": 41943040,
+      "hits": 1222,
+      "misses": 140,
+      "builds": 30,
+      "auxBuilds": 4,
+      "auxBytes": 6228416,
+      "evictions": 5,
+      "direct": 140,
+      "bytes": 38794364,
+      "peakBytes": 41905364,
+      "buildingBytes": 0,
+      "paintMs": 117.49999999976717,
+      "maxPaintMs": 7.399999999906868,
+      "bitmapFailures": 0,
+      "entries": 29,
+      "ready": 29,
+      "pending": 0
+    },
+    "worker": {
+      "requests": 2,
+      "hits": 2,
+      "fallbacks": 0,
+      "submitted": 50,
+      "completed": 50,
+      "superseded": 0,
+      "workerBuildMs": 1473.5999999998603,
+      "maxWorkerBuildMs": 79.79999999993015,
+      "maxPending": 1,
+      "maxQueued": 0,
+      "ready": true,
+      "failure": null,
+      "pending": 0,
+      "queued": 0,
+      "frames": 50,
+      "bytes": 9810904
+    }
+  },
+  "movements": [
+    {
+      "poseReview": {
+        "selected": "side",
+        "painted": "side",
+        "authored": false,
+        "directional": {
+          "preparations": 1,
+          "draws": 0,
+          "drawCalls": 0,
+          "partBytes": 1143632,
+          "sourceBytes": 1132204,
+          "ready": true,
+          "failure": null,
+          "views": [
+            "toward",
+            "away"
+          ],
+          "hasOwnAnimationLoop": false,
+          "hasOwnInputListeners": false
+        }
+      },
+      "phase": "idle-warm",
+      "keys": [],
+      "requestedMs": 2200,
+      "before": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 248,
+        "y": 730,
+        "face": 1
+      },
+      "after": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 248,
+        "y": 730,
+        "face": 1
+      },
+      "heroCacheBefore": {
+        "frames": 51,
+        "bytes": 9999384,
+        "limitBytes": 33554432,
+        "frameLimit": 98,
+        "phases": 48,
+        "canonicalHeight": 280,
+        "hits": 7,
+        "misses": 1,
+        "transientBuilds": 0,
+        "bitmapFrames": 51,
+        "bitmapFailures": 0,
+        "mode": "bitmap",
+        "pendingBitmaps": 0,
+        "buildMs": 10.900000000023283,
+        "maxBuildMs": 10.900000000023283,
+        "scratchBytes": 0,
+        "sourceWarmup": {
+          "prepared": 7,
+          "total": 7,
+          "complete": true,
+          "buildMs": 138.09999999997672,
+          "maxTaskMs": 36.199999999953434,
+          "foreground": true,
+          "pending": 0,
+          "failure": null,
+          "retries": 0
+        }
+      },
+      "heroCacheAfter": {
+        "frames": 51,
+        "bytes": 9999384,
+        "limitBytes": 33554432,
+        "frameLimit": 98,
+        "phases": 48,
+        "canonicalHeight": 280,
+        "hits": 7,
+        "misses": 1,
+        "transientBuilds": 0,
+        "bitmapFrames": 51,
+        "bitmapFailures": 0,
+        "mode": "bitmap",
+        "pendingBitmaps": 0,
+        "buildMs": 10.900000000023283,
+        "maxBuildMs": 10.900000000023283,
+        "scratchBytes": 0,
+        "sourceWarmup": {
+          "prepared": 7,
+          "total": 7,
+          "complete": true,
+          "buildMs": 138.09999999997672,
+          "maxTaskMs": 36.199999999953434,
+          "foreground": true,
+          "pending": 0,
+          "failure": null,
+          "retries": 0
+        }
+      }
+    },
+    {
+      "poseReview": {
+        "selected": "side",
+        "painted": "side",
+        "authored": false,
+        "directional": {
+          "preparations": 1,
+          "draws": 0,
+          "drawCalls": 0,
+          "partBytes": 1143632,
+          "sourceBytes": 1132204,
+          "ready": true,
+          "failure": null,
+          "views": [
+            "toward",
+            "away"
+          ],
+          "hasOwnAnimationLoop": false,
+          "hasOwnInputListeners": false
+        }
+      },
+      "phase": "horizontal-right",
+      "keys": [
+        "ArrowRight"
+      ],
+      "requestedMs": 1800,
+      "before": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 248,
+        "y": 730,
+        "face": 1
+      },
+      "after": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 478.9382300000016,
+        "y": 730,
+        "face": 1
+      },
+      "heroCacheBefore": {
+        "frames": 51,
+        "bytes": 9999384,
+        "limitBytes": 33554432,
+        "frameLimit": 98,
+        "phases": 48,
+        "canonicalHeight": 280,
+        "hits": 7,
+        "misses": 1,
+        "transientBuilds": 0,
+        "bitmapFrames": 51,
+        "bitmapFailures": 0,
+        "mode": "bitmap",
+        "pendingBitmaps": 0,
+        "buildMs": 10.900000000023283,
+        "maxBuildMs": 10.900000000023283,
+        "scratchBytes": 0,
+        "sourceWarmup": {
+          "prepared": 7,
+          "total": 7,
+          "complete": true,
+          "buildMs": 138.09999999997672,
+          "maxTaskMs": 36.199999999953434,
+          "foreground": true,
+          "pending": 0,
+          "failure": null,
+          "retries": 0
+        }
+      },
+      "heroCacheAfter": {
+        "frames": 52,
+        "bytes": 10183000,
+        "limitBytes": 33554432,
+        "frameLimit": 98,
+        "phases": 48,
+        "canonicalHeight": 280,
+        "hits": 7,
+        "misses": 1,
+        "transientBuilds": 0,
+        "bitmapFrames": 52,
+        "bitmapFailures": 0,
+        "mode": "bitmap",
+        "pendingBitmaps": 0,
+        "buildMs": 10.900000000023283,
+        "maxBuildMs": 10.900000000023283,
+        "scratchBytes": 0,
+        "sourceWarmup": {
+          "prepared": 7,
+          "total": 7,
+          "complete": true,
+          "buildMs": 138.09999999997672,
+          "maxTaskMs": 36.199999999953434,
+          "foreground": true,
+          "pending": 0,
+          "failure": null,
+          "retries": 0
+        }
+      }
+    },
+    {
+      "poseReview": {
+        "selected": "away",
+        "painted": "away",
+        "authored": true,
+        "directional": {
+          "preparations": 1,
+          "draws": 60,
+          "drawCalls": 11,
+          "partBytes": 1143632,
+          "sourceBytes": 1132204,
+          "ready": true,
+          "failure": null,
+          "views": [
+            "toward",
+            "away"
+          ],
+          "hasOwnAnimationLoop": false,
+          "hasOwnInputListeners": false
+        }
+      },
+      "phase": "depth-up",
+      "keys": [
+        "ArrowUp"
+      ],
+      "requestedMs": 1000,
+      "before": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 483.7147800000017,
+        "y": 730,
+        "face": 1
+      },
+      "after": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 484.4348900000017,
+        "y": 676.3416599999995,
+        "face": 1
+      },
+      "heroCacheBefore": {
+        "frames": 52,
+        "bytes": 10183000,
+        "limitBytes": 33554432,
+        "frameLimit": 98,
+        "phases": 48,
+        "canonicalHeight": 280,
+        "hits": 7,
+        "misses": 1,
+        "transientBuilds": 0,
+        "bitmapFrames": 52,
+        "bitmapFailures": 0,
+        "mode": "bitmap",
+        "pendingBitmaps": 0,
+        "buildMs": 10.900000000023283,
+        "maxBuildMs": 10.900000000023283,
+        "scratchBytes": 0,
+        "sourceWarmup": {
+          "prepared": 7,
+          "total": 7,
+          "complete": true,
+          "buildMs": 138.09999999997672,
+          "maxTaskMs": 36.199999999953434,
+          "foreground": true,
+          "pending": 0,
+          "failure": null,
+          "retries": 0
+        }
+      },
+      "heroCacheAfter": {
+        "frames": 52,
+        "bytes": 10185432,
+        "limitBytes": 33554432,
+        "frameLimit": 98,
+        "phases": 48,
+        "canonicalHeight": 280,
+        "hits": 7,
+        "misses": 1,
+        "transientBuilds": 0,
+        "bitmapFrames": 52,
+        "bitmapFailures": 0,
+        "mode": "bitmap",
+        "pendingBitmaps": 0,
+        "buildMs": 10.900000000023283,
+        "maxBuildMs": 10.900000000023283,
+        "scratchBytes": 0,
+        "sourceWarmup": {
+          "prepared": 7,
+          "total": 7,
+          "complete": true,
+          "buildMs": 138.09999999997672,
+          "maxTaskMs": 36.199999999953434,
+          "foreground": true,
+          "pending": 0,
+          "failure": null,
+          "retries": 0
+        }
+      }
+    },
+    {
+      "poseReview": {
+        "selected": "toward",
+        "painted": "toward",
+        "authored": true,
+        "directional": {
+          "preparations": 1,
+          "draws": 127,
+          "drawCalls": 11,
+          "partBytes": 1143632,
+          "sourceBytes": 1132204,
+          "ready": true,
+          "failure": null,
+          "views": [
+            "toward",
+            "away"
+          ],
+          "hasOwnAnimationLoop": false,
+          "hasOwnInputListeners": false
+        }
+      },
+      "phase": "depth-down",
+      "keys": [
+        "ArrowDown"
+      ],
+      "requestedMs": 1000,
+      "before": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 484.4348900000017,
+        "y": 675.9978399999995,
+        "face": 1
+      },
+      "after": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 484.4348900000017,
+        "y": 727.6554999999995,
+        "face": 1
+      },
+      "heroCacheBefore": {
+        "frames": 52,
+        "bytes": 10185432,
+        "limitBytes": 33554432,
+        "frameLimit": 98,
+        "phases": 48,
+        "canonicalHeight": 280,
+        "hits": 7,
+        "misses": 1,
+        "transientBuilds": 0,
+        "bitmapFrames": 52,
+        "bitmapFailures": 0,
+        "mode": "bitmap",
+        "pendingBitmaps": 0,
+        "buildMs": 10.900000000023283,
+        "maxBuildMs": 10.900000000023283,
+        "scratchBytes": 0,
+        "sourceWarmup": {
+          "prepared": 7,
+          "total": 7,
+          "complete": true,
+          "buildMs": 138.09999999997672,
+          "maxTaskMs": 36.199999999953434,
+          "foreground": true,
+          "pending": 0,
+          "failure": null,
+          "retries": 0
+        }
+      },
+      "heroCacheAfter": {
+        "frames": 52,
+        "bytes": 10185432,
+        "limitBytes": 33554432,
+        "frameLimit": 98,
+        "phases": 48,
+        "canonicalHeight": 280,
+        "hits": 7,
+        "misses": 1,
+        "transientBuilds": 0,
+        "bitmapFrames": 52,
+        "bitmapFailures": 0,
+        "mode": "bitmap",
+        "pendingBitmaps": 0,
+        "buildMs": 10.900000000023283,
+        "maxBuildMs": 10.900000000023283,
+        "scratchBytes": 0,
+        "sourceWarmup": {
+          "prepared": 7,
+          "total": 7,
+          "complete": true,
+          "buildMs": 138.09999999997672,
+          "maxTaskMs": 36.199999999953434,
+          "foreground": true,
+          "pending": 0,
+          "failure": null,
+          "retries": 0
+        }
+      }
+    },
+    {
+      "poseReview": {
+        "selected": "away",
+        "painted": "away",
+        "authored": true,
+        "directional": {
+          "preparations": 1,
+          "draws": 205,
+          "drawCalls": 11,
+          "partBytes": 1143632,
+          "sourceBytes": 1132204,
+          "ready": true,
+          "failure": null,
+          "views": [
+            "toward",
+            "away"
+          ],
+          "hasOwnAnimationLoop": false,
+          "hasOwnInputListeners": false
+        }
+      },
+      "phase": "diagonal-right-up",
+      "keys": [
+        "ArrowRight",
+        "ArrowUp"
+      ],
+      "requestedMs": 1200,
+      "before": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 484.4348900000017,
+        "y": 727.9993199999996,
+        "face": 1
+      },
+      "after": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 598.2183742989034,
+        "y": 681.5881468539582,
+        "face": 1
+      },
+      "heroCacheBefore": {
+        "frames": 52,
+        "bytes": 10185432,
+        "limitBytes": 33554432,
+        "frameLimit": 98,
+        "phases": 48,
+        "canonicalHeight": 280,
+        "hits": 7,
+        "misses": 1,
+        "transientBuilds": 0,
+        "bitmapFrames": 52,
+        "bitmapFailures": 0,
+        "mode": "bitmap",
+        "pendingBitmaps": 0,
+        "buildMs": 10.900000000023283,
+        "maxBuildMs": 10.900000000023283,
+        "scratchBytes": 0,
+        "sourceWarmup": {
+          "prepared": 7,
+          "total": 7,
+          "complete": true,
+          "buildMs": 138.09999999997672,
+          "maxTaskMs": 36.199999999953434,
+          "foreground": true,
+          "pending": 0,
+          "failure": null,
+          "retries": 0
+        }
+      },
+      "heroCacheAfter": {
+        "frames": 52,
+        "bytes": 10189080,
+        "limitBytes": 33554432,
+        "frameLimit": 98,
+        "phases": 48,
+        "canonicalHeight": 280,
+        "hits": 7,
+        "misses": 1,
+        "transientBuilds": 0,
+        "bitmapFrames": 52,
+        "bitmapFailures": 0,
+        "mode": "bitmap",
+        "pendingBitmaps": 0,
+        "buildMs": 10.900000000023283,
+        "maxBuildMs": 10.900000000023283,
+        "scratchBytes": 0,
+        "sourceWarmup": {
+          "prepared": 7,
+          "total": 7,
+          "complete": true,
+          "buildMs": 138.09999999997672,
+          "maxTaskMs": 36.199999999953434,
+          "foreground": true,
+          "pending": 0,
+          "failure": null,
+          "retries": 0
+        }
+      }
+    },
+    {
+      "poseReview": {
+        "selected": "toward",
+        "painted": "toward",
+        "authored": true,
+        "directional": {
+          "preparations": 1,
+          "draws": 286,
+          "drawCalls": 11,
+          "partBytes": 1143632,
+          "sourceBytes": 1132204,
+          "ready": true,
+          "failure": null,
+          "views": [
+            "toward",
+            "away"
+          ],
+          "hasOwnAnimationLoop": false,
+          "hasOwnInputListeners": false
+        }
+      },
+      "phase": "diagonal-left-down",
+      "keys": [
+        "ArrowLeft",
+        "ArrowDown"
+      ],
+      "requestedMs": 1200,
+      "before": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 599.4820907647712,
+        "y": 681.2424568539582,
+        "face": 1
+      },
+      "after": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 487.37605410978193,
+        "y": 727.0399454264798,
+        "face": -1
+      },
+      "heroCacheBefore": {
+        "frames": 52,
+        "bytes": 10189080,
+        "limitBytes": 33554432,
+        "frameLimit": 98,
+        "phases": 48,
+        "canonicalHeight": 280,
+        "hits": 7,
+        "misses": 1,
+        "transientBuilds": 0,
+        "bitmapFrames": 52,
+        "bitmapFailures": 0,
+        "mode": "bitmap",
+        "pendingBitmaps": 0,
+        "buildMs": 10.900000000023283,
+        "maxBuildMs": 10.900000000023283,
+        "scratchBytes": 0,
+        "sourceWarmup": {
+          "prepared": 7,
+          "total": 7,
+          "complete": true,
+          "buildMs": 138.09999999997672,
+          "maxTaskMs": 36.199999999953434,
+          "foreground": true,
+          "pending": 0,
+          "failure": null,
+          "retries": 0
+        }
+      },
+      "heroCacheAfter": {
+        "frames": 52,
+        "bytes": 10189080,
+        "limitBytes": 33554432,
+        "frameLimit": 98,
+        "phases": 48,
+        "canonicalHeight": 280,
+        "hits": 7,
+        "misses": 1,
+        "transientBuilds": 0,
+        "bitmapFrames": 52,
+        "bitmapFailures": 0,
+        "mode": "bitmap",
+        "pendingBitmaps": 0,
+        "buildMs": 10.900000000023283,
+        "maxBuildMs": 10.900000000023283,
+        "scratchBytes": 0,
+        "sourceWarmup": {
+          "prepared": 7,
+          "total": 7,
+          "complete": true,
+          "buildMs": 138.09999999997672,
+          "maxTaskMs": 36.199999999953434,
+          "foreground": true,
+          "pending": 0,
+          "failure": null,
+          "retries": 0
+        }
+      }
+    },
+    {
+      "poseReview": {
+        "selected": "toward",
+        "painted": "toward",
+        "authored": true,
+        "directional": {
+          "preparations": 1,
+          "draws": 399,
+          "drawCalls": 11,
+          "partBytes": 1143632,
+          "sourceBytes": 1132204,
+          "ready": true,
+          "failure": null,
+          "views": [
+            "toward",
+            "away"
+          ],
+          "hasOwnAnimationLoop": false,
+          "hasOwnInputListeners": false
+        }
+      },
+      "phase": "idle-after-turns",
+      "keys": [],
+      "requestedMs": 1800,
+      "before": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 486.11154003206934,
+        "y": 727.3822854264798,
+        "face": -1
+      },
+      "after": {
+        "sceneId": "metro-square",
+        "entranceId": "from-cycle-route",
+        "x": 486.11154003206934,
+        "y": 727.3822854264798,
+        "face": -1
+      },
+      "heroCacheBefore": {
+        "frames": 52,
+        "bytes": 10189080,
+        "limitBytes": 33554432,
+        "frameLimit": 98,
+        "phases": 48,
+        "canonicalHeight": 280,
+        "hits": 7,
+        "misses": 1,
+        "transientBuilds": 0,
+        "bitmapFrames": 52,
+        "bitmapFailures": 0,
+        "mode": "bitmap",
+        "pendingBitmaps": 0,
+        "buildMs": 10.900000000023283,
+        "maxBuildMs": 10.900000000023283,
+        "scratchBytes": 0,
+        "sourceWarmup": {
+          "prepared": 7,
+          "total": 7,
+          "complete": true,
+          "buildMs": 138.09999999997672,
+          "maxTaskMs": 36.199999999953434,
+          "foreground": true,
+          "pending": 0,
+          "failure": null,
+          "retries": 0
+        }
+      },
+      "heroCacheAfter": {
+        "frames": 52,
+        "bytes": 10189080,
+        "limitBytes": 33554432,
+        "frameLimit": 98,
+        "phases": 48,
+        "canonicalHeight": 280,
+        "hits": 7,
+        "misses": 1,
+        "transientBuilds": 0,
+        "bitmapFrames": 52,
+        "bitmapFailures": 0,
+        "mode": "bitmap",
+        "pendingBitmaps": 0,
+        "buildMs": 10.900000000023283,
+        "maxBuildMs": 10.900000000023283,
+        "scratchBytes": 0,
+        "sourceWarmup": {
+          "prepared": 7,
+          "total": 7,
+          "complete": true,
+          "buildMs": 138.09999999997672,
+          "maxTaskMs": 36.199999999953434,
+          "foreground": true,
+          "pending": 0,
+          "failure": null,
+          "retries": 0
+        }
+      }
+    }
+  ],
+  "afterCaches": {
+    "hero": {
+      "frames": 52,
+      "bytes": 10189080,
+      "limitBytes": 33554432,
+      "frameLimit": 98,
+      "phases": 48,
+      "canonicalHeight": 280,
+      "hits": 7,
+      "misses": 1,
+      "transientBuilds": 0,
+      "bitmapFrames": 52,
+      "bitmapFailures": 0,
+      "mode": "bitmap",
+      "pendingBitmaps": 0,
+      "buildMs": 10.900000000023283,
+      "maxBuildMs": 10.900000000023283,
+      "scratchBytes": 0,
+      "sourceWarmup": {
+        "prepared": 7,
+        "total": 7,
+        "complete": true,
+        "buildMs": 138.09999999997672,
+        "maxTaskMs": 36.199999999953434,
+        "foreground": true,
+        "pending": 0,
+        "failure": null,
+        "retries": 0
+      }
+    },
+    "npc": {
+      "preparationMode": "compiled",
+      "cacheFailure": null,
+      "onDemand": true,
+      "visibleComplete": true,
+      "requestedVariants": [
+        4
+      ],
+      "phaseCount": 48,
+      "canonicalHeight": 144,
+      "frameCount": 48,
+      "capacity": 576,
+      "bytes": 3808512,
+      "limitBytes": 50331648,
+      "hits": 0,
+      "misses": 0,
+      "bakes": 48,
+      "buildMs": 410.89999999990687,
+      "maxBuildMs": 11.29999999993015,
+      "mainBuildMs": 0,
+      "maxMainBuildMs": 0,
+      "mode": "compiled",
+      "warmupMs": 15630.599999999977,
+      "complete": false,
+      "variants": [
+        {
+          "variant": 0,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 9,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 11,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 10,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 1,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 2,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 3,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 4,
+          "frames": 48,
+          "width": 116,
+          "height": 171,
+          "bytes": 3808512,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 5,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 6,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 7,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        },
+        {
+          "variant": 8,
+          "frames": 0,
+          "width": 116,
+          "height": 171,
+          "bytes": 0,
+          "hits": 0,
+          "misses": 0
+        }
+      ]
+    },
+    "world": {
+      "mode": "immutable-raster-chunks",
+      "chunkWidth": 512,
+      "overscan": 128,
+      "scale": 1.35,
+      "limitBytes": 41943040,
+      "hits": 1222,
+      "misses": 140,
+      "builds": 30,
+      "auxBuilds": 4,
+      "auxBytes": 6228416,
+      "evictions": 5,
+      "direct": 140,
+      "bytes": 38794364,
+      "peakBytes": 41905364,
+      "buildingBytes": 0,
+      "paintMs": 117.49999999976717,
+      "maxPaintMs": 7.399999999906868,
+      "bitmapFailures": 0,
+      "entries": 29,
+      "ready": 29,
+      "pending": 0
+    },
+    "worker": {
+      "requests": 233,
+      "hits": 200,
+      "fallbacks": 33,
+      "submitted": 70,
+      "completed": 70,
+      "superseded": 13,
+      "workerBuildMs": 1969.5,
+      "maxWorkerBuildMs": 79.79999999993015,
+      "maxPending": 1,
+      "maxQueued": 1,
+      "ready": true,
+      "failure": null,
+      "pending": 0,
+      "queued": 0,
+      "frames": 51,
+      "bytes": 10000600
+    }
+  },
+  "stats": {
+    "fps": 60,
+    "drawMs": 1.0888655944043226,
+    "steps": 0,
+    "frames": 22,
+    "lastSample": 15993.2,
+    "lastUi": 0
+  },
+  "phases": {
+    "cold": {
+      "frames": 11,
+      "intervalMs": {
+        "median": 16.699999999999932,
+        "p95": 33.399999999999864,
+        "max": 66.69999999999993
+      },
+      "mainLoopCpuMs": {
+        "median": 2.799999999930151,
+        "p95": 13,
+        "max": 20.800000000046566
+      },
+      "functions": {}
+    },
+    "transfer-cold": {
+      "frames": 126,
+      "intervalMs": {
+        "median": 33.30000000000018,
+        "p95": 50.09999999999991,
+        "max": 100
+      },
+      "mainLoopCpuMs": {
+        "median": 18.099999999976717,
+        "p95": 23.399999999906868,
+        "max": 46.300000000046566
+      },
+      "functions": {
+        "BearlyCentrumEconomy.update": {
+          "n": 126,
+          "total": 3.0000000002328306,
+          "max": 0.7999999999301508,
+          "bytes": 0,
+          "meanMs": 0.02380952381137167,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 1.0
+        },
+        "JSON.stringify": {
+          "n": 2143,
+          "total": 40.59999999962747,
+          "max": 14.20000000006985,
+          "bytes": 4954709,
+          "meanMs": 0.018945403639583514,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 17.00793650793651
+        },
+        "JSON.parse": {
+          "n": 2101,
+          "total": 39.900000000721775,
+          "max": 0.8999999999068677,
+          "bytes": 4882694,
+          "meanMs": 0.018990956687635306,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 16.674603174603174
+        },
+        "BearlyCentrumInventory.update": {
+          "n": 126,
+          "total": 87.2999999995809,
+          "max": 5.699999999953434,
+          "bytes": 0,
+          "meanMs": 0.6928571428538167,
+          "medianMs": 0.5,
+          "p95Ms": 1.099999999976717,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.render": {
+          "n": 126,
+          "total": 73.89999999955762,
+          "max": 15.400000000023283,
+          "bytes": 0,
+          "meanMs": 0.5865079365044256,
+          "medianMs": 0,
+          "p95Ms": 1.599999999976717,
+          "perFrame": 1.0
+        },
+        "BearlyNpcMotion.draw": {
+          "n": 93,
+          "total": 1.8999999997904524,
+          "max": 0.39999999990686774,
+          "bytes": 0,
+          "meanMs": 0.02043010752462852,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 0.7380952380952381
+        },
+        "BearlyCentrumScenes.get": {
+          "n": 401,
+          "total": 12.400000000023283,
+          "max": 0.40000000002328306,
+          "bytes": 0,
+          "meanMs": 0.03092269326689098,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 3.1825396825396823
+        },
+        "BearlyVisits.audit": {
+          "n": 436,
+          "total": 41.79999999923166,
+          "max": 1.6999999999534339,
+          "bytes": 0,
+          "meanMs": 0.09587155963126527,
+          "medianMs": 0.09999999997671694,
+          "p95Ms": 0.2000000000698492,
+          "perFrame": 3.4603174603174605
+        },
+        "BearlyHeroRig.draw": {
+          "n": 11,
+          "total": 148.20000000006985,
+          "max": 31.900000000023283,
+          "bytes": 0,
+          "meanMs": 13.472727272733623,
+          "medianMs": 16.199999999953434,
+          "p95Ms": 16.900000000023283,
+          "perFrame": 0.0873015873015873
+        },
+        "BearlyCentrumSquareWorld.drawBase": {
+          "n": 33,
+          "total": 13.299999999348074,
+          "max": 1.7999999999301508,
+          "bytes": 0,
+          "meanMs": 0.4030303030105477,
+          "medianMs": 0.39999999990686774,
+          "p95Ms": 0.5,
+          "perFrame": 0.2619047619047619
+        },
+        "BearlyCentrumSquareWorld.drawables": {
+          "n": 33,
+          "total": 1.2000000001862645,
+          "max": 0.2000000000698492,
+          "bytes": 0,
+          "meanMs": 0.03636363636928074,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 0.2619047619047619
+        },
+        "BearlyCentrumStory.decorate": {
+          "n": 33,
+          "total": 1.3999999999068677,
+          "max": 0.8999999999068677,
+          "bytes": 0,
+          "meanMs": 0.04242424242142023,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 0.2619047619047619
+        },
+        "BearlyCentrumStory.update": {
+          "n": 3,
+          "total": 1.099999999976717,
+          "max": 0.5,
+          "bytes": 0,
+          "meanMs": 0.3666666666589056,
+          "medianMs": 0.30000000004656613,
+          "p95Ms": 0.30000000004656613,
+          "perFrame": 0.023809523809523808
+        },
+        "BearlyCentrumSquare.update": {
+          "n": 3,
+          "total": 5.000000000116415,
+          "max": 2.5,
+          "bytes": 0,
+          "meanMs": 1.6666666667054717,
+          "medianMs": 1.400000000023283,
+          "p95Ms": 1.400000000023283,
+          "perFrame": 0.023809523809523808
+        }
+      }
+    },
+    "idle-warm": {
+      "frames": 123,
+      "intervalMs": {
+        "median": 16.699999999999818,
+        "p95": 33.399999999999636,
+        "max": 33.400000000000546
+      },
+      "mainLoopCpuMs": {
+        "median": 3.5,
+        "p95": 5.200000000069849,
+        "max": 9.20000000006985
+      },
+      "functions": {
+        "JSON.stringify": {
+          "n": 6075,
+          "total": 65.2999999995809,
+          "max": 2.099999999976717,
+          "bytes": 15262479,
+          "meanMs": 0.01074897119334665,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 49.390243902439025
+        },
+        "JSON.parse": {
+          "n": 6059,
+          "total": 101.30000000086147,
+          "max": 1.1000000000931323,
+          "bytes": 15243015,
+          "meanMs": 0.016718930516729076,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 49.260162601626014
+        },
+        "BearlyCentrumScenes.get": {
+          "n": 2589,
+          "total": 89.50000000139698,
+          "max": 4.100000000093132,
+          "bytes": 0,
+          "meanMs": 0.03456933178887485,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 21.048780487804876
+        },
+        "BearlyCentrumStory.update": {
+          "n": 123,
+          "total": 35.80000000062864,
+          "max": 0.9000000000232831,
+          "bytes": 0,
+          "meanMs": 0.2910569105742166,
+          "medianMs": 0.30000000004656613,
+          "p95Ms": 0.40000000002328306,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.update": {
+          "n": 123,
+          "total": 150.9000000002561,
+          "max": 5.100000000093132,
+          "bytes": 0,
+          "meanMs": 1.2268292682947652,
+          "medianMs": 1.099999999976717,
+          "p95Ms": 1.8999999999068677,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumEconomy.update": {
+          "n": 123,
+          "total": 1.8000000000465661,
+          "max": 0.19999999995343387,
+          "bytes": 0,
+          "meanMs": 0.014634146341842002,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyVisits.audit": {
+          "n": 246,
+          "total": 29.600000000558794,
+          "max": 0.9000000000232831,
+          "bytes": 0,
+          "meanMs": 0.12032520325430404,
+          "medianMs": 0.09999999997671694,
+          "p95Ms": 0.2000000000698492,
+          "perFrame": 2.0
+        },
+        "BearlyCentrumInventory.update": {
+          "n": 123,
+          "total": 126.4000000001397,
+          "max": 3,
+          "bytes": 0,
+          "meanMs": 1.0276422764239,
+          "medianMs": 1,
+          "p95Ms": 1.3999999999068677,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawBase": {
+          "n": 123,
+          "total": 43.999999999650754,
+          "max": 1.5,
+          "bytes": 0,
+          "meanMs": 0.35772357723293297,
+          "medianMs": 0.30000000004656613,
+          "p95Ms": 0.5999999999767169,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawables": {
+          "n": 123,
+          "total": 5.500000000698492,
+          "max": 0.2000000000698492,
+          "bytes": 0,
+          "meanMs": 0.04471544716015034,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumStory.decorate": {
+          "n": 123,
+          "total": 1.6999999998370185,
+          "max": 0.2000000000698492,
+          "bytes": 0,
+          "meanMs": 0.013821138210057062,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyHeroRig.draw": {
+          "n": 123,
+          "total": 25.90000000037253,
+          "max": 1.400000000023283,
+          "bytes": 0,
+          "meanMs": 0.2105691056940856,
+          "medianMs": 0.19999999995343387,
+          "p95Ms": 0.39999999990686774,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.render": {
+          "n": 123,
+          "total": 164.20000000030268,
+          "max": 3.1000000000931323,
+          "bytes": 0,
+          "meanMs": 1.3349593495959569,
+          "medianMs": 1.2999999999301508,
+          "p95Ms": 1.900000000023283,
+          "perFrame": 1.0
+        }
+      }
+    },
+    "horizontal-right": {
+      "frames": 102,
+      "intervalMs": {
+        "median": 16.699999999999818,
+        "p95": 33.30000000000018,
+        "max": 33.399999999999636
+      },
+      "mainLoopCpuMs": {
+        "median": 3.5,
+        "p95": 5.299999999930151,
+        "max": 8.5
+      },
+      "functions": {
+        "JSON.stringify": {
+          "n": 4454,
+          "total": 46.20000000006985,
+          "max": 2.1000000000931323,
+          "bytes": 10779352,
+          "meanMs": 0.010372698697815413,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 43.666666666666664
+        },
+        "JSON.parse": {
+          "n": 4404,
+          "total": 80.30000000016298,
+          "max": 0.6999999999534339,
+          "bytes": 10675274,
+          "meanMs": 0.018233424159891685,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 43.1764705882353
+        },
+        "BearlyCentrumScenes.get": {
+          "n": 1471,
+          "total": 55.00000000046566,
+          "max": 0.5,
+          "bytes": 0,
+          "meanMs": 0.037389530931655784,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 14.42156862745098
+        },
+        "BearlyCentrumStory.update": {
+          "n": 102,
+          "total": 33.10000000032596,
+          "max": 1.099999999976717,
+          "bytes": 0,
+          "meanMs": 0.32450980392476436,
+          "medianMs": 0.30000000004656613,
+          "p95Ms": 0.5,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.update": {
+          "n": 102,
+          "total": 106.50000000046566,
+          "max": 2.200000000069849,
+          "bytes": 0,
+          "meanMs": 1.0441176470633888,
+          "medianMs": 1,
+          "p95Ms": 1.5,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumEconomy.update": {
+          "n": 102,
+          "total": 2.1000000002095476,
+          "max": 0.5,
+          "bytes": 0,
+          "meanMs": 0.020588235296172035,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 1.0
+        },
+        "BearlyVisits.audit": {
+          "n": 205,
+          "total": 29.9000000001397,
+          "max": 2.300000000046566,
+          "bytes": 0,
+          "meanMs": 0.1458536585372668,
+          "medianMs": 0.09999999997671694,
+          "p95Ms": 0.30000000004656613,
+          "perFrame": 2.0098039215686274
+        },
+        "BearlyCentrumInventory.update": {
+          "n": 102,
+          "total": 126.4000000001397,
+          "max": 5.599999999976717,
+          "bytes": 0,
+          "meanMs": 1.2392156862758794,
+          "medianMs": 1,
+          "p95Ms": 2.800000000046566,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawBase": {
+          "n": 102,
+          "total": 34.100000000791624,
+          "max": 1.1000000000931323,
+          "bytes": 0,
+          "meanMs": 0.3343137254979571,
+          "medianMs": 0.30000000004656613,
+          "p95Ms": 0.5,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawables": {
+          "n": 102,
+          "total": 4.099999999976717,
+          "max": 0.19999999995343387,
+          "bytes": 0,
+          "meanMs": 0.04019607843114428,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumStory.decorate": {
+          "n": 102,
+          "total": 1.099999999976717,
+          "max": 0.10000000009313226,
+          "bytes": 0,
+          "meanMs": 0.01078431372526193,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyHeroRig.draw": {
+          "n": 102,
+          "total": 21.300000000046566,
+          "max": 0.8000000000465661,
+          "bytes": 0,
+          "meanMs": 0.20882352941222124,
+          "medianMs": 0.19999999995343387,
+          "p95Ms": 0.40000000002328306,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.render": {
+          "n": 102,
+          "total": 133.29999999934807,
+          "max": 3.6000000000931323,
+          "bytes": 0,
+          "meanMs": 1.3068627450916477,
+          "medianMs": 1.1999999999534339,
+          "p95Ms": 1.900000000023283,
+          "perFrame": 1.0
+        }
+      }
+    },
+    "depth-up": {
+      "frames": 65,
+      "intervalMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "max": 33.30000000000109
+      },
+      "mainLoopCpuMs": {
+        "median": 3.099999999976717,
+        "p95": 4.900000000023283,
+        "max": 7.699999999953434
+      },
+      "functions": {
+        "JSON.stringify": {
+          "n": 2744,
+          "total": 29.499999999650754,
+          "max": 5.099999999976717,
+          "bytes": 6398283,
+          "meanMs": 0.010750728862846485,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 42.215384615384615
+        },
+        "JSON.parse": {
+          "n": 2719,
+          "total": 38.39999999979045,
+          "max": 0.39999999990686774,
+          "bytes": 6345814,
+          "meanMs": 0.014122839279069677,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 41.83076923076923
+        },
+        "BearlyCentrumScenes.get": {
+          "n": 855,
+          "total": 28.499999999417923,
+          "max": 0.5999999999767169,
+          "bytes": 0,
+          "meanMs": 0.033333333332652544,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 13.153846153846153
+        },
+        "BearlyCentrumStory.update": {
+          "n": 65,
+          "total": 24.700000000651926,
+          "max": 4.800000000046566,
+          "bytes": 0,
+          "meanMs": 0.38000000001002965,
+          "medianMs": 0.2999999999301508,
+          "p95Ms": 0.7000000000698492,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.update": {
+          "n": 65,
+          "total": 64.10000000009313,
+          "max": 5.300000000046566,
+          "bytes": 0,
+          "meanMs": 0.986153846155279,
+          "medianMs": 0.8999999999068677,
+          "p95Ms": 1.599999999976717,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumEconomy.update": {
+          "n": 65,
+          "total": 1,
+          "max": 0.40000000002328306,
+          "bytes": 0,
+          "meanMs": 0.015384615384615385,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyVisits.audit": {
+          "n": 131,
+          "total": 13.400000000256114,
+          "max": 0.30000000004656613,
+          "bytes": 0,
+          "meanMs": 0.10229007633783294,
+          "medianMs": 0.09999999997671694,
+          "p95Ms": 0.2000000000698492,
+          "perFrame": 2.0153846153846153
+        },
+        "BearlyCentrumInventory.update": {
+          "n": 65,
+          "total": 56.00000000023283,
+          "max": 1.400000000023283,
+          "bytes": 0,
+          "meanMs": 0.8615384615420435,
+          "medianMs": 0.8000000000465661,
+          "p95Ms": 1.1000000000931323,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawBase": {
+          "n": 65,
+          "total": 18.100000000558794,
+          "max": 0.40000000002328306,
+          "bytes": 0,
+          "meanMs": 0.2784615384701353,
+          "medianMs": 0.2999999999301508,
+          "p95Ms": 0.40000000002328306,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawables": {
+          "n": 65,
+          "total": 2.599999999976717,
+          "max": 0.40000000002328306,
+          "bytes": 0,
+          "meanMs": 0.0399999999996418,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumStory.decorate": {
+          "n": 65,
+          "total": 0.9000000001396984,
+          "max": 0.30000000004656613,
+          "bytes": 0,
+          "meanMs": 0.013846153848303053,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyHeroRig.draw": {
+          "n": 65,
+          "total": 14.300000000745058,
+          "max": 1.7000000000698492,
+          "bytes": 0,
+          "meanMs": 0.22000000001146244,
+          "medianMs": 0.19999999995343387,
+          "p95Ms": 0.39999999990686774,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.render": {
+          "n": 65,
+          "total": 84.89999999932479,
+          "max": 6.099999999976717,
+          "bytes": 0,
+          "meanMs": 1.3061538461434583,
+          "medianMs": 1.1000000000931323,
+          "p95Ms": 1.599999999976717,
+          "perFrame": 1.0
+        }
+      }
+    },
+    "depth-down": {
+      "frames": 67,
+      "intervalMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "max": 16.80000000000109
+      },
+      "mainLoopCpuMs": {
+        "median": 2.900000000023283,
+        "p95": 3.6000000000931323,
+        "max": 3.900000000023283
+      },
+      "functions": {
+        "JSON.stringify": {
+          "n": 2826,
+          "total": 26.40000000060536,
+          "max": 0.8000000000465661,
+          "bytes": 6582414,
+          "meanMs": 0.009341825902549667,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 42.17910447761194
+        },
+        "JSON.parse": {
+          "n": 2801,
+          "total": 39.69999999948777,
+          "max": 0.30000000004656613,
+          "bytes": 6529819,
+          "meanMs": 0.014173509460723946,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 41.80597014925373
+        },
+        "BearlyCentrumScenes.get": {
+          "n": 881,
+          "total": 29.30000000097789,
+          "max": 0.5,
+          "bytes": 0,
+          "meanMs": 0.0332576617491236,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 13.149253731343284
+        },
+        "BearlyCentrumStory.update": {
+          "n": 67,
+          "total": 18.5999999998603,
+          "max": 0.7000000000698492,
+          "bytes": 0,
+          "meanMs": 0.2776119402964224,
+          "medianMs": 0.2000000000698492,
+          "p95Ms": 0.40000000002328306,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.update": {
+          "n": 67,
+          "total": 57.79999999969732,
+          "max": 1.599999999976717,
+          "bytes": 0,
+          "meanMs": 0.8626865671596615,
+          "medianMs": 0.8000000000465661,
+          "p95Ms": 1.1999999999534339,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumEconomy.update": {
+          "n": 67,
+          "total": 0.8000000000465661,
+          "max": 0.30000000004656613,
+          "bytes": 0,
+          "meanMs": 0.011940298508157704,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyVisits.audit": {
+          "n": 135,
+          "total": 15.600000000209548,
+          "max": 1,
+          "bytes": 0,
+          "meanMs": 0.11555555555710775,
+          "medianMs": 0.09999999997671694,
+          "p95Ms": 0.2000000000698492,
+          "perFrame": 2.014925373134328
+        },
+        "BearlyCentrumInventory.update": {
+          "n": 67,
+          "total": 58.29999999993015,
+          "max": 1.900000000023283,
+          "bytes": 0,
+          "meanMs": 0.8701492537303007,
+          "medianMs": 0.8000000000465661,
+          "p95Ms": 1.099999999976717,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawBase": {
+          "n": 67,
+          "total": 17.099999999976717,
+          "max": 0.5,
+          "bytes": 0,
+          "meanMs": 0.2552238805966674,
+          "medianMs": 0.2999999999301508,
+          "p95Ms": 0.40000000002328306,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawables": {
+          "n": 67,
+          "total": 1.9999999998835847,
+          "max": 0.2000000000698492,
+          "bytes": 0,
+          "meanMs": 0.029850746266919175,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumStory.decorate": {
+          "n": 67,
+          "total": 1.0000000001164153,
+          "max": 0.30000000004656613,
+          "bytes": 0,
+          "meanMs": 0.0149253731360659,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyHeroRig.draw": {
+          "n": 67,
+          "total": 12.099999999511056,
+          "max": 1.099999999976717,
+          "bytes": 0,
+          "meanMs": 0.18059701491807545,
+          "medianMs": 0.19999999995343387,
+          "p95Ms": 0.2999999999301508,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.render": {
+          "n": 67,
+          "total": 74.39999999979045,
+          "max": 1.900000000023283,
+          "bytes": 0,
+          "meanMs": 1.1104477611909023,
+          "medianMs": 1,
+          "p95Ms": 1.400000000023283,
+          "perFrame": 1.0
+        }
+      }
+    },
+    "diagonal-right-up": {
+      "frames": 79,
+      "intervalMs": {
+        "median": 16.69999999999891,
+        "p95": 16.80000000000109,
+        "max": 33.399999999999636
+      },
+      "mainLoopCpuMs": {
+        "median": 3.099999999976717,
+        "p95": 4.300000000046566,
+        "max": 5.5
+      },
+      "functions": {
+        "JSON.stringify": {
+          "n": 3334,
+          "total": 32.60000000009313,
+          "max": 0.6999999999534339,
+          "bytes": 7798754,
+          "meanMs": 0.00977804439114971,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 42.20253164556962
+        },
+        "JSON.parse": {
+          "n": 3302,
+          "total": 51.29999999864958,
+          "max": 0.7000000000698492,
+          "bytes": 7731715,
+          "meanMs": 0.01553603876397625,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 41.79746835443038
+        },
+        "BearlyCentrumScenes.get": {
+          "n": 1037,
+          "total": 37.89999999885913,
+          "max": 0.9000000000232831,
+          "bytes": 0,
+          "meanMs": 0.03654773384653725,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 13.126582278481013
+        },
+        "BearlyCentrumStory.update": {
+          "n": 79,
+          "total": 19.700000000419095,
+          "max": 1.2000000000698492,
+          "bytes": 0,
+          "meanMs": 0.24936708861289994,
+          "medianMs": 0.2000000000698492,
+          "p95Ms": 0.40000000002328306,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.update": {
+          "n": 79,
+          "total": 71.9000000001397,
+          "max": 2,
+          "bytes": 0,
+          "meanMs": 0.9101265822802493,
+          "medianMs": 0.8000000000465661,
+          "p95Ms": 1.400000000023283,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumEconomy.update": {
+          "n": 79,
+          "total": 1.6999999998370185,
+          "max": 0.39999999990686774,
+          "bytes": 0,
+          "meanMs": 0.021518987339709094,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyVisits.audit": {
+          "n": 160,
+          "total": 17.799999999813735,
+          "max": 2.400000000023283,
+          "bytes": 0,
+          "meanMs": 0.11124999999883585,
+          "medianMs": 0.09999999997671694,
+          "p95Ms": 0.2000000000698492,
+          "perFrame": 2.0253164556962027
+        },
+        "BearlyCentrumInventory.update": {
+          "n": 79,
+          "total": 71.80000000016298,
+          "max": 3.299999999930151,
+          "bytes": 0,
+          "meanMs": 0.908860759495734,
+          "medianMs": 0.9000000000232831,
+          "p95Ms": 1.1000000000931323,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawBase": {
+          "n": 79,
+          "total": 24.19999999983702,
+          "max": 1.599999999976717,
+          "bytes": 0,
+          "meanMs": 0.3063291139219876,
+          "medianMs": 0.30000000004656613,
+          "p95Ms": 0.40000000002328306,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawables": {
+          "n": 79,
+          "total": 2.4999999998835847,
+          "max": 0.10000000009313226,
+          "bytes": 0,
+          "meanMs": 0.031645569618779554,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumStory.decorate": {
+          "n": 79,
+          "total": 1,
+          "max": 0.2999999999301508,
+          "bytes": 0,
+          "meanMs": 0.012658227848101266,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyHeroRig.draw": {
+          "n": 79,
+          "total": 17.599999999976717,
+          "max": 2.199999999953434,
+          "bytes": 0,
+          "meanMs": 0.22278481012628756,
+          "medianMs": 0.19999999995343387,
+          "p95Ms": 0.40000000002328306,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.render": {
+          "n": 79,
+          "total": 98.49999999941792,
+          "max": 3.300000000046566,
+          "bytes": 0,
+          "meanMs": 1.2468354430306066,
+          "medianMs": 1.099999999976717,
+          "p95Ms": 1.900000000023283,
+          "perFrame": 1.0
+        }
+      }
+    },
+    "diagonal-left-down": {
+      "frames": 82,
+      "intervalMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "max": 33.19999999999891
+      },
+      "mainLoopCpuMs": {
+        "median": 3,
+        "p95": 3.800000000046566,
+        "max": 12.400000000023283
+      },
+      "functions": {
+        "JSON.stringify": {
+          "n": 3493,
+          "total": 32.800000000046566,
+          "max": 0.5999999999767169,
+          "bytes": 8152604,
+          "meanMs": 0.009390208989420718,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 42.59756097560975
+        },
+        "JSON.parse": {
+          "n": 3450,
+          "total": 55.39999999932479,
+          "max": 0.2000000000698492,
+          "bytes": 8061836,
+          "meanMs": 0.01605797101429704,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 42.073170731707314
+        },
+        "BearlyCentrumScenes.get": {
+          "n": 1080,
+          "total": 36.299999999115244,
+          "max": 0.2000000000698492,
+          "bytes": 0,
+          "meanMs": 0.03361111111029189,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 13.170731707317072
+        },
+        "BearlyCentrumStory.update": {
+          "n": 82,
+          "total": 20.79999999993015,
+          "max": 0.5999999999767169,
+          "bytes": 0,
+          "meanMs": 0.25365853658451404,
+          "medianMs": 0.2999999999301508,
+          "p95Ms": 0.39999999990686774,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.update": {
+          "n": 82,
+          "total": 73.90000000025611,
+          "max": 2,
+          "bytes": 0,
+          "meanMs": 0.9012195121982453,
+          "medianMs": 0.9000000000232831,
+          "p95Ms": 1.099999999976717,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumEconomy.update": {
+          "n": 82,
+          "total": 2.400000000023283,
+          "max": 1,
+          "bytes": 0,
+          "meanMs": 0.02926829268321077,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyVisits.audit": {
+          "n": 166,
+          "total": 19.70000000030268,
+          "max": 0.6999999999534339,
+          "bytes": 0,
+          "meanMs": 0.1186746987970041,
+          "medianMs": 0.09999999997671694,
+          "p95Ms": 0.2000000000698492,
+          "perFrame": 2.024390243902439
+        },
+        "BearlyCentrumInventory.update": {
+          "n": 82,
+          "total": 75.69999999948777,
+          "max": 1.5,
+          "bytes": 0,
+          "meanMs": 0.9231707317010704,
+          "medianMs": 0.9000000000232831,
+          "p95Ms": 1.1999999999534339,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawBase": {
+          "n": 82,
+          "total": 31.600000000209548,
+          "max": 8.300000000046566,
+          "bytes": 0,
+          "meanMs": 0.38536585366109205,
+          "medianMs": 0.2999999999301508,
+          "p95Ms": 0.40000000002328306,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawables": {
+          "n": 82,
+          "total": 2.4999999998835847,
+          "max": 0.2000000000698492,
+          "bytes": 0,
+          "meanMs": 0.030487804876629082,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumStory.decorate": {
+          "n": 82,
+          "total": 0.9999999998835847,
+          "max": 0.10000000009313226,
+          "bytes": 0,
+          "meanMs": 0.012195121949799813,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyHeroRig.draw": {
+          "n": 82,
+          "total": 15.90000000060536,
+          "max": 0.40000000002328306,
+          "bytes": 0,
+          "meanMs": 0.19390243903177268,
+          "medianMs": 0.2000000000698492,
+          "p95Ms": 0.30000000004656613,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.render": {
+          "n": 82,
+          "total": 97.60000000067521,
+          "max": 9.20000000006985,
+          "bytes": 0,
+          "meanMs": 1.1902439024472586,
+          "medianMs": 1.099999999976717,
+          "p95Ms": 1.400000000023283,
+          "perFrame": 1.0
+        }
+      }
+    },
+    "idle-after-turns": {
+      "frames": 113,
+      "intervalMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000000728,
+        "max": 33.30000000000109
+      },
+      "mainLoopCpuMs": {
+        "median": 2.800000000046566,
+        "p95": 3.5,
+        "max": 10
+      },
+      "functions": {
+        "JSON.stringify": {
+          "n": 4719,
+          "total": 43.69999999902211,
+          "max": 1,
+          "bytes": 11010766,
+          "meanMs": 0.009260436532956582,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 41.76106194690266
+        },
+        "JSON.parse": {
+          "n": 4690,
+          "total": 76.70000000100117,
+          "max": 6.899999999906868,
+          "bytes": 10958654,
+          "meanMs": 0.016353944563113256,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 41.50442477876106
+        },
+        "BearlyCentrumScenes.get": {
+          "n": 1479,
+          "total": 53.80000000062864,
+          "max": 6.899999999906868,
+          "bytes": 0,
+          "meanMs": 0.03637592968264276,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 13.08849557522124
+        },
+        "BearlyCentrumStory.update": {
+          "n": 113,
+          "total": 26.400000000488944,
+          "max": 0.9000000000232831,
+          "bytes": 0,
+          "meanMs": 0.23362831858839775,
+          "medianMs": 0.2000000000698492,
+          "p95Ms": 0.30000000004656613,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.update": {
+          "n": 113,
+          "total": 92.0999999998603,
+          "max": 2,
+          "bytes": 0,
+          "meanMs": 0.8150442477863743,
+          "medianMs": 0.7999999999301508,
+          "p95Ms": 1.1000000000931323,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumEconomy.update": {
+          "n": 113,
+          "total": 1.0000000001164153,
+          "max": 0.30000000004656613,
+          "bytes": 0,
+          "meanMs": 0.008849557523154118,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyVisits.audit": {
+          "n": 226,
+          "total": 23.40000000037253,
+          "max": 1.099999999976717,
+          "bytes": 0,
+          "meanMs": 0.10353982301049791,
+          "medianMs": 0.09999999997671694,
+          "p95Ms": 0.2000000000698492,
+          "perFrame": 2.0
+        },
+        "BearlyCentrumInventory.update": {
+          "n": 113,
+          "total": 94.10000000067521,
+          "max": 2.099999999976717,
+          "bytes": 0,
+          "meanMs": 0.8327433628378337,
+          "medianMs": 0.8000000000465661,
+          "p95Ms": 1,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawBase": {
+          "n": 113,
+          "total": 38.799999999580905,
+          "max": 7.199999999953434,
+          "bytes": 0,
+          "meanMs": 0.3433628318546983,
+          "medianMs": 0.2999999999301508,
+          "p95Ms": 0.5,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawables": {
+          "n": 113,
+          "total": 3.0000000002328306,
+          "max": 0.19999999995343387,
+          "bytes": 0,
+          "meanMs": 0.02654867256843213,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumStory.decorate": {
+          "n": 113,
+          "total": 2,
+          "max": 0.10000000009313226,
+          "bytes": 0,
+          "meanMs": 0.017699115044247787,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyHeroRig.draw": {
+          "n": 113,
+          "total": 21,
+          "max": 0.5,
+          "bytes": 0,
+          "meanMs": 0.18584070796460178,
+          "medianMs": 0.19999999995343387,
+          "p95Ms": 0.30000000004656613,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.render": {
+          "n": 113,
+          "total": 131.0999999998603,
+          "max": 8.199999999953434,
+          "bytes": 0,
+          "meanMs": 1.1601769911492061,
+          "medianMs": 1,
+          "p95Ms": 1.5,
+          "perFrame": 1.0
+        }
+      }
+    },
+    "readout": {
+      "frames": 3,
+      "intervalMs": {
+        "median": 16.69999999999891,
+        "p95": 16.69999999999891,
+        "max": 16.700000000000728
+      },
+      "mainLoopCpuMs": {
+        "median": 3.099999999976717,
+        "p95": 3.099999999976717,
+        "max": 3.700000000069849
+      },
+      "functions": {
+        "JSON.stringify": {
+          "n": 123,
+          "total": 1.6999999999534339,
+          "max": 0.10000000009313226,
+          "bytes": 286830,
+          "meanMs": 0.013821138211003527,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 41.0
+        },
+        "JSON.parse": {
+          "n": 123,
+          "total": 1.599999999976717,
+          "max": 0.10000000009313226,
+          "bytes": 286830,
+          "meanMs": 0.01300813008111152,
+          "medianMs": 0,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 41.0
+        },
+        "BearlyCentrumScenes.get": {
+          "n": 39,
+          "total": 1.6000000002095476,
+          "max": 0.2000000000698492,
+          "bytes": 0,
+          "meanMs": 0.04102564103101404,
+          "medianMs": 0,
+          "p95Ms": 0.10000000009313226,
+          "perFrame": 13.0
+        },
+        "BearlyCentrumStory.update": {
+          "n": 3,
+          "total": 0.7000000000698492,
+          "max": 0.30000000004656613,
+          "bytes": 0,
+          "meanMs": 0.2333333333566164,
+          "medianMs": 0.2000000000698492,
+          "p95Ms": 0.2000000000698492,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.update": {
+          "n": 3,
+          "total": 2.700000000069849,
+          "max": 1.1000000000931323,
+          "bytes": 0,
+          "meanMs": 0.9000000000232831,
+          "medianMs": 0.9000000000232831,
+          "p95Ms": 0.9000000000232831,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumEconomy.update": {
+          "n": 3,
+          "total": 0,
+          "max": 0,
+          "bytes": 0,
+          "meanMs": 0.0,
+          "medianMs": 0,
+          "p95Ms": 0,
+          "perFrame": 1.0
+        },
+        "BearlyVisits.audit": {
+          "n": 6,
+          "total": 0.8000000000465661,
+          "max": 0.2000000000698492,
+          "bytes": 0,
+          "meanMs": 0.13333333334109435,
+          "medianMs": 0.09999999997671694,
+          "p95Ms": 0.2000000000698492,
+          "perFrame": 2.0
+        },
+        "BearlyCentrumInventory.update": {
+          "n": 3,
+          "total": 3.199999999953434,
+          "max": 1.5,
+          "bytes": 0,
+          "meanMs": 1.0666666666511446,
+          "medianMs": 0.8999999999068677,
+          "p95Ms": 0.8999999999068677,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawBase": {
+          "n": 3,
+          "total": 0.6999999999534339,
+          "max": 0.30000000004656613,
+          "bytes": 0,
+          "meanMs": 0.23333333331781128,
+          "medianMs": 0.19999999995343387,
+          "p95Ms": 0.19999999995343387,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquareWorld.drawables": {
+          "n": 3,
+          "total": 0.09999999997671694,
+          "max": 0.09999999997671694,
+          "bytes": 0,
+          "meanMs": 0.03333333332557231,
+          "medianMs": 0,
+          "p95Ms": 0,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumStory.decorate": {
+          "n": 3,
+          "total": 0.19999999995343387,
+          "max": 0.09999999997671694,
+          "bytes": 0,
+          "meanMs": 0.06666666665114462,
+          "medianMs": 0.09999999997671694,
+          "p95Ms": 0.09999999997671694,
+          "perFrame": 1.0
+        },
+        "BearlyHeroRig.draw": {
+          "n": 3,
+          "total": 0.39999999990686774,
+          "max": 0.19999999995343387,
+          "bytes": 0,
+          "meanMs": 0.13333333330228925,
+          "medianMs": 0.19999999995343387,
+          "p95Ms": 0.19999999995343387,
+          "perFrame": 1.0
+        },
+        "BearlyCentrumSquare.render": {
+          "n": 3,
+          "total": 3.200000000069849,
+          "max": 1.2000000000698492,
+          "bytes": 0,
+          "meanMs": 1.0666666666899498,
+          "medianMs": 1,
+          "p95Ms": 1,
+          "perFrame": 1.0
+        }
+      }
+    }
+  },
+  "maxPendingLoops": 1,
+  "pendingLoops": 1,
+  "timingLimits": "Function/JSON wrappers add instrumentation cost. Inclusive timings overlap and must not be summed. Shared host/headless scheduling and cache cold-start stalls cannot be translated into phone frame rate.",
+  "checks": {
+    "noRuntimeErrors": true,
+    "noConsoleErrors": true,
+    "noHttpFailures": true,
+    "oneMainLoop": true,
+    "heroCacheBounded": true,
+    "npcCacheBounded": true,
+    "workerQueueBounded": true,
+    "noNpcRebakesDuringWalk": true,
+    "allRequestedDirectionsMove": true,
+    "actualAuthoredAngles": true,
+    "workerReady": true,
+    "noLiveMainBodyBakes": true
+  },
+  "directional": {
+    "preparations": 1,
+    "draws": 426,
+    "drawCalls": 11,
+    "partBytes": 1143632,
+    "sourceBytes": 1132204,
+    "ready": true,
+    "failure": null,
+    "views": [
+      "toward",
+      "away"
+    ],
+    "hasOwnAnimationLoop": false,
+    "hasOwnInputListeners": false
+  },
+  "passed": true
+}

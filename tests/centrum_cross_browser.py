@@ -109,6 +109,36 @@ def use_exit(page,destination):
     page.wait_for_timeout(170)
 
 
+
+def verify_authored_angles(page, touch, engine, label, result):
+    """Native inputs prove new views and resting retention, not a pose fixture."""
+    samples=[]
+    page.bring_to_front()
+    for key,direction,sign,view in [('ArrowUp','up',-1,'away'),('ArrowDown','down',1,'toward')]:
+        before=square(page)
+        if touch:
+            box=page.locator('[data-square-dir="'+direction+'"]').bounding_box();assert box
+            page.mouse.move(box['x']+box['width']/2,box['y']+box['height']/2);page.mouse.down()
+        else:page.keyboard.down(key)
+        try:
+            page.wait_for_function("([start,sign,view])=>{const a=BearlyCentrumSquare.audit();return (a.y-start)*sign>8&&a.view===view&&a.hero?.view===view&&a.hero?.authoredView===true;}",arg=[before['y'],sign,view],timeout=20000)
+            moving=square(page)
+        finally:
+            if touch:page.mouse.up()
+            else:page.keyboard.up(key)
+        page.wait_for_function('Math.abs(BearlyCentrumSquare.audit().vx)<1e-8&&Math.abs(BearlyCentrumSquare.audit().vy)<1e-8',timeout=15000)
+        page.wait_for_timeout(100)
+        rest=square(page);hero=rest['hero'];baby=hero['babyFace'];directional=hero['directional']
+        assert rest['view']==view and hero['view']==view and hero['authoredView'],(view,rest)
+        assert not moving['hits'] and rest['health']==before['health'],(before,moving,rest)
+        assert hero['height']==200 and hero['integratedCarrier'] and baby['continuousUpperBody'] and baby['originalCollar'] and not baby['headOnly'],hero
+        assert math.isclose(baby['uniformScale'],.5710830421929589,rel_tol=1e-9),hero
+        assert directional['sourceBabyLower']=='assets/art/front-carrier-v7.png' and math.isclose(directional['sourceBabyLowerScale'],200/488,rel_tol=1e-9),hero
+        samples.append({'direction':direction,'expectedView':view,'nativeInput':'dpad mouse pointer hold' if touch else 'keyboard hold','displacementY':moving['y']-before['y'],'restView':rest['view'],'health':rest['health'],'hero':hero,'passed':True})
+        shot(page,engine,label+'-'+view,result)
+    return samples
+
+
 def target_dialogue(page,target):
     close_dialogue(page)
     anchor=page.evaluate('target=>BearlyCentrumStory.interactions(BearlyCentrumSquare.position().sceneId).find(a=>a.target===target)',target)
@@ -356,6 +386,7 @@ def run(engine,p,servers,args):
                     a=square(page);assert a['sceneId']==scene_id and a['height']==200 and a['health']==73
                     assert a['hero']['babyFace']['continuousUpperBody'] and a['hero']['babyFace']['originalCollar'] and not a['hero']['babyFace']['headOnly']
                     before=a['x'];page.bring_to_front();page.keyboard.down('ArrowRight');page.wait_for_function('x=>BearlyCentrumSquare.audit().x>x+4',arg=before,timeout=15000);page.keyboard.up('ArrowRight');page.wait_for_timeout(150);assert square(page)['x']>before+3,{'before':before,'after':square(page),'metrics':metrics(page)}
+                    authored=verify_authored_angles(page,touch,engine,label,result) if scene_id=='metro-square' else None
                     if touch and scene_id=='metro-square':
                         # Real PointerEvent input from mouse driver; cross-engine
                         # Playwright touchscreen API only exposes instantaneous tap.
@@ -364,7 +395,7 @@ def run(engine,p,servers,args):
                         note(result,label+' native dpad pointer hold and bag touch tap',page,{'bagControl':bag_control})
                     else:bag_control=check_bag_control(page,touch)
                     a=square(page);q=metrics(page);assert q['maxPending']<=1
-                    note(result,label+' '+scene_id+' rendered scene and movement',page,{'health':a['health'],'hero':a['hero'],'bagControl':bag_control,'metrics':q})
+                    note(result,label+' '+scene_id+' rendered scene and movement',page,{'health':a['health'],'hero':a['hero'],'bagControl':bag_control,'authoredWalking':authored,'metrics':q})
                     if scene_id in ['metro-square','food-shop']:shot(page,engine,label+'-'+scene_id,result)
                     ctx.close()
                 ctx,page=context(browser,engine,base+prefix+'autumn-v19.html',watch,touch=touch);assert page.evaluate('BEARLY_BUILD_ID')

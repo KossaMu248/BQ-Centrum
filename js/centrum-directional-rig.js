@@ -45,6 +45,12 @@
       const l=raw.legs[side];legs[side]={hip:P(l.hip),knee:P(l.knee),cuff:P(l.cuff),sole:P(l.sole),
         pants:part(canvas,poly(l.pants)),calf:part(canvas,poly(l.calf)),boot:part(canvas,poly(l.boot))};
     }
+    const middleHip=(legs.near.hip[0]+legs.far.hip[0])*.5;
+    for(const l of Object.values(legs)){
+      const dx=l.cuff[0]-l.hip[0],dy=l.cuff[1]-l.hip[1],length=Math.hypot(dx,dy)||1,kx=l.knee[0]-l.hip[0],ky=l.knee[1]-l.hip[1];
+      l.kneeAlong=clamp((kx*dx+ky*dy)/(length*length),.25,.75);
+      l.kneeAcross=(kx*dy-ky*dx)/length;l.bendSign=Math.sign(l.hip[0]-middleHip)||1;
+    }
     const lip=poly(raw.lip),middle=[(lip[0][0]+2*lip[1][0]+lip[2][0])/4,(lip[0][1]+2*lip[1][1]+lip[2][1])/4];
     const waist=[middle[0]+9.5,middle[1]+8.25],head={box:[waist[0]-55,waist[1]-125,83,85],neck:[waist[0]-6,waist[1]-43],angle:0};
     const layout={name:'centrum-'+name,head,upper:{box:[waist[0]-56,waist[1]-126,94,131],waist,lip,source:definition.image},rect:[0,0,canvas.width,canvas.height],origin};
@@ -85,7 +91,7 @@
     const view=prepared[options.centrumView],state=options.state||{};
     if(!view||!lowerBaby||!window.BearlyBabyPassenger?.ready()||!window.BearlyHeroRig?.ready()||state.baby||state.hp===0||state.hurt||state.attack||state.held)return false;
     const scale=h/STATURE,weight=clamp(options.weight||0,0,1),native=window.BearlyLocomotion.pose(options.distance||0,h,weight),gait=window.BearlyCentrumDepthGait?.project(native,options.groundMotion)||native;
-    const bob=(gait.bob||0)*.45,roll=(gait.roll||0)*.45,sway=(gait.sway||0)*.35,legs={};let drawCalls=0;
+    const bob=(gait.bob||0)*.65,roll=(gait.roll||0)*.55,sway=(gait.sway||0)*.55,legs={};let drawCalls=0;
     const pivot={x:view.origin[0],y:(view.legs.near.hip[1]+view.legs.far.hip[1])*.5},br=Math.cos(roll),bs=Math.sin(roll);
     const bodyMap=p=>({x:pivot.x+(p.x-pivot.x)*br-(p.y-pivot.y)*bs+sway/scale,y:pivot.y+(p.x-pivot.x)*bs+(p.y-pivot.y)*br+bob/scale});
     c.save();c.translate(px,py);if(face<0)c.scale(-1,1);
@@ -93,12 +99,14 @@
     for(const side of ['far','near']){
       const l=view.legs[side],f=gait[side],dx=f.x/scale,dy=f.y/scale,turn=clamp((f.angle||0)*.35,-.05,.05),cs=Math.cos(turn),sn=Math.sin(turn),sole=point(l.sole[0]+dx,l.sole[1]+dy);
       const rigid=p=>{const x=p.x-l.sole[0],y=p.y-l.sole[1];return{x:sole.x+x*cs-y*sn,y:sole.y+x*sn+y*cs};};
-      const cuff=rigid(point(...l.cuff)),hip=bodyMap(point(...l.hip)),nativeLength=Math.hypot(l.cuff[0]-l.hip[0],l.cuff[1]-l.hip[1]);
-      // Toward/away knee flex is mostly foreshortening. Preserve the painted
-      // limb width while sharing the projected shortening across thigh/shin.
-      const fraction=clamp(Math.hypot(l.knee[0]-l.hip[0],l.knee[1]-l.hip[1])/Math.max(1,nativeLength),.25,.75),knee=point(hip.x+(cuff.x-hip.x)*fraction,hip.y+(cuff.y-hip.y)*fraction);
+      const cuff=rigid(point(...l.cuff)),hip=bodyMap(point(...l.hip)),dxBone=cuff.x-hip.x,dyBone=cuff.y-hip.y,boneLength=Math.hypot(dxBone,dyBone)||1;
+      // Keep the authored rest knee and a small outward swing bend. Squaring
+      // native flex makes its added velocity zero at toe-off and landing.
+      // Feet stay in their existing floor frame; no shoe scaling or leg IK.
+      const flex=clamp(f.kneeFlex||0,0,1),kneeBend=l.bendSign*STATURE*.016*flex*flex,across=l.kneeAcross+kneeBend;
+      const knee=point(hip.x+dxBone*l.kneeAlong+dyBone/boneLength*across,hip.y+dyBone*l.kneeAlong-dxBone/boneLength*across);
       drawPart(c,l.pants,segmentMap(l.hip,l.knee,hip,knee));drawPart(c,l.calf,segmentMap(l.knee,l.cuff,knee,cuff));drawPart(c,l.boot,rigid);drawCalls+=3;
-      legs[side]={hip,knee,cuff,sole,contact:point(l.sole[0]+dx,l.sole[1]+(f.groundDepth||0)/scale),stance:f.stance,sourceFoot:side};
+      legs[side]={hip,knee,cuff,sole,contact:point(l.sole[0]+dx,l.sole[1]+(f.groundDepth||0)/scale),stance:f.stance,sourceFoot:side,kneeBend:kneeBend*scale};
     }
     drawPart(c,view.body,bodyMap);drawCalls++;if(view.belt){drawPart(c,view.belt,bodyMap);drawCalls++;}
     drawPart(c,lowerBaby,p=>bodyMap({x:p.x+view.waist[0]-LOWER_BABY.waist[0],y:p.y+view.waist[1]-LOWER_BABY.waist[1]}));drawCalls++;
@@ -111,7 +119,7 @@
     for(const p of view.frontMasks){drawPart(c,p,bodyMap);drawCalls++;}
     c.restore();c.restore();counts.draws++;counts.drawCalls=drawCalls;
     const world=v=>({x:(v.x-view.origin[0])*scale,y:(v.y-view.origin[1])*scale}),landmarks={};
-    for(const side of ['far','near'])landmarks[side]={...Object.fromEntries(['hip','knee','cuff','sole','contact'].map(k=>[k,world(legs[side][k])])),stance:legs[side].stance,sourceFoot:side,rigidShoe:true};
+    for(const side of ['far','near'])landmarks[side]={...Object.fromEntries(['hip','knee','cuff','sole','contact'].map(k=>[k,world(legs[side][k])])),stance:legs[side].stance,sourceFoot:side,rigidShoe:true,kneeBend:legs[side].kneeBend};
     lastAudit={pose:'walking',view:view.name,authoredView:true,sourceAsset:view.sourceAsset,source:view.sourceAsset,carrier:'front',integratedCarrier:true,height:h,babyFace,
       landmarks,gait,body:{continuous:true,surfaces:1,roll,bob,sway,authoredViewingAngle:true},directional:{view:view.name,asset:view.sourceAsset,framePhase:gait.phase,drawCalls,preparedParts:Object.keys(prepared).length,sourceBabyLower:LOWER_BABY.source,sourceBabyLowerScale:scale,sourceBabyOriginalScale:85/61*scale,groundAnchor:{x:px,y:py+(options.jump||0)}}};
     return lastAudit;

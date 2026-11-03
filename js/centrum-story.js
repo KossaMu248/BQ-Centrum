@@ -8,7 +8,7 @@
   panel.setAttribute('role','dialog');panel.setAttribute('aria-label','The Wrong Entrance dialogue');panel.setAttribute('aria-modal','true');
   panel.innerHTML='<div class="story-title">THE WRONG ENTRANCE</div><div class="story-line" aria-live="polite"><span class="dialogue-name"></span><span class="dialogue-text"></span></div><div class="story-choices"></div><button type="button" data-dialogue-close>CLOSE · ESC</button>';
   const journal=document.createElement('div');journal.className='centrum-story-objective';journal.hidden=true;journal.setAttribute('aria-live','polite');host.append(panel,journal);
-  let conversation=null,line=0,prepared=null,currentScene=null,paused=false;
+  let conversation=null,line=0,currentScene=null,paused=false;
   const knownScenes=new Set(window.BearlyCentrumSave?.adventure?.snapshot()?.discovered||[]);
   let reaction=null;
   function react(kind){reaction={kind,remaining:1.05};}
@@ -137,8 +137,8 @@
     if(live.action==='report'&&before.state!==after.state&&after.state==='reported'){react('quest-reported');economy()?.checkpoint('wrong-entrance-reported');}
     sync();
   }
-  function prepare(){
-    if(!prepared)prepared=civ.prepare().then(()=>{if(state().cargoMoved)civ.settleDelivery();});return prepared;
+  function prepare(sceneId){
+    return civ.prepare(sceneId).then(()=>{if(state().cargoMoved)civ.settleDelivery();});
   }
   function sceneEntered(sceneId){
     close();currentScene=sceneId;

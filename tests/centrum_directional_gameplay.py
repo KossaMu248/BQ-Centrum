@@ -13,17 +13,19 @@ from threading import Thread
 from playwright.sync_api import sync_playwright
 from centrum_economy_browser import Quiet,wait_ready,wait_exploration,close_dialogue,walk_to
 ROOT=Path(__file__).resolve().parents[1]
-P=argparse.ArgumentParser();P.add_argument('--baseline',action='store_true');P.add_argument('--clip',action='store_true');A=P.parse_args()
-OUT=ROOT/'verification/stage13/gameplay';assert not A.baseline,'Use historical Stage12 evidence for baseline';OUT.mkdir(parents=True,exist_ok=True)
+P=argparse.ArgumentParser();P.add_argument('--baseline',action='store_true');P.add_argument('--clip',action='store_true');P.add_argument('--out',default='verification/stage13/gameplay');A=P.parse_args()
+OUT=(ROOT/A.out).resolve();assert OUT.is_relative_to(ROOT),'Capture output must stay inside BQ-Centrum';assert not A.baseline,'Use historical Stage12 evidence for baseline';OUT.mkdir(parents=True,exist_ok=True)
 BASELINE='e5b0daa58ea5bdbddc866767badea86901169290'
 rig=subprocess.check_output(['git','show',BASELINE+':js/hero-rig.js'],cwd=ROOT) if A.baseline else (ROOT/'js/hero-rig.js').read_bytes()
 class Recording:
  def __init__(self,page):
-  self.frames=[];self.folder=OUT/'.recording-frames';self.folder.mkdir(exist_ok=True);self.session=page.context.new_cdp_session(page)
+  self.active=True;self.frames=[];self.folder=OUT/'.recording-frames';self.folder.mkdir(exist_ok=True);self.session=page.context.new_cdp_session(page)
   self.session.on('Page.screencastFrame',self.frame);self.session.send('Page.startScreencast',{'format':'jpeg','quality':78,'maxWidth':1280,'maxHeight':720,'everyNthFrame':3})
  def frame(self,event):
+  if not self.active:return
   p=self.folder/f'{len(self.frames):05d}.jpg';p.write_bytes(base64.b64decode(event['data']));self.frames.append((p,event['metadata']['timestamp']));self.session.send('Page.screencastFrameAck',{'sessionId':event['sessionId']})
  def finish(self):
+  self.active=False;self.session.remove_listener('Page.screencastFrame',self.frame)
   self.session.send('Page.stopScreencast');self.session.detach();assert len(self.frames)>20
   lines=[]
   for (p,a),(_,b) in zip(self.frames,self.frames[1:]):lines += [f"file '{p.resolve()}'",f'duration {max(.001,b-a):.6f}']

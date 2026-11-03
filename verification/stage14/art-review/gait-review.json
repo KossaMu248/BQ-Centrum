@@ -1,0 +1,81 @@
+{
+  "scope": "Independent final Stage14 visual review of actual rendered gameplay; no browser or runtime edit. Extracted contact sheets are cropped original-size gameplay video samples, not generated artwork.",
+  "atUtc": "2026-11-03T12:09:52.944261+00:00",
+  "captureBuild": "BQ_CENTRUM_STAGE14",
+  "captureVersionDisclosure": "Final clean Stage14 capture after startup, metadata and recorder-shutdown cleanup. Earlier pre-metadata and recorder-shutdown attempts are separately labelled and excluded from clean delivery.",
+  "conditions": {
+    "browser": "154.0.8037.57",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "physicalDevice": false,
+    "build": "BQ_CENTRUM_STAGE14"
+  },
+  "runtimeHashes": {
+    "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+    "js/hero-rig.js": "91a818f5af58263951f686f6554b7b8927d65d1360b6e34a7909ca9b34f9ec4f",
+    "js/centrum-square.js": "e5d53ac69fa032c852194ab58b39bf6333fe3202929edfcb1a5a16e3d3c8e903",
+    "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+    "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+    "assets/centrum/actors/bear-directions.png": "334a329ab35f7adeae1407e1223d702c27eb1ecf1d57a35ac61477d8dce21749"
+  },
+  "heroCaptureHashMatchesCurrent": true,
+  "directionalRigSha256": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+  "directionalGeometrySameAsPriorReview": true,
+  "parentArtSha256": "334a329ab35f7adeae1407e1223d702c27eb1ecf1d57a35ac61477d8dce21749",
+  "clip": {
+    "file": "walking.webm",
+    "nativeSeconds": 22.606341123580933,
+    "playbackSpeed": 1,
+    "frames": 360,
+    "encodingFps": 24,
+    "gameFpsClaim": false,
+    "actualGameplay": true,
+    "sha256": "ca5457dba15f538a956ecf61c76b85856d14e7f6d1b97abff79fdc5443dd8e9d"
+  },
+  "normalSizeFramesVisuallyInspected": [
+    "down-2.png",
+    "up-2.png",
+    "toward-rest.png",
+    "away-rest.png",
+    "north-east-rest.png",
+    "south-west-rest.png",
+    "down-1.png",
+    "up-3.png"
+  ],
+  "captureHashesChecked": 19,
+  "originalBabyContinuityAndScaleAuditsChecked": 19,
+  "diagonalStopChecks": 4,
+  "motionReview": {
+    "method": "Decoded entire VP9 clip without ffmpeg errors, then independently inspected2samples/second across full clip as unscaled240x260actorcrops. Compared equivalent sampling of Stage13 baseline.",
+    "sampleIntervalSeconds": 0.5,
+    "crop": [
+      520,
+      290,
+      240,
+      260
+    ],
+    "normalSourceFramePixels": [
+      1280,
+      720
+    ],
+    "fpsIsGamePerformanceClaim": false,
+    "contactSheetSha256": "735f72c239798fbe852b04316d643cace3a19690408dfd7443ff761de2c0ea52",
+    "baselineContactSheetSha256": "96523b844f1e76aeaa5a86f7b5943f3a32ec418baba2430461cea4ccf688cb50",
+    "passed": true
+  },
+  "findings": [
+    "Both new whole-parent viewing angles remain visibly distinct in both facing mirrors and after stopping/diagonal release.",
+    "Alternating boots and slight outward swing-knee bend are visible without the earlier duplicate third leg/boot strip, broad sideways knee splay or obvious joint separation in reviewed frames.",
+    "Added body support motion is restrained; original baby face/neck/clothing and lower legs/shoes remain continuous, readable, attached and at accepted normal scale.",
+    "Source-side walk remains visually consistent; foot shadows stay on the floor and the one parked player bike remains outside.",
+    "This is an incremental improvement to articulated painted pieces, not a fully drawn walking frame sequence."
+  ],
+  "limitations": [
+    "Two recordings follow the same scripted path with different input/phase timestamps, so contact sheets are not a pixel-aligned before/after animation metric.",
+    "No physical-device/Safari/thermal test or frame-time claim from this visual review.",
+    "Final input, timing, cross-engine and clean-package results belong to their separate evidence."
+  ],
+  "passed": true
+}

@@ -13,6 +13,7 @@
   function create(storage){
     let saved={};try{const value=JSON.parse(storage?.getItem(KEY)||'{}');if(value?.schemaVersion===1)saved=value;}catch(_){}
     const actors=new Map(),facts=Object.fromEntries(definitions.map(d=>[d.id,safeEvent(saved.actors?.[d.id])])),dirty=new Set();
+    const scenePreparations=new Map(),preparedScenes=new Set();
     let held=null,tick=0,prepared=null,ready=false,delivery={active:false,progress:saved.deliveryComplete===true?1:0,complete:saved.deliveryComplete===true};
     function seed(d,extra={}){return{id:d.id,variant:d.variant,civilian:true,hostile:false,patrol:true,face:d.variant===6?-1:1,x:d.x,depth:d.y,sidewalkDepth:d.y,patrolVariant:d.variant%3,
       routeMin:d.routeMin,routeMax:d.routeMax,walkSpeed:d.walkSpeed,fleeSpeed:130,
@@ -55,8 +56,18 @@
       const reason=duty?'The caretaker is moving the approved delivery.':recovering?'They are temporarily unavailable and will recover.':fear?'They need a quiet moment. Step back and give them time.':!available?'They need a quiet moment.':'Ready to talk.';
       return{id:d.id,role:d.role,label:d.label,sceneId:d.sceneId,x:n?.x??d.x,y:n?.depth??d.y,radius:78,available,reason,state:n?.state||'unavailable',variant:d.variant,civilian:true,hostile:false,fear:!!fear,activity:n?.activity||'idle',hp:n?.hp??0,bodyClear:inside};
     }
-    function prepare(){
-      ensure();if(!prepared)prepared=Promise.all([window.BearlyBrawlArt.prepare(),window.BearlyNpcMotion.loaded]).then(()=>window.BearlyNpcMotion.preloadAll()).then(()=>{ready=true;});return prepared;
+    function prepare(sceneId){
+      ensure();
+      if(!prepared)prepared=Promise.all([window.BearlyBrawlArt.prepare(),window.BearlyNpcMotion.loaded]).catch(error=>{prepared=null;throw error;});
+      const key=typeof sceneId==='string'?sceneId:'*';
+      if(!scenePreparations.has(key)){
+        const variants=[...new Set(definitions.filter(d=>key==='*'||d.sceneId===key).map(d=>d.variant))];
+        const task=prepared.then(()=>variants.length?(window.BearlyNpcMotion.preloadVariants?.(variants)||window.BearlyNpcMotion.preloadAll()):null)
+          .then(()=>{preparedScenes.add(key);ready=true;})
+          .catch(error=>{scenePreparations.delete(key);throw error;});
+        scenePreparations.set(key,task);
+      }
+      return scenePreparations.get(key);
     }
     function update(sceneId,dt,actor={},options={}){
       ensure();if(options.paused)return;dt=Math.max(0,Math.min(.05,Number(dt)||0));if(!dt)return;
@@ -111,7 +122,7 @@
     }
     function settleDelivery(){if(delivery.complete&&!delivery.active)return false;delivery={active:false,progress:1,complete:true};persist();return true;}
     function deliveryMotion(){return{...delivery};}
-    function audit(){ensure();return{ready,key:KEY,height:HEIGHT,talking:held,delivery:deliveryMotion(),residents:definitions.map(target),facts:clone(facts),sourceStats:Object.fromEntries([...actors].map(([id,a])=>[id,a.sim.snapshot().stats]))};}
+    function audit(){ensure();return{ready,preparedScenes:[...preparedScenes],key:KEY,height:HEIGHT,talking:held,delivery:deliveryMotion(),residents:definitions.map(target),facts:clone(facts),sourceStats:Object.fromEntries([...actors].map(([id,a])=>[id,a.sim.snapshot().stats]))};}
     return{prepare,update,nodes,targets,requestTalk,disturb,beginTalk,endTalk,approveDelivery,settleDelivery,deliveryMotion,audit};
   }
   let runtime=null;

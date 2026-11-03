@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "scope": "Fresh local-server startup/first native Centrum entry and warm walking, with one initial route-stop debug setup and real E transfer. Exclusive headless Chromium154 on shared Linux host, scale1, noCPUthrottle/recording. This is not a physical mobile/thermal benchmark.",
+  "before": {
+    "file": "startup-before.json",
+    "build": "BQ_CENTRUM_STAGE13",
+    "allServedRuntimeFrozen": true,
+    "firstEntrySeconds": 15.506269904000021,
+    "npcFramesBeforeWalking": 576,
+    "npcFrameBytes": 45702144
+  },
+  "desktopAfter": {
+    "file": "desktop.json",
+    "build": "BQ_CENTRUM_STAGE14",
+    "firstEntrySeconds": 3.903595052000014,
+    "firstEntryReductionPercent": 74.8256990484021,
+    "npcFramesBeforeWalking": 48,
+    "npcFrameBytes": 3808512,
+    "workerFramesReady": 50,
+    "sourceWarmup": {
+      "prepared": 7,
+      "total": 7,
+      "complete": true,
+      "buildMs": 136.30000000004657,
+      "maxTaskMs": 39.800000000046566,
+      "foreground": true,
+      "pending": 0,
+      "failure": null,
+      "retries": 0
+    },
+    "checks": {
+      "noRuntimeErrors": true,
+      "noConsoleErrors": true,
+      "noHttpFailures": true,
+      "oneMainLoop": true,
+      "heroCacheBounded": true,
+      "npcCacheBounded": true,
+      "workerQueueBounded": true,
+      "noNpcRebakesDuringWalk": true,
+      "allRequestedDirectionsMove": true,
+      "actualAuthoredAngles": true,
+      "workerReady": true,
+      "noLiveMainBodyBakes": true
+    }
+  },
+  "touchEmulationAfter": {
+    "file": "phone-emulation.json",
+    "build": "BQ_CENTRUM_STAGE14",
+    "firstEntrySeconds": 3.7102917500000103,
+    "touchEmulation": true,
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "checks": {
+      "noRuntimeErrors": true,
+      "noConsoleErrors": true,
+      "noHttpFailures": true,
+      "oneMainLoop": true,
+      "heroCacheBounded": true,
+      "npcCacheBounded": true,
+      "workerQueueBounded": true,
+      "noNpcRebakesDuringWalk": true,
+      "allRequestedDirectionsMove": true,
+      "actualAuthoredAngles": true,
+      "workerReady": true,
+      "noLiveMainBodyBakes": true
+    }
+  },
+  "implemented": [
+    "Per-scene authored resident variant warmup; no576-frame all-cast prerequisite for an empty square. Original native preloadAll function remains unchanged.",
+    "Optional foreground promotion of the same seven source pieces; one bounded task per turn, cancellation/stale-callback guard, coalesced requests and retry of remaining pieces. Default idle/32ms background behavior preserved.",
+    "Existing hero worker prewarm starts after validated parking/restore and overlaps the unchanged production transfer. All48 horizontal phases are still ready before ordinary exploration."
+  ],
+  "limits": [
+    "First-entry interval includes the original transfer animation; it is not solely source preparation time.",
+    "Baseline is desktop; touch emulation has different viewport/conditions and is not used as the primary A/B percentage.",
+    "Warm-frame timings fluctuate on this shared headless host. No physical-device FPS or network guarantee.",
+    "A per-scene resident can require first-use preparation at its destination; all runtime art remains original/local."
+  ],
+  "runtimeHashes": {
+    "js/hero-rig.js": "91a818f5af58263951f686f6554b7b8927d65d1360b6e34a7909ca9b34f9ec4f",
+    "js/npc-motion.js": "290e13eae670e41784a0dc93b6f15dc88330a40e30a5c6e91c92f62f1cb5af07",
+    "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+    "js/centrum-civilians.js": "259847773c33b053170f41da2ec20df80c4fcf51a865765ac4be2f2688735693",
+    "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+    "js/centrum-square.js": "e5d53ac69fa032c852194ab58b39bf6333fe3202929edfcb1a5a16e3d3c8e903"
+  }
+}

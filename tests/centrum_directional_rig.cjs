@@ -83,6 +83,48 @@ report.squareUpdate.unguardedMutationRejected=true;
 for(const [motion,previous,expected]of [[null,'side','side'],[null,'away','away'],[{y:NaN},'toward','toward'],[{y:Infinity},'away','away'],[{y:-1,metricSpeed:0},'toward','toward'],[{y:-.6,metricSpeed:5},'side','away'],[{y:.6},'side','toward'],[{y:.5},'side','side'],[{y:-.5},'away','away'],[{y:.4},'away','toward'],[{y:.3},'away','side'],[{y:0},'toward','side']]){assert.equal(api.viewForMotion(motion,previous),expected);report.headingCases++;}
 const definition=api.definition();assert(definition.views.toward&&definition.views.away);assert(definition.image.startsWith('assets/centrum/actors/'),'new parent art is a local project asset, not a donor or website dependency');definition.image='mutated-outside.png';assert.notEqual(api.definition().image,definition.image,'definition snapshots cannot mutate live source URL');
 const first=canvas().context;assert.equal(api.draw(first,100,200,200,1,{centrumView:'toward',state:{hp:100}}),false);assert.equal(nativeCalls.length,0);assert.equal(first.draws.length,0);
+function articulationContracts(renderer,dense=true){
+ const definitions=renderer.definition();let restKnees=0,swingKnees=0,poseCases=0,submittedJoints=0;
+ const draw=(view,h,face,phase,weight,motion)=>{const c=new Context({id:'articulation'}),a=renderer.draw(c,0,0,h,face,{centrumView:view,state:{hp:100},distance:gait.cycleLength(h)*phase,weight,groundMotion:motion||depth.heading(0,view==='away'?-52:52,face)});return{c,a};};
+ for(const view of ['toward','away'])for(const h of [145,200,280])for(const face of [-1,1]){
+  const raw=definitions.views[view],normal=512/raw.height,scale=h/488,{c,a}=draw(view,h,face,.37,0);
+  for(const [index,side]of [[0,'far'],[3,'near']]){
+   const k=raw.legs[side].knee,expected={x:(k[0]-raw.ground[0])*normal*scale,y:(k[1]-raw.ground[1])*normal*scale};
+   near(a.landmarks[side].knee.x,expected.x);near(a.landmarks[side].knee.y,expected.y);
+   const actual=mapped(c.draws[index].matrix,[(k[0]-raw.rect[0])*normal,(k[1]-raw.rect[1])*normal]);near(actual.x,expected.x*face);near(actual.y,expected.y);restKnees++;
+  }
+  for(const [side,phase]of [['far',.25],['near',.75]]){
+   const {a}=draw(view,h,face,phase,1),l=a.landmarks[side],r=raw.legs[side],dx=r.cuff[0]-r.hip[0],dy=r.cuff[1]-r.hip[1],length=Math.hypot(dx,dy),base=((r.knee[0]-r.hip[0])*dy-(r.knee[1]-r.hip[1])*dx)/length*normal*scale;
+   const nx=l.cuff.x-l.hip.x,ny=l.cuff.y-l.hip.y,span=Math.hypot(nx,ny),actual=((l.knee.x-l.hip.x)*ny-(l.knee.y-l.hip.y)*nx)/span;
+   const outward=Math.sign(r.hip[0]-(raw.legs.near.hip[0]+raw.legs.far.hip[0])*.5);
+   assert(Math.abs(actual-base)>h*.014,'swing must visibly bend rather than remain collinear');near(actual-base,outward*h*.016);near(l.kneeBend,outward*h*.016);swingKnees++;
+  }
+ }
+ // Added bend must arrive/leave at zero velocity. Native flex itself has a
+ // derivative discontinuity; this rejects using it unsquared.
+ for(const view of ['toward','away'])for(const [side,toeOff]of [['near',.5],['far',0]]){
+  for(const step of [1e-3,1e-4]){
+   const start=draw(view,200,1,toeOff,1).a.landmarks[side].kneeBend,end=draw(view,200,1,toeOff+step,1).a.landmarks[side].kneeBend;
+   assert(Math.abs(end-start)/step<130*step,'added swing bend has zero toe-off velocity');
+   const before=draw(view,200,1,toeOff+.5-step,1).a.landmarks[side].kneeBend,land=draw(view,200,1,toeOff+.5,1).a.landmarks[side].kneeBend;
+   assert(Math.abs(land-before)/step<130*step,'added swing bend has zero landing velocity');
+  }
+ }
+ if(dense)for(const view of ['toward','away'])for(const face of [-1,1])for(const weight of [0,.35,1])for(const [vx,vy]of [[130,0],[-130,0],[0,52],[0,-52],[92,37],[-92,37],[92,-37],[-92,-37]])for(let phase=0;phase<32;phase++){
+  const {c,a}=draw(view,200,face,phase/32,weight,depth.heading(vx,vy,face)),raw=definitions.views[view],normal=512/raw.height;
+  for(const [index,side]of [[0,'far'],[3,'near']]){
+   for(const part of [0,1,2]){const m=c.draws[index+part].matrix;assert(m.every(Number.isFinite));assert((m[0]*m[3]-m[1]*m[2])*face>0,'thigh, calf and boot transforms cannot invert');}
+   const k=raw.legs[side].knee,p=[(k[0]-raw.rect[0])*normal,(k[1]-raw.rect[1])*normal],aK=a.landmarks[side].knee;
+   for(const part of [0,1]){const joint=mapped(c.draws[index+part].matrix,p);near(joint.x,aK.x*face);near(joint.y,aK.y);submittedJoints++;}
+   const native=a.gait[side],bone=a.landmarks[side];assert(Math.abs(bone.kneeBend)<=3.2+1e-8);if(native.stance)near(bone.kneeBend,0);
+   // Added knee articulation must not change either boot/floor trajectory.
+   near(bone.sole.x,(raw.legs[side].sole[0]-raw.ground[0])*normal*200/488+native.x);
+   near(bone.sole.y,(raw.legs[side].sole[1]-raw.ground[1])*normal*200/488+native.y);
+  }
+  poseCases++;
+ }
+ return{restKnees,swingKnees,poseCases,submittedJoints};
+}
 (async()=>{
  const preparation=api.preload(),repeatPreparation=api.preload();assert.equal(await preparation,true);assert.equal(await repeatPreparation,true);assert(api.ready());
  const preparedCount=canvases.length,stats=api.stats(),raw=api.definition();assert.equal(stats.preparations,1);assert.deepEqual(value(stats.views),['toward','away']);assert(stats.partBytes>0&&stats.partBytes<4*1024*1024,'two prepared view pieces stay compact');
@@ -109,6 +151,7 @@ const first=canvas().context;assert.equal(api.draw(first,100,200,200,1,{centrumV
   report.drawCases++;
  }
  assert.equal(canvases.length,beforeDrawCanvases,'walking does not allocate part canvases per frame');assert.equal(api.stats().partBytes,stats.partBytes);assert.equal(api.stats().preparations,1);assert.equal(api.stats().hasOwnAnimationLoop,false);assert.equal(api.stats().hasOwnInputListeners,false);
+ report.articulation=articulationContracts(api);assert.equal(canvases.length,beforeDrawCanvases,'articulated walking also reuses fixed prepared canvases');
  const contacts={};for(const phase of [.25,.75]){const c=new Context({id:'contact'}),a=api.draw(c,0,0,200,1,{centrumView:'toward',state:{hp:100},distance:gait.cycleLength(200)*phase,weight:1,groundMotion:depth.heading(0,52,1)});contacts[phase]=a;}
  for(const side of ['near','far']){const a=contacts[.25].landmarks[side],b=contacts[.75].landmarks[side];near(a.contact.x,b.contact.x);near(a.contact.y,b.contact.y);assert(Math.abs(a.sole.y-b.sole.y)>8,'the swing foot lifts while the ground contact remains on the floor');report.contactCases++;}
  const originalPose=gait.pose;gait.pose=(...args)=>({...originalPose(...args),bob:90,roll:.3,sway:80});const altered=api.draw(new Context({id:'bob'}),0,0,200,1,{centrumView:'toward',state:{hp:100},distance:gait.cycleLength(200)*.25,weight:1,groundMotion:depth.heading(0,52,1)});gait.pose=originalPose;
@@ -120,5 +163,10 @@ const first=canvas().context;assert.equal(api.draw(first,100,200,200,1,{centrumV
  const fallbackWindow={BearlyBabyPassenger:window.BearlyBabyPassenger,BearlyHeroRig:window.BearlyHeroRig,BearlyLocomotion:gait,BearlyCentrumDepthGait:depth};
  const fallbackSandbox={...sandbox,window:fallbackWindow,Image:MissingSheet};vm.runInNewContext(fs.readFileSync('js/centrum-directional-rig.js','utf8'),fallbackSandbox);
  const fallback=fallbackWindow.BearlyCentrumDirectionalRig,loadsBefore=images.length;assert.equal(await fallback.preload(),false);assert.equal(fallback.ready(),false);assert.match(fallback.stats().failure,/Unable to load directional art/);assert.equal(images.length-loadsBefore,2);for(let i=0;i<8;i++)assert.equal(fallback.draw(new Context({id:'fallback'}),0,0,200,1,{centrumView:'toward',state:{hp:100}}),false,'missing optional art returns control to original renderer');assert.equal(images.length-loadsBefore,2,'draw never retries a failed optional asset or allocates replacement art');assert.equal(fallback.stats().partBytes,0);parentMissing=false;const retry=fallback.preload(),repeatedRetry=fallback.preload();assert.equal(await retry,true,'an explicit scene-entry retry can recover after a transient asset error');assert.equal(await repeatedRetry,true);assert(fallback.ready());assert.equal(fallback.stats().failure,null);assert.equal(fallback.stats().preparations,1);assert.deepEqual(value(fallback.stats().views),['toward','away']);assert.equal(images.length-loadsBefore,4,'one explicit retry shares its two requests');const recoveredBytes=fallback.stats().partBytes;assert(recoveredBytes>0&&recoveredBytes<4*1024*1024);assert.equal(await fallback.preload(),true);assert.equal(images.length-loadsBefore,4,'a recovered cache is reused');
+ const liveSource=fs.readFileSync('js/centrum-directional-rig.js','utf8');report.articulation.rejectedMutations=[];
+ for(const [name,token,replacement,error]of [['missing swing bend','kneeBend=l.bendSign*STATURE*.016*flex*flex','kneeBend=0',/swing must visibly bend/],['unsmoothed flex','*STATURE*.016*flex*flex','*STATURE*.016*flex',/zero toe-off velocity/]]){
+  assert(liveSource.includes(token));const mutantWindow={...fallbackWindow},mutantSandbox={...sandbox,window:mutantWindow};vm.runInNewContext(liveSource.replace(token,replacement),mutantSandbox);
+  const mutant=mutantWindow.BearlyCentrumDirectionalRig;assert.equal(await mutant.preload(),true);assert.throws(()=>articulationContracts(mutant,false),error,name+' must fail actual draw-transform checks');report.articulation.rejectedMutations.push(name);
+ }
  report.failedAssetFallbackCases=4;report.explicitAssetRecoveryCases=3;report.preparedPartBytes=stats.partBytes;report.preparedViews=2;report.passed=true;console.log(JSON.stringify(report));
 })().catch(error=>{console.error(error);process.exitCode=1;});
