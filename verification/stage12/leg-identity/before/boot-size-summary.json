@@ -1,0 +1,67 @@
+{
+  "rest.png": {
+    "near": 34.53565797442996,
+    "far": 42.13362801128297,
+    "nearIsLarger": false
+  },
+  "right-1.png": {
+    "near": 34.53565797442996,
+    "far": 42.13362801128297,
+    "nearIsLarger": false
+  },
+  "right-2.png": {
+    "near": 34.53565797442997,
+    "far": 42.13362801128298,
+    "nearIsLarger": false
+  },
+  "right-3.png": {
+    "near": 34.53565797442996,
+    "far": 42.13362801128297,
+    "nearIsLarger": false
+  },
+  "left-1.png": {
+    "near": 34.53565797442996,
+    "far": 42.13362801128298,
+    "nearIsLarger": false
+  },
+  "left-2.png": {
+    "near": 34.53565797442997,
+    "far": 42.13362801128297,
+    "nearIsLarger": false
+  },
+  "left-3.png": {
+    "near": 34.53565797442997,
+    "far": 42.13362801128297,
+    "nearIsLarger": false
+  },
+  "up-1.png": {
+    "near": 34.53565797442997,
+    "far": 42.13362801128298,
+    "nearIsLarger": false
+  },
+  "up-2.png": {
+    "near": 34.53565797442996,
+    "far": 42.13362801128297,
+    "nearIsLarger": false
+  },
+  "up-3.png": {
+    "near": 34.535657974429974,
+    "far": 42.133628011282994,
+    "nearIsLarger": false
+  },
+  "down-1.png": {
+    "near": 34.53565797442997,
+    "far": 42.13362801128298,
+    "nearIsLarger": false
+  },
+  "down-2.png": {
+    "near": 34.535657974429974,
+    "far": 42.13362801128297,
+    "nearIsLarger": false
+  },
+  "down-3.png": {
+    "near": 34.53565797442996,
+    "far": 42.13362801128297,
+    "nearIsLarger": false
+  }
+}

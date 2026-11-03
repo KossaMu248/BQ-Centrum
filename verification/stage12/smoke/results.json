@@ -1,0 +1,387 @@
+{
+  "disclosure": "Post-metadata Stage12 Chromium smoke. Debug warp prepares stop; native E/Q transfers, movement, pause and I/menu. No angle art or physical-device test.",
+  "checks": [
+    {
+      "view": "desktop",
+      "passed": true,
+      "build": "BQ_CENTRUM_STAGE12",
+      "health": 100,
+      "ownership": {
+        "bikeId": "centrum-family-bike",
+        "bicycles": 1,
+        "passengers": 1,
+        "passenger": "chair"
+      },
+      "grounded": {
+        "pressed": [],
+        "contacts": [],
+        "state": "playing",
+        "speed": 0,
+        "x": 11325,
+        "y": 1179.3787916216684,
+        "contact": true,
+        "canvas": {
+          "x": 29,
+          "y": 89,
+          "width": 1222,
+          "height": 674.203125,
+          "top": 89,
+          "right": 1251,
+          "bottom": 763.203125,
+          "left": 29
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "measuredGroundedWheels": [
+          {
+            "x": 11273.568235647343,
+            "y": 1212.088113080478,
+            "clearance": 0.003043028095135014
+          },
+          {
+            "x": 11356.310805120216,
+            "y": 1219.1101353694323,
+            "clearance": 0.0417200008259897
+          }
+        ]
+      },
+      "worker": {
+        "requests": 251,
+        "hits": 78,
+        "fallbacks": 173,
+        "submitted": 152,
+        "completed": 152,
+        "superseded": 67,
+        "workerBuildMs": 4162.79999999702,
+        "maxWorkerBuildMs": 163.59999999403954,
+        "maxPending": 1,
+        "maxQueued": 1,
+        "ready": true,
+        "failure": null,
+        "pending": 0,
+        "queued": 0,
+        "frames": 53,
+        "bytes": 10377560
+      },
+      "baby": {
+        "mood": "leanBack",
+        "source": "assets/baby_pose_leanBack.webp",
+        "continuousUpperBody": true,
+        "originalCollar": true,
+        "headOnly": false,
+        "uniformScale": 0.5710830421929589,
+        "angle": -0.13863973713415806,
+        "flip": 1,
+        "alpha": 1,
+        "pivot": [
+          65,
+          92
+        ],
+        "anatomicalWaist": [
+          65,
+          99
+        ],
+        "waist": {
+          "x": 20.28688524590164,
+          "y": -82.88934426229508
+        },
+        "headHeight": 35.97823165815641,
+        "referenceHeadHeight": 61,
+        "sourceRect": [
+          0,
+          0,
+          106,
+          93
+        ],
+        "sourceBounds": [
+          0,
+          0,
+          106,
+          140
+        ],
+        "seamY": 92,
+        "occludeFrom": 87,
+        "seam": {
+          "start": {
+            "x": 14.630850839420411,
+            "y": -82.10013015906515
+          },
+          "end": {
+            "x": 25.94291965238287,
+            "y": -83.67855836552502
+          },
+          "occludeFrom": {
+            "x": 19.89227819428667,
+            "y": -85.7173614655357
+          }
+        },
+        "head": [
+          17,
+          9,
+          77,
+          63
+        ],
+        "chin": [
+          {
+            "x": 22.036309841394672,
+            "y": -99.27869047270347
+          }
+        ],
+        "neck": [
+          {
+            "x": 7.08070258518733,
+            "y": -94.88539863139016
+          }
+        ],
+        "collar": [
+          {
+            "x": 20.970870802034252,
+            "y": -94.51709871654951
+          }
+        ],
+        "pose": "front",
+        "pouch": {
+          "lip": [
+            [
+              198,
+              288
+            ],
+            [
+              226,
+              293
+            ],
+            [
+              264,
+              285
+            ]
+          ],
+          "depth": 32,
+          "seam": [
+            228.5,
+            297.75
+          ],
+          "origin": [
+            179,
+            500
+          ],
+          "scale": 0.4098360655737705,
+          "bob": 0,
+          "source": "frontBackground",
+          "textureMap": null,
+          "padding": 8
+        }
+      },
+      "backToBikePathSamples": 0
+    },
+    {
+      "view": "touch",
+      "passed": true,
+      "build": "BQ_CENTRUM_STAGE12",
+      "health": 100,
+      "ownership": {
+        "bikeId": "centrum-family-bike",
+        "bicycles": 1,
+        "passengers": 1,
+        "passenger": "chair"
+      },
+      "grounded": {
+        "pressed": [],
+        "contacts": [],
+        "state": "playing",
+        "speed": 0,
+        "x": 11325,
+        "y": 1179.3823424827444,
+        "contact": true,
+        "canvas": {
+          "x": 73.1875,
+          "y": 5,
+          "width": 697.625,
+          "height": 384,
+          "top": 5,
+          "right": 770.8125,
+          "bottom": 389,
+          "left": 73.1875
+        },
+        "viewport": [
+          844,
+          390
+        ],
+        "measuredGroundedWheels": [
+          {
+            "x": 11273.557516793482,
+            "y": 1212.0899964534567,
+            "clearance": 0.0002449795870234084
+          },
+          {
+            "x": 11356.297781432771,
+            "y": 1219.1391245853956,
+            "clearance": 0.011619430200880743
+          }
+        ]
+      },
+      "worker": {
+        "requests": 245,
+        "hits": 53,
+        "fallbacks": 192,
+        "submitted": 228,
+        "completed": 228,
+        "superseded": 11,
+        "workerBuildMs": 4236.000000059605,
+        "maxWorkerBuildMs": 192.40000000596046,
+        "maxPending": 1,
+        "maxQueued": 1,
+        "ready": true,
+        "failure": null,
+        "pending": 0,
+        "queued": 0,
+        "frames": 53,
+        "bytes": 10379384
+      },
+      "baby": {
+        "mood": "idle",
+        "source": "assets/baby_pose_idle.webp",
+        "continuousUpperBody": true,
+        "originalCollar": true,
+        "headOnly": false,
+        "uniformScale": 0.5710830421929589,
+        "angle": -0.13863973713415806,
+        "flip": 1,
+        "alpha": 1,
+        "pivot": [
+          52,
+          94
+        ],
+        "anatomicalWaist": [
+          48,
+          104
+        ],
+        "waist": {
+          "x": 20.28688524590164,
+          "y": -82.4068647689934
+        },
+        "headHeight": 35.40714861596345,
+        "referenceHeadHeight": 61,
+        "sourceRect": [
+          0,
+          0,
+          82,
+          95
+        ],
+        "sourceBounds": [
+          0,
+          0,
+          82,
+          146
+        ],
+        "seamY": 94,
+        "occludeFrom": 90,
+        "seam": {
+          "start": {
+            "x": 14.630850839420411,
+            "y": -81.61765066576346
+          },
+          "end": {
+            "x": 25.94291965238287,
+            "y": -83.19607887222334
+          },
+          "occludeFrom": {
+            "x": 19.971199604609666,
+            "y": -84.66927853158589
+          }
+        },
+        "head": [
+          15,
+          9,
+          57,
+          62
+        ],
+        "chin": [
+          {
+            "x": 23.496355932370058,
+            "y": -100.72978553231515
+          },
+          {
+            "x": 22.444070461396805,
+            "y": -100.00633927102103
+          },
+          {
+            "x": 20.905102960098425,
+            "y": -98.63836815875581
+          },
+          {
+            "x": 19.287214048477054,
+            "y": -97.8360004871387
+          },
+          {
+            "x": 17.669325136855676,
+            "y": -97.0336328155216
+          }
+        ],
+        "neck": [
+          {
+            "x": 16.0514362252343,
+            "y": -96.2312651439045
+          },
+          {
+            "x": 16.130357635557296,
+            "y": -95.66566170325638
+          }
+        ],
+        "collar": [
+          {
+            "x": 9.500959168425812,
+            "y": -93.5873978980842
+          },
+          {
+            "x": 13.85479030457764,
+            "y": -91.31183056710454
+          },
+          {
+            "x": 19.510824711058866,
+            "y": -92.10104467033447
+          }
+        ],
+        "pose": "front",
+        "pouch": {
+          "lip": [
+            [
+              198,
+              288
+            ],
+            [
+              226,
+              293
+            ],
+            [
+              264,
+              285
+            ]
+          ],
+          "depth": 32,
+          "seam": [
+            228.5,
+            298.9272499636561
+          ],
+          "origin": [
+            179,
+            500
+          ],
+          "scale": 0.4098360655737705,
+          "bob": 0,
+          "source": "frontBackground",
+          "textureMap": null,
+          "padding": 9.177249963656097
+        }
+      },
+      "backToBikePathSamples": 0
+    }
+  ],
+  "errors": [],
+  "httpFailures": [],
+  "browser": "154.0.8037.57",
+  "passed": true,
+  "rendererScope": "Input/transfer smoke used repaired boot/calf sizing before the final complete-leg draw-order-only correction. Final walking screenshots/clip and final core checks verify that later renderer; other runtime/input/transfer code was unchanged.",
+  "testedHeroSha256": "2eb009ecac3b74276b170b3520b2dbf960d5f7800e97fed0d10aa0c8c0c018fa"
+}

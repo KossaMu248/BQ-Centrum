@@ -6,7 +6,7 @@ Play the published HTML: **https://kossamu248.github.io/BQ-Centrum/**.
 
 ## Start exactly
 
-Get the source from [KossaMu248/BQ-Centrum](https://github.com/KossaMu248/BQ-Centrum), or extract `delivery/BQ-Centrum-validated.zip` if using the local delivery archive. For a fresh checkout:
+Get the source from [KossaMu248/BQ-Centrum](https://github.com/KossaMu248/BQ-Centrum), or build a fresh delivery with the package tool. The existing local `delivery/BQ-Centrum-validated.zip` is the historical Stage11 archive; use the current source for the Stage12 leg repair. For a fresh checkout:
 
 ```sh
 git clone https://github.com/KossaMu248/BQ-Centrum.git
@@ -28,6 +28,8 @@ python3 -m http.server 8001 --bind 127.0.0.1
 ```
 
 Open **http://127.0.0.1:8001/BQ-Centrum/**. Both `index.html` and the manifest’s `autumn-v19.html` entry are active, matching small HTML files. The clean package is checked at the root and under this subpath.
+
+Stage12 corrects swapped foreground/background shoe sizing, calf ownership and leg overlap. **Genuine up/down viewing angles are still pending permission for new matching bear-only artwork.** The old lean is not an angle change.
 
 ## Implemented scope
 
@@ -99,6 +101,6 @@ Source: **KossaMu248/BQ-Autumn/main**, commit `da109213fdf24947c2ac0b85de900214c
 
 System Chromium 154, Firefox 153 and Linux WebKit 26.5 were exercised as detailed in the test report. Physical-device and thermal testing were **skipped at the user’s request**. Linux WebKit and touch emulation do not constitute physical iPhone/Safari tests. Keyboard and touch controls are supported; gamepad mapping is not implemented.
 
-The full Linux WebKit quest/economy/return flow now passed, including riding/source-visit bag checks; the old Stage 9 timeout was not reproduced and its cause remains unproven. HUD and portrait bag overlaps were repaired without changing the accepted camera, actors or artwork. The source side/front silhouettes and upper-façade cropping in phone cover framing remain as designed. Centrum uses an optional bounded worker for live source mesh rasterisation, fixed-size source boots/separate calf patches, shorter steps and distinct up/down three-quarter posture/native baby lean poses. No authored front/rear walking row is supplied. Cold scene preparation remains about15seconds in the measured setup, and a newly seen heading can briefly use idle while its frame is prepared. Unsupported worker browsers use a synchronous fallback. Headless timings are observations, not a physical mobile performance guarantee.
+The full Linux WebKit quest/economy/return flow now passed, including riding/source-visit bag checks; the old Stage 9 timeout was not reproduced and its cause remains unproven. HUD and portrait bag overlaps were repaired without changing the accepted camera, actors or artwork. The source side/front silhouettes and upper-façade cropping in phone cover framing remain as designed. Centrum uses an optional bounded worker for live source mesh rasterisation, fixed-size source boots/separate calf patches, shorter steps and original baby lean poses. Depth walking still uses the source three-quarter viewing angle; the lean does not satisfy the requested real angle change. New matching bear-only angle artwork is pending approval. No authored front/rear walking row is supplied. Cold scene preparation remains about15seconds in the measured setup, and a newly seen heading can briefly use idle while its frame is prepared. Unsupported worker browsers use a synchronous fallback. Headless timings are observations, not a physical mobile performance guarantee.
 
 The user authorized publication to the independent **KossaMu248/BQ-Centrum** repository. This project retains its own Git history/configuration; no donor Git metadata, repository, save keys or deployment was modified. The user also approved branch-based GitHub Pages; the playable target is linked above. Publication details and observed versions are recorded in GITHUB_PUBLICATION.md.

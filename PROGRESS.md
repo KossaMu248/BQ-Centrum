@@ -97,3 +97,16 @@ Actual final verification:
 The optional raster-equivalence lab remains a **failed** check: all 12 pairs exceed its original raw-byte/2-LSB visible threshold, even after native bitmap settling. Numeric geometry matches exactly; paired 1× lab images show differences along clipped-triangle seams. No byte/pixel-equivalence claim is made, and the threshold was not loosened. Original asset hashes and the accepted normal-size gameplay likeness are separate evidence.
 
 Remaining limits: cold scene preparation around 15 seconds, brief first-heading idle fallback (~120ms extra in the recorded desktop sample), existing three-quarter silhouettes/facade cropping and synchronous fallback cost on unsupported workers. Physical-device/thermal tests remain skipped; no fresh Firefox claim. [Current report](TEST_REPORT.md) and [Stage11 evidence](verification/stage11/README.md) give actual conditions. Clean archive validation is recorded externally beside the delivery; publication remains limited to the authorized target main/Pages, with no donor/save/deployment changes.
+
+
+# Stage12 — Correct leg ownership; real angles still pending
+
+The user found defects missed by the prior visual gate. The larger foreground contact shoe had been scaled to the smaller idle shoe; the background shoe became larger. Lifted soleY also changed internal leg overlap. Source calf indices were misidentified and one patch included an extra unbooted fur column.
+
+Corrected the source sampling, preserving total shoe size but assigning the production near/far proportions, matching foreground/background calf patches to their trouser openings, excluding that extra strip and keeping the current three-quarter far leg behind the near leg. Original source pixels, baby/attachment/scale, riding renderer, physics, camera/scenes, worker budget and on-demand I/menu inventory remain unchanged.
+
+Verified 19 unit suites / 35 JS syntax / 944 strict source reconstructions, plus negative mutation checks. The regression fails against the published size/order bugs and passes 240 pose / 720 lift-order / 6 baby cases after repair. Actual 26 before/after screenshots and a 10.08-second 1× walking clip supplement the math; both desktop/touch post-metadata native transfer/move/pause/I/menu/remount checks pass with 100 HP unchanged and one bicycle/passenger. No JS/HTTP errors. [Evidence](verification/stage12/README.md).
+
+**The up/down angle request remains unimplemented.** The prior change only leaned the same source view. A renewed audit found no compatible toward/away bear artwork; new matching bear-only views require permission under the user's earlier instruction prohibiting regenerated characters. The original baby must remain untouched. The explicit artwork question is pending; no generated views or false angle-completion claim are included.
+
+This focused repair does not claim a fresh FPS, full quest/WebKit or clean-archive matrix. The existing Stage11 ZIP/certificate remains historical; use current source for Stage12. Physical testing remains skipped. No donor/save/deployment changes; publication stays limited to the authorized target main/Pages.

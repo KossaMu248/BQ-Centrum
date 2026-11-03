@@ -1,0 +1,206 @@
+{
+  "scope": "Read-only source art audit; source artwork screenshots/crops are references, not gameplay. No runtime/source artwork mutation.",
+  "sources": {
+    "bear-near-contact-v18.png": "98204b77df52ac8ffc50a3d967e95dbff7d39a396d6976122aaf5525ac4fd190",
+    "bear-idle-lower-v18.png": "ea49613d5e7954e5be0b8e9d0cb6ead8aa013a371d9c67d0094fa47dad7a7cf9",
+    "bear-near-support-v18.png": "94f899a65a3d6bd59a50a2a545207ee6421c2d7384b36a38bb8024ca91aac69c",
+    "bear-far-poses-v18.png": "73fb903cd9dd8e6288de641fd171871714ca67e0e3fbe79720622391cf672ab3",
+    "matched-legs-v11.png": "f456036e628d74f7d86e8ec7b5469e67d19be64f9f5957b6f7a2938c60c3bd67",
+    "front-carrier-v7.png": "3ebe5734b486736887c674f4676eb69f24aad260a94c26457b57688676c5ebd6"
+  },
+  "currentStage11BootWidthsAt200": {
+    "near": 34.53565797442998,
+    "far": 42.13362801128297
+  },
+  "nativeProfileBootWidthsAt200": {
+    "near": 51.22950819672131,
+    "far": 44.26229508196721
+  },
+  "orangeFurRows": {
+    "560": {
+      "central": [
+        780,
+        868
+      ],
+      "extraRight": [
+        912,
+        969
+      ]
+    },
+    "580": {
+      "central": [
+        699,
+        867
+      ],
+      "extraRight": [
+        895,
+        987
+      ]
+    },
+    "600": {
+      "central": [
+        613,
+        882
+      ],
+      "extraRight": [
+        893,
+        980
+      ]
+    },
+    "620": {
+      "central": [
+        589,
+        874
+      ],
+      "extraRight": [
+        900,
+        990
+      ]
+    },
+    "640": {
+      "central": [
+        579,
+        882
+      ],
+      "extraRight": [
+        893,
+        979
+      ]
+    },
+    "660": {
+      "central": [
+        587,
+        887
+      ],
+      "extraRight": [
+        897,
+        983
+      ]
+    },
+    "680": {
+      "central": [
+        580,
+        877
+      ],
+      "extraRight": [
+        898,
+        984
+      ]
+    },
+    "700": {
+      "central": [
+        591,
+        880
+      ],
+      "extraRight": [
+        890,
+        969
+      ]
+    },
+    "720": {
+      "central": [
+        588,
+        867
+      ],
+      "extraRight": [
+        889,
+        966
+      ]
+    },
+    "740": {
+      "central": [
+        589,
+        867
+      ],
+      "extraRight": [
+        876,
+        944
+      ]
+    },
+    "760": {
+      "central": [
+        608,
+        850
+      ],
+      "extraRight": [
+        872,
+        920
+      ]
+    },
+    "780": {
+      "central": [
+        630,
+        830
+      ],
+      "extraRight": [
+        849,
+        924
+      ]
+    },
+    "800": {
+      "central": [
+        656,
+        794
+      ],
+      "extraRight": [
+        844,
+        921
+      ]
+    }
+  },
+  "recommendedFarFurRightBoundary_y_x": [
+    [
+      560,
+      890
+    ],
+    [
+      580,
+      881
+    ],
+    [
+      600,
+      887
+    ],
+    [
+      620,
+      887
+    ],
+    [
+      640,
+      888
+    ],
+    [
+      660,
+      892
+    ],
+    [
+      680,
+      888
+    ],
+    [
+      700,
+      885
+    ],
+    [
+      720,
+      878
+    ],
+    [
+      740,
+      871
+    ],
+    [
+      760,
+      861
+    ],
+    [
+      780,
+      840
+    ],
+    [
+      800,
+      819
+    ]
+  ],
+  "maskedBootCandidateStatus": "Not a runtime recommendation; near/far mask experiment retained for source trace only, superseded by parent active-contact-pair repair."
+}

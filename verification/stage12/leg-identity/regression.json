@@ -1,0 +1,36 @@
+{
+  "baselineCommit": "e5b0daa58ea5bdbddc866767badea86901169290",
+  "heroSHA256": "c89a1cba364486ba9fa9e1e18c3b1a8148e604d1da8530af8f7adb099bc1f1aa",
+  "cases": [
+    {
+      "command": [
+        "node",
+        "tests/centrum_leg_identity.cjs",
+        "--baseline"
+      ],
+      "exitCode": 1,
+      "expectedFailure": true,
+      "output": "node:internal/assert/utils:77\n    throw err;\n    ^\n\nAssertionError [ERR_ASSERTION]: foreground shoe must remain larger than its paired background shoe\n    at Object.<anonymous> (/workspace/BQ-Centrum/tests/centrum_leg_identity.cjs:19:82)\n    at Module._compile (node:internal/modules/cjs/loader:1872:14)\n    at Object..js (node:internal/modules/cjs/loader:2003:10)\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/centrum_leg_identity.cjs",
+        "--baseline-order-only"
+      ],
+      "exitCode": 1,
+      "expectedFailure": true,
+      "output": "node:internal/assert/utils:77\n    throw err;\n    ^\n\nAssertionError [ERR_ASSERTION]: swing lift cannot flip the actor's anatomical near/far paint order\n    at Object.<anonymous> (/workspace/BQ-Centrum/tests/centrum_leg_identity.cjs:29:3)\n    at Module._compile (node:internal/modules/cjs/loader:1872:14)\n    at Object..js (node:internal/modules/cjs/loader:2003:10)\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/centrum_leg_identity.cjs"
+      ],
+      "exitCode": 0,
+      "expectedFailure": false,
+      "output": "{\"passed\":true,\"cases\":240,\"nearToFarRatio\":{\"min\":1.0551181102362197,\"max\":1.1574074074074074},\"layerCases\":720,\"babyCases\":6}\n"
+    }
+  ],
+  "passed": true
+}

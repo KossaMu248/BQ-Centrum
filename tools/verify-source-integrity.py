@@ -36,6 +36,19 @@ def replace_reviewed(text, added, original='', count=1):
     return text.replace(added, original)
 
 
+def reverse_stage12_rig(text):
+    """Restore Stage11 through exact SHA-pinned Stage12 source-only context hunks."""
+    path = ROOT / 'references/source/stage12-hero-integration.json'
+    raw = path.read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == '8ef685ae12bf25f3a7a2b8f173867fed307104e725c94a8c6f24f3a3fd5dab13', 'Changed Stage12 rig inverse manifest'
+    spec = json.loads(raw)
+    assert spec['path'] == 'js/hero-rig.js' and spec['previousProjectCommit'] == 'e5b0daa58ea5bdbddc866767badea86901169290'
+    for edit in reversed(spec['changes']):
+        text = replace_reviewed(text, edit['current'], edit['previous'])
+    assert hashlib.sha256(text.encode()).hexdigest() == 'f5fb15663af2dc871962aa5e0d834876bc3d5c2ad2069b134ca2c534f6e2b1fb', 'Unexpected rig edits beyond reviewed Stage12 integration'
+    return text
+
+
 def reverse_stage11_rig(text):
     """Reverse exact SHA-pinned context hunks before older donor reconstruction."""
     path = ROOT / 'references/source/stage11-hero-integration.json'
@@ -51,6 +64,9 @@ def reverse_stage11_rig(text):
 
 def restore_donor(path):
     text = (ROOT / path).read_text()
+    if path.endswith('.html'):
+        for resource in ['js/hero-rig.js', 'js/game.js']:
+            text = replace_reviewed(text, f'{resource}?edition=centrum-stage12', f'{resource}?edition=centrum-stage11')
     if path.endswith('.html'):
         # Stage 11 changes only the project menu/status markup and script editions.
         for resource, previous in [('css/centrum-inventory.css', 10), ('js/centrum-inventory.js', 10),
@@ -86,6 +102,7 @@ def restore_donor(path):
         for name, stage in [('hero-rig', 9), ('game', 10)]:
             text = replace_reviewed(text, f'js/{name}.js?edition=centrum-stage{stage}', f'js/{name}.js?edition=autumn-v19')
     if path == 'js/hero-rig.js':
+        text = reverse_stage12_rig(text)
         text = reverse_stage11_rig(text)
         # Optional ground projection is used only by the independent square.
         # Default source calls, source locomotion, torso and baby pixels remain
@@ -97,6 +114,7 @@ def restore_donor(path):
         text = replace_reviewed(text, 'bodyFrame(profile,name,options.distance||0,h,weight,options.groundMotion)', 'bodyFrame(profile,name,options.distance||0,h,weight)')
         text = replace_reviewed(text, 'projectGroundGait(window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,weight),frame.gait.groundMotion||options.groundMotion)', 'window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,weight)')
     if path == 'js/game.js':
+        text = replace_reviewed(text, "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE12';", "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE11';")
         text = replace_reviewed(text, "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE11';", "window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE10';")
         text = replace_reviewed(text, 'if(startup.requested&&!window.BearlyCentrumLink?.holding()&&!window.BearlyCentrumEconomy?.ready())enterReadyRide();', 'if(startup.requested&&!window.BearlyCentrumLink?.holding())enterReadyRide();')
         # Stage 6 changes the pickup destination and adds narrow ledger/action
@@ -212,6 +230,6 @@ assert not failures, '\n'.join(failures)
 assert (ROOT / 'index.html').read_bytes() == (ROOT / 'autumn-v19.html').read_bytes()
 manifest = json.loads((ROOT / 'autumn-version.json').read_text())
 assert manifest['source']['commit'] == 'da109213fdf24947c2ac0b85de900214cc72e44f'
-assert manifest['edition'] == 'BQ_CENTRUM_STAGE11'
+assert manifest['edition'] == 'BQ_CENTRUM_STAGE12'
 print(f'PASS: {len(HASHES)} pinned original files verified; all source assets/CSS and original protected code match;')
 print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional Centrum walking/worker additions differ.')

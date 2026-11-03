@@ -1,0 +1,839 @@
+{
+  "scope": "Final frozen Stage12 source-only leg identity and complete far-calf/boot before near-calf/boot ordering. Node units, JS syntax and strict Stage12\u2192Stage11\u2192donor reconstruction. No genuine direction artwork, browser test or current archive certification is implied.",
+  "atUtc": "2026-11-03T06:06:02Z",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "baseProjectCommit": "e5b0daa58ea5bdbddc866767badea86901169290",
+  "newAngleArtAuthorized": false,
+  "node": "v24.19.0",
+  "runtimeHashesBefore": {
+    "autumn-v19.html": "819b2dd3127922009f397d7ed1466aef3bd5987eb94ead040b4958f819bc7d1b",
+    "autumn-version.json": "cd9367299e290ea168a19cfdc0431f8f34843c29f49a7018566e8853b23dfad3",
+    "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+    "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+    "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+    "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+    "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+    "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+    "index.html": "819b2dd3127922009f397d7ed1466aef3bd5987eb94ead040b4958f819bc7d1b",
+    "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+    "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+    "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+    "js/brawler-art.js": "042627f4a89564bce96c26a7a8499ce06d1e691c6ca168e8c7dfa37950b930ee",
+    "js/brawler.js": "83f40b2a50fa24c3534adc9b90cb1ba3ee4076133a523a3d93d2fc96c05f3294",
+    "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+    "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+    "js/centrum-civilians.js": "86d294ff75a2915d830e81369ecd9aef213bfbbe0292cc0dcefe0fa13e709eb6",
+    "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+    "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+    "js/centrum-hero-cache.js": "8e292fa343074be831a0d04bb2198e528c3168c254972ee24be18031347d3706",
+    "js/centrum-inventory.js": "b57ee93a98de53d86d567518cae65be5703dcd575a6117f4ffa610904cfd8903",
+    "js/centrum-link.js": "d1a695bb2ea5bf1e7117caa900498838170eaf8ca6b3afaaadcff21e877be98d",
+    "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+    "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+    "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+    "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+    "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+    "js/centrum-square.js": "dedd5c1ee31312dcde4dd96cbf15814aa35b3b9e7d0a039d21f53224ce36f4ca",
+    "js/centrum-story.js": "c625d40ea5366285ed67d4140b3f1765a89181aa112901b17627385e1996d333",
+    "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+    "js/game.js": "f093ab3929280663c758f6a787e483f924e586ef14ac7c7349a4b3b399122e40",
+    "js/hero-rig.js": "c89a1cba364486ba9fa9e1e18c3b1a8148e604d1da8530af8f7adb099bc1f1aa",
+    "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+    "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+    "js/illustrated-kids.js": "ae3a7dd4d5409ae8562f427bc655c494f8a46ef2c1862ea2bb640449a0f03444",
+    "js/illustrated-neighbourhood.js": "71417eda5219cc410288dee15034cea96ca82d0c107e9f1cfd458dfe664609b0",
+    "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+    "js/illustrated-visits.js": "1fd3a8f60a019b1529db6859d16be51ca8b35c2bb82ada9c4ef1dedab58c9003",
+    "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+    "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+    "js/npc-motion.js": "ddc5a88e1cd653243bdd98c44fc5bf2bd97f70ada2f81c8bf7cce88d5174d766",
+    "js/street-life.js": "8547a6829602b9c2070add14e2d89083299fa3c6e01d15885fe5f6b07d46f994",
+    "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+    "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d",
+    "references/source/stage11-hero-integration.json": "6ed48030cf3e2862d7a0412fdc47de260b248daf9a41718a2cecb72a0370333f",
+    "references/source/stage12-hero-integration.json": "8ef685ae12bf25f3a7a2b8f173867fed307104e725c94a8c6f24f3a3fd5dab13",
+    "tools/verify-source-integrity.py": "c8f945d7a51020be02cab376a70eff77aacfa9c8aedbd8648851c57b8865e711"
+  },
+  "unitSuites": [
+    {
+      "test": "tests/brawler.cjs",
+      "testSha256": "a6d6a101e8117e8bf00ba5df08f6d2fd148630beb83ab60b447d4a1e1c8ab00a",
+      "command": [
+        "node",
+        "tests/brawler.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.064,
+      "stdout": "Brawler checks passed: persistent residents, witness aggression, hostile throws, staged screen impact, damage/death/recovery, attached baby and timed Apex/Madness states.",
+      "stderr": ""
+    },
+    {
+      "test": "tests/building-visits.cjs",
+      "testSha256": "035a04e57cf25aeffc646a2f5b4559065749dcf86f7d2605ef4a1bd52ae24f40",
+      "command": [
+        "node",
+        "tests/building-visits.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.038,
+      "stdout": "Placement and quest checks passed: access, terrain, walking, inventory requirements, boat unlock, buoy/seed objectives, persistence and unavailable storage.\nLocomotion checks passed: opposing legs, alternating planted/swing feet, stable stance and continuous two-bone joints.",
+      "stderr": ""
+    },
+    {
+      "test": "tests/centrum_anatomy.cjs",
+      "testSha256": "43a00bf85112b1f32ee34762d002b2ba17d52ff8f4997380306a2bfbf4e4c09e",
+      "command": [
+        "node",
+        "tests/centrum_anatomy.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.259,
+      "stdout": "{\"cases\":160,\"bootRatios\":{\"near\":{\"min\":1,\"max\":1},\"far\":{\"min\":1,\"max\":1}},\"maxHipShift\":18.013933261806773,\"maxThighError\":1.0150610510858574e-14,\"maxShinError\":2.2838873649431793e-14,\"sourceTriangles\":15360,\"minAreaRatio\":0.10264026204394812,\"moods\":{\"horizontal\":\"laugh\",\"up\":\"leanForward\",\"down\":\"leanBack\"}}",
+      "stderr": ""
+    },
+    {
+      "test": "tests/centrum_civilians.cjs",
+      "testSha256": "499db2648a80d466ac165b168221e9be3917f3de9fdfe76823d69d7a076d5795",
+      "command": [
+        "node",
+        "tests/centrum_civilians.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.221,
+      "stdout": "PASS: sparse source civilians, fear/defeat/reload recovery, peaceful identities, held dialogue, one-time delivery walk and namespaced/denied storage.",
+      "stderr": ""
+    },
+    {
+      "test": "tests/centrum_depth_gait.cjs",
+      "testSha256": "7bad8feae2f7c6a2225d7cbf4576ebda9a6a2c23b284512277a815a25aae09b1",
+      "command": [
+        "node",
+        "tests/centrum_depth_gait.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.1,
+      "stdout": "{\"passed\":true,\"midStanceCases\":24,\"worstResidualUnitsPerSecond\":9.069651696336223e-10,\"contactEnvelopeAtHeight200\":[-11.248524590163933,7.5600000000000005],\"unchangedDepthRadius\":12,\"pureDepthCyclesPerSecond\":1.7195767195767198,\"horizontalCyclesPerSecond\":1.2896825396825398,\"nativeOptOutPreserved\":true}",
+      "stderr": ""
+    },
+    {
+      "test": "tests/centrum_economy.cjs",
+      "testSha256": "61f5924f4ad44ccd3009796a6465fbea3c80faab201c6aaa5ab7c1ed202e81ef",
+      "command": [
+        "node",
+        "tests/centrum_economy.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.09,
+      "stdout": "PASS: 15 economy cases; atomic values, one-time rewards/pickups, coherent latest/checkpoint recovery, safe recovery and donor isolation.",
+      "stderr": ""
+    },
+    {
+      "test": "tests/centrum_hero_cache.cjs",
+      "testSha256": "fdcb11231b5c61ae2875282e41725f552b49f46fffa307330174770931dbcad2",
+      "command": [
+        "node",
+        "tests/centrum_hero_cache.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.042,
+      "stdout": "PASS: exact frame metadata, native idle/same-heading fallback, latest-only queue, bounded shared cache, disposal and failure recovery",
+      "stderr": ""
+    },
+    {
+      "test": "tests/centrum_inventory.cjs",
+      "testSha256": "2293d8b0747f44afa3513662b87c5a75c97352a24bb7ff795080e8ce244b0422",
+      "command": [
+        "node",
+        "tests/centrum_inventory.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.03,
+      "stdout": "centrum inventory action checks passed",
+      "stderr": ""
+    },
+    {
+      "test": "tests/centrum_leg_identity.cjs",
+      "testSha256": "6c3333f57ab6c01eb29e8de33b31d82ea955b362fdc47e79f83c6fb453b8e919",
+      "command": [
+        "node",
+        "tests/centrum_leg_identity.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.222,
+      "stdout": "{\"passed\":true,\"cases\":240,\"nearToFarRatio\":{\"min\":1.0551181102362197,\"max\":1.1574074074074074},\"layerCases\":720,\"babyCases\":6}",
+      "stderr": ""
+    },
+    {
+      "test": "tests/centrum_parking_save.cjs",
+      "testSha256": "4cf63a7bbd4c2dc2030d0a1ab2dce0d6857609349b9b60f75d7f52b0f7422d9e",
+      "command": [
+        "node",
+        "tests/centrum_parking_save.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.034,
+      "stdout": "PASS: single namespaced parking record, exact route/health/quest/reward ledger, stable transfer reload, impossible-target rejection and no duplicated reward writes.",
+      "stderr": ""
+    },
+    {
+      "test": "tests/centrum_quest_reload.cjs",
+      "testSha256": "d099f52c896f99f28298c4c119ffe2a31ce70f9f563cc64dcfe4f423e15d5f1f",
+      "command": [
+        "node",
+        "tests/centrum_quest_reload.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.031,
+      "stdout": "centrum quest facade/reload checks passed",
+      "stderr": ""
+    },
+    {
+      "test": "tests/centrum_save.cjs",
+      "testSha256": "05348a8d02f8cc234c2e3e6eaac7560dba0c207346237af233bf72465e8ad46f",
+      "command": [
+        "node",
+        "tests/centrum_save.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.04,
+      "stdout": "PASS: namespaced scene persistence, gate/discovery/inventory continuity, safe named fallback, schema/layout/position validation and denied storage.",
+      "stderr": ""
+    },
+    {
+      "test": "tests/centrum_scenes.cjs",
+      "testSha256": "60737c32a2ad281690be3f59e4edd279fbb79f5b557db8fc4e2f17efc5b38a3c",
+      "command": [
+        "node",
+        "tests/centrum_scenes.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.051,
+      "stdout": "PASS: scene graph, named safe entrances/facing, occlusion data, body-clear proximity, furniture sweep and closed/open gate/post footprints.",
+      "stderr": ""
+    },
+    {
+      "test": "tests/centrum_validation.cjs",
+      "testSha256": "f13d984b9c698570af60d5dcd0d530b331dea8459289e854a4b8acc7b4e0e072",
+      "command": [
+        "node",
+        "tests/centrum_validation.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 2.988,
+      "stdout": "PASS: 7 stage8 validation groups: every exit and named arrival is body-clear in both gate states; locked shortcut never isolates a task, room or bicycle; sweeps cannot tunnel through furniture, floors or closed gate; opened posts stay solid; furniture/gate occlusion anchors follow floor footprints, not actor jumps; each stable story prefix reloads through the canonical ledger and denied progress rolls back; transaction model: random purchases/pickups/eat/damage/reload/retry preserve one coherent state; stale scene and quest component saves cannot erase paid rewards or resurrect food",
+      "stderr": ""
+    },
+    {
+      "test": "tests/gang-encounters.cjs",
+      "testSha256": "a6f886c39b6de852db7ce51bea5cda5620f98d3f818f60dc53b7128b2378a487",
+      "command": [
+        "node",
+        "tests/gang-encounters.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.18,
+      "stdout": "Gang encounters passed: calm hangouts, warning/pressure, crew provocation, real cover, cycling ownership, exact weapon contacts, fire duration, shared health and bounded history.",
+      "stderr": ""
+    },
+    {
+      "test": "tests/hero-gait.cjs",
+      "testSha256": "4a737f92dba6c93f960782c23d9741d63e9a2b16fd5ef8cba3bbff31ad3a9ef3",
+      "command": [
+        "node",
+        "tests/hero-gait.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 1.575,
+      "stdout": "{\"result\":\"passed\",\"rigCases\":1152,\"streetCycle\":104.39999999999999,\"cyclesPerSecond\":1.149425287356322,\"cacheBytes\":4025684}\nZero-budget idle preparation completes all seven source pieces.",
+      "stderr": ""
+    },
+    {
+      "test": "tests/npc-life.cjs",
+      "testSha256": "4084007b1ad93c5220ff3bf0a224bf501eaaba7ddd522fef2d4850a58355aa61",
+      "command": [
+        "node",
+        "tests/npc-life.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.113,
+      "stdout": "NPC life checks passed: peaceful fear/flee/hide, witness safety, sidewalk routes, prop rests, running pursuit, schedules, stable IDs/health and combat visibility.",
+      "stderr": ""
+    },
+    {
+      "test": "tests/weapons.cjs",
+      "testSha256": "16d6f2b4b1d7bbc2f817927d0c3b417a0cdfb6cec72cfb2d396f70cf4d49a915",
+      "command": [
+        "node",
+        "tests/weapons.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.103,
+      "stdout": "{\"result\":\"passed\",\"renderCases\":192,\"damage\":{\"rock\":10,\"molotov\":30,\"firecracker\":20},\"heartHP\":20,\"maxEffects\":32}",
+      "stderr": ""
+    },
+    {
+      "test": "tests/wrong_entrance_quest.cjs",
+      "testSha256": "b775432b60b37d04731a424af6a7aba73a78c1e61eb1e709ac134e2918ac7dc1",
+      "command": [
+        "node",
+        "tests/wrong_entrance_quest.cjs"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.042,
+      "stdout": "PASS: Wrong Entrance ordered states, slip/label/parcel prerequisites, persistent one-time entitlement, future-only idempotent redemption, corruption/unavailability and no food/health/source-save writes.",
+      "stderr": ""
+    }
+  ],
+  "syntaxChecks": [
+    {
+      "file": "js/assets.js",
+      "command": [
+        "node",
+        "--check",
+        "js/assets.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.036,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/autumn-quests.js",
+      "command": [
+        "node",
+        "--check",
+        "js/autumn-quests.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.025,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/baby-passenger.js",
+      "command": [
+        "node",
+        "--check",
+        "js/baby-passenger.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.027,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/brawler-art.js",
+      "command": [
+        "node",
+        "--check",
+        "js/brawler-art.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.027,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/brawler.js",
+      "command": [
+        "node",
+        "--check",
+        "js/brawler.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.027,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-atmosphere.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-atmosphere.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.027,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-balance.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-balance.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.03,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-civilians.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-civilians.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.027,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-depth-gait.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-depth-gait.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.031,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-economy.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-economy.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.036,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-hero-cache.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-hero-cache.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.037,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-inventory.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-inventory.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.043,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-link.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-link.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.029,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-parking-save.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-parking-save.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.03,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-save.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-save.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.043,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-scenery.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-scenery.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.043,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-scenes.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-scenes.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.036,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-square-world.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-square-world.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.036,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-square.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-square.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.037,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/centrum-story.js",
+      "command": [
+        "node",
+        "--check",
+        "js/centrum-story.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.033,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/fullscreen.js",
+      "command": [
+        "node",
+        "--check",
+        "js/fullscreen.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.033,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/game.js",
+      "command": [
+        "node",
+        "--check",
+        "js/game.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.059,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/hero-rig.js",
+      "command": [
+        "node",
+        "--check",
+        "js/hero-rig.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.036,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/illustrated-atlas.js",
+      "command": [
+        "node",
+        "--check",
+        "js/illustrated-atlas.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.034,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/illustrated-hero.js",
+      "command": [
+        "node",
+        "--check",
+        "js/illustrated-hero.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.037,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/illustrated-kids.js",
+      "command": [
+        "node",
+        "--check",
+        "js/illustrated-kids.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.035,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/illustrated-neighbourhood.js",
+      "command": [
+        "node",
+        "--check",
+        "js/illustrated-neighbourhood.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.033,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/illustrated-props.js",
+      "command": [
+        "node",
+        "--check",
+        "js/illustrated-props.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.038,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/illustrated-visits.js",
+      "command": [
+        "node",
+        "--check",
+        "js/illustrated-visits.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.035,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/illustrated-world.js",
+      "command": [
+        "node",
+        "--check",
+        "js/illustrated-world.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.042,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/locomotion.js",
+      "command": [
+        "node",
+        "--check",
+        "js/locomotion.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.041,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/npc-motion.js",
+      "command": [
+        "node",
+        "--check",
+        "js/npc-motion.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.043,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/street-life.js",
+      "command": [
+        "node",
+        "--check",
+        "js/street-life.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.041,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/weapon-effects.js",
+      "command": [
+        "node",
+        "--check",
+        "js/weapon-effects.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.036,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "js/wrong-entrance-quest.js",
+      "command": [
+        "node",
+        "--check",
+        "js/wrong-entrance-quest.js"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.033,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "sourceIntegrity": {
+    "command": [
+      "python3",
+      "tools/verify-source-integrity.py"
+    ],
+    "passed": true,
+    "returnCode": 0,
+    "elapsedSeconds": 0.306,
+    "stdout": "PASS: 944 pinned original files verified; all source assets/CSS and original protected code match;\nonly reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional Centrum walking/worker additions differ.",
+    "stderr": ""
+  },
+  "runtimeHashesAfter": {
+    "autumn-v19.html": "819b2dd3127922009f397d7ed1466aef3bd5987eb94ead040b4958f819bc7d1b",
+    "autumn-version.json": "cd9367299e290ea168a19cfdc0431f8f34843c29f49a7018566e8853b23dfad3",
+    "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+    "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+    "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+    "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+    "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+    "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+    "index.html": "819b2dd3127922009f397d7ed1466aef3bd5987eb94ead040b4958f819bc7d1b",
+    "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+    "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+    "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+    "js/brawler-art.js": "042627f4a89564bce96c26a7a8499ce06d1e691c6ca168e8c7dfa37950b930ee",
+    "js/brawler.js": "83f40b2a50fa24c3534adc9b90cb1ba3ee4076133a523a3d93d2fc96c05f3294",
+    "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+    "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+    "js/centrum-civilians.js": "86d294ff75a2915d830e81369ecd9aef213bfbbe0292cc0dcefe0fa13e709eb6",
+    "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+    "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+    "js/centrum-hero-cache.js": "8e292fa343074be831a0d04bb2198e528c3168c254972ee24be18031347d3706",
+    "js/centrum-inventory.js": "b57ee93a98de53d86d567518cae65be5703dcd575a6117f4ffa610904cfd8903",
+    "js/centrum-link.js": "d1a695bb2ea5bf1e7117caa900498838170eaf8ca6b3afaaadcff21e877be98d",
+    "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+    "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+    "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+    "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+    "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+    "js/centrum-square.js": "dedd5c1ee31312dcde4dd96cbf15814aa35b3b9e7d0a039d21f53224ce36f4ca",
+    "js/centrum-story.js": "c625d40ea5366285ed67d4140b3f1765a89181aa112901b17627385e1996d333",
+    "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+    "js/game.js": "f093ab3929280663c758f6a787e483f924e586ef14ac7c7349a4b3b399122e40",
+    "js/hero-rig.js": "c89a1cba364486ba9fa9e1e18c3b1a8148e604d1da8530af8f7adb099bc1f1aa",
+    "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+    "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+    "js/illustrated-kids.js": "ae3a7dd4d5409ae8562f427bc655c494f8a46ef2c1862ea2bb640449a0f03444",
+    "js/illustrated-neighbourhood.js": "71417eda5219cc410288dee15034cea96ca82d0c107e9f1cfd458dfe664609b0",
+    "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+    "js/illustrated-visits.js": "1fd3a8f60a019b1529db6859d16be51ca8b35c2bb82ada9c4ef1dedab58c9003",
+    "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+    "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+    "js/npc-motion.js": "ddc5a88e1cd653243bdd98c44fc5bf2bd97f70ada2f81c8bf7cce88d5174d766",
+    "js/street-life.js": "8547a6829602b9c2070add14e2d89083299fa3c6e01d15885fe5f6b07d46f994",
+    "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+    "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d",
+    "references/source/stage11-hero-integration.json": "6ed48030cf3e2862d7a0412fdc47de260b248daf9a41718a2cecb72a0370333f",
+    "references/source/stage12-hero-integration.json": "8ef685ae12bf25f3a7a2b8f173867fed307104e725c94a8c6f24f3a3fd5dab13",
+    "tools/verify-source-integrity.py": "c8f945d7a51020be02cab376a70eff77aacfa9c8aedbd8648851c57b8865e711"
+  },
+  "changedRuntimeFiles": [],
+  "passed": true,
+  "sourceGuardMutationChecks": [
+    {
+      "name": "unreviewed original body-height change",
+      "passed": true,
+      "scope": "In-memory string only; no source/runtime file changed.",
+      "rejection": "Unexpected rig edits beyond reviewed Stage12 integration"
+    },
+    {
+      "name": "unreviewed anatomical layer reversal",
+      "passed": true,
+      "scope": "In-memory string only; no source/runtime file changed.",
+      "rejection": "Missing or repeated reviewed edit:     }"
+    }
+  ]
+}
