@@ -1,9 +1,9 @@
 {
   "passed": true,
   "archive": "delivery/BQ-Centrum-validated.zip",
-  "sha256": "d8fc49ec6ca19106e323314249b954ce250467edee1a7f4256ebe54b27dcdaeb",
-  "zipBytes": 899734242,
-  "uncompressedBytes": 925233648,
+  "sha256": "106016baeaf3f47170b7b317431b4dfb594a21d96770608ef814d702540100d0",
+  "zipBytes": 899734237,
+  "uncompressedBytes": 925233636,
   "files": 1888,
   "htmlFiles": [
     "autumn-v19.html",

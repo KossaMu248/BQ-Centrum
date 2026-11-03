@@ -1,5 +1,5 @@
 {
-  "scope": "Exact Stage14 delivery payload compared with current frozen target worktree. External standalone certificate/output subtree excluded except frozen README.",
+  "scope": "Exact Stage14 delivery payload after the documented README link fix, compared with current frozen target worktree. External standalone certificate/history/output subtree excluded except frozen README.",
   "manifestPayloads": 1886,
   "currentSelectedPayloads": 1886,
   "missing": [],

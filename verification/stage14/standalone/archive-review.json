@@ -1,15 +1,15 @@
 {
-  "scope": "External exact-archive Stage14 delivery review; excluded from its own ZIP. Production named-entrance scene fixtures are disclosed. This is not a fresh earned quest route or physical-device test.",
-  "atUtc": "2026-11-03T12:13:23+00:00",
+  "scope": "External exact-archive Stage14 delivery review after correcting one documentation link. Excluded from its own ZIP. Production named-entrance fixtures are disclosed; this is not a fresh earned quest route or physical-device test.",
+  "atUtc": "2026-11-03T12:18:44+00:00",
   "build": "BQ_CENTRUM_STAGE14",
   "passed": true,
   "archive": "delivery/BQ-Centrum-validated.zip",
-  "archiveSha256": "d8fc49ec6ca19106e323314249b954ce250467edee1a7f4256ebe54b27dcdaeb",
-  "archiveBytes": 899734242,
+  "archiveSha256": "106016baeaf3f47170b7b317431b4dfb594a21d96770608ef814d702540100d0",
+  "archiveBytes": 899734237,
   "manifestPayloadsCompared": 1886,
   "archiveEntries": 1888,
   "worktreePayloadComparison": {
-    "scope": "Exact Stage14 delivery payload compared with current frozen target worktree. External standalone certificate/output subtree excluded except frozen README.",
+    "scope": "Exact Stage14 delivery payload after the documented README link fix, compared with current frozen target worktree. External standalone certificate/history/output subtree excluded except frozen README.",
     "manifestPayloads": 1886,
     "currentSelectedPayloads": 1886,
     "missing": [],
@@ -133,8 +133,8 @@
     "outsideSubpathRequests": 0
   },
   "requestsObserved": {
-    "root": 2255,
-    "subpath": 2255
+    "root": 2238,
+    "subpath": 2254
   },
   "extractedSourceIntegrity": "PASS: 944 pinned original files verified; all source assets/CSS and original protected code match;\nonly reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional Centrum walking/worker/preparation additions differ.",
   "currentCoreEvidence": {
@@ -193,5 +193,13 @@
     "Named production save-factory fixtures test scene loading, bag behavior and authored walking; separate native route evidence covers the earned story flow.",
     "Frame samples from this functional run are not controlled performance or thermal guarantees.",
     "No additional WebKit/Firefox run was performed for this exact ZIP; current-runtime browser evidence is separate."
-  ]
+  ],
+  "docOnlyRebuild": {
+    "changedPayload": "verification/stage14/README.md",
+    "reason": "Correct the scheduler/scene-contracts link from performance/preparation-contracts.json to preparation-contracts.json.",
+    "priorActuallyTestedArchiveSha256": "d8fc49ec6ca19106e323314249b954ce250467edee1a7f4256ebe54b27dcdaeb",
+    "priorCertificateHistory": "verification/stage14/standalone/history/before-document-link-fix/",
+    "runtimeUnitAndPerformanceReruns": false,
+    "exactArchiveMatrixRerun": true
+  }
 }
