@@ -1,0 +1,172 @@
+{
+  "passed": true,
+  "scope": "The single frozen Stage17 archive; package hashes/extraction, real clean-server browser interaction matrix and final payload comparison.",
+  "archiveSha256": "a3159912fafd3bdd90bd915644b97e9fb7cb3e4b05b3f0400ac9a1d7490fd3c9",
+  "zipBytes": 998969071,
+  "payloadBytes": 1029265971,
+  "payloadFiles": 2124,
+  "archiveFiles": 2126,
+  "exactManifestAndCRC": true,
+  "smallHTMLFiles": {
+    "autumn-v19.html": 13644,
+    "index.html": 13644
+  },
+  "forbiddenPaths": [],
+  "credentialPatternScan": "Package builder scans allowlisted text and decoded gzip JSON; eight positive/negative codec checks also passed.",
+  "requiredPreparedRuntimeAssets": 55,
+  "sourceIntegrityFromExtraction": "PASS: 944 pinned original files verified; all source assets/CSS and original protected code match;\nonly reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest and Stage17 NPC-prop fit additions differ.",
+  "matrix": {
+    "passed": true,
+    "topLevelChecks": 28,
+    "serverPaths": [
+      "/",
+      "/BQ-Centrum/"
+    ],
+    "desktop": [
+      1280,
+      720
+    ],
+    "phoneLandscapeChromiumTouchEmulation": [
+      844,
+      390
+    ],
+    "physicalDevice": false,
+    "sceneLoadsAtUnchanged73HP": 20,
+    "cameraProjectionSamples": 36,
+    "realWalkInputSamples": 16,
+    "authoredAwayTowardAndNativeBabyChecks": 8,
+    "oneBicycleAndOriginalCarrierChecks": "Asserted at all scene arrivals and actual walking samples.",
+    "maxPendingMainRAF": 1,
+    "consoleHTTPExternalPathErrors": 0,
+    "fixtures": "Production save factory, named entrances and recorded valid parking; this extracted delivery matrix does not claim another earned story route."
+  },
+  "realGameplayFrames": [
+    {
+      "file": "root-desktop-food-shop.jpg",
+      "sha256": "e593d81c79f986e689abaa002d6ed037d2fdb882293dfdbe378b900d9862aacd",
+      "pixels": [
+        1280,
+        720
+      ],
+      "bytes": 290907,
+      "encoding": "JPEG quality94 normal-size capture, not pixel-equivalence reference"
+    },
+    {
+      "file": "root-desktop-metro-square.jpg",
+      "sha256": "9467d3f6782e091c2753a6e872475d5510d49bc3152fff9ef025d55c6c128507",
+      "pixels": [
+        1280,
+        720
+      ],
+      "bytes": 246391,
+      "encoding": "JPEG quality94 normal-size capture, not pixel-equivalence reference"
+    },
+    {
+      "file": "root-desktop-ride.jpg",
+      "sha256": "4addf932e90c0b9522b722dedbace46f4ca9566fd0e6abe3bdc70b8217c7ff6a",
+      "pixels": [
+        1280,
+        720
+      ],
+      "bytes": 287584,
+      "encoding": "JPEG quality94 normal-size capture, not pixel-equivalence reference"
+    },
+    {
+      "file": "root-phone-emulation-food-shop.jpg",
+      "sha256": "2ccab0dd9a6455a925ac60c8af0ecc8624f1b29a4b8c6f7373611e1348758b4c",
+      "pixels": [
+        844,
+        390
+      ],
+      "bytes": 144130,
+      "encoding": "JPEG quality94 normal-size capture, not pixel-equivalence reference"
+    },
+    {
+      "file": "root-phone-emulation-metro-square.jpg",
+      "sha256": "e60f47126b218ad4850a0e4d1fb3fa91fddf2a1d821f5d29766db7ef310fc902",
+      "pixels": [
+        844,
+        390
+      ],
+      "bytes": 120815,
+      "encoding": "JPEG quality94 normal-size capture, not pixel-equivalence reference"
+    },
+    {
+      "file": "root-phone-emulation-ride.jpg",
+      "sha256": "bc584222fbd05e7e3e57f880fb74ba4727cf0de261dca48562d285632016b73d",
+      "pixels": [
+        844,
+        390
+      ],
+      "bytes": 123058,
+      "encoding": "JPEG quality94 normal-size capture, not pixel-equivalence reference"
+    },
+    {
+      "file": "subpath-desktop-food-shop.jpg",
+      "sha256": "1e498438fcd76069acde8d8e54ab9bbad3715bc273b05555d1df1d81835a43cb",
+      "pixels": [
+        1280,
+        720
+      ],
+      "bytes": 290913,
+      "encoding": "JPEG quality94 normal-size capture, not pixel-equivalence reference"
+    },
+    {
+      "file": "subpath-desktop-metro-square.jpg",
+      "sha256": "3c55a7ef2ce08bec7f07df36b4081a3fd4e069d40deac36a1bb37e0963780471",
+      "pixels": [
+        1280,
+        720
+      ],
+      "bytes": 246329,
+      "encoding": "JPEG quality94 normal-size capture, not pixel-equivalence reference"
+    },
+    {
+      "file": "subpath-desktop-ride.jpg",
+      "sha256": "02236d805339e48af504360168b1084dbae40763c31709865329c8f43a59a804",
+      "pixels": [
+        1280,
+        720
+      ],
+      "bytes": 287513,
+      "encoding": "JPEG quality94 normal-size capture, not pixel-equivalence reference"
+    },
+    {
+      "file": "subpath-phone-emulation-food-shop.jpg",
+      "sha256": "a92fc1919806187a79097853f6a5607f0290570ca7de87a2138837473edd8029",
+      "pixels": [
+        844,
+        390
+      ],
+      "bytes": 144156,
+      "encoding": "JPEG quality94 normal-size capture, not pixel-equivalence reference"
+    },
+    {
+      "file": "subpath-phone-emulation-metro-square.jpg",
+      "sha256": "7e56abcbaef0af225691ac92f67f507e565aa3dfad31e7b45b441e89002fc18a",
+      "pixels": [
+        844,
+        390
+      ],
+      "bytes": 120779,
+      "encoding": "JPEG quality94 normal-size capture, not pixel-equivalence reference"
+    },
+    {
+      "file": "subpath-phone-emulation-ride.jpg",
+      "sha256": "7c2370bd37bc52e304217726f20aac4e3e585f6493e639332f425ed8d47a677b",
+      "pixels": [
+        844,
+        390
+      ],
+      "bytes": 123117,
+      "encoding": "JPEG quality94 normal-size capture, not pixel-equivalence reference"
+    }
+  ],
+  "compressedProfiles": {
+    "scope": "Retained historical Stage16 traces; no Stage17 profiling claim",
+    "count": 5,
+    "allExactOriginalBytesVerified": true,
+    "bytesSaved": 31016055
+  },
+  "frozenPayloadUnchanged": true
+}

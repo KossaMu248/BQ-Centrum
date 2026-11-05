@@ -15,15 +15,21 @@
   bush.src='assets/art/autumn-verge.png';
   let cacheKey='',locals=[],gangLocals=[],furniture=[];
   const painted=new Map(),heard=new Set();let audioRequests=0,lastSoundAt=-99;
+  // Original bench() is180 units wide. Its real sloping seat runs from
+  // y=-39.5 at the back to-27.5 at the front (measured at the centre).
+  // Share that surface with the seated rig instead of a separate hip offset.
+  const benchWidth=140,benchScale=benchWidth/180;
   function prepare(scenes,finish,count,gangs=[]){
     const key=finish+':'+count+':'+gangs.map(n=>n.id).join(',');if(cacheKey===key)return;
     cacheKey=key;locals=[];gangLocals=[];furniture=[];
     const safe=x=>Math.max(100,Math.min(finish-100,x));
     function prop(id,kind,x,depth=-82){
-      const p={id,kind,x:safe(x),depth,seatHeight:38};furniture.push(p);return p;
+      const seating=kind==='bench'?{width:benchWidth,seatHeight:35*benchScale,seatPan:{front:27.5*benchScale,rear:39.5*benchScale},footprintHalf:benchWidth*.55}:{};
+      const p={id,kind,x:safe(x),depth,...seating};furniture.push(p);return p;
     }
     const hide=p=>({id:p.id,kind:p.kind==='bush'?'bush':'bin',x:p.x+(p.kind==='bin'?24:0),depth:p.depth-4,duration:10});
-    const rest=(p,kind,duration)=>({...p,kind,duration});
+    // A smoker uses the bin from beside it, rather than standing through it.
+    const rest=(p,kind,duration)=>({...p,kind,propKind:p.kind,propX:p.x,propDepth:p.depth,x:p.x-(kind==='smoke'&&p.kind==='bin'?70:0),duration});
     const west=prop('promenade-bench-west','bench',2220,-84),east=prop('promenade-bench-east','bench',2680,-84);
     const smoke=prop('promenade-smoke','bin',2930,-82),leftBush=prop('promenade-bush-west','bush',1980,-80),rightBush=prop('promenade-bush-east','bush',3190,-80);
     const refuge=[hide(leftBush),hide(rightBush),hide(smoke)];
@@ -32,7 +38,7 @@
         restSpots:[{id:'promenade-pause',kind:'idle',x:2460,depth:-64,duration:4}],hideSpots:refuge},
       {id:'civilian-reader',variant:9,x:east.x,depth:east.depth,sidewalkDepth:-64,patrol:true,civilian:true,routeMin:2300,routeMax:3530,walkSpeed:53,
         restSpots:[rest(east,'newspaper',14),{id:'promenade-east-pause',kind:'idle',x:3410,depth:-64,duration:4}],hideSpots:refuge},
-      {id:'civilian-smoker',variant:10,x:smoke.x,depth:smoke.depth,sidewalkDepth:-64,patrol:true,civilian:true,routeMin:2470,routeMax:3760,walkSpeed:48,
+      {id:'civilian-smoker',variant:10,x:rest(smoke,'smoke',13).x,depth:smoke.depth,sidewalkDepth:-64,patrol:true,civilian:true,routeMin:2470,routeMax:3760,walkSpeed:48,
         restSpots:[rest(smoke,'smoke',13),rest(east,'bench',9)],hideSpots:refuge,
         schedule:{period:110,on:65,offset:15,entryX:3760,exitX:3760}},
       {id:'civilian-bench',variant:11,x:west.x,depth:west.depth,sidewalkDepth:-64,patrol:true,civilian:true,routeMin:1540,routeMax:2840,walkSpeed:44,
@@ -89,7 +95,7 @@
   function drawProp(c,p,groundAt,time=0){
     const g=groundAt(p.x);if(g==null)return;
     const y=g+p.depth;
-    if(p.kind==='bench')window.BearlyStreetProps.draw(c,'bench',p.x,y,196,time);
+    if(p.kind==='bench')window.BearlyStreetProps.draw(c,'bench',p.x,y,p.width||benchWidth,time);
     else if(p.kind==='bin')window.BearlyStreetProps.draw(c,'bin',p.x,y,68,time);
     else if(p.kind==='utility')window.BearlyStreetProps.draw(c,'utility',p.x,y,p.width||88,time);
     else if(p.kind==='firebin'){
@@ -100,7 +106,7 @@
       const scale=cover.width/cover.w;
       c.drawImage(coverTile,p.x-cover.width*.5,y+(cover.y-cover.foot)*scale,cover.width,coverTile.height*.5);c.restore();
     }
-    painted.set(p.id,{...p,foot:y,seatY:y-p.seatHeight});
+    painted.set(p.id,{...p,foot:y,seatY:p.kind==='bench'?y-p.seatHeight:null,seatPanY:p.seatPan?{front:y-p.seatPan.front,rear:y-p.seatPan.rear}:null});
   }
   function caption(c,n,x,y,h,time){
     if(n.visible===false||n.active===false)return;

@@ -36,6 +36,33 @@ def replace_reviewed(text, added, original='', count=1):
     return text.replace(added, original)
 
 
+STAGE17_PREVIOUS = {
+    'autumn-v19.html': '17d0516568c790a8ac968c57e3ac56d76d0563f193145f01799b38ab08c3d2c6',
+    'index.html': '17d0516568c790a8ac968c57e3ac56d76d0563f193145f01799b38ab08c3d2c6',
+    'js/game.js': '11c93d495aa746d673896781d0053a1a8f85b498bbab5f850a1ff7468d0e3dec',
+    'js/npc-motion.js': '147503f395bd349444a4c8490d72b912c9d5211849323ef8c6c929ed5ff6db13',
+    'js/street-life.js': '1677f641ef54a8e4ef3d2c7ffe0c8d15aea2d7bd5f1e6d3419f67c5d97401584',
+}
+STAGE17_MANIFEST_SHA256 = '699523fc251d06a6626cb793f330f24fdeb706d72c65af6248fb54c530fd7ce9'
+INTENTIONAL.update(STAGE17_PREVIOUS)
+
+
+def reverse_stage17_source(path, text):
+    """Undo only the exact reviewed NPC-prop/seated-fit and entry hunks."""
+    raw = (ROOT / 'references/source/stage17-source-integration.json').read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == STAGE17_MANIFEST_SHA256, 'Changed Stage17 source inverse manifest'
+    spec = json.loads(raw)
+    assert spec['format'] == 1 and spec['previousProjectCommit'] == 'c75b5ca6dca299ea77bfb52eb6754bb00f1d41ea'
+    assert set(spec['files']) == set(STAGE17_PREVIOUS), 'Unexpected Stage17 protected paths'
+    edits = spec['files'][path]
+    assert edits['previousSha256'] == STAGE17_PREVIOUS[path]
+    assert hashlib.sha256(text.encode()).hexdigest() == edits['currentSha256'], 'Unreviewed Stage17 source bytes: ' + path
+    for edit in reversed(edits['changes']):
+        text = replace_reviewed(text, edit['current'], edit['previous'])
+    assert hashlib.sha256(text.encode()).hexdigest() == STAGE17_PREVIOUS[path], 'Unexpected source edits beyond reviewed Stage17 integration: ' + path
+    return text
+
+
 
 STAGE16_PREVIOUS = {
     "autumn-v19.html": "84cbd3fd22a209a3ae4831e0ab906f94e905d0b54e1fe5de29c4f761c3b428df",
@@ -132,6 +159,8 @@ def reverse_stage11_rig(text):
 
 def restore_donor(path):
     text = (ROOT / path).read_text()
+    if path in STAGE17_PREVIOUS:
+        text = reverse_stage17_source(path, text)
     if path in STAGE16_PREVIOUS:
         text = reverse_stage16_source(path, text)
     if path in STAGE14_PREVIOUS:
@@ -327,9 +356,9 @@ assert not failures, '\n'.join(failures)
 assert (ROOT / 'index.html').read_bytes() == (ROOT / 'autumn-v19.html').read_bytes()
 manifest = json.loads((ROOT / 'autumn-version.json').read_text())
 assert manifest['source']['commit'] == 'da109213fdf24947c2ac0b85de900214cc72e44f'
-assert manifest['edition'] == 'BQ_CENTRUM_STAGE16'
+assert manifest['edition'] == 'BQ_CENTRUM_STAGE17'
 assert manifest['project'] == 'BQ-Centrum' and manifest['entry'] == 'autumn-v19.html'
 assert manifest['source']['repository'] == 'KossaMu248/BQ-Autumn'
 assert manifest['source']['branch'] == 'main' and manifest['source']['build_id'] == 'AUTUMN_RIDE_ART_V19'
 print(f'PASS: {len(HASHES)} pinned original files verified; all source assets/CSS and original protected code match;')
-print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional Centrum walking/worker/preparation and reviewed Stage16 camera/NPC/rest additions differ.')
+print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest and Stage17 NPC-prop fit additions differ.')

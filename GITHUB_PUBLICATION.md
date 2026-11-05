@@ -63,3 +63,8 @@ The user explicitly approved the proposed25% screen-size reduction for a wider e
 ## Stage16 reported 2.5D/NPC repairs
 
 The user requested less lag, a wider copied2.5D view, shorter child gangsters, coherentNPC walking and peaceful seated rest until disturbed. This target-only update preserves original assets/baby/title, source cycling/damage formulas, the existing adventure ledger and combat recovery. It adds bounded original-pouch/native-worker reuse, route1.0 projection, source child94/128 proportions, original complete NPC walking keys and calm rest retention. Actual timings, source inverses, native gameplay and exact standalone evidence are versioned under verification/stage16. Existing target main/Pages authorization persists; final commit/deployment and public-file hashes are read back outside the ZIP. Neither donor repository/save/deployment is modified.
+
+
+## Stage17 NPC-associated prop fit
+
+This target-only repair scales the original source-street benches to140 units and uses their actual sloped seat to support intact original seated/read poses. It also moves smoking anchors beside their existing bins. Original artwork, character scale, camera, physics/damage, peaceful-rest behaviour, inventory and saves remain. Fresh rendered prop-fit/interaction and exact standalone evidence live under verification/stage17; earlier performance/full-campaign tests keep their original stage labels. Existing target main/Pages authorization persists; physical-device tests stay skipped. Final publication hashes are read back outside the ZIP. Neither donor repository/save/deployment is modified.

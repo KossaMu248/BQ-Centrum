@@ -277,9 +277,15 @@ onmessage=event=>{const m=event.data;if(m.type==='source'){const tile=new Offscr
     return JSON.parse(JSON.stringify({...lastAudit,details}));
   }
   function cacheStats(){return{preparationMode,cacheFailure,onDemand:!!preparedManifest,visibleComplete:[...walkBanks.values()].filter(b=>b.requested).every(b=>b.built===WALK_PHASES),requestedVariants:[...walkBanks.values()].filter(b=>b.requested).map(b=>b.variant),phaseCount:WALK_PHASES,canonicalHeight:cacheState.height,frameCount:cacheState.bakes,capacity:profiles.length*WALK_PHASES,bytes:cacheState.bytes,limitBytes:CACHE_LIMIT,hits:cacheState.hits,misses:cacheState.misses,bakes:cacheState.bakes,buildMs:cacheState.buildMs,maxBuildMs:cacheState.maxBuildMs,mainBuildMs:cacheState.mainBuildMs,maxMainBuildMs:cacheState.maxMainBuildMs,mode:cacheState.mode,warmupMs:cacheState.completedMs||performance.now()-cacheState.startedAt,complete:cacheState.complete,variants:[...walkBanks.values()].map(b=>({variant:b.variant,frames:b.built,width:b.width,height:b.height,bytes:b.built*b.width*b.height*4,hits:b.hits,misses:b.misses}))};}
-  function seated(c,frame,x,y,h,face,seatHeight,t=0,reading=false){
+  function seated(c,frame,x,y,h,face,seatHeight,t=0,reading=false,seatPan=null){
     const s=h/frame.stature,flip=face*frame.sourceFace<0?-1:1,[px,py]=frame.seatPivot||frame.anchor,[sx,sy]=frame.rect;
+    const reach=(frame.core[1]+frame.core[3]-1-py)*s;
+    const fitted=Number.isFinite(seatPan?.front)&&Number.isFinite(seatPan?.rear)&&seatPan.front>0&&seatPan.rear>=seatPan.front;
+    // Keep the whole original pose/scale. Shorter legs perch at the front of
+    // the same sloped seat; longer legs sit further back. Never stretch legs.
+    if(fitted)seatHeight=clamp(reach,seatPan.front,seatPan.rear);
     c.save();c.translate(x,y-seatHeight);c.rotate(Math.sin(t*.75+frame.variant)* (reading?.0035:.0018));c.scale(flip,1+.0025*Math.sin(t*1.6+frame.variant));c.drawImage(frame.tile,(sx-px)*s,(sy-py)*s,frame.tile.width*s,frame.tile.height*s);c.restore();
+    return{seated:true,fitted,seatHeight,legReach:reach,soleOffset:reach-seatHeight,seatPan:fitted?{...seatPan}:null};
   }
   const authoredWalkFrames=new WeakMap();
   function authoredFrame(frame){
@@ -319,7 +325,7 @@ onmessage=event=>{const m=event.data;if(m.type==='source'){const tile=new Offscr
     else if(!reaction&&(['run','flee'].includes(activity)||n.running)){
       const flight=-(Math.sin(((phase%1)+1)%1*Math.PI*2)**2)*h*.035,lean=(face>0?1:-1)*.055;
       c.save();c.translate(0,flight);c.rotate(lean);raw(c,frame,0,0,h,face);c.restore();
-    }else if(['sit','read'].includes(pose)&&frame.seatPivot){seated(c,frame,0,0,h,face,n.activityProp?.seatHeight??h*.29,t,pose==='read');}
+    }else if(['sit','read'].includes(pose)&&frame.seatPivot){details=seated(c,frame,0,0,h,face,n.activityProp?.seatHeight??h*.29,t,pose==='read',n.activityProp?.seatPan);}
     else if(activity==='hide'&&variant<9){c.save();c.scale(1,.65);raw(c,frame,0,0,h,face);c.restore();}
     else{const breathing=!reaction&&n.state!=='held'?1+.004*Math.sin(t*1.8+variant):1;c.save();c.scale(1,breathing);raw(c,frame,0,0,h,face);c.restore();}
     if(activity==='smoke'&&!reaction){

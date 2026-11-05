@@ -1,0 +1,530 @@
+{
+  "scope": "Read-only active-source art and geometry audit; original metadata/formula measurements and independent reference inspection. Not gameplay or animation acceptance.",
+  "artGenerated": false,
+  "artReplaced": false,
+  "sourceReferences": {
+    "assets/art/civilian-rest-v16.png": "a3caa1e0c152048fac759773c903bddaa2e5ab47c6efd7484597af56befffb6c",
+    "assets/art/civilian-standing-v16.png": "cf7ea6884f1e716901377ee68a91f045075b7687d97533d7e650f09d69bf92d1",
+    "assets/cache/actors-v19-manifest.json": "3ea0a83d319f0b6688ed4411b9267dd6ee5dbfbd4813d2a1c153e9321e86fc9e",
+    "assets/cache/npc-source-5-v19.png": "ce14b55a8046e7f0f583536ec7bd0ccbc70177d23f3330a521b893a4264f597c",
+    "assets/art/painted-bin.png": "23e15e5ccffbcaced2b6b6624da559ffc4295b162abba73b70808ba0ffbb4b91",
+    "assets/v98_clean_utility.webp": "dc508971e3e9bbb71592087bfcd9903a0764be52546381d4745e1106b544fd46"
+  },
+  "bench": {
+    "renderer": "js/illustrated-props.js bench(), used by BearlyStreetProps.draw",
+    "sourceBaseWidth": 180,
+    "oldStreetWidth": 196,
+    "oldStreetSeatHeight": 38,
+    "seatRearPolygonPoints": [
+      [
+        -81,
+        -39
+      ],
+      [
+        78,
+        -40
+      ]
+    ],
+    "seatFrontPolygonPoints": [
+      [
+        -86,
+        -27
+      ],
+      [
+        88,
+        -28
+      ]
+    ],
+    "centerSeatRearY": -39.5,
+    "centerSeatFrontY": -27.5,
+    "proposedFixedStreetWidth": 140,
+    "actualVisibleBodyWidthApprox": 135.33333333333334,
+    "bodyHeightApprox": 56.0,
+    "reason": "Seat surface has real shallow depth. Tall original seated poses can use its rear; the short older resident can perch on its front, with no pose-art/pivot/body-scale change.",
+    "sharedCurrentCentreBenches": {
+      "width": 210,
+      "npcBaseHeight": 176,
+      "npcSeatedUsers": 0,
+      "recommendation": "Leave unchanged; scale relative to176-unit residents is already similar, and nobody currently sits on them."
+    }
+  },
+  "seatingMeasurements": [
+    {
+      "variant": 9,
+      "pose": "sit",
+      "baseActorHeight": 128,
+      "heightScale": 1.05,
+      "renderedStandingHeight": 134.4,
+      "originalSeatPivot": [
+        170,
+        265
+      ],
+      "originalStature": 420.08,
+      "originalCore": [
+        83,
+        13,
+        263,
+        351
+      ],
+      "sourceOpaqueSoleY": 363,
+      "nativeFootDropBelowHip": 31.35402780422777,
+      "oldSeatHeight": 38,
+      "oldSoleMinusFloor": -6.645972195772231,
+      "fixedBenchWidth": 140,
+      "originalSeatFrontHeight": 21.38888888888889,
+      "originalSeatRearHeight": 30.72222222222222,
+      "proposedContactHeight": 30.72222222222222,
+      "proposedSoleMinusFloor": 0.6318055820055477
+    },
+    {
+      "variant": 9,
+      "pose": "sit",
+      "baseActorHeight": 127.6,
+      "heightScale": 1.05,
+      "renderedStandingHeight": 133.98,
+      "originalSeatPivot": [
+        170,
+        265
+      ],
+      "originalStature": 420.08,
+      "originalCore": [
+        83,
+        13,
+        263,
+        351
+      ],
+      "sourceOpaqueSoleY": 363,
+      "nativeFootDropBelowHip": 31.256046467339555,
+      "oldSeatHeight": 38,
+      "oldSoleMinusFloor": -6.743953532660445,
+      "fixedBenchWidth": 140,
+      "originalSeatFrontHeight": 21.38888888888889,
+      "originalSeatRearHeight": 30.72222222222222,
+      "proposedContactHeight": 30.72222222222222,
+      "proposedSoleMinusFloor": 0.5338242451173336
+    },
+    {
+      "variant": 9,
+      "pose": "read",
+      "baseActorHeight": 128,
+      "heightScale": 1.05,
+      "renderedStandingHeight": 134.4,
+      "originalSeatPivot": [
+        548,
+        265
+      ],
+      "originalStature": 420.08,
+      "originalCore": [
+        433,
+        16,
+        268,
+        347
+      ],
+      "sourceOpaqueSoleY": 362,
+      "nativeFootDropBelowHip": 31.034088745000957,
+      "oldSeatHeight": 38,
+      "oldSoleMinusFloor": -6.9659112549990425,
+      "fixedBenchWidth": 140,
+      "originalSeatFrontHeight": 21.38888888888889,
+      "originalSeatRearHeight": 30.72222222222222,
+      "proposedContactHeight": 30.72222222222222,
+      "proposedSoleMinusFloor": 0.31186652277873605
+    },
+    {
+      "variant": 9,
+      "pose": "read",
+      "baseActorHeight": 127.6,
+      "heightScale": 1.05,
+      "renderedStandingHeight": 133.98,
+      "originalSeatPivot": [
+        548,
+        265
+      ],
+      "originalStature": 420.08,
+      "originalCore": [
+        433,
+        16,
+        268,
+        347
+      ],
+      "sourceOpaqueSoleY": 362,
+      "nativeFootDropBelowHip": 30.937107217672825,
+      "oldSeatHeight": 38,
+      "oldSoleMinusFloor": -7.062892782327175,
+      "fixedBenchWidth": 140,
+      "originalSeatFrontHeight": 21.38888888888889,
+      "originalSeatRearHeight": 30.72222222222222,
+      "proposedContactHeight": 30.72222222222222,
+      "proposedSoleMinusFloor": 0.21488499545060336
+    },
+    {
+      "variant": 10,
+      "pose": "sit",
+      "baseActorHeight": 128,
+      "heightScale": 1,
+      "renderedStandingHeight": 128,
+      "originalSeatPivot": [
+        160,
+        614
+      ],
+      "originalStature": 400.02,
+      "originalCore": [
+        97,
+        375,
+        250,
+        336
+      ],
+      "sourceOpaqueSoleY": 710,
+      "nativeFootDropBelowHip": 30.718464076796163,
+      "oldSeatHeight": 38,
+      "oldSoleMinusFloor": -7.281535923203837,
+      "fixedBenchWidth": 140,
+      "originalSeatFrontHeight": 21.38888888888889,
+      "originalSeatRearHeight": 30.72222222222222,
+      "proposedContactHeight": 30.718464076796163,
+      "proposedSoleMinusFloor": 0.0
+    },
+    {
+      "variant": 10,
+      "pose": "sit",
+      "baseActorHeight": 127.6,
+      "heightScale": 1,
+      "renderedStandingHeight": 127.6,
+      "originalSeatPivot": [
+        160,
+        614
+      ],
+      "originalStature": 400.02,
+      "originalCore": [
+        97,
+        375,
+        250,
+        336
+      ],
+      "sourceOpaqueSoleY": 710,
+      "nativeFootDropBelowHip": 30.62246887655617,
+      "oldSeatHeight": 38,
+      "oldSoleMinusFloor": -7.3775311234438306,
+      "fixedBenchWidth": 140,
+      "originalSeatFrontHeight": 21.38888888888889,
+      "originalSeatRearHeight": 30.72222222222222,
+      "proposedContactHeight": 30.62246887655617,
+      "proposedSoleMinusFloor": 0.0
+    },
+    {
+      "variant": 10,
+      "pose": "read",
+      "baseActorHeight": 128,
+      "heightScale": 1,
+      "renderedStandingHeight": 128,
+      "originalSeatPivot": [
+        541,
+        614
+      ],
+      "originalStature": 400.02,
+      "originalCore": [
+        443,
+        376,
+        263,
+        334
+      ],
+      "sourceOpaqueSoleY": 709,
+      "nativeFootDropBelowHip": 30.3984800759962,
+      "oldSeatHeight": 38,
+      "oldSoleMinusFloor": -7.601519924003799,
+      "fixedBenchWidth": 140,
+      "originalSeatFrontHeight": 21.38888888888889,
+      "originalSeatRearHeight": 30.72222222222222,
+      "proposedContactHeight": 30.3984800759962,
+      "proposedSoleMinusFloor": 0.0
+    },
+    {
+      "variant": 10,
+      "pose": "read",
+      "baseActorHeight": 127.6,
+      "heightScale": 1,
+      "renderedStandingHeight": 127.6,
+      "originalSeatPivot": [
+        541,
+        614
+      ],
+      "originalStature": 400.02,
+      "originalCore": [
+        443,
+        376,
+        263,
+        334
+      ],
+      "sourceOpaqueSoleY": 709,
+      "nativeFootDropBelowHip": 30.303484825758712,
+      "oldSeatHeight": 38,
+      "oldSoleMinusFloor": -7.696515174241288,
+      "fixedBenchWidth": 140,
+      "originalSeatFrontHeight": 21.38888888888889,
+      "originalSeatRearHeight": 30.72222222222222,
+      "proposedContactHeight": 30.303484825758712,
+      "proposedSoleMinusFloor": 0.0
+    },
+    {
+      "variant": 11,
+      "pose": "sit",
+      "baseActorHeight": 128,
+      "heightScale": 0.84,
+      "renderedStandingHeight": 107.52,
+      "originalSeatPivot": [
+        185,
+        946
+      ],
+      "originalStature": 359.9,
+      "originalCore": [
+        90,
+        722,
+        219,
+        296
+      ],
+      "sourceOpaqueSoleY": 1017,
+      "nativeFootDropBelowHip": 21.211225340372327,
+      "oldSeatHeight": 38,
+      "oldSoleMinusFloor": -16.788774659627673,
+      "fixedBenchWidth": 140,
+      "originalSeatFrontHeight": 21.38888888888889,
+      "originalSeatRearHeight": 30.72222222222222,
+      "proposedContactHeight": 21.38888888888889,
+      "proposedSoleMinusFloor": -0.17766354851656274
+    },
+    {
+      "variant": 11,
+      "pose": "sit",
+      "baseActorHeight": 127.6,
+      "heightScale": 0.84,
+      "renderedStandingHeight": 107.184,
+      "originalSeatPivot": [
+        185,
+        946
+      ],
+      "originalStature": 359.9,
+      "originalCore": [
+        90,
+        722,
+        219,
+        296
+      ],
+      "sourceOpaqueSoleY": 1017,
+      "nativeFootDropBelowHip": 21.144940261183663,
+      "oldSeatHeight": 38,
+      "oldSoleMinusFloor": -16.855059738816337,
+      "fixedBenchWidth": 140,
+      "originalSeatFrontHeight": 21.38888888888889,
+      "originalSeatRearHeight": 30.72222222222222,
+      "proposedContactHeight": 21.38888888888889,
+      "proposedSoleMinusFloor": -0.24394862770522607
+    },
+    {
+      "variant": 11,
+      "pose": "read",
+      "baseActorHeight": 128,
+      "heightScale": 0.84,
+      "renderedStandingHeight": 107.52,
+      "originalSeatPivot": [
+        565,
+        945
+      ],
+      "originalStature": 359.9,
+      "originalCore": [
+        445,
+        723,
+        256,
+        295
+      ],
+      "sourceOpaqueSoleY": 1017,
+      "nativeFootDropBelowHip": 21.509974993053625,
+      "oldSeatHeight": 38,
+      "oldSoleMinusFloor": -16.490025006946375,
+      "fixedBenchWidth": 140,
+      "originalSeatFrontHeight": 21.38888888888889,
+      "originalSeatRearHeight": 30.72222222222222,
+      "proposedContactHeight": 21.509974993053625,
+      "proposedSoleMinusFloor": 0.0
+    },
+    {
+      "variant": 11,
+      "pose": "read",
+      "baseActorHeight": 127.6,
+      "heightScale": 0.84,
+      "renderedStandingHeight": 107.184,
+      "originalSeatPivot": [
+        565,
+        945
+      ],
+      "originalStature": 359.9,
+      "originalCore": [
+        445,
+        723,
+        256,
+        295
+      ],
+      "sourceOpaqueSoleY": 1017,
+      "nativeFootDropBelowHip": 21.442756321200335,
+      "oldSeatHeight": 38,
+      "oldSoleMinusFloor": -16.557243678799665,
+      "fixedBenchWidth": 140,
+      "originalSeatFrontHeight": 21.38888888888889,
+      "originalSeatRearHeight": 30.72222222222222,
+      "proposedContactHeight": 21.442756321200335,
+      "proposedSoleMinusFloor": 0.0
+    }
+  ],
+  "currentRestAssociations": [
+    {
+      "prop": "promenade-bench-west",
+      "users": [
+        {
+          "id": "civilian-bench",
+          "variant": 11,
+          "poses": [
+            "sit",
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "prop": "promenade-bench-east",
+      "users": [
+        {
+          "id": "civilian-reader",
+          "variant": 9,
+          "poses": [
+            "read"
+          ]
+        },
+        {
+          "id": "civilian-smoker",
+          "variant": 10,
+          "poses": [
+            "sit"
+          ]
+        }
+      ]
+    },
+    {
+      "prop": "each later <scene>-life-bench",
+      "users": "Exactly one scene visitor; variant9+i%3. Other scene walkers/neighbours have idle-only stops."
+    }
+  ],
+  "otherUsedProps": {
+    "bin": {
+      "oldAndRetainedWidth": 68,
+      "paintedSourceCrop": [
+        32,
+        247,
+        1030,
+        1105
+      ],
+      "bodyHeight": 72.95145631067962,
+      "recommendation": "Keep size; it is a plausible waist-high bin versus128-unit adult. Offset authored smoking contact from its centre so the adult no longer stands inside it.",
+      "recommendedSmokingOffsetX": -70,
+      "minimumApproxOpaqueClearanceAt128": 3.528023598820056
+    },
+    "utilityCover": {
+      "nominalWidth": 88,
+      "sourceImageSize": [
+        195,
+        142
+      ],
+      "opaqueSourceBounds": [
+        20,
+        9,
+        192,
+        142
+      ],
+      "actualDrawnHeight": 104.13333333333333,
+      "actualOpaqueHeight": 97.53333333333333,
+      "dimensionsMetadataBodyHeight": 89.10000000000001,
+      "observation": "Metadata under-reports actual painted height. It is tall relative to94-unit children, but is authored cover rather than a seat; no unrequested resize recommended in this seating repair."
+    },
+    "firebinCover": {
+      "width": 72,
+      "bodyHeight": 77.24271844660194,
+      "observation": "Below94-unit child height and plausible as cover; flame extent is separate."
+    },
+    "newspaperAndBags": {
+      "observation": "Part of complete original pose art; keep their source proportions and ownership. Do not independently rescale a painted-in newspaper or handbag."
+    }
+  },
+  "recommendation": "Use a single fixed140-wide source-street bench; derive contacts from its actual original seat-pan range and each original pose sole/pivot. Preserve complete NPC artwork and seating pivots, full original masks and tiny existing sway. Validate actual after-captures separately.",
+  "remainingLimit": "Static source poses are drawn from slightly different three-quarter viewpoints; up to~0.64 native worldpixel sole/floor difference is anticipated when a tall pose is clamped to the rear edge. This is an art-fit tolerance, not exact whole-frame pixel equivalence.",
+  "visualReview": {
+    "scope": "Independent normal-size visual inspection of six final actual gameplay JPEGs and direct comparison to original art/baseline. No browser/profiler run or new artwork by reviewer. Stills and QA runtime traces are separate; no walking clip was recorded in Stage17.",
+    "conditions": {
+      "browser": "154.0.8037.57",
+      "desktop": [
+        1280,
+        720
+      ],
+      "phoneEmulation": [
+        844,
+        390
+      ],
+      "physicalPhone": false,
+      "physicalSafariTested": false
+    },
+    "reviewedCaptures": [
+      {
+        "file": "verification/stage17/browser/after/desktop/resting-prop-fit.jpg",
+        "sha256": "b8d168ed630de913ffe19412b1fff102852804a0639cc9ddadc7353c9853469a",
+        "actualGameplay": true,
+        "reviewedAtNativePixelScale": true
+      },
+      {
+        "file": "verification/stage17/browser/after/desktop/contact-stands-and-walks.jpg",
+        "sha256": "44c5391e952a461ccfda86a60101f26b1038c521e8342e964a94a06b08e0b25f",
+        "actualGameplay": true,
+        "reviewedAtNativePixelScale": true
+      },
+      {
+        "file": "verification/stage17/browser/after/desktop/walk-behind-empty-bench.jpg",
+        "sha256": "60dad499de20c29409300cef2278a81823ca949fce65258830731ca51eb8105c",
+        "actualGameplay": true,
+        "reviewedAtNativePixelScale": true
+      },
+      {
+        "file": "verification/stage17/browser/after/phone/resting-prop-fit.jpg",
+        "sha256": "f099dd9a21dd466d81e3da0258a18fda62cfdc102659b48287eeb001680ade2b",
+        "actualGameplay": true,
+        "reviewedAtNativePixelScale": true
+      },
+      {
+        "file": "verification/stage17/browser/after/phone/contact-stands-and-walks.jpg",
+        "sha256": "dcf2ef697b247b5ab26ff378236659ba5599c7d5d51f91f8c569e61e8963344a",
+        "actualGameplay": true,
+        "reviewedAtNativePixelScale": true
+      },
+      {
+        "file": "verification/stage17/browser/after/phone/walk-behind-empty-bench.jpg",
+        "sha256": "8193d6cbc9c2b4ff31144c3280f7730dfd9a3d1cd85ba64764bb705ebb8cd05d",
+        "actualGameplay": true,
+        "reviewedAtNativePixelScale": true
+      }
+    ],
+    "qaReport": {
+      "file": "verification/stage17/browser/after/results.json",
+      "sha256": "1dc4a58acead933d1267ef8719b84c44ed7da156f152a4760bacc5842fc6e526",
+      "runtimeMatchesCurrent": true
+    },
+    "outcome": "No visual blocker in the reviewed final frames. Original seated identities now fit the smaller original benches with coherent posterior support and grounded shoes; smoker stands beside rather than inside the bin.",
+    "observations": [
+      "Both benches retain the original wood/iron painting, fixed shared scale and planted feet, with visibly more plausible proportions against the unchanged civilian bodies.",
+      "Older resident perches toward the front of the actual pan; reader sits farther back. Both original posteriors are visibly supported, without the earlier elevated shoes.",
+      "Source handbag and newspaper remain complete original pose artwork at their established character scale.",
+      "Contact snapshots show the older resident standing/walking, leaving the same-sized bench empty. Player-behind-bench snapshots show the original furniture in front of the legs, and the original baby remains visible above it.",
+      "The smoker and bin have a visible physical gap; the bin retains plausible waist-level size.",
+      "Original bear/baby likeness, continuous child clothing/carrier, bicycle and accepted source-route camera remain visually unchanged."
+    ],
+    "remainingLimits": [
+      "Source rest/walk art remains a limited original pose set; this review does not certify continuous motion from screenshots. Runtime quiet/contact/walking evidence belongs to the separate browser harness.",
+      "Phone-landscape source UI remains dense; contextual hints cover some background/NPC space, and the far-right action label is close to the edge. The baby is clear in these frames; no interface redesign was part of this repair.",
+      "Subpixel sole/floor differences and existing tiny seated sway remain, measured separately. Physical devices and thermal/frame-rate guarantees are untested."
+    ]
+  }
+}

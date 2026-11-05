@@ -1,0 +1,5377 @@
+{
+  "scope": "Stage17 actual NPC/prop fit: same authored residents before and after repair.\n\nOne original debug route-stop setup per fresh context; native Q, walking, pause,\ninventory and contact thereafter. No NPC/health/item/quest grants. Browser probes\nonly observe render arguments and Canvas matrices. Chromium touch emulation is\nnot physical-device/Safari evidence. These are functional, not FPS tests.\n",
+  "phase": "after",
+  "harnessSHA256": "1dbd324ee01750247fa9230f8287b5077ab85b57198da302719505b5c5f4dc7a",
+  "runtimeHashes": {
+    "autumn-v19.html": "867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb",
+    "autumn-version.json": "0d92274f3b2bdaee9fff7b707fb2349b8d8850771999e6139518ec29906039cf",
+    "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+    "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+    "css/centrum-route.css": "892e1ec5ac28ae0a551d45b276974888e6db3f227635487e45c761e1553d1e5f",
+    "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+    "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+    "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+    "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+    "index.html": "867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb",
+    "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+    "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+    "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+    "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+    "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+    "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+    "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+    "js/centrum-camera.js": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+    "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+    "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+    "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+    "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+    "js/centrum-hero-cache.js": "38f3212052e12304e3ecf4a053f0141122660395593874151e23835717ee5eff",
+    "js/centrum-inventory.js": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+    "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+    "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+    "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+    "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+    "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+    "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+    "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf",
+    "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+    "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+    "js/game.js": "5cfc8f851422d73cc9829d4bb8adf403ffbcf6f923427226d974cf9efa411a9c",
+    "js/hero-rig.js": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+    "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+    "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+    "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+    "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+    "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+    "js/illustrated-visits.js": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+    "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+    "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+    "js/npc-motion.js": "f4111c327656ae3131a58547fbce9b7ac6865cd4af8907545fe94cd8d08d637a",
+    "js/street-life.js": "7e54984fb2d8b94df6f5a055b0c1f8c2828bbde14634a8d9431d50a52e73b229",
+    "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+    "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+  },
+  "conditions": {
+    "headless": true,
+    "physicalDevicesTested": false,
+    "desktop": [
+      1280,
+      720
+    ],
+    "touchEmulation": [
+      844,
+      390
+    ],
+    "deviceScaleFactor": 1,
+    "jpegQuality": 90,
+    "setup": "one original debug route stop per fresh context, then native controls; no state grants"
+  },
+  "checks": [
+    {
+      "name": "desktop original seated art/feet fit bench; quiet rest, front/behind sorting, contact stand/walk, bag/pause/same-bike return",
+      "passed": true,
+      "initialSetup": 1600,
+      "quietSimulationSeconds": 5,
+      "frontRenderOrder": [
+        {
+          "kind": "prop",
+          "id": "promenade-bench-west"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-bench-east"
+        },
+        {
+          "kind": "npc",
+          "id": "civilian-reader"
+        },
+        {
+          "kind": "npc",
+          "id": "civilian-bench"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-smoke"
+        },
+        {
+          "kind": "npc",
+          "id": "civilian-smoker"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-bush-west"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-bush-east"
+        },
+        {
+          "kind": "npc",
+          "id": "promenade-walker"
+        },
+        {
+          "kind": "player",
+          "x": 2221.665336000002,
+          "y": 542.8139453866673
+        }
+      ],
+      "behindRenderOrder": [
+        {
+          "kind": "player",
+          "x": 2225.7729120000017,
+          "y": 487.2972655733342
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-bench-west"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-bench-east"
+        },
+        {
+          "kind": "npc",
+          "id": "civilian-reader"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-smoke"
+        },
+        {
+          "kind": "npc",
+          "id": "civilian-smoker"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-bush-west"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-bush-east"
+        },
+        {
+          "kind": "npc",
+          "id": "promenade-walker"
+        },
+        {
+          "kind": "npc",
+          "id": "civilian-bench"
+        }
+      ],
+      "afterContact": {
+        "id": "civilian-bench",
+        "x": 2246.3956000000017,
+        "depth": -64,
+        "activity": "walk",
+        "prop": null,
+        "state": "idle",
+        "hp": 60,
+        "visible": true,
+        "active": true,
+        "distance": 37.59485988334543,
+        "speed": 44,
+        "fearUntil": 0
+      },
+      "health": 100,
+      "combatStatsBefore": {
+        "grabs": 0,
+        "throws": 0,
+        "mauls": 0,
+        "frenzyMauls": 0,
+        "transformations": 0,
+        "witnesses": 0,
+        "defeats": 0,
+        "enemyShots": 0,
+        "screenImpacts": 0,
+        "screams": 0,
+        "civilianScares": 0,
+        "hides": 0,
+        "gangWarnings": 0,
+        "gangProvocations": 0
+      },
+      "combatStatsAfter": {
+        "grabs": 0,
+        "throws": 0,
+        "mauls": 0,
+        "frenzyMauls": 0,
+        "transformations": 0,
+        "witnesses": 0,
+        "defeats": 0,
+        "enemyShots": 0,
+        "screenImpacts": 0,
+        "screams": 0,
+        "civilianScares": 0,
+        "hides": 0,
+        "gangWarnings": 0,
+        "gangProvocations": 0
+      },
+      "metrics": {
+        "writes": [
+          "bq-centrum:scene-network:v1"
+        ],
+        "reads": [
+          "bq-centrum:adventure:v1",
+          "bq-centrum:best-score:v1",
+          "bq-centrum:civilians:v1",
+          "bq-centrum:parking:v1",
+          "bq-centrum:quest:wrong-entrance:v1",
+          "bq-centrum:scene-network:v1"
+        ],
+        "listenerCounts": {
+          "document:fullscreenchange": 1,
+          "window:keydown": 6,
+          "window:pagehide": 3,
+          "window:pointerdown": 2,
+          "window:blur": 5,
+          "document:visibilitychange": 5,
+          "window:keyup": 3,
+          "window:centrum-square-change": 1,
+          "window:pointerup": 2,
+          "window:pointercancel": 1,
+          "window:touchend": 2,
+          "window:touchcancel": 2,
+          "window:__playwright_global_listeners_check__": 1,
+          "window:mousemove": 1,
+          "window:touchstart": 1,
+          "window:mousedown": 1,
+          "window:mouseup": 1,
+          "window:click": 1,
+          "window:auxclick": 1,
+          "window:dblclick": 1,
+          "window:contextmenu": 1
+        },
+        "loopFrames": 1035,
+        "pending": 1,
+        "maxPending": 1,
+        "audioContexts": 1,
+        "frameTimeMs": {
+          "samples": 360,
+          "median": 16.7,
+          "p95": 33.4,
+          "maximum": 50
+        }
+      }
+    },
+    {
+      "name": "phone original seated art/feet fit bench; quiet rest, front/behind sorting, contact stand/walk, bag/pause/same-bike return",
+      "passed": true,
+      "initialSetup": 1600,
+      "quietSimulationSeconds": 5,
+      "frontRenderOrder": [
+        {
+          "kind": "prop",
+          "id": "promenade-bench-west"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-bench-east"
+        },
+        {
+          "kind": "npc",
+          "id": "civilian-reader"
+        },
+        {
+          "kind": "npc",
+          "id": "civilian-bench"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-smoke"
+        },
+        {
+          "kind": "npc",
+          "id": "civilian-smoker"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-bush-west"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-bush-east"
+        },
+        {
+          "kind": "npc",
+          "id": "promenade-walker"
+        },
+        {
+          "kind": "player",
+          "x": 2219.1900400000013,
+          "y": 538.6751330222222
+        }
+      ],
+      "behindRenderOrder": [
+        {
+          "kind": "player",
+          "x": 2223.4078480000016,
+          "y": 485.42703184888927
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-bench-west"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-bench-east"
+        },
+        {
+          "kind": "npc",
+          "id": "civilian-reader"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-smoke"
+        },
+        {
+          "kind": "npc",
+          "id": "civilian-smoker"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-bush-west"
+        },
+        {
+          "kind": "prop",
+          "id": "promenade-bush-east"
+        },
+        {
+          "kind": "npc",
+          "id": "civilian-bench"
+        }
+      ],
+      "afterContact": {
+        "id": "civilian-bench",
+        "x": 2249.330400000001,
+        "depth": -64,
+        "activity": "walk",
+        "prop": null,
+        "state": "idle",
+        "hp": 60,
+        "visible": true,
+        "active": true,
+        "distance": 40.78407892882298,
+        "speed": 44,
+        "fearUntil": 0
+      },
+      "health": 100,
+      "combatStatsBefore": {
+        "grabs": 0,
+        "throws": 0,
+        "mauls": 0,
+        "frenzyMauls": 0,
+        "transformations": 0,
+        "witnesses": 0,
+        "defeats": 0,
+        "enemyShots": 0,
+        "screenImpacts": 0,
+        "screams": 0,
+        "civilianScares": 0,
+        "hides": 0,
+        "gangWarnings": 0,
+        "gangProvocations": 0
+      },
+      "combatStatsAfter": {
+        "grabs": 0,
+        "throws": 0,
+        "mauls": 0,
+        "frenzyMauls": 0,
+        "transformations": 0,
+        "witnesses": 0,
+        "defeats": 0,
+        "enemyShots": 0,
+        "screenImpacts": 0,
+        "screams": 0,
+        "civilianScares": 0,
+        "hides": 0,
+        "gangWarnings": 0,
+        "gangProvocations": 0
+      },
+      "metrics": {
+        "writes": [
+          "bq-centrum:scene-network:v1"
+        ],
+        "reads": [
+          "bq-centrum:adventure:v1",
+          "bq-centrum:best-score:v1",
+          "bq-centrum:civilians:v1",
+          "bq-centrum:parking:v1",
+          "bq-centrum:quest:wrong-entrance:v1",
+          "bq-centrum:scene-network:v1"
+        ],
+        "listenerCounts": {
+          "document:fullscreenchange": 1,
+          "window:keydown": 6,
+          "window:pagehide": 3,
+          "window:pointerdown": 2,
+          "window:blur": 5,
+          "document:visibilitychange": 5,
+          "window:keyup": 3,
+          "window:centrum-square-change": 1,
+          "window:pointerup": 2,
+          "window:pointercancel": 1,
+          "window:touchend": 2,
+          "window:touchcancel": 2,
+          "window:__playwright_global_listeners_check__": 1,
+          "window:mousemove": 1,
+          "window:touchstart": 1,
+          "window:mousedown": 1,
+          "window:mouseup": 1,
+          "window:click": 1,
+          "window:auxclick": 1,
+          "window:dblclick": 1,
+          "window:contextmenu": 1
+        },
+        "loopFrames": 1301,
+        "pending": 1,
+        "maxPending": 1,
+        "audioContexts": 1,
+        "frameTimeMs": {
+          "samples": 360,
+          "median": 16.8,
+          "p95": 50,
+          "maximum": 183.4
+        }
+      }
+    }
+  ],
+  "captures": [
+    {
+      "file": "desktop/resting-prop-fit.jpg",
+      "sha256": "b8d168ed630de913ffe19412b1fff102852804a0639cc9ddadc7353c9853469a",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE17",
+        "source": {
+          "mode": "street",
+          "x": 2428,
+          "depth": 0,
+          "paused": false,
+          "parkedAt": 2400
+        },
+        "hero": {
+          "pose": "walking",
+          "height": 145,
+          "source": "front",
+          "lowerPose": "idle",
+          "authoredLowerBody": true
+        },
+        "baby": {
+          "source": "assets/baby_pose_idle.webp",
+          "mood": "idle",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.4140352055898952,
+          "pose": "front"
+        },
+        "route": {
+          "routeId": "autumn-main",
+          "x": 2400,
+          "health": 100,
+          "grounded": true,
+          "babyMounted": true,
+          "simTime": 4.408333333333342,
+          "lifeTime": 4.999599999999997
+        },
+        "residents": [
+          {
+            "id": "civilian-reader",
+            "variant": 9,
+            "x": 2680,
+            "depth": -84,
+            "activity": "read",
+            "prop": {
+              "id": "promenade-bench-east",
+              "kind": "newspaper",
+              "x": 2680,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "propKind": "bench",
+              "propX": 2680,
+              "propDepth": -84,
+              "duration": 14
+            },
+            "state": "idle",
+            "hp": 60,
+            "distance": 0,
+            "face": 1
+          },
+          {
+            "id": "civilian-smoker",
+            "variant": 10,
+            "x": 2860,
+            "depth": -82,
+            "activity": "smoke",
+            "prop": {
+              "id": "promenade-smoke",
+              "kind": "smoke",
+              "x": 2860,
+              "depth": -82,
+              "propKind": "bin",
+              "propX": 2930,
+              "propDepth": -82,
+              "duration": 13
+            },
+            "state": "idle",
+            "hp": 60,
+            "distance": 0,
+            "face": 1
+          },
+          {
+            "id": "civilian-bench",
+            "variant": 11,
+            "x": 2220,
+            "depth": -84,
+            "activity": "sit",
+            "prop": {
+              "id": "promenade-bench-west",
+              "kind": "bench",
+              "x": 2220,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "propKind": "bench",
+              "propX": 2220,
+              "propDepth": -84,
+              "duration": 12
+            },
+            "state": "idle",
+            "hp": 60,
+            "distance": 0,
+            "face": 1
+          }
+        ],
+        "props": [
+          {
+            "id": "promenade-bench-west",
+            "kind": "bench",
+            "x": 2220,
+            "depth": -84,
+            "width": 140,
+            "seatHeight": 27.22222222222222,
+            "seatPan": {
+              "front": 21.38888888888889,
+              "rear": 30.72222222222222
+            },
+            "footprintHalf": 77,
+            "foot": 487.4,
+            "seatY": 460.17777777777775,
+            "seatPanY": {
+              "front": 466.01111111111106,
+              "rear": 456.67777777777775
+            }
+          },
+          {
+            "id": "promenade-bench-east",
+            "kind": "bench",
+            "x": 2680,
+            "depth": -84,
+            "width": 140,
+            "seatHeight": 27.22222222222222,
+            "seatPan": {
+              "front": 21.38888888888889,
+              "rear": 30.72222222222222
+            },
+            "footprintHalf": 77,
+            "foot": 519.7111111111111,
+            "seatY": 492.4888888888889,
+            "seatPanY": {
+              "front": 498.3222222222222,
+              "rear": 488.9888888888889
+            }
+          },
+          {
+            "id": "promenade-smoke",
+            "kind": "bin",
+            "x": 2930,
+            "depth": -82,
+            "foot": 529.4888888888889,
+            "seatY": null,
+            "seatPanY": null
+          }
+        ],
+        "render": {
+          "npcs": {
+            "civilian-reader": {
+              "id": "civilian-reader",
+              "variant": 9,
+              "activity": "read",
+              "state": "idle",
+              "x": 2680,
+              "y": 519.7111111111111,
+              "height": 127.6,
+              "scale": 1,
+              "prop": {
+                "id": "promenade-bench-east",
+                "kind": "newspaper",
+                "x": 2680,
+                "depth": -84,
+                "width": 140,
+                "seatHeight": 27.22222222222222,
+                "seatPan": {
+                  "front": 21.38888888888889,
+                  "rear": 30.72222222222222
+                },
+                "footprintHalf": 77,
+                "propKind": "bench",
+                "propX": 2680,
+                "propDepth": -84,
+                "duration": 14
+              },
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -2010.3228759765625,
+                "f": -103.25796508789062,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -2010.3228759765625,
+                "m42": -103.25796508789062,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-rest-v16.png",
+                  "sourceRect": "393,12,365,360",
+                  "sourcePose": "read",
+                  "sourceVariant": "9",
+                  "tile": [
+                    365,
+                    360
+                  ],
+                  "destination": [
+                    -49.43558369834317,
+                    -80.69163016568272,
+                    116.4128261283565,
+                    114.81812988002285
+                  ],
+                  "matrix": {
+                    "a": 0.9999997964367928,
+                    "b": 0.0006380645523501886,
+                    "c": -0.0006365312318900419,
+                    "d": 0.9975967164625622,
+                    "e": 669.6771240234375,
+                    "f": 385.7309341430664,
+                    "m11": 0.9999997964367928,
+                    "m12": 0.0006380645523501886,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": -0.0006365312318900419,
+                    "m22": 0.9975967164625622,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 669.6771240234375,
+                    "m42": 385.7309341430664,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 9,
+                "activity": "read",
+                "pose": "read",
+                "phase": 0,
+                "source": "assets/art/civilian-rest-v16.png",
+                "sourceRect": [
+                  393,
+                  12,
+                  365,
+                  360
+                ],
+                "height": 133.98,
+                "heightScale": 1.05,
+                "civilian": true,
+                "details": {
+                  "seated": true,
+                  "fitted": true,
+                  "seatHeight": 30.72222222222222,
+                  "legReach": 30.937107217672825,
+                  "soleOffset": 0.21488499545060336,
+                  "seatPan": {
+                    "front": 21.38888888888889,
+                    "rear": 30.72222222222222
+                  }
+                }
+              }
+            },
+            "civilian-bench": {
+              "id": "civilian-bench",
+              "variant": 11,
+              "activity": "sit",
+              "state": "idle",
+              "x": 2220,
+              "y": 487.4,
+              "height": 127.6,
+              "scale": 1,
+              "prop": {
+                "id": "promenade-bench-west",
+                "kind": "bench",
+                "x": 2220,
+                "depth": -84,
+                "width": 140,
+                "seatHeight": 27.22222222222222,
+                "seatPan": {
+                  "front": 21.38888888888889,
+                  "rear": 30.72222222222222
+                },
+                "footprintHalf": 77,
+                "propKind": "bench",
+                "propX": 2220,
+                "propDepth": -84,
+                "duration": 12
+              },
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -2010.3228759765625,
+                "f": -103.25796508789062,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -2010.3228759765625,
+                "m42": -103.25796508789062,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-rest-v16.png",
+                  "sourceRect": "29,689,355,335",
+                  "sourcePose": "sit",
+                  "sourceVariant": "11",
+                  "tile": [
+                    355,
+                    335
+                  ],
+                  "destination": [
+                    -46.45930536260072,
+                    -76.53872742428453,
+                    105.72470130591832,
+                    99.7683801055849
+                  ],
+                  "matrix": {
+                    "a": 0.9999989155043433,
+                    "b": 0.0014727491766824093,
+                    "c": -0.0014732986963313208,
+                    "d": 1.0003720401759848,
+                    "e": 209.6771240234375,
+                    "f": 362.7531394958496,
+                    "m11": 0.9999989155043433,
+                    "m12": 0.0014727491766824093,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": -0.0014732986963313208,
+                    "m22": 1.0003720401759848,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 209.6771240234375,
+                    "m42": 362.7531394958496,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 11,
+                "activity": "sit",
+                "pose": "sit",
+                "phase": 0,
+                "source": "assets/art/civilian-rest-v16.png",
+                "sourceRect": [
+                  29,
+                  689,
+                  355,
+                  335
+                ],
+                "height": 107.184,
+                "heightScale": 0.84,
+                "civilian": true,
+                "details": {
+                  "seated": true,
+                  "fitted": true,
+                  "seatHeight": 21.38888888888889,
+                  "legReach": 21.144940261183663,
+                  "soleOffset": -0.24394862770522607,
+                  "seatPan": {
+                    "front": 21.38888888888889,
+                    "rear": 30.72222222222222
+                  }
+                }
+              }
+            },
+            "civilian-smoker": {
+              "id": "civilian-smoker",
+              "variant": 10,
+              "activity": "smoke",
+              "state": "idle",
+              "x": 2860,
+              "y": 527.3111111111111,
+              "height": 127.6,
+              "scale": 1,
+              "prop": {
+                "id": "promenade-smoke",
+                "kind": "smoke",
+                "x": 2860,
+                "depth": -82,
+                "propKind": "bin",
+                "propX": 2930,
+                "propDepth": -82,
+                "duration": 13
+              },
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -2010.3228759765625,
+                "f": -103.25796508789062,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -2010.3228759765625,
+                "m42": -103.25796508789062,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-rest-v16.png",
+                  "sourceRect": "769,343,305,377",
+                  "sourcePose": "smoke",
+                  "sourceVariant": "10",
+                  "tile": [
+                    305,
+                    377
+                  ],
+                  "destination": [
+                    -60.41238938053097,
+                    -136.63362831858407,
+                    114.80235988200589,
+                    141.9032448377581
+                  ],
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1.0005966424942017,
+                    "e": 849.6771240234375,
+                    "f": 424.0531311035156,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1.0005966424942017,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 849.6771240234375,
+                    "m42": 424.0531311035156,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 10,
+                "activity": "smoke",
+                "pose": "smoke",
+                "phase": 0,
+                "source": "assets/art/civilian-rest-v16.png",
+                "sourceRect": [
+                  769,
+                  343,
+                  305,
+                  377
+                ],
+                "height": 127.6,
+                "heightScale": 1,
+                "civilian": true,
+                "details": null
+              }
+            }
+          },
+          "props": {
+            "promenade-bench-west": {
+              "id": "promenade-bench-west",
+              "kind": "bench",
+              "x": 2220,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -2010.3228759765625,
+                "f": -103.25796508789062,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -2010.3228759765625,
+                "m42": -103.25796508789062,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bench",
+                  "x": 2220,
+                  "y": 487.4,
+                  "width": 140,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -2010.3228759765625,
+                    "f": -103.25796508789062,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -2010.3228759765625,
+                    "m42": -103.25796508789062,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            },
+            "promenade-bench-east": {
+              "id": "promenade-bench-east",
+              "kind": "bench",
+              "x": 2680,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -2010.3228759765625,
+                "f": -103.25796508789062,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -2010.3228759765625,
+                "m42": -103.25796508789062,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bench",
+                  "x": 2680,
+                  "y": 519.7111111111111,
+                  "width": 140,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -2010.3228759765625,
+                    "f": -103.25796508789062,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -2010.3228759765625,
+                    "m42": -103.25796508789062,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            },
+            "promenade-smoke": {
+              "id": "promenade-smoke",
+              "kind": "bin",
+              "x": 2930,
+              "depth": -82,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -2010.3228759765625,
+                "f": -103.25796508789062,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -2010.3228759765625,
+                "m42": -103.25796508789062,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bin",
+                  "x": 2930,
+                  "y": 529.4888888888889,
+                  "width": 68,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -2010.3228759765625,
+                    "f": -103.25796508789062,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -2010.3228759765625,
+                    "m42": -103.25796508789062,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            }
+          },
+          "order": [
+            {
+              "kind": "prop",
+              "id": "promenade-bench-west"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bench-east"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-reader"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-bench"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-smoke"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-smoker"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bush-west"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bush-east"
+            },
+            {
+              "kind": "npc",
+              "id": "promenade-walker"
+            },
+            {
+              "kind": "player",
+              "x": 2428,
+              "y": 587.1155555555556
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "desktop/contact-stands-and-walks.jpg",
+      "sha256": "44c5391e952a461ccfda86a60101f26b1038c521e8342e964a94a06b08e0b25f",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE17",
+        "source": {
+          "mode": "street",
+          "x": 2244.2224640000018,
+          "depth": -80.10501999999951,
+          "paused": false,
+          "parkedAt": 2400
+        },
+        "hero": {
+          "pose": "walking",
+          "height": 145,
+          "source": "front",
+          "lowerPose": "idle",
+          "authoredLowerBody": true
+        },
+        "baby": {
+          "source": "assets/baby_pose_idle.webp",
+          "mood": "idle",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.4140352055898952,
+          "pose": "front"
+        },
+        "route": {
+          "routeId": "autumn-main",
+          "x": 2400,
+          "health": 100,
+          "grounded": true,
+          "babyMounted": true,
+          "simTime": 4.408333333333342,
+          "lifeTime": 17.489299999999947
+        },
+        "residents": [
+          {
+            "id": "civilian-reader",
+            "variant": 9,
+            "x": 2680,
+            "depth": -84,
+            "activity": "read",
+            "prop": {
+              "id": "promenade-bench-east",
+              "kind": "newspaper",
+              "x": 2680,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "propKind": "bench",
+              "propX": 2680,
+              "propDepth": -84,
+              "duration": 14
+            },
+            "state": "idle",
+            "hp": 60,
+            "distance": 0,
+            "face": 1
+          },
+          {
+            "id": "civilian-smoker",
+            "variant": 10,
+            "x": 2860,
+            "depth": -82,
+            "activity": "smoke",
+            "prop": {
+              "id": "promenade-smoke",
+              "kind": "smoke",
+              "x": 2860,
+              "depth": -82,
+              "propKind": "bin",
+              "propX": 2930,
+              "propDepth": -82,
+              "duration": 13
+            },
+            "state": "idle",
+            "hp": 60,
+            "distance": 0,
+            "face": 1
+          },
+          {
+            "id": "civilian-bench",
+            "variant": 11,
+            "x": 2254.4652000000024,
+            "depth": -64,
+            "activity": "walk",
+            "prop": null,
+            "state": "idle",
+            "hp": 60,
+            "distance": 45.66445988334551,
+            "face": 1
+          }
+        ],
+        "props": [
+          {
+            "id": "promenade-bench-west",
+            "kind": "bench",
+            "x": 2220,
+            "depth": -84,
+            "width": 140,
+            "seatHeight": 27.22222222222222,
+            "seatPan": {
+              "front": 21.38888888888889,
+              "rear": 30.72222222222222
+            },
+            "footprintHalf": 77,
+            "foot": 487.4,
+            "seatY": 460.17777777777775,
+            "seatPanY": {
+              "front": 466.01111111111106,
+              "rear": 456.67777777777775
+            }
+          },
+          {
+            "id": "promenade-bench-east",
+            "kind": "bench",
+            "x": 2680,
+            "depth": -84,
+            "width": 140,
+            "seatHeight": 27.22222222222222,
+            "seatPan": {
+              "front": 21.38888888888889,
+              "rear": 30.72222222222222
+            },
+            "footprintHalf": 77,
+            "foot": 519.7111111111111,
+            "seatY": 492.4888888888889,
+            "seatPanY": {
+              "front": 498.3222222222222,
+              "rear": 488.9888888888889
+            }
+          },
+          {
+            "id": "promenade-smoke",
+            "kind": "bin",
+            "x": 2930,
+            "depth": -82,
+            "foot": 529.4888888888889,
+            "seatY": null,
+            "seatPanY": null
+          }
+        ],
+        "render": {
+          "npcs": {
+            "civilian-reader": {
+              "id": "civilian-reader",
+              "variant": 9,
+              "activity": "read",
+              "state": "idle",
+              "x": 2680,
+              "y": 519.7111111111111,
+              "height": 127.6,
+              "scale": 1,
+              "prop": {
+                "id": "promenade-bench-east",
+                "kind": "newspaper",
+                "x": 2680,
+                "depth": -84,
+                "width": 140,
+                "seatHeight": 27.22222222222222,
+                "seatPan": {
+                  "front": 21.38888888888889,
+                  "rear": 30.72222222222222
+                },
+                "footprintHalf": 77,
+                "propKind": "bench",
+                "propX": 2680,
+                "propDepth": -84,
+                "duration": 14
+              },
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1826.720703125,
+                "f": -89.26756286621094,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1826.720703125,
+                "m42": -89.26756286621094,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-rest-v16.png",
+                  "sourceRect": "393,12,365,360",
+                  "sourcePose": "read",
+                  "sourceVariant": "9",
+                  "tile": [
+                    365,
+                    360
+                  ],
+                  "destination": [
+                    -49.43558369834317,
+                    -80.69163016568272,
+                    116.4128261283565,
+                    114.81812988002285
+                  ],
+                  "matrix": {
+                    "a": 0.9999999035379181,
+                    "b": -0.00043923132228930776,
+                    "c": 0.00043851037119985387,
+                    "d": 0.9983585109884255,
+                    "e": 853.279296875,
+                    "f": 399.7213363647461,
+                    "m11": 0.9999999035379181,
+                    "m12": -0.00043923132228930776,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0.00043851037119985387,
+                    "m22": 0.9983585109884255,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 853.279296875,
+                    "m42": 399.7213363647461,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 9,
+                "activity": "read",
+                "pose": "read",
+                "phase": 0,
+                "source": "assets/art/civilian-rest-v16.png",
+                "sourceRect": [
+                  393,
+                  12,
+                  365,
+                  360
+                ],
+                "height": 133.98,
+                "heightScale": 1.05,
+                "civilian": true,
+                "details": {
+                  "seated": true,
+                  "fitted": true,
+                  "seatHeight": 30.72222222222222,
+                  "legReach": 30.937107217672825,
+                  "soleOffset": 0.21488499545060336,
+                  "seatPan": {
+                    "front": 21.38888888888889,
+                    "rear": 30.72222222222222
+                  }
+                }
+              }
+            },
+            "civilian-bench": {
+              "id": "civilian-bench",
+              "variant": 11,
+              "activity": "walk",
+              "state": "idle",
+              "x": 2254.4652000000024,
+              "y": 510.0040373333335,
+              "height": 127.6,
+              "scale": 1,
+              "prop": null,
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1826.720703125,
+                "f": -89.26756286621094,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1826.720703125,
+                "m42": -89.26756286621094,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-motion-v16.png",
+                  "sourceRect": "385,699,339,325",
+                  "sourcePose": "walkB",
+                  "sourceVariant": "11",
+                  "tile": [
+                    339,
+                    325
+                  ],
+                  "destination": [
+                    -72.29524832214766,
+                    -112.9388456375839,
+                    121.93079194630873,
+                    116.89530201342282
+                  ],
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": 427.744384765625,
+                    "f": 420.73646545410156,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 427.744384765625,
+                    "m42": 420.73646545410156,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 11,
+                "activity": "walk",
+                "pose": "walkB",
+                "phase": 0.7768928727200892,
+                "source": "assets/art/civilian-motion-v16.png",
+                "sourceRect": [
+                  385,
+                  699,
+                  339,
+                  325
+                ],
+                "height": 107.184,
+                "heightScale": 0.84,
+                "civilian": true,
+                "details": {
+                  "authored": true,
+                  "completePose": true,
+                  "sourcePose": "walkB",
+                  "cycleLength": 58.77832258064516,
+                  "drawCalls": 1
+                }
+              }
+            },
+            "civilian-smoker": {
+              "id": "civilian-smoker",
+              "variant": 10,
+              "activity": "smoke",
+              "state": "idle",
+              "x": 2860,
+              "y": 527.3111111111111,
+              "height": 127.6,
+              "scale": 1,
+              "prop": {
+                "id": "promenade-smoke",
+                "kind": "smoke",
+                "x": 2860,
+                "depth": -82,
+                "propKind": "bin",
+                "propX": 2930,
+                "propDepth": -82,
+                "duration": 13
+              },
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1826.720703125,
+                "f": -89.26756286621094,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1826.720703125,
+                "m42": -89.26756286621094,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-rest-v16.png",
+                  "sourceRect": "769,343,305,377",
+                  "sourcePose": "smoke",
+                  "sourceVariant": "10",
+                  "tile": [
+                    305,
+                    377
+                  ],
+                  "destination": [
+                    -60.41238938053097,
+                    -136.63362831858407,
+                    114.80235988200589,
+                    141.9032448377581
+                  ],
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 0.9976111054420471,
+                    "e": 1033.279296875,
+                    "f": 438.0435333251953,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 0.9976111054420471,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 1033.279296875,
+                    "m42": 438.0435333251953,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 10,
+                "activity": "smoke",
+                "pose": "smoke",
+                "phase": 0,
+                "source": "assets/art/civilian-rest-v16.png",
+                "sourceRect": [
+                  769,
+                  343,
+                  305,
+                  377
+                ],
+                "height": 127.6,
+                "heightScale": 1,
+                "civilian": true,
+                "details": null
+              }
+            }
+          },
+          "props": {
+            "promenade-bench-west": {
+              "id": "promenade-bench-west",
+              "kind": "bench",
+              "x": 2220,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1826.720703125,
+                "f": -89.26756286621094,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1826.720703125,
+                "m42": -89.26756286621094,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bench",
+                  "x": 2220,
+                  "y": 487.4,
+                  "width": 140,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -1826.720703125,
+                    "f": -89.26756286621094,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -1826.720703125,
+                    "m42": -89.26756286621094,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            },
+            "promenade-bench-east": {
+              "id": "promenade-bench-east",
+              "kind": "bench",
+              "x": 2680,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1826.720703125,
+                "f": -89.26756286621094,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1826.720703125,
+                "m42": -89.26756286621094,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bench",
+                  "x": 2680,
+                  "y": 519.7111111111111,
+                  "width": 140,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -1826.720703125,
+                    "f": -89.26756286621094,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -1826.720703125,
+                    "m42": -89.26756286621094,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            },
+            "promenade-smoke": {
+              "id": "promenade-smoke",
+              "kind": "bin",
+              "x": 2930,
+              "depth": -82,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1826.720703125,
+                "f": -89.26756286621094,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1826.720703125,
+                "m42": -89.26756286621094,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bin",
+                  "x": 2930,
+                  "y": 529.4888888888889,
+                  "width": 68,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -1826.720703125,
+                    "f": -89.26756286621094,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -1826.720703125,
+                    "m42": -89.26756286621094,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            }
+          },
+          "order": [
+            {
+              "kind": "prop",
+              "id": "promenade-bench-west"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bench-east"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-reader"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-smoke"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-smoker"
+            },
+            {
+              "kind": "player",
+              "x": 2244.2224640000018,
+              "y": 493.1251217244451
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bush-west"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bush-east"
+            },
+            {
+              "kind": "npc",
+              "id": "promenade-walker"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-bench"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "desktop/walk-behind-empty-bench.jpg",
+      "sha256": "60dad499de20c29409300cef2278a81823ca949fce65258830731ca51eb8105c",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE17",
+        "source": {
+          "mode": "street",
+          "x": 2225.7729120000017,
+          "depth": -84.53890999999923,
+          "paused": false,
+          "parkedAt": 2400
+        },
+        "hero": {
+          "pose": "walking",
+          "height": 145,
+          "source": "front",
+          "lowerPose": "idle",
+          "authoredLowerBody": true
+        },
+        "baby": {
+          "source": "assets/baby_pose_idle.webp",
+          "mood": "idle",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.4140352055898952,
+          "pose": "front"
+        },
+        "route": {
+          "routeId": "autumn-main",
+          "x": 2400,
+          "health": 100,
+          "grounded": true,
+          "babyMounted": true,
+          "simTime": 4.408333333333342,
+          "lifeTime": 19.169199999999904
+        },
+        "residents": [
+          {
+            "id": "civilian-reader",
+            "variant": 9,
+            "x": 2680,
+            "depth": -84,
+            "activity": "read",
+            "prop": {
+              "id": "promenade-bench-east",
+              "kind": "newspaper",
+              "x": 2680,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "propKind": "bench",
+              "propX": 2680,
+              "propDepth": -84,
+              "duration": 14
+            },
+            "state": "idle",
+            "hp": 60,
+            "distance": 0,
+            "face": 1
+          },
+          {
+            "id": "civilian-smoker",
+            "variant": 10,
+            "x": 2860,
+            "depth": -82,
+            "activity": "smoke",
+            "prop": {
+              "id": "promenade-smoke",
+              "kind": "smoke",
+              "x": 2860,
+              "depth": -82,
+              "propKind": "bin",
+              "propX": 2930,
+              "propDepth": -82,
+              "duration": 13
+            },
+            "state": "idle",
+            "hp": 60,
+            "distance": 0,
+            "face": 1
+          },
+          {
+            "id": "civilian-bench",
+            "variant": 11,
+            "x": 2328.3808,
+            "depth": -64,
+            "activity": "walk",
+            "prop": null,
+            "state": "idle",
+            "hp": 60,
+            "distance": 119.58005988334554,
+            "face": 1
+          }
+        ],
+        "props": [
+          {
+            "id": "promenade-bench-west",
+            "kind": "bench",
+            "x": 2220,
+            "depth": -84,
+            "width": 140,
+            "seatHeight": 27.22222222222222,
+            "seatPan": {
+              "front": 21.38888888888889,
+              "rear": 30.72222222222222
+            },
+            "footprintHalf": 77,
+            "foot": 487.4,
+            "seatY": 460.17777777777775,
+            "seatPanY": {
+              "front": 466.01111111111106,
+              "rear": 456.67777777777775
+            }
+          },
+          {
+            "id": "promenade-bench-east",
+            "kind": "bench",
+            "x": 2680,
+            "depth": -84,
+            "width": 140,
+            "seatHeight": 27.22222222222222,
+            "seatPan": {
+              "front": 21.38888888888889,
+              "rear": 30.72222222222222
+            },
+            "footprintHalf": 77,
+            "foot": 519.7111111111111,
+            "seatY": 492.4888888888889,
+            "seatPanY": {
+              "front": 498.3222222222222,
+              "rear": 488.9888888888889
+            }
+          },
+          {
+            "id": "promenade-smoke",
+            "kind": "bin",
+            "x": 2930,
+            "depth": -82,
+            "foot": 529.4888888888889,
+            "seatY": null,
+            "seatPanY": null
+          }
+        ],
+        "render": {
+          "npcs": {
+            "civilian-reader": {
+              "id": "civilian-reader",
+              "variant": 9,
+              "activity": "read",
+              "state": "idle",
+              "x": 2680,
+              "y": 519.7111111111111,
+              "height": 127.6,
+              "scale": 1,
+              "prop": {
+                "id": "promenade-bench-east",
+                "kind": "newspaper",
+                "x": 2680,
+                "depth": -84,
+                "width": 140,
+                "seatHeight": 27.22222222222222,
+                "seatPan": {
+                  "front": 21.38888888888889,
+                  "rear": 30.72222222222222
+                },
+                "footprintHalf": 77,
+                "propKind": "bench",
+                "propX": 2680,
+                "propDepth": -84,
+                "duration": 14
+              },
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1809.0303955078125,
+                "f": -87.93096923828125,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1809.0303955078125,
+                "m42": -87.93096923828125,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-rest-v16.png",
+                  "sourceRect": "393,12,365,360",
+                  "sourcePose": "read",
+                  "sourceVariant": "9",
+                  "tile": [
+                    365,
+                    360
+                  ],
+                  "destination": [
+                    -49.43558369834317,
+                    -80.69163016568272,
+                    116.4128261283565,
+                    114.81812988002285
+                  ],
+                  "matrix": {
+                    "a": 0.9999940823528051,
+                    "b": -0.0034402411792409907,
+                    "c": 0.003448159968261763,
+                    "d": 1.0022958809034288,
+                    "e": 870.9696044921875,
+                    "f": 401.0579299926758,
+                    "m11": 0.9999940823528051,
+                    "m12": -0.0034402411792409907,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0.003448159968261763,
+                    "m22": 1.0022958809034288,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 870.9696044921875,
+                    "m42": 401.0579299926758,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 9,
+                "activity": "read",
+                "pose": "read",
+                "phase": 0,
+                "source": "assets/art/civilian-rest-v16.png",
+                "sourceRect": [
+                  393,
+                  12,
+                  365,
+                  360
+                ],
+                "height": 133.98,
+                "heightScale": 1.05,
+                "civilian": true,
+                "details": {
+                  "seated": true,
+                  "fitted": true,
+                  "seatHeight": 30.72222222222222,
+                  "legReach": 30.937107217672825,
+                  "soleOffset": 0.21488499545060336,
+                  "seatPan": {
+                    "front": 21.38888888888889,
+                    "rear": 30.72222222222222
+                  }
+                }
+              }
+            },
+            "civilian-bench": {
+              "id": "civilian-bench",
+              "variant": 11,
+              "activity": "walk",
+              "state": "idle",
+              "x": 2328.3808,
+              "y": 515.5887715555556,
+              "height": 127.6,
+              "scale": 1,
+              "prop": null,
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1809.0303955078125,
+                "f": -87.93096923828125,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1809.0303955078125,
+                "m42": -87.93096923828125,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-motion-v16.png",
+                  "sourceRect": "33,704,351,320",
+                  "sourcePose": "walkA",
+                  "sourceVariant": "11",
+                  "tile": [
+                    351,
+                    320
+                  ],
+                  "destination": [
+                    -63.66297986577182,
+                    -111.14045637583892,
+                    126.24692617449665,
+                    115.09691275167785
+                  ],
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": 519.3504638671875,
+                    "f": 427.65777587890625,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 519.3504638671875,
+                    "m42": 427.65777587890625,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 11,
+                "activity": "walk",
+                "pose": "walkA",
+                "phase": 2.034424506063082,
+                "source": "assets/art/civilian-motion-v16.png",
+                "sourceRect": [
+                  33,
+                  704,
+                  351,
+                  320
+                ],
+                "height": 107.184,
+                "heightScale": 0.84,
+                "civilian": true,
+                "details": {
+                  "authored": true,
+                  "completePose": true,
+                  "sourcePose": "walkA",
+                  "cycleLength": 58.77832258064516,
+                  "drawCalls": 1
+                }
+              }
+            },
+            "civilian-smoker": {
+              "id": "civilian-smoker",
+              "variant": 10,
+              "activity": "smoke",
+              "state": "idle",
+              "x": 2860,
+              "y": 527.3111111111111,
+              "height": 127.6,
+              "scale": 1,
+              "prop": {
+                "id": "promenade-smoke",
+                "kind": "smoke",
+                "x": 2860,
+                "depth": -82,
+                "propKind": "bin",
+                "propX": 2930,
+                "propDepth": -82,
+                "duration": 13
+              },
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1809.0303955078125,
+                "f": -87.93096923828125,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1809.0303955078125,
+                "m42": -87.93096923828125,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-rest-v16.png",
+                  "sourceRect": "769,343,305,377",
+                  "sourcePose": "smoke",
+                  "sourceVariant": "10",
+                  "tile": [
+                    305,
+                    377
+                  ],
+                  "destination": [
+                    -60.41238938053097,
+                    -136.63362831858407,
+                    114.80235988200589,
+                    141.9032448377581
+                  ],
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1.001995325088501,
+                    "e": 1050.9696044921875,
+                    "f": 439.380126953125,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1.001995325088501,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 1050.9696044921875,
+                    "m42": 439.380126953125,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 10,
+                "activity": "smoke",
+                "pose": "smoke",
+                "phase": 0,
+                "source": "assets/art/civilian-rest-v16.png",
+                "sourceRect": [
+                  769,
+                  343,
+                  305,
+                  377
+                ],
+                "height": 127.6,
+                "heightScale": 1,
+                "civilian": true,
+                "details": null
+              }
+            }
+          },
+          "props": {
+            "promenade-bench-west": {
+              "id": "promenade-bench-west",
+              "kind": "bench",
+              "x": 2220,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1809.0303955078125,
+                "f": -87.93096923828125,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1809.0303955078125,
+                "m42": -87.93096923828125,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bench",
+                  "x": 2220,
+                  "y": 487.4,
+                  "width": 140,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -1809.0303955078125,
+                    "f": -87.93096923828125,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -1809.0303955078125,
+                    "m42": -87.93096923828125,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            },
+            "promenade-bench-east": {
+              "id": "promenade-bench-east",
+              "kind": "bench",
+              "x": 2680,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1809.0303955078125,
+                "f": -87.93096923828125,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1809.0303955078125,
+                "m42": -87.93096923828125,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bench",
+                  "x": 2680,
+                  "y": 519.7111111111111,
+                  "width": 140,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -1809.0303955078125,
+                    "f": -87.93096923828125,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -1809.0303955078125,
+                    "m42": -87.93096923828125,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            },
+            "promenade-smoke": {
+              "id": "promenade-smoke",
+              "kind": "bin",
+              "x": 2930,
+              "depth": -82,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1809.0303955078125,
+                "f": -87.93096923828125,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1809.0303955078125,
+                "m42": -87.93096923828125,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bin",
+                  "x": 2930,
+                  "y": 529.4888888888889,
+                  "width": 68,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -1809.0303955078125,
+                    "f": -87.93096923828125,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -1809.0303955078125,
+                    "m42": -87.93096923828125,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            }
+          },
+          "order": [
+            {
+              "kind": "player",
+              "x": 2225.7729120000017,
+              "y": 487.2972655733342
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bench-west"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bench-east"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-reader"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-smoke"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-smoker"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bush-west"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bush-east"
+            },
+            {
+              "kind": "npc",
+              "id": "promenade-walker"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-bench"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "phone/resting-prop-fit.jpg",
+      "sha256": "f099dd9a21dd466d81e3da0258a18fda62cfdc102659b48287eeb001680ade2b",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE17",
+        "source": {
+          "mode": "street",
+          "x": 2428,
+          "depth": 0,
+          "paused": false,
+          "parkedAt": 2400
+        },
+        "hero": {
+          "pose": "walking",
+          "height": 145,
+          "source": "front",
+          "lowerPose": "idle",
+          "authoredLowerBody": true
+        },
+        "baby": {
+          "source": "assets/baby_pose_idle.webp",
+          "mood": "idle",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.4140352055898952,
+          "pose": "front"
+        },
+        "route": {
+          "routeId": "autumn-main",
+          "x": 2400,
+          "health": 100,
+          "grounded": true,
+          "babyMounted": true,
+          "simTime": 3.874999999999989,
+          "lifeTime": 4.363299999999999
+        },
+        "residents": [
+          {
+            "id": "civilian-reader",
+            "variant": 9,
+            "x": 2680,
+            "depth": -84,
+            "activity": "read",
+            "prop": {
+              "id": "promenade-bench-east",
+              "kind": "newspaper",
+              "x": 2680,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "propKind": "bench",
+              "propX": 2680,
+              "propDepth": -84,
+              "duration": 14
+            },
+            "state": "idle",
+            "hp": 60,
+            "distance": 0,
+            "face": 1
+          },
+          {
+            "id": "civilian-smoker",
+            "variant": 10,
+            "x": 2860,
+            "depth": -82,
+            "activity": "smoke",
+            "prop": {
+              "id": "promenade-smoke",
+              "kind": "smoke",
+              "x": 2860,
+              "depth": -82,
+              "propKind": "bin",
+              "propX": 2930,
+              "propDepth": -82,
+              "duration": 13
+            },
+            "state": "idle",
+            "hp": 60,
+            "distance": 0,
+            "face": 1
+          },
+          {
+            "id": "civilian-bench",
+            "variant": 11,
+            "x": 2220,
+            "depth": -84,
+            "activity": "sit",
+            "prop": {
+              "id": "promenade-bench-west",
+              "kind": "bench",
+              "x": 2220,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "propKind": "bench",
+              "propX": 2220,
+              "propDepth": -84,
+              "duration": 12
+            },
+            "state": "idle",
+            "hp": 60,
+            "distance": 0,
+            "face": 1
+          }
+        ],
+        "props": [
+          {
+            "id": "promenade-bench-west",
+            "kind": "bench",
+            "x": 2220,
+            "depth": -84,
+            "width": 140,
+            "seatHeight": 27.22222222222222,
+            "seatPan": {
+              "front": 21.38888888888889,
+              "rear": 30.72222222222222
+            },
+            "footprintHalf": 77,
+            "foot": 487.4,
+            "seatY": 460.17777777777775,
+            "seatPanY": {
+              "front": 466.01111111111106,
+              "rear": 456.67777777777775
+            }
+          },
+          {
+            "id": "promenade-bench-east",
+            "kind": "bench",
+            "x": 2680,
+            "depth": -84,
+            "width": 140,
+            "seatHeight": 27.22222222222222,
+            "seatPan": {
+              "front": 21.38888888888889,
+              "rear": 30.72222222222222
+            },
+            "footprintHalf": 77,
+            "foot": 519.7111111111111,
+            "seatY": 492.4888888888889,
+            "seatPanY": {
+              "front": 498.3222222222222,
+              "rear": 488.9888888888889
+            }
+          },
+          {
+            "id": "promenade-smoke",
+            "kind": "bin",
+            "x": 2930,
+            "depth": -82,
+            "foot": 529.4888888888889,
+            "seatY": null,
+            "seatPanY": null
+          }
+        ],
+        "render": {
+          "npcs": {
+            "civilian-reader": {
+              "id": "civilian-reader",
+              "variant": 9,
+              "activity": "read",
+              "state": "idle",
+              "x": 2680,
+              "y": 519.7111111111111,
+              "height": 127.6,
+              "scale": 1,
+              "prop": {
+                "id": "promenade-bench-east",
+                "kind": "newspaper",
+                "x": 2680,
+                "depth": -84,
+                "width": 140,
+                "seatHeight": 27.22222222222222,
+                "seatPan": {
+                  "front": 21.38888888888889,
+                  "rear": 30.72222222222222
+                },
+                "footprintHalf": 77,
+                "propKind": "bench",
+                "propX": 2680,
+                "propDepth": -84,
+                "duration": 14
+              },
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -2010.2371826171875,
+                "f": -103.38253784179688,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -2010.2371826171875,
+                "m42": -103.38253784179688,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-rest-v16.png",
+                  "sourceRect": "393,12,365,360",
+                  "sourcePose": "read",
+                  "sourceVariant": "9",
+                  "tile": [
+                    365,
+                    360
+                  ],
+                  "destination": [
+                    -49.43558369834317,
+                    -80.69163016568272,
+                    116.4128261283565,
+                    114.81812988002285
+                  ],
+                  "matrix": {
+                    "a": 0.9999994860130906,
+                    "b": -0.0010138903070004927,
+                    "c": 0.001013206089424951,
+                    "d": 0.9993246425718045,
+                    "e": 669.7628173828125,
+                    "f": 385.60636138916016,
+                    "m11": 0.9999994860130906,
+                    "m12": -0.0010138903070004927,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0.001013206089424951,
+                    "m22": 0.9993246425718045,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 669.7628173828125,
+                    "m42": 385.60636138916016,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 9,
+                "activity": "read",
+                "pose": "read",
+                "phase": 0,
+                "source": "assets/art/civilian-rest-v16.png",
+                "sourceRect": [
+                  393,
+                  12,
+                  365,
+                  360
+                ],
+                "height": 133.98,
+                "heightScale": 1.05,
+                "civilian": true,
+                "details": {
+                  "seated": true,
+                  "fitted": true,
+                  "seatHeight": 30.72222222222222,
+                  "legReach": 30.937107217672825,
+                  "soleOffset": 0.21488499545060336,
+                  "seatPan": {
+                    "front": 21.38888888888889,
+                    "rear": 30.72222222222222
+                  }
+                }
+              }
+            },
+            "civilian-bench": {
+              "id": "civilian-bench",
+              "variant": 11,
+              "activity": "sit",
+              "state": "idle",
+              "x": 2220,
+              "y": 487.4,
+              "height": 127.6,
+              "scale": 1,
+              "prop": {
+                "id": "promenade-bench-west",
+                "kind": "bench",
+                "x": 2220,
+                "depth": -84,
+                "width": 140,
+                "seatHeight": 27.22222222222222,
+                "seatPan": {
+                  "front": 21.38888888888889,
+                  "rear": 30.72222222222222
+                },
+                "footprintHalf": 77,
+                "propKind": "bench",
+                "propX": 2220,
+                "propDepth": -84,
+                "duration": 12
+              },
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -2010.2371826171875,
+                "f": -103.38253784179688,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -2010.2371826171875,
+                "m42": -103.38253784179688,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-rest-v16.png",
+                  "sourceRect": "29,689,355,335",
+                  "sourcePose": "sit",
+                  "sourceVariant": "11",
+                  "tile": [
+                    355,
+                    335
+                  ],
+                  "destination": [
+                    -46.45930536260072,
+                    -76.53872742428453,
+                    105.72470130591832,
+                    99.7683801055849
+                  ],
+                  "matrix": {
+                    "a": 0.9999984094792574,
+                    "b": 0.0017835467348217109,
+                    "c": -0.0017801436137034566,
+                    "d": 0.9980903486255228,
+                    "e": 209.7628173828125,
+                    "f": 362.62856674194336,
+                    "m11": 0.9999984094792574,
+                    "m12": 0.0017835467348217109,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": -0.0017801436137034566,
+                    "m22": 0.9980903486255228,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 209.7628173828125,
+                    "m42": 362.62856674194336,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 11,
+                "activity": "sit",
+                "pose": "sit",
+                "phase": 0,
+                "source": "assets/art/civilian-rest-v16.png",
+                "sourceRect": [
+                  29,
+                  689,
+                  355,
+                  335
+                ],
+                "height": 107.184,
+                "heightScale": 0.84,
+                "civilian": true,
+                "details": {
+                  "seated": true,
+                  "fitted": true,
+                  "seatHeight": 21.38888888888889,
+                  "legReach": 21.144940261183663,
+                  "soleOffset": -0.24394862770522607,
+                  "seatPan": {
+                    "front": 21.38888888888889,
+                    "rear": 30.72222222222222
+                  }
+                }
+              }
+            },
+            "civilian-smoker": {
+              "id": "civilian-smoker",
+              "variant": 10,
+              "activity": "smoke",
+              "state": "idle",
+              "x": 2860,
+              "y": 527.3111111111111,
+              "height": 127.6,
+              "scale": 1,
+              "prop": {
+                "id": "promenade-smoke",
+                "kind": "smoke",
+                "x": 2860,
+                "depth": -82,
+                "propKind": "bin",
+                "propX": 2930,
+                "propDepth": -82,
+                "duration": 13
+              },
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -2010.2371826171875,
+                "f": -103.38253784179688,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -2010.2371826171875,
+                "m42": -103.38253784179688,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-rest-v16.png",
+                  "sourceRect": "769,343,305,377",
+                  "sourcePose": "smoke",
+                  "sourceVariant": "10",
+                  "tile": [
+                    305,
+                    377
+                  ],
+                  "destination": [
+                    -60.41238938053097,
+                    -136.63362831858407,
+                    114.80235988200589,
+                    141.9032448377581
+                  ],
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 0.996643602848053,
+                    "e": 849.7628173828125,
+                    "f": 423.9285583496094,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 0.996643602848053,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 849.7628173828125,
+                    "m42": 423.9285583496094,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 10,
+                "activity": "smoke",
+                "pose": "smoke",
+                "phase": 0,
+                "source": "assets/art/civilian-rest-v16.png",
+                "sourceRect": [
+                  769,
+                  343,
+                  305,
+                  377
+                ],
+                "height": 127.6,
+                "heightScale": 1,
+                "civilian": true,
+                "details": null
+              }
+            }
+          },
+          "props": {
+            "promenade-bench-west": {
+              "id": "promenade-bench-west",
+              "kind": "bench",
+              "x": 2220,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -2010.2371826171875,
+                "f": -103.38253784179688,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -2010.2371826171875,
+                "m42": -103.38253784179688,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bench",
+                  "x": 2220,
+                  "y": 487.4,
+                  "width": 140,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -2010.2371826171875,
+                    "f": -103.38253784179688,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -2010.2371826171875,
+                    "m42": -103.38253784179688,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            },
+            "promenade-bench-east": {
+              "id": "promenade-bench-east",
+              "kind": "bench",
+              "x": 2680,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -2010.2371826171875,
+                "f": -103.38253784179688,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -2010.2371826171875,
+                "m42": -103.38253784179688,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bench",
+                  "x": 2680,
+                  "y": 519.7111111111111,
+                  "width": 140,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -2010.2371826171875,
+                    "f": -103.38253784179688,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -2010.2371826171875,
+                    "m42": -103.38253784179688,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            },
+            "promenade-smoke": {
+              "id": "promenade-smoke",
+              "kind": "bin",
+              "x": 2930,
+              "depth": -82,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -2010.2371826171875,
+                "f": -103.38253784179688,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -2010.2371826171875,
+                "m42": -103.38253784179688,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bin",
+                  "x": 2930,
+                  "y": 529.4888888888889,
+                  "width": 68,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -2010.2371826171875,
+                    "f": -103.38253784179688,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -2010.2371826171875,
+                    "m42": -103.38253784179688,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            }
+          },
+          "order": [
+            {
+              "kind": "prop",
+              "id": "promenade-bench-west"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bench-east"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-reader"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-bench"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-smoke"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-smoker"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bush-west"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bush-east"
+            },
+            {
+              "kind": "npc",
+              "id": "promenade-walker"
+            },
+            {
+              "kind": "player",
+              "x": 2428,
+              "y": 587.1155555555556
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "phone/contact-stands-and-walks.jpg",
+      "sha256": "dcf2ef697b247b5ab26ff378236659ba5599c7d5d51f91f8c569e61e8963344a",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE17",
+        "source": {
+          "mode": "street",
+          "x": 2240.726500000003,
+          "depth": -86.23044999999975,
+          "paused": false,
+          "parkedAt": 2400
+        },
+        "hero": {
+          "pose": "walking",
+          "height": 145,
+          "source": "front",
+          "lowerPose": "idle",
+          "authoredLowerBody": true
+        },
+        "baby": {
+          "source": "assets/baby_pose_idle.webp",
+          "mood": "idle",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.4140352055898952,
+          "pose": "front"
+        },
+        "route": {
+          "routeId": "autumn-main",
+          "x": 2400,
+          "health": 100,
+          "grounded": true,
+          "babyMounted": true,
+          "simTime": 3.874999999999989,
+          "lifeTime": 18.336099999999938
+        },
+        "residents": [
+          {
+            "id": "civilian-reader",
+            "variant": 9,
+            "x": 2680,
+            "depth": -84,
+            "activity": "read",
+            "prop": {
+              "id": "promenade-bench-east",
+              "kind": "newspaper",
+              "x": 2680,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "propKind": "bench",
+              "propX": 2680,
+              "propDepth": -84,
+              "duration": 14
+            },
+            "state": "idle",
+            "hp": 60,
+            "distance": 0,
+            "face": 1
+          },
+          {
+            "id": "civilian-smoker",
+            "variant": 10,
+            "x": 2860,
+            "depth": -82,
+            "activity": "smoke",
+            "prop": {
+              "id": "promenade-smoke",
+              "kind": "smoke",
+              "x": 2860,
+              "depth": -82,
+              "propKind": "bin",
+              "propX": 2930,
+              "propDepth": -82,
+              "duration": 13
+            },
+            "state": "idle",
+            "hp": 60,
+            "distance": 0,
+            "face": 1
+          },
+          {
+            "id": "civilian-bench",
+            "variant": 11,
+            "x": 2259.010400000002,
+            "depth": -64,
+            "activity": "walk",
+            "prop": null,
+            "state": "idle",
+            "hp": 60,
+            "distance": 50.46407892882298,
+            "face": 1
+          }
+        ],
+        "props": [
+          {
+            "id": "promenade-bench-west",
+            "kind": "bench",
+            "x": 2220,
+            "depth": -84,
+            "width": 140,
+            "seatHeight": 27.22222222222222,
+            "seatPan": {
+              "front": 21.38888888888889,
+              "rear": 30.72222222222222
+            },
+            "footprintHalf": 77,
+            "foot": 487.4,
+            "seatY": 460.17777777777775,
+            "seatPanY": {
+              "front": 466.01111111111106,
+              "rear": 456.67777777777775
+            }
+          },
+          {
+            "id": "promenade-bench-east",
+            "kind": "bench",
+            "x": 2680,
+            "depth": -84,
+            "width": 140,
+            "seatHeight": 27.22222222222222,
+            "seatPan": {
+              "front": 21.38888888888889,
+              "rear": 30.72222222222222
+            },
+            "footprintHalf": 77,
+            "foot": 519.7111111111111,
+            "seatY": 492.4888888888889,
+            "seatPanY": {
+              "front": 498.3222222222222,
+              "rear": 488.9888888888889
+            }
+          },
+          {
+            "id": "promenade-smoke",
+            "kind": "bin",
+            "x": 2930,
+            "depth": -82,
+            "foot": 529.4888888888889,
+            "seatY": null,
+            "seatPanY": null
+          }
+        ],
+        "render": {
+          "npcs": {
+            "civilian-reader": {
+              "id": "civilian-reader",
+              "variant": 9,
+              "activity": "read",
+              "state": "idle",
+              "x": 2680,
+              "y": 519.7111111111111,
+              "height": 127.6,
+              "scale": 1,
+              "prop": {
+                "id": "promenade-bench-east",
+                "kind": "newspaper",
+                "x": 2680,
+                "depth": -84,
+                "width": 140,
+                "seatHeight": 27.22222222222222,
+                "seatPan": {
+                  "front": 21.38888888888889,
+                  "rear": 30.72222222222222
+                },
+                "footprintHalf": 77,
+                "propKind": "bench",
+                "propX": 2680,
+                "propDepth": -84,
+                "duration": 14
+              },
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1823.1875,
+                "f": -89.0006103515625,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1823.1875,
+                "m42": -89.0006103515625,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-rest-v16.png",
+                  "sourceRect": "393,12,365,360",
+                  "sourcePose": "read",
+                  "sourceVariant": "9",
+                  "tile": [
+                    365,
+                    360
+                  ],
+                  "destination": [
+                    -49.43558369834317,
+                    -80.69163016568272,
+                    116.4128261283565,
+                    114.81812988002285
+                  ],
+                  "matrix": {
+                    "a": 0.9999970873309771,
+                    "b": -0.002413571950881455,
+                    "c": 0.002417168741070956,
+                    "d": 1.001487318319089,
+                    "e": 856.8125,
+                    "f": 399.98828887939453,
+                    "m11": 0.9999970873309771,
+                    "m12": -0.002413571950881455,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0.002417168741070956,
+                    "m22": 1.001487318319089,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 856.8125,
+                    "m42": 399.98828887939453,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 9,
+                "activity": "read",
+                "pose": "read",
+                "phase": 0,
+                "source": "assets/art/civilian-rest-v16.png",
+                "sourceRect": [
+                  393,
+                  12,
+                  365,
+                  360
+                ],
+                "height": 133.98,
+                "heightScale": 1.05,
+                "civilian": true,
+                "details": {
+                  "seated": true,
+                  "fitted": true,
+                  "seatHeight": 30.72222222222222,
+                  "legReach": 30.937107217672825,
+                  "soleOffset": 0.21488499545060336,
+                  "seatPan": {
+                    "front": 21.38888888888889,
+                    "rear": 30.72222222222222
+                  }
+                }
+              }
+            },
+            "civilian-bench": {
+              "id": "civilian-bench",
+              "variant": 11,
+              "activity": "walk",
+              "state": "idle",
+              "x": 2259.010400000002,
+              "y": 510.34745244444457,
+              "height": 127.6,
+              "scale": 1,
+              "prop": null,
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1823.1875,
+                "f": -89.0006103515625,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1823.1875,
+                "m42": -89.0006103515625,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-motion-v16.png",
+                  "sourceRect": "385,699,339,325",
+                  "sourcePose": "walkB",
+                  "sourceVariant": "11",
+                  "tile": [
+                    339,
+                    325
+                  ],
+                  "destination": [
+                    -72.29524832214766,
+                    -112.9388456375839,
+                    121.93079194630873,
+                    116.89530201342282
+                  ],
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": 435.822998046875,
+                    "f": 421.3468322753906,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 435.822998046875,
+                    "m42": 421.3468322753906,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 11,
+                "activity": "walk",
+                "pose": "walkB",
+                "phase": 0.8585491506598397,
+                "source": "assets/art/civilian-motion-v16.png",
+                "sourceRect": [
+                  385,
+                  699,
+                  339,
+                  325
+                ],
+                "height": 107.184,
+                "heightScale": 0.84,
+                "civilian": true,
+                "details": {
+                  "authored": true,
+                  "completePose": true,
+                  "sourcePose": "walkB",
+                  "cycleLength": 58.77832258064516,
+                  "drawCalls": 1
+                }
+              }
+            },
+            "civilian-smoker": {
+              "id": "civilian-smoker",
+              "variant": 10,
+              "activity": "smoke",
+              "state": "idle",
+              "x": 2860,
+              "y": 527.3111111111111,
+              "height": 127.6,
+              "scale": 1,
+              "prop": {
+                "id": "promenade-smoke",
+                "kind": "smoke",
+                "x": 2860,
+                "depth": -82,
+                "propKind": "bin",
+                "propX": 2930,
+                "propDepth": -82,
+                "duration": 13
+              },
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1823.1875,
+                "f": -89.0006103515625,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1823.1875,
+                "m42": -89.0006103515625,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-rest-v16.png",
+                  "sourceRect": "769,343,305,377",
+                  "sourcePose": "smoke",
+                  "sourceVariant": "10",
+                  "tile": [
+                    305,
+                    377
+                  ],
+                  "destination": [
+                    -60.41238938053097,
+                    -136.63362831858407,
+                    114.80235988200589,
+                    141.9032448377581
+                  ],
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 0.9966840147972107,
+                    "e": 1036.8125,
+                    "f": 438.31048583984375,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 0.9966840147972107,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 1036.8125,
+                    "m42": 438.31048583984375,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 10,
+                "activity": "smoke",
+                "pose": "smoke",
+                "phase": 0,
+                "source": "assets/art/civilian-rest-v16.png",
+                "sourceRect": [
+                  769,
+                  343,
+                  305,
+                  377
+                ],
+                "height": 127.6,
+                "heightScale": 1,
+                "civilian": true,
+                "details": null
+              }
+            }
+          },
+          "props": {
+            "promenade-bench-west": {
+              "id": "promenade-bench-west",
+              "kind": "bench",
+              "x": 2220,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1823.1875,
+                "f": -89.0006103515625,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1823.1875,
+                "m42": -89.0006103515625,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bench",
+                  "x": 2220,
+                  "y": 487.4,
+                  "width": 140,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -1823.1875,
+                    "f": -89.0006103515625,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -1823.1875,
+                    "m42": -89.0006103515625,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            },
+            "promenade-bench-east": {
+              "id": "promenade-bench-east",
+              "kind": "bench",
+              "x": 2680,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1823.1875,
+                "f": -89.0006103515625,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1823.1875,
+                "m42": -89.0006103515625,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bench",
+                  "x": 2680,
+                  "y": 519.7111111111111,
+                  "width": 140,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -1823.1875,
+                    "f": -89.0006103515625,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -1823.1875,
+                    "m42": -89.0006103515625,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            },
+            "promenade-smoke": {
+              "id": "promenade-smoke",
+              "kind": "bin",
+              "x": 2930,
+              "depth": -82,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1823.1875,
+                "f": -89.0006103515625,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1823.1875,
+                "m42": -89.0006103515625,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bin",
+                  "x": 2930,
+                  "y": 529.4888888888889,
+                  "width": 68,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -1823.1875,
+                    "f": -89.0006103515625,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -1823.1875,
+                    "m42": -89.0006103515625,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            }
+          },
+          "order": [
+            {
+              "kind": "player",
+              "x": 2240.726500000003,
+              "y": 486.7355522222227
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bench-west"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bench-east"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-reader"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-smoke"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-smoker"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bush-west"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bush-east"
+            },
+            {
+              "kind": "npc",
+              "id": "promenade-walker"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-bench"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "phone/walk-behind-empty-bench.jpg",
+      "sha256": "8193d6cbc9c2b4ff31144c3280f7730dfd9a3d1cd85ba64764bb705ebb8cd05d",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE17",
+        "source": {
+          "mode": "street",
+          "x": 2223.4078480000016,
+          "depth": -86.23044999999975,
+          "paused": false,
+          "parkedAt": 2400
+        },
+        "hero": {
+          "pose": "walking",
+          "height": 145,
+          "source": "front",
+          "lowerPose": "idle",
+          "authoredLowerBody": true
+        },
+        "baby": {
+          "source": "assets/baby_pose_idle.webp",
+          "mood": "idle",
+          "continuousUpperBody": true,
+          "originalCollar": true,
+          "headOnly": false,
+          "uniformScale": 0.4140352055898952,
+          "pose": "front"
+        },
+        "route": {
+          "routeId": "autumn-main",
+          "x": 2400,
+          "health": 100,
+          "grounded": true,
+          "babyMounted": true,
+          "simTime": 3.874999999999989,
+          "lifeTime": 20.809299999999936
+        },
+        "residents": [
+          {
+            "id": "civilian-reader",
+            "variant": 9,
+            "x": 2680,
+            "depth": -84,
+            "activity": "read",
+            "prop": {
+              "id": "promenade-bench-east",
+              "kind": "newspaper",
+              "x": 2680,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "propKind": "bench",
+              "propX": 2680,
+              "propDepth": -84,
+              "duration": 14
+            },
+            "state": "idle",
+            "hp": 60,
+            "distance": 0,
+            "face": 1
+          },
+          {
+            "id": "civilian-smoker",
+            "variant": 10,
+            "x": 2860,
+            "depth": -82,
+            "activity": "smoke",
+            "prop": {
+              "id": "promenade-smoke",
+              "kind": "smoke",
+              "x": 2860,
+              "depth": -82,
+              "propKind": "bin",
+              "propX": 2930,
+              "propDepth": -82,
+              "duration": 13
+            },
+            "state": "idle",
+            "hp": 60,
+            "distance": 0,
+            "face": 1
+          },
+          {
+            "id": "civilian-bench",
+            "variant": 11,
+            "x": 2367.831200000008,
+            "depth": -64,
+            "activity": "walk",
+            "prop": null,
+            "state": "idle",
+            "hp": 60,
+            "distance": 159.2848789288233,
+            "face": 1
+          }
+        ],
+        "props": [
+          {
+            "id": "promenade-bench-west",
+            "kind": "bench",
+            "x": 2220,
+            "depth": -84,
+            "width": 140,
+            "seatHeight": 27.22222222222222,
+            "seatPan": {
+              "front": 21.38888888888889,
+              "rear": 30.72222222222222
+            },
+            "footprintHalf": 77,
+            "foot": 487.4,
+            "seatY": 460.17777777777775,
+            "seatPanY": {
+              "front": 466.01111111111106,
+              "rear": 456.67777777777775
+            }
+          },
+          {
+            "id": "promenade-bench-east",
+            "kind": "bench",
+            "x": 2680,
+            "depth": -84,
+            "width": 140,
+            "seatHeight": 27.22222222222222,
+            "seatPan": {
+              "front": 21.38888888888889,
+              "rear": 30.72222222222222
+            },
+            "footprintHalf": 77,
+            "foot": 519.7111111111111,
+            "seatY": 492.4888888888889,
+            "seatPanY": {
+              "front": 498.3222222222222,
+              "rear": 488.9888888888889
+            }
+          },
+          {
+            "id": "promenade-smoke",
+            "kind": "bin",
+            "x": 2930,
+            "depth": -82,
+            "foot": 529.4888888888889,
+            "seatY": null,
+            "seatPanY": null
+          }
+        ],
+        "render": {
+          "npcs": {
+            "civilian-reader": {
+              "id": "civilian-reader",
+              "variant": 9,
+              "activity": "read",
+              "state": "idle",
+              "x": 2680,
+              "y": 519.7111111111111,
+              "height": 127.6,
+              "scale": 1,
+              "prop": {
+                "id": "promenade-bench-east",
+                "kind": "newspaper",
+                "x": 2680,
+                "depth": -84,
+                "width": 140,
+                "seatHeight": 27.22222222222222,
+                "seatPan": {
+                  "front": 21.38888888888889,
+                  "rear": 30.72222222222222
+                },
+                "footprintHalf": 77,
+                "propKind": "bench",
+                "propX": 2680,
+                "propDepth": -84,
+                "duration": 14
+              },
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1805.3653564453125,
+                "f": -87.654052734375,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1805.3653564453125,
+                "m42": -87.654052734375,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-rest-v16.png",
+                  "sourceRect": "393,12,365,360",
+                  "sourcePose": "read",
+                  "sourceVariant": "9",
+                  "tile": [
+                    365,
+                    360
+                  ],
+                  "destination": [
+                    -49.43558369834317,
+                    -80.69163016568272,
+                    116.4128261283565,
+                    114.81812988002285
+                  ],
+                  "matrix": {
+                    "a": 0.999998457238995,
+                    "b": -0.0017565647240381514,
+                    "c": 0.001752203155749707,
+                    "d": 0.9975154507776333,
+                    "e": 874.6346435546875,
+                    "f": 401.33484649658203,
+                    "m11": 0.999998457238995,
+                    "m12": -0.0017565647240381514,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0.001752203155749707,
+                    "m22": 0.9975154507776333,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 874.6346435546875,
+                    "m42": 401.33484649658203,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 9,
+                "activity": "read",
+                "pose": "read",
+                "phase": 0,
+                "source": "assets/art/civilian-rest-v16.png",
+                "sourceRect": [
+                  393,
+                  12,
+                  365,
+                  360
+                ],
+                "height": 133.98,
+                "heightScale": 1.05,
+                "civilian": true,
+                "details": {
+                  "seated": true,
+                  "fitted": true,
+                  "seatHeight": 30.72222222222222,
+                  "legReach": 30.937107217672825,
+                  "soleOffset": 0.21488499545060336,
+                  "seatPan": {
+                    "front": 21.38888888888889,
+                    "rear": 30.72222222222222
+                  }
+                }
+              }
+            },
+            "civilian-bench": {
+              "id": "civilian-bench",
+              "variant": 11,
+              "activity": "walk",
+              "state": "idle",
+              "x": 2367.831200000008,
+              "y": 518.5694684444451,
+              "height": 127.6,
+              "scale": 1,
+              "prop": null,
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1805.3653564453125,
+                "f": -87.654052734375,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1805.3653564453125,
+                "m42": -87.654052734375,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-motion-v16.png",
+                  "sourceRect": "385,699,339,325",
+                  "sourcePose": "walkB",
+                  "sourceVariant": "11",
+                  "tile": [
+                    339,
+                    325
+                  ],
+                  "destination": [
+                    -72.29524832214766,
+                    -112.9388456375839,
+                    121.93079194630873,
+                    116.89530201342282
+                  ],
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": 562.4659423828125,
+                    "f": 430.9154052734375,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 562.4659423828125,
+                    "m42": 430.9154052734375,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 11,
+                "activity": "walk",
+                "pose": "walkB",
+                "phase": 2.7099255632938646,
+                "source": "assets/art/civilian-motion-v16.png",
+                "sourceRect": [
+                  385,
+                  699,
+                  339,
+                  325
+                ],
+                "height": 107.184,
+                "heightScale": 0.84,
+                "civilian": true,
+                "details": {
+                  "authored": true,
+                  "completePose": true,
+                  "sourcePose": "walkB",
+                  "cycleLength": 58.77832258064516,
+                  "drawCalls": 1
+                }
+              }
+            },
+            "civilian-smoker": {
+              "id": "civilian-smoker",
+              "variant": 10,
+              "activity": "smoke",
+              "state": "idle",
+              "x": 2860,
+              "y": 527.3111111111111,
+              "height": 127.6,
+              "scale": 1,
+              "prop": {
+                "id": "promenade-smoke",
+                "kind": "smoke",
+                "x": 2860,
+                "depth": -82,
+                "propKind": "bin",
+                "propX": 2930,
+                "propDepth": -82,
+                "duration": 13
+              },
+              "baseMatrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1805.3653564453125,
+                "f": -87.654052734375,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1805.3653564453125,
+                "m42": -87.654052734375,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "source": "civilian-rest-v16.png",
+                  "sourceRect": "769,343,305,377",
+                  "sourcePose": "smoke",
+                  "sourceVariant": "10",
+                  "tile": [
+                    305,
+                    377
+                  ],
+                  "destination": [
+                    -60.41238938053097,
+                    -136.63362831858407,
+                    114.80235988200589,
+                    141.9032448377581
+                  ],
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 0.99869304895401,
+                    "e": 1054.6346435546875,
+                    "f": 439.65704345703125,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 0.99869304895401,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": 1054.6346435546875,
+                    "m42": 439.65704345703125,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ],
+              "audit": {
+                "variant": 10,
+                "activity": "smoke",
+                "pose": "smoke",
+                "phase": 0,
+                "source": "assets/art/civilian-rest-v16.png",
+                "sourceRect": [
+                  769,
+                  343,
+                  305,
+                  377
+                ],
+                "height": 127.6,
+                "heightScale": 1,
+                "civilian": true,
+                "details": null
+              }
+            }
+          },
+          "props": {
+            "promenade-bench-west": {
+              "id": "promenade-bench-west",
+              "kind": "bench",
+              "x": 2220,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1805.3653564453125,
+                "f": -87.654052734375,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1805.3653564453125,
+                "m42": -87.654052734375,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bench",
+                  "x": 2220,
+                  "y": 487.4,
+                  "width": 140,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -1805.3653564453125,
+                    "f": -87.654052734375,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -1805.3653564453125,
+                    "m42": -87.654052734375,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            },
+            "promenade-bench-east": {
+              "id": "promenade-bench-east",
+              "kind": "bench",
+              "x": 2680,
+              "depth": -84,
+              "width": 140,
+              "seatHeight": 27.22222222222222,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              },
+              "footprintHalf": 77,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1805.3653564453125,
+                "f": -87.654052734375,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1805.3653564453125,
+                "m42": -87.654052734375,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bench",
+                  "x": 2680,
+                  "y": 519.7111111111111,
+                  "width": 140,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -1805.3653564453125,
+                    "f": -87.654052734375,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -1805.3653564453125,
+                    "m42": -87.654052734375,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            },
+            "promenade-smoke": {
+              "id": "promenade-smoke",
+              "kind": "bin",
+              "x": 2930,
+              "depth": -82,
+              "matrix": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -1805.3653564453125,
+                "f": -87.654052734375,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -1805.3653564453125,
+                "m42": -87.654052734375,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "draws": [
+                {
+                  "kind": "bin",
+                  "x": 2930,
+                  "y": 529.4888888888889,
+                  "width": 68,
+                  "matrix": {
+                    "a": 1,
+                    "b": 0,
+                    "c": 0,
+                    "d": 1,
+                    "e": -1805.3653564453125,
+                    "f": -87.654052734375,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m14": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m24": 0,
+                    "m31": 0,
+                    "m32": 0,
+                    "m33": 1,
+                    "m34": 0,
+                    "m41": -1805.3653564453125,
+                    "m42": -87.654052734375,
+                    "m43": 0,
+                    "m44": 1,
+                    "is2D": true,
+                    "isIdentity": false
+                  }
+                }
+              ]
+            }
+          },
+          "order": [
+            {
+              "kind": "player",
+              "x": 2223.4078480000016,
+              "y": 485.42703184888927
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bench-west"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bench-east"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-reader"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-smoke"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-smoker"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bush-west"
+            },
+            {
+              "kind": "prop",
+              "id": "promenade-bush-east"
+            },
+            {
+              "kind": "npc",
+              "id": "civilian-bench"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "recordings": [],
+  "errors": [],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "browser": "154.0.8037.57",
+  "fitMeasurements": [
+    {
+      "platform": "desktop",
+      "fits": [
+        {
+          "id": "civilian-reader",
+          "variant": 9,
+          "source": "civilian-rest-v16.png",
+          "pose": "read",
+          "sourceSeatPivot": [
+            548,
+            265
+          ],
+          "sourceOpaqueSoleY": 362,
+          "benchWidth": 140,
+          "benchSeatHeight": 27.22222222222222,
+          "hipCanvas": {
+            "x": 669.60107421875,
+            "y": 385.8416976928711
+          },
+          "seatCanvas": {
+            "x": 669.60107421875,
+            "y": 389.34168735080294
+          },
+          "seatPanCanvas": {
+            "rear": {
+              "x": 669.60107421875,
+              "y": 385.84168735080294
+            },
+            "front": {
+              "x": 669.60107421875,
+              "y": 395.17502068413626
+            }
+          },
+          "opaqueSoleCanvas": {
+            "x": 675.4372562099188,
+            "y": 416.73115768729855
+          },
+          "benchFloorCanvas": {
+            "x": 669.60107421875,
+            "y": 416.56390957302517
+          },
+          "ownGroundCanvas": {
+            "x": 669.60107421875,
+            "y": 416.56390957302517
+          },
+          "hipSeatGap": -3.499989657931849,
+          "soleFloorGap": 0.16724811427337727,
+          "soleOwnGroundGap": 0.16724811427337727,
+          "imageAspect": 1.0,
+          "renderAudit": {
+            "variant": 9,
+            "activity": "read",
+            "pose": "read",
+            "phase": 0,
+            "source": "assets/art/civilian-rest-v16.png",
+            "sourceRect": [
+              393,
+              12,
+              365,
+              360
+            ],
+            "height": 133.98,
+            "heightScale": 1.05,
+            "civilian": true,
+            "details": {
+              "seated": true,
+              "fitted": true,
+              "seatHeight": 30.72222222222222,
+              "legReach": 30.937107217672825,
+              "soleOffset": 0.21488499545060336,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              }
+            }
+          }
+        },
+        {
+          "id": "civilian-bench",
+          "variant": 11,
+          "source": "civilian-rest-v16.png",
+          "pose": "sit",
+          "sourceSeatPivot": [
+            185,
+            946
+          ],
+          "sourceOpaqueSoleY": 1017,
+          "benchWidth": 140,
+          "benchSeatHeight": 27.22222222222222,
+          "hipCanvas": {
+            "x": 209.60107421875,
+            "y": 362.8639030456543
+          },
+          "seatCanvas": {
+            "x": 209.60107421875,
+            "y": 357.0305762396918
+          },
+          "seatPanCanvas": {
+            "rear": {
+              "x": 209.60107421875,
+              "y": 353.5305762396918
+            },
+            "front": {
+              "x": 209.60107421875,
+              "y": 362.8639095730251
+            }
+          },
+          "opaqueSoleCanvas": {
+            "x": 213.75201818470887,
+            "y": 384.05994273169205
+          },
+          "benchFloorCanvas": {
+            "x": 209.60107421875,
+            "y": 384.25279846191404
+          },
+          "ownGroundCanvas": {
+            "x": 209.60107421875,
+            "y": 384.25279846191404
+          },
+          "hipSeatGap": 5.833326805962486,
+          "soleFloorGap": -0.19285573022199287,
+          "soleOwnGroundGap": -0.19285573022199287,
+          "imageAspect": 1.0,
+          "renderAudit": {
+            "variant": 11,
+            "activity": "sit",
+            "pose": "sit",
+            "phase": 0,
+            "source": "assets/art/civilian-rest-v16.png",
+            "sourceRect": [
+              29,
+              689,
+              355,
+              335
+            ],
+            "height": 107.184,
+            "heightScale": 0.84,
+            "civilian": true,
+            "details": {
+              "seated": true,
+              "fitted": true,
+              "seatHeight": 21.38888888888889,
+              "legReach": 21.144940261183663,
+              "soleOffset": -0.24394862770522607,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "platform": "phone",
+      "fits": [
+        {
+          "id": "civilian-reader",
+          "variant": 9,
+          "source": "civilian-rest-v16.png",
+          "pose": "read",
+          "sourceSeatPivot": [
+            548,
+            265
+          ],
+          "sourceOpaqueSoleY": 362,
+          "benchWidth": 140,
+          "benchSeatHeight": 27.22222222222222,
+          "hipCanvas": {
+            "x": 669.60009765625,
+            "y": 385.84326934814453
+          },
+          "seatCanvas": {
+            "x": 669.60009765625,
+            "y": 389.3432590060764
+          },
+          "seatPanCanvas": {
+            "rear": {
+              "x": 669.60009765625,
+              "y": 385.8432590060764
+            },
+            "front": {
+              "x": 669.60009765625,
+              "y": 395.1765923394097
+            }
+          },
+          "opaqueSoleCanvas": {
+            "x": 675.4422841515764,
+            "y": 416.7252052630768
+          },
+          "benchFloorCanvas": {
+            "x": 669.60009765625,
+            "y": 416.5654812282986
+          },
+          "ownGroundCanvas": {
+            "x": 669.60009765625,
+            "y": 416.5654812282986
+          },
+          "hipSeatGap": -3.499989657931849,
+          "soleFloorGap": 0.15972403477820762,
+          "soleOwnGroundGap": 0.15972403477820762,
+          "imageAspect": 1.0,
+          "renderAudit": {
+            "variant": 9,
+            "activity": "read",
+            "pose": "read",
+            "phase": 0,
+            "source": "assets/art/civilian-rest-v16.png",
+            "sourceRect": [
+              393,
+              12,
+              365,
+              360
+            ],
+            "height": 133.98,
+            "heightScale": 1.05,
+            "civilian": true,
+            "details": {
+              "seated": true,
+              "fitted": true,
+              "seatHeight": 30.72222222222222,
+              "legReach": 30.937107217672825,
+              "soleOffset": 0.21488499545060336,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              }
+            }
+          }
+        },
+        {
+          "id": "civilian-bench",
+          "variant": 11,
+          "source": "civilian-rest-v16.png",
+          "pose": "sit",
+          "sourceSeatPivot": [
+            185,
+            946
+          ],
+          "sourceOpaqueSoleY": 1017,
+          "benchWidth": 140,
+          "benchSeatHeight": 27.22222222222222,
+          "hipCanvas": {
+            "x": 209.60009765625,
+            "y": 362.86547470092773
+          },
+          "seatCanvas": {
+            "x": 209.60009765625,
+            "y": 357.03214789496525
+          },
+          "seatPanCanvas": {
+            "rear": {
+              "x": 209.60009765625,
+              "y": 353.53214789496525
+            },
+            "front": {
+              "x": 209.60009765625,
+              "y": 362.86548122829856
+            }
+          },
+          "opaqueSoleCanvas": {
+            "x": 213.7488433701388,
+            "y": 384.0581317166667
+          },
+          "benchFloorCanvas": {
+            "x": 209.60009765625,
+            "y": 384.2543701171875
+          },
+          "ownGroundCanvas": {
+            "x": 209.60009765625,
+            "y": 384.2543701171875
+          },
+          "hipSeatGap": 5.833326805962486,
+          "soleFloorGap": -0.19623840052076957,
+          "soleOwnGroundGap": -0.19623840052076957,
+          "imageAspect": 1.0,
+          "renderAudit": {
+            "variant": 11,
+            "activity": "sit",
+            "pose": "sit",
+            "phase": 0,
+            "source": "assets/art/civilian-rest-v16.png",
+            "sourceRect": [
+              29,
+              689,
+              355,
+              335
+            ],
+            "height": 107.184,
+            "heightScale": 0.84,
+            "civilian": true,
+            "details": {
+              "seated": true,
+              "fitted": true,
+              "seatHeight": 21.38888888888889,
+              "legReach": 21.144940261183663,
+              "soleOffset": -0.24394862770522607,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "smokingPropMeasurements": [
+    {
+      "platform": "desktop",
+      "id": "civilian-smoker",
+      "anchorX": 2860,
+      "binX": 2930,
+      "binWidth": 68,
+      "horizontalSeparation": 70
+    },
+    {
+      "platform": "phone",
+      "id": "civilian-smoker",
+      "anchorX": 2860,
+      "binX": 2930,
+      "binWidth": 68,
+      "horizontalSeparation": 70
+    }
+  ],
+  "runtimeHashesAfter": {
+    "autumn-v19.html": "867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb",
+    "autumn-version.json": "0d92274f3b2bdaee9fff7b707fb2349b8d8850771999e6139518ec29906039cf",
+    "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+    "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+    "css/centrum-route.css": "892e1ec5ac28ae0a551d45b276974888e6db3f227635487e45c761e1553d1e5f",
+    "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+    "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+    "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+    "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+    "index.html": "867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb",
+    "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+    "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+    "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+    "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+    "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+    "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+    "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+    "js/centrum-camera.js": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+    "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+    "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+    "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+    "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+    "js/centrum-hero-cache.js": "38f3212052e12304e3ecf4a053f0141122660395593874151e23835717ee5eff",
+    "js/centrum-inventory.js": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+    "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+    "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+    "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+    "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+    "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+    "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+    "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf",
+    "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+    "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+    "js/game.js": "5cfc8f851422d73cc9829d4bb8adf403ffbcf6f923427226d974cf9efa411a9c",
+    "js/hero-rig.js": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+    "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+    "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+    "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+    "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+    "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+    "js/illustrated-visits.js": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+    "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+    "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+    "js/npc-motion.js": "f4111c327656ae3131a58547fbce9b7ac6865cd4af8907545fe94cd8d08d637a",
+    "js/street-life.js": "7e54984fb2d8b94df6f5a055b0c1f8c2828bbde14634a8d9431d50a52e73b229",
+    "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+    "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+  },
+  "changedRuntimeFiles": [],
+  "passed": true
+}

@@ -21,8 +21,8 @@ from urllib.parse import urlparse
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'verification/stage16/standalone'
-EXPECTED_BUILD='BQ_CENTRUM_STAGE16'
+OUT=ROOT/'verification/stage17/standalone'
+EXPECTED_BUILD='BQ_CENTRUM_STAGE17'
 WORK=OUT/'work'
 SCENES=['metro-square','shopping-arcade','service-courtyard','food-shop','bicycle-workshop']
 KEY='bq-centrum:scene-network:v1'
@@ -224,7 +224,7 @@ def main():
     result={'scope':'Extracted standalone delivery, clean local root and /BQ-Centrum/ repository subpath','conditions':{'browser':'system Chromium /usr/bin/chromium, headless','desktopViewport':[1280,720],'phoneEmulationViewport':[844,390],'physicalDevices':False,'sceneFixtures':'Production-factory sealed named-entrance/parking fixtures; primary native route is a separate test.'},'checks':[],'errors':[],'consoleErrors':[],'httpFailures':[],'serverHttpFailures':[],'serverOutsideSubpathRequests':[],'externalRequests':[],'outsideSubpathRequests':[],'limits':['Chromium emulation is not physical iPhone/Safari testing.','Frame times were sampled on this shared container and are not physical-device performance promises.']}
     result['testedArchiveSha256']=file_hash(package)
     runtime,manifest=extract_package(package)
-    assert json.loads((runtime/'autumn-version.json').read_text())['edition']==EXPECTED_BUILD,'Archive is not the intended Stage16 build'
+    assert json.loads((runtime/'autumn-version.json').read_text())['edition']==EXPECTED_BUILD,'Archive is not the intended Stage17 build'
     assert (runtime/'css/centrum-route.css').is_file(),'Copied-street hint stylesheet is missing'
     for entry in ['index.html','autumn-v19.html']:
         assert 'css/centrum-route.css?edition=centrum-stage16' in (runtime/entry).read_text(),'Alias omitted current route stylesheet'
@@ -280,7 +280,7 @@ def main():
             templates={scene_id:fixture(page,scene_id) for scene_id in SCENES}
             sample=metrics(page);assert sample['maxPending']<=1 and sample['loopFrames']>10,sample
             assert all(k.startswith('bq-centrum:') for k in sample['reads']+sample['writes']),sample
-            page.screenshot(path=str(OUT/(label+'-ride.png')))
+            page.screenshot(path=str(OUT/(label+'-ride.jpg')),type='jpeg',quality=94)
             result['checks'].append({'name':label+' fresh startup and actual pedal input','passed':True,'startup':page.evaluate('BEARLY_STARTUP()'),'ridingInventoryLayout':riding_layout,'metrics':sample})
             context.close()
             for scene_id in SCENES:
@@ -298,7 +298,7 @@ def main():
               sample=metrics(page);assert sample['maxPending']<=1 and sample['loopFrames']>5
               assert all(k.startswith('bq-centrum:') for k in sample['reads']+sample['writes']),sample
               result['checks'].append({'name':label+' '+scene_id+' scene load and native bag interaction','passed':True,'health':a['health'],'hero':a['hero'],'cameraProjection':projection,'scenery':scenery,'inventory':bag,'walking':walking,'metrics':sample})
-              if scene_id in ['metro-square','food-shop']:page.screenshot(path=str(OUT/(label+'-'+scene_id+'.png')))
+              if scene_id in ['metro-square','food-shop']:page.screenshot(path=str(OUT/(label+'-'+scene_id+'.jpg')),type='jpeg',quality=94)
               context.close()
             # Active alias entry is tested separately without borrowed browser state.
             context,page=open_page(browser,base+prefix+'autumn-v19.html',touch,watch)
@@ -318,7 +318,7 @@ def main():
         assert audit['sha256']==result['testedArchiveSha256']==file_hash(package),'Archive changed during validation'
         certificate={'package':audit,'standaloneValidation':result,'certificateScope':'External certificate for the delivered ZIP; no stale certificate is embedded in the archive itself.'}
         (ROOT/'delivery/BQ-Centrum-validated.validation.json').write_text(json.dumps(certificate,indent=2)+'\n')
-      (OUT/'frames.sha256').write_text(''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.name+'\n' for p in sorted(OUT.glob('*.png'))))
+      (OUT/'frames.sha256').write_text(''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.name+'\n' for p in sorted(OUT.glob('*.jpg'))))
       if not args.keep_extracted:shutil.rmtree(WORK)
     print('PASS:',len(result['checks']),'extracted package root/subpath checks; no JS/HTTP/external-path errors.',flush=True)
 

@@ -11,12 +11,19 @@ with contextlib.redirect_stdout(io.StringIO()):
     verifier = runpy.run_path(str(ROOT / 'tools/verify-source-integrity.py'))
 reverse = verifier['reverse_stage14_source']
 reverse16 = verifier['reverse_stage16_source']
+reverse17 = verifier['reverse_stage17_source']
 checks = []
+
+
+def stage16_text(source):
+    """Preserve all earlier negative guards against the version they reviewed."""
+    current = (ROOT / source).read_text()
+    return reverse17(source, current) if source in verifier['STAGE17_PREVIOUS'] else current
 
 
 def stage15_text(source):
     """Older inverse contracts still receive the exact version they reviewed."""
-    current = (ROOT / source).read_text()
+    current = stage16_text(source)
     return reverse16(source, current) if source in verifier['STAGE16_PREVIOUS'] else current
 
 
@@ -77,7 +84,7 @@ native_markers = {
 }
 stage16_cases = []
 for source, expected in verifier['STAGE16_PREVIOUS'].items():
-    current = (ROOT / source).read_text()
+    current = stage16_text(source)
     restored = reverse16(source, current)
     assert hashlib.sha256(restored.encode()).hexdigest() == expected
     checks.append(source + ' exact Stage16 inverse')
@@ -108,9 +115,50 @@ def modified_stage16_manifest(path):
 
 
 with patch.object(Path, 'read_bytes', modified_stage16_manifest):
-    rejected('Stage16 inverse manifest tampering', lambda: reverse16('js/game.js', (ROOT / 'js/game.js').read_text()))
+    rejected('Stage16 inverse manifest tampering', lambda: reverse16('js/game.js', stage16_text('js/game.js')))
 
 assert len(checks) == 11 + 3 * len(stage16_cases)
-print(f'PASS: 944 protected originals; prior Stage14 guards retained; {len(stage16_cases)} exact Stage16 inverses, '
-      f'{2 * len(stage16_cases)} rejected Stage16 source/load-order mutations and tampered Stage16 manifest; '
+stage17_cases = []
+stage17_native_markers = {
+    'js/game.js': ('  function update(dt){', '  function update(dt){dt*=2;'),
+    'js/npc-motion.js': ('  function draw(c,n,x,y,height=130,scale=1,options={}){', '  function draw(c,n,x,y,height=130,scale=1,options={}){height*=.5;'),
+    'js/street-life.js': ('  function caption(c,n,x,y,h,time){', '  function caption(c,n,x,y,h,time){h*=.5;'),
+}
+for source, expected in verifier['STAGE17_PREVIOUS'].items():
+    current = (ROOT / source).read_text()
+    restored = reverse17(source, current)
+    assert hashlib.sha256(restored.encode()).hexdigest() == expected
+    checks.append(source + ' exact Stage17 inverse')
+    stage17_cases.append(source)
+    rejected(source + ' appended Stage17 unreviewed source', lambda: reverse17(source, current + '\n// unreviewed source edit\n'))
+    marker, replacement = ('<script src=', '<script async src=') if source.endswith('.html') else stage17_native_markers[source]
+    assert current.count(marker) >= 1, (source, marker)
+    changed = current.replace(marker, replacement, 1)
+    assert changed != current
+    rejected(source + ' Stage17 unreviewed native path or load order', lambda: reverse17(source, changed))
+
+# Pin the reviewed prop dimensions and the intact-pose seating transform too.
+# Tests deliberately alter only working-memory strings, never files or saves.
+for source, marker, replacement in [
+    ('js/street-life.js', 'const benchWidth=140,benchScale=benchWidth/180;', 'const benchWidth=196,benchScale=benchWidth/180;'),
+    ('js/npc-motion.js', 'seatHeight=clamp(reach,seatPan.front,seatPan.rear);', 'seatHeight=seatPan.rear*2;'),
+]:
+    current = (ROOT / source).read_text()
+    assert current.count(marker) == 1
+    rejected(source + ' unreviewed prop/seat geometry', lambda: reverse17(source, current.replace(marker, replacement, 1)))
+
+manifest17 = ROOT / 'references/source/stage17-source-integration.json'
+
+
+def modified_stage17_manifest(path):
+    return read_bytes(path) + (b'\n' if path == manifest17 else b'')
+
+
+with patch.object(Path, 'read_bytes', modified_stage17_manifest):
+    rejected('Stage17 inverse manifest tampering', lambda: reverse17('js/game.js', (ROOT / 'js/game.js').read_text()))
+
+assert len(checks) == 14 + 3 * len(stage16_cases) + 3 * len(stage17_cases)
+print(f'PASS: 944 protected originals; prior Stage14 guards retained; {len(stage16_cases)} exact Stage16 inverses/'
+      f'{2 * len(stage16_cases)} rejected source/load-order mutations; {len(stage17_cases)} exact Stage17 inverses/'
+      f'{2 * len(stage17_cases) + 2} rejected source/load-order/prop-fit mutations; both inverse-manifest tamper guards; '
       'cycling simulation block unchanged; all mutations in memory.')

@@ -1,0 +1,101 @@
+{
+  "scope": "Actual final Stage17 source reconstruction and in-memory negative guards; not visual/animation or performance evidence.",
+  "atUtc": "2026-11-05T17:52:45.484096+00:00",
+  "build": "BQ_CENTRUM_STAGE17",
+  "previousTargetCommit": "c75b5ca6dca299ea77bfb52eb6754bb00f1d41ea",
+  "manifest": "references/source/stage17-source-integration.json",
+  "manifestSha256": "699523fc251d06a6626cb793f330f24fdeb706d72c65af6248fb54c530fd7ce9",
+  "originalProtectedFiles": 944,
+  "originalArtworkFiles": 919,
+  "stage17ExactInverseFiles": 5,
+  "stage17ExactHunks": {
+    "autumn-v19.html": 2,
+    "index.html": 2,
+    "js/game.js": 1,
+    "js/npc-motion.js": 2,
+    "js/street-life.js": 4
+  },
+  "stage17RejectedSourceLoadOrderOrFitMutations": 12,
+  "stage17RejectedManifestMutations": 1,
+  "priorStage16Guards": {
+    "exactInverses": 11,
+    "rejectedSourceOrLoadOrderMutations": 22,
+    "rejectedManifestMutations": 1
+  },
+  "priorStage14Guards": {
+    "exactInverses": 2,
+    "rejectedSourceMutations": 6,
+    "rejectedManifestMutations": 1
+  },
+  "independentCyclingSimulation": {
+    "characters": 17332,
+    "sha256": "be413cd99f320f38d94a49fdf3b93d297dfe5f5039aa977d4c20442250fc9bef",
+    "matchesStage16": true
+  },
+  "runtimeHashes": {
+    "autumn-v19.html": "867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb",
+    "index.html": "867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb",
+    "js/game.js": "5cfc8f851422d73cc9829d4bb8adf403ffbcf6f923427226d974cf9efa411a9c",
+    "js/npc-motion.js": "f4111c327656ae3131a58547fbce9b7ac6865cd4af8907545fe94cd8d08d637a",
+    "js/street-life.js": "7e54984fb2d8b94df6f5a055b0c1f8c2828bbde14634a8d9431d50a52e73b229",
+    "autumn-version.json": "0d92274f3b2bdaee9fff7b707fb2349b8d8850771999e6139518ec29906039cf"
+  },
+  "guardHashes": {
+    "tools/verify-source-integrity.py": "cbc13c9f4855d352d03ed7695e0a0627ee1d6218da10bb47b5c0851f4cbb9813",
+    "tests/centrum_source_integrity.py": "77909190eec910afd7eeea39a73c652a54b13cfd4b8d2a125d6f072c0433255c"
+  },
+  "noDonorCheckoutOrGitRequiredByVerifier": true,
+  "mutationsStayInMemory": true,
+  "originalArtworkChanges": [],
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "tools/verify-source-integrity.py"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.176357433,
+      "stdout": "PASS: 944 pinned original files verified; all source assets/CSS and original protected code match;\nonly reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest and Stage17 NPC-prop fit additions differ."
+    },
+    {
+      "command": [
+        "python3",
+        "tests/centrum_source_integrity.py"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.280770588,
+      "stdout": "PASS: 944 protected originals; prior Stage14 guards retained; 11 exact Stage16 inverses/22 rejected source/load-order mutations; 5 exact Stage17 inverses/12 rejected source/load-order/prop-fit mutations; both inverse-manifest tamper guards; cycling simulation block unchanged; all mutations in memory."
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "tools/verify-source-integrity.py",
+        "tests/centrum_source_integrity.py"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.000022034,
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "tools/verify-source-integrity.py",
+        "tests/centrum_source_integrity.py",
+        "references/source/stage17-source-integration.json"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.000021152,
+      "stdout": ""
+    }
+  ],
+  "passed": true
+}

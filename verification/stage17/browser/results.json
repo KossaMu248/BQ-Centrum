@@ -1,0 +1,417 @@
+{
+  "scope": "Stage17 actual copied-street NPC/prop fit. Baseline/after are separate frozen runtime snapshots; no physical-device/FPS/full-campaign claim.",
+  "passed": true,
+  "conditions": {
+    "headless": true,
+    "physicalDevicesTested": false,
+    "desktop": [
+      1280,
+      720
+    ],
+    "touchEmulation": [
+      844,
+      390
+    ],
+    "deviceScaleFactor": 1,
+    "jpegQuality": 90,
+    "setup": "one original debug route stop per fresh context, then native controls; no state grants"
+  },
+  "browser": "154.0.8037.57",
+  "contexts": {
+    "before": 2,
+    "after": 2
+  },
+  "normalRealScreenshots": {
+    "before": 4,
+    "after": 6,
+    "total": 10
+  },
+  "runs": [
+    {
+      "phase": "before",
+      "file": "before/results.json",
+      "sha256": "649802735ec81cd16877394a3dac6a0f0dee6b06eec49e518a40e7bc724b4c62",
+      "harnessSHA256": "4e41d2af9de94cec6f9bdd501079249383d1d9f4e08fe52934460852230bac6c",
+      "runtimeChangedWithinRun": [],
+      "passed": true
+    },
+    {
+      "phase": "after",
+      "file": "after/results.json",
+      "sha256": "1dc4a58acead933d1267ef8719b84c44ed7da156f152a4760bacc5842fc6e526",
+      "harnessSHA256": "1dbd324ee01750247fa9230f8287b5077ab85b57198da302719505b5c5f4dc7a",
+      "runtimeChangedWithinRun": [],
+      "passed": true
+    }
+  ],
+  "fitMeasurements": [
+    {
+      "platform": "desktop",
+      "fits": [
+        {
+          "id": "civilian-reader",
+          "variant": 9,
+          "source": "civilian-rest-v16.png",
+          "pose": "read",
+          "sourceSeatPivot": [
+            548,
+            265
+          ],
+          "sourceOpaqueSoleY": 362,
+          "benchWidth": 140,
+          "benchSeatHeight": 27.22222222222222,
+          "hipCanvas": {
+            "x": 669.60107421875,
+            "y": 385.8416976928711
+          },
+          "seatCanvas": {
+            "x": 669.60107421875,
+            "y": 389.34168735080294
+          },
+          "seatPanCanvas": {
+            "rear": {
+              "x": 669.60107421875,
+              "y": 385.84168735080294
+            },
+            "front": {
+              "x": 669.60107421875,
+              "y": 395.17502068413626
+            }
+          },
+          "opaqueSoleCanvas": {
+            "x": 675.4372562099188,
+            "y": 416.73115768729855
+          },
+          "benchFloorCanvas": {
+            "x": 669.60107421875,
+            "y": 416.56390957302517
+          },
+          "ownGroundCanvas": {
+            "x": 669.60107421875,
+            "y": 416.56390957302517
+          },
+          "hipSeatGap": -3.499989657931849,
+          "soleFloorGap": 0.16724811427337727,
+          "soleOwnGroundGap": 0.16724811427337727,
+          "imageAspect": 1.0,
+          "renderAudit": {
+            "variant": 9,
+            "activity": "read",
+            "pose": "read",
+            "phase": 0,
+            "source": "assets/art/civilian-rest-v16.png",
+            "sourceRect": [
+              393,
+              12,
+              365,
+              360
+            ],
+            "height": 133.98,
+            "heightScale": 1.05,
+            "civilian": true,
+            "details": {
+              "seated": true,
+              "fitted": true,
+              "seatHeight": 30.72222222222222,
+              "legReach": 30.937107217672825,
+              "soleOffset": 0.21488499545060336,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              }
+            }
+          }
+        },
+        {
+          "id": "civilian-bench",
+          "variant": 11,
+          "source": "civilian-rest-v16.png",
+          "pose": "sit",
+          "sourceSeatPivot": [
+            185,
+            946
+          ],
+          "sourceOpaqueSoleY": 1017,
+          "benchWidth": 140,
+          "benchSeatHeight": 27.22222222222222,
+          "hipCanvas": {
+            "x": 209.60107421875,
+            "y": 362.8639030456543
+          },
+          "seatCanvas": {
+            "x": 209.60107421875,
+            "y": 357.0305762396918
+          },
+          "seatPanCanvas": {
+            "rear": {
+              "x": 209.60107421875,
+              "y": 353.5305762396918
+            },
+            "front": {
+              "x": 209.60107421875,
+              "y": 362.8639095730251
+            }
+          },
+          "opaqueSoleCanvas": {
+            "x": 213.75201818470887,
+            "y": 384.05994273169205
+          },
+          "benchFloorCanvas": {
+            "x": 209.60107421875,
+            "y": 384.25279846191404
+          },
+          "ownGroundCanvas": {
+            "x": 209.60107421875,
+            "y": 384.25279846191404
+          },
+          "hipSeatGap": 5.833326805962486,
+          "soleFloorGap": -0.19285573022199287,
+          "soleOwnGroundGap": -0.19285573022199287,
+          "imageAspect": 1.0,
+          "renderAudit": {
+            "variant": 11,
+            "activity": "sit",
+            "pose": "sit",
+            "phase": 0,
+            "source": "assets/art/civilian-rest-v16.png",
+            "sourceRect": [
+              29,
+              689,
+              355,
+              335
+            ],
+            "height": 107.184,
+            "heightScale": 0.84,
+            "civilian": true,
+            "details": {
+              "seated": true,
+              "fitted": true,
+              "seatHeight": 21.38888888888889,
+              "legReach": 21.144940261183663,
+              "soleOffset": -0.24394862770522607,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "platform": "phone",
+      "fits": [
+        {
+          "id": "civilian-reader",
+          "variant": 9,
+          "source": "civilian-rest-v16.png",
+          "pose": "read",
+          "sourceSeatPivot": [
+            548,
+            265
+          ],
+          "sourceOpaqueSoleY": 362,
+          "benchWidth": 140,
+          "benchSeatHeight": 27.22222222222222,
+          "hipCanvas": {
+            "x": 669.60009765625,
+            "y": 385.84326934814453
+          },
+          "seatCanvas": {
+            "x": 669.60009765625,
+            "y": 389.3432590060764
+          },
+          "seatPanCanvas": {
+            "rear": {
+              "x": 669.60009765625,
+              "y": 385.8432590060764
+            },
+            "front": {
+              "x": 669.60009765625,
+              "y": 395.1765923394097
+            }
+          },
+          "opaqueSoleCanvas": {
+            "x": 675.4422841515764,
+            "y": 416.7252052630768
+          },
+          "benchFloorCanvas": {
+            "x": 669.60009765625,
+            "y": 416.5654812282986
+          },
+          "ownGroundCanvas": {
+            "x": 669.60009765625,
+            "y": 416.5654812282986
+          },
+          "hipSeatGap": -3.499989657931849,
+          "soleFloorGap": 0.15972403477820762,
+          "soleOwnGroundGap": 0.15972403477820762,
+          "imageAspect": 1.0,
+          "renderAudit": {
+            "variant": 9,
+            "activity": "read",
+            "pose": "read",
+            "phase": 0,
+            "source": "assets/art/civilian-rest-v16.png",
+            "sourceRect": [
+              393,
+              12,
+              365,
+              360
+            ],
+            "height": 133.98,
+            "heightScale": 1.05,
+            "civilian": true,
+            "details": {
+              "seated": true,
+              "fitted": true,
+              "seatHeight": 30.72222222222222,
+              "legReach": 30.937107217672825,
+              "soleOffset": 0.21488499545060336,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              }
+            }
+          }
+        },
+        {
+          "id": "civilian-bench",
+          "variant": 11,
+          "source": "civilian-rest-v16.png",
+          "pose": "sit",
+          "sourceSeatPivot": [
+            185,
+            946
+          ],
+          "sourceOpaqueSoleY": 1017,
+          "benchWidth": 140,
+          "benchSeatHeight": 27.22222222222222,
+          "hipCanvas": {
+            "x": 209.60009765625,
+            "y": 362.86547470092773
+          },
+          "seatCanvas": {
+            "x": 209.60009765625,
+            "y": 357.03214789496525
+          },
+          "seatPanCanvas": {
+            "rear": {
+              "x": 209.60009765625,
+              "y": 353.53214789496525
+            },
+            "front": {
+              "x": 209.60009765625,
+              "y": 362.86548122829856
+            }
+          },
+          "opaqueSoleCanvas": {
+            "x": 213.7488433701388,
+            "y": 384.0581317166667
+          },
+          "benchFloorCanvas": {
+            "x": 209.60009765625,
+            "y": 384.2543701171875
+          },
+          "ownGroundCanvas": {
+            "x": 209.60009765625,
+            "y": 384.2543701171875
+          },
+          "hipSeatGap": 5.833326805962486,
+          "soleFloorGap": -0.19623840052076957,
+          "soleOwnGroundGap": -0.19623840052076957,
+          "imageAspect": 1.0,
+          "renderAudit": {
+            "variant": 11,
+            "activity": "sit",
+            "pose": "sit",
+            "phase": 0,
+            "source": "assets/art/civilian-rest-v16.png",
+            "sourceRect": [
+              29,
+              689,
+              355,
+              335
+            ],
+            "height": 107.184,
+            "heightScale": 0.84,
+            "civilian": true,
+            "details": {
+              "seated": true,
+              "fitted": true,
+              "seatHeight": 21.38888888888889,
+              "legReach": 21.144940261183663,
+              "soleOffset": -0.24394862770522607,
+              "seatPan": {
+                "front": 21.38888888888889,
+                "rear": 30.72222222222222
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "smokingPropMeasurements": [
+    {
+      "platform": "desktop",
+      "id": "civilian-smoker",
+      "anchorX": 2860,
+      "binX": 2930,
+      "binWidth": 68,
+      "horizontalSeparation": 70
+    },
+    {
+      "platform": "phone",
+      "id": "civilian-smoker",
+      "anchorX": 2860,
+      "binX": 2930,
+      "binWidth": 68,
+      "horizontalSeparation": 70
+    }
+  ],
+  "sampledMaximumAbsoluteSoleFloorErrorCanvasPixels": 0.19623840052076957,
+  "observedContactMovement": [
+    {
+      "platform": "desktop",
+      "id": "civilian-bench",
+      "activity": "walk",
+      "distance": 37.59485988334543,
+      "speed": 44,
+      "hp": 60
+    },
+    {
+      "platform": "phone",
+      "id": "civilian-bench",
+      "activity": "walk",
+      "distance": 40.78407892882298,
+      "speed": 44,
+      "hp": 60
+    }
+  ],
+  "errorCounts": {
+    "errors": 0,
+    "consoleErrors": 0,
+    "httpFailures": 0
+  },
+  "checks": "Original source hip within existing painted sloped seat pan; original opaque sole to actual painted bench floor; aspect1; fixed140 width; smoker beside68-widebin; quietrest and nearbyfrontwalk; actualcontactstand/walk; front/behinddraworder; I/touchBag; pause; samegroundedbike/native transfer;100HP, combat-rewardstats andonependingRAF preserved.",
+  "interpretation": [
+    "Source benchwidth196\u2192140. Originalhip/sole source coordinates, frame stature/height and whole original sprite remain; test sees actual tile destinations/Canvas matrices.",
+    "Before was captured using an earlier observational harness; its own recorded hash and original4images/209KBJSON remain unchanged. Final harness adds actualpropdraw/perframeorder andcompactcaptures; after binds current finalruntimehashes.",
+    "Desktoppreview is preserved only under preview-provisional and excluded from delivery. It is not counted as final acceptance.",
+    "No clip was recorded for this narrow fitrepair. Actual native movement/contact/stand/walk state advances and render-order traces provide interaction/motion evidence beyond still images.",
+    "Physical phones/Safari/thermal, newFPS measurements, full story/economy and allsourceNPCreload persistence were not retested. Sourcebenches have no newlyadded collision system; front/behind is visualdepthordering."
+  ],
+  "captureSHA256": {
+    "before/desktop/resting-prop-fit.jpg": "b1d007177981907cdc6916c97c5e9cce154b0e7b404ce6aeebd4be0d548e5b29",
+    "before/desktop/resting-prop-fit-quiet.jpg": "7c31ebca2831fe9817e33b89aa9a75d3bb97c6649c376001ca3ec2a7028b1355",
+    "before/phone/resting-prop-fit.jpg": "a53eeb09076dca9003d04410a1eb51767dd5801495d8a9bfa3a933c522f40d6d",
+    "before/phone/resting-prop-fit-quiet.jpg": "15cc178b1bd74f92c72968eb71e32ec10e02c961a99aab7ca0800d77a27f2637",
+    "after/desktop/resting-prop-fit.jpg": "b8d168ed630de913ffe19412b1fff102852804a0639cc9ddadc7353c9853469a",
+    "after/desktop/contact-stands-and-walks.jpg": "44c5391e952a461ccfda86a60101f26b1038c521e8342e964a94a06b08e0b25f",
+    "after/desktop/walk-behind-empty-bench.jpg": "60dad499de20c29409300cef2278a81823ca949fce65258830731ca51eb8105c",
+    "after/phone/resting-prop-fit.jpg": "f099dd9a21dd466d81e3da0258a18fda62cfdc102659b48287eeb001680ade2b",
+    "after/phone/contact-stands-and-walks.jpg": "dcf2ef697b247b5ab26ff378236659ba5599c7d5d51f91f8c569e61e8963344a",
+    "after/phone/walk-behind-empty-bench.jpg": "8193d6cbc9c2b4ff31144c3280f7730dfd9a3d1cd85ba64764bb705ebb8cd05d"
+  }
+}
