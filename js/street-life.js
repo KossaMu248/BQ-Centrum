@@ -15,16 +15,15 @@
   bush.src='assets/art/autumn-verge.png';
   let cacheKey='',locals=[],gangLocals=[],furniture=[];
   const painted=new Map(),heard=new Set();let audioRequests=0,lastSoundAt=-99;
-  // Original bench() is180 units wide. Its real sloping seat runs from
-  // y=-39.5 at the back to-27.5 at the front (measured at the centre).
-  // Share that surface with the seated rig instead of a separate hip offset.
-  const benchWidth=140,benchScale=benchWidth/180;
+  // A shared bench needs its own width and low seat, rather than scaling the
+  // old tall drawing down around one occupant. One geometry owns both uses.
+  const benchWidth=224;
   function prepare(scenes,finish,count,gangs=[]){
     const key=finish+':'+count+':'+gangs.map(n=>n.id).join(',');if(cacheKey===key)return;
     cacheKey=key;locals=[];gangLocals=[];furniture=[];
     const safe=x=>Math.max(100,Math.min(finish-100,x));
     function prop(id,kind,x,depth=-82){
-      const seating=kind==='bench'?{width:benchWidth,seatHeight:35*benchScale,seatPan:{front:27.5*benchScale,rear:39.5*benchScale},footprintHalf:benchWidth*.55}:{};
+      const seating=kind==='bench'?window.BearlyCentrumStreetBench.metrics(benchWidth):{};
       const p={id,kind,x:safe(x),depth,...seating};furniture.push(p);return p;
     }
     const hide=p=>({id:p.id,kind:p.kind==='bush'?'bush':'bin',x:p.x+(p.kind==='bin'?24:0),depth:p.depth-4,duration:10});
@@ -50,7 +49,7 @@
       if(i<2)return;
       const base=scene.x,depth=-64-(i%2)*4;
       const bench=prop(scene.key+'-life-bench','bench',base+scene.w*.5+120,-84);
-      const bin=prop(scene.key+'-life-bin','bin',bench.x+170,-82);
+      const bin=prop(scene.key+'-life-bin','bin',bench.x+220,-82);
       const shrubs=[prop(scene.key+'-life-bush-left','bush',base-Math.max(700,scene.w*.5+250),-80),prop(scene.key+'-life-bush-right','bush',base+Math.max(850,scene.w*.5+580),-80)];
       const spots=[...shrubs.map(hide),hide(bin)];
       const visitor=9+i%3;
@@ -95,7 +94,7 @@
   function drawProp(c,p,groundAt,time=0){
     const g=groundAt(p.x);if(g==null)return;
     const y=g+p.depth;
-    if(p.kind==='bench')window.BearlyStreetProps.draw(c,'bench',p.x,y,p.width||benchWidth,time);
+    if(p.kind==='bench')window.BearlyCentrumStreetBench.draw(c,p.x,y,p.width||benchWidth);
     else if(p.kind==='bin')window.BearlyStreetProps.draw(c,'bin',p.x,y,68,time);
     else if(p.kind==='utility')window.BearlyStreetProps.draw(c,'utility',p.x,y,p.width||88,time);
     else if(p.kind==='firebin'){

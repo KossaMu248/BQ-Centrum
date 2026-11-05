@@ -1,0 +1,3006 @@
+{
+  "scope": "Stage18 native rendered bench and damage-eye acceptance.\n\nOne disclosed original route-stop setup per fresh context, then native movement,\npersonal-space provocation and actual enemy damage. No health/NPC/item grants.\nChromium touch emulation is not physical Safari/device testing. Screenshots and\nobserved live state/Canvas submissions provide different kinds of evidence.\n",
+  "phase": "after",
+  "harnessSHA256": "b05344342864868accfbf99b43b1d4280c7d60e679046101a5894bafd66fe952",
+  "runtimeHashes": {
+    "autumn-v19.html": "2fa3df3354669b3f5e97ad85225c6998936e33a2bb3820a8d3383f75b0a80a32",
+    "autumn-version.json": "969c1e5f241ab8251e24bf16e6bb345e590824090a42d90132cec895f1402ffe",
+    "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+    "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+    "css/centrum-route.css": "892e1ec5ac28ae0a551d45b276974888e6db3f227635487e45c761e1553d1e5f",
+    "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+    "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+    "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+    "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+    "index.html": "2fa3df3354669b3f5e97ad85225c6998936e33a2bb3820a8d3383f75b0a80a32",
+    "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+    "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+    "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+    "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+    "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+    "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+    "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+    "js/centrum-camera.js": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+    "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+    "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+    "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+    "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+    "js/centrum-hero-cache.js": "38f3212052e12304e3ecf4a053f0141122660395593874151e23835717ee5eff",
+    "js/centrum-inventory.js": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+    "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+    "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+    "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+    "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+    "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+    "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+    "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf",
+    "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+    "js/centrum-street-bench.js": "f1a59a04ab518d1c194a2fb5a17280aca1729fd8035473f5dee463bb61120e4f",
+    "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+    "js/game.js": "60ef1993ea5dd5112f45d24748eed8146733fcfa6a18953a16edcdbaa95674bf",
+    "js/hero-rig.js": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+    "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+    "js/illustrated-hero.js": "ac91804b0afd366308c41ba2e53173fee649c5399acdc725c0bf64ac9072ee93",
+    "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+    "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+    "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+    "js/illustrated-visits.js": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+    "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+    "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+    "js/npc-motion.js": "f4111c327656ae3131a58547fbce9b7ac6865cd4af8907545fe94cd8d08d637a",
+    "js/street-life.js": "ded03758bd6019831d41889c58b5409dd6ec2df0d1634825310f034be621c308",
+    "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+    "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+  },
+  "conditions": {
+    "headless": true,
+    "physicalDevicesTested": false,
+    "desktop": [
+      1280,
+      720
+    ],
+    "touchEmulation": [
+      844,
+      390
+    ],
+    "deviceScaleFactor": 1,
+    "jpegQuality": 76,
+    "setup": "one original debug route stop per fresh context; no NPC/health/item grants in primary scenarios; native movement and existing personal-space aggression. The separately labelled right-arm renderer fixture uses the existing severe damage helper."
+  },
+  "checks": [
+    {
+      "name": "desktop explicit right-arm injury and actual airborne crash renderer fixture",
+      "passed": true,
+      "secondaryFixture": true,
+      "fixture": {
+        "explicitSecondaryFixture": true,
+        "fixture": "existing BEARLY_TEST.hit(rightArm,25), severe original damage; no healing/reward grants",
+        "moduleServing": {
+          "mode": "current-worktree"
+        },
+        "before": {
+          "health": 100,
+          "lostParts": [],
+          "state": "playing",
+          "x": 5550,
+          "speed": 0,
+          "bearPose": "idle"
+        },
+        "after": {
+          "health": 75,
+          "lostParts": [
+            "rightArm"
+          ],
+          "state": "playing",
+          "x": 5550,
+          "speed": 0,
+          "bearPose": "idle"
+        },
+        "image": {
+          "samples": [
+            {
+              "source": "http://127.0.0.1:46673/assets/cache/hero-cycling-v19/bear_upper_rightarm_injured.png",
+              "sourceSize": [
+                291,
+                309
+              ],
+              "resultType": "CANVAS",
+              "resultSize": [
+                291,
+                309
+              ]
+            },
+            {
+              "source": "http://127.0.0.1:46673/assets/cache/hero-cycling-v19/bear_upper_rightarm_injured.png",
+              "sourceSize": [
+                291,
+                309
+              ],
+              "resultType": "CANVAS",
+              "resultSize": [
+                291,
+                309
+              ]
+            }
+          ],
+          "last": {
+            "source": "http://127.0.0.1:46673/assets/cache/hero-cycling-v19/bear_upper_rightarm_injured.png",
+            "sourceSize": [
+              291,
+              309
+            ],
+            "resultType": "CANVAS",
+            "resultSize": [
+              291,
+              309
+            ]
+          },
+          "pixels": {
+            "coordinates": [
+              [
+                190,
+                49
+              ],
+              [
+                212,
+                51
+              ]
+            ],
+            "original": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                36,
+                42,
+                30,
+                42
+              ]
+            ],
+            "actual": [
+              [
+                255,
+                249,
+                223,
+                255
+              ],
+              [
+                219,
+                208,
+                185,
+                255
+              ]
+            ],
+            "scope": "One read-only sample of actual sprite return used by live game; not a game-frame alpha claim."
+          },
+          "gameDraws": [
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47854236326077276,
+                "b": 0.03737908860729748,
+                "c": -0.03737908860729748,
+                "d": 0.47854236326077276,
+                "e": 303.6805690751007,
+                "f": 319.85433385781175,
+                "m11": 0.47854236326077276,
+                "m12": 0.03737908860729748,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.03737908860729748,
+                "m22": 0.47854236326077276,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 303.6805690751007,
+                "m42": 319.85433385781175,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5697.200000001118
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4783624527372064,
+                "b": 0.03961506672418317,
+                "c": -0.03961506672418317,
+                "d": 0.4783624527372064,
+                "e": 308.550425995761,
+                "f": 319.36843912484517,
+                "m11": 0.4783624527372064,
+                "m12": 0.03961506672418317,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.03961506672418317,
+                "m22": 0.4783624527372064,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 308.550425995761,
+                "m42": 319.36843912484517,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5726.5
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47800596430084236,
+                "b": 0.04370683920325641,
+                "c": -0.04370683920325641,
+                "d": 0.47800596430084236,
+                "e": 317.86463819652863,
+                "f": 322.9063835337596,
+                "m11": 0.47800596430084236,
+                "m12": 0.04370683920325641,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.04370683920325641,
+                "m22": 0.47800596430084236,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 317.86463819652863,
+                "m42": 322.9063835337596,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5755.4000000003725
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4776979382194994,
+                "b": 0.04695390847583247,
+                "c": -0.04695390847583247,
+                "d": 0.4776979382194994,
+                "e": 311.4944416704088,
+                "f": 323.31605352075167,
+                "m11": 0.4776979382194994,
+                "m12": 0.04695390847583247,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.04695390847583247,
+                "m22": 0.4776979382194994,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 311.4944416704088,
+                "m42": 323.31605352075167,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5782.5
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47756514200342687,
+                "b": 0.04828586587775126,
+                "c": -0.04828586587775126,
+                "d": 0.47756514200342687,
+                "e": 313.7896368676321,
+                "f": 318.14276181767593,
+                "m11": 0.47756514200342687,
+                "m12": 0.04828586587775126,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.04828586587775126,
+                "m22": 0.47756514200342687,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 313.7896368676321,
+                "m42": 318.14276181767593,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5808.300000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47735280714481837,
+                "b": 0.05034170449318677,
+                "c": -0.05034170449318677,
+                "d": 0.47735280714481837,
+                "e": 312.7588040906077,
+                "f": 322.0619964248149,
+                "m11": 0.47735280714481837,
+                "m12": 0.05034170449318677,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05034170449318677,
+                "m22": 0.47735280714481837,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 312.7588040906077,
+                "m42": 322.0619964248149,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5837.300000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4772749158149496,
+                "b": 0.051074890446777314,
+                "c": -0.051074890446777314,
+                "d": 0.4772749158149496,
+                "e": 312.7000278184652,
+                "f": 317.05928206993667,
+                "m11": 0.4772749158149496,
+                "m12": 0.051074890446777314,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.051074890446777314,
+                "m22": 0.4772749158149496,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 312.7000278184652,
+                "m42": 317.05928206993667,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5864.4000000003725
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4771702091928394,
+                "b": 0.052044030965898526,
+                "c": -0.052044030965898526,
+                "d": 0.4771702091928394,
+                "e": 316.6992936977002,
+                "f": 322.2889221061728,
+                "m11": 0.4771702091928394,
+                "m12": 0.052044030965898526,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.052044030965898526,
+                "m22": 0.4771702091928394,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 316.6992936977002,
+                "m42": 322.2889221061728,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5890.4000000003725
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4771161376054971,
+                "b": 0.0525374241539293,
+                "c": -0.0525374241539293,
+                "d": 0.4771161376054971,
+                "e": 318.15964535952946,
+                "f": 322.5749343615911,
+                "m11": 0.4771161376054971,
+                "m12": 0.0525374241539293,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.0525374241539293,
+                "m22": 0.4771161376054971,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 318.15964535952946,
+                "m42": 322.5749343615911,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5916.700000001118
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4771007363911965,
+                "b": 0.05267710162201005,
+                "c": -0.05267710162201005,
+                "d": 0.4771007363911965,
+                "e": 316.660641159858,
+                "f": 319.879914838375,
+                "m11": 0.4771007363911965,
+                "m12": 0.05267710162201005,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05267710162201005,
+                "m22": 0.4771007363911965,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 316.660641159858,
+                "m42": 319.879914838375,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5946
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47708120111496705,
+                "b": 0.052853734428305814,
+                "c": -0.052853734428305814,
+                "d": 0.47708120111496705,
+                "e": 317.43365445058805,
+                "f": 320.7531059795262,
+                "m11": 0.47708120111496705,
+                "m12": 0.052853734428305814,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.052853734428305814,
+                "m22": 0.47708120111496705,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 317.43365445058805,
+                "m42": 320.7531059795262,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5971.5
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4770671710373441,
+                "b": 0.052980222901974926,
+                "c": -0.052980222901974926,
+                "d": 0.4770671710373441,
+                "e": 321.56454254013465,
+                "f": 319.3480197753031,
+                "m11": 0.4770671710373441,
+                "m12": 0.052980222901974926,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.052980222901974926,
+                "m22": 0.4770671710373441,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 321.56454254013465,
+                "m42": 319.3480197753031,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5998.200000001118
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47706057682450415,
+                "b": 0.053039567684785446,
+                "c": -0.053039567684785446,
+                "d": 0.47706057682450415,
+                "e": 320.5507788663534,
+                "f": 319.63434160818764,
+                "m11": 0.47706057682450415,
+                "m12": 0.053039567684785446,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.053039567684785446,
+                "m22": 0.47706057682450415,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 320.5507788663534,
+                "m42": 319.63434160818764,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6024.800000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4770479171629872,
+                "b": 0.05315331062853213,
+                "c": -0.05315331062853213,
+                "d": 0.4770479171629872,
+                "e": 318.1380746804597,
+                "f": 321.5927204083231,
+                "m11": 0.4770479171629872,
+                "m12": 0.05315331062853213,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05315331062853213,
+                "m22": 0.4770479171629872,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 318.1380746804597,
+                "m42": 321.5927204083231,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6053.0999999996275
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47704217570600077,
+                "b": 0.05320481461298931,
+                "c": -0.05320481461298931,
+                "d": 0.47704217570600077,
+                "e": 315.8518207424725,
+                "f": 319.40514292657247,
+                "m11": 0.47704217570600077,
+                "m12": 0.05320481461298931,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05320481461298931,
+                "m22": 0.47704217570600077,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 315.8518207424725,
+                "m42": 319.40514292657247,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6077.5
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47703185442165474,
+                "b": 0.053297275421494934,
+                "c": -0.053297275421494934,
+                "d": 0.47703185442165474,
+                "e": 320.1063380982161,
+                "f": 318.1504634357642,
+                "m11": 0.47703185442165474,
+                "m12": 0.053297275421494934,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.053297275421494934,
+                "m22": 0.47703185442165474,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 320.1063380982161,
+                "m42": 318.1504634357642,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6103
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.477029448664545,
+                "b": 0.053318803504183276,
+                "c": -0.053318803504183276,
+                "d": 0.477029448664545,
+                "e": 320.407722035664,
+                "f": 319.72920589322734,
+                "m11": 0.477029448664545,
+                "m12": 0.053318803504183276,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.053318803504183276,
+                "m22": 0.477029448664545,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 320.407722035664,
+                "m42": 319.72920589322734,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6129.4000000003725
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4770258569818378,
+                "b": 0.05335092755576694,
+                "c": -0.05335092755576694,
+                "d": 0.4770258569818378,
+                "e": 319.0345677457559,
+                "f": 320.78817201898175,
+                "m11": 0.4770258569818378,
+                "m12": 0.05335092755576694,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05335092755576694,
+                "m22": 0.4770258569818378,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 319.0345677457559,
+                "m42": 320.78817201898175,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6157.800000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4770234391398341,
+                "b": 0.053372541737512096,
+                "c": -0.053372541737512096,
+                "d": 0.4770234391398341,
+                "e": 319.6811849885462,
+                "f": 318.7005199554013,
+                "m11": 0.4770234391398341,
+                "m12": 0.053372541737512096,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.053372541737512096,
+                "m22": 0.4770234391398341,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 319.6811849885462,
+                "m42": 318.7005199554013,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6185.300000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47702254466267346,
+                "b": 0.053380535627372536,
+                "c": -0.053380535627372536,
+                "d": 0.47702254466267346,
+                "e": 319.3488750916456,
+                "f": 320.34642421336673,
+                "m11": 0.47702254466267346,
+                "m12": 0.053380535627372536,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.053380535627372536,
+                "m22": 0.47702254466267346,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 319.3488750916456,
+                "m42": 320.34642421336673,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6211.0999999996275
+            }
+          ]
+        },
+        "heroAudit": {
+          "compiledDraws": 151,
+          "legacyBuilds": 1,
+          "legacyLargeBuilds": 0,
+          "legacyPixels": 5727,
+          "eyeRepairs": 1,
+          "eyeRepairBytes": 359676,
+          "compiledSources": 15
+        },
+        "crash": {
+          "helper": "BEARLY_TEST.crash(), explicit secondary crash fixture",
+          "after": {
+            "health": 75,
+            "lostParts": [
+              "rightArm"
+            ],
+            "state": "dead",
+            "x": 5550,
+            "speed": 0,
+            "bearPose": "hurt",
+            "bearEjected": true,
+            "babyEjected": true
+          },
+          "actualAirborneSpriteDraw": {
+            "destination": [
+              -154,
+              -176
+            ],
+            "matrix": {
+              "a": 0.43576662327885357,
+              "b": -0.20126460130003782,
+              "c": 0.20126460130003782,
+              "d": 0.43576662327885357,
+              "e": 414.80615234375,
+              "f": 385.5224914550781,
+              "m11": 0.43576662327885357,
+              "m12": -0.20126460130003782,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0.20126460130003782,
+              "m22": 0.43576662327885357,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": 414.80615234375,
+              "m42": 385.5224914550781,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "globalAlpha": 1,
+            "composite": "source-over",
+            "at": 6420.0999999996275
+          },
+          "eyePixels": {
+            "coordinates": [
+              [
+                190,
+                49
+              ],
+              [
+                212,
+                51
+              ]
+            ],
+            "original": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                36,
+                42,
+                30,
+                42
+              ]
+            ],
+            "actual": [
+              [
+                255,
+                249,
+                223,
+                255
+              ],
+              [
+                219,
+                208,
+                185,
+                255
+              ]
+            ],
+            "scope": "One read-only sample of actual sprite return used by live game; not a game-frame alpha claim."
+          },
+          "heroAudit": {
+            "compiledDraws": 151,
+            "legacyBuilds": 1,
+            "legacyLargeBuilds": 0,
+            "legacyPixels": 5727,
+            "eyeRepairs": 1,
+            "eyeRepairBytes": 359676,
+            "compiledSources": 15
+          }
+        }
+      },
+      "moduleServing": {
+        "mode": "current-worktree"
+      },
+      "damageHelper": "BEARLY_TEST.hit(rightArm,25)",
+      "healthBefore": 100,
+      "healthAfter": 75,
+      "lostParts": [
+        "rightArm"
+      ],
+      "metrics": {
+        "writes": [
+          "bq-centrum:scene-network:v1"
+        ],
+        "reads": [
+          "bq-centrum:adventure:v1",
+          "bq-centrum:best-score:v1",
+          "bq-centrum:civilians:v1",
+          "bq-centrum:parking:v1",
+          "bq-centrum:quest:wrong-entrance:v1",
+          "bq-centrum:scene-network:v1"
+        ],
+        "listenerCounts": {
+          "document:fullscreenchange": 1,
+          "window:keydown": 6,
+          "window:pagehide": 3,
+          "window:pointerdown": 2,
+          "window:blur": 5,
+          "document:visibilitychange": 5,
+          "window:keyup": 3,
+          "window:centrum-square-change": 1,
+          "window:pointerup": 2,
+          "window:pointercancel": 1,
+          "window:touchend": 2,
+          "window:touchcancel": 2,
+          "window:__playwright_global_listeners_check__": 1,
+          "window:mousemove": 1,
+          "window:touchstart": 1,
+          "window:mousedown": 1,
+          "window:mouseup": 1,
+          "window:click": 1,
+          "window:auxclick": 1,
+          "window:dblclick": 1,
+          "window:contextmenu": 1
+        },
+        "loopFrames": 222,
+        "pending": 1,
+        "maxPending": 1,
+        "audioContexts": 1,
+        "frameTimeMs": {
+          "samples": 221,
+          "median": 16.7,
+          "p95": 33.4,
+          "maximum": 133.3
+        }
+      }
+    },
+    {
+      "name": "phone explicit right-arm injury and actual airborne crash renderer fixture",
+      "passed": true,
+      "secondaryFixture": true,
+      "fixture": {
+        "explicitSecondaryFixture": true,
+        "fixture": "existing BEARLY_TEST.hit(rightArm,25), severe original damage; no healing/reward grants",
+        "moduleServing": {
+          "mode": "current-worktree"
+        },
+        "before": {
+          "health": 100,
+          "lostParts": [],
+          "state": "playing",
+          "x": 5550,
+          "speed": 0,
+          "bearPose": "idle"
+        },
+        "after": {
+          "health": 75,
+          "lostParts": [
+            "rightArm"
+          ],
+          "state": "playing",
+          "x": 5550,
+          "speed": 0,
+          "bearPose": "idle"
+        },
+        "image": {
+          "samples": [
+            {
+              "source": "http://127.0.0.1:46673/assets/cache/hero-cycling-v19/bear_upper_rightarm_injured.png",
+              "sourceSize": [
+                291,
+                309
+              ],
+              "resultType": "CANVAS",
+              "resultSize": [
+                291,
+                309
+              ]
+            },
+            {
+              "source": "http://127.0.0.1:46673/assets/cache/hero-cycling-v19/bear_upper_rightarm_injured.png",
+              "sourceSize": [
+                291,
+                309
+              ],
+              "resultType": "CANVAS",
+              "resultSize": [
+                291,
+                309
+              ]
+            }
+          ],
+          "last": {
+            "source": "http://127.0.0.1:46673/assets/cache/hero-cycling-v19/bear_upper_rightarm_injured.png",
+            "sourceSize": [
+              291,
+              309
+            ],
+            "resultType": "CANVAS",
+            "resultSize": [
+              291,
+              309
+            ]
+          },
+          "pixels": {
+            "coordinates": [
+              [
+                190,
+                49
+              ],
+              [
+                212,
+                51
+              ]
+            ],
+            "original": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                36,
+                42,
+                30,
+                42
+              ]
+            ],
+            "actual": [
+              [
+                255,
+                249,
+                223,
+                255
+              ],
+              [
+                219,
+                208,
+                185,
+                255
+              ]
+            ],
+            "scope": "One read-only sample of actual sprite return used by live game; not a game-frame alpha claim."
+          },
+          "gameDraws": [
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4747573054243376,
+                "b": 0.07074949219987231,
+                "c": -0.07074949219987231,
+                "d": 0.4747573054243376,
+                "e": 319.32358318415197,
+                "f": 310.6442601286648,
+                "m11": 0.4747573054243376,
+                "m12": 0.07074949219987231,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.07074949219987231,
+                "m22": 0.4747573054243376,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 319.32358318415197,
+                "m42": 310.6442601286648,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5159.300000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47445348184694175,
+                "b": 0.0727590768470245,
+                "c": -0.0727590768470245,
+                "d": 0.47445348184694175,
+                "e": 314.7930733351574,
+                "f": 312.9634632831388,
+                "m11": 0.47445348184694175,
+                "m12": 0.0727590768470245,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.0727590768470245,
+                "m22": 0.47445348184694175,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 314.7930733351574,
+                "m42": 312.9634632831388,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5186.700000001118
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4747154761041034,
+                "b": 0.07102961669312237,
+                "c": -0.07102961669312237,
+                "d": 0.4747154761041034,
+                "e": 312.39119091596234,
+                "f": 312.07920320987625,
+                "m11": 0.4747154761041034,
+                "m12": 0.07102961669312237,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.07102961669312237,
+                "m22": 0.4747154761041034,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 312.39119091596234,
+                "m42": 312.07920320987625,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5213.700000001118
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47567489339051,
+                "b": 0.06429141076570324,
+                "c": -0.06429141076570324,
+                "d": 0.47567489339051,
+                "e": 309.3677576057782,
+                "f": 313.92417719724136,
+                "m11": 0.47567489339051,
+                "m12": 0.06429141076570324,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.06429141076570324,
+                "m22": 0.47567489339051,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 309.3677576057782,
+                "m42": 313.92417719724136,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5241.5
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4761698981915372,
+                "b": 0.0605162602659701,
+                "c": -0.0605162602659701,
+                "d": 0.4761698981915372,
+                "e": 315.3422543132327,
+                "f": 319.4151488350029,
+                "m11": 0.4761698981915372,
+                "m12": 0.0605162602659701,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.0605162602659701,
+                "m22": 0.4761698981915372,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 315.3422543132327,
+                "m42": 319.4151488350029,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5268.800000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47632110537998246,
+                "b": 0.05931436815737942,
+                "c": -0.05931436815737942,
+                "d": 0.47632110537998246,
+                "e": 317.0058214121442,
+                "f": 314.85995380647364,
+                "m11": 0.47632110537998246,
+                "m12": 0.05931436815737942,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05931436815737942,
+                "m22": 0.47632110537998246,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 317.0058214121442,
+                "m42": 314.85995380647364,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5296.700000001118
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47652453198690986,
+                "b": 0.05765726419952691,
+                "c": -0.05765726419952691,
+                "d": 0.47652453198690986,
+                "e": 313.203164112595,
+                "f": 315.9406172866062,
+                "m11": 0.47652453198690986,
+                "m12": 0.05765726419952691,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05765726419952691,
+                "m22": 0.47652453198690986,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 313.203164112595,
+                "m42": 315.9406172866062,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5323.4000000003725
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47666266662333845,
+                "b": 0.05650391090752578,
+                "c": -0.05650391090752578,
+                "d": 0.47666266662333845,
+                "e": 321.0870134653168,
+                "f": 321.4789652654459,
+                "m11": 0.47666266662333845,
+                "m12": 0.05650391090752578,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05650391090752578,
+                "m22": 0.47666266662333845,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 321.0870134653168,
+                "m42": 321.4789652654459,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5354.5
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47671950665769736,
+                "b": 0.05602233190754532,
+                "c": -0.05602233190754532,
+                "d": 0.47671950665769736,
+                "e": 318.2179378777678,
+                "f": 319.4858107931289,
+                "m11": 0.47671950665769736,
+                "m12": 0.05602233190754532,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05602233190754532,
+                "m22": 0.47671950665769736,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 318.2179378777678,
+                "m42": 319.4858107931289,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5381.300000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47681575922046976,
+                "b": 0.05519711459238144,
+                "c": -0.05519711459238144,
+                "d": 0.47681575922046976,
+                "e": 313.0125407605602,
+                "f": 322.43049292156013,
+                "m11": 0.47681575922046976,
+                "m12": 0.05519711459238144,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05519711459238144,
+                "m22": 0.47681575922046976,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 313.0125407605602,
+                "m42": 322.43049292156013,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5409.10000000149
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4768892196669685,
+                "b": 0.054558792744593076,
+                "c": -0.054558792744593076,
+                "d": 0.4768892196669685,
+                "e": 315.65296034168705,
+                "f": 320.73073904924547,
+                "m11": 0.4768892196669685,
+                "m12": 0.054558792744593076,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.054558792744593076,
+                "m22": 0.4768892196669685,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 315.65296034168705,
+                "m42": 320.73073904924547,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5436.60000000149
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47691724867650664,
+                "b": 0.054313236095344185,
+                "c": -0.054313236095344185,
+                "d": 0.47691724867650664,
+                "e": 317.4528576393651,
+                "f": 322.27567022548624,
+                "m11": 0.47691724867650664,
+                "m12": 0.054313236095344185,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.054313236095344185,
+                "m22": 0.47691724867650664,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 317.4528576393651,
+                "m42": 322.27567022548624,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5467.10000000149
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47695729806127285,
+                "b": 0.05396040702596281,
+                "c": -0.05396040702596281,
+                "d": 0.47695729806127285,
+                "e": 316.1795728219772,
+                "f": 321.46503106858677,
+                "m11": 0.47695729806127285,
+                "m12": 0.05396040702596281,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05396040702596281,
+                "m22": 0.47695729806127285,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 316.1795728219772,
+                "m42": 321.46503106858677,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5496.4000000003725
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4769802977408731,
+                "b": 0.0537567229967153,
+                "c": -0.0537567229967153,
+                "d": 0.4769802977408731,
+                "e": 318.5764807307921,
+                "f": 318.614273241711,
+                "m11": 0.4769802977408731,
+                "m12": 0.0537567229967153,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.0537567229967153,
+                "m22": 0.4769802977408731,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 318.5764807307921,
+                "m42": 318.614273241711,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5524.4000000003725
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47699249339263056,
+                "b": 0.05364840116349071,
+                "c": -0.05364840116349071,
+                "d": 0.47699249339263056,
+                "e": 319.74455507675185,
+                "f": 321.55532244683985,
+                "m11": 0.47699249339263056,
+                "m12": 0.05364840116349071,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05364840116349071,
+                "m22": 0.47699249339263056,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 319.74455507675185,
+                "m42": 321.55532244683985,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5553.5
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47699629985678793,
+                "b": 0.053614546750399464,
+                "c": -0.053614546750399464,
+                "d": 0.47699629985678793,
+                "e": 316.19734030112375,
+                "f": 320.49085003421715,
+                "m11": 0.47699629985678793,
+                "m12": 0.053614546750399464,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.053614546750399464,
+                "m22": 0.47699629985678793,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 316.19734030112375,
+                "m42": 320.49085003421715,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5581.300000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4770019698336576,
+                "b": 0.05356407821598259,
+                "c": -0.05356407821598259,
+                "d": 0.4770019698336576,
+                "e": 316.61242585998025,
+                "f": 319.6429819813991,
+                "m11": 0.4770019698336576,
+                "m12": 0.05356407821598259,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05356407821598259,
+                "m22": 0.4770019698336576,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 316.61242585998025,
+                "m42": 319.6429819813991,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5610.800000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47700733464837247,
+                "b": 0.05351628155966268,
+                "c": -0.05351628155966268,
+                "d": 0.47700733464837247,
+                "e": 318.3377625800191,
+                "f": 320.8798630250373,
+                "m11": 0.47700733464837247,
+                "m12": 0.05351628155966268,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05351628155966268,
+                "m22": 0.47700733464837247,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 318.3377625800191,
+                "m42": 320.8798630250373,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5639.10000000149
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4770109479755047,
+                "b": 0.0534840650271448,
+                "c": -0.0534840650271448,
+                "d": 0.4770109479755047,
+                "e": 319.3832588136697,
+                "f": 320.4317792398528,
+                "m11": 0.4770109479755047,
+                "m12": 0.0534840650271448,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.0534840650271448,
+                "m22": 0.4770109479755047,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 319.3832588136697,
+                "m42": 320.4317792398528,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5669
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47701228529872713,
+                "b": 0.053472136430137596,
+                "c": -0.053472136430137596,
+                "d": 0.47701228529872713,
+                "e": 319.77480265474765,
+                "f": 318.9563973551792,
+                "m11": 0.47701228529872713,
+                "m12": 0.053472136430137596,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.053472136430137596,
+                "m22": 0.47701228529872713,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 319.77480265474765,
+                "m42": 318.9563973551792,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5696.5
+            }
+          ]
+        },
+        "heroAudit": {
+          "compiledDraws": 140,
+          "legacyBuilds": 1,
+          "legacyLargeBuilds": 0,
+          "legacyPixels": 5727,
+          "eyeRepairs": 1,
+          "eyeRepairBytes": 359676,
+          "compiledSources": 15
+        },
+        "crash": {
+          "helper": "BEARLY_TEST.crash(), explicit secondary crash fixture",
+          "after": {
+            "health": 75,
+            "lostParts": [
+              "rightArm"
+            ],
+            "state": "dead",
+            "x": 5550,
+            "speed": 0,
+            "bearPose": "hurt",
+            "bearEjected": true,
+            "babyEjected": true
+          },
+          "actualAirborneSpriteDraw": {
+            "destination": [
+              -154,
+              -176
+            ],
+            "matrix": {
+              "a": 0.44864045070274494,
+              "b": -0.17065091764639115,
+              "c": 0.17065091764639115,
+              "d": 0.44864045070274494,
+              "e": 415.85400390625,
+              "f": 388.2046203613281,
+              "m11": 0.44864045070274494,
+              "m12": -0.17065091764639115,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0.17065091764639115,
+              "m22": 0.44864045070274494,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": 415.85400390625,
+              "m42": 388.2046203613281,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "globalAlpha": 1,
+            "composite": "source-over",
+            "at": 5922.4000000003725
+          },
+          "eyePixels": {
+            "coordinates": [
+              [
+                190,
+                49
+              ],
+              [
+                212,
+                51
+              ]
+            ],
+            "original": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                36,
+                42,
+                30,
+                42
+              ]
+            ],
+            "actual": [
+              [
+                255,
+                249,
+                223,
+                255
+              ],
+              [
+                219,
+                208,
+                185,
+                255
+              ]
+            ],
+            "scope": "One read-only sample of actual sprite return used by live game; not a game-frame alpha claim."
+          },
+          "heroAudit": {
+            "compiledDraws": 140,
+            "legacyBuilds": 1,
+            "legacyLargeBuilds": 0,
+            "legacyPixels": 5727,
+            "eyeRepairs": 1,
+            "eyeRepairBytes": 359676,
+            "compiledSources": 15
+          }
+        }
+      },
+      "moduleServing": {
+        "mode": "current-worktree"
+      },
+      "damageHelper": "BEARLY_TEST.hit(rightArm,25)",
+      "healthBefore": 100,
+      "healthAfter": 75,
+      "lostParts": [
+        "rightArm"
+      ],
+      "metrics": {
+        "writes": [
+          "bq-centrum:scene-network:v1"
+        ],
+        "reads": [
+          "bq-centrum:adventure:v1",
+          "bq-centrum:best-score:v1",
+          "bq-centrum:civilians:v1",
+          "bq-centrum:parking:v1",
+          "bq-centrum:quest:wrong-entrance:v1",
+          "bq-centrum:scene-network:v1"
+        ],
+        "listenerCounts": {
+          "document:fullscreenchange": 1,
+          "window:keydown": 6,
+          "window:pagehide": 3,
+          "window:pointerdown": 2,
+          "window:blur": 5,
+          "document:visibilitychange": 5,
+          "window:keyup": 3,
+          "window:centrum-square-change": 1,
+          "window:pointerup": 2,
+          "window:pointercancel": 1,
+          "window:touchend": 2,
+          "window:touchcancel": 2,
+          "window:__playwright_global_listeners_check__": 1,
+          "window:mousemove": 1,
+          "window:touchstart": 1,
+          "window:mousedown": 1,
+          "window:mouseup": 1,
+          "window:click": 1,
+          "window:auxclick": 1,
+          "window:dblclick": 1,
+          "window:contextmenu": 1
+        },
+        "loopFrames": 205,
+        "pending": 1,
+        "maxPending": 1,
+        "audioContexts": 1,
+        "frameTimeMs": {
+          "samples": 204,
+          "median": 16.7,
+          "p95": 33.4,
+          "maximum": 99.9
+        }
+      }
+    }
+  ],
+  "captures": [
+    {
+      "file": "desktop/right-arm-injured-airborne.jpg",
+      "sha256": "eaef8322a7724687fe8ba0aa876819f73fb9923e41b4859d7015d4479fde3751",
+      "actualGameplay": true,
+      "state": {
+        "explicitSecondaryFixture": true,
+        "fixture": "existing BEARLY_TEST.hit(rightArm,25), severe original damage; no healing/reward grants",
+        "moduleServing": {
+          "mode": "current-worktree"
+        },
+        "before": {
+          "health": 100,
+          "lostParts": [],
+          "state": "playing",
+          "x": 5550,
+          "speed": 0,
+          "bearPose": "idle"
+        },
+        "after": {
+          "health": 75,
+          "lostParts": [
+            "rightArm"
+          ],
+          "state": "playing",
+          "x": 5550,
+          "speed": 0,
+          "bearPose": "idle"
+        },
+        "image": {
+          "samples": [
+            {
+              "source": "http://127.0.0.1:46673/assets/cache/hero-cycling-v19/bear_upper_rightarm_injured.png",
+              "sourceSize": [
+                291,
+                309
+              ],
+              "resultType": "CANVAS",
+              "resultSize": [
+                291,
+                309
+              ]
+            },
+            {
+              "source": "http://127.0.0.1:46673/assets/cache/hero-cycling-v19/bear_upper_rightarm_injured.png",
+              "sourceSize": [
+                291,
+                309
+              ],
+              "resultType": "CANVAS",
+              "resultSize": [
+                291,
+                309
+              ]
+            }
+          ],
+          "last": {
+            "source": "http://127.0.0.1:46673/assets/cache/hero-cycling-v19/bear_upper_rightarm_injured.png",
+            "sourceSize": [
+              291,
+              309
+            ],
+            "resultType": "CANVAS",
+            "resultSize": [
+              291,
+              309
+            ]
+          },
+          "pixels": {
+            "coordinates": [
+              [
+                190,
+                49
+              ],
+              [
+                212,
+                51
+              ]
+            ],
+            "original": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                36,
+                42,
+                30,
+                42
+              ]
+            ],
+            "actual": [
+              [
+                255,
+                249,
+                223,
+                255
+              ],
+              [
+                219,
+                208,
+                185,
+                255
+              ]
+            ],
+            "scope": "One read-only sample of actual sprite return used by live game; not a game-frame alpha claim."
+          },
+          "gameDraws": [
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47854236326077276,
+                "b": 0.03737908860729748,
+                "c": -0.03737908860729748,
+                "d": 0.47854236326077276,
+                "e": 303.6805690751007,
+                "f": 319.85433385781175,
+                "m11": 0.47854236326077276,
+                "m12": 0.03737908860729748,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.03737908860729748,
+                "m22": 0.47854236326077276,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 303.6805690751007,
+                "m42": 319.85433385781175,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5697.200000001118
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4783624527372064,
+                "b": 0.03961506672418317,
+                "c": -0.03961506672418317,
+                "d": 0.4783624527372064,
+                "e": 308.550425995761,
+                "f": 319.36843912484517,
+                "m11": 0.4783624527372064,
+                "m12": 0.03961506672418317,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.03961506672418317,
+                "m22": 0.4783624527372064,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 308.550425995761,
+                "m42": 319.36843912484517,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5726.5
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47800596430084236,
+                "b": 0.04370683920325641,
+                "c": -0.04370683920325641,
+                "d": 0.47800596430084236,
+                "e": 317.86463819652863,
+                "f": 322.9063835337596,
+                "m11": 0.47800596430084236,
+                "m12": 0.04370683920325641,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.04370683920325641,
+                "m22": 0.47800596430084236,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 317.86463819652863,
+                "m42": 322.9063835337596,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5755.4000000003725
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4776979382194994,
+                "b": 0.04695390847583247,
+                "c": -0.04695390847583247,
+                "d": 0.4776979382194994,
+                "e": 311.4944416704088,
+                "f": 323.31605352075167,
+                "m11": 0.4776979382194994,
+                "m12": 0.04695390847583247,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.04695390847583247,
+                "m22": 0.4776979382194994,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 311.4944416704088,
+                "m42": 323.31605352075167,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5782.5
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47756514200342687,
+                "b": 0.04828586587775126,
+                "c": -0.04828586587775126,
+                "d": 0.47756514200342687,
+                "e": 313.7896368676321,
+                "f": 318.14276181767593,
+                "m11": 0.47756514200342687,
+                "m12": 0.04828586587775126,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.04828586587775126,
+                "m22": 0.47756514200342687,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 313.7896368676321,
+                "m42": 318.14276181767593,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5808.300000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47735280714481837,
+                "b": 0.05034170449318677,
+                "c": -0.05034170449318677,
+                "d": 0.47735280714481837,
+                "e": 312.7588040906077,
+                "f": 322.0619964248149,
+                "m11": 0.47735280714481837,
+                "m12": 0.05034170449318677,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05034170449318677,
+                "m22": 0.47735280714481837,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 312.7588040906077,
+                "m42": 322.0619964248149,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5837.300000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4772749158149496,
+                "b": 0.051074890446777314,
+                "c": -0.051074890446777314,
+                "d": 0.4772749158149496,
+                "e": 312.7000278184652,
+                "f": 317.05928206993667,
+                "m11": 0.4772749158149496,
+                "m12": 0.051074890446777314,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.051074890446777314,
+                "m22": 0.4772749158149496,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 312.7000278184652,
+                "m42": 317.05928206993667,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5864.4000000003725
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4771702091928394,
+                "b": 0.052044030965898526,
+                "c": -0.052044030965898526,
+                "d": 0.4771702091928394,
+                "e": 316.6992936977002,
+                "f": 322.2889221061728,
+                "m11": 0.4771702091928394,
+                "m12": 0.052044030965898526,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.052044030965898526,
+                "m22": 0.4771702091928394,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 316.6992936977002,
+                "m42": 322.2889221061728,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5890.4000000003725
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4771161376054971,
+                "b": 0.0525374241539293,
+                "c": -0.0525374241539293,
+                "d": 0.4771161376054971,
+                "e": 318.15964535952946,
+                "f": 322.5749343615911,
+                "m11": 0.4771161376054971,
+                "m12": 0.0525374241539293,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.0525374241539293,
+                "m22": 0.4771161376054971,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 318.15964535952946,
+                "m42": 322.5749343615911,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5916.700000001118
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4771007363911965,
+                "b": 0.05267710162201005,
+                "c": -0.05267710162201005,
+                "d": 0.4771007363911965,
+                "e": 316.660641159858,
+                "f": 319.879914838375,
+                "m11": 0.4771007363911965,
+                "m12": 0.05267710162201005,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05267710162201005,
+                "m22": 0.4771007363911965,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 316.660641159858,
+                "m42": 319.879914838375,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5946
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47708120111496705,
+                "b": 0.052853734428305814,
+                "c": -0.052853734428305814,
+                "d": 0.47708120111496705,
+                "e": 317.43365445058805,
+                "f": 320.7531059795262,
+                "m11": 0.47708120111496705,
+                "m12": 0.052853734428305814,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.052853734428305814,
+                "m22": 0.47708120111496705,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 317.43365445058805,
+                "m42": 320.7531059795262,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5971.5
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4770671710373441,
+                "b": 0.052980222901974926,
+                "c": -0.052980222901974926,
+                "d": 0.4770671710373441,
+                "e": 321.56454254013465,
+                "f": 319.3480197753031,
+                "m11": 0.4770671710373441,
+                "m12": 0.052980222901974926,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.052980222901974926,
+                "m22": 0.4770671710373441,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 321.56454254013465,
+                "m42": 319.3480197753031,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 5998.200000001118
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47706057682450415,
+                "b": 0.053039567684785446,
+                "c": -0.053039567684785446,
+                "d": 0.47706057682450415,
+                "e": 320.5507788663534,
+                "f": 319.63434160818764,
+                "m11": 0.47706057682450415,
+                "m12": 0.053039567684785446,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.053039567684785446,
+                "m22": 0.47706057682450415,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 320.5507788663534,
+                "m42": 319.63434160818764,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6024.800000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4770479171629872,
+                "b": 0.05315331062853213,
+                "c": -0.05315331062853213,
+                "d": 0.4770479171629872,
+                "e": 318.1380746804597,
+                "f": 321.5927204083231,
+                "m11": 0.4770479171629872,
+                "m12": 0.05315331062853213,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05315331062853213,
+                "m22": 0.4770479171629872,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 318.1380746804597,
+                "m42": 321.5927204083231,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6053.0999999996275
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47704217570600077,
+                "b": 0.05320481461298931,
+                "c": -0.05320481461298931,
+                "d": 0.47704217570600077,
+                "e": 315.8518207424725,
+                "f": 319.40514292657247,
+                "m11": 0.47704217570600077,
+                "m12": 0.05320481461298931,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05320481461298931,
+                "m22": 0.47704217570600077,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 315.8518207424725,
+                "m42": 319.40514292657247,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6077.5
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47703185442165474,
+                "b": 0.053297275421494934,
+                "c": -0.053297275421494934,
+                "d": 0.47703185442165474,
+                "e": 320.1063380982161,
+                "f": 318.1504634357642,
+                "m11": 0.47703185442165474,
+                "m12": 0.053297275421494934,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.053297275421494934,
+                "m22": 0.47703185442165474,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 320.1063380982161,
+                "m42": 318.1504634357642,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6103
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.477029448664545,
+                "b": 0.053318803504183276,
+                "c": -0.053318803504183276,
+                "d": 0.477029448664545,
+                "e": 320.407722035664,
+                "f": 319.72920589322734,
+                "m11": 0.477029448664545,
+                "m12": 0.053318803504183276,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.053318803504183276,
+                "m22": 0.477029448664545,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 320.407722035664,
+                "m42": 319.72920589322734,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6129.4000000003725
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4770258569818378,
+                "b": 0.05335092755576694,
+                "c": -0.05335092755576694,
+                "d": 0.4770258569818378,
+                "e": 319.0345677457559,
+                "f": 320.78817201898175,
+                "m11": 0.4770258569818378,
+                "m12": 0.05335092755576694,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.05335092755576694,
+                "m22": 0.4770258569818378,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 319.0345677457559,
+                "m42": 320.78817201898175,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6157.800000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.4770234391398341,
+                "b": 0.053372541737512096,
+                "c": -0.053372541737512096,
+                "d": 0.4770234391398341,
+                "e": 319.6811849885462,
+                "f": 318.7005199554013,
+                "m11": 0.4770234391398341,
+                "m12": 0.053372541737512096,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.053372541737512096,
+                "m22": 0.4770234391398341,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 319.6811849885462,
+                "m42": 318.7005199554013,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6185.300000000745
+            },
+            {
+              "destination": [
+                0,
+                0
+              ],
+              "matrix": {
+                "a": 0.47702254466267346,
+                "b": 0.053380535627372536,
+                "c": -0.053380535627372536,
+                "d": 0.47702254466267346,
+                "e": 319.3488750916456,
+                "f": 320.34642421336673,
+                "m11": 0.47702254466267346,
+                "m12": 0.053380535627372536,
+                "m13": 0,
+                "m14": 0,
+                "m21": -0.053380535627372536,
+                "m22": 0.47702254466267346,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": 319.3488750916456,
+                "m42": 320.34642421336673,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "globalAlpha": 1,
+              "composite": "source-over",
+              "at": 6211.0999999996275
+            }
+          ]
+        },
+        "heroAudit": {
+          "compiledDraws": 151,
+          "legacyBuilds": 1,
+          "legacyLargeBuilds": 0,
+          "legacyPixels": 5727,
+          "eyeRepairs": 1,
+          "eyeRepairBytes": 359676,
+          "compiledSources": 15
+        },
+        "crash": {
+          "helper": "BEARLY_TEST.crash(), explicit secondary crash fixture",
+          "after": {
+            "health": 75,
+            "lostParts": [
+              "rightArm"
+            ],
+            "state": "dead",
+            "x": 5550,
+            "speed": 0,
+            "bearPose": "hurt",
+            "bearEjected": true,
+            "babyEjected": true
+          },
+          "actualAirborneSpriteDraw": {
+            "destination": [
+              -154,
+              -176
+            ],
+            "matrix": {
+              "a": 0.43576662327885357,
+              "b": -0.20126460130003782,
+              "c": 0.20126460130003782,
+              "d": 0.43576662327885357,
+              "e": 414.80615234375,
+              "f": 385.5224914550781,
+              "m11": 0.43576662327885357,
+              "m12": -0.20126460130003782,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0.20126460130003782,
+              "m22": 0.43576662327885357,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": 414.80615234375,
+              "m42": 385.5224914550781,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "globalAlpha": 1,
+            "composite": "source-over",
+            "at": 6420.0999999996275
+          },
+          "eyePixels": {
+            "coordinates": [
+              [
+                190,
+                49
+              ],
+              [
+                212,
+                51
+              ]
+            ],
+            "original": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                36,
+                42,
+                30,
+                42
+              ]
+            ],
+            "actual": [
+              [
+                255,
+                249,
+                223,
+                255
+              ],
+              [
+                219,
+                208,
+                185,
+                255
+              ]
+            ],
+            "scope": "One read-only sample of actual sprite return used by live game; not a game-frame alpha claim."
+          },
+          "heroAudit": {
+            "compiledDraws": 151,
+            "legacyBuilds": 1,
+            "legacyLargeBuilds": 0,
+            "legacyPixels": 5727,
+            "eyeRepairs": 1,
+            "eyeRepairBytes": 359676,
+            "compiledSources": 15
+          }
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "browser": "154.0.8037.57",
+  "runtimeHashesAfter": {
+    "autumn-v19.html": "2fa3df3354669b3f5e97ad85225c6998936e33a2bb3820a8d3383f75b0a80a32",
+    "autumn-version.json": "969c1e5f241ab8251e24bf16e6bb345e590824090a42d90132cec895f1402ffe",
+    "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+    "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+    "css/centrum-route.css": "892e1ec5ac28ae0a551d45b276974888e6db3f227635487e45c761e1553d1e5f",
+    "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+    "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+    "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+    "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+    "index.html": "2fa3df3354669b3f5e97ad85225c6998936e33a2bb3820a8d3383f75b0a80a32",
+    "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+    "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+    "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+    "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+    "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+    "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+    "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+    "js/centrum-camera.js": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+    "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+    "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+    "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+    "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+    "js/centrum-hero-cache.js": "38f3212052e12304e3ecf4a053f0141122660395593874151e23835717ee5eff",
+    "js/centrum-inventory.js": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+    "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+    "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+    "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+    "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+    "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+    "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+    "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf",
+    "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+    "js/centrum-street-bench.js": "f1a59a04ab518d1c194a2fb5a17280aca1729fd8035473f5dee463bb61120e4f",
+    "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+    "js/game.js": "60ef1993ea5dd5112f45d24748eed8146733fcfa6a18953a16edcdbaa95674bf",
+    "js/hero-rig.js": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+    "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+    "js/illustrated-hero.js": "ac91804b0afd366308c41ba2e53173fee649c5399acdc725c0bf64ac9072ee93",
+    "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+    "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+    "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+    "js/illustrated-visits.js": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+    "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+    "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+    "js/npc-motion.js": "f4111c327656ae3131a58547fbce9b7ac6865cd4af8907545fe94cd8d08d637a",
+    "js/street-life.js": "ded03758bd6019831d41889c58b5409dd6ec2df0d1634825310f034be621c308",
+    "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+    "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+  },
+  "changedRuntimeFiles": [],
+  "passed": true
+}

@@ -91,7 +91,7 @@ const stored=make();let storedHp=null;assert.ok(stored.hit(10,{...p,storeHealth:
 
 // Street seed cover entries dispatch real prop renderers and retain depth order.
 const calls=[],c={save(){},restore(){},translate(){},scale(){}},streetWindow={BearlyStreetProps:{draw:(...args)=>calls.push(['draw',args[1],args[4]]),hazard:(ctx,h)=>calls.push(['hazard',h.type]),ready:()=>true}};
-vm.runInNewContext(fs.readFileSync('js/street-life.js','utf8'),{window:streetWindow,Image:class{set src(value){this.url=value;}},document:{createElement:()=>({getContext:()=>({drawImage(){}})})}});
+for(const name of ['centrum-street-bench','street-life'])vm.runInNewContext(fs.readFileSync('js/'+name+'.js','utf8'),{window:streetWindow,Image:class{set src(value){this.url=value;}},document:{createElement:()=>({getContext:()=>({drawImage(){}})})}});
 const seeds=streetWindow.BearlyStreetLife.seeds([],42000,12,[seed('gang-4000-0',{x:3900}),seed('gang-4000-1',{x:4050}),seed('gang-8000-0',{x:8000})]);
 const gangSeeds=seeds.filter(n=>n.kind==='gangster');assert.equal(gangSeeds.length,3);assert.equal(gangSeeds.filter(n=>n.coverSpots.length).length,2);assert.ok(gangSeeds.every(n=>!n.hostile));
 const audit=streetWindow.BearlyStreetLife.audit(),coverProps=audit.props.filter(q=>['firebin','utility'].includes(q.kind));assert.equal(coverProps.length,2);

@@ -2,11 +2,24 @@
 (() => {
   'use strict';
   const cache=new WeakMap(),compiled={"bear_pedal_3.webp":"assets/cache/hero-cycling-v19/bear_pedal_3.png","bear_pose_pedal.webp":"assets/cache/hero-cycling-v19/bear_pose_pedal.png","bear_pose_coast.webp":"assets/cache/hero-cycling-v19/bear_pose_coast.png","bear_pose_brake.webp":"assets/cache/hero-cycling-v19/bear_pose_brake.png","bear_pose_wheelie.webp":"assets/cache/hero-cycling-v19/bear_pose_wheelie.png","bear_pose_jump.webp":"assets/cache/hero-cycling-v19/bear_pose_jump.png","bear_pose_land.webp":"assets/cache/hero-cycling-v19/bear_pose_land.png","bear_pose_hurt.webp":"assets/cache/hero-cycling-v19/bear_pose_hurt.png","bear_pedal_0.webp":"assets/cache/hero-cycling-v19/bear_pedal_0.png","bear_pedal_1.webp":"assets/cache/hero-cycling-v19/bear_pedal_1.png","bear_pedal_2.webp":"assets/cache/hero-cycling-v19/bear_pedal_2.png","bear_upper.webp":"assets/cache/hero-cycling-v19/bear_upper.png","bear_upper_rightarm_injured.webp":"assets/cache/hero-cycling-v19/bear_upper_rightarm_injured.png","bear_leg_clean.webp":"assets/cache/hero-cycling-v19/bear_leg_clean.png","bear_leg_original.webp":"assets/cache/hero-cycling-v19/bear_leg_original.png"};
-  const stats={compiledDraws:0,legacyBuilds:0,legacyLargeBuilds:0,legacyPixels:0};
+  const stats={compiledDraws:0,legacyBuilds:0,legacyLargeBuilds:0,legacyPixels:0,eyeRepairs:0,eyeRepairBytes:0};
+  const eyeCache=new WeakMap(),eyeRegions=[[182,42,20,22],[209,47,7,9]];
+  const filename=im=>String(im?.src||'').split('/').pop().split('?')[0];
+  function intactEyes(im,reference){
+    // The original injured-arm cel has transparent holes in both eye whites.
+    // Reuse only the matching intact coast cel's native eye pixels underneath;
+    // keep the authored injured body, missing arm and every other alpha intact.
+    const saved=eyeCache.get(im);if(saved?.reference===reference)return saved.canvas;
+    const body=sprite(im),eyes=sprite(reference),canvas=document.createElement('canvas');canvas.width=291;canvas.height=309;
+    const g=canvas.getContext('2d');g.drawImage(body,0,0);g.globalCompositeOperation='destination-over';
+    for(const rect of eyeRegions)g.drawImage(eyes,...rect,...rect);
+    g.globalCompositeOperation='source-over';eyeCache.set(im,{reference,canvas});stats.eyeRepairs++;stats.eyeRepairBytes+=canvas.width*canvas.height*4;return canvas;
+  }
   function source(url){const name=String(url||'').split('/').pop().split('?')[0];return compiled[name]||url;}
   function prepared(im){return String(im?.src||'').includes('/assets/cache/hero-cycling-v19/');}
-  function sprite(im){
+  function sprite(im,reference=null){
     if(!im?.naturalWidth)return im;
+    if(/^bear_upper_rightarm_injured\.(?:png|webp)$/.test(filename(im))&&/^bear_pose_coast\.(?:png|webp)$/.test(filename(reference))&&im.naturalWidth===291&&im.naturalHeight===309&&reference?.naturalWidth===291&&reference.naturalHeight===309)return intactEyes(im,reference);
     if(prepared(im)){stats.compiledDraws++;return im;}
     if(cache.has(im))return cache.get(im);
     try{

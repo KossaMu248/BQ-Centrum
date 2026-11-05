@@ -1,0 +1,739 @@
+{
+  "scope": "Stage18 actual native gameplay and explicitly prepared secondary injury/crash renderer fixtures; source-art labs are separate.",
+  "passed": true,
+  "browser": "154.0.8037.57",
+  "conditions": {
+    "headless": true,
+    "physicalDevicesTested": false,
+    "desktop": [
+      1280,
+      720
+    ],
+    "touchEmulation": [
+      844,
+      390
+    ],
+    "deviceScaleFactor": 1,
+    "jpegQuality": 76,
+    "setup": "one original debug route stop per fresh context; no NPC/health/item grants in primary scenarios; native movement and existing personal-space aggression. The separately labelled right-arm renderer fixture uses the existing severe damage helper."
+  },
+  "totalContexts": 11,
+  "baselineContexts": 2,
+  "mainAcceptanceContexts": 6,
+  "finalCrashSupplementContexts": 2,
+  "finalOccupancyContexts": 1,
+  "actualNormalSizeJPEGs": 7,
+  "recordings": [],
+  "runs": [
+    {
+      "file": "before/results.json",
+      "sha256": "c5208ac716e4a56ecbec944d9bbaa5b7afd1b39ed5ca29a227e607b2e47bb53d",
+      "passed": true,
+      "contexts": 1,
+      "actualJPEGs": 1,
+      "harnessSHA256": "80f7e9898e01d5637ecbb9d9ddd8ccc4fcf8e63dcb3f25ae29d833b080e43467",
+      "runtimeFingerprints": {
+        "js/game.js": "5cfc8f851422d73cc9829d4bb8adf403ffbcf6f923427226d974cf9efa411a9c",
+        "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+        "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+        "js/street-life.js": "7e54984fb2d8b94df6f5a055b0c1f8c2828bbde14634a8d9431d50a52e73b229",
+        "js/centrum-street-bench.js": null,
+        "index.html": "867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb",
+        "autumn-v19.html": "867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb"
+      },
+      "runtimeDiffersFromCurrent": [
+        "autumn-v19.html",
+        "autumn-version.json",
+        "index.html",
+        "js/brawler.js",
+        "js/centrum-street-bench.js",
+        "js/game.js",
+        "js/illustrated-hero.js",
+        "js/street-life.js"
+      ],
+      "withinRunRuntimeDrift": [],
+      "errors": [],
+      "consoleErrors": [],
+      "httpFailures": []
+    },
+    {
+      "file": "arm-fixture/before/results.json",
+      "sha256": "510adad8273ff0fecb7094fb452225d1538514837b6cd6543356418b31a2d2f3",
+      "passed": true,
+      "contexts": 1,
+      "actualJPEGs": 1,
+      "harnessSHA256": "64b7c2f60bca6727bbb3b0c7a3cbe9d8363dd77d24723fad996217c4af8a1918",
+      "runtimeFingerprints": {
+        "js/game.js": "30cc6553cc5d55cc0ba4843ff00cac7aa673af94b62e64534bd28ff24c1071c9",
+        "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+        "js/illustrated-hero.js": "ac91804b0afd366308c41ba2e53173fee649c5399acdc725c0bf64ac9072ee93",
+        "js/street-life.js": "7e54984fb2d8b94df6f5a055b0c1f8c2828bbde14634a8d9431d50a52e73b229",
+        "js/centrum-street-bench.js": null,
+        "index.html": "867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb",
+        "autumn-v19.html": "867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb"
+      },
+      "runtimeDiffersFromCurrent": [
+        "autumn-v19.html",
+        "autumn-version.json",
+        "index.html",
+        "js/brawler.js",
+        "js/centrum-street-bench.js",
+        "js/game.js",
+        "js/street-life.js"
+      ],
+      "withinRunRuntimeDrift": [],
+      "errors": [],
+      "consoleErrors": [],
+      "httpFailures": []
+    },
+    {
+      "file": "after/results.json",
+      "sha256": "475485fb303eb5af705ae34a74e667d4ebef56506adb51ef9e696cb5c8e6af18",
+      "passed": true,
+      "contexts": 6,
+      "actualJPEGs": 4,
+      "harnessSHA256": "c1f1e255d92dc9652e9d5f576f21b9146f1308a1a20f0690bed53036b4fcb0c3",
+      "runtimeFingerprints": {
+        "js/game.js": "a7c502320068b5924b17ea6779fc805ebefff9e4fce1670309b0bed78df6f72f",
+        "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+        "js/illustrated-hero.js": "ac91804b0afd366308c41ba2e53173fee649c5399acdc725c0bf64ac9072ee93",
+        "js/street-life.js": "ded03758bd6019831d41889c58b5409dd6ec2df0d1634825310f034be621c308",
+        "js/centrum-street-bench.js": "f1a59a04ab518d1c194a2fb5a17280aca1729fd8035473f5dee463bb61120e4f",
+        "index.html": "2fa3df3354669b3f5e97ad85225c6998936e33a2bb3820a8d3383f75b0a80a32",
+        "autumn-v19.html": "2fa3df3354669b3f5e97ad85225c6998936e33a2bb3820a8d3383f75b0a80a32"
+      },
+      "runtimeDiffersFromCurrent": [
+        "autumn-v19.html",
+        "index.html",
+        "js/brawler.js",
+        "js/game.js"
+      ],
+      "withinRunRuntimeDrift": [],
+      "errors": [],
+      "consoleErrors": [],
+      "httpFailures": []
+    },
+    {
+      "file": "final-crash-supplement/after/results.json",
+      "sha256": "1d985b4b1662792b4e6e7ce26d0dde1f009cbef5af820ab767eed45a6437471c",
+      "passed": true,
+      "contexts": 2,
+      "actualJPEGs": 1,
+      "harnessSHA256": "b05344342864868accfbf99b43b1d4280c7d60e679046101a5894bafd66fe952",
+      "runtimeFingerprints": {
+        "js/game.js": "60ef1993ea5dd5112f45d24748eed8146733fcfa6a18953a16edcdbaa95674bf",
+        "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+        "js/illustrated-hero.js": "ac91804b0afd366308c41ba2e53173fee649c5399acdc725c0bf64ac9072ee93",
+        "js/street-life.js": "ded03758bd6019831d41889c58b5409dd6ec2df0d1634825310f034be621c308",
+        "js/centrum-street-bench.js": "f1a59a04ab518d1c194a2fb5a17280aca1729fd8035473f5dee463bb61120e4f",
+        "index.html": "2fa3df3354669b3f5e97ad85225c6998936e33a2bb3820a8d3383f75b0a80a32",
+        "autumn-v19.html": "2fa3df3354669b3f5e97ad85225c6998936e33a2bb3820a8d3383f75b0a80a32"
+      },
+      "runtimeDiffersFromCurrent": [
+        "autumn-v19.html",
+        "index.html",
+        "js/brawler.js"
+      ],
+      "withinRunRuntimeDrift": [],
+      "errors": [],
+      "consoleErrors": [],
+      "httpFailures": []
+    },
+    {
+      "file": "final-occupancy-supplement/after/results.json",
+      "sha256": "3b2ecd2e2bf71868e4a35d31fc43402203be311a363941f5626db738dfcbb13b",
+      "passed": true,
+      "contexts": 1,
+      "actualJPEGs": 0,
+      "harnessSHA256": "91c802540ad958f7aa9206b6d02eee3d55566587ed0f8a812a19d8f94c1344d4",
+      "runtimeFingerprints": {
+        "js/game.js": "60ef1993ea5dd5112f45d24748eed8146733fcfa6a18953a16edcdbaa95674bf",
+        "js/brawler.js": "048adfc03134d2aa94cf32169efcd9e6e164391800386d40d3f29b41dd2b2028",
+        "js/illustrated-hero.js": "ac91804b0afd366308c41ba2e53173fee649c5399acdc725c0bf64ac9072ee93",
+        "js/street-life.js": "ded03758bd6019831d41889c58b5409dd6ec2df0d1634825310f034be621c308",
+        "js/centrum-street-bench.js": "f1a59a04ab518d1c194a2fb5a17280aca1729fd8035473f5dee463bb61120e4f",
+        "index.html": "9ee316f87594803c6dec2a12cc3849da2dcdddc0d5b95c2b9a715223bb7a2f9b",
+        "autumn-v19.html": "9ee316f87594803c6dec2a12cc3849da2dcdddc0d5b95c2b9a715223bb7a2f9b"
+      },
+      "runtimeDiffersFromCurrent": [],
+      "withinRunRuntimeDrift": [],
+      "errors": [],
+      "consoleErrors": [],
+      "httpFailures": []
+    }
+  ],
+  "images": [
+    {
+      "file": "before/desktop/actual-enemy-hurt.jpg",
+      "sha256": "ba006db429dbb406018d2d4cf3e57a444e060471111012e6124d971cda04bdc7",
+      "actualGameplay": true,
+      "jpegQuality": 82
+    },
+    {
+      "file": "arm-fixture/before/desktop/right-arm-injured-cycling.jpg",
+      "sha256": "2b1ccac3fbe72d824fdb23c6849603e50bd6aefebf055056dc265ecbbd1d40f8",
+      "actualGameplay": true,
+      "jpegQuality": 82
+    },
+    {
+      "file": "after/desktop/right-arm-injured-cycling.jpg",
+      "sha256": "0a3b73dd187bcce2f20fbe5a532d42f956d1758afef72c74caf8637463382049",
+      "actualGameplay": true,
+      "jpegQuality": 76
+    },
+    {
+      "file": "after/desktop/shared-bench-seating.jpg",
+      "sha256": "49017b5ba694ea1eec1532437a6ea948c4dc6870b808156a2f22c5b96da4ad5a",
+      "actualGameplay": true,
+      "jpegQuality": 76
+    },
+    {
+      "file": "after/phone/actual-enemy-hurt.jpg",
+      "sha256": "d6a6c3a9bac3c247e73d610c0390ea66b65571448cc27ab37202e038fe07a22f",
+      "actualGameplay": true,
+      "jpegQuality": 76
+    },
+    {
+      "file": "after/phone/shared-bench-seating.jpg",
+      "sha256": "baebad87acc4233b81777deb52c051726a5ca44d56bc11597cbd91ef85a6e35c",
+      "actualGameplay": true,
+      "jpegQuality": 76
+    },
+    {
+      "file": "final-crash-supplement/after/desktop/right-arm-injured-airborne.jpg",
+      "sha256": "eaef8322a7724687fe8ba0aa876819f73fb9923e41b4859d7015d4479fde3751",
+      "actualGameplay": true,
+      "jpegQuality": 76
+    }
+  ],
+  "currentRuntimeFingerprints": {
+    "js/game.js": "60ef1993ea5dd5112f45d24748eed8146733fcfa6a18953a16edcdbaa95674bf",
+    "js/brawler.js": "048adfc03134d2aa94cf32169efcd9e6e164391800386d40d3f29b41dd2b2028",
+    "js/illustrated-hero.js": "ac91804b0afd366308c41ba2e53173fee649c5399acdc725c0bf64ac9072ee93",
+    "js/street-life.js": "ded03758bd6019831d41889c58b5409dd6ec2df0d1634825310f034be621c308",
+    "js/centrum-street-bench.js": "f1a59a04ab518d1c194a2fb5a17280aca1729fd8035473f5dee463bb61120e4f",
+    "index.html": "9ee316f87594803c6dec2a12cc3849da2dcdddc0d5b95c2b9a715223bb7a2f9b",
+    "autumn-v19.html": "9ee316f87594803c6dec2a12cc3849da2dcdddc0d5b95c2b9a715223bb7a2f9b"
+  },
+  "nativeDamage": [
+    {
+      "name": "desktop actual authored enemy damage and recovery use native controls",
+      "healthBefore": 60,
+      "healthBeforeWait": 50,
+      "hurtHealth": 20,
+      "hurtPose": "frontHurt",
+      "recoveredHealth": 20,
+      "recoveredPose": "walking"
+    },
+    {
+      "name": "phone actual authored enemy damage and recovery use native controls",
+      "healthBefore": 60,
+      "healthBeforeWait": 50,
+      "hurtHealth": 40,
+      "hurtPose": "frontHurt",
+      "recoveredHealth": 30,
+      "recoveredPose": "walking"
+    }
+  ],
+  "benchMeasurements": [
+    {
+      "platform": "desktop",
+      "fits": [
+        {
+          "id": "civilian-reader",
+          "variant": 9,
+          "source": "civilian-rest-v16.png",
+          "pose": "read",
+          "hipCanvas": {
+            "x": 670.0145263671875,
+            "y": 385.2620048522949
+          },
+          "opaqueSoleCanvas": {
+            "x": 675.9351931879248,
+            "y": 416.15831019061966
+          },
+          "benchFloorCanvas": {
+            "x": 670.0145263671875,
+            "y": 415.96199612087673
+          },
+          "seatPanCanvas": {
+            "front": {
+              "x": 670.0145263671875,
+              "y": 394.56199612087676
+            },
+            "rear": {
+              "x": 670.0145263671875,
+              "y": 385.26199612087674
+            }
+          },
+          "soleFloorGap": 0.1963140697429253,
+          "aspect": 1.0,
+          "actualSubmittedBenchWidth": 224,
+          "opaqueBodyWidth": 85.47571891068368,
+          "usableSeatToBodyWidths": 2.1994550311585823
+        },
+        {
+          "id": "civilian-bench",
+          "variant": 11,
+          "source": "civilian-rest-v16.png",
+          "pose": "sit",
+          "hipCanvas": {
+            "x": 210.0145263671875,
+            "y": 362.2508792877197
+          },
+          "opaqueSoleCanvas": {
+            "x": 214.14703449483463,
+            "y": 383.37133978367376
+          },
+          "benchFloorCanvas": {
+            "x": 210.0145263671875,
+            "y": 383.6508850097656
+          },
+          "seatPanCanvas": {
+            "front": {
+              "x": 210.0145263671875,
+              "y": 362.2508850097656
+            },
+            "rear": {
+              "x": 210.0145263671875,
+              "y": 352.9508850097656
+            }
+          },
+          "soleFloorGap": -0.27954522609184096,
+          "aspect": 1.0,
+          "actualSubmittedBenchWidth": 224,
+          "opaqueBodyWidth": 65.22171714365102,
+          "usableSeatToBodyWidths": 2.882475473406035
+        }
+      ]
+    },
+    {
+      "platform": "phone",
+      "fits": [
+        {
+          "id": "civilian-reader",
+          "variant": 9,
+          "source": "civilian-rest-v16.png",
+          "pose": "read",
+          "hipCanvas": {
+            "x": 670.01416015625,
+            "y": 385.26195907592773
+          },
+          "opaqueSoleCanvas": {
+            "x": 675.9065745797519,
+            "y": 416.1332055798115
+          },
+          "benchFloorCanvas": {
+            "x": 670.01416015625,
+            "y": 415.96195034450955
+          },
+          "seatPanCanvas": {
+            "front": {
+              "x": 670.01416015625,
+              "y": 394.56195034450957
+            },
+            "rear": {
+              "x": 670.01416015625,
+              "y": 385.26195034450956
+            }
+          },
+          "soleFloorGap": 0.17125523530194187,
+          "aspect": 1.0,
+          "actualSubmittedBenchWidth": 224,
+          "opaqueBodyWidth": 85.47571891068368,
+          "usableSeatToBodyWidths": 2.1994550311585823
+        },
+        {
+          "id": "civilian-bench",
+          "variant": 11,
+          "source": "civilian-rest-v16.png",
+          "pose": "sit",
+          "hipCanvas": {
+            "x": 210.01416015625,
+            "y": 362.25083351135254
+          },
+          "opaqueSoleCanvas": {
+            "x": 214.1502393631086,
+            "y": 383.3978904294207
+          },
+          "benchFloorCanvas": {
+            "x": 210.01416015625,
+            "y": 383.6508392333984
+          },
+          "seatPanCanvas": {
+            "front": {
+              "x": 210.01416015625,
+              "y": 362.25083923339844
+            },
+            "rear": {
+              "x": 210.01416015625,
+              "y": 352.9508392333984
+            }
+          },
+          "soleFloorGap": -0.25294880397768793,
+          "aspect": 1.0,
+          "actualSubmittedBenchWidth": 224,
+          "opaqueBodyWidth": 65.22171714365102,
+          "usableSeatToBodyWidths": 2.882475473406035
+        }
+      ]
+    }
+  ],
+  "finalCrashMeasurements": [
+    {
+      "name": "desktop explicit right-arm injury and actual airborne crash renderer fixture",
+      "after": {
+        "health": 75,
+        "lostParts": [
+          "rightArm"
+        ],
+        "state": "dead",
+        "x": 5550,
+        "speed": 0,
+        "bearPose": "hurt",
+        "bearEjected": true,
+        "babyEjected": true
+      },
+      "actualSpriteDraw": {
+        "destination": [
+          -154,
+          -176
+        ],
+        "matrix": {
+          "a": 0.43576662327885357,
+          "b": -0.20126460130003782,
+          "c": 0.20126460130003782,
+          "d": 0.43576662327885357,
+          "e": 414.80615234375,
+          "f": 385.5224914550781,
+          "m11": 0.43576662327885357,
+          "m12": -0.20126460130003782,
+          "m13": 0,
+          "m14": 0,
+          "m21": 0.20126460130003782,
+          "m22": 0.43576662327885357,
+          "m23": 0,
+          "m24": 0,
+          "m31": 0,
+          "m32": 0,
+          "m33": 1,
+          "m34": 0,
+          "m41": 414.80615234375,
+          "m42": 385.5224914550781,
+          "m43": 0,
+          "m44": 1,
+          "is2D": true,
+          "isIdentity": false
+        },
+        "globalAlpha": 1,
+        "composite": "source-over",
+        "at": 6420.0999999996275
+      },
+      "eyePixels": {
+        "coordinates": [
+          [
+            190,
+            49
+          ],
+          [
+            212,
+            51
+          ]
+        ],
+        "original": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            36,
+            42,
+            30,
+            42
+          ]
+        ],
+        "actual": [
+          [
+            255,
+            249,
+            223,
+            255
+          ],
+          [
+            219,
+            208,
+            185,
+            255
+          ]
+        ],
+        "scope": "One read-only sample of actual sprite return used by live game; not a game-frame alpha claim."
+      }
+    },
+    {
+      "name": "phone explicit right-arm injury and actual airborne crash renderer fixture",
+      "after": {
+        "health": 75,
+        "lostParts": [
+          "rightArm"
+        ],
+        "state": "dead",
+        "x": 5550,
+        "speed": 0,
+        "bearPose": "hurt",
+        "bearEjected": true,
+        "babyEjected": true
+      },
+      "actualSpriteDraw": {
+        "destination": [
+          -154,
+          -176
+        ],
+        "matrix": {
+          "a": 0.44864045070274494,
+          "b": -0.17065091764639115,
+          "c": 0.17065091764639115,
+          "d": 0.44864045070274494,
+          "e": 415.85400390625,
+          "f": 388.2046203613281,
+          "m11": 0.44864045070274494,
+          "m12": -0.17065091764639115,
+          "m13": 0,
+          "m14": 0,
+          "m21": 0.17065091764639115,
+          "m22": 0.44864045070274494,
+          "m23": 0,
+          "m24": 0,
+          "m31": 0,
+          "m32": 0,
+          "m33": 1,
+          "m34": 0,
+          "m41": 415.85400390625,
+          "m42": 388.2046203613281,
+          "m43": 0,
+          "m44": 1,
+          "is2D": true,
+          "isIdentity": false
+        },
+        "globalAlpha": 1,
+        "composite": "source-over",
+        "at": 5922.4000000003725
+      },
+      "eyePixels": {
+        "coordinates": [
+          [
+            190,
+            49
+          ],
+          [
+            212,
+            51
+          ]
+        ],
+        "original": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            36,
+            42,
+            30,
+            42
+          ]
+        ],
+        "actual": [
+          [
+            255,
+            249,
+            223,
+            255
+          ],
+          [
+            219,
+            208,
+            185,
+            255
+          ]
+        ],
+        "scope": "One read-only sample of actual sprite return used by live game; not a game-frame alpha claim."
+      }
+    }
+  ],
+  "finalOccupancy": {
+    "scope": "Final complete runtime, desktop native contact/movement only, no additional image or state grant.",
+    "simulationSeconds": 24.865599999999795,
+    "health": 100,
+    "bypassedOccupiedBench": [
+      {
+        "id": "civilian-reader",
+        "x": 2680,
+        "depth": -84,
+        "activity": "read",
+        "prop": {
+          "id": "promenade-bench-east",
+          "kind": "newspaper",
+          "x": 2680,
+          "depth": -84,
+          "width": 224,
+          "bodyHeight": 70,
+          "usableSeatWidth": 188,
+          "seatHeight": 26,
+          "seatPan": {
+            "front": 21.4,
+            "rear": 30.7
+          },
+          "footprintHalf": 123.20000000000002,
+          "propKind": "bench",
+          "propX": 2680,
+          "propDepth": -84,
+          "duration": 14
+        },
+        "state": "idle",
+        "hp": 60,
+        "distance": 0,
+        "speed": 0
+      },
+      {
+        "id": "civilian-smoker",
+        "x": 2669.6127999999885,
+        "depth": -64,
+        "activity": "walk",
+        "prop": null,
+        "state": "idle",
+        "hp": 60,
+        "distance": 200.0276505404623,
+        "speed": 48
+      },
+      {
+        "id": "civilian-bench",
+        "x": 2220,
+        "depth": -84,
+        "activity": "sit",
+        "prop": {
+          "id": "promenade-bench-west",
+          "kind": "bench",
+          "x": 2220,
+          "depth": -84,
+          "width": 224,
+          "bodyHeight": 70,
+          "usableSeatWidth": 188,
+          "seatHeight": 26,
+          "seatPan": {
+            "front": 21.4,
+            "rear": 30.7
+          },
+          "footprintHalf": 123.20000000000002,
+          "propKind": "bench",
+          "propX": 2220,
+          "propDepth": -84,
+          "duration": 12
+        },
+        "state": "idle",
+        "hp": 60,
+        "distance": 0,
+        "speed": 0
+      }
+    ],
+    "reusedBySmoker": [
+      {
+        "id": "civilian-reader",
+        "x": 3170.228799999984,
+        "depth": -64,
+        "activity": "walk",
+        "prop": null,
+        "state": "idle",
+        "hp": 60,
+        "distance": 500.33530460556113,
+        "speed": 53
+      },
+      {
+        "id": "civilian-smoker",
+        "x": 2680,
+        "depth": -84,
+        "activity": "sit",
+        "prop": {
+          "id": "promenade-bench-east",
+          "kind": "bench",
+          "x": 2680,
+          "depth": -84,
+          "width": 224,
+          "bodyHeight": 70,
+          "usableSeatWidth": 188,
+          "seatHeight": 26,
+          "seatPan": {
+            "front": 21.4,
+            "rear": 30.7
+          },
+          "footprintHalf": 123.20000000000002,
+          "propKind": "bench",
+          "propX": 2680,
+          "propDepth": -84,
+          "duration": 9
+        },
+        "state": "idle",
+        "hp": 60,
+        "distance": 616.7346711335638,
+        "speed": 0
+      },
+      {
+        "id": "civilian-bench",
+        "x": 2220,
+        "depth": -84,
+        "activity": "sit",
+        "prop": {
+          "id": "promenade-bench-west",
+          "kind": "bench",
+          "x": 2220,
+          "depth": -84,
+          "width": 224,
+          "bodyHeight": 70,
+          "usableSeatWidth": 188,
+          "seatHeight": 26,
+          "seatPan": {
+            "front": 21.4,
+            "rear": 30.7
+          },
+          "footprintHalf": 123.20000000000002,
+          "propKind": "bench",
+          "propX": 2220,
+          "propDepth": -84,
+          "duration": 12
+        },
+        "state": "idle",
+        "hp": 60,
+        "distance": 0,
+        "speed": 0
+      }
+    ],
+    "actualNewSourcePose": [
+      "sit"
+    ]
+  },
+  "allObservedStorageKeysProjectNamespaced": true,
+  "maxPendingMainRAF": 1,
+  "interpretation": [
+    "The native-foot baseline uses Stage17. Native primary movement provokes authored child enemies and damage without NPC/health/item grants.",
+    "The original injured-arm baseline is an explicitly prepared severe-damage fixture; its old illustrated-hero.js bytes were served read-only from Git HEAD at the time (now pinned bbf2de3 in the reproduction command), no disk rollback.",
+    "Six main contexts test the new bench and mounted-eye repair before the final thrown-body call and seat-occupancy fixes. They retain original hashes and are not relabelled as final whole-game tests.",
+    "Two fresh crash fixture contexts test the actual corrected airborne sprite call and opaque eye pixels before the final Brawler occupancy patch; their hash differences are explicit.",
+    "The last desktop occupancy context binds every current runtime hash and shows actual occupied-seat bypass, contact release, later normal reuse, one pending RAF and no HP/reward change. Earlier bench/eye modules remain byte-identical.",
+    "Screenshots are real unscaled viewport captures with disclosed JPEG quality. Live movement, damage/recovery and actual Canvas submissions establish interaction beyond stills; no video/FPS/physical-device claim.",
+    "The final harness only pins the before-fixture reproduction to the exact previously observed target commit, so committing this repair does not accidentally change what --phase before serves. The immutable baseline bytes were checked to match its recorded SHA."
+  ],
+  "preservedAttempts": [
+    "arm-fixture-initial-return-attempt: harness expected successful injure() to return true; it actually returns undefined.",
+    "arm-fixture-warp-safety-attempt: existing debug stop protects2.5 simulation seconds; fixture now lets the actual timer expire.",
+    "after-missing-probe-argument-attempt: observer initially dropped the new second sprite argument; corrected observer forwards every argument transparently.",
+    "preview-provisional: successful desktop bench rehearsal excluded from final evidence/package."
+  ],
+  "remainingLimits": [
+    "Physical phone/iPhone/Safari and thermal tests skipped.",
+    "Original NPC key-pose changes and dense source-phone UI remain.",
+    "Severe injury/crash helpers are explicitly prepared renderer fixtures, not an earned campaign or physics-balance test.",
+    "Final occupied-bench reuse has direct desktop coverage; touch native movement/hurt/bench/eye/crash coverage remains scoped to the separately recorded contexts."
+  ]
+}

@@ -55,7 +55,8 @@ assert.deepEqual(combatTrace(live),combatTrace(mutation));report.combatRecoveryT
 
 // Exercise the actual authored promenade identities/rest props, including the
 // smoker's schedule. Non-rest idle waypoints still resume normal walking.
-const world={};class Image{};vm.runInNewContext(fs.readFileSync('js/street-life.js','utf8'),{window:world,Image});
+const world={};class Image{};
+for(const name of ['centrum-street-bench','street-life'])vm.runInNewContext(fs.readFileSync('js/'+name+'.js','utf8'),{window:world,Image});
 const actual=make();actual.enter('route',world.BearlyStreetLife.seeds([],6000,4));step(actual,180);
 for(const [id,activity,prop]of [['civilian-reader','read','promenade-bench-east'],['civilian-smoker','smoke','promenade-smoke'],['civilian-bench','sit','promenade-bench-west']]){
  const n=actual.lookup(id);assert.equal(n.activity,activity);assert.equal(n.activityProp.id,prop);assert.equal(n.distance,0);assert(n.active&&n.visible);

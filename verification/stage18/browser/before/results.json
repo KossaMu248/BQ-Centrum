@@ -1,0 +1,1097 @@
+{
+  "scope": "Stage18 native rendered bench and damage-eye acceptance.\n\nOne disclosed original route-stop setup per fresh context, then native movement,\npersonal-space provocation and actual enemy damage. No health/NPC/item grants.\nChromium touch emulation is not physical Safari/device testing. Screenshots and\nobserved live state/Canvas submissions provide different kinds of evidence.\n",
+  "phase": "before",
+  "harnessSHA256": "80f7e9898e01d5637ecbb9d9ddd8ccc4fcf8e63dcb3f25ae29d833b080e43467",
+  "runtimeHashes": {
+    "autumn-v19.html": "867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb",
+    "autumn-version.json": "0d92274f3b2bdaee9fff7b707fb2349b8d8850771999e6139518ec29906039cf",
+    "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+    "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+    "css/centrum-route.css": "892e1ec5ac28ae0a551d45b276974888e6db3f227635487e45c761e1553d1e5f",
+    "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+    "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+    "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+    "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+    "index.html": "867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb",
+    "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+    "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+    "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+    "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+    "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+    "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+    "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+    "js/centrum-camera.js": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+    "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+    "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+    "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+    "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+    "js/centrum-hero-cache.js": "38f3212052e12304e3ecf4a053f0141122660395593874151e23835717ee5eff",
+    "js/centrum-inventory.js": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+    "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+    "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+    "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+    "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+    "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+    "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+    "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf",
+    "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+    "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+    "js/game.js": "5cfc8f851422d73cc9829d4bb8adf403ffbcf6f923427226d974cf9efa411a9c",
+    "js/hero-rig.js": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+    "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+    "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+    "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+    "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+    "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+    "js/illustrated-visits.js": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+    "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+    "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+    "js/npc-motion.js": "f4111c327656ae3131a58547fbce9b7ac6865cd4af8907545fe94cd8d08d637a",
+    "js/street-life.js": "7e54984fb2d8b94df6f5a055b0c1f8c2828bbde14634a8d9431d50a52e73b229",
+    "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+    "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+  },
+  "conditions": {
+    "headless": true,
+    "physicalDevicesTested": false,
+    "desktop": [
+      1280,
+      720
+    ],
+    "touchEmulation": [
+      844,
+      390
+    ],
+    "deviceScaleFactor": 1,
+    "jpegQuality": 82,
+    "setup": "one original debug route stop per fresh context; no NPC/health/item grants; native movement and existing personal-space aggression"
+  },
+  "checks": [
+    {
+      "name": "desktop actual authored enemy damage and recovery use native controls",
+      "passed": true,
+      "setupStop": 2720,
+      "targetEnemy": {
+        "id": "gang-4080-1",
+        "x": 4130,
+        "depth": 0
+      },
+      "beforeHealth": 60,
+      "healthImmediatelyBeforeHitWait": 50,
+      "hurt": {
+        "build": "BQ_CENTRUM_STAGE17",
+        "route": {
+          "x": 4080,
+          "health": 20,
+          "grounded": true,
+          "babyMounted": true
+        },
+        "source": {
+          "mode": "street",
+          "x": 4157.910204,
+          "depth": 0,
+          "paused": false,
+          "parkedAt": 4080,
+          "combat": {
+            "time": 6.446200000000013,
+            "hp": 20,
+            "hurt": true,
+            "effects": [
+              {
+                "id": 4,
+                "kind": "hurt",
+                "x": 4129.671339999999,
+                "depth": 0,
+                "age": 0.8897999999999993
+              },
+              {
+                "id": 5,
+                "kind": "counter",
+                "x": 4130,
+                "depth": 0,
+                "age": 0.8897999999999993
+              },
+              {
+                "id": 7,
+                "kind": "hurt",
+                "x": 4157.910204,
+                "depth": 0,
+                "age": 0.05
+              },
+              {
+                "id": 8,
+                "kind": "weapon-impact",
+                "x": 4136.601546535966,
+                "depth": 0,
+                "age": 0.05,
+                "arena": "route",
+                "time": 6.412900000000013,
+                "weapon": "bottle",
+                "target": "bear",
+                "hit": true,
+                "appliedDamage": 30,
+                "hpBefore": 50,
+                "hpAfter": 20,
+                "z": 86.56462969443328,
+                "direction": 1,
+                "ownerId": "gang-4080-0"
+              }
+            ],
+            "stats": {
+              "grabs": 0,
+              "throws": 0,
+              "mauls": 0,
+              "frenzyMauls": 0,
+              "transformations": 0,
+              "witnesses": 0,
+              "defeats": 0,
+              "enemyShots": 1,
+              "screenImpacts": 0,
+              "screams": 0,
+              "civilianScares": 0,
+              "hides": 0,
+              "departures": 0,
+              "arrivals": 3,
+              "gangWarnings": 2,
+              "gangProvocations": 2
+            },
+            "shots": []
+          },
+          "hero": {
+            "pose": "frontHurt",
+            "source": "reactions",
+            "height": 145,
+            "carrier": "front",
+            "babyFace": {
+              "mood": "terror",
+              "source": "assets/baby_pose_terror.webp",
+              "continuousUpperBody": true,
+              "originalCollar": true,
+              "headOnly": false,
+              "uniformScale": 0.3722677595628415,
+              "angle": 0.18534794999569476,
+              "flip": 1,
+              "alpha": 1,
+              "pivot": [
+                64,
+                104
+              ],
+              "anatomicalWaist": [
+                67,
+                112
+              ],
+              "waist": {
+                "x": 18.28125,
+                "y": -66.07539054532023
+              },
+              "headHeight": 26.058743169398905,
+              "referenceHeadHeight": 61,
+              "sourceRect": [
+                0,
+                0,
+                99,
+                105
+              ],
+              "sourceBounds": [
+                0,
+                0,
+                99,
+                155
+              ],
+              "seamY": 104,
+              "occludeFrom": 97,
+              "seam": {
+                "start": {
+                  "x": 14.622333730333297,
+                  "y": -66.76143734588274
+                },
+                "end": {
+                  "x": 21.940166269666705,
+                  "y": -65.38934374475772
+                },
+                "occludeFrom": {
+                  "x": 18.761482760393754,
+                  "y": -68.63663193408692
+                }
+              },
+              "head": [
+                18,
+                7,
+                72,
+                70
+              ],
+              "chin": [
+                {
+                  "x": 25.07311332556882,
+                  "y": -78.05834132847868
+                },
+                {
+                  "x": 21.8029569095542,
+                  "y": -76.77772063409535
+                },
+                {
+                  "x": 17.34365270589791,
+                  "y": -77.23508516780367
+                }
+              ],
+              "neck": [
+                {
+                  "x": 13.158767222466617,
+                  "y": -79.1560162093787
+                }
+              ],
+              "collar": [
+                {
+                  "x": 13.410317716006201,
+                  "y": -76.4575654604995
+                },
+                {
+                  "x": 17.45799383932499,
+                  "y": -73.80485116499115
+                }
+              ],
+              "pose": "frontHurt",
+              "pouch": {
+                "lip": [
+                  [
+                    361,
+                    361
+                  ],
+                  [
+                    402,
+                    379
+                  ],
+                  [
+                    446,
+                    360
+                  ]
+                ],
+                "depth": 41.03529411764706,
+                "seam": [
+                  402.75,
+                  387.8381253824629
+                ],
+                "origin": [
+                  315,
+                  705
+                ],
+                "scale": 0.20833333333333334,
+                "bob": 0,
+                "source": "reactions",
+                "textureMap": null,
+                "padding": 18.08812538246291
+              }
+            }
+          }
+        },
+        "nearby": [
+          {
+            "id": "gang-4080-0",
+            "kind": "gangster",
+            "variant": 0,
+            "x": 4030,
+            "depth": 0,
+            "state": "idle",
+            "hp": 60,
+            "activity": "fight",
+            "aggressive": true
+          },
+          {
+            "id": "gang-4080-1",
+            "kind": "gangster",
+            "variant": 1,
+            "x": 4130,
+            "depth": 0,
+            "state": "idle",
+            "hp": 60,
+            "activity": "fight",
+            "aggressive": true
+          }
+        ],
+        "projection": {
+          "hero": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -3739.80810546875,
+              "f": -165.70492553710938,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -3739.80810546875,
+              "m42": -165.70492553710938,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 12423.400000000373,
+            "x": 4157.910204,
+            "y": 649.69053968,
+            "height": 145
+          },
+          "baby": {
+            "m": {
+              "a": 0.36589162040401013,
+              "b": 0.0686046788257519,
+              "c": -0.0686046788257519,
+              "d": 0.36589162040401013,
+              "e": 436.38330078125,
+              "f": 417.9102325439453,
+              "m11": 0.36589162040401013,
+              "m12": 0.0686046788257519,
+              "m13": 0,
+              "m14": 0,
+              "m21": -0.0686046788257519,
+              "m22": 0.36589162040401013,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": 436.38330078125,
+              "m42": 417.9102325439453,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 12423.5,
+            "source": "baby_pose_terror.webp"
+          }
+        }
+      },
+      "recovered": {
+        "build": "BQ_CENTRUM_STAGE17",
+        "route": {
+          "x": 4080,
+          "health": 20,
+          "grounded": true,
+          "babyMounted": true
+        },
+        "source": {
+          "mode": "street",
+          "x": 4101.563532,
+          "depth": 0,
+          "paused": false,
+          "parkedAt": 4080,
+          "combat": {
+            "time": 7.362900000000019,
+            "hp": 20,
+            "hurt": false,
+            "effects": [
+              {
+                "id": 7,
+                "kind": "hurt",
+                "x": 4157.910204,
+                "depth": 0,
+                "age": 0.9667000000000009
+              },
+              {
+                "id": 8,
+                "kind": "weapon-impact",
+                "x": 4136.601546535966,
+                "depth": 0,
+                "age": 0.9667000000000009,
+                "arena": "route",
+                "time": 6.412900000000013,
+                "weapon": "bottle",
+                "target": "bear",
+                "hit": true,
+                "appliedDamage": 30,
+                "hpBefore": 50,
+                "hpAfter": 20,
+                "z": 86.56462969443328,
+                "direction": 1,
+                "ownerId": "gang-4080-0"
+              },
+              {
+                "id": 10,
+                "kind": "counter",
+                "x": 4130,
+                "depth": 0,
+                "age": 0.6832999999999992
+              }
+            ],
+            "stats": {
+              "grabs": 0,
+              "throws": 0,
+              "mauls": 0,
+              "frenzyMauls": 0,
+              "transformations": 0,
+              "witnesses": 0,
+              "defeats": 0,
+              "enemyShots": 1,
+              "screenImpacts": 0,
+              "screams": 0,
+              "civilianScares": 0,
+              "hides": 0,
+              "departures": 0,
+              "arrivals": 3,
+              "gangWarnings": 2,
+              "gangProvocations": 2
+            },
+            "shots": []
+          },
+          "hero": {
+            "pose": "walking",
+            "source": "front",
+            "height": 145,
+            "carrier": "front",
+            "babyFace": {
+              "mood": "idle",
+              "source": "assets/baby_pose_idle.webp",
+              "continuousUpperBody": true,
+              "originalCollar": true,
+              "headOnly": false,
+              "uniformScale": 0.4140352055898952,
+              "angle": -0.13863973713415806,
+              "flip": 1,
+              "alpha": 1,
+              "pivot": [
+                52,
+                94
+              ],
+              "anatomicalWaist": [
+                48,
+                104
+              ],
+              "waist": {
+                "x": 14.70799180327869,
+                "y": -59.74497695752022
+              },
+              "headHeight": 25.670182746573502,
+              "referenceHeadHeight": 61,
+              "sourceRect": [
+                0,
+                0,
+                82,
+                95
+              ],
+              "sourceBounds": [
+                0,
+                0,
+                82,
+                146
+              ],
+              "seamY": 94,
+              "occludeFrom": 90,
+              "seam": {
+                "start": {
+                  "x": 10.6073668585798,
+                  "y": -59.17279673267852
+                },
+                "end": {
+                  "x": 18.80861674797758,
+                  "y": -60.317157182361925
+                },
+                "occludeFrom": {
+                  "x": 14.479119713342007,
+                  "y": -61.38522693539978
+                }
+              },
+              "head": [
+                15,
+                9,
+                57,
+                62
+              ],
+              "chin": [
+                {
+                  "x": 17.034858050968293,
+                  "y": -73.02909451092849
+                },
+                {
+                  "x": 16.271951084512686,
+                  "y": -72.50459597149026
+                },
+                {
+                  "x": 15.156199646071359,
+                  "y": -71.51281691509797
+                },
+                {
+                  "x": 13.983230185145862,
+                  "y": -70.93110035317557
+                },
+                {
+                  "x": 12.810260724220367,
+                  "y": -70.34938379125316
+                }
+              ],
+              "neck": [
+                {
+                  "x": 11.63729126329487,
+                  "y": -69.76766722933077
+                },
+                {
+                  "x": 11.694509285779041,
+                  "y": -69.35760473486087
+                }
+              ],
+              "collar": [
+                {
+                  "x": 6.888195397108712,
+                  "y": -67.85086347611104
+                },
+                {
+                  "x": 10.044722970818789,
+                  "y": -66.20107716115079
+                },
+                {
+                  "x": 14.145347915517679,
+                  "y": -66.77325738599251
+                }
+              ],
+              "pose": "front",
+              "pouch": {
+                "lip": [
+                  [
+                    198,
+                    288
+                  ],
+                  [
+                    226,
+                    293
+                  ],
+                  [
+                    264,
+                    285
+                  ]
+                ],
+                "depth": 32,
+                "seam": [
+                  228.5,
+                  298.9272499636561
+                ],
+                "origin": [
+                  179,
+                  500
+                ],
+                "scale": 0.29713114754098363,
+                "bob": 0,
+                "source": "frontBackground",
+                "textureMap": null,
+                "padding": 9.177249963656097
+              }
+            }
+          }
+        },
+        "nearby": [
+          {
+            "id": "gang-4080-0",
+            "kind": "gangster",
+            "variant": 0,
+            "x": 4030,
+            "depth": 0,
+            "state": "idle",
+            "hp": 60,
+            "activity": "fight",
+            "aggressive": true
+          },
+          {
+            "id": "gang-4080-1",
+            "kind": "gangster",
+            "variant": 1,
+            "x": 4130,
+            "depth": 0,
+            "state": "idle",
+            "hp": 60,
+            "activity": "fight",
+            "aggressive": true
+          }
+        ],
+        "projection": {
+          "hero": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -3687.4208984375,
+              "f": -164.07508850097656,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -3687.4208984375,
+              "m42": -164.07508850097656,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 13339.300000000745,
+            "x": 4101.563532,
+            "y": 647.9375321066667,
+            "height": 145
+          },
+          "baby": {
+            "m": {
+              "a": -0.4081705027502793,
+              "b": -0.06944053867799015,
+              "c": -0.06944053867799015,
+              "d": 0.4081705027502793,
+              "e": 401.3857788903089,
+              "f": 416.87615198158824,
+              "m11": -0.4081705027502793,
+              "m12": -0.06944053867799015,
+              "m13": 0,
+              "m14": 0,
+              "m21": -0.06944053867799015,
+              "m22": 0.4081705027502793,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": 401.3857788903089,
+              "m42": 416.87615198158824,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 13339.300000000745,
+            "source": "baby_pose_idle.webp"
+          }
+        }
+      },
+      "metrics": {
+        "writes": [
+          "bq-centrum:scene-network:v1"
+        ],
+        "reads": [
+          "bq-centrum:adventure:v1",
+          "bq-centrum:best-score:v1",
+          "bq-centrum:civilians:v1",
+          "bq-centrum:parking:v1",
+          "bq-centrum:quest:wrong-entrance:v1",
+          "bq-centrum:scene-network:v1"
+        ],
+        "listenerCounts": {
+          "document:fullscreenchange": 1,
+          "window:keydown": 6,
+          "window:pagehide": 3,
+          "window:pointerdown": 2,
+          "window:blur": 5,
+          "document:visibilitychange": 5,
+          "window:keyup": 3,
+          "window:centrum-square-change": 1,
+          "window:pointerup": 2,
+          "window:pointercancel": 1,
+          "window:touchend": 2,
+          "window:touchcancel": 2,
+          "window:__playwright_global_listeners_check__": 1,
+          "window:mousemove": 1,
+          "window:touchstart": 1,
+          "window:mousedown": 1,
+          "window:mouseup": 1,
+          "window:click": 1,
+          "window:auxclick": 1,
+          "window:dblclick": 1,
+          "window:contextmenu": 1
+        },
+        "loopFrames": 399,
+        "pending": 1,
+        "maxPending": 1,
+        "audioContexts": 1,
+        "frameTimeMs": {
+          "samples": 360,
+          "median": 33.3,
+          "p95": 50.1,
+          "maximum": 149.9
+        }
+      }
+    }
+  ],
+  "captures": [
+    {
+      "file": "desktop/actual-enemy-hurt.jpg",
+      "sha256": "ba006db429dbb406018d2d4cf3e57a444e060471111012e6124d971cda04bdc7",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE17",
+        "route": {
+          "x": 4080,
+          "health": 20,
+          "grounded": true,
+          "babyMounted": true
+        },
+        "source": {
+          "mode": "street",
+          "x": 4157.910204,
+          "depth": 0,
+          "paused": false,
+          "parkedAt": 4080,
+          "combat": {
+            "time": 6.446200000000013,
+            "hp": 20,
+            "hurt": true,
+            "effects": [
+              {
+                "id": 4,
+                "kind": "hurt",
+                "x": 4129.671339999999,
+                "depth": 0,
+                "age": 0.8897999999999993
+              },
+              {
+                "id": 5,
+                "kind": "counter",
+                "x": 4130,
+                "depth": 0,
+                "age": 0.8897999999999993
+              },
+              {
+                "id": 7,
+                "kind": "hurt",
+                "x": 4157.910204,
+                "depth": 0,
+                "age": 0.05
+              },
+              {
+                "id": 8,
+                "kind": "weapon-impact",
+                "x": 4136.601546535966,
+                "depth": 0,
+                "age": 0.05,
+                "arena": "route",
+                "time": 6.412900000000013,
+                "weapon": "bottle",
+                "target": "bear",
+                "hit": true,
+                "appliedDamage": 30,
+                "hpBefore": 50,
+                "hpAfter": 20,
+                "z": 86.56462969443328,
+                "direction": 1,
+                "ownerId": "gang-4080-0"
+              }
+            ],
+            "stats": {
+              "grabs": 0,
+              "throws": 0,
+              "mauls": 0,
+              "frenzyMauls": 0,
+              "transformations": 0,
+              "witnesses": 0,
+              "defeats": 0,
+              "enemyShots": 1,
+              "screenImpacts": 0,
+              "screams": 0,
+              "civilianScares": 0,
+              "hides": 0,
+              "departures": 0,
+              "arrivals": 3,
+              "gangWarnings": 2,
+              "gangProvocations": 2
+            },
+            "shots": []
+          },
+          "hero": {
+            "pose": "frontHurt",
+            "source": "reactions",
+            "height": 145,
+            "carrier": "front",
+            "babyFace": {
+              "mood": "terror",
+              "source": "assets/baby_pose_terror.webp",
+              "continuousUpperBody": true,
+              "originalCollar": true,
+              "headOnly": false,
+              "uniformScale": 0.3722677595628415,
+              "angle": 0.18534794999569476,
+              "flip": 1,
+              "alpha": 1,
+              "pivot": [
+                64,
+                104
+              ],
+              "anatomicalWaist": [
+                67,
+                112
+              ],
+              "waist": {
+                "x": 18.28125,
+                "y": -66.07539054532023
+              },
+              "headHeight": 26.058743169398905,
+              "referenceHeadHeight": 61,
+              "sourceRect": [
+                0,
+                0,
+                99,
+                105
+              ],
+              "sourceBounds": [
+                0,
+                0,
+                99,
+                155
+              ],
+              "seamY": 104,
+              "occludeFrom": 97,
+              "seam": {
+                "start": {
+                  "x": 14.622333730333297,
+                  "y": -66.76143734588274
+                },
+                "end": {
+                  "x": 21.940166269666705,
+                  "y": -65.38934374475772
+                },
+                "occludeFrom": {
+                  "x": 18.761482760393754,
+                  "y": -68.63663193408692
+                }
+              },
+              "head": [
+                18,
+                7,
+                72,
+                70
+              ],
+              "chin": [
+                {
+                  "x": 25.07311332556882,
+                  "y": -78.05834132847868
+                },
+                {
+                  "x": 21.8029569095542,
+                  "y": -76.77772063409535
+                },
+                {
+                  "x": 17.34365270589791,
+                  "y": -77.23508516780367
+                }
+              ],
+              "neck": [
+                {
+                  "x": 13.158767222466617,
+                  "y": -79.1560162093787
+                }
+              ],
+              "collar": [
+                {
+                  "x": 13.410317716006201,
+                  "y": -76.4575654604995
+                },
+                {
+                  "x": 17.45799383932499,
+                  "y": -73.80485116499115
+                }
+              ],
+              "pose": "frontHurt",
+              "pouch": {
+                "lip": [
+                  [
+                    361,
+                    361
+                  ],
+                  [
+                    402,
+                    379
+                  ],
+                  [
+                    446,
+                    360
+                  ]
+                ],
+                "depth": 41.03529411764706,
+                "seam": [
+                  402.75,
+                  387.8381253824629
+                ],
+                "origin": [
+                  315,
+                  705
+                ],
+                "scale": 0.20833333333333334,
+                "bob": 0,
+                "source": "reactions",
+                "textureMap": null,
+                "padding": 18.08812538246291
+              }
+            }
+          }
+        },
+        "nearby": [
+          {
+            "id": "gang-4080-0",
+            "kind": "gangster",
+            "variant": 0,
+            "x": 4030,
+            "depth": 0,
+            "state": "idle",
+            "hp": 60,
+            "activity": "fight",
+            "aggressive": true
+          },
+          {
+            "id": "gang-4080-1",
+            "kind": "gangster",
+            "variant": 1,
+            "x": 4130,
+            "depth": 0,
+            "state": "idle",
+            "hp": 60,
+            "activity": "fight",
+            "aggressive": true
+          }
+        ],
+        "projection": {
+          "hero": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -3739.80810546875,
+              "f": -165.70492553710938,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -3739.80810546875,
+              "m42": -165.70492553710938,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 12423.400000000373,
+            "x": 4157.910204,
+            "y": 649.69053968,
+            "height": 145
+          },
+          "baby": {
+            "m": {
+              "a": 0.36589162040401013,
+              "b": 0.0686046788257519,
+              "c": -0.0686046788257519,
+              "d": 0.36589162040401013,
+              "e": 436.38330078125,
+              "f": 417.9102325439453,
+              "m11": 0.36589162040401013,
+              "m12": 0.0686046788257519,
+              "m13": 0,
+              "m14": 0,
+              "m21": -0.0686046788257519,
+              "m22": 0.36589162040401013,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": 436.38330078125,
+              "m42": 417.9102325439453,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 12423.5,
+            "source": "baby_pose_terror.webp"
+          }
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "browser": "154.0.8037.57",
+  "runtimeHashesAfter": {
+    "autumn-v19.html": "867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb",
+    "autumn-version.json": "0d92274f3b2bdaee9fff7b707fb2349b8d8850771999e6139518ec29906039cf",
+    "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+    "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+    "css/centrum-route.css": "892e1ec5ac28ae0a551d45b276974888e6db3f227635487e45c761e1553d1e5f",
+    "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+    "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+    "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+    "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+    "index.html": "867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb",
+    "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+    "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+    "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+    "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+    "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+    "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+    "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+    "js/centrum-camera.js": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+    "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+    "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+    "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+    "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+    "js/centrum-hero-cache.js": "38f3212052e12304e3ecf4a053f0141122660395593874151e23835717ee5eff",
+    "js/centrum-inventory.js": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+    "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+    "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+    "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+    "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+    "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+    "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+    "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf",
+    "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+    "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+    "js/game.js": "5cfc8f851422d73cc9829d4bb8adf403ffbcf6f923427226d974cf9efa411a9c",
+    "js/hero-rig.js": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+    "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+    "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+    "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+    "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+    "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+    "js/illustrated-visits.js": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+    "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+    "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+    "js/npc-motion.js": "f4111c327656ae3131a58547fbce9b7ac6865cd4af8907545fe94cd8d08d637a",
+    "js/street-life.js": "7e54984fb2d8b94df6f5a055b0c1f8c2828bbde14634a8d9431d50a52e73b229",
+    "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+    "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+  },
+  "changedRuntimeFiles": [],
+  "passed": true
+}

@@ -1,0 +1,19 @@
+# Shared street bench geometry and source-art audit
+
+This is numeric/source-reference evidence, not gameplay or an illustration presented as a game screenshot. [Measurements and hashes](results.json) distinguish the new environment drawing from unchanged character art.
+
+The new project [street-bench renderer](../../../js/centrum-street-bench.js) gives width and seat height independent dimensions:224wide,70high,188usable between the arms, and a sloped seat21.4–30.7above its floor. The old bench drawing remains intact in [illustrated-props.js](../../../js/illustrated-props.js) as the wood/iron palette and outline reference. The new drawing reuses its warm wood colours, green-grey metal, bolts, slats and curved supports. It is a new project-authored vector environment drawing, not an original donor asset or replacement character. The original default bench renderer remains in use for Metro Square and other source decoration; the new renderer serves only the source-street routine benches.
+
+The largest original seated/read opaque body is85.7437worldunits wide at the source128-unit adult presentation. Two such bodies plus a12-unit gap occupy183.4873, within the188-unit usable seat. This checks that the longer bench reads as shared public seating without scaling the source people. Height stays separate: the actual painted pan matches the intact original seat contacts instead of growing taller whenever the bench grows wider.
+
+Original [civilian-rest artwork](../../../assets/art/civilian-rest-v16.png), prepared masks, source pivots, stature and identity-height factors remain unchanged. Twelve source-street benches keep their stable IDs and centred existing users; this stage does not add occupants. Fourteen authored sit/read associations and eleven smoking anchors remain valid. Later bins move from170 to220units to the right so a smoker70units left of a bin clears the wider bench arm. The existing promenade bin was already far enough away. Centrum Square’s existing bench geometry and collision footprints remain unchanged.
+
+Actual production-code VM contracts pass168submitted seated transforms/336opaque sole bounds, with maximum0.735worldpixel floor error including the existing tiny sway. Sixteen legacy/malformed-pan cases preserve fallback behaviour. Five old-size/seat/spacing regressions are rejected. The new painter test independently maps its cached vector seat/back paths through actual Canvas submissions at four sizes; two source bodies fit,240hot draws repaint nothing, seven invalid draws allocate nothing and three painter mutations fail. One480×184canvas occupies353,280bytes. No bench-owned loop, timer, listener, source-pixel readback or per-frame canvas is added.
+
+Normal-size gameplay, contact, walking and damage-eye checks belong to the separate Stage18 browser results. These measurements make no physical-phone or FPS claim.
+
+## Final normal-size gameplay review
+
+Independent inspection of the final [desktop seating](../browser/after/desktop/shared-bench-seating.jpg) and [Chromium phone-emulated seating](../browser/after/phone/shared-bench-seating.jpg) found no new bench-fit blocker. Both now read as shared public seating, with room beside the original occupants, higher backs, low supported hips and planted original shoes. Warm outlined wood and green-grey iron fit the existing autumn view. The desktop smoker has clear space beside the bin. Original bear/baby remain recognisable and continuously attached; the accepted camera is unchanged. Exact image and QA-result hashes are recorded in the numeric receipt.
+
+The existing phone onboarding hint covers some background/NPC space; the baby remains clear. Dense phone controls and original keyed sit/stand pose changes remain limitations. These stills do not by themselves prove motion: the separate browser result records native movement/rest/contact checks. This review adds no FPS or physical-device/Safari claim.

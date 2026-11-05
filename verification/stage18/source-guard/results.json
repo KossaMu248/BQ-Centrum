@@ -1,0 +1,86 @@
+{
+  "scope": "Final Stage18 source inverses including original-eyed mounted/thrown injured-arm renderers and peaceful occupied-bench approach/revalidation. Exact target-local donor baseline only, original artwork and cycling block independently protected.",
+  "atUtc": "2026-11-05T18:51:33.399416+00:00",
+  "baseProjectCommit": "bbf2de3d6c26652cf7ae29faa1c03456c0f533c0",
+  "manifestSHA256": "43cbcea8011d508c921aa0c2bab013b6a2e7e97309a935cc8d3c710daac302ef",
+  "protectedOriginalFiles": 944,
+  "protectedOriginalArtwork": 919,
+  "exactStage18Files": 6,
+  "exactStage18Hunks": 15,
+  "newRejectedSourceRenderLoadOrderMutations": 12,
+  "newManifestTamperGuard": true,
+  "priorStage14Stage16Stage17GuardsRetained": true,
+  "cyclingUpdate": {
+    "characters": 17332,
+    "sha256": "be413cd99f320f38d94a49fdf3b93d297dfe5f5039aa977d4c20442250fc9bef",
+    "unchanged": true
+  },
+  "sourceHashesBefore": {
+    "autumn-v19.html": "9ee316f87594803c6dec2a12cc3849da2dcdddc0d5b95c2b9a715223bb7a2f9b",
+    "index.html": "9ee316f87594803c6dec2a12cc3849da2dcdddc0d5b95c2b9a715223bb7a2f9b",
+    "js/brawler.js": "048adfc03134d2aa94cf32169efcd9e6e164391800386d40d3f29b41dd2b2028",
+    "js/game.js": "60ef1993ea5dd5112f45d24748eed8146733fcfa6a18953a16edcdbaa95674bf",
+    "js/illustrated-hero.js": "ac91804b0afd366308c41ba2e53173fee649c5399acdc725c0bf64ac9072ee93",
+    "js/street-life.js": "ded03758bd6019831d41889c58b5409dd6ec2df0d1634825310f034be621c308"
+  },
+  "sourceHashesAfter": {
+    "autumn-v19.html": "9ee316f87594803c6dec2a12cc3849da2dcdddc0d5b95c2b9a715223bb7a2f9b",
+    "index.html": "9ee316f87594803c6dec2a12cc3849da2dcdddc0d5b95c2b9a715223bb7a2f9b",
+    "js/brawler.js": "048adfc03134d2aa94cf32169efcd9e6e164391800386d40d3f29b41dd2b2028",
+    "js/game.js": "60ef1993ea5dd5112f45d24748eed8146733fcfa6a18953a16edcdbaa95674bf",
+    "js/illustrated-hero.js": "ac91804b0afd366308c41ba2e53173fee649c5399acdc725c0bf64ac9072ee93",
+    "js/street-life.js": "ded03758bd6019831d41889c58b5409dd6ec2df0d1634825310f034be621c308"
+  },
+  "sourceDrift": [],
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "tools/verify-source-integrity.py"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.363,
+      "stdout": "PASS: 944 pinned original files verified; all source assets/CSS and original protected code match;\nonly reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest, Stage17 NPC-prop fit and Stage18 bench/peaceful-seat/opaque-eye additions differ.",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "tests/centrum_source_integrity.py"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.575,
+      "stdout": "PASS: 944 protected originals; prior Stage14/16/17 guards retained; 6 exact Stage18 inverses/12 rejected source/render/load-order mutations and Stage18 manifest tampering; cycling simulation block unchanged; all mutations in memory.",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "tools/verify-source-integrity.py",
+        "tests/centrum_source_integrity.py"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.051,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "elapsedSeconds": 0.018,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": true
+}

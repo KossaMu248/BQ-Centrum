@@ -1,0 +1,531 @@
+{
+  "scope": "Original/compiled native-size pixel renderer lab; not gameplay.",
+  "componentHashes": {
+    "js/illustrated-hero.js": "ac91804b0afd366308c41ba2e53173fee649c5399acdc725c0bf64ac9072ee93",
+    "assets/bear_upper_rightarm_injured.webp": "3e008fe191e41c1665a679e16bb48319dc463937f697eef3792534fb26e35b25",
+    "assets/bear_pose_coast.webp": "9fea86a157a5a95e84220a7d542825cf6e57349710d3951bbaad68a7c3548358",
+    "assets/cache/hero-cycling-v19/bear_upper_rightarm_injured.png": "f645e490916378b089a79f50d40c42e1960e06f66ba4da9f4609480ab9df1148",
+    "assets/cache/hero-cycling-v19/bear_pose_coast.png": "5b7f97733b924cac40f8f3e67a856cca7ef83a6dc3ac019a05b310edc9887bbe"
+  },
+  "harnessSHA256": "3964f809d5853fc3781f183a933c5b42d0f5c13e41a193bfca048fcbb27f7785",
+  "physicalDevicesTested": false,
+  "pageErrors": [],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "browser": "154.0.8037.57",
+  "passed": true,
+  "cases": [
+    {
+      "family": "compiled",
+      "width": 291,
+      "height": 309,
+      "outsidePixels": 89416,
+      "changedOutsidePixels": 0,
+      "originalOpaquePixels": 21841,
+      "changedOriginalOpaquePixels": 0,
+      "opaqueEyePixels": 442,
+      "sourceEyeHolePixels": 123,
+      "changedEyePixels": 299,
+      "missingArmPixels": 917,
+      "backgroundDependentEyePixels": 123,
+      "samples": [
+        {
+          "x": 189,
+          "y": 46,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            255,
+            250,
+            225,
+            255
+          ],
+          "intact": [
+            255,
+            250,
+            225,
+            255
+          ]
+        },
+        {
+          "x": 190,
+          "y": 46,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            254,
+            248,
+            220,
+            255
+          ],
+          "intact": [
+            254,
+            248,
+            220,
+            255
+          ]
+        },
+        {
+          "x": 191,
+          "y": 46,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            255,
+            248,
+            220,
+            255
+          ],
+          "intact": [
+            255,
+            248,
+            220,
+            255
+          ]
+        },
+        {
+          "x": 192,
+          "y": 46,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            254,
+            247,
+            220,
+            255
+          ],
+          "intact": [
+            254,
+            247,
+            220,
+            255
+          ]
+        },
+        {
+          "x": 193,
+          "y": 46,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            255,
+            248,
+            223,
+            255
+          ],
+          "intact": [
+            255,
+            248,
+            223,
+            255
+          ]
+        },
+        {
+          "x": 194,
+          "y": 46,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            254,
+            247,
+            223,
+            255
+          ],
+          "intact": [
+            254,
+            247,
+            223,
+            255
+          ]
+        },
+        {
+          "x": 195,
+          "y": 46,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            255,
+            249,
+            225,
+            255
+          ],
+          "intact": [
+            255,
+            249,
+            225,
+            255
+          ]
+        },
+        {
+          "x": 188,
+          "y": 47,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            255,
+            248,
+            225,
+            255
+          ],
+          "intact": [
+            255,
+            248,
+            225,
+            255
+          ]
+        }
+      ],
+      "probes": [
+        {
+          "x": 190,
+          "y": 49,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            255,
+            249,
+            223,
+            255
+          ],
+          "intact": [
+            255,
+            249,
+            223,
+            255
+          ]
+        },
+        {
+          "x": 212,
+          "y": 51,
+          "before": [
+            36,
+            42,
+            30,
+            42
+          ],
+          "after": [
+            219,
+            208,
+            185,
+            255
+          ],
+          "intact": [
+            255,
+            241,
+            216,
+            255
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "family": "original",
+      "width": 291,
+      "height": 309,
+      "outsidePixels": 89416,
+      "changedOutsidePixels": 0,
+      "originalOpaquePixels": 21841,
+      "changedOriginalOpaquePixels": 0,
+      "opaqueEyePixels": 442,
+      "sourceEyeHolePixels": 123,
+      "changedEyePixels": 299,
+      "missingArmPixels": 917,
+      "backgroundDependentEyePixels": 123,
+      "samples": [
+        {
+          "x": 189,
+          "y": 46,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            255,
+            250,
+            225,
+            255
+          ],
+          "intact": [
+            255,
+            250,
+            225,
+            255
+          ]
+        },
+        {
+          "x": 190,
+          "y": 46,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            254,
+            248,
+            220,
+            255
+          ],
+          "intact": [
+            254,
+            248,
+            220,
+            255
+          ]
+        },
+        {
+          "x": 191,
+          "y": 46,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            255,
+            248,
+            220,
+            255
+          ],
+          "intact": [
+            255,
+            248,
+            220,
+            255
+          ]
+        },
+        {
+          "x": 192,
+          "y": 46,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            254,
+            247,
+            220,
+            255
+          ],
+          "intact": [
+            254,
+            247,
+            220,
+            255
+          ]
+        },
+        {
+          "x": 193,
+          "y": 46,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            255,
+            248,
+            223,
+            255
+          ],
+          "intact": [
+            255,
+            248,
+            223,
+            255
+          ]
+        },
+        {
+          "x": 194,
+          "y": 46,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            254,
+            247,
+            223,
+            255
+          ],
+          "intact": [
+            254,
+            247,
+            223,
+            255
+          ]
+        },
+        {
+          "x": 195,
+          "y": 46,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            255,
+            249,
+            225,
+            255
+          ],
+          "intact": [
+            255,
+            249,
+            225,
+            255
+          ]
+        },
+        {
+          "x": 188,
+          "y": 47,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            255,
+            248,
+            225,
+            255
+          ],
+          "intact": [
+            255,
+            248,
+            225,
+            255
+          ]
+        }
+      ],
+      "probes": [
+        {
+          "x": 190,
+          "y": 49,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            255,
+            249,
+            223,
+            255
+          ],
+          "intact": [
+            255,
+            249,
+            223,
+            255
+          ]
+        },
+        {
+          "x": 212,
+          "y": 51,
+          "before": [
+            36,
+            42,
+            30,
+            42
+          ],
+          "after": [
+            219,
+            208,
+            185,
+            255
+          ],
+          "intact": [
+            255,
+            241,
+            216,
+            255
+          ]
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "eyeRegions": [
+    [
+      182,
+      42,
+      20,
+      22
+    ],
+    [
+      209,
+      47,
+      7,
+      9
+    ]
+  ],
+  "backgrounds": [
+    "#f5dbab",
+    "#17394a"
+  ],
+  "audit": {
+    "compiledDraws": 4,
+    "legacyBuilds": 2,
+    "legacyLargeBuilds": 2,
+    "legacyPixels": 179838,
+    "eyeRepairs": 2,
+    "eyeRepairBytes": 719352,
+    "compiledSources": 15
+  },
+  "componentHashesAfter": {
+    "js/illustrated-hero.js": "ac91804b0afd366308c41ba2e53173fee649c5399acdc725c0bf64ac9072ee93",
+    "assets/bear_upper_rightarm_injured.webp": "3e008fe191e41c1665a679e16bb48319dc463937f697eef3792534fb26e35b25",
+    "assets/bear_pose_coast.webp": "9fea86a157a5a95e84220a7d542825cf6e57349710d3951bbaad68a7c3548358",
+    "assets/cache/hero-cycling-v19/bear_upper_rightarm_injured.png": "f645e490916378b089a79f50d40c42e1960e06f66ba4da9f4609480ab9df1148",
+    "assets/cache/hero-cycling-v19/bear_pose_coast.png": "5b7f97733b924cac40f8f3e67a856cca7ef83a6dc3ac019a05b310edc9887bbe"
+  }
+}

@@ -29,7 +29,7 @@ python3 -m http.server 8001 --bind 127.0.0.1
 
 Open **http://127.0.0.1:8001/BQ-Centrum/**. Both `index.html` and the manifest’s `autumn-v19.html` entry are active, matching small HTML files. The clean package is checked at the root and under this subpath.
 
-Stage17 fits NPC props to their users: smaller source-street benches share their actual sloped seat with the original seated poses, keeping hips supported and shoes on the floor. Smokers stand beside their bins. Character artwork, scale, camera, physics, saves and the established peaceful-rest behaviour remain unchanged. [Actual results and limits](TEST_REPORT.md).
+Stage18 redesigns the source-street benches as wide shared seats with independent seat/back heights, retaining original NPC scale and grounded sitting. Damaged cycling and airborne bear eyes reuse matching original eye pixels to stay opaque; the injured body and missing arm remain. Source assets, baby artwork, camera, physics/damage, saves and economy remain unchanged. [Actual results and limits](TEST_REPORT.md).
 
 ## Implemented scope
 
@@ -71,7 +71,7 @@ The existing `bq-centrum:scene-network:v1` document owns the adventure (schema 2
 
 ## Verification and package
 
-Read the compact [TEST_REPORT.md](TEST_REPORT.md) for actual test conditions, repairs, results and limitations. [Stage17 evidence](verification/stage17/README.md) records NPC prop fit and actual seating/contact verification. [Stage16 evidence](verification/stage16/README.md) preserves source-street CPU/cache fixes, actual gameplay, peaceful rest and child/NPC review. [Stage15 evidence](verification/stage15/README.md) preserves the wider Centrum-camera review. [Stage14 evidence](verification/stage14/README.md) preserves entry timing and knee-animation verification. [Stage13 evidence](verification/stage13/README.md) preserves the original angle and native-baby compositing review. [Stage 11 evidence](verification/stage11/README.md) covers walking performance/poses and on-demand inventory; [Stage 10 evidence](verification/stage10/README.md) preserves its HUD and browser checks; [Stage 9 evidence](verification/stage9/README.md) keeps the earned ride and gait review; the [Stage 8 full-route evidence](verification/stage8/README.md) remains available. Prior [Stage 7 art review](verification/stage7/README.md) remains available. Historical earlier evidence stays in the development workspace, outside the clean delivery.
+Read the compact [TEST_REPORT.md](TEST_REPORT.md) for actual test conditions, repairs, results and limitations. [Stage18 evidence](verification/stage18/README.md) records the shared-bench redesign and injured-eye repair. [Stage17 evidence](verification/stage17/README.md) preserves the earlier prop-fit attempt rejected by the user. [Stage16 evidence](verification/stage16/README.md) preserves source-street CPU/cache fixes, actual gameplay, peaceful rest and child/NPC review. [Stage15 evidence](verification/stage15/README.md) preserves the wider Centrum-camera review. [Stage14 evidence](verification/stage14/README.md) preserves entry timing and knee-animation verification. [Stage13 evidence](verification/stage13/README.md) preserves the original angle and native-baby compositing review. [Stage 11 evidence](verification/stage11/README.md) covers walking performance/poses and on-demand inventory; [Stage 10 evidence](verification/stage10/README.md) preserves its HUD and browser checks; [Stage 9 evidence](verification/stage9/README.md) keeps the earned ride and gait review; the [Stage 8 full-route evidence](verification/stage8/README.md) remains available. Prior [Stage 7 art review](verification/stage7/README.md) remains available. Historical earlier evidence stays in the development workspace, outside the clean delivery.
 
 Development verification needs Python Playwright, system Chromium at `/usr/bin/chromium`, Node.js and ffmpeg for recordings; the game itself needs none of those beyond a static server/browser. The cross-browser check additionally expects Playwright Firefox/WebKit binaries in `.test-browsers` (`PLAYWRIGHT_BROWSERS_PATH=.test-browsers python3 -m playwright install firefox webkit`) and the host libraries required by those engines. Test-browser binaries/libraries are excluded from delivery.
 
@@ -93,6 +93,10 @@ node tests/centrum_camera.cjs
 node tests/centrum_route_camera.cjs
 node tests/centrum_npc_rest.cjs
 node tests/centrum_prop_fit.cjs
+node tests/centrum_street_bench.cjs
+node tests/centrum_bench_occupancy.cjs
+node tests/centrum_damage_eyes.cjs
+python3 tests/centrum_damage_eyes.py
 node tests/centrum_npc_render.cjs
 node tests/centrum_pouch_cache.cjs
 node tests/centrum_native_cache.cjs
@@ -102,7 +106,7 @@ node tests/centrum_scene_preparation.cjs
 python3 tests/centrum_source_integrity.py
 python3 tests/centrum_actor_provenance.py
 python3 tests/centrum_stage16_browser.py --out verification/local-gameplay --clip
-python3 tests/centrum_prop_fit_browser.py --phase after --out verification/local-prop-fit
+python3 tests/centrum_stage18_browser.py --phase after --out verification/local-stage18
 python3 tests/centrum_mode_performance.py --out verification/local-performance --label desktop
 python3 tests/centrum_npc_render_browser.py --out verification/local-npc-review
 python3 tests/centrum_package_codec.py

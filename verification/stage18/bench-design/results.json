@@ -1,0 +1,188 @@
+{
+  "scope": "Numeric/source/palette audit. Canvas paths and source-metadata tests use mocked pixels; this is not gameplay, image-generation or animation evidence.",
+  "projectBase": "bbf2de3d6c26652cf7ae29faa1c03456c0f533c0",
+  "renderer": "js/centrum-street-bench.js",
+  "geometry": {
+    "width": 224,
+    "bodyHeight": 70,
+    "usableSeatWidth": 188,
+    "nominalSeatHeight": 26,
+    "seatPan": {
+      "front": 21.4,
+      "rear": 30.7
+    },
+    "footprintHalf": 123.2,
+    "cachedCanvas": [
+      480,
+      184
+    ],
+    "cacheBytes": 353280,
+    "paintedSeatPolygon": [
+      [
+        -102,
+        -30.7
+      ],
+      [
+        102,
+        -30.7
+      ],
+      [
+        108,
+        -21.4
+      ],
+      [
+        -108,
+        -21.4
+      ]
+    ]
+  },
+  "capacity": {
+    "opaqueBodyCases": [
+      {
+        "variant": 9,
+        "pose": "sit",
+        "opaqueSourceWidth": 263,
+        "sourceStature": 420.08,
+        "heightFactor": 1.05,
+        "opaqueWidthAt128": 84.14397257665208
+      },
+      {
+        "variant": 9,
+        "pose": "read",
+        "opaqueSourceWidth": 268,
+        "sourceStature": 420.08,
+        "heightFactor": 1.05,
+        "opaqueWidthAt128": 85.74366787278615
+      },
+      {
+        "variant": 10,
+        "pose": "sit",
+        "opaqueSourceWidth": 250,
+        "sourceStature": 400.02,
+        "heightFactor": 1,
+        "opaqueWidthAt128": 79.99600019999001
+      },
+      {
+        "variant": 10,
+        "pose": "read",
+        "opaqueSourceWidth": 263,
+        "sourceStature": 400.02,
+        "heightFactor": 1,
+        "opaqueWidthAt128": 84.15579221038948
+      },
+      {
+        "variant": 11,
+        "pose": "sit",
+        "opaqueSourceWidth": 219,
+        "sourceStature": 359.9,
+        "heightFactor": 0.84,
+        "opaqueWidthAt128": 65.42617393720478
+      },
+      {
+        "variant": 11,
+        "pose": "read",
+        "opaqueSourceWidth": 256,
+        "sourceStature": 359.9,
+        "heightFactor": 0.84,
+        "opaqueWidthAt128": 76.4799110864129
+      }
+    ],
+    "largestOpaqueBodyWidth": 85.74366787278615,
+    "twoBodyGap": 12,
+    "twoBodyWidthIncludingGap": 183.4873357455723,
+    "fitsUsableSeat": true
+  },
+  "palette": {
+    "outline": "#27291f",
+    "wood": [
+      "#dfad5e",
+      "#bc813e",
+      "#925c2e",
+      "#8d5a31"
+    ],
+    "woodHighlight": [
+      "#f5c37a",
+      "#e2b56b"
+    ],
+    "iron": [
+      "#637165",
+      "#849080"
+    ]
+  },
+  "associations": {
+    "sourceStreetBenches": 12,
+    "seatedRestAssociations": 14,
+    "smokingAnchors": 11,
+    "laterBinOffsetFromBench": 220,
+    "smokerOffsetFromBin": -70,
+    "newSmokerXFromBench": 150,
+    "centrumSquareBenchFootprintsChanged": false
+  },
+  "unitResults": {
+    "propFit": {
+      "passed": true,
+      "seatTransforms": 168,
+      "soleBounds": 336,
+      "maximumSoleFloorError": 0.734434949715137,
+      "legacyFallbackCases": 16,
+      "rejectedMutations": 5
+    },
+    "benchPainting": {
+      "passed": true,
+      "paintedSizeCases": 4,
+      "repeatedCachedDraws": 240,
+      "invalidDrawCases": 7,
+      "cachedCanvases": 1,
+      "cacheBytes": 353280,
+      "rejectedMutations": 3
+    }
+  },
+  "sha256": {
+    "js/centrum-street-bench.js": "f1a59a04ab518d1c194a2fb5a17280aca1729fd8035473f5dee463bb61120e4f",
+    "js/street-life.js": "ded03758bd6019831d41889c58b5409dd6ec2df0d1634825310f034be621c308",
+    "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+    "js/npc-motion.js": "f4111c327656ae3131a58547fbce9b7ac6865cd4af8907545fe94cd8d08d637a",
+    "assets/art/civilian-rest-v16.png": "a3caa1e0c152048fac759773c903bddaa2e5ab47c6efd7484597af56befffb6c",
+    "assets/cache/actors-v19-manifest.json": "3ea0a83d319f0b6688ed4411b9267dd6ee5dbfbd4813d2a1c153e9321e86fc9e",
+    "tests/centrum_prop_fit.cjs": "5696f539a816f3bd4da812b0dd2c3ecb3c80b2078b259c596996e86f057b01b7",
+    "tests/centrum_street_bench.cjs": "ad0d502b85f6bed2e37229bda9e60c1cf5b335265d01ebe24427a7840bff16e9"
+  },
+  "visualReview": {
+    "scope": "Independent normal-size inspection of two actual final gameplay JPEGs; geometry/cache tests and native interaction traces remain separate. No browser or image generation by this reviewer.",
+    "conditions": {
+      "desktop": [
+        1280,
+        720
+      ],
+      "phone": "Chromium844x390 touch emulation, not physical phone/Safari"
+    },
+    "images": [
+      {
+        "file": "verification/stage18/browser/after/desktop/shared-bench-seating.jpg",
+        "sha256": "49017b5ba694ea1eec1532437a6ea948c4dc6870b808156a2f22c5b96da4ad5a",
+        "actualGameplay": true
+      },
+      {
+        "file": "verification/stage18/browser/after/phone/shared-bench-seating.jpg",
+        "sha256": "baebad87acc4233b81777deb52c051726a5ca44d56bc11597cbd91ef85a6e35c",
+        "actualGameplay": true
+      }
+    ],
+    "qaResultFile": "verification/stage18/browser/after/results.json",
+    "qaResultSHA256": "475485fb303eb5af705ae34a74e667d4ebef56506adb51ef9e696cb5c8e6af18",
+    "qaPassed": true,
+    "observations": [
+      "Both benches now clearly read as shared public seating, with usable room beside the unchanged single occupants.",
+      "New back slats, low seat and original hip positions support the same seated/read bodies; original shoes visually meet the floor.",
+      "Warm outlined wood, green-grey iron and curved supports fit the retained autumn view.",
+      "Desktop smoker remains beside the existing bin with a clear gap.",
+      "Original bear/baby remain recognisable and continuously attached in both views; camera is unchanged."
+    ],
+    "limits": [
+      "Phone onboarding hint still covers background/NPC space; it does not cover the baby. Existing dense phone controls remain.",
+      "Screenshots alone are not animation/interaction proof. QA native action traces provide the separate movement/rest/contact evidence.",
+      "Physical-device/Safari, FPS and new authored sit/stand animations were not assessed."
+    ],
+    "outcome": "No new bench-fit visual blocker found in the two inspected final captures."
+  }
+}

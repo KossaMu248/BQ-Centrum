@@ -3,7 +3,7 @@
 
 (() => {
   'use strict';
-  window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE17';
+  window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE18';
   /* v10.58 — original-size, original-clothes actor art; only prop pixels + portraits. */
   window.BEARLY_ASSETS['v158_firecracker_hoodie_0_0']='assets/v158_firecracker_hoodie_0_0.webp';
   window.BEARLY_ASSETS['v158_firecracker_hoodie_0_3']='assets/v158_firecracker_hoodie_0_3.webp';
@@ -5243,7 +5243,7 @@ function babyFigure(expr, thrown=false, pose='idle'){
     const safePose=pose==='hurt'?'coast':pose;
     const original=(safePose==='pedal'&&!noRightArm)?(images['bear_pedal_'+pedalIndex]||images.bear_pose_pedal):images['bear_pose_'+safePose];
     if(noRightArm && images.bear_upper_rightarm_injured?.naturalWidth){
-      ctx.drawImage(window.BearlyHero.sprite(images.bear_upper_rightarm_injured),0,0);
+      ctx.drawImage(window.BearlyHero.sprite(images.bear_upper_rightarm_injured,images.bear_pose_coast),0,0);
     }else if(original?.naturalWidth){ctx.drawImage(window.BearlyHero.sprite(original),0,0);}
     else if(images.bear_upper?.naturalWidth){ctx.drawImage(window.BearlyHero.sprite(images.bear_upper),0,0);}
   }
@@ -5578,7 +5578,8 @@ function babyFigure(expr, thrown=false, pose='idle'){
     }
     // Use the amputated right-arm pose whenever needed; never regrow it mid-tumble.
     const torso=lostParts.has('rightArm')?images.bear_upper_rightarm_injured:upright;
-    ctx.drawImage(torso?.naturalWidth?torso:upright,-ART_ORIGIN_X+20,-ART_ORIGIN_Y+14);
+    const art=torso?.naturalWidth?torso:upright;
+    ctx.drawImage(lostParts.has('rightArm')&&art===torso?window.BearlyHero.sprite(art,images.bear_pose_coast):art,-ART_ORIGIN_X+20,-ART_ORIGIN_Y+14);
     ctx.restore();
   }
   function drawSeatThrown(){

@@ -68,3 +68,8 @@ The user requested less lag, a wider copied2.5D view, shorter child gangsters, c
 ## Stage17 NPC-associated prop fit
 
 This target-only repair scales the original source-street benches to140 units and uses their actual sloped seat to support intact original seated/read poses. It also moves smoking anchors beside their existing bins. Original artwork, character scale, camera, physics/damage, peaceful-rest behaviour, inventory and saves remain. Fresh rendered prop-fit/interaction and exact standalone evidence live under verification/stage17; earlier performance/full-campaign tests keep their original stage labels. Existing target main/Pages authorization persists; physical-device tests stay skipped. Final publication hashes are read back outside the ZIP. Neither donor repository/save/deployment is modified.
+
+
+## Stage18 shared benches and original injured-eye repair
+
+The user rejected the small Stage17benches and requested redesign plus opaque eyes after damage. This target-only stage adds a modular project vector bench: wide shared seating with independently sized low pan/back, source autumn palette and unchanged original NPCs. The injured bear reuses matching original eye pixels on the cycling and airborne paths, with all non-eye/missing-arm transparency and original assets retained. No scene/camera/save/economy or physics/damage change. Existing target main/Pages authorization persists. Versioned tests and real compact gameplay evidence distinguish native damage from disclosed permanent-injury/crash fixtures; physical tests remain skipped. Final publication hashes are read back outside the ZIP. Neither donor repository/save/deployment changes.

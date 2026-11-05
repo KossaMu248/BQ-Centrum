@@ -2,7 +2,7 @@
    Numeric submitted transforms are separate from real gameplay/visual review. */
 'use strict';
 const assert=require('node:assert/strict'),crypto=require('node:crypto'),fs=require('node:fs'),vm=require('node:vm');
-const source={npc:fs.readFileSync('js/npc-motion.js','utf8'),life:fs.readFileSync('js/street-life.js','utf8'),neighbourhood:fs.readFileSync('js/illustrated-neighbourhood.js','utf8'),brawler:fs.readFileSync('js/brawler.js','utf8')};
+const source={npc:fs.readFileSync('js/npc-motion.js','utf8'),life:fs.readFileSync('js/street-life.js','utf8'),bench:fs.readFileSync('js/centrum-street-bench.js','utf8'),neighbourhood:fs.readFileSync('js/illustrated-neighbourhood.js','utf8'),brawler:fs.readFileSync('js/brawler.js','utf8')};
 const manifest=JSON.parse(fs.readFileSync('assets/cache/actors-v19-manifest.json','utf8'));
 for(const [name,hash]of Object.entries(manifest.sourceSHA256))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(name)).digest('hex'),hash,'original character/prop ownership art is unchanged: '+name);
 const close=(a,b,tolerance=1e-7)=>assert(Math.abs(a-b)<=tolerance,`${a} differs from ${b}`),plain=x=>JSON.parse(JSON.stringify(x));
@@ -11,8 +11,10 @@ class Context{
  constructor(){this.m=[1,0,0,1,0,0];this.stack=[];this.draws=[];this.globalAlpha=1;}
  save(){this.stack.push({m:[...this.m],alpha:this.globalAlpha});}restore(){const entry=this.stack.pop();assert(entry);this.m=entry.m;this.globalAlpha=entry.alpha;}
  translate(x,y){this.m=multiply(this.m,[1,0,0,1,x,y]);}scale(x,y){this.m=multiply(this.m,[x,0,0,y,0,0]);}rotate(a){this.m=multiply(this.m,[Math.cos(a),Math.sin(a),-Math.sin(a),Math.cos(a),0,0]);}
+ transform(...m){this.m=multiply(this.m,m);}setTransform(...m){this.m=m.length?m:[1,0,0,1,0,0];}resetTransform(){this.m=[1,0,0,1,0,0];}
  drawImage(image,...args){this.draws.push({image,args,m:[...this.m]});}
- beginPath(){}rect(){}clip(){}moveTo(){}lineTo(){}stroke(){}ellipse(){}fill(){}fillText(){}bezierCurveTo(){}
+ beginPath(){}rect(){}clip(){}moveTo(){}lineTo(){}stroke(){}ellipse(){}fill(){}fillText(){}bezierCurveTo(){}closePath(){}roundRect(){}quadraticCurveTo(){}fillRect(){}clearRect(){}
+ createLinearGradient(){return{addColorStop(){}};}
  getImageData(){throw Error('Seating must not trigger runtime pixel readback');}
 }
 async function load(npcCode=source.npc,lifeCode=source.life){
@@ -21,7 +23,10 @@ async function load(npcCode=source.npc,lifeCode=source.life){
  class ImageMock{constructor(){this.naturalWidth=0;this.naturalHeight=0;}set src(value){this.url=value;this.naturalWidth=2048;this.naturalHeight=1536;queueMicrotask(()=>this.onload?.());}get src(){return this.url||'';}decode(){return Promise.resolve();}}
  const window={BearlyStreetProps:{ready:()=>true,draw:(...args)=>{propDraws.push(args);return true;}}};
  const context=vm.createContext({window,document:{createElement:kind=>{assert.equal(kind,'canvas');return makeCanvas();}},Image:ImageMock,fetch:()=>Promise.resolve({ok:true,json:()=>Promise.resolve(manifest)}),performance:{now:()=>0},setTimeout:()=>{counts.timers++;throw Error('No seating/bank bake timers');},clearTimeout(){},queueMicrotask,URL:{createObjectURL(){throw Error('No worker for seating');}},Blob:class{},Worker:class{constructor(){counts.workers++;throw Error('No worker for seating');}}});
- for(const code of [npcCode,source.neighbourhood,lifeCode,source.brawler])vm.runInContext(code,context);
+ for(const code of [npcCode,source.bench,source.neighbourhood])vm.runInContext(code,context);
+ const bench=window.BearlyCentrumStreetBench,drawBench=bench.draw;
+ window.BearlyCentrumStreetBench={...bench,draw:(c,x,y,width)=>{propDraws.push([c,'bench',x,y,width]);return drawBench.call(bench,c,x,y,width);}};
+ for(const code of [lifeCode,source.brawler])vm.runInContext(code,context);
  await window.BearlyNpcMotion.loaded;await Promise.resolve();
  assert(window.BearlyNpcMotion.ready());
  return{window,counts,propDraws};
@@ -32,18 +37,18 @@ function tilePoint(draw,frame,x,y){
 }
 async function contract(npcCode=source.npc,lifeCode=source.life){
  const {window,counts,propDraws}=await load(npcCode,lifeCode),npc=window.BearlyNpcMotion,life=window.BearlyStreetLife;
- const initialFrames=plain(npc.frames()),initialCanvases=counts.canvases;
+ const initialFrames=plain(npc.frames());
  const seeds=life.seeds(window.BearlyNeighbourhood.scenes,42000,12),audit=plain(life.audit()),benches=audit.props.filter(p=>p.kind==='bench'),props=new Map(audit.props.map(p=>[p.id,p]));
  assert.equal(benches.length,12,'two promenade benches plus ten original later-stop benches');
  const report={scope:'Production VM/original source metadata; mocked Canvas, not visual acceptance',seatedTransformCases:0,opaqueSoleBounds:0,maximumSoleFloorError:0,legacyAndMalformedPanCases:0,benchProps:benches.length,benchRestAssociations:0,smokingAssociations:0};
  const groundAt=x=>410+x*.003;
  for(const bench of benches){
-  close(bench.width,140);close(bench.seatHeight,35*140/180);close(bench.seatPan.front,27.5*140/180);close(bench.seatPan.rear,39.5*140/180);close(bench.footprintHalf,77);
+  close(bench.width,224);close(bench.seatHeight,26);close(bench.seatPan.front,21.4);close(bench.seatPan.rear,30.7);close(bench.footprintHalf,224*.55);
   const c=new Context();life.beginFrame();life.drawProp(c,bench,groundAt,8);const submitted=propDraws.at(-1),drawn=life.audit().drawnProps[0];
-  assert.equal(submitted[1],'bench');close(submitted[2],bench.x);close(submitted[3],groundAt(bench.x)+bench.depth);close(submitted[4],140);
+  assert.equal(submitted[1],'bench');close(submitted[2],bench.x);close(submitted[3],groundAt(bench.x)+bench.depth);close(submitted[4],224);
   close(drawn.seatPanY.front,drawn.foot-bench.seatPan.front);close(drawn.seatPanY.rear,drawn.foot-bench.seatPan.rear);close(drawn.seatY,drawn.foot-bench.seatHeight);
-  // The old196/108-width ghost footprint must not reserve now-empty space.
-  assert(life.overlaps(bench.x+76));assert(!life.overlaps(bench.x+80));
+  // The redesigned seat reserves its wider actual footprint consistently.
+  assert(life.overlaps(bench.x+122));assert(!life.overlaps(bench.x+126));
  }
  for(const bin of audit.props.filter(p=>p.kind==='bin')){
   life.beginFrame();life.drawProp(new Context(),bin,groundAt,8);const submitted=propDraws.at(-1),drawn=life.audit().drawnProps[0];
@@ -54,6 +59,12 @@ async function contract(npcCode=source.npc,lifeCode=source.life){
    const prop=props.get(spot.id);assert(prop&&prop.kind==='bench');assert.equal(spot.propKind,'bench');close(spot.propX,prop.x);close(spot.x,prop.x);close(spot.depth,prop.depth);assert.deepEqual(plain(spot.seatPan),prop.seatPan);report.benchRestAssociations++;
   }else if(spot.kind==='smoke'){
    const prop=props.get(spot.id);assert(prop&&prop.kind==='bin');assert.equal(spot.propKind,'bin');close(spot.propX,prop.x);close(spot.x,prop.x-70);close(spot.depth,prop.depth);report.smokingAssociations++;
+   if(spot.id.endsWith('-life-bin')){
+    const related=props.get(spot.id.replace(/-bin$/,'-bench'));assert(related);close(prop.x-related.x,220);
+    // A broad original smoker must fit between the wider arm and existing bin.
+    const smokeFrame=npc.frame(seed.variant,'smoke'),h=128*smokeFrame.heightScale,halfBody=smokeFrame.core[2]*h/smokeFrame.stature/2;
+    assert(spot.x-halfBody>related.x+related.width/2,'smoker stays clear of the redesigned right arm');
+   }
   }
  }
  assert.equal(report.benchRestAssociations,14);assert.equal(report.smokingAssociations,11);
@@ -63,7 +74,7 @@ async function contract(npcCode=source.npc,lifeCode=source.life){
  assert.equal(seatedIds.length,12);
  for(const id of seatedIds){const n=simulation.lookup(id);assert(n.active?['sit','read'].includes(n.activity):n.activity==='offstage','existing schedules may keep later residents offstage');assert.deepEqual(plain(n.activityProp.seatPan),props.get(n.activityProp.id).seatPan);}
  assert.equal(simulation.lookup('civilian-smoker').activity,'smoke');close(simulation.lookup('civilian-smoker').x,props.get('promenade-smoke').x-70);
- const sharedSeat=benches[0];
+ const sharedSeat=benches[0],initialCanvases=counts.canvases;
  for(const variant of [9,10,11])for(const pose of ['sit','read'])for(const height of [127.6,128])for(const face of [-1,1])for(const time of [0,.5,1,8,14,63,300]){
   const c=new Context(),floor=groundAt(sharedSeat.x)+sharedSeat.depth,n={id:'seat-contract',variant,state:'idle',civilian:true,activity:pose,face,age:time,hp:60,activityProp:sharedSeat};
   assert(npc.draw(c,n,sharedSeat.x,floor,height,1,{authoredWalk:true}));assert.equal(c.draws.length,1,'one complete original pose');assert.equal(c.stack.length,0);
@@ -90,9 +101,11 @@ async function contract(npcCode=source.npc,lifeCode=source.life){
 }
 (async()=>{
  const report=await contract();const mutations=[
-  {name:'old oversized196bench',which:'life',from:'benchWidth=140',to:'benchWidth=196'},
+  {name:'old single-person140bench',which:'life',from:'benchWidth=224',to:'benchWidth=140'},
+  {name:'old uniformly-scaled196bench',which:'life',from:'benchWidth=224',to:'benchWidth=196'},
   {name:'old fixed38hip',which:'npc',from:'if(fitted)seatHeight=clamp(reach,seatPan.front,seatPan.rear);',to:'if(fitted)seatHeight=38;'},
   {name:'missing smoking offset',which:'life',from:"kind==='smoke'&&p.kind==='bin'?70:0",to:"kind==='smoke'&&p.kind==='bin'?0:0"},
+  {name:'crowded later-bin placement',which:'life',from:'bench.x+220',to:'bench.x+170'},
  ];
  report.rejectedMutations=[];
  for(const mutation of mutations){assert(source[mutation.which].includes(mutation.from),'mutation applies to actual production code');const changed=source[mutation.which].replace(mutation.from,mutation.to);await assert.rejects(()=>contract(mutation.which==='npc'?changed:source.npc,mutation.which==='life'?changed:source.life),assert.AssertionError,mutation.name+' must fail the contract');report.rejectedMutations.push(mutation.name);}

@@ -232,10 +232,13 @@
       if(Math.abs(n.x-exit)<3&&Math.abs(n.x-p.x)>offscreen){n.active=n.visible=false;n.departing=false;setActivity(n,'offstage');stats.departures++;}
       return true;
     }
+    function availableRest(n,point){
+      return !['bench','newspaper'].includes(point?.kind)||!point.id||!npcs.some(other=>other!==n&&resting(other)&&['sit','read'].includes(other.activity)&&other.activityProp.id===point.id);
+    }
     function chooseRoutePoint(n){
       const points=n.routePoints;
-      let i=n.routeDirection>0?points.findIndex(q=>q.x>n.x+4):-1;
-      if(n.routeDirection<0){for(let j=points.length-1;j>=0;j--)if(points[j].x<n.x-4){i=j;break;}}
+      let i=n.routeDirection>0?points.findIndex(q=>q.x>n.x+4&&availableRest(n,q)):-1;
+      if(n.routeDirection<0){for(let j=points.length-1;j>=0;j--)if(points[j].x<n.x-4&&availableRest(n,points[j])){i=j;break;}}
       if(i<0){n.routeDirection*=-1;i=n.routeDirection>0?0:points.length-1;}
       n.routeIndex=i;return points[i];
     }
@@ -250,6 +253,7 @@
       }
       if(n.restUntil>time){setActivity(n,activityFor(n.activityProp?.kind));return;}
       n.activityProp=null;
+      if(n.routeIndex!=null&&!availableRest(n,n.routePoints[n.routeIndex]))n.routeIndex=null;
       const point=n.routeIndex==null?chooseRoutePoint(n):n.routePoints[n.routeIndex];
       const dist=Math.abs(point.x-n.x),speed=Math.min(n.walkSpeed||54,Math.max(14,dist*2.6));
       moveTo(n,point.x,point.depth??n.sidewalkDepth,speed,dt);setActivity(n,n.moving?'walk':'idle');
