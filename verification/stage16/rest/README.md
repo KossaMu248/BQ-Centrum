@@ -1,0 +1,9 @@
+# Peaceful source-NPC rest
+
+The user clarified sitting/lying peacefully, not combat knockdowns. The actual source has authored `sit`, `read` and `smoke` routines; its lying `down`/`dead` poses are combat states and retain their old recovery rules.
+
+The old `restUntil` timeout and schedule window made quiet residents automatically get up. Calm authored rest now retains its pose, prop, position and finite ordinary state until a real disturbance. A moving player must overlap the canonical foot footprint to bump them; standing still, passing nearby, another depth lane or a jump above the footprint does not wake them. Existing attacks, grabs and nearby fighting/fear still disturb residents. No damage, reward, enemy-recovery timing, input, dialogue or save system is added. Ordinary finite `idle` waypoint pauses still resume walking.
+
+[Actual unit/source results](contracts.json) exercise the real Brawler and actual promenade seed identities. New `centrum_npc_rest.cjs` checks300 quiet seconds for all three rest kinds, smoker schedule deferral,120 seconds in another arena, finite JSON seed roundtrip, six noncontact cases, contact without health/heat/rewards, existing attack/witness wake and an identical combat fall/dead/rise trace. Disabling only the new rest predicate reproduces the timer bug and fails the regression. Existing NPC-life, brawler, gang-encounter and essential civilian recovery suites pass. These checks are not browser-animation proof.
+
+Existing source arena memory retains activity/prop identity across visits. Quiet authored initial seats reinitialise on normal source loading; there is no claim of a newly added complete ordinary street-NPC save/restore feature. No donor save is touched and no Infinity/null timer hack or extra storage key is used. Browser/native interaction evidence is separate in the Stage16 report.

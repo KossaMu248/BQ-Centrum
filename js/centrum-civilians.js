@@ -62,7 +62,7 @@
       const key=typeof sceneId==='string'?sceneId:'*';
       if(!scenePreparations.has(key)){
         const variants=[...new Set(definitions.filter(d=>key==='*'||d.sceneId===key).map(d=>d.variant))];
-        const task=prepared.then(()=>variants.length?(window.BearlyNpcMotion.preloadVariants?.(variants)||window.BearlyNpcMotion.preloadAll()):null)
+        const task=prepared.then(()=>variants.length?(window.BearlyNpcMotion.preloadVariants?.(variants,{authoredWalk:true})||window.BearlyNpcMotion.preloadAll()):null)
           .then(()=>{preparedScenes.add(key);ready=true;})
           .catch(error=>{scenePreparations.delete(key);throw error;});
         scenePreparations.set(key,task);

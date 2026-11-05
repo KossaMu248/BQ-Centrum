@@ -1,0 +1,581 @@
+{
+  "scope": "Independent visual review only; actual capture evidence and sampled decoded motion. No browser, profiling, donor, runtime or Git mutation by this reviewer.",
+  "sourceTargetCommit": "ffec905bf71296b63f2d38fab74a3ac20e2c3875",
+  "conditions": {
+    "browser": "Chromium 154.0.8037.57, headless QA",
+    "desktopCSSPixels": [
+      1280,
+      720
+    ],
+    "touchEmulatedCSSPixels": [
+      844,
+      390
+    ],
+    "portraitCSSPixels": [
+      390,
+      844
+    ],
+    "deviceScaleFactor": 1,
+    "physicalDevice": false,
+    "physicalSafariTested": false,
+    "reviewedAtNativePixelScale": true
+  },
+  "outcome": "No remaining visual blocker found in the sampled evidence; limited keyed NPC motion and small phone-landscape facial detail remain.",
+  "observations": [
+    {
+      "id": "baby-likeness",
+      "result": "Observed continuous original face, neck, collar and blue clothing in actual carrier/transfer/riding samples and original-reference comparison."
+    },
+    {
+      "id": "ownership",
+      "result": "Sampled carrier views have empty chair; remount has one original seated baby and same bike. QA state traces separately report one passenger/bicycle."
+    },
+    {
+      "id": "camera",
+      "result": "Copied route/street wider; original source room retains its original indoor scale; accepted Centrum projection retained."
+    },
+    {
+      "id": "all-npc-reference-identities",
+      "result": "All12 adult variants and3 child identities independently inspected on clearly labelled renderer-reference boards; intact original full-body paintings and coherent limbs/boots."
+    },
+    {
+      "id": "child-proportions",
+      "result": "Child reference height94 versus adult128; actual nearby child-crew phone/desktop captures visually shorter; source QA reports93.70625 versus127.6 in street."
+    },
+    {
+      "id": "npc-motion",
+      "result": "Decoded native recordings into labelled original-pixel timeline crops. Sampled moving full poses show no previous X-fold/crossed leg or torn boot mesh. Stepped keyed motion remains."
+    },
+    {
+      "id": "peaceful-rest",
+      "result": "Actual rendered before/after/nearpass/contact frames reviewed with32s desktop and18s phone QA traces. Quiet read/smoke/sit retained; nearby pass keeps sit; actual contacted seated resident walks away with coherent full poses."
+    },
+    {
+      "id": "source-hint-placement",
+      "result": "Earlier primary phone hint crossed baby; final transfer supplement shows source tips at right with baby unobscured."
+    }
+  ],
+  "limits": [
+    "No direct continuous video playback capability in this review; motion assessment used decoded temporal samples plus the native-input QA trace. Original recordings are supplied.",
+    "Four complete NPC keys for0\u20138 and two distinct keys for9\u201311 remain visibly stepped; no continuous foot-lock or new up/down NPC art claimed.",
+    "Source phone-landscape bear about90CSSpx and baby14\u201318CSSpx; recognisable source likeness/clothes but fine eye/expression detail limited.",
+    "Original source transition crossfade briefly blends bear bodies; no second passenger observed in reviewed samples.",
+    "The authored source has no peaceful lying routine; combat down/recovery remains separate.",
+    "Primary clips precede final transfer/tip-only repairs; final transfer stills/traces separately bound. No continuous final-transfer video.",
+    "Renderer reference boards and derived crops are not new actual gameplay screenshots.",
+    "No FPS inference from encoded24fps clips, no physical device/Safari test, no independent combat balance or all-frame certification."
+  ],
+  "reviewedEvidence": [
+    {
+      "file": "references/source/ride.png",
+      "category": "source-baseline-gameplay",
+      "sha256": "216584e7c7a4933e3ec9292f22175697b2c8fd64f920457e5b77fe0f3d9e9749"
+    },
+    {
+      "file": "references/source/front-carrier-street.png",
+      "category": "source-baseline-gameplay",
+      "sha256": "1c5dba3b421bb4831c802bf3607076c26764b0c17aa8ba69d348b860cee4cbdc"
+    },
+    {
+      "file": "verification/stage16/npc-render/lab/variants-0-2.png",
+      "category": "renderer-reference-not-gameplay",
+      "sha256": "6ed1114b3ac7dfe694a005e44c8bb191b493cfa4dc4a5efa88e8d52587df97ff"
+    },
+    {
+      "file": "verification/stage16/npc-render/lab/variants-3-5.png",
+      "category": "renderer-reference-not-gameplay",
+      "sha256": "99a3bf28e7e2ea9a314b76b954e929dafcea202ce7667cc0e5411f5b6f49bd89"
+    },
+    {
+      "file": "verification/stage16/npc-render/lab/variants-6-8.png",
+      "category": "renderer-reference-not-gameplay",
+      "sha256": "859bf1f5044313ffe73ea32e2e6e34a020a9edb0d055e49180f5ef79870da78f"
+    },
+    {
+      "file": "verification/stage16/npc-render/lab/variants-9-11.png",
+      "category": "renderer-reference-not-gameplay",
+      "sha256": "a5a6ed11fcd3ae2d35d5d52c4a91a15b1549badfd4d0bb5c1e3f7223b1c3246c"
+    },
+    {
+      "file": "verification/stage16/npc-render/lab/teen-height94.png",
+      "category": "renderer-reference-not-gameplay",
+      "sha256": "6dbd62eeb242c4f4ca191c6ee12f3bdfe757332e67df412f9a0bedb3c7bae61e"
+    },
+    {
+      "file": "verification/stage16/pouch/passenger-pouch-normal200-reference.png",
+      "category": "renderer-reference-not-gameplay",
+      "sha256": "9d8a28498edd177f673246daaab75939a7a28f384be91b93885a7e574bc5fbc5"
+    },
+    {
+      "file": "verification/stage16/browser/desktop-primary/desktop/street-idle.png",
+      "category": "actual-gameplay-primary",
+      "sha256": "a87292e5169532423cc7c2996e681f5c60dc5879913680d6f0dd320bd692b8d9"
+    },
+    {
+      "file": "verification/stage16/browser/desktop-primary/desktop/street-depth--60.png",
+      "category": "actual-gameplay-primary",
+      "sha256": "101ef60726262e0200b771a0d3c8f120f5182c7adbcd57efd0738966299018b5"
+    },
+    {
+      "file": "verification/stage16/browser/desktop-primary/desktop/street-depth-20.png",
+      "category": "actual-gameplay-primary",
+      "sha256": "0b2d6c4bb8e250e10d942a20c04ce1f5ef2dd23e1ffe9603890eabcca74db496"
+    },
+    {
+      "file": "verification/stage16/browser/desktop-primary/desktop/source-workshop-room.png",
+      "category": "actual-gameplay-primary",
+      "sha256": "e86da772505f910a546faae9d70d480bf60a92072f87430ee7df70dffd6b6b11"
+    },
+    {
+      "file": "verification/stage16/browser/desktop-primary/desktop/centrum-wider-preserved.png",
+      "category": "actual-gameplay-primary",
+      "sha256": "fc958da0af19afd0ee1a2115875c3968a4173c7f79be4c6561f5c7be8c8d86d8"
+    },
+    {
+      "file": "verification/stage16/browser/desktop-primary/desktop/source-same-bike-remount.png",
+      "category": "actual-gameplay-primary",
+      "sha256": "90bb4011544427ee1de840760e2653a8a14dfdd685c0dc92aca317179a1577ab"
+    },
+    {
+      "file": "verification/stage16/browser/phone-primary/phone/street-idle.jpg",
+      "category": "actual-gameplay-primary",
+      "sha256": "cf9824534a02f0a9ac5ee2dfac682478a486006fa08eade636866b09e564d39d"
+    },
+    {
+      "file": "verification/stage16/browser/phone-primary/phone/street-depth-20.jpg",
+      "category": "actual-gameplay-primary",
+      "sha256": "85d73d45bf6a2e3a3c4f377b846935bab69017e1867ebbe7904ca50d31f5645e"
+    },
+    {
+      "file": "verification/stage16/browser/phone-primary/phone/centrum-wider-preserved.jpg",
+      "category": "actual-gameplay-primary",
+      "sha256": "dd248b4ea8b86866f072b04169b7cd304fde5a84a880f04aef9b3c30a608b7e0"
+    },
+    {
+      "file": "verification/stage16/browser/phone-primary/phone/source-same-bike-remount.jpg",
+      "category": "actual-gameplay-primary",
+      "sha256": "a9320d1c5120cd9ec26da168f4da1aa8ed4e26f90405afccec8d22594b05f158"
+    },
+    {
+      "file": "verification/stage16/browser/phone-primary/phone/street-portrait-movement.jpg",
+      "category": "actual-gameplay-primary",
+      "sha256": "c02bd8c6474cb2cc0280496130d069b243947edd539e7a79c226b295558a25c4"
+    },
+    {
+      "file": "verification/stage16/browser/rest/desktop/peaceful-before.jpg",
+      "category": "actual-gameplay-rest",
+      "sha256": "e490dd79e25c75b7081fef066598d4ac9a5166a7ca355fac47b996498732d8cc"
+    },
+    {
+      "file": "verification/stage16/browser/rest/desktop/peaceful-after-32s.jpg",
+      "category": "actual-gameplay-rest",
+      "sha256": "5350c53ddaa78781651f2de15d33eadd1fa1f664577660363401e9cefe30380f"
+    },
+    {
+      "file": "verification/stage16/browser/rest/desktop/peaceful-near-pass.jpg",
+      "category": "actual-gameplay-rest",
+      "sha256": "a0c821eb1fd2d756b1bbc504728fdfeed705c9e9864492f5359b09520d7d707f"
+    },
+    {
+      "file": "verification/stage16/browser/rest/desktop/peaceful-actual-bump.jpg",
+      "category": "actual-gameplay-rest",
+      "sha256": "a785819b535956e29be862270c87c12df05258d3c9e019b68c6344cdda4e2632"
+    },
+    {
+      "file": "verification/stage16/browser/rest/phone/peaceful-after-18s.jpg",
+      "category": "actual-gameplay-rest",
+      "sha256": "d360e8e55f2afe4d2a83d51d2048f81f77e2a09114330448e3b0dd67f6e34962"
+    },
+    {
+      "file": "verification/stage16/browser/rest/phone/peaceful-actual-bump.jpg",
+      "category": "actual-gameplay-rest",
+      "sha256": "b2888d29e73a256f1be67a164adf044398c155f22edd39bbb104e52542696e31"
+    },
+    {
+      "file": "verification/stage16/browser/kids/desktop/route-smaller-children.jpg",
+      "category": "actual-gameplay-child-crew",
+      "sha256": "327df767f12f3d1428e4aacf4d86fe85f8bd834b5b3493d74a962cb85f71d5d5"
+    },
+    {
+      "file": "verification/stage16/browser/kids/desktop/street-smaller-children.jpg",
+      "category": "actual-gameplay-child-crew",
+      "sha256": "72885509a550421b94069075601b25b50bb61858d5732b1d9e0e3bf3802b6a39"
+    },
+    {
+      "file": "verification/stage16/browser/kids/phone/route-smaller-children.jpg",
+      "category": "actual-gameplay-child-crew",
+      "sha256": "89473074ec3bd02fa546244862d9269e75feab1d3bcd07b571638c36fbc0d714"
+    },
+    {
+      "file": "verification/stage16/browser/kids/phone/street-smaller-children.jpg",
+      "category": "actual-gameplay-child-crew",
+      "sha256": "a4acb29c0cedba5ca4c60d86fa7304a278833fae1bc1814d1e9e5a94a3c202f6"
+    },
+    {
+      "file": "verification/stage16/browser/final-transfer/desktop/native-transfer-to-carrier.jpg",
+      "category": "actual-gameplay-final-transfer",
+      "sha256": "b76a2604e537c88c04ea0eed9669bafbbcfa3c40f97881d3f2ff1f95aadf6d64"
+    },
+    {
+      "file": "verification/stage16/browser/final-transfer/desktop/native-transfer-to-chair.jpg",
+      "category": "actual-gameplay-final-transfer",
+      "sha256": "cf4e449cbdbb1f59d9f03a59c89b638d45cc10e7d5fc334553a789023acb12da"
+    },
+    {
+      "file": "verification/stage16/browser/final-transfer/desktop/native-carrier-walk.jpg",
+      "category": "actual-gameplay-final-transfer",
+      "sha256": "3994b673da7103a86060289e64d092d79fe0783ed90155f2e97d3dec53b41712"
+    },
+    {
+      "file": "verification/stage16/browser/final-transfer/desktop/native-same-bike-remounted.jpg",
+      "category": "actual-gameplay-final-transfer",
+      "sha256": "27d3ca0dcbff60bf0d09525f923bd5a070b969f691f974627d6ff6cae4d7c660"
+    },
+    {
+      "file": "verification/stage16/browser/final-transfer/phone/native-transfer-to-carrier.jpg",
+      "category": "actual-gameplay-final-transfer",
+      "sha256": "eb057ee46fb48afbb4ef4abfff3a9cd1d9c394b14529b8198b364a921485261c"
+    },
+    {
+      "file": "verification/stage16/browser/final-transfer/phone/native-transfer-to-chair.jpg",
+      "category": "actual-gameplay-final-transfer",
+      "sha256": "c7d1448619d38916c7ccfbe81d83f9170ba1bf00daaba580523a076d3858ccf8"
+    },
+    {
+      "file": "verification/stage16/browser/final-transfer/phone/native-carrier-walk.jpg",
+      "category": "actual-gameplay-final-transfer",
+      "sha256": "dfaaa2a0765ef27667f7504a5ab8a3a665d6839ec0ec1db7df14e670487316a6"
+    },
+    {
+      "file": "verification/stage16/browser/final-transfer/phone/native-same-bike-remounted.jpg",
+      "category": "actual-gameplay-final-transfer",
+      "sha256": "ca115a57f9590d2f7a5e50037f60fc879a32b66fb0396575a713445f795d5648"
+    },
+    {
+      "file": "verification/stage16/browser/desktop-primary/desktop-source-walking.webm",
+      "category": "actual-gameplay-recording-decoded-for-timeline-review",
+      "sha256": "a0f0e98ce18d3a9d83d4117cfdf924a577cba4c6be952ce3b1c0e083f7851bdd"
+    },
+    {
+      "file": "verification/stage16/browser/phone-primary/phone-source-walking.webm",
+      "category": "actual-gameplay-recording-decoded-for-timeline-review",
+      "sha256": "45cdd5d11eeebc5b316a49f0ef6f83eeece6a83143081afbe9a70ba2f59a5101"
+    },
+    {
+      "file": "verification/stage16/visual-review/desktop-walk-contact.png",
+      "category": "derived-native-pixel-video-crop-not-new-screenshot",
+      "sha256": "64de2298cb09230001ad0afc3c734cf595ee166e3b08c29936b94fcb644dc40c"
+    },
+    {
+      "file": "verification/stage16/visual-review/phone-walk-contact.png",
+      "category": "derived-native-pixel-video-crop-not-new-screenshot",
+      "sha256": "6fa0a1dffa02903e628986a25782c65ed74d27c1704cc90eef633e372eed5b81"
+    }
+  ],
+  "qaReports": {
+    "desktop-primary": {
+      "file": "verification/stage16/browser/desktop-primary/results.json",
+      "sha256": "dbce391bc833a929169d90316534e3a3c558e39b788537702f37e6651c61cde7",
+      "passedReportedByQA": true,
+      "changedRuntimeFilesDuringCapture": [],
+      "runtimeHashes": {
+        "autumn-v19.html": "03e5b2d1af11b21f46e10bb155a5ca568bdb21afff74060ddf1cf86be16c4cf0",
+        "autumn-version.json": "7f49fc3888b86e21cd2502bcc9a1b91d8c00c9b9d37e448b29643fe8938111c1",
+        "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+        "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+        "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+        "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+        "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+        "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+        "index.html": "03e5b2d1af11b21f46e10bb155a5ca568bdb21afff74060ddf1cf86be16c4cf0",
+        "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+        "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+        "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+        "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+        "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+        "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+        "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+        "js/centrum-camera.js": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+        "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+        "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+        "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+        "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+        "js/centrum-hero-cache.js": "38f3212052e12304e3ecf4a053f0141122660395593874151e23835717ee5eff",
+        "js/centrum-inventory.js": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+        "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+        "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+        "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+        "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+        "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+        "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+        "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf",
+        "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+        "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+        "js/game.js": "11c93d495aa746d673896781d0053a1a8f85b498bbab5f850a1ff7468d0e3dec",
+        "js/hero-rig.js": "af6737c0021f803d15870424f062c21144e784cec9a3a9bc083685c4943a8b59",
+        "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+        "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+        "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+        "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+        "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+        "js/illustrated-visits.js": "3321f50b5e416deba3921bf69dc4c1cf5e4e540e55e3e18e91747a7e82e06cc9",
+        "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+        "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+        "js/npc-motion.js": "147503f395bd349444a4c8490d72b912c9d5211849323ef8c6c929ed5ff6db13",
+        "js/street-life.js": "1677f641ef54a8e4ef3d2c7ffe0c8d15aea2d7bd5f1e6d3419f67c5d97401584",
+        "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+        "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+      }
+    },
+    "phone-primary": {
+      "file": "verification/stage16/browser/phone-primary/results.json",
+      "sha256": "37841442f1f18d1b06d9345475c7571f598094da579bbd7cedb6fa54d97127b8",
+      "passedReportedByQA": true,
+      "changedRuntimeFilesDuringCapture": [],
+      "runtimeHashes": {
+        "autumn-v19.html": "03e5b2d1af11b21f46e10bb155a5ca568bdb21afff74060ddf1cf86be16c4cf0",
+        "autumn-version.json": "7f49fc3888b86e21cd2502bcc9a1b91d8c00c9b9d37e448b29643fe8938111c1",
+        "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+        "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+        "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+        "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+        "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+        "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+        "index.html": "03e5b2d1af11b21f46e10bb155a5ca568bdb21afff74060ddf1cf86be16c4cf0",
+        "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+        "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+        "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+        "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+        "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+        "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+        "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+        "js/centrum-camera.js": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+        "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+        "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+        "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+        "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+        "js/centrum-hero-cache.js": "38f3212052e12304e3ecf4a053f0141122660395593874151e23835717ee5eff",
+        "js/centrum-inventory.js": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+        "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+        "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+        "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+        "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+        "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+        "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+        "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf",
+        "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+        "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+        "js/game.js": "11c93d495aa746d673896781d0053a1a8f85b498bbab5f850a1ff7468d0e3dec",
+        "js/hero-rig.js": "af6737c0021f803d15870424f062c21144e784cec9a3a9bc083685c4943a8b59",
+        "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+        "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+        "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+        "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+        "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+        "js/illustrated-visits.js": "3321f50b5e416deba3921bf69dc4c1cf5e4e540e55e3e18e91747a7e82e06cc9",
+        "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+        "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+        "js/npc-motion.js": "147503f395bd349444a4c8490d72b912c9d5211849323ef8c6c929ed5ff6db13",
+        "js/street-life.js": "1677f641ef54a8e4ef3d2c7ffe0c8d15aea2d7bd5f1e6d3419f67c5d97401584",
+        "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+        "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+      }
+    },
+    "rest": {
+      "file": "verification/stage16/browser/rest/results.json",
+      "sha256": "9677bfe28861bf31f942b2d2563ec96ff15bb739117ade63e8ac485bc6b4e8af",
+      "passedReportedByQA": true,
+      "changedRuntimeFilesDuringCapture": [],
+      "runtimeHashes": {
+        "autumn-v19.html": "03e5b2d1af11b21f46e10bb155a5ca568bdb21afff74060ddf1cf86be16c4cf0",
+        "autumn-version.json": "7f49fc3888b86e21cd2502bcc9a1b91d8c00c9b9d37e448b29643fe8938111c1",
+        "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+        "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+        "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+        "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+        "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+        "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+        "index.html": "03e5b2d1af11b21f46e10bb155a5ca568bdb21afff74060ddf1cf86be16c4cf0",
+        "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+        "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+        "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+        "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+        "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+        "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+        "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+        "js/centrum-camera.js": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+        "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+        "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+        "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+        "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+        "js/centrum-hero-cache.js": "38f3212052e12304e3ecf4a053f0141122660395593874151e23835717ee5eff",
+        "js/centrum-inventory.js": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+        "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+        "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+        "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+        "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+        "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+        "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+        "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf",
+        "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+        "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+        "js/game.js": "11c93d495aa746d673896781d0053a1a8f85b498bbab5f850a1ff7468d0e3dec",
+        "js/hero-rig.js": "af6737c0021f803d15870424f062c21144e784cec9a3a9bc083685c4943a8b59",
+        "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+        "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+        "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+        "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+        "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+        "js/illustrated-visits.js": "3321f50b5e416deba3921bf69dc4c1cf5e4e540e55e3e18e91747a7e82e06cc9",
+        "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+        "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+        "js/npc-motion.js": "147503f395bd349444a4c8490d72b912c9d5211849323ef8c6c929ed5ff6db13",
+        "js/street-life.js": "1677f641ef54a8e4ef3d2c7ffe0c8d15aea2d7bd5f1e6d3419f67c5d97401584",
+        "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+        "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+      }
+    },
+    "kids": {
+      "file": "verification/stage16/browser/kids/results.json",
+      "sha256": "a5ba6b4ab5e50c6df967cea34ab83901ca0c8f887c0fe115296ddc2599011ab5",
+      "passedReportedByQA": true,
+      "changedRuntimeFilesDuringCapture": [],
+      "runtimeHashes": {
+        "autumn-v19.html": "03e5b2d1af11b21f46e10bb155a5ca568bdb21afff74060ddf1cf86be16c4cf0",
+        "autumn-version.json": "7f49fc3888b86e21cd2502bcc9a1b91d8c00c9b9d37e448b29643fe8938111c1",
+        "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+        "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+        "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+        "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+        "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+        "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+        "index.html": "03e5b2d1af11b21f46e10bb155a5ca568bdb21afff74060ddf1cf86be16c4cf0",
+        "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+        "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+        "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+        "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+        "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+        "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+        "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+        "js/centrum-camera.js": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+        "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+        "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+        "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+        "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+        "js/centrum-hero-cache.js": "38f3212052e12304e3ecf4a053f0141122660395593874151e23835717ee5eff",
+        "js/centrum-inventory.js": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+        "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+        "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+        "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+        "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+        "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+        "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+        "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf",
+        "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+        "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+        "js/game.js": "11c93d495aa746d673896781d0053a1a8f85b498bbab5f850a1ff7468d0e3dec",
+        "js/hero-rig.js": "33a415f73181aa3bbf7f23de024ee09ef010337a49d688f057c10a160aff05fb",
+        "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+        "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+        "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+        "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+        "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+        "js/illustrated-visits.js": "3321f50b5e416deba3921bf69dc4c1cf5e4e540e55e3e18e91747a7e82e06cc9",
+        "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+        "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+        "js/npc-motion.js": "147503f395bd349444a4c8490d72b912c9d5211849323ef8c6c929ed5ff6db13",
+        "js/street-life.js": "1677f641ef54a8e4ef3d2c7ffe0c8d15aea2d7bd5f1e6d3419f67c5d97401584",
+        "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+        "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+      }
+    },
+    "final-transfer": {
+      "file": "verification/stage16/browser/final-transfer/results.json",
+      "sha256": "c9ac0dcd20fce4a6c567ff2591ebd29def8e65e9005a804195e2e677a0e88950",
+      "passedReportedByQA": true,
+      "changedRuntimeFilesDuringCapture": [],
+      "runtimeHashes": {
+        "autumn-v19.html": "17d0516568c790a8ac968c57e3ac56d76d0563f193145f01799b38ab08c3d2c6",
+        "autumn-version.json": "7f49fc3888b86e21cd2502bcc9a1b91d8c00c9b9d37e448b29643fe8938111c1",
+        "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+        "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+        "css/centrum-route.css": "892e1ec5ac28ae0a551d45b276974888e6db3f227635487e45c761e1553d1e5f",
+        "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+        "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+        "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+        "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+        "index.html": "17d0516568c790a8ac968c57e3ac56d76d0563f193145f01799b38ab08c3d2c6",
+        "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+        "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+        "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+        "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+        "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+        "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+        "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+        "js/centrum-camera.js": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+        "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+        "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+        "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+        "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+        "js/centrum-hero-cache.js": "38f3212052e12304e3ecf4a053f0141122660395593874151e23835717ee5eff",
+        "js/centrum-inventory.js": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+        "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+        "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+        "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+        "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+        "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+        "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+        "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf",
+        "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+        "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+        "js/game.js": "11c93d495aa746d673896781d0053a1a8f85b498bbab5f850a1ff7468d0e3dec",
+        "js/hero-rig.js": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+        "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+        "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+        "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+        "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+        "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+        "js/illustrated-visits.js": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+        "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+        "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+        "js/npc-motion.js": "147503f395bd349444a4c8490d72b912c9d5211849323ef8c6c929ed5ff6db13",
+        "js/street-life.js": "1677f641ef54a8e4ef3d2c7ffe0c8d15aea2d7bd5f1e6d3419f67c5d97401584",
+        "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+        "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+      }
+    }
+  },
+  "finalRuntimeComparison": {
+    "js/hero-rig.js": {
+      "finalCaptureSHA256": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+      "currentSHA256": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+      "matches": true
+    },
+    "js/illustrated-visits.js": {
+      "finalCaptureSHA256": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+      "currentSHA256": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+      "matches": true
+    },
+    "js/npc-motion.js": {
+      "finalCaptureSHA256": "147503f395bd349444a4c8490d72b912c9d5211849323ef8c6c929ed5ff6db13",
+      "currentSHA256": "147503f395bd349444a4c8490d72b912c9d5211849323ef8c6c929ed5ff6db13",
+      "matches": true
+    },
+    "js/illustrated-kids.js": {
+      "finalCaptureSHA256": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+      "currentSHA256": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+      "matches": true
+    },
+    "js/brawler.js": {
+      "finalCaptureSHA256": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+      "currentSHA256": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+      "matches": true
+    },
+    "js/centrum-camera.js": {
+      "finalCaptureSHA256": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+      "currentSHA256": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+      "matches": true
+    }
+  },
+  "finalSelectedRuntimeMatches": true
+}

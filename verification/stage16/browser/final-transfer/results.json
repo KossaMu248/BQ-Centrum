@@ -1,0 +1,5310 @@
+{
+  "scope": "Stage16 rendered source-route and peaceful-rest acceptance.\n\nEach scenario has one disclosed original debug route-stop setup, then native\ncontrols. No NPC state/mood, health, inventory or quest fixture is injected.\nRenderer labs and CPU profiles are separate evidence. Chromium touch emulation\nis not physical iPhone/Safari testing; screencast encoding is not game FPS.\n",
+  "harnessSHA256": "54175e32d8c864d45179d05e77a8b0a5c813b4ad4506d796160a9ea17799278c",
+  "runtimeHashes": {
+    "autumn-v19.html": "17d0516568c790a8ac968c57e3ac56d76d0563f193145f01799b38ab08c3d2c6",
+    "autumn-version.json": "7f49fc3888b86e21cd2502bcc9a1b91d8c00c9b9d37e448b29643fe8938111c1",
+    "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+    "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+    "css/centrum-route.css": "892e1ec5ac28ae0a551d45b276974888e6db3f227635487e45c761e1553d1e5f",
+    "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+    "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+    "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+    "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+    "index.html": "17d0516568c790a8ac968c57e3ac56d76d0563f193145f01799b38ab08c3d2c6",
+    "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+    "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+    "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+    "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+    "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+    "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+    "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+    "js/centrum-camera.js": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+    "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+    "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+    "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+    "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+    "js/centrum-hero-cache.js": "38f3212052e12304e3ecf4a053f0141122660395593874151e23835717ee5eff",
+    "js/centrum-inventory.js": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+    "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+    "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+    "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+    "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+    "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+    "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+    "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf",
+    "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+    "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+    "js/game.js": "11c93d495aa746d673896781d0053a1a8f85b498bbab5f850a1ff7468d0e3dec",
+    "js/hero-rig.js": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+    "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+    "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+    "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+    "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+    "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+    "js/illustrated-visits.js": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+    "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+    "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+    "js/npc-motion.js": "147503f395bd349444a4c8490d72b912c9d5211849323ef8c6c929ed5ff6db13",
+    "js/street-life.js": "1677f641ef54a8e4ef3d2c7ffe0c8d15aea2d7bd5f1e6d3419f67c5d97401584",
+    "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+    "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+  },
+  "conditions": {
+    "headless": true,
+    "physicalDevice": false,
+    "desktop": [
+      1280,
+      720
+    ],
+    "phoneChromiumTouchEmulation": [
+      844,
+      390
+    ],
+    "deviceScaleFactor": 1,
+    "initialSetups": "one original debug stop per scenario/context; no further state or health grants",
+    "timing": "functional/recording, not exclusive performance"
+  },
+  "checks": [
+    {
+      "name": "desktop final Hero transfer-clip repair native Q/carrier walk/bag/same-bike grounded remount",
+      "passed": true,
+      "initialStop": 3700,
+      "before": {
+        "routeId": "autumn-main",
+        "routeSceneId": "route:autumn-main",
+        "x": 5550,
+        "y": 712.0812793988163,
+        "speed": 0,
+        "angle": 0.11072617203965923,
+        "grounded": true,
+        "state": "playing",
+        "introHidden": true,
+        "debugOpen": false,
+        "demo": false,
+        "health": 100,
+        "bikeFrame": {
+          "x": 5550,
+          "y": 712.0812793988163,
+          "vx": 0,
+          "vy": -1.26785713820446,
+          "a": 0.11072617203965923,
+          "va": -0.04280303154017116,
+          "contact": true,
+          "cycle": 0,
+          "expression": "original_photo",
+          "broken": false,
+          "lean": 0
+        },
+        "adventure": {
+          "started": false,
+          "lunch": false,
+          "kit": false,
+          "delivered": false,
+          "repaired": false,
+          "chart": false,
+          "buoys": [],
+          "voyage": false,
+          "seeds": [],
+          "garden": false,
+          "boatReady": false
+        },
+        "simTime": 0.5500000000000005,
+        "projectiles": 0,
+        "projectilePositions": [],
+        "lifeTime": 0.5533999999999998,
+        "babyMounted": true,
+        "routeProgress": {
+          "collectedPickups": [],
+          "score": 0,
+          "bonus": 0,
+          "maxDist": 5550,
+          "seconds": 0.5500000000000005,
+          "checkpoint": 0,
+          "panic": 7.726067008738424,
+          "trickHazards": [
+            "scooter:5100",
+            "pothole:2865"
+          ],
+          "oneTime": [
+            "district:homes",
+            "episode0",
+            "episode1",
+            "episode2",
+            "tutorialJump",
+            "safetyCouncil"
+          ],
+          "lostParts": []
+        },
+        "wheels": [
+          {
+            "x": 5497.732803770033,
+            "y": 743.4578980544021,
+            "clearance": 0.028796777894967818
+          },
+          {
+            "x": 5580.264276605574,
+            "y": 752.6338226179698,
+            "clearance": 0.31648109946934255
+          }
+        ]
+      },
+      "after": {
+        "routeId": "autumn-main",
+        "routeSceneId": "route:autumn-main",
+        "x": 5550,
+        "y": 712.1266825832292,
+        "speed": 0,
+        "angle": 0.11151691211953944,
+        "grounded": true,
+        "state": "playing",
+        "introHidden": true,
+        "debugOpen": false,
+        "demo": false,
+        "health": 100,
+        "bikeFrame": {
+          "x": 5550,
+          "y": 712.1266825832292,
+          "vx": 0,
+          "vy": -1.267857142857143,
+          "a": 0.11151691211953944,
+          "va": -0.05273992487694203,
+          "contact": true,
+          "cycle": 0,
+          "expression": "original_photo",
+          "broken": false,
+          "lean": 0
+        },
+        "adventure": {
+          "started": false,
+          "lunch": false,
+          "kit": false,
+          "delivered": false,
+          "repaired": false,
+          "chart": false,
+          "buoys": [],
+          "voyage": false,
+          "seeds": [],
+          "garden": false,
+          "boatReady": false
+        },
+        "simTime": 4.441666666666677,
+        "projectiles": 0,
+        "projectilePositions": [],
+        "lifeTime": 5.576300000000002,
+        "babyMounted": true,
+        "routeProgress": {
+          "collectedPickups": [],
+          "score": 0,
+          "bonus": 0,
+          "maxDist": 5550,
+          "seconds": 4.441666666666677,
+          "checkpoint": 0,
+          "panic": 4.2488459180466815,
+          "trickHazards": [
+            "scooter:5100",
+            "pothole:2865"
+          ],
+          "oneTime": [
+            "district:homes",
+            "episode0",
+            "episode1",
+            "episode2",
+            "tutorialJump",
+            "safetyCouncil"
+          ],
+          "lostParts": []
+        },
+        "wheels": [
+          {
+            "x": 5497.708009363227,
+            "y": 743.4619616667734,
+            "clearance": 0.02189007354320438
+          },
+          {
+            "x": 5580.232200625982,
+            "y": 752.7031442982483,
+            "clearance": 0.24348137353092625
+          }
+        ]
+      },
+      "metrics": {
+        "writes": [
+          "bq-centrum:scene-network:v1"
+        ],
+        "reads": [
+          "bq-centrum:adventure:v1",
+          "bq-centrum:best-score:v1",
+          "bq-centrum:civilians:v1",
+          "bq-centrum:parking:v1",
+          "bq-centrum:quest:wrong-entrance:v1",
+          "bq-centrum:scene-network:v1"
+        ],
+        "listenerCounts": {
+          "document:fullscreenchange": 1,
+          "window:keydown": 6,
+          "window:pagehide": 3,
+          "window:pointerdown": 2,
+          "window:blur": 5,
+          "document:visibilitychange": 5,
+          "window:keyup": 3,
+          "window:centrum-square-change": 1,
+          "window:pointerup": 2,
+          "window:pointercancel": 1,
+          "window:touchend": 2,
+          "window:touchcancel": 2,
+          "window:__playwright_global_listeners_check__": 1,
+          "window:mousemove": 1,
+          "window:touchstart": 1,
+          "window:mousedown": 1,
+          "window:mouseup": 1,
+          "window:click": 1,
+          "window:auxclick": 1,
+          "window:dblclick": 1,
+          "window:contextmenu": 1
+        },
+        "loopFrames": 454,
+        "pending": 1,
+        "maxPending": 1,
+        "audioContexts": 1,
+        "frameTimeMs": {
+          "samples": 360,
+          "median": 16.7,
+          "p95": 33.4,
+          "maximum": 166.7
+        }
+      }
+    },
+    {
+      "name": "phone final Hero transfer-clip repair native Q/carrier walk/bag/same-bike grounded remount",
+      "passed": true,
+      "initialStop": 3700,
+      "before": {
+        "routeId": "autumn-main",
+        "routeSceneId": "route:autumn-main",
+        "x": 5550,
+        "y": 712.0332827895187,
+        "speed": 0,
+        "angle": 0.10988897211622926,
+        "grounded": true,
+        "state": "playing",
+        "introHidden": true,
+        "debugOpen": false,
+        "demo": false,
+        "health": 100,
+        "bikeFrame": {
+          "x": 5550,
+          "y": 712.0332827895187,
+          "vx": 0,
+          "vy": -1.2678598353819115,
+          "a": 0.10988897211622926,
+          "va": -0.03982080905438524,
+          "contact": true,
+          "cycle": 0,
+          "expression": "original_photo",
+          "broken": false,
+          "lean": 0
+        },
+        "adventure": {
+          "started": false,
+          "lunch": false,
+          "kit": false,
+          "delivered": false,
+          "repaired": false,
+          "chart": false,
+          "buoys": [],
+          "voyage": false,
+          "seeds": [],
+          "garden": false,
+          "boatReady": false
+        },
+        "simTime": 0.39166666666666705,
+        "projectiles": 0,
+        "projectilePositions": [],
+        "lifeTime": 0.39670000000000005,
+        "babyMounted": true,
+        "routeProgress": {
+          "collectedPickups": [],
+          "score": 0,
+          "bonus": 0,
+          "maxDist": 5550,
+          "seconds": 0.39166666666666705,
+          "checkpoint": 0,
+          "panic": 7.964377580618357,
+          "trickHazards": [
+            "scooter:5100",
+            "pothole:2865"
+          ],
+          "oneTime": [
+            "district:homes",
+            "episode0",
+            "episode1",
+            "episode2",
+            "tutorialJump",
+            "safetyCouncil"
+          ],
+          "lostParts": []
+        },
+        "wheels": [
+          {
+            "x": 5497.759090586835,
+            "y": 743.4536485366809,
+            "clearance": 0.03606051727604154
+          },
+          {
+            "x": 5580.298216581515,
+            "y": 752.5604745498621,
+            "clearance": 0.39372095148485187
+          }
+        ]
+      },
+      "after": {
+        "routeId": "autumn-main",
+        "routeSceneId": "route:autumn-main",
+        "x": 5550,
+        "y": 712.1266825832292,
+        "speed": 0,
+        "angle": 0.11151691211953954,
+        "grounded": true,
+        "state": "playing",
+        "introHidden": true,
+        "debugOpen": false,
+        "demo": false,
+        "health": 100,
+        "bikeFrame": {
+          "x": 5550,
+          "y": 712.1266825832292,
+          "vx": 0,
+          "vy": -1.267857142857143,
+          "a": 0.11151691211953954,
+          "va": -0.05273992487694203,
+          "contact": true,
+          "cycle": 0,
+          "expression": "original_photo",
+          "broken": false,
+          "lean": 0
+        },
+        "adventure": {
+          "started": false,
+          "lunch": false,
+          "kit": false,
+          "delivered": false,
+          "repaired": false,
+          "chart": false,
+          "buoys": [],
+          "voyage": false,
+          "seeds": [],
+          "garden": false,
+          "boatReady": false
+        },
+        "simTime": 3.708333333333323,
+        "projectiles": 0,
+        "projectilePositions": [],
+        "lifeTime": 5.4797000000000065,
+        "babyMounted": true,
+        "routeProgress": {
+          "collectedPickups": [],
+          "score": 0,
+          "bonus": 0,
+          "maxDist": 5550,
+          "seconds": 3.708333333333323,
+          "checkpoint": 0,
+          "panic": 4.282966864399543,
+          "trickHazards": [
+            "scooter:5100",
+            "pothole:2865"
+          ],
+          "oneTime": [
+            "district:homes",
+            "episode0",
+            "episode1",
+            "episode2",
+            "tutorialJump",
+            "safetyCouncil"
+          ],
+          "lostParts": []
+        },
+        "wheels": [
+          {
+            "x": 5497.708009363227,
+            "y": 743.4619616667734,
+            "clearance": 0.02189007354320438
+          },
+          {
+            "x": 5580.232200625982,
+            "y": 752.7031442982483,
+            "clearance": 0.24348137353092625
+          }
+        ]
+      },
+      "metrics": {
+        "writes": [
+          "bq-centrum:scene-network:v1"
+        ],
+        "reads": [
+          "bq-centrum:adventure:v1",
+          "bq-centrum:best-score:v1",
+          "bq-centrum:civilians:v1",
+          "bq-centrum:parking:v1",
+          "bq-centrum:quest:wrong-entrance:v1",
+          "bq-centrum:scene-network:v1"
+        ],
+        "listenerCounts": {
+          "document:fullscreenchange": 1,
+          "window:keydown": 6,
+          "window:pagehide": 3,
+          "window:pointerdown": 2,
+          "window:blur": 5,
+          "document:visibilitychange": 5,
+          "window:keyup": 3,
+          "window:centrum-square-change": 1,
+          "window:pointerup": 2,
+          "window:pointercancel": 1,
+          "window:touchend": 2,
+          "window:touchcancel": 2,
+          "window:__playwright_global_listeners_check__": 1,
+          "window:mousemove": 1,
+          "window:touchstart": 1,
+          "window:mousedown": 1,
+          "window:mouseup": 1,
+          "window:click": 1,
+          "window:auxclick": 1,
+          "window:dblclick": 1,
+          "window:contextmenu": 1
+        },
+        "loopFrames": 527,
+        "pending": 1,
+        "maxPending": 1,
+        "audioContexts": 1,
+        "frameTimeMs": {
+          "samples": 360,
+          "median": 16.7,
+          "p95": 33.4,
+          "maximum": 50.1
+        }
+      }
+    }
+  ],
+  "captures": [
+    {
+      "file": "desktop/native-transfer-to-carrier.jpg",
+      "sha256": "b76a2604e537c88c04ea0eed9669bafbbcfa3c40f97881d3f2ff1f95aadf6d64",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE16",
+        "source": {
+          "mode": "dismount",
+          "transition": "dismount",
+          "place": "road",
+          "x": 160,
+          "depth": 0,
+          "jump": 0,
+          "paused": false,
+          "parkedAt": 5550,
+          "hero": {
+            "pose": "transfer3",
+            "carrier": "front",
+            "integratedCarrier": true,
+            "babyFace": {
+              "mood": "brace",
+              "source": "assets/baby_pose_brace.webp",
+              "continuousUpperBody": true,
+              "originalCollar": true,
+              "headOnly": false,
+              "uniformScale": 0.39942219833378123,
+              "angle": 0.2,
+              "flip": -1,
+              "alpha": 1,
+              "pivot": [
+                59,
+                101
+              ],
+              "anatomicalWaist": [
+                62,
+                104
+              ],
+              "waist": {
+                "x": 36.02715163934427,
+                "y": -69.6853915281962
+              },
+              "headHeight": 28.35897608169847,
+              "referenceHeadHeight": 61,
+              "sourceRect": [
+                0,
+                0,
+                98,
+                102
+              ],
+              "sourceBounds": [
+                0,
+                0,
+                98,
+                143
+              ],
+              "seamY": 101,
+              "occludeFrom": 95,
+              "seam": {
+                "start": {
+                  "x": 39.941755109692416,
+                  "y": -68.89186211971956
+                },
+                "end": {
+                  "x": 32.11254816899612,
+                  "y": -70.47892093667285
+                },
+                "occludeFrom": {
+                  "x": 36.50326928443025,
+                  "y": -72.0341536104051
+                }
+              },
+              "head": [
+                12,
+                5,
+                68,
+                71
+              ],
+              "chin": [
+                {
+                  "x": 36.5297910704478,
+                  "y": -82.21742699051379
+                },
+                {
+                  "x": 39.50276796503098,
+                  "y": -80.79968276966284
+                },
+                {
+                  "x": 42.242990394274685,
+                  "y": -80.24421218372919
+                }
+              ],
+              "neck": [
+                {
+                  "x": 44.983212823518386,
+                  "y": -79.68874159779554
+                }
+              ],
+              "collar": [
+                {
+                  "x": 43.882880366058096,
+                  "y": -78.2816060913516
+                },
+                {
+                  "x": 39.88361959765878,
+                  "y": -76.64702047677169
+                }
+              ],
+              "pose": "transfer3",
+              "pouch": {
+                "lip": [
+                  [
+                    350,
+                    753
+                  ],
+                  [
+                    379,
+                    768
+                  ],
+                  [
+                    409,
+                    750
+                  ]
+                ],
+                "depth": 30.870588235294118,
+                "seam": [
+                  379.25,
+                  772.472613339588
+                ],
+                "origin": [
+                  258,
+                  1007
+                ],
+                "scale": 0.29713114754098363,
+                "bob": 0,
+                "source": "transferBackground",
+                "textureMap": null,
+                "padding": 12.72261333958796
+              }
+            }
+          },
+          "combat": {
+            "hp": 100,
+            "time": 4.443099999999995,
+            "stats": {
+              "grabs": 0,
+              "throws": 0,
+              "mauls": 0,
+              "frenzyMauls": 0,
+              "transformations": 0,
+              "witnesses": 0,
+              "defeats": 0,
+              "enemyShots": 0,
+              "screenImpacts": 0,
+              "screams": 0,
+              "civilianScares": 0,
+              "hides": 0,
+              "departures": 0,
+              "arrivals": 1,
+              "gangWarnings": 0,
+              "gangProvocations": 0
+            },
+            "shots": 0
+          }
+        },
+        "route": {
+          "routeId": "autumn-main",
+          "routeSceneId": "route:autumn-main",
+          "x": 5550,
+          "y": 712.1266825832292,
+          "speed": 0,
+          "angle": 0.11151691211953944,
+          "grounded": true,
+          "state": "playing",
+          "introHidden": true,
+          "debugOpen": false,
+          "demo": false,
+          "health": 100,
+          "bikeFrame": {
+            "x": 5550,
+            "y": 712.1266825832292,
+            "vx": 0,
+            "vy": -1.267857142857143,
+            "a": 0.11151691211953944,
+            "va": -0.05273992487694203,
+            "contact": true,
+            "cycle": 0,
+            "expression": "original_photo",
+            "broken": false,
+            "lean": 0
+          },
+          "adventure": {
+            "started": false,
+            "lunch": false,
+            "kit": false,
+            "delivered": false,
+            "repaired": false,
+            "chart": false,
+            "buoys": [],
+            "voyage": false,
+            "seeds": [],
+            "garden": false,
+            "boatReady": false
+          },
+          "simTime": 4.441666666666677,
+          "projectiles": 0,
+          "projectilePositions": [],
+          "lifeTime": 4.443099999999995,
+          "babyMounted": true,
+          "routeProgress": {
+            "collectedPickups": [],
+            "score": 0,
+            "bonus": 0,
+            "maxDist": 5550,
+            "seconds": 4.441666666666677,
+            "checkpoint": 0,
+            "panic": 4.2488459180466815,
+            "trickHazards": [
+              "scooter:5100",
+              "pothole:2865"
+            ],
+            "oneTime": [
+              "district:homes",
+              "episode0",
+              "episode1",
+              "episode2",
+              "tutorialJump",
+              "safetyCouncil"
+            ],
+            "lostParts": []
+          },
+          "wheels": [
+            {
+              "x": 5497.708009363227,
+              "y": 743.4619616667734,
+              "clearance": 0.02189007354320438
+            },
+            {
+              "x": 5580.232200625982,
+              "y": 752.7031442982483,
+              "clearance": 0.24348137353092625
+            }
+          ]
+        },
+        "ownership": {
+          "bikeId": "centrum-family-bike",
+          "bicycles": 1,
+          "passengers": 1,
+          "passenger": "chair"
+        },
+        "linkPhase": "riding",
+        "square": null,
+        "projection": {
+          "world": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -5155.60009765625,
+              "f": -293.1507873535156,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -5155.60009765625,
+              "m42": -293.1507873535156,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 8068.9000000003725
+          },
+          "hero": null,
+          "baby": null,
+          "npcs": {
+            "civilian-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5155.60009765625,
+                "f": -293.1507873535156,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5155.60009765625,
+                "m42": -293.1507873535156,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "civilian-workshop",
+              "kind": null,
+              "variant": 11,
+              "x": 6030,
+              "y": 739.24,
+              "height": 128,
+              "state": "idle",
+              "activity": "sit"
+            },
+            "walker-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5155.60009765625,
+                "f": -293.1507873535156,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5155.60009765625,
+                "m42": -293.1507873535156,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "walker-workshop",
+              "kind": null,
+              "variant": 2,
+              "x": 5247.791999999997,
+              "y": 669.5468159999996,
+              "height": 128,
+              "state": "idle",
+              "activity": "walk"
+            },
+            "neighbour-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5155.60009765625,
+                "f": -293.1507873535156,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5155.60009765625,
+                "m42": -293.1507873535156,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "neighbour-workshop",
+              "kind": null,
+              "variant": 6,
+              "x": 6120,
+              "y": 769.56,
+              "height": 128,
+              "state": "idle",
+              "activity": "idle"
+            }
+          },
+          "inside": false
+        },
+        "children": {
+          "ready": true,
+          "preparationMode": "compiled",
+          "cacheFailure": null,
+          "drawn": {},
+          "types": [
+            "bottle",
+            "rock",
+            "firecracker"
+          ],
+          "worldHeight": 94,
+          "adultReferenceHeight": 128,
+          "problems": []
+        },
+        "npc": {
+          "variant": 6,
+          "activity": "idle",
+          "pose": "idle",
+          "phase": 0,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            78,
+            11,
+            228,
+            345
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": null
+        },
+        "heroCache": {
+          "frames": 50,
+          "bytes": 10344804,
+          "limitBytes": 33554432,
+          "frameLimit": 98,
+          "phases": 48,
+          "canonicalHeight": 280,
+          "hits": 0,
+          "misses": 0,
+          "transientBuilds": 0,
+          "bitmapFrames": 50,
+          "bitmapFailures": 0,
+          "mode": "bitmap",
+          "pendingBitmaps": 0,
+          "buildMs": 0,
+          "maxBuildMs": 0,
+          "scratchBytes": 0,
+          "pouch": {
+            "frames": 0,
+            "bytes": 0,
+            "limitBytes": 2097152,
+            "frameLimit": 48,
+            "hits": 0,
+            "builds": 0,
+            "evictions": 0
+          },
+          "sourceWarmup": {
+            "prepared": 7,
+            "total": 7,
+            "complete": true,
+            "buildMs": 269.40000000037253,
+            "maxTaskMs": 96.1999999997206,
+            "foreground": true,
+            "pending": 0,
+            "failure": null,
+            "retries": 0
+          }
+        },
+        "inventory": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "pendingOpen": null,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 100,
+          "disabledReason": "Finish changing areas first.",
+          "layout": null
+        },
+        "fullscreen": "window"
+      }
+    },
+    {
+      "file": "desktop/native-carrier-walk.jpg",
+      "sha256": "3994b673da7103a86060289e64d092d79fe0783ed90155f2e97d3dec53b41712",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE16",
+        "source": {
+          "mode": "street",
+          "transition": null,
+          "place": "road",
+          "x": 5614.780888,
+          "depth": 0,
+          "jump": 0,
+          "paused": false,
+          "parkedAt": 5550,
+          "hero": {
+            "pose": "walking",
+            "carrier": "front",
+            "integratedCarrier": true,
+            "babyFace": {
+              "mood": "idle",
+              "source": "assets/baby_pose_idle.webp",
+              "continuousUpperBody": true,
+              "originalCollar": true,
+              "headOnly": false,
+              "uniformScale": 0.4140352055898952,
+              "angle": -0.13863973713415806,
+              "flip": 1,
+              "alpha": 1,
+              "pivot": [
+                52,
+                94
+              ],
+              "anatomicalWaist": [
+                48,
+                104
+              ],
+              "waist": {
+                "x": 14.70799180327869,
+                "y": -59.74497695752022
+              },
+              "headHeight": 25.670182746573502,
+              "referenceHeadHeight": 61,
+              "sourceRect": [
+                0,
+                0,
+                82,
+                95
+              ],
+              "sourceBounds": [
+                0,
+                0,
+                82,
+                146
+              ],
+              "seamY": 94,
+              "occludeFrom": 90,
+              "seam": {
+                "start": {
+                  "x": 10.6073668585798,
+                  "y": -59.17279673267852
+                },
+                "end": {
+                  "x": 18.80861674797758,
+                  "y": -60.317157182361925
+                },
+                "occludeFrom": {
+                  "x": 14.479119713342007,
+                  "y": -61.38522693539978
+                }
+              },
+              "head": [
+                15,
+                9,
+                57,
+                62
+              ],
+              "chin": [
+                {
+                  "x": 17.034858050968293,
+                  "y": -73.02909451092849
+                },
+                {
+                  "x": 16.271951084512686,
+                  "y": -72.50459597149026
+                },
+                {
+                  "x": 15.156199646071359,
+                  "y": -71.51281691509797
+                },
+                {
+                  "x": 13.983230185145862,
+                  "y": -70.93110035317557
+                },
+                {
+                  "x": 12.810260724220367,
+                  "y": -70.34938379125316
+                }
+              ],
+              "neck": [
+                {
+                  "x": 11.63729126329487,
+                  "y": -69.76766722933077
+                },
+                {
+                  "x": 11.694509285779041,
+                  "y": -69.35760473486087
+                }
+              ],
+              "collar": [
+                {
+                  "x": 6.888195397108712,
+                  "y": -67.85086347611104
+                },
+                {
+                  "x": 10.044722970818789,
+                  "y": -66.20107716115079
+                },
+                {
+                  "x": 14.145347915517679,
+                  "y": -66.77325738599251
+                }
+              ],
+              "pose": "front",
+              "pouch": {
+                "lip": [
+                  [
+                    198,
+                    288
+                  ],
+                  [
+                    226,
+                    293
+                  ],
+                  [
+                    264,
+                    285
+                  ]
+                ],
+                "depth": 32,
+                "seam": [
+                  228.5,
+                  298.9272499636561
+                ],
+                "origin": [
+                  179,
+                  500
+                ],
+                "scale": 0.29713114754098363,
+                "bob": 0,
+                "source": "frontBackground",
+                "textureMap": null,
+                "padding": 9.177249963656097
+              }
+            },
+            "height": 145,
+            "source": "front",
+            "sourceRect": [
+              51,
+              13,
+              256,
+              377
+            ],
+            "lowerPose": "idle",
+            "lowerSourceRect": [
+              170,
+              94,
+              1021,
+              1085
+            ],
+            "authoredLowerBody": true,
+            "stature": 488,
+            "landmarks": {
+              "near": {
+                "hip": {
+                  "x": -9.996218978513165,
+                  "y": -49.56513403431829
+                },
+                "knee": {
+                  "x": -10.686755267684005,
+                  "y": -26.113173522460222
+                },
+                "cuff": {
+                  "x": -13.394002163590176,
+                  "y": -16.059215285744813
+                },
+                "heel": {
+                  "x": -22.860335762154893,
+                  "y": -1.7146395169521564
+                },
+                "toe": {
+                  "x": -2.1588648951283753,
+                  "y": -3.768418337539643
+                },
+                "sole": {
+                  "x": -7.16442595154671,
+                  "y": -9.741282203181079e-07
+                },
+                "renderedFromSource": true,
+                "source": {
+                  "image": "bear-idle-lower-v18.png",
+                  "pose": "idle",
+                  "hip": [
+                    510,
+                    315
+                  ],
+                  "knee": [
+                    430,
+                    650
+                  ],
+                  "cuff": [
+                    405,
+                    790
+                  ],
+                  "heel": [
+                    205,
+                    1010
+                  ],
+                  "toe": [
+                    635,
+                    1080
+                  ],
+                  "sole": [
+                    470,
+                    1083
+                  ]
+                },
+                "plannedSole": {
+                  "x": -7.164425951546711,
+                  "y": -9.741282161806518e-07
+                },
+                "plannedCuff": {
+                  "x": -11.918163003197373,
+                  "y": -18.42222535892369
+                },
+                "angle": 1.9612719497693264e-05,
+                "stance": true,
+                "kneeFlex": 0,
+                "contact": {
+                  "x": -7.114757764726912,
+                  "y": 0
+                },
+                "bootWidth": 20.803098411107936,
+                "rigidShoe": true
+              },
+              "far": {
+                "hip": {
+                  "x": 8.536061170061997,
+                  "y": -49.67585148359493
+                },
+                "knee": {
+                  "x": 4.076421551157878,
+                  "y": -29.152311388288375
+                },
+                "cuff": {
+                  "x": 4.326706007358748,
+                  "y": -19.65703789549418
+                },
+                "heel": {
+                  "x": -3.1262742260989973,
+                  "y": -3.212013725009689
+                },
+                "toe": {
+                  "x": 25.978486074165215,
+                  "y": -4.022281973149409
+                },
+                "sole": {
+                  "x": 12.246114640879567,
+                  "y": -2.6955240969036636
+                },
+                "renderedFromSource": true,
+                "source": {
+                  "image": "bear-idle-lower-v18.png",
+                  "pose": "idle",
+                  "hip": [
+                    835,
+                    315
+                  ],
+                  "knee": [
+                    790,
+                    690
+                  ],
+                  "cuff": [
+                    820,
+                    850
+                  ],
+                  "heel": [
+                    650,
+                    1110
+                  ],
+                  "toe": [
+                    1180,
+                    1150
+                  ],
+                  "sole": [
+                    940,
+                    1155
+                  ]
+                },
+                "plannedSole": {
+                  "x": 12.24611464087957,
+                  "y": -2.695524096903673
+                },
+                "plannedCuff": {
+                  "x": 8.380700777554695,
+                  "y": -19.928523253274566
+                },
+                "angle": -0.00015719246095820003,
+                "stance": false,
+                "kneeFlex": 0.002741721012383442,
+                "contact": {
+                  "x": 12.24611464087957,
+                  "y": -2.695524096903673
+                },
+                "bootWidth": 29.116036934476146,
+                "rigidShoe": true
+              }
+            },
+            "gait": {
+              "far": {
+                "x": 0.06704541151882008,
+                "y": -0.02134376903481999,
+                "angle": -0.00015719246095820003,
+                "shinAngle": 0.0014370972631970612,
+                "kneeFlex": 0.002741721012383442,
+                "contactOffset": 0,
+                "stance": false
+              },
+              "near": {
+                "x": -0.03658623039223364,
+                "y": 0,
+                "angle": 1.9612719497693264e-05,
+                "shinAngle": 0.00046381507266121495,
+                "kneeFlex": 0,
+                "contactOffset": 0.04966818682935195,
+                "stance": true
+              },
+              "phase": 0.35230735632183996,
+              "cycleLength": 104.39999999999999,
+              "bob": -0.0015369646346832522,
+              "sway": 0.004626633783488412,
+              "roll": 1.1731256573526873e-05,
+              "pelvisSway": -0.0047705945615471885,
+              "pelvisRoll": 6.58013042972026e-05
+            },
+            "body": {
+              "pivot": {
+                "x": -2.0799180327868854,
+                "y": -49.0266393442623
+              },
+              "sway": 0.004626633783488412,
+              "bob": -7.423855470739752,
+              "roll": 1.1731256573526873e-05,
+              "pelvisSway": -0.0047705945615471885,
+              "pelvisRoll": 6.58013042972026e-05,
+              "slope": 0.11416803179320167,
+              "opaque": true,
+              "surfaces": 1,
+              "continuous": true,
+              "triangles": 400,
+              "canonicalHeight": 280,
+              "lowerHeight": 190,
+              "cachePhase": 0.35230735632183996
+            },
+            "cache": {
+              "frames": 52,
+              "hits": 14,
+              "misses": 1
+            },
+            "raster": {
+              "mode": "worker",
+              "requestedPhase": 0.35230735632183996,
+              "renderedPhase": 0.35230735632183996,
+              "requestedWeight": 0.0009048518726439908,
+              "renderedWeight": 0.0034253921951277206,
+              "heading": "horizontal"
+            }
+          },
+          "combat": {
+            "hp": 100,
+            "time": 5.3597,
+            "stats": {
+              "grabs": 0,
+              "throws": 0,
+              "mauls": 0,
+              "frenzyMauls": 0,
+              "transformations": 0,
+              "witnesses": 0,
+              "defeats": 0,
+              "enemyShots": 0,
+              "screenImpacts": 0,
+              "screams": 0,
+              "civilianScares": 0,
+              "hides": 0,
+              "departures": 0,
+              "arrivals": 2,
+              "gangWarnings": 0,
+              "gangProvocations": 0
+            },
+            "shots": 0
+          }
+        },
+        "route": {
+          "routeId": "autumn-main",
+          "routeSceneId": "route:autumn-main",
+          "x": 5550,
+          "y": 712.1266825832292,
+          "speed": 0,
+          "angle": 0.11151691211953944,
+          "grounded": true,
+          "state": "playing",
+          "introHidden": true,
+          "debugOpen": false,
+          "demo": false,
+          "health": 100,
+          "bikeFrame": {
+            "x": 5550,
+            "y": 712.1266825832292,
+            "vx": 0,
+            "vy": -1.267857142857143,
+            "a": 0.11151691211953944,
+            "va": -0.05273992487694203,
+            "contact": true,
+            "cycle": 0,
+            "expression": "original_photo",
+            "broken": false,
+            "lean": 0
+          },
+          "adventure": {
+            "started": false,
+            "lunch": false,
+            "kit": false,
+            "delivered": false,
+            "repaired": false,
+            "chart": false,
+            "buoys": [],
+            "voyage": false,
+            "seeds": [],
+            "garden": false,
+            "boatReady": false
+          },
+          "simTime": 4.441666666666677,
+          "projectiles": 0,
+          "projectilePositions": [],
+          "lifeTime": 5.3597,
+          "babyMounted": true,
+          "routeProgress": {
+            "collectedPickups": [],
+            "score": 0,
+            "bonus": 0,
+            "maxDist": 5550,
+            "seconds": 4.441666666666677,
+            "checkpoint": 0,
+            "panic": 4.2488459180466815,
+            "trickHazards": [
+              "scooter:5100",
+              "pothole:2865"
+            ],
+            "oneTime": [
+              "district:homes",
+              "episode0",
+              "episode1",
+              "episode2",
+              "tutorialJump",
+              "safetyCouncil"
+            ],
+            "lostParts": []
+          },
+          "wheels": [
+            {
+              "x": 5497.708009363227,
+              "y": 743.4619616667734,
+              "clearance": 0.02189007354320438
+            },
+            {
+              "x": 5580.232200625982,
+              "y": 752.7031442982483,
+              "clearance": 0.24348137353092625
+            }
+          ]
+        },
+        "ownership": {
+          "bikeId": "centrum-family-bike",
+          "bicycles": 1,
+          "passengers": 1,
+          "passenger": "chair"
+        },
+        "linkPhase": "riding",
+        "square": null,
+        "projection": {
+          "world": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -5196.53759765625,
+              "f": -291.5946960449219,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -5196.53759765625,
+              "m42": -291.5946960449219,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 10037.80000000028
+          },
+          "hero": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -5196.53759765625,
+              "f": -291.5946960449219,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -5196.53759765625,
+              "m42": -291.5946960449219,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 10038.600000000093,
+            "x": 5614.780888,
+            "y": 775.6282084906667,
+            "height": 145
+          },
+          "baby": {
+            "m": {
+              "a": 0.4139113506187571,
+              "b": -0.010126280475157045,
+              "c": 0.010126280475157045,
+              "d": 0.4139113506187571,
+              "e": 440.5119898328833,
+              "f": 418.97825360954516,
+              "m11": 0.4139113506187571,
+              "m12": -0.010126280475157045,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0.010126280475157045,
+              "m22": 0.4139113506187571,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": 440.5119898328833,
+              "m42": 418.97825360954516,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 10038.600000000093,
+            "source": "baby_pose_idle.webp"
+          },
+          "npcs": {
+            "civilian-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5196.53759765625,
+                "f": -291.5946960449219,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5196.53759765625,
+                "m42": -291.5946960449219,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "civilian-workshop",
+              "kind": null,
+              "variant": 11,
+              "x": 6030,
+              "y": 739.24,
+              "height": 127.6,
+              "state": "idle",
+              "activity": "sit"
+            },
+            "walker-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5196.53759765625,
+                "f": -291.5946960449219,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5196.53759765625,
+                "m42": -291.5946960449219,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "walker-workshop",
+              "kind": null,
+              "variant": 2,
+              "x": 5302.787999999996,
+              "y": 675.8530239999996,
+              "height": 127.6,
+              "state": "idle",
+              "activity": "walk"
+            },
+            "neighbour-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5196.53759765625,
+                "f": -291.5946960449219,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5196.53759765625,
+                "m42": -291.5946960449219,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "neighbour-workshop",
+              "kind": null,
+              "variant": 6,
+              "x": 6120,
+              "y": 769.56,
+              "height": 127.6,
+              "state": "idle",
+              "activity": "idle"
+            }
+          },
+          "inside": false
+        },
+        "children": {
+          "ready": true,
+          "preparationMode": "compiled",
+          "cacheFailure": null,
+          "drawn": {},
+          "types": [
+            "bottle",
+            "rock",
+            "firecracker"
+          ],
+          "worldHeight": 94,
+          "adultReferenceHeight": 128,
+          "problems": []
+        },
+        "npc": {
+          "variant": 6,
+          "activity": "idle",
+          "pose": "idle",
+          "phase": 0,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            78,
+            11,
+            228,
+            345
+          ],
+          "height": 127.6,
+          "heightScale": 1,
+          "civilian": true,
+          "details": null
+        },
+        "heroCache": {
+          "frames": 52,
+          "bytes": 10721764,
+          "limitBytes": 33554432,
+          "frameLimit": 98,
+          "phases": 48,
+          "canonicalHeight": 280,
+          "hits": 14,
+          "misses": 1,
+          "transientBuilds": 0,
+          "bitmapFrames": 52,
+          "bitmapFailures": 0,
+          "mode": "bitmap",
+          "pendingBitmaps": 0,
+          "buildMs": 15.599999999627471,
+          "maxBuildMs": 15.599999999627471,
+          "scratchBytes": 0,
+          "pouch": {
+            "frames": 1,
+            "bytes": 12320,
+            "limitBytes": 2097152,
+            "frameLimit": 48,
+            "hits": 52,
+            "builds": 1,
+            "evictions": 0
+          },
+          "sourceWarmup": {
+            "prepared": 7,
+            "total": 7,
+            "complete": true,
+            "buildMs": 269.40000000037253,
+            "maxTaskMs": 96.1999999997206,
+            "foreground": true,
+            "pending": 0,
+            "failure": null,
+            "retries": 0
+          }
+        },
+        "inventory": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "pendingOpen": null,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 100,
+          "disabledReason": "Full health \u2014 food kept.",
+          "layout": null
+        },
+        "fullscreen": "window"
+      }
+    },
+    {
+      "file": "desktop/native-transfer-to-chair.jpg",
+      "sha256": "cf4e449cbdbb1f59d9f03a59c89b638d45cc10e7d5fc334553a789023acb12da",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE16",
+        "source": {
+          "mode": "mount",
+          "transition": "mount",
+          "place": "road",
+          "x": 5614.780888,
+          "depth": 0,
+          "jump": 0,
+          "paused": false,
+          "parkedAt": 5550,
+          "hero": {
+            "pose": "transfer3",
+            "carrier": "front",
+            "integratedCarrier": true,
+            "babyFace": {
+              "mood": "brace",
+              "source": "assets/baby_pose_brace.webp",
+              "continuousUpperBody": true,
+              "originalCollar": true,
+              "headOnly": false,
+              "uniformScale": 0.39942219833378123,
+              "angle": 0.2,
+              "flip": -1,
+              "alpha": 1,
+              "pivot": [
+                59,
+                101
+              ],
+              "anatomicalWaist": [
+                62,
+                104
+              ],
+              "waist": {
+                "x": 36.02715163934427,
+                "y": -69.6853915281962
+              },
+              "headHeight": 28.35897608169847,
+              "referenceHeadHeight": 61,
+              "sourceRect": [
+                0,
+                0,
+                98,
+                102
+              ],
+              "sourceBounds": [
+                0,
+                0,
+                98,
+                143
+              ],
+              "seamY": 101,
+              "occludeFrom": 95,
+              "seam": {
+                "start": {
+                  "x": 39.941755109692416,
+                  "y": -68.89186211971956
+                },
+                "end": {
+                  "x": 32.11254816899612,
+                  "y": -70.47892093667285
+                },
+                "occludeFrom": {
+                  "x": 36.50326928443025,
+                  "y": -72.0341536104051
+                }
+              },
+              "head": [
+                12,
+                5,
+                68,
+                71
+              ],
+              "chin": [
+                {
+                  "x": 36.5297910704478,
+                  "y": -82.21742699051379
+                },
+                {
+                  "x": 39.50276796503098,
+                  "y": -80.79968276966284
+                },
+                {
+                  "x": 42.242990394274685,
+                  "y": -80.24421218372919
+                }
+              ],
+              "neck": [
+                {
+                  "x": 44.983212823518386,
+                  "y": -79.68874159779554
+                }
+              ],
+              "collar": [
+                {
+                  "x": 43.882880366058096,
+                  "y": -78.2816060913516
+                },
+                {
+                  "x": 39.88361959765878,
+                  "y": -76.64702047677169
+                }
+              ],
+              "pose": "transfer3",
+              "pouch": {
+                "lip": [
+                  [
+                    350,
+                    753
+                  ],
+                  [
+                    379,
+                    768
+                  ],
+                  [
+                    409,
+                    750
+                  ]
+                ],
+                "depth": 30.870588235294118,
+                "seam": [
+                  379.25,
+                  772.472613339588
+                ],
+                "origin": [
+                  258,
+                  1007
+                ],
+                "scale": 0.29713114754098363,
+                "bob": 0,
+                "source": "transferBackground",
+                "textureMap": null,
+                "padding": 12.72261333958796
+              }
+            }
+          },
+          "combat": {
+            "hp": 100,
+            "time": 5.576300000000002,
+            "stats": {
+              "grabs": 0,
+              "throws": 0,
+              "mauls": 0,
+              "frenzyMauls": 0,
+              "transformations": 0,
+              "witnesses": 0,
+              "defeats": 0,
+              "enemyShots": 0,
+              "screenImpacts": 0,
+              "screams": 0,
+              "civilianScares": 0,
+              "hides": 0,
+              "departures": 0,
+              "arrivals": 2,
+              "gangWarnings": 0,
+              "gangProvocations": 0
+            },
+            "shots": 0
+          }
+        },
+        "route": {
+          "routeId": "autumn-main",
+          "routeSceneId": "route:autumn-main",
+          "x": 5550,
+          "y": 712.1266825832292,
+          "speed": 0,
+          "angle": 0.11151691211953944,
+          "grounded": true,
+          "state": "playing",
+          "introHidden": true,
+          "debugOpen": false,
+          "demo": false,
+          "health": 100,
+          "bikeFrame": {
+            "x": 5550,
+            "y": 712.1266825832292,
+            "vx": 0,
+            "vy": -1.267857142857143,
+            "a": 0.11151691211953944,
+            "va": -0.05273992487694203,
+            "contact": true,
+            "cycle": 0,
+            "expression": "original_photo",
+            "broken": false,
+            "lean": 0
+          },
+          "adventure": {
+            "started": false,
+            "lunch": false,
+            "kit": false,
+            "delivered": false,
+            "repaired": false,
+            "chart": false,
+            "buoys": [],
+            "voyage": false,
+            "seeds": [],
+            "garden": false,
+            "boatReady": false
+          },
+          "simTime": 4.441666666666677,
+          "projectiles": 0,
+          "projectilePositions": [],
+          "lifeTime": 5.576300000000002,
+          "babyMounted": true,
+          "routeProgress": {
+            "collectedPickups": [],
+            "score": 0,
+            "bonus": 0,
+            "maxDist": 5550,
+            "seconds": 4.441666666666677,
+            "checkpoint": 0,
+            "panic": 4.2488459180466815,
+            "trickHazards": [
+              "scooter:5100",
+              "pothole:2865"
+            ],
+            "oneTime": [
+              "district:homes",
+              "episode0",
+              "episode1",
+              "episode2",
+              "tutorialJump",
+              "safetyCouncil"
+            ],
+            "lostParts": []
+          },
+          "wheels": [
+            {
+              "x": 5497.708009363227,
+              "y": 743.4619616667734,
+              "clearance": 0.02189007354320438
+            },
+            {
+              "x": 5580.232200625982,
+              "y": 752.7031442982483,
+              "clearance": 0.24348137353092625
+            }
+          ]
+        },
+        "ownership": {
+          "bikeId": "centrum-family-bike",
+          "bicycles": 1,
+          "passengers": 1,
+          "passenger": "chair"
+        },
+        "linkPhase": "riding",
+        "square": null,
+        "projection": {
+          "world": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -5197.03955078125,
+              "f": -291.6442565917969,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -5197.03955078125,
+              "m42": -291.6442565917969,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 11406.100000000093
+          },
+          "hero": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -5197.03955078125,
+              "f": -291.6442565917969,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -5197.03955078125,
+              "m42": -291.6442565917969,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 10763,
+            "x": 5578,
+            "y": 768.7974064119489,
+            "height": 145
+          },
+          "baby": {
+            "m": {
+              "a": 0.4100624899960297,
+              "b": -0.05721802185991112,
+              "c": 0.05721802185991112,
+              "d": 0.4100624899960297,
+              "e": 395.6684408187866,
+              "f": 410.8643226623535,
+              "m11": 0.4100624899960297,
+              "m12": -0.05721802185991112,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0.05721802185991112,
+              "m22": 0.4100624899960297,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": 395.6684408187866,
+              "m42": 410.8643226623535,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 10763,
+            "source": "baby_pose_brace.webp"
+          },
+          "npcs": {
+            "civilian-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5197.03955078125,
+                "f": -291.6442565917969,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5197.03955078125,
+                "m42": -291.6442565917969,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "civilian-workshop",
+              "kind": null,
+              "variant": 11,
+              "x": 6030,
+              "y": 739.24,
+              "height": 128,
+              "state": "idle",
+              "activity": "sit"
+            },
+            "walker-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5197.03955078125,
+                "f": -291.6442565917969,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5197.03955078125,
+                "m42": -291.6442565917969,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "walker-workshop",
+              "kind": null,
+              "variant": 2,
+              "x": 5315.783999999995,
+              "y": 677.3432319999995,
+              "height": 128,
+              "state": "idle",
+              "activity": "walk"
+            },
+            "neighbour-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5197.03955078125,
+                "f": -291.6442565917969,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5197.03955078125,
+                "m42": -291.6442565917969,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "neighbour-workshop",
+              "kind": null,
+              "variant": 6,
+              "x": 6120,
+              "y": 769.56,
+              "height": 128,
+              "state": "idle",
+              "activity": "idle"
+            }
+          },
+          "inside": false
+        },
+        "children": {
+          "ready": true,
+          "preparationMode": "compiled",
+          "cacheFailure": null,
+          "drawn": {},
+          "types": [
+            "bottle",
+            "rock",
+            "firecracker"
+          ],
+          "worldHeight": 94,
+          "adultReferenceHeight": 128,
+          "problems": []
+        },
+        "npc": {
+          "variant": 6,
+          "activity": "idle",
+          "pose": "idle",
+          "phase": 0,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            78,
+            11,
+            228,
+            345
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": null
+        },
+        "heroCache": {
+          "frames": 52,
+          "bytes": 10721764,
+          "limitBytes": 33554432,
+          "frameLimit": 98,
+          "phases": 48,
+          "canonicalHeight": 280,
+          "hits": 31,
+          "misses": 1,
+          "transientBuilds": 0,
+          "bitmapFrames": 52,
+          "bitmapFailures": 0,
+          "mode": "bitmap",
+          "pendingBitmaps": 0,
+          "buildMs": 15.599999999627471,
+          "maxBuildMs": 15.599999999627471,
+          "scratchBytes": 0,
+          "pouch": {
+            "frames": 1,
+            "bytes": 12320,
+            "limitBytes": 2097152,
+            "frameLimit": 48,
+            "hits": 83,
+            "builds": 1,
+            "evictions": 0
+          },
+          "sourceWarmup": {
+            "prepared": 7,
+            "total": 7,
+            "complete": true,
+            "buildMs": 269.40000000037253,
+            "maxTaskMs": 96.1999999997206,
+            "foreground": true,
+            "pending": 0,
+            "failure": null,
+            "retries": 0
+          }
+        },
+        "inventory": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "pendingOpen": null,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 100,
+          "disabledReason": "Finish changing areas first.",
+          "layout": null
+        },
+        "fullscreen": "window"
+      }
+    },
+    {
+      "file": "desktop/native-same-bike-remounted.jpg",
+      "sha256": "27d3ca0dcbff60bf0d09525f923bd5a070b969f691f974627d6ff6cae4d7c660",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE16",
+        "source": {
+          "mode": null,
+          "transition": null,
+          "place": null,
+          "x": 5614.780888,
+          "depth": 0,
+          "jump": 0,
+          "paused": false,
+          "parkedAt": 5550,
+          "hero": {
+            "pose": "transfer2",
+            "carrier": "front",
+            "integratedCarrier": true,
+            "babyFace": {
+              "mood": "brace",
+              "source": "assets/baby_pose_brace.webp",
+              "continuousUpperBody": true,
+              "originalCollar": true,
+              "headOnly": false,
+              "uniformScale": 0.4140352055898952,
+              "angle": 0.2,
+              "flip": -1,
+              "alpha": 1,
+              "pivot": [
+                59,
+                101
+              ],
+              "anatomicalWaist": [
+                62,
+                104
+              ],
+              "waist": {
+                "x": 24.88473360655738,
+                "y": -63.323457270056174
+              },
+              "headHeight": 29.39649959688256,
+              "referenceHeadHeight": 61,
+              "sourceRect": [
+                0,
+                0,
+                98,
+                102
+              ],
+              "sourceBounds": [
+                0,
+                0,
+                98,
+                143
+              ],
+              "seamY": 101,
+              "occludeFrom": 95,
+              "seam": {
+                "start": {
+                  "x": 28.942554277040216,
+                  "y": -62.50089629785477
+                },
+                "end": {
+                  "x": 20.826912936074542,
+                  "y": -64.14601824225757
+                },
+                "occludeFrom": {
+                  "x": 25.37827018987822,
+                  "y": -65.75814967234588
+                }
+              },
+              "head": [
+                12,
+                5,
+                68,
+                71
+              ],
+              "chin": [
+                {
+                  "x": 25.405762285140305,
+                  "y": -76.31398183465366
+                },
+                {
+                  "x": 28.48750662708629,
+                  "y": -74.84436892279598
+                },
+                {
+                  "x": 31.327981096424278,
+                  "y": -74.268576242255
+                }
+              ],
+              "neck": [
+                {
+                  "x": 34.16845556576226,
+                  "y": -73.69278356171401
+                }
+              ],
+              "collar": [
+                {
+                  "x": 33.02786704278513,
+                  "y": -72.23416748796116
+                },
+                {
+                  "x": 28.88229185602974,
+                  "y": -70.53977996065272
+                }
+              ],
+              "pose": "transfer2",
+              "pouch": {
+                "lip": [
+                  [
+                    1308,
+                    266
+                  ],
+                  [
+                    1342,
+                    282
+                  ],
+                  [
+                    1375,
+                    266
+                  ]
+                ],
+                "depth": 32,
+                "seam": [
+                  1341.75,
+                  286.8838127738799
+                ],
+                "origin": [
+                  1258,
+                  500
+                ],
+                "scale": 0.29713114754098363,
+                "bob": 0,
+                "source": "transferBackground",
+                "textureMap": null,
+                "padding": 12.883812773879935
+              }
+            }
+          },
+          "combat": {
+            "hp": 100,
+            "time": 5.792900000000003,
+            "stats": {
+              "grabs": 0,
+              "throws": 0,
+              "mauls": 0,
+              "frenzyMauls": 0,
+              "transformations": 0,
+              "witnesses": 0,
+              "defeats": 0,
+              "enemyShots": 0,
+              "screenImpacts": 0,
+              "screams": 0,
+              "civilianScares": 0,
+              "hides": 0,
+              "departures": 0,
+              "arrivals": 2,
+              "gangWarnings": 0,
+              "gangProvocations": 0
+            },
+            "shots": 0
+          }
+        },
+        "route": {
+          "routeId": "autumn-main",
+          "routeSceneId": "route:autumn-main",
+          "x": 5550,
+          "y": 712.1266825832292,
+          "speed": 0,
+          "angle": 0.11151691211953946,
+          "grounded": true,
+          "state": "playing",
+          "introHidden": true,
+          "debugOpen": false,
+          "demo": false,
+          "health": 100,
+          "bikeFrame": {
+            "x": 5550,
+            "y": 712.1266825832292,
+            "vx": 0,
+            "vy": -1.267857142857143,
+            "a": 0.11151691211953946,
+            "va": -0.05273992487694203,
+            "contact": true,
+            "cycle": 0,
+            "expression": "original_photo",
+            "broken": false,
+            "lean": 0
+          },
+          "adventure": {
+            "started": false,
+            "lunch": false,
+            "kit": false,
+            "delivered": false,
+            "repaired": false,
+            "chart": false,
+            "buoys": [],
+            "voyage": false,
+            "seeds": [],
+            "garden": false,
+            "boatReady": false
+          },
+          "simTime": 4.650000000000021,
+          "projectiles": 0,
+          "projectilePositions": [],
+          "lifeTime": 5.792900000000003,
+          "babyMounted": true,
+          "routeProgress": {
+            "collectedPickups": [],
+            "score": 0,
+            "bonus": 0,
+            "maxDist": 5550,
+            "seconds": 4.650000000000021,
+            "checkpoint": 0,
+            "panic": 4.242203921967497,
+            "trickHazards": [
+              "scooter:5100",
+              "pothole:2865"
+            ],
+            "oneTime": [
+              "district:homes",
+              "episode0",
+              "episode1",
+              "episode2",
+              "tutorialJump",
+              "safetyCouncil"
+            ],
+            "lostParts": []
+          },
+          "wheels": [
+            {
+              "x": 5497.708009363227,
+              "y": 743.4619616667734,
+              "clearance": 0.02189007354320438
+            },
+            {
+              "x": 5580.232200625982,
+              "y": 752.7031442982483,
+              "clearance": 0.24348137353092625
+            }
+          ]
+        },
+        "ownership": {
+          "bikeId": "centrum-family-bike",
+          "bicycles": 1,
+          "passengers": 1,
+          "passenger": "chair"
+        },
+        "linkPhase": "riding",
+        "square": null,
+        "projection": {
+          "world": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -5175.1748046875,
+              "f": -292.1172180175781,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -5175.1748046875,
+              "m42": -292.1172180175781,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 12736.200000000186
+          },
+          "hero": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -5197.03955078125,
+              "f": -291.6442565917969,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -5197.03955078125,
+              "m42": -291.6442565917969,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 10763,
+            "x": 5578,
+            "y": 768.7974064119489,
+            "height": 145
+          },
+          "baby": {
+            "m": {
+              "a": 0.4100624899960297,
+              "b": -0.05721802185991112,
+              "c": 0.05721802185991112,
+              "d": 0.4100624899960297,
+              "e": 395.6684408187866,
+              "f": 410.8643226623535,
+              "m11": 0.4100624899960297,
+              "m12": -0.05721802185991112,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0.05721802185991112,
+              "m22": 0.4100624899960297,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": 395.6684408187866,
+              "m42": 410.8643226623535,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 10763,
+            "source": "baby_pose_brace.webp"
+          },
+          "npcs": {
+            "civilian-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5175.1748046875,
+                "f": -292.1172180175781,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5175.1748046875,
+                "m42": -292.1172180175781,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "civilian-workshop",
+              "kind": null,
+              "variant": 11,
+              "x": 6030,
+              "y": 739.24,
+              "height": 128,
+              "state": "idle",
+              "activity": "sit"
+            },
+            "walker-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5175.1748046875,
+                "f": -292.1172180175781,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5175.1748046875,
+                "m42": -292.1172180175781,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "walker-workshop",
+              "kind": null,
+              "variant": 2,
+              "x": 5328.779999999995,
+              "y": 678.8334399999994,
+              "height": 128,
+              "state": "idle",
+              "activity": "walk"
+            },
+            "neighbour-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5175.1748046875,
+                "f": -292.1172180175781,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5175.1748046875,
+                "m42": -292.1172180175781,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "neighbour-workshop",
+              "kind": null,
+              "variant": 6,
+              "x": 6120,
+              "y": 769.56,
+              "height": 128,
+              "state": "idle",
+              "activity": "idle"
+            }
+          },
+          "inside": false
+        },
+        "children": {
+          "ready": true,
+          "preparationMode": "compiled",
+          "cacheFailure": null,
+          "drawn": {},
+          "types": [
+            "bottle",
+            "rock",
+            "firecracker"
+          ],
+          "worldHeight": 94,
+          "adultReferenceHeight": 128,
+          "problems": []
+        },
+        "npc": {
+          "variant": 6,
+          "activity": "idle",
+          "pose": "idle",
+          "phase": 0,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            78,
+            11,
+            228,
+            345
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": null
+        },
+        "heroCache": {
+          "frames": 52,
+          "bytes": 10721764,
+          "limitBytes": 33554432,
+          "frameLimit": 98,
+          "phases": 48,
+          "canonicalHeight": 280,
+          "hits": 31,
+          "misses": 1,
+          "transientBuilds": 0,
+          "bitmapFrames": 52,
+          "bitmapFailures": 0,
+          "mode": "bitmap",
+          "pendingBitmaps": 0,
+          "buildMs": 15.599999999627471,
+          "maxBuildMs": 15.599999999627471,
+          "scratchBytes": 0,
+          "pouch": {
+            "frames": 1,
+            "bytes": 12320,
+            "limitBytes": 2097152,
+            "frameLimit": 48,
+            "hits": 83,
+            "builds": 1,
+            "evictions": 0
+          },
+          "sourceWarmup": {
+            "prepared": 7,
+            "total": 7,
+            "complete": true,
+            "buildMs": 269.40000000037253,
+            "maxTaskMs": 96.1999999997206,
+            "foreground": true,
+            "pending": 0,
+            "failure": null,
+            "retries": 0
+          }
+        },
+        "inventory": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "pendingOpen": null,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 100,
+          "disabledReason": "Full health \u2014 food kept.",
+          "layout": null
+        },
+        "fullscreen": "window"
+      }
+    },
+    {
+      "file": "phone/native-transfer-to-carrier.jpg",
+      "sha256": "eb057ee46fb48afbb4ef4abfff3a9cd1d9c394b14529b8198b364a921485261c",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE16",
+        "source": {
+          "mode": "dismount",
+          "transition": "dismount",
+          "place": "road",
+          "x": 160,
+          "depth": 0,
+          "jump": 0,
+          "paused": false,
+          "parkedAt": 5550,
+          "hero": {
+            "pose": "transfer3",
+            "carrier": "front",
+            "integratedCarrier": true,
+            "babyFace": {
+              "mood": "brace",
+              "source": "assets/baby_pose_brace.webp",
+              "continuousUpperBody": true,
+              "originalCollar": true,
+              "headOnly": false,
+              "uniformScale": 0.39942219833378123,
+              "angle": 0.2,
+              "flip": -1,
+              "alpha": 1,
+              "pivot": [
+                59,
+                101
+              ],
+              "anatomicalWaist": [
+                62,
+                104
+              ],
+              "waist": {
+                "x": 36.02715163934427,
+                "y": -69.6853915281962
+              },
+              "headHeight": 28.35897608169847,
+              "referenceHeadHeight": 61,
+              "sourceRect": [
+                0,
+                0,
+                98,
+                102
+              ],
+              "sourceBounds": [
+                0,
+                0,
+                98,
+                143
+              ],
+              "seamY": 101,
+              "occludeFrom": 95,
+              "seam": {
+                "start": {
+                  "x": 39.941755109692416,
+                  "y": -68.89186211971956
+                },
+                "end": {
+                  "x": 32.11254816899612,
+                  "y": -70.47892093667285
+                },
+                "occludeFrom": {
+                  "x": 36.50326928443025,
+                  "y": -72.0341536104051
+                }
+              },
+              "head": [
+                12,
+                5,
+                68,
+                71
+              ],
+              "chin": [
+                {
+                  "x": 36.5297910704478,
+                  "y": -82.21742699051379
+                },
+                {
+                  "x": 39.50276796503098,
+                  "y": -80.79968276966284
+                },
+                {
+                  "x": 42.242990394274685,
+                  "y": -80.24421218372919
+                }
+              ],
+              "neck": [
+                {
+                  "x": 44.983212823518386,
+                  "y": -79.68874159779554
+                }
+              ],
+              "collar": [
+                {
+                  "x": 43.882880366058096,
+                  "y": -78.2816060913516
+                },
+                {
+                  "x": 39.88361959765878,
+                  "y": -76.64702047677169
+                }
+              ],
+              "pose": "transfer3",
+              "pouch": {
+                "lip": [
+                  [
+                    350,
+                    753
+                  ],
+                  [
+                    379,
+                    768
+                  ],
+                  [
+                    409,
+                    750
+                  ]
+                ],
+                "depth": 30.870588235294118,
+                "seam": [
+                  379.25,
+                  772.472613339588
+                ],
+                "origin": [
+                  258,
+                  1007
+                ],
+                "scale": 0.29713114754098363,
+                "bob": 0,
+                "source": "transferBackground",
+                "textureMap": null,
+                "padding": 12.72261333958796
+              }
+            }
+          },
+          "combat": {
+            "hp": 100,
+            "time": 3.7131999999999956,
+            "stats": {
+              "grabs": 0,
+              "throws": 0,
+              "mauls": 0,
+              "frenzyMauls": 0,
+              "transformations": 0,
+              "witnesses": 0,
+              "defeats": 0,
+              "enemyShots": 0,
+              "screenImpacts": 0,
+              "screams": 0,
+              "civilianScares": 0,
+              "hides": 0,
+              "departures": 0,
+              "arrivals": 0,
+              "gangWarnings": 0,
+              "gangProvocations": 0
+            },
+            "shots": 0
+          }
+        },
+        "route": {
+          "routeId": "autumn-main",
+          "routeSceneId": "route:autumn-main",
+          "x": 5550,
+          "y": 712.1266825832292,
+          "speed": 0,
+          "angle": 0.11151691211953954,
+          "grounded": true,
+          "state": "playing",
+          "introHidden": true,
+          "debugOpen": false,
+          "demo": false,
+          "health": 100,
+          "bikeFrame": {
+            "x": 5550,
+            "y": 712.1266825832292,
+            "vx": 0,
+            "vy": -1.267857142857143,
+            "a": 0.11151691211953954,
+            "va": -0.05273992487694203,
+            "contact": true,
+            "cycle": 0,
+            "expression": "original_photo",
+            "broken": false,
+            "lean": 0
+          },
+          "adventure": {
+            "started": false,
+            "lunch": false,
+            "kit": false,
+            "delivered": false,
+            "repaired": false,
+            "chart": false,
+            "buoys": [],
+            "voyage": false,
+            "seeds": [],
+            "garden": false,
+            "boatReady": false
+          },
+          "simTime": 3.708333333333323,
+          "projectiles": 0,
+          "projectilePositions": [],
+          "lifeTime": 3.7131999999999956,
+          "babyMounted": true,
+          "routeProgress": {
+            "collectedPickups": [],
+            "score": 0,
+            "bonus": 0,
+            "maxDist": 5550,
+            "seconds": 3.708333333333323,
+            "checkpoint": 0,
+            "panic": 4.282966864399543,
+            "trickHazards": [
+              "scooter:5100",
+              "pothole:2865"
+            ],
+            "oneTime": [
+              "district:homes",
+              "episode0",
+              "episode1",
+              "episode2",
+              "tutorialJump",
+              "safetyCouncil"
+            ],
+            "lostParts": []
+          },
+          "wheels": [
+            {
+              "x": 5497.708009363227,
+              "y": 743.4619616667734,
+              "clearance": 0.02189007354320438
+            },
+            {
+              "x": 5580.232200625982,
+              "y": 752.7031442982483,
+              "clearance": 0.24348137353092625
+            }
+          ]
+        },
+        "ownership": {
+          "bikeId": "centrum-family-bike",
+          "bicycles": 1,
+          "passengers": 1,
+          "passenger": "chair"
+        },
+        "linkPhase": "riding",
+        "square": null,
+        "projection": {
+          "world": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -5155.60009765625,
+              "f": -293.13934326171875,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -5155.60009765625,
+              "m42": -293.13934326171875,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 6664.9000000003725
+          },
+          "hero": null,
+          "baby": null,
+          "npcs": {
+            "civilian-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5155.60009765625,
+                "f": -293.13934326171875,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5155.60009765625,
+                "m42": -293.13934326171875,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "civilian-workshop",
+              "kind": null,
+              "variant": 11,
+              "x": 6030,
+              "y": 739.24,
+              "height": 128,
+              "state": "idle",
+              "activity": "sit"
+            },
+            "walker-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5155.60009765625,
+                "f": -293.13934326171875,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5155.60009765625,
+                "m42": -293.13934326171875,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "walker-workshop",
+              "kind": null,
+              "variant": 2,
+              "x": 5202.996000000004,
+              "y": 664.4102080000005,
+              "height": 128,
+              "state": "idle",
+              "activity": "walk"
+            },
+            "neighbour-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5155.60009765625,
+                "f": -293.13934326171875,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5155.60009765625,
+                "m42": -293.13934326171875,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "neighbour-workshop",
+              "kind": null,
+              "variant": 6,
+              "x": 6120,
+              "y": 769.56,
+              "height": 128,
+              "state": "idle",
+              "activity": "idle"
+            }
+          },
+          "inside": false
+        },
+        "children": {
+          "ready": true,
+          "preparationMode": "compiled",
+          "cacheFailure": null,
+          "drawn": {},
+          "types": [
+            "bottle",
+            "rock",
+            "firecracker"
+          ],
+          "worldHeight": 94,
+          "adultReferenceHeight": 128,
+          "problems": []
+        },
+        "npc": {
+          "variant": 6,
+          "activity": "idle",
+          "pose": "idle",
+          "phase": 0,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            78,
+            11,
+            228,
+            345
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": null
+        },
+        "heroCache": {
+          "frames": 50,
+          "bytes": 10344804,
+          "limitBytes": 33554432,
+          "frameLimit": 98,
+          "phases": 48,
+          "canonicalHeight": 280,
+          "hits": 0,
+          "misses": 0,
+          "transientBuilds": 0,
+          "bitmapFrames": 50,
+          "bitmapFailures": 0,
+          "mode": "bitmap",
+          "pendingBitmaps": 0,
+          "buildMs": 0,
+          "maxBuildMs": 0,
+          "scratchBytes": 0,
+          "pouch": {
+            "frames": 0,
+            "bytes": 0,
+            "limitBytes": 2097152,
+            "frameLimit": 48,
+            "hits": 0,
+            "builds": 0,
+            "evictions": 0
+          },
+          "sourceWarmup": {
+            "prepared": 7,
+            "total": 7,
+            "complete": true,
+            "buildMs": 174.4000000008382,
+            "maxTaskMs": 50.8000000002794,
+            "foreground": true,
+            "pending": 0,
+            "failure": null,
+            "retries": 0
+          }
+        },
+        "inventory": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "pendingOpen": null,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 100,
+          "disabledReason": "Finish changing areas first.",
+          "layout": null
+        },
+        "fullscreen": "window"
+      }
+    },
+    {
+      "file": "phone/native-carrier-walk.jpg",
+      "sha256": "dfaaa2a0765ef27667f7504a5ab8a3a665d6839ec0ec1db7df14e670487316a6",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE16",
+        "source": {
+          "mode": "street",
+          "transition": null,
+          "place": "road",
+          "x": 5620.668667999999,
+          "depth": 0,
+          "jump": 0,
+          "paused": false,
+          "parkedAt": 5550,
+          "hero": {
+            "pose": "walking",
+            "carrier": "front",
+            "integratedCarrier": true,
+            "babyFace": {
+              "mood": "idle",
+              "source": "assets/baby_pose_idle.webp",
+              "continuousUpperBody": true,
+              "originalCollar": true,
+              "headOnly": false,
+              "uniformScale": 0.4140352055898952,
+              "angle": -0.13863973713415806,
+              "flip": 1,
+              "alpha": 1,
+              "pivot": [
+                52,
+                94
+              ],
+              "anatomicalWaist": [
+                48,
+                104
+              ],
+              "waist": {
+                "x": 14.70799180327869,
+                "y": -59.74497695752022
+              },
+              "headHeight": 25.670182746573502,
+              "referenceHeadHeight": 61,
+              "sourceRect": [
+                0,
+                0,
+                82,
+                95
+              ],
+              "sourceBounds": [
+                0,
+                0,
+                82,
+                146
+              ],
+              "seamY": 94,
+              "occludeFrom": 90,
+              "seam": {
+                "start": {
+                  "x": 10.6073668585798,
+                  "y": -59.17279673267852
+                },
+                "end": {
+                  "x": 18.80861674797758,
+                  "y": -60.317157182361925
+                },
+                "occludeFrom": {
+                  "x": 14.479119713342007,
+                  "y": -61.38522693539978
+                }
+              },
+              "head": [
+                15,
+                9,
+                57,
+                62
+              ],
+              "chin": [
+                {
+                  "x": 17.034858050968293,
+                  "y": -73.02909451092849
+                },
+                {
+                  "x": 16.271951084512686,
+                  "y": -72.50459597149026
+                },
+                {
+                  "x": 15.156199646071359,
+                  "y": -71.51281691509797
+                },
+                {
+                  "x": 13.983230185145862,
+                  "y": -70.93110035317557
+                },
+                {
+                  "x": 12.810260724220367,
+                  "y": -70.34938379125316
+                }
+              ],
+              "neck": [
+                {
+                  "x": 11.63729126329487,
+                  "y": -69.76766722933077
+                },
+                {
+                  "x": 11.694509285779041,
+                  "y": -69.35760473486087
+                }
+              ],
+              "collar": [
+                {
+                  "x": 6.888195397108712,
+                  "y": -67.85086347611104
+                },
+                {
+                  "x": 10.044722970818789,
+                  "y": -66.20107716115079
+                },
+                {
+                  "x": 14.145347915517679,
+                  "y": -66.77325738599251
+                }
+              ],
+              "pose": "front",
+              "pouch": {
+                "lip": [
+                  [
+                    198,
+                    288
+                  ],
+                  [
+                    226,
+                    293
+                  ],
+                  [
+                    264,
+                    285
+                  ]
+                ],
+                "depth": 32,
+                "seam": [
+                  228.5,
+                  298.9272499636561
+                ],
+                "origin": [
+                  179,
+                  500
+                ],
+                "scale": 0.29713114754098363,
+                "bob": 0,
+                "source": "frontBackground",
+                "textureMap": null,
+                "padding": 9.177249963656097
+              }
+            },
+            "height": 145,
+            "source": "front",
+            "sourceRect": [
+              51,
+              13,
+              256,
+              377
+            ],
+            "lowerPose": "idle",
+            "lowerSourceRect": [
+              170,
+              94,
+              1021,
+              1085
+            ],
+            "authoredLowerBody": true,
+            "stature": 488,
+            "landmarks": {
+              "near": {
+                "hip": {
+                  "x": -9.998630789943316,
+                  "y": -49.55812230842919
+                },
+                "knee": {
+                  "x": -10.69710504778198,
+                  "y": -26.109488448236227
+                },
+                "cuff": {
+                  "x": -13.407902663555621,
+                  "y": -16.06073580185354
+                },
+                "heel": {
+                  "x": -22.881291224181876,
+                  "y": -1.7218599095239968
+                },
+                "toe": {
+                  "x": -2.1536190236151436,
+                  "y": -3.7605688375306694
+                },
+                "sole": {
+                  "x": -7.186232430826346,
+                  "y": -2.4259098322765297e-05
+                },
+                "renderedFromSource": true,
+                "source": {
+                  "image": "bear-idle-lower-v18.png",
+                  "pose": "idle",
+                  "hip": [
+                    510,
+                    315
+                  ],
+                  "knee": [
+                    430,
+                    650
+                  ],
+                  "cuff": [
+                    405,
+                    790
+                  ],
+                  "heel": [
+                    205,
+                    1010
+                  ],
+                  "toe": [
+                    635,
+                    1080
+                  ],
+                  "sole": [
+                    470,
+                    1083
+                  ]
+                },
+                "plannedSole": {
+                  "x": -7.186232430826347,
+                  "y": -2.4259098318571837e-05
+                },
+                "plannedCuff": {
+                  "x": -11.931600104331922,
+                  "y": -18.424406280844327
+                },
+                "angle": 0.0004738948809978186,
+                "stance": true,
+                "kneeFlex": 0,
+                "contact": {
+                  "x": -7.135041549735828,
+                  "y": 0
+                },
+                "bootWidth": 20.827691397446834,
+                "rigidShoe": true
+              },
+              "far": {
+                "hip": {
+                  "x": 8.539112060904309,
+                  "y": -49.66950989573398
+                },
+                "knee": {
+                  "x": 4.08933235438948,
+                  "y": -29.14590145518945
+                },
+                "cuff": {
+                  "x": 4.3490975074403035,
+                  "y": -19.64830937431845
+                },
+                "heel": {
+                  "x": -3.10941532674615,
+                  "y": -3.20176136630973
+                },
+                "toe": {
+                  "x": 26.00457896532839,
+                  "y": -4.014071620322998
+                },
+                "sole": {
+                  "x": 12.272383527087559,
+                  "y": -2.6854933991190113
+                },
+                "renderedFromSource": true,
+                "source": {
+                  "image": "bear-idle-lower-v18.png",
+                  "pose": "idle",
+                  "hip": [
+                    835,
+                    315
+                  ],
+                  "knee": [
+                    790,
+                    690
+                  ],
+                  "cuff": [
+                    820,
+                    850
+                  ],
+                  "heel": [
+                    650,
+                    1110
+                  ],
+                  "toe": [
+                    1180,
+                    1150
+                  ],
+                  "sole": [
+                    940,
+                    1155
+                  ]
+                },
+                "plannedSole": {
+                  "x": 12.272383527087564,
+                  "y": -2.68549339911902
+                },
+                "plannedCuff": {
+                  "x": 8.404685299565827,
+                  "y": -19.917980006660287
+                },
+                "angle": -0.00028975198495076254,
+                "stance": false,
+                "kneeFlex": 0.0019159012676570031,
+                "contact": {
+                  "x": 12.269430992775707,
+                  "y": -2.6854925436163186
+                },
+                "bootWidth": 29.125324231460908,
+                "rigidShoe": true
+              }
+            },
+            "gait": {
+              "far": {
+                "x": 0.09341570717514558,
+                "y": -0.011312215747466086,
+                "angle": -0.00028975198495076254,
+                "shinAngle": 0.0004055128878993522,
+                "kneeFlex": 0.0019159012676570031,
+                "contactOffset": -0.002952534435799249,
+                "stance": false
+              },
+              "near": {
+                "x": -0.05849412473483953,
+                "y": 0,
+                "angle": 0.0004738948809978186,
+                "shinAngle": 0.0006724357881770566,
+                "kneeFlex": 0,
+                "contactOffset": 0.05119088683865074,
+                "stance": true
+              },
+              "phase": 0.40870371647509574,
+              "cycleLength": 104.39999999999999,
+              "bob": 0.002314251037560582,
+              "sway": 0.0026158454044188273,
+              "roll": 3.225332201309219e-05,
+              "pelvisSway": -0.0033336682057231856,
+              "pelvisRoll": 4.598163042376807e-05
+            },
+            "body": {
+              "pivot": {
+                "x": -2.0799180327868854,
+                "y": -49.0266393442623
+              },
+              "sway": 0.0026158454044188273,
+              "bob": -7.419821531066392,
+              "roll": 3.225332201309219e-05,
+              "pelvisSway": -0.0033336682057231856,
+              "pelvisRoll": 4.598163042376807e-05,
+              "slope": 0.1141680317932048,
+              "opaque": true,
+              "surfaces": 1,
+              "continuous": true,
+              "triangles": 400,
+              "canonicalHeight": 280,
+              "lowerHeight": 190,
+              "cachePhase": 0.40870371647509574
+            },
+            "cache": {
+              "frames": 52,
+              "hits": 17,
+              "misses": 1
+            },
+            "raster": {
+              "mode": "worker",
+              "requestedPhase": 0.40870371647509574,
+              "renderedPhase": 0.40870371647509574,
+              "requestedWeight": 0.0012143547616310004,
+              "renderedWeight": 0.0035304059888724647,
+              "heading": "horizontal"
+            }
+          },
+          "combat": {
+            "hp": 100,
+            "time": 4.796500000000002,
+            "stats": {
+              "grabs": 0,
+              "throws": 0,
+              "mauls": 0,
+              "frenzyMauls": 0,
+              "transformations": 0,
+              "witnesses": 0,
+              "defeats": 0,
+              "enemyShots": 0,
+              "screenImpacts": 0,
+              "screams": 0,
+              "civilianScares": 0,
+              "hides": 0,
+              "departures": 0,
+              "arrivals": 1,
+              "gangWarnings": 0,
+              "gangProvocations": 0
+            },
+            "shots": 0
+          }
+        },
+        "route": {
+          "routeId": "autumn-main",
+          "routeSceneId": "route:autumn-main",
+          "x": 5550,
+          "y": 712.1266825832292,
+          "speed": 0,
+          "angle": 0.11151691211953954,
+          "grounded": true,
+          "state": "playing",
+          "introHidden": true,
+          "debugOpen": false,
+          "demo": false,
+          "health": 100,
+          "bikeFrame": {
+            "x": 5550,
+            "y": 712.1266825832292,
+            "vx": 0,
+            "vy": -1.267857142857143,
+            "a": 0.11151691211953954,
+            "va": -0.05273992487694203,
+            "contact": true,
+            "cycle": 0,
+            "expression": "original_photo",
+            "broken": false,
+            "lean": 0
+          },
+          "adventure": {
+            "started": false,
+            "lunch": false,
+            "kit": false,
+            "delivered": false,
+            "repaired": false,
+            "chart": false,
+            "buoys": [],
+            "voyage": false,
+            "seeds": [],
+            "garden": false,
+            "boatReady": false
+          },
+          "simTime": 3.708333333333323,
+          "projectiles": 0,
+          "projectilePositions": [],
+          "lifeTime": 4.796500000000002,
+          "babyMounted": true,
+          "routeProgress": {
+            "collectedPickups": [],
+            "score": 0,
+            "bonus": 0,
+            "maxDist": 5550,
+            "seconds": 3.708333333333323,
+            "checkpoint": 0,
+            "panic": 4.282966864399543,
+            "trickHazards": [
+              "scooter:5100",
+              "pothole:2865"
+            ],
+            "oneTime": [
+              "district:homes",
+              "episode0",
+              "episode1",
+              "episode2",
+              "tutorialJump",
+              "safetyCouncil"
+            ],
+            "lostParts": []
+          },
+          "wheels": [
+            {
+              "x": 5497.708009363227,
+              "y": 743.4619616667734,
+              "clearance": 0.02189007354320438
+            },
+            {
+              "x": 5580.232200625982,
+              "y": 752.7031442982483,
+              "clearance": 0.24348137353092625
+            }
+          ]
+        },
+        "ownership": {
+          "bikeId": "centrum-family-bike",
+          "bicycles": 1,
+          "passengers": 1,
+          "passenger": "chair"
+        },
+        "linkPhase": "riding",
+        "square": null,
+        "projection": {
+          "world": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -5202.3056640625,
+              "f": -292.2490234375,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -5202.3056640625,
+              "m42": -292.2490234375,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 8880.5
+          },
+          "hero": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -5202.3056640625,
+              "f": -292.2490234375,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -5202.3056640625,
+              "m42": -292.2490234375,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 8882,
+            "x": 5620.668667999999,
+            "y": 776.3033405973333,
+            "height": 145
+          },
+          "baby": {
+            "m": {
+              "a": 0.41391155834378723,
+              "b": -0.010117786157200392,
+              "c": 0.010117786157200392,
+              "d": 0.41391155834378723,
+              "e": 440.629340505685,
+              "f": 419.00318402412415,
+              "m11": 0.41391155834378723,
+              "m12": -0.010117786157200392,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0.010117786157200392,
+              "m22": 0.41391155834378723,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": 440.629340505685,
+              "m42": 419.00318402412415,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 8882,
+            "source": "baby_pose_idle.webp"
+          },
+          "npcs": {
+            "civilian-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5202.3056640625,
+                "f": -292.2490234375,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5202.3056640625,
+                "m42": -292.2490234375,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "civilian-workshop",
+              "kind": null,
+              "variant": 11,
+              "x": 6030,
+              "y": 739.24,
+              "height": 127.6,
+              "state": "idle",
+              "activity": "sit"
+            },
+            "walker-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5202.3056640625,
+                "f": -292.2490234375,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5202.3056640625,
+                "m42": -292.2490234375,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "walker-workshop",
+              "kind": null,
+              "variant": 2,
+              "x": 5267.994000000004,
+              "y": 671.8633120000005,
+              "height": 127.6,
+              "state": "idle",
+              "activity": "walk"
+            },
+            "neighbour-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5202.3056640625,
+                "f": -292.2490234375,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5202.3056640625,
+                "m42": -292.2490234375,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "neighbour-workshop",
+              "kind": null,
+              "variant": 6,
+              "x": 6120,
+              "y": 769.56,
+              "height": 127.6,
+              "state": "idle",
+              "activity": "idle"
+            }
+          },
+          "inside": false
+        },
+        "children": {
+          "ready": true,
+          "preparationMode": "compiled",
+          "cacheFailure": null,
+          "drawn": {},
+          "types": [
+            "bottle",
+            "rock",
+            "firecracker"
+          ],
+          "worldHeight": 94,
+          "adultReferenceHeight": 128,
+          "problems": []
+        },
+        "npc": {
+          "variant": 6,
+          "activity": "idle",
+          "pose": "idle",
+          "phase": 0,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            78,
+            11,
+            228,
+            345
+          ],
+          "height": 127.6,
+          "heightScale": 1,
+          "civilian": true,
+          "details": null
+        },
+        "heroCache": {
+          "frames": 52,
+          "bytes": 10721764,
+          "limitBytes": 33554432,
+          "frameLimit": 98,
+          "phases": 48,
+          "canonicalHeight": 280,
+          "hits": 17,
+          "misses": 1,
+          "transientBuilds": 0,
+          "bitmapFrames": 52,
+          "bitmapFailures": 0,
+          "mode": "bitmap",
+          "pendingBitmaps": 0,
+          "buildMs": 11.600000000093132,
+          "maxBuildMs": 11.600000000093132,
+          "scratchBytes": 0,
+          "pouch": {
+            "frames": 1,
+            "bytes": 12320,
+            "limitBytes": 2097152,
+            "frameLimit": 48,
+            "hits": 69,
+            "builds": 1,
+            "evictions": 0
+          },
+          "sourceWarmup": {
+            "prepared": 7,
+            "total": 7,
+            "complete": true,
+            "buildMs": 174.4000000008382,
+            "maxTaskMs": 50.8000000002794,
+            "foreground": true,
+            "pending": 0,
+            "failure": null,
+            "retries": 0
+          }
+        },
+        "inventory": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "pendingOpen": null,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 100,
+          "disabledReason": "Full health \u2014 food kept.",
+          "layout": null
+        },
+        "fullscreen": "window"
+      }
+    },
+    {
+      "file": "phone/native-transfer-to-chair.jpg",
+      "sha256": "c7d1448619d38916c7ccfbe81d83f9170ba1bf00daaba580523a076d3858ccf8",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE16",
+        "source": {
+          "mode": "mount",
+          "transition": "mount",
+          "place": "road",
+          "x": 5620.668667999999,
+          "depth": 0,
+          "jump": 0,
+          "paused": false,
+          "parkedAt": 5550,
+          "hero": {
+            "pose": "transfer4",
+            "carrier": "front",
+            "integratedCarrier": true,
+            "babyFace": {
+              "mood": "brace",
+              "source": "assets/baby_pose_brace.webp",
+              "continuousUpperBody": true,
+              "originalCollar": true,
+              "headOnly": false,
+              "uniformScale": 0.39942219833378123,
+              "angle": -0.10827059086045604,
+              "flip": 1,
+              "alpha": 1,
+              "pivot": [
+                59,
+                101
+              ],
+              "anatomicalWaist": [
+                62,
+                104
+              ],
+              "waist": {
+                "x": 16.862192622950822,
+                "y": -58.89447518443926
+              },
+              "headHeight": 28.35897608169847,
+              "referenceHeadHeight": 61,
+              "sourceRect": [
+                0,
+                0,
+                98,
+                102
+              ],
+              "sourceBounds": [
+                0,
+                0,
+                98,
+                143
+              ],
+              "seamY": 101,
+              "occludeFrom": 95,
+              "seam": {
+                "start": {
+                  "x": 12.891358953945232,
+                  "y": -58.46286282911257
+                },
+                "end": {
+                  "x": 20.83302629195641,
+                  "y": -59.32608753976595
+                },
+                "occludeFrom": {
+                  "x": 16.603225209754804,
+                  "y": -61.27697538584261
+                }
+              },
+              "head": [
+                12,
+                5,
+                68,
+                71
+              ],
+              "chin": [
+                {
+                  "x": 17.509611155940863,
+                  "y": -71.41986573601993
+                },
+                {
+                  "x": 14.419266691801731,
+                  "y": -70.28040911795746
+                },
+                {
+                  "x": 11.639683123497818,
+                  "y": -69.97828046922878
+                }
+              ],
+              "neck": [
+                {
+                  "x": 8.860099555193905,
+                  "y": -69.67615182050008
+                }
+              ],
+              "collar": [
+                {
+                  "x": 9.8269112311257,
+                  "y": -68.17414082396319
+                },
+                {
+                  "x": 13.65962894642675,
+                  "y": -66.18009174235387
+                }
+              ],
+              "pose": "transfer4",
+              "pouch": {
+                "lip": [
+                  [
+                    791,
+                    792
+                  ],
+                  [
+                    829,
+                    807
+                  ],
+                  [
+                    866,
+                    789
+                  ]
+                ],
+                "depth": 30.870588235294118,
+                "seam": [
+                  828.75,
+                  809.7896283447838
+                ],
+                "origin": [
+                  772,
+                  1008
+                ],
+                "scale": 0.29713114754098363,
+                "bob": 0,
+                "source": "transferBackground",
+                "textureMap": null,
+                "padding": 11.039628344783742
+              }
+            }
+          },
+          "combat": {
+            "hp": 100,
+            "time": 5.4797000000000065,
+            "stats": {
+              "grabs": 0,
+              "throws": 0,
+              "mauls": 0,
+              "frenzyMauls": 0,
+              "transformations": 0,
+              "witnesses": 0,
+              "defeats": 0,
+              "enemyShots": 0,
+              "screenImpacts": 0,
+              "screams": 0,
+              "civilianScares": 0,
+              "hides": 0,
+              "departures": 0,
+              "arrivals": 2,
+              "gangWarnings": 0,
+              "gangProvocations": 0
+            },
+            "shots": 0
+          }
+        },
+        "route": {
+          "routeId": "autumn-main",
+          "routeSceneId": "route:autumn-main",
+          "x": 5550,
+          "y": 712.1266825832292,
+          "speed": 0,
+          "angle": 0.11151691211953954,
+          "grounded": true,
+          "state": "playing",
+          "introHidden": true,
+          "debugOpen": false,
+          "demo": false,
+          "health": 100,
+          "bikeFrame": {
+            "x": 5550,
+            "y": 712.1266825832292,
+            "vx": 0,
+            "vy": -1.267857142857143,
+            "a": 0.11151691211953954,
+            "va": -0.05273992487694203,
+            "contact": true,
+            "cycle": 0,
+            "expression": "original_photo",
+            "broken": false,
+            "lean": 0
+          },
+          "adventure": {
+            "started": false,
+            "lunch": false,
+            "kit": false,
+            "delivered": false,
+            "repaired": false,
+            "chart": false,
+            "buoys": [],
+            "voyage": false,
+            "seeds": [],
+            "garden": false,
+            "boatReady": false
+          },
+          "simTime": 3.708333333333323,
+          "projectiles": 0,
+          "projectilePositions": [],
+          "lifeTime": 5.4797000000000065,
+          "babyMounted": true,
+          "routeProgress": {
+            "collectedPickups": [],
+            "score": 0,
+            "bonus": 0,
+            "maxDist": 5550,
+            "seconds": 3.708333333333323,
+            "checkpoint": 0,
+            "panic": 4.282966864399543,
+            "trickHazards": [
+              "scooter:5100",
+              "pothole:2865"
+            ],
+            "oneTime": [
+              "district:homes",
+              "episode0",
+              "episode1",
+              "episode2",
+              "tutorialJump",
+              "safetyCouncil"
+            ],
+            "lostParts": []
+          },
+          "wheels": [
+            {
+              "x": 5497.708009363227,
+              "y": 743.4619616667734,
+              "clearance": 0.02189007354320438
+            },
+            {
+              "x": 5580.232200625982,
+              "y": 752.7031442982483,
+              "clearance": 0.24348137353092625
+            }
+          ]
+        },
+        "ownership": {
+          "bikeId": "centrum-family-bike",
+          "bicycles": 1,
+          "passengers": 1,
+          "passenger": "chair"
+        },
+        "linkPhase": "riding",
+        "square": null,
+        "projection": {
+          "world": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -5203.06201171875,
+              "f": -292.3326110839844,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -5203.06201171875,
+              "m42": -292.3326110839844,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 11190.30000000028
+          },
+          "hero": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -5203.06201171875,
+              "f": -292.3326110839844,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -5203.06201171875,
+              "m42": -292.3326110839844,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 10587.5,
+            "x": 5578,
+            "y": 768.9519136104217,
+            "height": 145
+          },
+          "baby": {
+            "m": {
+              "a": 0.4100624899960297,
+              "b": -0.05721802185991112,
+              "c": 0.05721802185991112,
+              "d": 0.4100624899960297,
+              "e": 389.6459798812866,
+              "f": 410.33044815063477,
+              "m11": 0.4100624899960297,
+              "m12": -0.05721802185991112,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0.05721802185991112,
+              "m22": 0.4100624899960297,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": 389.6459798812866,
+              "m42": 410.33044815063477,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 10587.600000000093,
+            "source": "baby_pose_brace.webp"
+          },
+          "npcs": {
+            "civilian-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5203.06201171875,
+                "f": -292.3326110839844,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5203.06201171875,
+                "m42": -292.3326110839844,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "civilian-workshop",
+              "kind": null,
+              "variant": 11,
+              "x": 6030,
+              "y": 739.24,
+              "height": 128,
+              "state": "idle",
+              "activity": "sit"
+            },
+            "walker-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5203.06201171875,
+                "f": -292.3326110839844,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5203.06201171875,
+                "m42": -292.3326110839844,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "walker-workshop",
+              "kind": null,
+              "variant": 2,
+              "x": 5308.986000000006,
+              "y": 676.5637280000008,
+              "height": 128,
+              "state": "idle",
+              "activity": "walk"
+            },
+            "neighbour-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5203.06201171875,
+                "f": -292.3326110839844,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5203.06201171875,
+                "m42": -292.3326110839844,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "neighbour-workshop",
+              "kind": null,
+              "variant": 6,
+              "x": 6120,
+              "y": 769.56,
+              "height": 128,
+              "state": "idle",
+              "activity": "idle"
+            }
+          },
+          "inside": false
+        },
+        "children": {
+          "ready": true,
+          "preparationMode": "compiled",
+          "cacheFailure": null,
+          "drawn": {},
+          "types": [
+            "bottle",
+            "rock",
+            "firecracker"
+          ],
+          "worldHeight": 94,
+          "adultReferenceHeight": 128,
+          "problems": []
+        },
+        "npc": {
+          "variant": 6,
+          "activity": "idle",
+          "pose": "idle",
+          "phase": 0,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            78,
+            11,
+            228,
+            345
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": null
+        },
+        "heroCache": {
+          "frames": 52,
+          "bytes": 10721764,
+          "limitBytes": 33554432,
+          "frameLimit": 98,
+          "phases": 48,
+          "canonicalHeight": 280,
+          "hits": 34,
+          "misses": 1,
+          "transientBuilds": 0,
+          "bitmapFrames": 52,
+          "bitmapFailures": 0,
+          "mode": "bitmap",
+          "pendingBitmaps": 0,
+          "buildMs": 11.600000000093132,
+          "maxBuildMs": 11.600000000093132,
+          "scratchBytes": 0,
+          "pouch": {
+            "frames": 1,
+            "bytes": 12320,
+            "limitBytes": 2097152,
+            "frameLimit": 48,
+            "hits": 148,
+            "builds": 1,
+            "evictions": 0
+          },
+          "sourceWarmup": {
+            "prepared": 7,
+            "total": 7,
+            "complete": true,
+            "buildMs": 174.4000000008382,
+            "maxTaskMs": 50.8000000002794,
+            "foreground": true,
+            "pending": 0,
+            "failure": null,
+            "retries": 0
+          }
+        },
+        "inventory": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "pendingOpen": null,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 100,
+          "disabledReason": "Finish changing areas first.",
+          "layout": null
+        },
+        "fullscreen": "window"
+      }
+    },
+    {
+      "file": "phone/native-same-bike-remounted.jpg",
+      "sha256": "ca115a57f9590d2f7a5e50037f60fc879a32b66fb0396575a713445f795d5648",
+      "actualGameplay": true,
+      "state": {
+        "build": "BQ_CENTRUM_STAGE16",
+        "source": {
+          "mode": null,
+          "transition": null,
+          "place": null,
+          "x": 5620.668667999999,
+          "depth": 0,
+          "jump": 0,
+          "paused": false,
+          "parkedAt": 5550,
+          "hero": {
+            "pose": "transfer2",
+            "carrier": "front",
+            "integratedCarrier": true,
+            "babyFace": {
+              "mood": "brace",
+              "source": "assets/baby_pose_brace.webp",
+              "continuousUpperBody": true,
+              "originalCollar": true,
+              "headOnly": false,
+              "uniformScale": 0.4140352055898952,
+              "angle": 0.2,
+              "flip": -1,
+              "alpha": 1,
+              "pivot": [
+                59,
+                101
+              ],
+              "anatomicalWaist": [
+                62,
+                104
+              ],
+              "waist": {
+                "x": 24.88473360655738,
+                "y": -63.323457270056174
+              },
+              "headHeight": 29.39649959688256,
+              "referenceHeadHeight": 61,
+              "sourceRect": [
+                0,
+                0,
+                98,
+                102
+              ],
+              "sourceBounds": [
+                0,
+                0,
+                98,
+                143
+              ],
+              "seamY": 101,
+              "occludeFrom": 95,
+              "seam": {
+                "start": {
+                  "x": 28.942554277040216,
+                  "y": -62.50089629785477
+                },
+                "end": {
+                  "x": 20.826912936074542,
+                  "y": -64.14601824225757
+                },
+                "occludeFrom": {
+                  "x": 25.37827018987822,
+                  "y": -65.75814967234588
+                }
+              },
+              "head": [
+                12,
+                5,
+                68,
+                71
+              ],
+              "chin": [
+                {
+                  "x": 25.405762285140305,
+                  "y": -76.31398183465366
+                },
+                {
+                  "x": 28.48750662708629,
+                  "y": -74.84436892279598
+                },
+                {
+                  "x": 31.327981096424278,
+                  "y": -74.268576242255
+                }
+              ],
+              "neck": [
+                {
+                  "x": 34.16845556576226,
+                  "y": -73.69278356171401
+                }
+              ],
+              "collar": [
+                {
+                  "x": 33.02786704278513,
+                  "y": -72.23416748796116
+                },
+                {
+                  "x": 28.88229185602974,
+                  "y": -70.53977996065272
+                }
+              ],
+              "pose": "transfer2",
+              "pouch": {
+                "lip": [
+                  [
+                    1308,
+                    266
+                  ],
+                  [
+                    1342,
+                    282
+                  ],
+                  [
+                    1375,
+                    266
+                  ]
+                ],
+                "depth": 32,
+                "seam": [
+                  1341.75,
+                  286.8838127738799
+                ],
+                "origin": [
+                  1258,
+                  500
+                ],
+                "scale": 0.29713114754098363,
+                "bob": 0,
+                "source": "transferBackground",
+                "textureMap": null,
+                "padding": 12.883812773879935
+              }
+            }
+          },
+          "combat": {
+            "hp": 100,
+            "time": 5.646300000000008,
+            "stats": {
+              "grabs": 0,
+              "throws": 0,
+              "mauls": 0,
+              "frenzyMauls": 0,
+              "transformations": 0,
+              "witnesses": 0,
+              "defeats": 0,
+              "enemyShots": 0,
+              "screenImpacts": 0,
+              "screams": 0,
+              "civilianScares": 0,
+              "hides": 0,
+              "departures": 0,
+              "arrivals": 2,
+              "gangWarnings": 0,
+              "gangProvocations": 0
+            },
+            "shots": 0
+          }
+        },
+        "route": {
+          "routeId": "autumn-main",
+          "routeSceneId": "route:autumn-main",
+          "x": 5550,
+          "y": 712.1266825832292,
+          "speed": 0,
+          "angle": 0.11151691211953954,
+          "grounded": true,
+          "state": "playing",
+          "introHidden": true,
+          "debugOpen": false,
+          "demo": false,
+          "health": 100,
+          "bikeFrame": {
+            "x": 5550,
+            "y": 712.1266825832292,
+            "vx": 0,
+            "vy": -1.267857142857143,
+            "a": 0.11151691211953954,
+            "va": -0.05273992487694203,
+            "contact": true,
+            "cycle": 0,
+            "expression": "original_photo",
+            "broken": false,
+            "lean": 0
+          },
+          "adventure": {
+            "started": false,
+            "lunch": false,
+            "kit": false,
+            "delivered": false,
+            "repaired": false,
+            "chart": false,
+            "buoys": [],
+            "voyage": false,
+            "seeds": [],
+            "garden": false,
+            "boatReady": false
+          },
+          "simTime": 3.8666666666666556,
+          "projectiles": 0,
+          "projectilePositions": [],
+          "lifeTime": 5.646300000000008,
+          "babyMounted": true,
+          "routeProgress": {
+            "collectedPickups": [],
+            "score": 0,
+            "bonus": 0,
+            "maxDist": 5550,
+            "seconds": 3.8666666666666556,
+            "checkpoint": 0,
+            "panic": 4.271746448186555,
+            "trickHazards": [
+              "scooter:5100",
+              "pothole:2865"
+            ],
+            "oneTime": [
+              "district:homes",
+              "episode0",
+              "episode1",
+              "episode2",
+              "tutorialJump",
+              "safetyCouncil"
+            ],
+            "lostParts": []
+          },
+          "wheels": [
+            {
+              "x": 5497.708009363227,
+              "y": 743.4619616667734,
+              "clearance": 0.02189007354320438
+            },
+            {
+              "x": 5580.232200625982,
+              "y": 752.7031442982483,
+              "clearance": 0.24348137353092625
+            }
+          ]
+        },
+        "ownership": {
+          "bikeId": "centrum-family-bike",
+          "bicycles": 1,
+          "passengers": 1,
+          "passenger": "chair"
+        },
+        "linkPhase": "riding",
+        "square": null,
+        "projection": {
+          "world": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -5182.44091796875,
+              "f": -292.5369567871094,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -5182.44091796875,
+              "m42": -292.5369567871094,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 12491.80000000028
+          },
+          "hero": {
+            "m": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1,
+              "e": -5203.06201171875,
+              "f": -292.3326110839844,
+              "m11": 1,
+              "m12": 0,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0,
+              "m22": 1,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": -5203.06201171875,
+              "m42": -292.3326110839844,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 10587.5,
+            "x": 5578,
+            "y": 768.9519136104217,
+            "height": 145
+          },
+          "baby": {
+            "m": {
+              "a": 0.4100624899960297,
+              "b": -0.05721802185991112,
+              "c": 0.05721802185991112,
+              "d": 0.4100624899960297,
+              "e": 389.6459798812866,
+              "f": 410.33044815063477,
+              "m11": 0.4100624899960297,
+              "m12": -0.05721802185991112,
+              "m13": 0,
+              "m14": 0,
+              "m21": 0.05721802185991112,
+              "m22": 0.4100624899960297,
+              "m23": 0,
+              "m24": 0,
+              "m31": 0,
+              "m32": 0,
+              "m33": 1,
+              "m34": 0,
+              "m41": 389.6459798812866,
+              "m42": 410.33044815063477,
+              "m43": 0,
+              "m44": 1,
+              "is2D": true,
+              "isIdentity": false
+            },
+            "w": 1160,
+            "h": 640,
+            "at": 10587.600000000093,
+            "source": "baby_pose_brace.webp"
+          },
+          "npcs": {
+            "civilian-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5182.44091796875,
+                "f": -292.5369567871094,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5182.44091796875,
+                "m42": -292.5369567871094,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "civilian-workshop",
+              "kind": null,
+              "variant": 11,
+              "x": 6030,
+              "y": 739.24,
+              "height": 128,
+              "state": "idle",
+              "activity": "sit"
+            },
+            "walker-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5182.44091796875,
+                "f": -292.5369567871094,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5182.44091796875,
+                "m42": -292.5369567871094,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "walker-workshop",
+              "kind": null,
+              "variant": 2,
+              "x": 5318.982000000006,
+              "y": 677.7099360000008,
+              "height": 128,
+              "state": "idle",
+              "activity": "walk"
+            },
+            "neighbour-workshop": {
+              "m": {
+                "a": 1,
+                "b": 0,
+                "c": 0,
+                "d": 1,
+                "e": -5182.44091796875,
+                "f": -292.5369567871094,
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m14": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m24": 0,
+                "m31": 0,
+                "m32": 0,
+                "m33": 1,
+                "m34": 0,
+                "m41": -5182.44091796875,
+                "m42": -292.5369567871094,
+                "m43": 0,
+                "m44": 1,
+                "is2D": true,
+                "isIdentity": false
+              },
+              "w": 1160,
+              "h": 640,
+              "id": "neighbour-workshop",
+              "kind": null,
+              "variant": 6,
+              "x": 6120,
+              "y": 769.56,
+              "height": 128,
+              "state": "idle",
+              "activity": "idle"
+            }
+          },
+          "inside": false
+        },
+        "children": {
+          "ready": true,
+          "preparationMode": "compiled",
+          "cacheFailure": null,
+          "drawn": {},
+          "types": [
+            "bottle",
+            "rock",
+            "firecracker"
+          ],
+          "worldHeight": 94,
+          "adultReferenceHeight": 128,
+          "problems": []
+        },
+        "npc": {
+          "variant": 6,
+          "activity": "idle",
+          "pose": "idle",
+          "phase": 0,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            78,
+            11,
+            228,
+            345
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": null
+        },
+        "heroCache": {
+          "frames": 52,
+          "bytes": 10721764,
+          "limitBytes": 33554432,
+          "frameLimit": 98,
+          "phases": 48,
+          "canonicalHeight": 280,
+          "hits": 34,
+          "misses": 1,
+          "transientBuilds": 0,
+          "bitmapFrames": 52,
+          "bitmapFailures": 0,
+          "mode": "bitmap",
+          "pendingBitmaps": 0,
+          "buildMs": 11.600000000093132,
+          "maxBuildMs": 11.600000000093132,
+          "scratchBytes": 0,
+          "pouch": {
+            "frames": 1,
+            "bytes": 12320,
+            "limitBytes": 2097152,
+            "frameLimit": 48,
+            "hits": 148,
+            "builds": 1,
+            "evictions": 0
+          },
+          "sourceWarmup": {
+            "prepared": 7,
+            "total": 7,
+            "complete": true,
+            "buildMs": 174.4000000008382,
+            "maxTaskMs": 50.8000000002794,
+            "foreground": true,
+            "pending": 0,
+            "failure": null,
+            "retries": 0
+          }
+        },
+        "inventory": {
+          "bound": true,
+          "browsing": false,
+          "recovering": false,
+          "pendingOpen": null,
+          "eating": null,
+          "lastOutcome": null,
+          "food": 0,
+          "wallet": 0,
+          "health": 100,
+          "disabledReason": "Full health \u2014 food kept.",
+          "layout": null
+        },
+        "fullscreen": "window"
+      }
+    }
+  ],
+  "recordings": [],
+  "errors": [],
+  "consoleErrors": [],
+  "httpFailures": [],
+  "browser": "154.0.8037.57",
+  "runtimeHashesAfter": {
+    "autumn-v19.html": "17d0516568c790a8ac968c57e3ac56d76d0563f193145f01799b38ab08c3d2c6",
+    "autumn-version.json": "7f49fc3888b86e21cd2502bcc9a1b91d8c00c9b9d37e448b29643fe8938111c1",
+    "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+    "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+    "css/centrum-route.css": "892e1ec5ac28ae0a551d45b276974888e6db3f227635487e45c761e1553d1e5f",
+    "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+    "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+    "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+    "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+    "index.html": "17d0516568c790a8ac968c57e3ac56d76d0563f193145f01799b38ab08c3d2c6",
+    "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+    "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+    "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+    "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+    "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+    "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+    "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+    "js/centrum-camera.js": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+    "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+    "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+    "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+    "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+    "js/centrum-hero-cache.js": "38f3212052e12304e3ecf4a053f0141122660395593874151e23835717ee5eff",
+    "js/centrum-inventory.js": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+    "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+    "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+    "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+    "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+    "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+    "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+    "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf",
+    "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+    "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+    "js/game.js": "11c93d495aa746d673896781d0053a1a8f85b498bbab5f850a1ff7468d0e3dec",
+    "js/hero-rig.js": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+    "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+    "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+    "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+    "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+    "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+    "js/illustrated-visits.js": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+    "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+    "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+    "js/npc-motion.js": "147503f395bd349444a4c8490d72b912c9d5211849323ef8c6c929ed5ff6db13",
+    "js/street-life.js": "1677f641ef54a8e4ef3d2c7ffe0c8d15aea2d7bd5f1e6d3419f67c5d97401584",
+    "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+    "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+  },
+  "changedRuntimeFiles": [],
+  "passed": true
+}

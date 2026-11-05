@@ -104,6 +104,7 @@
   }
   function caption(c,n,x,y,h,time){
     if(n.visible===false||n.active===false)return;
+    if(n.kind==='gangster')h=window.BearlyKids.heightFor(h);
     if(n.screaming){
       c.save();c.font=`600 ${Math.max(13,h*.11)}px Arial, sans-serif`;c.textAlign='center';c.fillStyle='#fff';c.shadowColor='#18241f';c.shadowBlur=4;
       c.fillText('AAH!',x,y-h-10-Math.sin(time*16)*2);c.restore();

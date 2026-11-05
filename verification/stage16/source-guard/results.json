@@ -1,0 +1,101 @@
+{
+  "scope": "Actual final Stage16 source reconstruction and in-memory negative guards; no visual/animation or performance claim.",
+  "atUtc": "2026-11-05T16:17:53.449551+00:00",
+  "build": "BQ_CENTRUM_STAGE16",
+  "previousTargetCommit": "ffec905bf71296b63f2d38fab74a3ac20e2c3875",
+  "manifest": "references/source/stage16-source-integration.json",
+  "manifestSha256": "7c8f291d196d5239d31a5bece59b71732279cc5b88aac88a7e3903fc9f60befd",
+  "originalProtectedFiles": 944,
+  "originalArtworkFiles": 919,
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "tools/verify-source-integrity.py"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "result": "944 original protected files reconstructed exactly; original source assets/CSS unchanged."
+    },
+    {
+      "command": [
+        "python3",
+        "tests/centrum_source_integrity.py"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "result": "Prior Stage14 guards retained; 11 exact Stage16 inverses; 22 rejected Stage16 source/load-order mutations; tampered Stage16 manifest rejected; cycling simulation block unchanged."
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "tools/verify-source-integrity.py",
+        "tests/centrum_source_integrity.py"
+      ],
+      "passed": true,
+      "returnCode": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "tools/verify-source-integrity.py",
+        "tests/centrum_source_integrity.py",
+        "references/source/stage16-source-integration.json"
+      ],
+      "passed": true,
+      "returnCode": 0
+    }
+  ],
+  "stage16ExactInverseFiles": 11,
+  "stage16ExactHunks": {
+    "autumn-v19.html": 4,
+    "index.html": 4,
+    "js/brawler-art.js": 1,
+    "js/brawler.js": 5,
+    "js/game.js": 2,
+    "js/hero-rig.js": 7,
+    "js/illustrated-kids.js": 1,
+    "js/illustrated-neighbourhood.js": 1,
+    "js/illustrated-visits.js": 5,
+    "js/npc-motion.js": 5,
+    "js/street-life.js": 1
+  },
+  "stage16RejectedCodeOrLoadOrderMutations": 22,
+  "stage16RejectedManifestMutations": 1,
+  "priorStage14Guards": {
+    "exactInverses": 2,
+    "rejectedSourceMutations": 6,
+    "rejectedManifestMutations": 1
+  },
+  "independentCyclingSimulation": {
+    "characters": 17332,
+    "sha256": "be413cd99f320f38d94a49fdf3b93d297dfe5f5039aa977d4c20442250fc9bef",
+    "matchesStage15": true
+  },
+  "runtimeHashes": {
+    "autumn-v19.html": "17d0516568c790a8ac968c57e3ac56d76d0563f193145f01799b38ab08c3d2c6",
+    "index.html": "17d0516568c790a8ac968c57e3ac56d76d0563f193145f01799b38ab08c3d2c6",
+    "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+    "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+    "js/game.js": "11c93d495aa746d673896781d0053a1a8f85b498bbab5f850a1ff7468d0e3dec",
+    "js/hero-rig.js": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+    "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+    "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+    "js/illustrated-visits.js": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+    "js/npc-motion.js": "147503f395bd349444a4c8490d72b912c9d5211849323ef8c6c929ed5ff6db13",
+    "js/street-life.js": "1677f641ef54a8e4ef3d2c7ffe0c8d15aea2d7bd5f1e6d3419f67c5d97401584"
+  },
+  "guardHashes": {
+    "tools/verify-source-integrity.py": "1ff88dd9b68799b4a8c051fc8780ed2472727d0f37a180f26d64c81a2830e678",
+    "tests/centrum_source_integrity.py": "4216f0007e6272dc99464232c04af91515436fee28b325bfa6a870ccd4572413"
+  },
+  "noDonorCheckoutOrGitRequiredByVerifier": true,
+  "mutationsStayInMemory": true,
+  "originalArtworkChanges": [],
+  "passed": true
+}

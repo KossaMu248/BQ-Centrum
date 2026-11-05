@@ -105,10 +105,11 @@
   function gang(c,n,h){
     return window.BearlyKids.drawState(c,n,h);
   }
+  const motionOptions=Object.freeze({authoredWalk:true});
   function adult(c,n,x,y,h=130,scale=1){
     if(n.active===false||n.visible===false)return;
     if(n.kind!=='gangster'){
-      if(window.BearlyNpcMotion?.draw(c,n,x,y,h,scale))return;
+      if(window.BearlyNpcMotion?.draw(c,n,x,y,h,scale,motionOptions))return;
       if((n.variant||0)>=9)return;
       const passive=!n.hostile&&!['aggressive','hostile'].includes(n.mood)&&!['stagger','fall','dead','down','rise','held'].includes(n.state);
       if(passive&&!window.BearlyNpcMotion?.ready())return;

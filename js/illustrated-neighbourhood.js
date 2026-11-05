@@ -112,7 +112,7 @@
   window.BearlyNeighbourhood={
     scenes,
     entrance,placement,walkingAt,
-    scaleAudit:()=>scenes.map(b=>{const source={apartment:[807,124],courtyard:[682,160],workshop:[854,220],arcade:[765,180],metro:[1513,270],'civic-hall':[754,223],pizzeria:[919,216],library:[722,145],greenhouse:[695,206],boathouse:[739,160],cafe:[1319,287]}[b.key];return{key:b.key,width:b.w,estimatedDoorHeight:b.key==='castle'?160:source[1]*b.w/source[0],foregroundGate:b.key==='castle',bearHeight:145,adultHeight:128,teenHeight:120};}),
+    scaleAudit:()=>scenes.map(b=>{const source={apartment:[807,124],courtyard:[682,160],workshop:[854,220],arcade:[765,180],metro:[1513,270],'civic-hall':[754,223],pizzeria:[919,216],library:[722,145],greenhouse:[695,206],boathouse:[739,160],cafe:[1319,287]}[b.key];return{key:b.key,width:b.w,estimatedDoorHeight:b.key==='castle'?160:source[1]*b.w/source[0],foregroundGate:b.key==='castle',bearHeight:145,adultHeight:128,teenHeight:window.BearlyKids?.worldHeight?.()||94};}),
     canVisit:b=>publicRoles.has(b.role),
     nearestEntrance(x){return scenes.filter(b=>publicRoles.has(b.role)&&Math.abs(entrance(b).x-x)<=110).sort((a,b)=>Math.abs(entrance(a).x-x)-Math.abs(entrance(b).x-x))[0]||null;},
     entrances(c,s){

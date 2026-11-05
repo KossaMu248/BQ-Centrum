@@ -58,3 +58,8 @@ The user asked to continue the remaining limits. This target-only stage reduces 
 ## Stage15 approved wider camera
 
 The user explicitly approved the proposed25% screen-size reduction for a wider exploration view. Stage15 applies uniform0.75 world projection with original world/character proportions, native baby art, collision/saves, source ride/transfers and shared health retained. Existing rooms center in a quiet matte; no scene/floor expansion or character regeneration. Normal desktop/phone-landscape moving-character evidence, interaction/source checks and exact standalone delivery are recorded under verification/stage15. The existing target-only main push and automatic Pages authorization persist; final commit/deployment are read back outside the ZIP. Donors remain read-only.
+
+
+## Stage16 reported 2.5D/NPC repairs
+
+The user requested less lag, a wider copied2.5D view, shorter child gangsters, coherentNPC walking and peaceful seated rest until disturbed. This target-only update preserves original assets/baby/title, source cycling/damage formulas, the existing adventure ledger and combat recovery. It adds bounded original-pouch/native-worker reuse, route1.0 projection, source child94/128 proportions, original complete NPC walking keys and calm rest retention. Actual timings, source inverses, native gameplay and exact standalone evidence are versioned under verification/stage16. Existing target main/Pages authorization persists; final commit/deployment and public-file hashes are read back outside the ZIP. Neither donor repository/save/deployment is modified.

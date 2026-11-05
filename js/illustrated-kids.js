@@ -12,7 +12,7 @@
     return{manifest,image,yieldTask,prepare};
   })());
   const yieldPreparation=()=>window.__BEARLY_BUILD_RENDER_CACHE?Promise.resolve():renderCache.yieldTask();
-  const WORLD_HEIGHT=120,ADULT_HEIGHT=128,TAU=Math.PI*2;
+  const WORLD_HEIGHT=94,ADULT_HEIGHT=128,TAU=Math.PI*2;
   const cast={
     bottle:{file:'teen-molotov-poses-v18.png',oppositeUnits:1.15,releaseHand:[940,452],outfit:'Burgundy cap · black puffer gilet and hoodie · black tracksuit · sling bag · burgundy trainers'},
     rock:{file:'teen-rock-poses-v18.png',oppositeUnits:1.12,releaseHand:[940,488],outfit:'Blue cap · olive technical jacket · charcoal cargos · sling bag · gray trainers'},

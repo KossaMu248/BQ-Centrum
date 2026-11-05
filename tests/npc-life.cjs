@@ -27,14 +27,15 @@ assert.ok(witnesses.maul(player));assert.equal(by(witnesses,'target').mood,'aggr
 step(witnesses,.4);assert.equal(by(witnesses,'close').activity,'flee');assert.equal(by(witnesses,'far').activity,'walk');
 assert.ok(witnesses.snapshot().stats.witnesses>=1);
 
-// Long explicit routes stay on the sidewalk, visit props, pause there, then
-// continue over a much larger range than the former short back-and-forth route.
+// Long explicit routes stay on the sidewalk. Authored readers keep resting
+// until disturbed; after an actual moving contact the normal route resumes.
 const route=make();route.enter('street',[{id:'reader',x:600,depth:0,civilian:true,patrol:true,routeMin:100,routeMax:1500,walkSpeed:65,
   restSpots:[{id:'reading-bench',kind:'newspaper',x:600,depth:-70,duration:2}]}]);
 assert.equal(by(route,'reader').activity,'read');assert.equal(by(route,'reader').depth,-70);
 step(route,1);assert.equal(by(route,'reader').activity,'read');assert.equal(by(route,'reader').x,600);assert.equal(by(route,'reader').speed,0);
-step(route,2);assert.equal(by(route,'reader').activity,'walk');
-let min=Infinity,max=-Infinity;for(let i=0;i<2600;i++){route.update(.02,{...player,x:4000});const n=by(route,'reader');min=Math.min(min,n.x);max=Math.max(max,n.x);assert.equal(n.depth,-70);}
+step(route,2);assert.equal(by(route,'reader').activity,'read','elapsed rest duration does not end a peaceful activity');
+route.update(.02,{...player,x:605,depth:-70,speed:25});assert.equal(by(route,'reader').activity,'walk','moving physical contact releases the reader');
+let min=Infinity,max=-Infinity;for(let i=0;i<2600;i++){const resting=by(route,'reader');if(resting.activity==='read')route.update(.02,{...player,x:resting.x+5,depth:resting.depth,speed:25});route.update(.02,{...player,x:4000});const n=by(route,'reader');min=Math.min(min,n.x);max=Math.max(max,n.x);assert.equal(n.depth,-70);}
 assert.ok(max-min>1100,{min,max});assert.ok(by(route,'reader').distance>1800);
 
 // Each adult rest mode has an actual prop association rather than a combat pose.
@@ -48,7 +49,8 @@ const behind=make();behind.enter('street',[{id:'bench-reader',x:400,patrol:true,
  restSpots:[{id:'rear-bench',kind:'newspaper',x:400,depth:-84,duration:2}]}]);
 assert.equal(by(behind,'bench-reader').depth,-84);assert.equal(by(behind,'bench-reader').homeDepth,-64);
 step(behind,1,{...player,x:4000});assert.equal(by(behind,'bench-reader').activity,'read');assert.equal(by(behind,'bench-reader').depth,-84);
-step(behind,2,{...player,x:4000});assert.equal(by(behind,'bench-reader').activity,'walk');assert.equal(by(behind,'bench-reader').depth,-64);
+step(behind,2,{...player,x:4000});assert.equal(by(behind,'bench-reader').activity,'read');assert.equal(by(behind,'bench-reader').depth,-84);
+behind.update(.02,{...player,x:405,depth:-84,speed:25});step(behind,2,{...player,x:4000});assert.equal(by(behind,'bench-reader').activity,'walk');assert.equal(by(behind,'bench-reader').depth,-64);
 assert.equal(by(behind,'bench-reader').homeDepth,-64);assert.equal(by(behind,'bench-reader').sidewalkDepth,-64);
 
 // Provoked adults run fast enough to close a gap on a walking player. They

@@ -30,7 +30,7 @@
   const placeArt=p=>!p?[]:p.role==='pizza'?['room']:p.role==='workshop'?['workshop']:p.role==='water'?['water']:['park','castle'].includes(p.role)?['forest','verge']:[];
   const placeReady=p=>placeArt(p).every(key=>art[key].naturalWidth>0);
   function preload(p=null){
-    if(!footPreparation)footPreparation=Promise.all([Promise.all(['people','transfer','passengers','boat'].map(loadArt)).then(()=>{preparation.base=true;}),window.BearlyHeroRig.preload().then(()=>{preparation.hero=true;}),Promise.resolve(window.BearlyBrawlArt.prepare?.()).then(()=>{preparation.combat=true;})]).then(()=>window.BearlyHeroRig.warmupSources?.()).then(()=>{preparation.sources=true;footPrepared=true;});
+    if(!footPreparation)footPreparation=Promise.all([Promise.all(['people','transfer','passengers','boat'].map(loadArt)).then(()=>{preparation.base=true;}),window.BearlyHeroRig.preload().then(()=>{preparation.hero=true;}),Promise.resolve(window.BearlyBrawlArt.prepare?.()).then(()=>{preparation.combat=true;})]).then(()=>window.BearlyHeroRig.warmupSources?.({foreground:true})).then(()=>window.BearlyHeroRig.prepareRouteCache?.()).then(()=>{preparation.sources=true;footPrepared=true;});
     return Promise.all([footPreparation,...placeArt(p).map(loadArt)]);
   }
   let candidate=null,context=null,place=null,mode=null,x=160,velocity=0,face=1,clock=0,stride=0,fade=0,focused=null,paused=false,lastMessage='';
@@ -57,8 +57,10 @@
   function syncViewport(){
     const visible=viewport.width/Math.max(viewport.width/1160,viewport.height/640),span=1160-visible;
     const road=mode==='street'||!mode||transition?.kind?.startsWith('door');
-    const screenX=road?1160*.32+1.35*((mode==='street'?x:context.x)-(context.road.cameraX||0)-1160*.32):mode==='room'?x:x-viewOffset;
-    host.style.setProperty('--portrait-pan',`${span>1?clamp((screenX-visible*.42)/span,0,1)*100:50}%`);
+    const screenX=road?window.BearlyCentrumCamera.projectRoute({cameraX:context.road.cameraX||0,cameraY:context.road.cameraY||0},mode==='street'?x:context.x,0).x:mode==='room'?x:x-viewOffset;
+    const pan=span>1?clamp((screenX-visible*.42)/span,0,1):.5;
+    host.style.setProperty('--portrait-pan',`${pan*100}%`);
+    messageEl.dataset.side=screenX-span*pan<visible*.5?'right':'left';
   }
   function clear(){held.clear();contacts.clear();for(const b of controls.querySelectorAll('[data-direction],[data-depth]'))b.classList.remove('held');}
   function eligible(s){return s?.playing&&s.grounded&&Math.abs(s.speed)<45;}
@@ -233,7 +235,7 @@
     nameEl.textContent=paused?'PAUSED':mode==='water'?'MÄLAREN · BUOY TRAIL':mode==='dock'?'MÄLARENS BÅTHUS · DOCK':mode==='garden'?place.label+' · GARDEN':mode==='street'?'HÄSSELBY · ON FOOT':place.label;
     panel.querySelector('.area-exit').textContent=mode==='water'?'BACK TO DOCK ↗':streetEntry&&mode!=='street'?'BACK OUTSIDE ↗':'BACK TO BIKE ↗';
     actionButton.disabled=(!t&&mode!=='street')||paused||combatState.hp===0;actionButton.textContent=t?t.label+' · E':mode==='street'?'WALK BACK TO BIKE · Q':'WALK CLOSER';
-    controls.dataset.mode=mode;
+    controls.dataset.mode=mode;panel.dataset.mode=mode;
     controls.querySelector('.area-grab').textContent=combatState.held?'THROW · G':'GRAB · G';
     for(const cls of ['.area-grab','.area-maul','.area-jump'])controls.querySelector(cls).disabled=mode==='water'||paused||combatState.hp===0;
     const meter=status.querySelector('.primal-track'),value=combatState.phase==='madness'?combatState.frenzy/8*100:combatState.heat;
@@ -338,7 +340,7 @@
   function babyPresentation(){return {state:land()?combatState:{hp:100},talking:clock<babyTalkUntil,mode,speed:velocity,weight:land()?walkWeight:0,jump:land()?jumpZ:0,transfer:!!transition};}
   function walkingActor(c,px,py,height=190){
     if(!externalShadow){c.save();c.fillStyle='#162e2945';c.beginPath();c.ellipse(px,py+1,height*.18,height*.032,0,0,Math.PI*2);c.fill();c.restore();}
-    window.BearlyHeroRig.draw(c,px,py,height,face,{...babyPresentation(),distance:stride,groundAt:mode==='street'&&!transition?context?.road.groundAt:null});
+    window.BearlyHeroRig.draw(c,px,py,height,face,{...babyPresentation(),routeCache:!transition,distance:stride,groundAt:mode==='street'&&!transition?context?.road.groundAt:null});
   }
   function actor(c,px,py,height=190,seated=false){
     if(!art.people.naturalWidth)return;
@@ -387,7 +389,7 @@
     const project=(nx,nd)=>{
       if(mode==='street'&&road){
         const gy=road.groundAt(nx)??road.groundAt(x)??0;
-        return {x:W*.32+1.35*(nx-road.cameraX-W*.32),y:H*.22+1.35*(gy+nd-road.cameraY-H*.22),height:145*.88*1.35};
+        return {...window.BearlyCentrumCamera.projectRoute({width:W,height:H,cameraX:road.cameraX,cameraY:road.cameraY},nx,gy+nd),height:145*.88*window.BearlyCentrumCamera.routeZoom};
       }
       return {x:(nx-(mode==='room'?0:viewOffset))*W/1160,y:(floor+nd)*H/640,height:195*H/640};
     };

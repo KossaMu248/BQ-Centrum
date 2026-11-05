@@ -1,0 +1,34 @@
+{
+  "scope": "Real source metadata and submitted Canvas transforms with mocked pixels; independent renderer-reference boards supplement this, actual gameplay is recorded separately.",
+  "atUtc": "2026-11-05T15:56:52.352163+00:00",
+  "commands": [
+    {
+      "command": [
+        "node",
+        "tests/centrum_npc_render.cjs"
+      ],
+      "passed": true,
+      "stdout": "{\"scope\":\"Mocked Canvas/real source metadata; no pixel/visual claim\",\"authoredWalkCases\":576,\"groundedSoles\":576,\"childPoseCases\":54,\"contactLockCases\":9,\"projectileOriginCases\":3,\"authoredFramesAllocated\":0,\"authoredWalkCacheBytes\":0,\"legacyVariantFrames\":48,\"passed\":true}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "tests/centrum_scene_preparation.cjs"
+      ],
+      "passed": true,
+      "stdout": "PASS: native preloadAll unchanged; optional variants validate/deduplicate/wait; scene-specific empty/three identities; concurrent coalescing; independent failure/retry; no save writes or identity changes.",
+      "stderr": ""
+    }
+  ],
+  "runtimeHashes": {
+    "js/npc-motion.js": "147503f395bd349444a4c8490d72b912c9d5211849323ef8c6c929ed5ff6db13",
+    "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+    "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+    "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+    "js/street-life.js": "1677f641ef54a8e4ef3d2c7ffe0c8d15aea2d7bd5f1e6d3419f67c5d97401584",
+    "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+    "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09"
+  },
+  "passed": true
+}

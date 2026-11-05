@@ -54,6 +54,33 @@
   };
   let parts=null,lastAudit={},nativeFrames=null;
   const preparedBodies=new Map();
+  // Reuse the original curved pouch pixels instead of making the main canvas
+  // replay a live clipped image at every passenger draw. No child pixels enter
+  // this cache; pose/layout/source coordinates remain in native artwork units.
+  const pouchFrames=new Map(),pouchSources=new WeakMap(),POUCH_LIMIT=2*1024*1024,POUCH_FRAMES=48;
+  let pouchSequence=0,pouchBytes=0,pouchHits=0,pouchBuilds=0,pouchEvictions=0;
+  function pouchFrame(image,rect,name,upper,lip,depth){
+    const source=upper.texture||upper.source?image:images[backgrounds[name]];
+    let id=pouchSources.get(source);if(!id){id=++pouchSequence;pouchSources.set(source,id);}
+    const key=id+':'+name+':'+rect.join(',')+':'+lip.flat().join(',')+':'+depth+':'+(upper.texture?.join(',')||'');
+    let frame=pouchFrames.get(key);if(frame){pouchHits++;pouchFrames.delete(key);pouchFrames.set(key,frame);return frame;}
+    const [a,q,b]=lip,left=Math.floor(Math.min(a[0],q[0],b[0]))-2,top=Math.floor(Math.min(a[1],q[1],b[1]))-2,
+      right=Math.ceil(Math.max(a[0],q[0],b[0]))+2,bottom=Math.ceil(Math.max(a[1],q[1],b[1])+depth)+2;
+    const tile=document.createElement('canvas');tile.width=Math.max(1,right-left);tile.height=Math.max(1,bottom-top);
+    const c=tile.getContext('2d',{willReadFrequently:true});c.translate(-left,-top);c.beginPath();c.moveTo(...a);c.quadraticCurveTo(...q,...b);
+    c.lineTo(b[0],b[1]+depth);c.quadraticCurveTo(q[0],q[1]+depth,a[0],a[1]+depth);c.closePath();c.clip();
+    let textureMap=null;
+    if(upper.texture){
+      const y0=Math.min(a[1],q[1],b[1]),y1=Math.max(a[1],q[1],b[1])+depth,destination=[a[0],y0,b[0]-a[0],y1-y0];
+      c.drawImage(source,...upper.texture,...destination);textureMap={source:upper.texture,destination};
+    }else{const [sx,sy,sw,sh]=rect;c.drawImage(source,sx,sy,sw,sh,sx,sy,sw,sh);}
+    const pixels=c.getImageData(0,0,tile.width,tile.height);c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,tile.width,tile.height);c.putImageData(pixels,0,0);
+    frame={image:tile,left,top,width:tile.width,height:tile.height,bytes:tile.width*tile.height*4,textureMap};pouchBuilds++;
+    // An unexpectedly large optional layout may draw once but is not retained.
+    if(frame.bytes<=POUCH_LIMIT){pouchFrames.set(key,frame);pouchBytes+=frame.bytes;
+      while(pouchBytes>POUCH_LIMIT||pouchFrames.size>POUCH_FRAMES){const oldest=pouchFrames.keys().next().value,evicted=pouchFrames.get(oldest);pouchFrames.delete(oldest);pouchBytes-=evicted.bytes;evicted.image.width=evicted.image.height=1;pouchEvictions++;}}
+    return frame;
+  }
   const upperBodies={
     front:{box:[182,172,94,131],waist:[238,298],raise:6,lip:[[198,294],[226,299],[264,291]]},
     back:{box:[269,78,88,139],waist:[302,212],raise:20,lip:[[276,208],[302,216],[328,203]]},
@@ -131,14 +158,22 @@
     const passenger=window.BearlyBabyPassenger.draw(c,{mood,x:X(seam[0]),y:Y(seam[1]),scale:scale*s,angle,flip});
     // The original neck and shirt remain continuous. Only the lower torso cut
     // disappears behind the front of the actual carrier pouch, below the face.
-    const depth=Math.max(32*u,padding+14*u),foreground=new Path2D();foreground.moveTo(X(a[0]),Y(a[1]));foreground.quadraticCurveTo(X(q[0]),Y(q[1]),X(b[0]),Y(b[1]));
-    foreground.lineTo(X(b[0]),Y(b[1]+depth));foreground.quadraticCurveTo(X(q[0]),Y(q[1]+depth),X(a[0]),Y(a[1]+depth));foreground.closePath();
-    c.save();c.clip(foreground);const [sx,sy,sw,sh]=rect;let textureMap=null;
-    if(upper.texture){
-      const top=Math.min(a[1],q[1],b[1]),bottom=Math.max(a[1],q[1],b[1])+depth,destination=[a[0],top,b[0]-a[0],bottom-top];
-      c.drawImage(image,...upper.texture,X(destination[0]),Y(destination[1]),destination[2]*s,destination[3]*s);textureMap={source:upper.texture,destination};
-    }else c.drawImage(upper.source?image:images[backgrounds[name]],sx,sy,sw,sh,X(sx),Y(sy),sw*s,sh*s);
-    c.restore();
+    const depth=Math.max(32*u,padding+14*u);let textureMap=null;
+    if(name.startsWith('transfer')||name==='boat'){
+      // Preserve production transfers/boat clothing and pouch overlap. These
+      // authored poses retain the original clip at final render scale.
+      const foreground=new Path2D();foreground.moveTo(X(a[0]),Y(a[1]));foreground.quadraticCurveTo(X(q[0]),Y(q[1]),X(b[0]),Y(b[1]));
+      foreground.lineTo(X(b[0]),Y(b[1]+depth));foreground.quadraticCurveTo(X(q[0]),Y(q[1]+depth),X(a[0]),Y(a[1]+depth));foreground.closePath();
+      c.save();c.clip(foreground);const [sx,sy,sw,sh]=rect;
+      if(upper.texture){
+        const top=Math.min(a[1],q[1],b[1]),bottom=Math.max(a[1],q[1],b[1])+depth,destination=[a[0],top,b[0]-a[0],bottom-top];
+        c.drawImage(image,...upper.texture,X(destination[0]),Y(destination[1]),destination[2]*s,destination[3]*s);textureMap={source:upper.texture,destination};
+      }else c.drawImage(upper.source?image:images[backgrounds[name]],sx,sy,sw,sh,X(sx),Y(sy),sw*s,sh*s);
+      c.restore();
+    }else{
+      const foreground=pouchFrame(image,rect,name,upper,lip,depth);textureMap=foreground.textureMap;
+      c.drawImage(foreground.image,X(foreground.left),Y(foreground.top),foreground.width*s,foreground.height*s);
+    }
     c.save();c.strokeStyle='#274b60';c.lineWidth=1.8*s;c.beginPath();c.moveTo(X(a[0]),Y(a[1]));c.quadraticCurveTo(X(q[0]),Y(q[1]),X(b[0]),Y(b[1]));c.stroke();c.restore();
     return {...passenger,pose:name,pouch:{lip,depth,seam,origin,scale:s,bob,source:upper.source||backgrounds[name],textureMap,padding}};
   }
@@ -330,7 +365,7 @@
     const buildMs=bodyNow()-buildStart;bodyBuildMs+=buildMs;maxBodyBuildMs=Math.max(maxBodyBuildMs,buildMs);return frame;
   }
   // Centrum-only raster backend begin. Original source calls still use bodyFrame.
-  let centrumCache=null,centrumPreparePromise=null,centrumPrepareFailure=null;
+  let centrumCache=null,centrumManagerPromise=null,centrumPreparePromise=null,routePreparePromise=null,centrumPrepareFailure=null,centrumWarmQueue=Promise.resolve();
   function centrumJob(profile,name,distance,h,weight,motion){
     const phase=((distance/window.BearlyLocomotion.cycleLength(h))%1+1)%1,index=Math.round(phase*BODY_PHASES)%BODY_PHASES,steady=weight>=.999,idle=weight<=.0001;
     const effectivePhase=idle?0:steady?index/BODY_PHASES:phase,heading=motion?.y?(motion.cacheKey||'depth'):'horizontal';
@@ -342,26 +377,37 @@
     if(frame.bitmap){frame.image.close();bodyBitmaps--;}
     if(frame.canvas){frame.canvas.width=1;frame.canvas.height=1;}
   }
-  function prepareCentrumCache(){
-    if(centrumPreparePromise)return centrumPreparePromise;
+  function prepareRasterCache(){
+    if(centrumManagerPromise)return centrumManagerPromise;
     centrumPrepareFailure=null;
     if(!window.BearlyCentrumHeroCache?.supported()){centrumPrepareFailure='Worker raster unavailable';return warmupSources({foreground:true}).then(()=>false);}
-    centrumPreparePromise=warmupSources({foreground:true}).then(async()=>{
+    centrumManagerPromise=warmupSources({foreground:true}).then(async()=>{
       const lower=lowerKeys.map((_,index)=>({index,...prepareLower(index)}));
       const upper=['front','back'].map(name=>({name,...upperSource(profiles[name],name)}));
       centrumCache=await window.BearlyCentrumHeroCache.create({functions:{surfacePose,centrumBoot,centrumLowerTargets,centrumLowerMesh,lowerTargets,lowerMesh,surfaceTriangle,bakeBody},lower,upper,
         images:Object.fromEntries(Object.entries(images).map(([key,image])=>[key,{src:image.src}])),
         cache:{frames:bodyFrames,limitFrames:98,limitBytes:BODY_CACHE_LIMIT,bytes:()=>bodyCacheBytes,
           add:frame=>{bodyCacheBytes+=frame.width*frame.height*4;bodyBitmaps++;},drop:centrumDrop}});
-      // Native idles guarantee a correct carrier while a newly requested heading
-      // finishes; the first horizontal cycle is ready before accepting movement.
-      const motion={x:1,y:0,cacheKey:'horizontal',centrumWalk:true};
+      return centrumCache.available();
+    }).catch(error=>{centrumPrepareFailure=String(error?.message||error);centrumCache?.close();centrumCache=null;centrumManagerPromise=centrumPreparePromise=routePreparePromise=null;return false;});
+    return centrumManagerPromise;
+  }
+  function warmRasterFamily(motion){
+    const task=centrumWarmQueue.catch(()=>false).then(async()=>{
+      if(!await prepareRasterCache())return false;
+      // Both APIs share one worker/budget. Serial warmup prevents one family
+      // from superseding another family's preparation waiters.
       for(const name of ['front','back'])await centrumCache.ensure(centrumJob(profiles[name],name,0,BODY_HEIGHT,0,motion));
       for(let index=0;index<BODY_PHASES;index++)await centrumCache.ensure(centrumJob(profiles.front,'front',window.BearlyLocomotion.cycleLength(BODY_HEIGHT)*index/BODY_PHASES,BODY_HEIGHT,1,motion));
       return centrumCache.available();
-    }).catch(error=>{centrumPrepareFailure=String(error?.message||error);centrumCache?.close();centrumCache=null;centrumPreparePromise=null;return false;});
+    });
+    centrumWarmQueue=task;return task;
+  }
+  function prepareCentrumCache(){
+    if(!centrumPreparePromise)centrumPreparePromise=warmRasterFamily({x:1,y:0,cacheKey:'horizontal',centrumWalk:true}).then(ready=>{if(!ready)centrumPreparePromise=null;return ready;});
     return centrumPreparePromise;
   }
+  function prepareRouteCache(){if(!routePreparePromise)routePreparePromise=warmRasterFamily(null).then(ready=>{if(!ready)routePreparePromise=null;return ready;});return routePreparePromise;}
   function centrumCacheStats(){return{...(centrumCache?.stats()||{ready:false,pending:0,queued:0,frames:0,bytes:0}),failure:centrumPrepareFailure||centrumCache?.stats().failure||null};}
   // End Centrum-only raster backend.
   function projectGroundGait(gait,motion){return window.BearlyCentrumDepthGait?.project(gait,motion)||gait;}
@@ -380,7 +426,7 @@
     if(action){const babyFace=fullPose(c,action,h,options);lastAudit={pose:action,carrier:action==='frontHurt'?'front':'back',integratedCarrier:true,babyFace,height:h,source:actions[action].image};c.restore();return true;}
     let slope=0;if(options.groundAt){const a=options.groundAt(px-18),b=options.groundAt(px+18);if(a!=null&&b!=null)slope=Math.atan2(b-a,36)*face;}c.rotate(slope);
     const groundMotion=options.centrumCache?{x:1,y:0,cacheKey:'horizontal',...options.groundMotion,centrumWalk:true}:options.groundMotion;
-    const request=options.centrumCache&&centrumCache?.available()?centrumJob(profile,name,options.distance||0,h,weight,groundMotion):null;
+    const request=(options.centrumCache||options.routeCache)&&centrumCache?.available()?centrumJob(profile,name,options.distance||0,h,weight,groundMotion):null;
     const frame=(request?centrumCache.get(request):null)||bodyFrame(profile,name,options.distance||0,h,weight,groundMotion),scale=h/BODY_HEIGHT;c.drawImage(frame.image,frame.left*scale,frame.top*scale,frame.width*scale,frame.height*scale);
     const renderedWeight=frame.centrum?frame.weight:weight,renderedMotion=frame.centrum?frame.gait.groundMotion:(frame.gait.groundMotion||groundMotion);
     const gait=projectGroundGait(window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,renderedWeight),renderedMotion),pose=surfacePose(profile,h,gait,renderedWeight),passengerOptions=gait.centrumWalk?{...options,weight:renderedWeight,groundMotion:renderedMotion}:options;c.save();pose.transform(c);const babyFace=paintPassenger(c,images[profile.image],profile.torso,profile.origin,s,name,passengerOptions);c.restore();
@@ -416,7 +462,7 @@
     })).catch(error=>{sourceWarmupFailure=String(error?.message||error);throw error;});
     return sourceWarmupPromise;
   }
-  function cacheStats(){return {frames:bodyFrames.size,bytes:bodyCacheBytes,limitBytes:BODY_CACHE_LIMIT,frameLimit:98,phases:BODY_PHASES,canonicalHeight:BODY_HEIGHT,hits:bodyCacheHits,misses:bodyCacheMisses,transientBuilds,bitmapFrames:bodyBitmaps,bitmapFailures,mode:window.createImageBitmap?'bitmap':'raster-canvas',pendingBitmaps:[...bodyFrames.values()].filter(f=>f.pending).length,buildMs:bodyBuildMs,maxBuildMs:maxBodyBuildMs,scratchBytes:[...bodyScratch.values()].reduce((n,c)=>n+c.width*c.height*4,0),sourceWarmup:{prepared:sourceWarmupDone,total:7,complete:sourceWarmupDone===7,buildMs:sourceWarmupMs,maxTaskMs:sourceWarmupMaxMs,foreground:sourceWarmupForeground,pending:sourceWarmupPending?1:0,failure:sourceWarmupFailure,retries:sourceWarmupRetries}};}
+  function cacheStats(){return {frames:bodyFrames.size,bytes:bodyCacheBytes,limitBytes:BODY_CACHE_LIMIT,frameLimit:98,phases:BODY_PHASES,canonicalHeight:BODY_HEIGHT,hits:bodyCacheHits,misses:bodyCacheMisses,transientBuilds,bitmapFrames:bodyBitmaps,bitmapFailures,mode:window.createImageBitmap?'bitmap':'raster-canvas',pendingBitmaps:[...bodyFrames.values()].filter(f=>f.pending).length,buildMs:bodyBuildMs,maxBuildMs:maxBodyBuildMs,scratchBytes:[...bodyScratch.values()].reduce((n,c)=>n+c.width*c.height*4,0),pouch:{frames:pouchFrames.size,bytes:pouchBytes,limitBytes:POUCH_LIMIT,frameLimit:POUCH_FRAMES,hits:pouchHits,builds:pouchBuilds,evictions:pouchEvictions},sourceWarmup:{prepared:sourceWarmupDone,total:7,complete:sourceWarmupDone===7,buildMs:sourceWarmupMs,maxTaskMs:sourceWarmupMaxMs,foreground:sourceWarmupForeground,pending:sourceWarmupPending?1:0,failure:sourceWarmupFailure,retries:sourceWarmupRetries}};}
   function drawAuthored(c,image,rect,origin,scale,pose,options={}){
     if(!ready()||!heads[pose])return false;
     const babyFace=drawCarrier(c,image,rect,origin,scale,pose,options);
@@ -427,5 +473,5 @@
     if(!ready()||!layout?.head||!layout?.upper)return false;
     return paintPassenger(c,image,layout.rect,layout.origin,s,layout.name||'centrum-directional',options,0,layout);
   }
-  window.BearlyHeroRig={drawPassengerLayout,ready,preload,warmupSources,prepareCentrumCache,centrumCacheStats,draw,drawAuthored,babyMood,cacheStats,layout:()=>JSON.parse(JSON.stringify(upperBodies)),audit:()=>JSON.parse(JSON.stringify(lastAudit)),profiles:()=>JSON.parse(JSON.stringify(profiles))};
+  window.BearlyHeroRig={drawPassengerLayout,ready,preload,warmupSources,prepareCentrumCache,prepareRouteCache,centrumCacheStats,draw,drawAuthored,babyMood,cacheStats,layout:()=>JSON.parse(JSON.stringify(upperBodies)),audit:()=>JSON.parse(JSON.stringify(lastAudit)),profiles:()=>JSON.parse(JSON.stringify(profiles))};
 })();

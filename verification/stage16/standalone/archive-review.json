@@ -1,0 +1,159 @@
+{
+  "passed": true,
+  "scope": "The single frozen Stage16 archive; package hashes/extraction, real clean-server browser interaction matrix and final payload comparison.",
+  "archiveSha256": "e7ba221de08d05032440e3f3cb3ccca27cf9a30698d450d4f260a001f5bd7cdb",
+  "zipBytes": 996984547,
+  "payloadBytes": 1026840425,
+  "payloadFiles": 2100,
+  "archiveFiles": 2102,
+  "exactManifestAndCRC": true,
+  "smallHTMLFiles": {
+    "autumn-v19.html": 13644,
+    "index.html": 13644
+  },
+  "forbiddenPaths": [],
+  "credentialPatternScan": "Package builder scans allowlisted text and decoded gzip JSON; eight positive/negative codec checks also passed.",
+  "requiredPreparedRuntimeAssets": 55,
+  "sourceIntegrityFromExtraction": "PASS: 944 pinned original files verified; all source assets/CSS and original protected code match;\nonly reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional Centrum walking/worker/preparation and reviewed Stage16 camera/NPC/rest additions differ.",
+  "matrix": {
+    "passed": true,
+    "topLevelChecks": 28,
+    "serverPaths": [
+      "/",
+      "/BQ-Centrum/"
+    ],
+    "desktop": [
+      1280,
+      720
+    ],
+    "phoneLandscapeChromiumTouchEmulation": [
+      844,
+      390
+    ],
+    "physicalDevice": false,
+    "sceneLoadsAtUnchanged73HP": 20,
+    "cameraProjectionSamples": 36,
+    "realWalkInputSamples": 16,
+    "authoredAwayTowardAndNativeBabyChecks": 8,
+    "oneBicycleAndOriginalCarrierChecks": "Asserted at all scene arrivals and actual walking samples.",
+    "maxPendingMainRAF": 1,
+    "consoleHTTPExternalPathErrors": 0,
+    "fixtures": "Production save factory, named entrances and recorded valid parking; this extracted delivery matrix does not claim another earned story route."
+  },
+  "realGameplayFrames": [
+    {
+      "file": "root-desktop-food-shop.png",
+      "sha256": "515dace147b235679156fd8ad2c2626cf2e3da167591cbdfb0230312f215f9e9",
+      "pixels": [
+        1280,
+        720
+      ],
+      "bytes": 970715
+    },
+    {
+      "file": "root-desktop-metro-square.png",
+      "sha256": "d470c0c61f664f0415bafb2348e90b99aa5cf4ad71975303b205bef0437f7921",
+      "pixels": [
+        1280,
+        720
+      ],
+      "bytes": 823966
+    },
+    {
+      "file": "root-desktop-ride.png",
+      "sha256": "86b6afc662095fa2b5b3c6a15a5907bbc00246f773c7ccf29dcc38a0ec6d0b6b",
+      "pixels": [
+        1280,
+        720
+      ],
+      "bytes": 1118844
+    },
+    {
+      "file": "root-phone-emulation-food-shop.png",
+      "sha256": "70f353dbbbc8d73feb6f677c7b49ee8e442fba27b8ade41751de4be9f4bf84d2",
+      "pixels": [
+        844,
+        390
+      ],
+      "bytes": 488281
+    },
+    {
+      "file": "root-phone-emulation-metro-square.png",
+      "sha256": "0826943b3c60bac43571d16116b0bdfe7b25fd6dd3882f8e241d4cd13c94d583",
+      "pixels": [
+        844,
+        390
+      ],
+      "bytes": 429998
+    },
+    {
+      "file": "root-phone-emulation-ride.png",
+      "sha256": "2ffdb1eea89e613a5bcb6db96a88fb5feb020d65f3537998441bcaa8611fcb97",
+      "pixels": [
+        844,
+        390
+      ],
+      "bytes": 408896
+    },
+    {
+      "file": "subpath-desktop-food-shop.png",
+      "sha256": "ea368f7e0ff7a1197a46ab7d44910219290f86b110efd31a10d84870d9bb409e",
+      "pixels": [
+        1280,
+        720
+      ],
+      "bytes": 970779
+    },
+    {
+      "file": "subpath-desktop-metro-square.png",
+      "sha256": "6a3b62da9b2b8f07c613a56ba76cc2b7d30d7a6eb63d32a316de083d035d2764",
+      "pixels": [
+        1280,
+        720
+      ],
+      "bytes": 823916
+    },
+    {
+      "file": "subpath-desktop-ride.png",
+      "sha256": "a13836ba28e67727a0a65093ab69ee55ff1242c58b9bd97db6af2d194e707a76",
+      "pixels": [
+        1280,
+        720
+      ],
+      "bytes": 1118552
+    },
+    {
+      "file": "subpath-phone-emulation-food-shop.png",
+      "sha256": "d495bd5bbeaa989ab4e5d7d72571b730bcfaff52c66ad4d3efd11903ac3c6261",
+      "pixels": [
+        844,
+        390
+      ],
+      "bytes": 488274
+    },
+    {
+      "file": "subpath-phone-emulation-metro-square.png",
+      "sha256": "9e565ce419f54bfb0c46f8702dcec92b6dc6206bbc5f9d3d90121b5246dd708d",
+      "pixels": [
+        844,
+        390
+      ],
+      "bytes": 430296
+    },
+    {
+      "file": "subpath-phone-emulation-ride.png",
+      "sha256": "13c3a8a493d56cf1ac8fd8aabf2a1738857839f93b99114fe330971e0cdc3e20",
+      "pixels": [
+        844,
+        390
+      ],
+      "bytes": 408930
+    }
+  ],
+  "compressedProfiles": {
+    "count": 5,
+    "allExactOriginalBytesVerified": true,
+    "bytesSaved": 31016055
+  },
+  "frozenPayloadUnchanged": true
+}

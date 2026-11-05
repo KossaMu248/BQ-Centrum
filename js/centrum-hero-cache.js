@@ -52,26 +52,28 @@
       if(pending)finish(pending.job,null);if(queued)finish(queued,null);pending=queued=null;
       worker?.terminate();if(workerURL){URL.revokeObjectURL(workerURL);workerURL=null;}
     }
-    function slot(job){return prefix+(job.idle?job.name+':idle':job.steady?job.key:job.name+':transient:'+job.heading);}
+    const family=job=>job.gait?.centrumWalk?'square':'native';
+    function slot(job){return prefix+family(job)+':'+(job.idle?job.name+':idle':job.steady?job.key:job.name+':transient:'+job.heading);}
     function touch(key,frame){map.delete(key);map.set(key,frame);return frame;}
     function exact(job){const key=slot(job),frame=map.get(key);return frame&&!frame.disposed&&frame.centrum?.key===job.key?touch(key,frame):null;}
     function dispose(key,frame){map.delete(key);options.cache.drop(frame);}
     function store(job,frame){
       const key=slot(job),old=map.get(key);if(old)dispose(key,old);
-      frame.centrum={key:job.key,name:job.name,heading:job.heading,idle:job.idle,phase:job.gait.phase};
+      frame.centrum={key:job.key,name:job.name,heading:job.heading,idle:job.idle,phase:job.gait.phase,family:family(job)};
       map.set(key,frame);options.cache.add(frame);
       let examined=0;
       while((map.size>options.cache.limitFrames||options.cache.bytes()>options.cache.limitBytes)&&examined++<map.size+2){
         const oldest=map.keys().next().value,value=map.get(oldest);
-        // Keep the two correct native idle fallbacks inside the same byte budget.
-        if(value.centrum?.idle&&map.size>2){touch(oldest,value);continue;}dispose(oldest,value);
+        // Prefer each geometry family's correct idle, but a hard byte/frame
+        // budget still wins if only idle frames remain.
+        if(value.centrum?.idle&&[...map.values()].some(frame=>!frame.centrum?.idle)){touch(oldest,value);continue;}dispose(oldest,value);
       }
       return frame;
     }
     function recent(job){
       let idle=null,best=null,cost=Infinity;
       for(const [key,frame]of map){
-        const info=frame.centrum;if(frame.disposed||!info||info.name!==job.name)continue;
+        const info=frame.centrum;if(frame.disposed||!info||info.name!==job.name||info.family!==family(job))continue;
         if(info.idle){idle={key,frame};continue;}if(info.heading!==job.heading)continue;
         const gap=Math.abs(frame.gait.phase-job.gait.phase),phase=Math.min(gap,1-gap),weight=Math.abs(frame.weight-job.weight);
         if(phase>.125||weight>.45)continue;const score=phase+weight*.15;

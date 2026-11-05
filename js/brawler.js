@@ -18,6 +18,13 @@
       return ((time+offset)%period+period)%period<clamp(n.schedule.on??55,0,period);
     }
     function setActivity(n,next){if(n.activity!==next){n.activity=next;n.activityAge=0;}}
+    // Authored peaceful seats/readers keep resting until an actual disturbance.
+    // Reuse finite activity/prop state, rather than saving an infinite timer.
+    function resting(n){return shown(n)&&n.state==='idle'&&n.hp>0&&!aggressive(n)&&n.fearUntil<=time&&!n.hiding&&!!n.activityProp&&['sit','read','smoke'].includes(n.activity);}
+    function bumpRest(n,p){
+      if(!resting(n)||playerSpeed<=1||!Number.isFinite(p.x)||(p.z||0)>=24||Math.abs(n.x-p.x)>=32||Math.abs(n.depth-(p.depth||0))>=18)return;
+      n.activityProp=null;n.restUntil=0;n.routeIndex=null;setActivity(n,'idle');
+    }
     function enter(key,items=[],reset=false){
       if(arena===key&&!reset)return;
       release();arena=key;lastPlayer=null;
@@ -209,7 +216,7 @@
       effect('weapon-impact',q.x,q.depth,{...record,age:0});
     }
     function scheduled(n,p,dt){
-      if(!n.schedule)return false;
+      if(!n.schedule||resting(n))return false;
       const wanted=scheduleOn(n),entry=n.schedule.entryX??n.home,offscreen=Math.max(620,p.populationViewRadius||720);
       if(!n.active){
         setActivity(n,'offstage');n.visible=false;
@@ -234,6 +241,7 @@
     }
     function routine(n,dt){
       n.running=false;n.hiding=false;
+      if(resting(n))return;
       if(!n.patrol){moveTo(n,n.x,n.homeDepth,60,dt);setActivity(n,'idle');return;}
       if(!n.routineExplicit){
         const patrol=n.patrolVariant,wait=3+patrol*1.25,span=285,speed=24+patrol*3,duration=span*2/speed,cycle=duration*2+wait*2,t=(time+patrol*7)%cycle;
@@ -281,6 +289,7 @@
         n.age+=dt;n.activityAge+=dt;n.moving=n.running=false;n.speed=0;
         if(n.civilian){n.hostile=false;n.angryUntil=0;n.punchUntil=0;}
         if(n.civilian&&shown(n)&&lastFight?.until>time&&Math.abs(n.x-lastFight.x)<360&&Math.abs(n.depth-lastFight.depth)<115&&!inactive(n))scare(n,lastFight);
+        bumpRest(n,p);
         if(scheduled(n,p,dt))continue;
         if(!shown(n))continue;
         if(n.state==='held'){n.behindCover=n.hiding=false;n.activityProp=null;n.x+=(p.x+p.face*65-n.x)*Math.min(1,dt*22);n.depth=p.depth;n.z=p.z+25;setActivity(n,'held');continue;}
@@ -312,7 +321,7 @@
           if(n.hostile&&p.riding){setActivity(n,'fight');continue;}
           if(time<n.alertUntil){setActivity(n,'fight');continue;}
           if(n.state==='windup'){
-            setActivity(n,'fight');if(n.age>.55){const hand=gang(n)?window.BearlyKids?.projectileOrigin?.(n.item||'rock',120):null,handX=n.x+(gang(n)?n.face*(hand?.x??40):0),fromZ=hand?.z??(gang(n)?82:90);shots.push({id:serial++,ownerId:n.id,kind:weaponKind(n.item||'rock'),x:handX,depth:n.depth,fromX:handX,fromDepth:n.depth,targetX:p.x,targetDepth:p.depth,age:0,duration:Math.max(.45,close/380),fromZ,z:fromZ});n.state='release';n.age=0;n.nextHit=time+2.2;stats.enemyShots++;markFight(n.x,n.depth);}continue;
+            setActivity(n,'fight');if(n.age>.55){const hand=gang(n)?window.BearlyKids?.projectileOrigin?.(n.item||'rock',window.BearlyKids?.worldHeight?.()||120):null,handX=n.x+(gang(n)?n.face*(hand?.x??40):0),fromZ=hand?.z??(gang(n)?82:90);shots.push({id:serial++,ownerId:n.id,kind:weaponKind(n.item||'rock'),x:handX,depth:n.depth,fromX:handX,fromDepth:n.depth,targetX:p.x,targetDepth:p.depth,age:0,duration:Math.max(.45,close/380),fromZ,z:fromZ});n.state='release';n.age=0;n.nextHit=time+2.2;stats.enemyShots++;markFight(n.x,n.depth);}continue;
           }
           if(n.state==='release'){setActivity(n,'fight');if(n.age>.3){n.state='idle';n.age=0;}continue;}
           if(gang(n)&&gangCover(n,p,dt))continue;

@@ -1,0 +1,1654 @@
+{
+  "scope": "Source-pose renderer reference boards, not in-game screenshots or animation proof.",
+  "captures": [
+    {
+      "file": "variants-0-2.png",
+      "sha256": "6ed1114b3ac7dfe694a005e44c8bb191b493cfa4dc4a5efa88e8d52587df97ff",
+      "actualGameplay": false,
+      "kind": "production-renderer reference",
+      "audit": [
+        {
+          "variant": 0,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0,
+          "source": "assets/art/npc-motion-a-v16.png",
+          "sourceRect": [
+            309,
+            12,
+            305,
+            342
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 0,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.25,
+          "source": "assets/art/npc-motion-a-v16.png",
+          "sourceRect": [
+            55,
+            14,
+            253,
+            342
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 0,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.5,
+          "source": "assets/art/npc-motion-a-v16.png",
+          "sourceRect": [
+            615,
+            12,
+            267,
+            344
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 0,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.75,
+          "source": "assets/art/npc-motion-a-v16.png",
+          "sourceRect": [
+            55,
+            14,
+            253,
+            342
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 1,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0,
+          "source": "assets/art/npc-motion-a-v16.png",
+          "sourceRect": [
+            313,
+            343,
+            301,
+            336
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 1,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.25,
+          "source": "assets/art/npc-motion-a-v16.png",
+          "sourceRect": [
+            35,
+            343,
+            273,
+            337
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 1,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.5,
+          "source": "assets/art/npc-motion-a-v16.png",
+          "sourceRect": [
+            615,
+            344,
+            306,
+            329
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 1,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.75,
+          "source": "assets/art/npc-motion-a-v16.png",
+          "sourceRect": [
+            35,
+            343,
+            273,
+            337
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 2,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0,
+          "source": "assets/art/npc-motion-a-v16.png",
+          "sourceRect": [
+            347,
+            674,
+            267,
+            334
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 2,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.25,
+          "source": "assets/art/npc-motion-a-v16.png",
+          "sourceRect": [
+            39,
+            677,
+            267,
+            347
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 2,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.5,
+          "source": "assets/art/npc-motion-a-v16.png",
+          "sourceRect": [
+            615,
+            677,
+            305,
+            333
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 2,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.75,
+          "source": "assets/art/npc-motion-a-v16.png",
+          "sourceRect": [
+            39,
+            677,
+            267,
+            347
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        }
+      ]
+    },
+    {
+      "file": "variants-3-5.png",
+      "sha256": "99a3bf28e7e2ea9a314b76b954e929dafcea202ce7667cc0e5411f5b6f49bd89",
+      "actualGameplay": false,
+      "kind": "production-renderer reference",
+      "audit": [
+        {
+          "variant": 3,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0,
+          "source": "assets/art/npc-motion-b-v16.png",
+          "sourceRect": [
+            329,
+            12,
+            249,
+            326
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 3,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.25,
+          "source": "assets/art/npc-motion-b-v16.png",
+          "sourceRect": [
+            93,
+            11,
+            154,
+            332
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 3,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.5,
+          "source": "assets/art/npc-motion-b-v16.png",
+          "sourceRect": [
+            638,
+            12,
+            224,
+            330
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 3,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.75,
+          "source": "assets/art/npc-motion-b-v16.png",
+          "sourceRect": [
+            93,
+            11,
+            154,
+            332
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 4,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0,
+          "source": "assets/art/npc-motion-b-v16.png",
+          "sourceRect": [
+            382,
+            337,
+            232,
+            343
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 4,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.25,
+          "source": "assets/art/npc-motion-b-v16.png",
+          "sourceRect": [
+            95,
+            337,
+            163,
+            339
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 4,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.5,
+          "source": "assets/art/npc-motion-b-v16.png",
+          "sourceRect": [
+            615,
+            335,
+            282,
+            345
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 4,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.75,
+          "source": "assets/art/npc-motion-b-v16.png",
+          "sourceRect": [
+            95,
+            337,
+            163,
+            339
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 5,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0,
+          "source": "assets/art/npc-motion-b-v16.png",
+          "sourceRect": [
+            360,
+            670,
+            232,
+            338
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 5,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.25,
+          "source": "assets/art/npc-motion-b-v16.png",
+          "sourceRect": [
+            33,
+            669,
+            223,
+            339
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 5,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.5,
+          "source": "assets/art/npc-motion-b-v16.png",
+          "sourceRect": [
+            620,
+            673,
+            279,
+            335
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 5,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.75,
+          "source": "assets/art/npc-motion-b-v16.png",
+          "sourceRect": [
+            33,
+            669,
+            223,
+            339
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        }
+      ]
+    },
+    {
+      "file": "variants-6-8.png",
+      "sha256": "859bf1f5044313ffe73ea32e2e6e34a020a9edb0d055e49180f5ef79870da78f",
+      "actualGameplay": false,
+      "kind": "production-renderer reference",
+      "audit": [
+        {
+          "variant": 6,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            319,
+            2,
+            295,
+            348
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 6,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.25,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            78,
+            11,
+            228,
+            345
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 6,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.5,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            615,
+            5,
+            263,
+            339
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 6,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.75,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            78,
+            11,
+            228,
+            345
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 7,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            308,
+            345,
+            284,
+            339
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 7,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.25,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            63,
+            343,
+            245,
+            345
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 7,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.5,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            617,
+            342,
+            291,
+            342
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 7,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.75,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            63,
+            343,
+            245,
+            345
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 8,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            311,
+            673,
+            303,
+            337
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 8,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.25,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            74,
+            670,
+            232,
+            341
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 8,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.5,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            615,
+            673,
+            307,
+            337
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 8,
+          "activity": "walk",
+          "pose": "idle",
+          "phase": 0.75,
+          "source": "assets/art/npc-motion-c-v16.png",
+          "sourceRect": [
+            74,
+            670,
+            232,
+            341
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "idle",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        }
+      ]
+    },
+    {
+      "file": "variants-9-11.png",
+      "sha256": "a5a6ed11fcd3ae2d35d5d52c4a91a15b1549badfd4d0bb5c1e3f7223b1c3246c",
+      "actualGameplay": false,
+      "kind": "production-renderer reference",
+      "audit": [
+        {
+          "variant": 9,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0,
+          "source": "assets/art/civilian-motion-v16.png",
+          "sourceRect": [
+            49,
+            1,
+            329,
+            399
+          ],
+          "height": 134.4,
+          "heightScale": 1.05,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 73.70322580645163,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 9,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0.25,
+          "source": "assets/art/civilian-motion-v16.png",
+          "sourceRect": [
+            49,
+            1,
+            329,
+            399
+          ],
+          "height": 134.4,
+          "heightScale": 1.05,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 73.70322580645163,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 9,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.5,
+          "source": "assets/art/civilian-motion-v16.png",
+          "sourceRect": [
+            429,
+            3,
+            339,
+            386
+          ],
+          "height": 134.4,
+          "heightScale": 1.05,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 73.70322580645163,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 9,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.75,
+          "source": "assets/art/civilian-motion-v16.png",
+          "sourceRect": [
+            429,
+            3,
+            339,
+            386
+          ],
+          "height": 134.4,
+          "heightScale": 1.05,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 73.70322580645163,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 10,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0,
+          "source": "assets/art/civilian-motion-v16.png",
+          "sourceRect": [
+            47,
+            342,
+            331,
+            396
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 10,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0.25,
+          "source": "assets/art/civilian-motion-v16.png",
+          "sourceRect": [
+            47,
+            342,
+            331,
+            396
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 10,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.5,
+          "source": "assets/art/civilian-motion-v16.png",
+          "sourceRect": [
+            391,
+            346,
+            377,
+            390
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 10,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.75,
+          "source": "assets/art/civilian-motion-v16.png",
+          "sourceRect": [
+            391,
+            346,
+            377,
+            390
+          ],
+          "height": 128,
+          "heightScale": 1,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 70.19354838709678,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 11,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0,
+          "source": "assets/art/civilian-motion-v16.png",
+          "sourceRect": [
+            33,
+            704,
+            351,
+            320
+          ],
+          "height": 107.52,
+          "heightScale": 0.84,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 58.962580645161296,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 11,
+          "activity": "walk",
+          "pose": "walkA",
+          "phase": 0.25,
+          "source": "assets/art/civilian-motion-v16.png",
+          "sourceRect": [
+            33,
+            704,
+            351,
+            320
+          ],
+          "height": 107.52,
+          "heightScale": 0.84,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkA",
+            "cycleLength": 58.962580645161296,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 11,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.5,
+          "source": "assets/art/civilian-motion-v16.png",
+          "sourceRect": [
+            385,
+            699,
+            339,
+            325
+          ],
+          "height": 107.52,
+          "heightScale": 0.84,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 58.962580645161296,
+            "drawCalls": 1
+          }
+        },
+        {
+          "variant": 11,
+          "activity": "walk",
+          "pose": "walkB",
+          "phase": 0.75,
+          "source": "assets/art/civilian-motion-v16.png",
+          "sourceRect": [
+            385,
+            699,
+            339,
+            325
+          ],
+          "height": 107.52,
+          "heightScale": 0.84,
+          "civilian": true,
+          "details": {
+            "authored": true,
+            "completePose": true,
+            "sourcePose": "walkB",
+            "cycleLength": 58.962580645161296,
+            "drawCalls": 1
+          }
+        }
+      ]
+    },
+    {
+      "file": "teen-height94.png",
+      "sha256": "6dbd62eeb242c4f4ca191c6ee12f3bdfe757332e67df412f9a0bedb3c7bae61e",
+      "actualGameplay": false,
+      "kind": "production-renderer reference",
+      "audit": [
+        {
+          "pose": "lean",
+          "height": 94,
+          "physicalScale": 0.27405247813411077,
+          "outfit": "Burgundy cap \u00b7 black puffer gilet and hoodie \u00b7 black tracksuit \u00b7 sling bag \u00b7 burgundy trainers",
+          "source": "assets/art/teen-molotov-poses-v18.png",
+          "sourceRect": [
+            684,
+            13,
+            148,
+            342
+          ],
+          "stature": 343,
+          "anchor": [
+            754.7113333333333,
+            353
+          ],
+          "core": [
+            685,
+            14,
+            147,
+            340
+          ]
+        },
+        {
+          "pose": "runA",
+          "height": 94,
+          "physicalScale": 0.27405247813411077,
+          "outfit": "Burgundy cap \u00b7 black puffer gilet and hoodie \u00b7 black tracksuit \u00b7 sling bag \u00b7 burgundy trainers",
+          "source": "assets/art/teen-molotov-poses-v18.png",
+          "sourceRect": [
+            44,
+            691,
+            245,
+            307
+          ],
+          "stature": 343,
+          "anchor": [
+            159.162502068509,
+            996
+          ],
+          "core": [
+            45,
+            692,
+            243,
+            305
+          ]
+        },
+        {
+          "pose": "runB",
+          "height": 94,
+          "physicalScale": 0.27405247813411077,
+          "outfit": "Burgundy cap \u00b7 black puffer gilet and hoodie \u00b7 black tracksuit \u00b7 sling bag \u00b7 burgundy trainers",
+          "source": "assets/art/teen-molotov-poses-v18.png",
+          "sourceRect": [
+            341,
+            693,
+            213,
+            298
+          ],
+          "stature": 343,
+          "anchor": [
+            460.1350364963504,
+            989
+          ],
+          "core": [
+            342,
+            694,
+            211,
+            296
+          ]
+        },
+        {
+          "pose": "runC",
+          "height": 94,
+          "physicalScale": 0.23830650272531373,
+          "outfit": "Burgundy cap \u00b7 black puffer gilet and hoodie \u00b7 black tracksuit \u00b7 sling bag \u00b7 burgundy trainers",
+          "source": "assets/art/teen-run-opposites-v18.png",
+          "sourceRect": [
+            269,
+            8,
+            340,
+            335
+          ],
+          "stature": 394.45,
+          "anchor": [
+            423.04191489361705,
+            341
+          ],
+          "core": [
+            270,
+            8,
+            338,
+            334
+          ]
+        },
+        {
+          "pose": "runD",
+          "height": 94,
+          "physicalScale": 0.23830650272531373,
+          "outfit": "Burgundy cap \u00b7 black puffer gilet and hoodie \u00b7 black tracksuit \u00b7 sling bag \u00b7 burgundy trainers",
+          "source": "assets/art/teen-run-opposites-v18.png",
+          "sourceRect": [
+            953,
+            8,
+            327,
+            335
+          ],
+          "stature": 394.45,
+          "anchor": [
+            1117.8173928603383,
+            341
+          ],
+          "core": [
+            954,
+            8,
+            325,
+            334
+          ]
+        },
+        {
+          "pose": "lean",
+          "height": 94,
+          "physicalScale": 0.2611111111111111,
+          "outfit": "Blue cap \u00b7 olive technical jacket \u00b7 charcoal cargos \u00b7 sling bag \u00b7 gray trainers",
+          "source": "assets/art/teen-rock-poses-v18.png",
+          "sourceRect": [
+            691,
+            14,
+            142,
+            361
+          ],
+          "stature": 360,
+          "anchor": [
+            755.6150903574726,
+            374
+          ],
+          "core": [
+            692,
+            14,
+            140,
+            361
+          ]
+        },
+        {
+          "pose": "runA",
+          "height": 94,
+          "physicalScale": 0.2611111111111111,
+          "outfit": "Blue cap \u00b7 olive technical jacket \u00b7 charcoal cargos \u00b7 sling bag \u00b7 gray trainers",
+          "source": "assets/art/teen-rock-poses-v18.png",
+          "sourceRect": [
+            31,
+            716,
+            251,
+            285
+          ],
+          "stature": 360,
+          "anchor": [
+            150.7535495441638,
+            1000
+          ],
+          "core": [
+            32,
+            717,
+            250,
+            284
+          ]
+        },
+        {
+          "pose": "runB",
+          "height": 94,
+          "physicalScale": 0.2611111111111111,
+          "outfit": "Blue cap \u00b7 olive technical jacket \u00b7 charcoal cargos \u00b7 sling bag \u00b7 gray trainers",
+          "source": "assets/art/teen-rock-poses-v18.png",
+          "sourceRect": [
+            325,
+            717,
+            259,
+            266
+          ],
+          "stature": 360,
+          "anchor": [
+            455.8471856917412,
+            982
+          ],
+          "core": [
+            326,
+            718,
+            258,
+            265
+          ]
+        },
+        {
+          "pose": "runC",
+          "height": 94,
+          "physicalScale": 0.2331349206349206,
+          "outfit": "Blue cap \u00b7 olive technical jacket \u00b7 charcoal cargos \u00b7 sling bag \u00b7 gray trainers",
+          "source": "assets/art/teen-run-opposites-v18.png",
+          "sourceRect": [
+            271,
+            343,
+            348,
+            338
+          ],
+          "stature": 403.20000000000005,
+          "anchor": [
+            426.3903251868309,
+            679
+          ],
+          "core": [
+            272,
+            344,
+            347,
+            336
+          ]
+        },
+        {
+          "pose": "runD",
+          "height": 94,
+          "physicalScale": 0.2331349206349206,
+          "outfit": "Blue cap \u00b7 olive technical jacket \u00b7 charcoal cargos \u00b7 sling bag \u00b7 gray trainers",
+          "source": "assets/art/teen-run-opposites-v18.png",
+          "sourceRect": [
+            955,
+            343,
+            326,
+            338
+          ],
+          "stature": 403.20000000000005,
+          "anchor": [
+            1117.602490421456,
+            680
+          ],
+          "core": [
+            956,
+            344,
+            324,
+            337
+          ]
+        },
+        {
+          "pose": "lean",
+          "height": 94,
+          "physicalScale": 0.25895316804407714,
+          "outfit": "Red cap \u00b7 navy puffer and tracksuit \u00b7 sling bag \u00b7 red/navy trainers",
+          "source": "assets/art/teen-firecracker-poses-v18.png",
+          "sourceRect": [
+            679,
+            10,
+            159,
+            357
+          ],
+          "stature": 363,
+          "anchor": [
+            758.6758241758242,
+            365
+          ],
+          "core": [
+            679,
+            11,
+            158,
+            355
+          ]
+        },
+        {
+          "pose": "runA",
+          "height": 94,
+          "physicalScale": 0.25895316804407714,
+          "outfit": "Red cap \u00b7 navy puffer and tracksuit \u00b7 sling bag \u00b7 red/navy trainers",
+          "source": "assets/art/teen-firecracker-poses-v18.png",
+          "sourceRect": [
+            27,
+            711,
+            277,
+            287
+          ],
+          "stature": 363,
+          "anchor": [
+            169.1311425061425,
+            996
+          ],
+          "core": [
+            28,
+            712,
+            275,
+            285
+          ]
+        },
+        {
+          "pose": "runB",
+          "height": 94,
+          "physicalScale": 0.25895316804407714,
+          "outfit": "Red cap \u00b7 navy puffer and tracksuit \u00b7 sling bag \u00b7 red/navy trainers",
+          "source": "assets/art/teen-firecracker-poses-v18.png",
+          "sourceRect": [
+            350,
+            714,
+            253,
+            268
+          ],
+          "stature": 363,
+          "anchor": [
+            503.2022288665398,
+            980
+          ],
+          "core": [
+            351,
+            715,
+            252,
+            266
+          ]
+        },
+        {
+          "pose": "runC",
+          "height": 94,
+          "physicalScale": 0.239771451892664,
+          "outfit": "Red cap \u00b7 navy puffer and tracksuit \u00b7 sling bag \u00b7 red/navy trainers",
+          "source": "assets/art/teen-run-opposites-v18.png",
+          "sourceRect": [
+            270,
+            683,
+            349,
+            328
+          ],
+          "stature": 392.04,
+          "anchor": [
+            428.2694025090368,
+            1009
+          ],
+          "core": [
+            270,
+            684,
+            348,
+            326
+          ]
+        },
+        {
+          "pose": "runD",
+          "height": 94,
+          "physicalScale": 0.239771451892664,
+          "outfit": "Red cap \u00b7 navy puffer and tracksuit \u00b7 sling bag \u00b7 red/navy trainers",
+          "source": "assets/art/teen-run-opposites-v18.png",
+          "sourceRect": [
+            953,
+            683,
+            332,
+            328
+          ],
+          "stature": 392.04,
+          "anchor": [
+            1120.5068347239483,
+            1009
+          ],
+          "core": [
+            954,
+            684,
+            330,
+            326
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "httpFailures": [],
+  "runtimeHashes": {
+    "js/npc-motion.js": "147503f395bd349444a4c8490d72b912c9d5211849323ef8c6c929ed5ff6db13",
+    "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+    "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+    "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+    "js/street-life.js": "1677f641ef54a8e4ef3d2c7ffe0c8d15aea2d7bd5f1e6d3419f67c5d97401584"
+  },
+  "cacheStats": {
+    "preparationMode": "compiled",
+    "cacheFailure": null,
+    "onDemand": true,
+    "visibleComplete": true,
+    "requestedVariants": [],
+    "phaseCount": 48,
+    "canonicalHeight": 144,
+    "frameCount": 0,
+    "capacity": 576,
+    "bytes": 0,
+    "limitBytes": 50331648,
+    "hits": 0,
+    "misses": 0,
+    "bakes": 0,
+    "buildMs": 0,
+    "maxBuildMs": 0,
+    "mainBuildMs": 0,
+    "maxMainBuildMs": 0,
+    "mode": "compiled",
+    "warmupMs": 1142.6999999999534,
+    "complete": false,
+    "variants": [
+      {
+        "variant": 0,
+        "frames": 0,
+        "width": 116,
+        "height": 171,
+        "bytes": 0,
+        "hits": 0,
+        "misses": 0
+      },
+      {
+        "variant": 9,
+        "frames": 0,
+        "width": 116,
+        "height": 171,
+        "bytes": 0,
+        "hits": 0,
+        "misses": 0
+      },
+      {
+        "variant": 11,
+        "frames": 0,
+        "width": 116,
+        "height": 171,
+        "bytes": 0,
+        "hits": 0,
+        "misses": 0
+      },
+      {
+        "variant": 10,
+        "frames": 0,
+        "width": 116,
+        "height": 171,
+        "bytes": 0,
+        "hits": 0,
+        "misses": 0
+      },
+      {
+        "variant": 1,
+        "frames": 0,
+        "width": 116,
+        "height": 171,
+        "bytes": 0,
+        "hits": 0,
+        "misses": 0
+      },
+      {
+        "variant": 2,
+        "frames": 0,
+        "width": 116,
+        "height": 171,
+        "bytes": 0,
+        "hits": 0,
+        "misses": 0
+      },
+      {
+        "variant": 3,
+        "frames": 0,
+        "width": 116,
+        "height": 171,
+        "bytes": 0,
+        "hits": 0,
+        "misses": 0
+      },
+      {
+        "variant": 4,
+        "frames": 0,
+        "width": 116,
+        "height": 171,
+        "bytes": 0,
+        "hits": 0,
+        "misses": 0
+      },
+      {
+        "variant": 5,
+        "frames": 0,
+        "width": 116,
+        "height": 171,
+        "bytes": 0,
+        "hits": 0,
+        "misses": 0
+      },
+      {
+        "variant": 6,
+        "frames": 0,
+        "width": 116,
+        "height": 171,
+        "bytes": 0,
+        "hits": 0,
+        "misses": 0
+      },
+      {
+        "variant": 7,
+        "frames": 0,
+        "width": 116,
+        "height": 171,
+        "bytes": 0,
+        "hits": 0,
+        "misses": 0
+      },
+      {
+        "variant": 8,
+        "frames": 0,
+        "width": 116,
+        "height": 171,
+        "bytes": 0,
+        "hits": 0,
+        "misses": 0
+      }
+    ]
+  },
+  "browser": "154.0.8037.57",
+  "build": "BQ_CENTRUM_STAGE15",
+  "passed": true
+}

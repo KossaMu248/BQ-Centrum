@@ -29,7 +29,7 @@ python3 -m http.server 8001 --bind 127.0.0.1
 
 Open **http://127.0.0.1:8001/BQ-Centrum/**. Both `index.html` and the manifest’s `autumn-v19.html` entry are active, matching small HTML files. The clean package is checked at the root and under this subpath.
 
-Stage15 uses a **0.75 camera zoom**, making the whole scene and characters25% smaller on screen while revealing about33% more world along each axis. The upright shallow view, original bear/baby proportions and native expressions remain. Buildings, furniture, NPCs, bicycle and floor shadows scale together. Compact rooms are fully framed against a quiet border; their walkable area is unchanged. [Actual framing review](verification/stage15/README.md).
+Stage16 fixes costly rendering in the copied2.5D street, gives its route a wider1.0 view, reduces child NPC height to94 against adult128, and replaces distorted NPC walking meshes with complete original source poses. Peaceful seated/read/smoke residents stay resting until genuine contact or danger. The original baby/artwork, source title, cycling simulation and damage formulas remain. Centrum retains its0.75 camera. [Actual results and limits](TEST_REPORT.md).
 
 ## Implemented scope
 
@@ -71,7 +71,7 @@ The existing `bq-centrum:scene-network:v1` document owns the adventure (schema 2
 
 ## Verification and package
 
-Read the compact [TEST_REPORT.md](TEST_REPORT.md) for actual test conditions, repairs, results and limitations. [Stage15 evidence](verification/stage15/README.md) records the wider-camera review, real moving expressions and current browser/source/package checks. [Stage14 evidence](verification/stage14/README.md) preserves entry timing and knee-animation verification. [Stage13 evidence](verification/stage13/README.md) preserves the original angle and native-baby compositing review. [Stage 11 evidence](verification/stage11/README.md) covers walking performance/poses and on-demand inventory; [Stage 10 evidence](verification/stage10/README.md) preserves its HUD and browser checks; [Stage 9 evidence](verification/stage9/README.md) keeps the earned ride and gait review; the [Stage 8 full-route evidence](verification/stage8/README.md) remains available. Prior [Stage 7 art review](verification/stage7/README.md) remains available. Historical earlier evidence stays in the development workspace, outside the clean delivery.
+Read the compact [TEST_REPORT.md](TEST_REPORT.md) for actual test conditions, repairs, results and limitations. [Stage16 evidence](verification/stage16/README.md) records source-street CPU/cache fixes, actual gameplay, peaceful rest and child/NPC review. [Stage15 evidence](verification/stage15/README.md) preserves the wider Centrum-camera review. [Stage14 evidence](verification/stage14/README.md) preserves entry timing and knee-animation verification. [Stage13 evidence](verification/stage13/README.md) preserves the original angle and native-baby compositing review. [Stage 11 evidence](verification/stage11/README.md) covers walking performance/poses and on-demand inventory; [Stage 10 evidence](verification/stage10/README.md) preserves its HUD and browser checks; [Stage 9 evidence](verification/stage9/README.md) keeps the earned ride and gait review; the [Stage 8 full-route evidence](verification/stage8/README.md) remains available. Prior [Stage 7 art review](verification/stage7/README.md) remains available. Historical earlier evidence stays in the development workspace, outside the clean delivery.
 
 Development verification needs Python Playwright, system Chromium at `/usr/bin/chromium`, Node.js and ffmpeg for recordings; the game itself needs none of those beyond a static server/browser. The cross-browser check additionally expects Playwright Firefox/WebKit binaries in `.test-browsers` (`PLAYWRIGHT_BROWSERS_PATH=.test-browsers python3 -m playwright install firefox webkit`) and the host libraries required by those engines. Test-browser binaries/libraries are excluded from delivery.
 
@@ -79,24 +79,31 @@ Development verification needs Python Playwright, system Chromium at `/usr/bin/c
 python3 tools/verify-source-integrity.py
 node tests/centrum_validation.cjs
 node tests/centrum_depth_gait.cjs
-python3 tests/centrum_complete_route.py --out verification/stage15/full-route
+python3 tests/centrum_complete_route.py --out verification/stage16/full-route
 python3 tests/centrum_edge_browser.py
 python3 tests/centrum_remount_race.py
 python3 tests/centrum_combat_validation.py
 python3 tests/centrum_remaining_review.py
-python3 tests/centrum_cross_browser.py --engine webkit --functional-only --out verification/stage15/browsers
-python3 tests/centrum_cross_browser.py --engine firefox --smoke-only --out verification/stage15/browsers
+python3 tests/centrum_cross_browser.py --engine webkit --functional-only --out verification/stage16/browsers
+python3 tests/centrum_cross_browser.py --engine firefox --smoke-only --out verification/stage16/browsers
 node tests/centrum_hero_cache.cjs
 python3 tests/centrum_inventory_access.py
 node tests/centrum_directional_rig.cjs
 node tests/centrum_camera.cjs
-python3 tests/centrum_camera_review.py --out verification/stage15/camera
+node tests/centrum_route_camera.cjs
+node tests/centrum_npc_rest.cjs
+node tests/centrum_npc_render.cjs
+node tests/centrum_pouch_cache.cjs
+node tests/centrum_native_cache.cjs
+python3 tests/centrum_camera_review.py --out verification/local-camera-review
 node tests/centrum_warmup_scheduling.cjs
 node tests/centrum_scene_preparation.cjs
 python3 tests/centrum_source_integrity.py
 python3 tests/centrum_actor_provenance.py
-python3 tests/centrum_directional_gameplay.py --out verification/stage15/gameplay --clip
-python3 tests/centrum_walk_performance.py --out verification/stage15/performance --label desktop
+python3 tests/centrum_stage16_browser.py --out verification/local-gameplay --clip
+python3 tests/centrum_mode_performance.py --out verification/local-performance --label desktop
+python3 tests/centrum_npc_render_browser.py --out verification/local-npc-review
+python3 tests/centrum_package_codec.py
 python3 tools/package-project.py
 python3 tests/centrum_standalone.py
 ```
@@ -109,8 +116,10 @@ Source: **KossaMu248/BQ-Autumn/main**, commit `da109213fdf24947c2ac0b85de900214c
 
 System Chromium 154, Firefox 153 and Linux WebKit 26.5 were exercised as detailed in the test report. Physical-device and thermal testing were **skipped at the user’s request**. Linux WebKit and touch emulation do not constitute physical iPhone/Safari tests. Keyboard and touch controls are supported; gamepad mapping is not implemented.
 
-Stage14 uses the existing approved toward/away artwork with bounded outward knee flex and authored rest joints. This remains an articulated painted gait rather than a newly drawn frame-by-frame animation set. The away view stays oblique so the original baby remains visible. The wider shallow camera retains bounded follow/cover framing. Small upper-façade details can still be cropped from the south on phone landscape; walking north reveals them.
+Centrum keeps the approved original-baby/toward-away presentation and shallow0.75 camera. The copied route uses1.0 instead of its old1.35 magnifier, with aligned overlays and unchanged road position; the original title stays1.35. Copied source rooms/gardens keep their original closer framing. No overhead/isometric conversion, new character artwork or scene expansion.
 
-In the historical Stage14 exclusive desktop and touch-emulated Chromium profiles, first entry measured 3.90/3.71 seconds; the same-host desktop baseline was 15.51 seconds. Warm moving frame medians remained16.7ms with p95 up to33.4ms. Shared-headless-host timings are observations, not a physical-mobile FPS guarantee. Explicit scene preparation remains a real cost; unsupported worker browsers retain synchronous source-side fallback. Optional missing angle art keeps original side walking/exits usable. The earlier source-worker raw-pixel equivalence diagnostic remains failed; thresholds are unchanged. Original file integrity, native-baby probes and normal-size motion review are separate checks. Current versus historical engine evidence is identified in the test report. At the new zoom the phone baby head is roughly19–24CSS pixels: recognisable, with less subtle expression detail than the closer framing. Physical phones remain untested.
+On the measured shared Linux host, source walking CPU medians fell from26–28ms to about3ms; repeated start/stop no longer bakes transient bodies on the main thread. Actual frame intervals still vary16.7–33.3ms and occasional host stalls remain, so this is not a universal60FPS guarantee. Source entry measured about6.3seconds versus10.4 before, including established animations/preparation. Original transfer/boat clipping stays exact and retains its brief rendering cost. Runtime body caches are bounded and share one worker.
+
+NPC walks now use original whole-pose keys (4 or2), so motion is visibly keyed rather than continuously redrawn. Resting applies to authored peaceful sit/read/smoke; combat knockdown recovery remains unchanged. Existing arena state persists across visits, without claiming a new complete ordinary street-NPC reload system. The original source phone baby remains recognisable but fine face/expression detail is small. Physical phones/Safari/thermal remain skipped. The historical source-worker pixel-equivalence diagnostic remains failed; new pouch/protected-baby tests are separate, with all protected probes exact and original transfer/boat pixels unchanged. Full conditions and per-run hash scope are in the current report.
 
 The user authorized publication to the independent **KossaMu248/BQ-Centrum** repository. This project retains its own Git history/configuration; no donor Git metadata, repository, save keys or deployment was modified. The user also approved branch-based GitHub Pages; the playable target is linked above. Publication details and observed versions are recorded in GITHUB_PUBLICATION.md.

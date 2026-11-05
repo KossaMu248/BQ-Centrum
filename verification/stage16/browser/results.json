@@ -1,0 +1,302 @@
+{
+  "passed": true,
+  "browser": "Chromium154.0.8037.57 headless /usr/bin/chromium",
+  "conditions": {
+    "desktop": [
+      1280,
+      720
+    ],
+    "phone": "Chromium844x390 CDP touch emulation; portrait390x844 supplemental movement/restore",
+    "deviceScaleFactor": 1,
+    "physicalDevicesTested": false,
+    "setup": "Each fresh scenario/context used one disclosed original debug route stop. No further teleports or NPC/health/item/quest grants; primary then used actual controls to ride to Centrum.",
+    "performance": "Functional runs and screencast, not exclusive profiles or physical-device FPS."
+  },
+  "totalExecutedGroups": 12,
+  "distinctScenarioGroups": 10,
+  "totalRealNormalSizeCaptures": 52,
+  "runs": [
+    {
+      "directory": "desktop-primary",
+      "resultFile": "desktop-primary/results.json",
+      "resultSHA256": "dbce391bc833a929169d90316534e3a3c558e39b788537702f37e6651c61cde7",
+      "passed": true,
+      "executedGroups": 2,
+      "realNormalSizeCaptures": 11,
+      "harnessSHA256": "349e0027743f56022ce43d17eeb9c53e08b76a5376bc364d41f5d7f91ee76ea0",
+      "runtimeDiffersFromFinal": [
+        "autumn-v19.html",
+        "css/centrum-route.css",
+        "index.html",
+        "js/hero-rig.js",
+        "js/illustrated-visits.js"
+      ],
+      "runtimeChangedDuringRun": [],
+      "heroSHA256": "af6737c0021f803d15870424f062c21144e784cec9a3a9bc083685c4943a8b59",
+      "visitsSHA256": "3321f50b5e416deba3921bf69dc4c1cf5e4e540e55e3e18e91747a7e82e06cc9",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "httpFailures": []
+    },
+    {
+      "directory": "phone-primary",
+      "resultFile": "phone-primary/results.json",
+      "resultSHA256": "37841442f1f18d1b06d9345475c7571f598094da579bbd7cedb6fa54d97127b8",
+      "passed": true,
+      "executedGroups": 2,
+      "realNormalSizeCaptures": 13,
+      "harnessSHA256": "1909b096bce4d04abcfedf4eac44789add07446f521076488980c348c9cdd6fe",
+      "runtimeDiffersFromFinal": [
+        "autumn-v19.html",
+        "css/centrum-route.css",
+        "index.html",
+        "js/hero-rig.js",
+        "js/illustrated-visits.js"
+      ],
+      "runtimeChangedDuringRun": [],
+      "heroSHA256": "af6737c0021f803d15870424f062c21144e784cec9a3a9bc083685c4943a8b59",
+      "visitsSHA256": "3321f50b5e416deba3921bf69dc4c1cf5e4e540e55e3e18e91747a7e82e06cc9",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "httpFailures": []
+    },
+    {
+      "directory": "rest",
+      "resultFile": "rest/results.json",
+      "resultSHA256": "9677bfe28861bf31f942b2d2563ec96ff15bb739117ade63e8ac485bc6b4e8af",
+      "passed": true,
+      "executedGroups": 2,
+      "realNormalSizeCaptures": 8,
+      "harnessSHA256": "e8b4e4320c65511d12f9c38b678822ce616df6e45ac96baf38a6fa2a9015f075",
+      "runtimeDiffersFromFinal": [
+        "autumn-v19.html",
+        "css/centrum-route.css",
+        "index.html",
+        "js/hero-rig.js",
+        "js/illustrated-visits.js"
+      ],
+      "runtimeChangedDuringRun": [],
+      "heroSHA256": "af6737c0021f803d15870424f062c21144e784cec9a3a9bc083685c4943a8b59",
+      "visitsSHA256": "3321f50b5e416deba3921bf69dc4c1cf5e4e540e55e3e18e91747a7e82e06cc9",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "httpFailures": []
+    },
+    {
+      "directory": "kids",
+      "resultFile": "kids/results.json",
+      "resultSHA256": "a5ba6b4ab5e50c6df967cea34ab83901ca0c8f887c0fe115296ddc2599011ab5",
+      "passed": true,
+      "executedGroups": 2,
+      "realNormalSizeCaptures": 4,
+      "harnessSHA256": "e8b4e4320c65511d12f9c38b678822ce616df6e45ac96baf38a6fa2a9015f075",
+      "runtimeDiffersFromFinal": [
+        "autumn-v19.html",
+        "css/centrum-route.css",
+        "index.html",
+        "js/hero-rig.js",
+        "js/illustrated-visits.js"
+      ],
+      "runtimeChangedDuringRun": [],
+      "heroSHA256": "33a415f73181aa3bbf7f23de024ee09ef010337a49d688f057c10a160aff05fb",
+      "visitsSHA256": "3321f50b5e416deba3921bf69dc4c1cf5e4e540e55e3e18e91747a7e82e06cc9",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "httpFailures": []
+    },
+    {
+      "directory": "final-transfer",
+      "resultFile": "final-transfer/results.json",
+      "resultSHA256": "c9ac0dcd20fce4a6c567ff2591ebd29def8e65e9005a804195e2e677a0e88950",
+      "passed": true,
+      "executedGroups": 2,
+      "realNormalSizeCaptures": 8,
+      "harnessSHA256": "54175e32d8c864d45179d05e77a8b0a5c813b4ad4506d796160a9ea17799278c",
+      "runtimeDiffersFromFinal": [],
+      "runtimeChangedDuringRun": [],
+      "heroSHA256": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+      "visitsSHA256": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "httpFailures": []
+    },
+    {
+      "directory": "final-transfer-hint",
+      "resultFile": "final-transfer-hint/results.json",
+      "resultSHA256": "25f0f6cbb4e5902e2f6a703cc8923eb23fbb10d05760204861ed32da4b95eb1e",
+      "passed": true,
+      "executedGroups": 2,
+      "realNormalSizeCaptures": 8,
+      "harnessSHA256": "a2c75dff990d7030246753e2a51d94985f08ce75d1abd62308ee6e879b0d42d6",
+      "runtimeDiffersFromFinal": [],
+      "runtimeChangedDuringRun": [],
+      "heroSHA256": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+      "visitsSHA256": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "httpFailures": []
+    }
+  ],
+  "recordings": [
+    {
+      "directory": "desktop-primary",
+      "file": "desktop-source-walking.webm",
+      "nativeSeconds": 7.126345872879028,
+      "samples": 95,
+      "playbackSpeed": 1,
+      "encodingFps": 24,
+      "gameFpsClaim": false,
+      "sha256": "a0f0e98ce18d3a9d83d4117cfdf924a577cba4c6be952ce3b1c0e083f7851bdd"
+    },
+    {
+      "directory": "phone-primary",
+      "file": "phone-source-walking.webm",
+      "nativeSeconds": 10.075101137161255,
+      "samples": 114,
+      "playbackSpeed": 1,
+      "encodingFps": 24,
+      "gameFpsClaim": false,
+      "sha256": "45cdd5d11eeebc5b316a49f0ef6f83eeece6a83143081afbe9a70ba2f59a5101"
+    }
+  ],
+  "finalRuntimeHashes": {
+    "autumn-v19.html": "17d0516568c790a8ac968c57e3ac56d76d0563f193145f01799b38ab08c3d2c6",
+    "autumn-version.json": "7f49fc3888b86e21cd2502bcc9a1b91d8c00c9b9d37e448b29643fe8938111c1",
+    "css/centrum-inventory.css": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+    "css/centrum-link.css": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+    "css/centrum-route.css": "892e1ec5ac28ae0a551d45b276974888e6db3f227635487e45c761e1553d1e5f",
+    "css/centrum-square.css": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+    "css/centrum-story.css": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+    "css/game.css": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+    "css/illustrated.css": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+    "index.html": "17d0516568c790a8ac968c57e3ac56d76d0563f193145f01799b38ab08c3d2c6",
+    "js/assets.js": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+    "js/autumn-quests.js": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+    "js/baby-passenger.js": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+    "js/brawler-art.js": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+    "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+    "js/centrum-atmosphere.js": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+    "js/centrum-balance.js": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+    "js/centrum-camera.js": "a7ca80691522cfbf7799ebd3172293234bf531a84a6210e77d9cc896b9d67482",
+    "js/centrum-civilians.js": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+    "js/centrum-depth-gait.js": "f5098a4488fc88eebe609fabb1e7fe1c50ad90c071d3d0c3b35d9be74dfe6c72",
+    "js/centrum-directional-rig.js": "93034f1266346e53eb1918a25d0db2a99e3a1bddd1907bd205bea5243ea2cac6",
+    "js/centrum-economy.js": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+    "js/centrum-hero-cache.js": "38f3212052e12304e3ecf4a053f0141122660395593874151e23835717ee5eff",
+    "js/centrum-inventory.js": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+    "js/centrum-link.js": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+    "js/centrum-parking-save.js": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+    "js/centrum-save.js": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+    "js/centrum-scenery.js": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+    "js/centrum-scenes.js": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+    "js/centrum-square-world.js": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+    "js/centrum-square.js": "276e4c210dcb329cb17dcb9e11f5550b78c15fdcbd0c6d12a644fff4771690bf",
+    "js/centrum-story.js": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+    "js/fullscreen.js": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+    "js/game.js": "11c93d495aa746d673896781d0053a1a8f85b498bbab5f850a1ff7468d0e3dec",
+    "js/hero-rig.js": "34d2c90e46f96b1ce9cd8630773737f46369502313e4cb1a1c313d49b2440263",
+    "js/illustrated-atlas.js": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+    "js/illustrated-hero.js": "04ab3ced1cc05e28164d0b3eeacf5a1f8de18ea10822038eaff2d267a00bcb51",
+    "js/illustrated-kids.js": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+    "js/illustrated-neighbourhood.js": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+    "js/illustrated-props.js": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+    "js/illustrated-visits.js": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+    "js/illustrated-world.js": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+    "js/locomotion.js": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+    "js/npc-motion.js": "147503f395bd349444a4c8490d72b912c9d5211849323ef8c6c929ed5ff6db13",
+    "js/street-life.js": "1677f641ef54a8e4ef3d2c7ffe0c8d15aea2d7bd5f1e6d3419f67c5d97401584",
+    "js/weapon-effects.js": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+    "js/wrong-entrance-quest.js": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d"
+  },
+  "finalHintClearance": [
+    {
+      "platform": "desktop",
+      "visible": true,
+      "side": "right",
+      "panelMode": "street",
+      "text": "On foot \u00b7 Arrows / WASD move. Space jumps; G grabs or throws; J mauls. E enters buildings; Q returns to your bicycle.",
+      "head": {
+        "left": 476.02487279980437,
+        "right": 501.5400544821277,
+        "top": 493.09445825447074,
+        "bottom": 520.7364623729438
+      },
+      "headSource": "baby_pose_idle.webp",
+      "headSourceRect": [
+        15,
+        9,
+        57,
+        62
+      ],
+      "message": {
+        "x": 897,
+        "y": 590.640625,
+        "width": 340,
+        "height": 54.5625,
+        "top": 590.640625,
+        "right": 1237,
+        "bottom": 645.203125,
+        "left": 897
+      },
+      "objectFit": "contain",
+      "contentScale": 1.0534423828125,
+      "overlapCssPixels": 0,
+      "routeStyleLoaded": true
+    },
+    {
+      "platform": "phone",
+      "visible": true,
+      "side": "right",
+      "panelMode": "street",
+      "text": "On foot \u00b7 Arrows / WASD move. Space jumps; G grabs or throws; J mauls. E enters buildings; Q returns to your bicycle.",
+      "head": {
+        "left": 327.1114170593081,
+        "right": 341.87085294261897,
+        "top": 233.7539381382702,
+        "bottom": 249.7436650853729
+      },
+      "headSource": "baby_pose_idle.webp",
+      "headSourceRect": [
+        15,
+        9,
+        57,
+        62
+      ],
+      "message": {
+        "x": 520.40625,
+        "y": 211.4375,
+        "width": 311.59375,
+        "height": 54.5625,
+        "top": 211.4375,
+        "right": 832,
+        "bottom": 266,
+        "left": 520.40625
+      },
+      "objectFit": "contain",
+      "contentScale": 0.609375,
+      "overlapCssPixels": 0,
+      "routeStyleLoaded": true
+    }
+  ],
+  "interpretation": [
+    "Primary desktop/phone and peaceful-rest results use earlier Heroaf6737/Visits3321; their full real route, source-room, inventory, camera, quiet routines and reload checks are not relabelled as final code runs.",
+    "Crew uses intermediate Hero33a415; child/NPC renderer modules are unchanged in final runtime.",
+    "Final source transfer/boat masking exception and phone hint CSS were retested in both final-transfer and final-transfer-hint at Hero34d2c9/Visits861be8. Final-hint run additionally measures actual native baby head Canvas matrix against visible DOM hint. Both current final runs pass with no runtime drift.",
+    "12 execution groups include the two final transfer groups repeated with numerical hint-clearance instrumentation; there are10 distinct scenario groups.",
+    "Video is actual screencast with native timestamps, encoded VP9WebM24fps for playback,1x native time; encoding FPS is not game FPS. No continuous rest video was recorded: quiet-state simulation time, before/after snapshots and runtime traces are the evidence."
+  ],
+  "preservedFailedAttempt": {
+    "directory": "rest-attempt1",
+    "passed": false,
+    "cause": "Harness compared all combat snapshot counters and rejected ordinary civilian arrival/departure changes while testing a peaceful foot bump.",
+    "repair": "Compare action/damage/reward-related combat counters while permitting authored arrival/departure routines. Corrected fresh desktop32s/phone18s execution passed; runtime unchanged."
+  },
+  "remainingLimits": [
+    "Physical phone/iPhone/Safari and thermal behaviour untested, explicitly skipped.",
+    "Ordinary source room/garden225-height presentation remains original and closer than source street145; no room redesign.",
+    "Phone source baby is recognisable at original continuous native scale; fine eye/finger details are small (~16CSS-pixel head in measured final street frame).",
+    "Source articulated painted gait and original brief transfer crossfade remain; no claim of new authored rear/angle art for source NPCs.",
+    "NPC source full persistence on ordinary reload was not added or asserted. Authored peaceful source routines reinitialize on fresh source route context; repeated in-memory visits and calm timers are separate from Centrum civilian saves.",
+    "Full story/economy campaign was not repeated in this Stage16 camera/NPC/rest acceptance; historical reports remain separately versioned."
+  ]
+}

@@ -6,11 +6,13 @@ browser or build caches. Development caches, donor inspection archives and Git
 metadata are never included. No source tree, remote or deployment is modified.
 """
 import argparse
+import gzip
 import hashlib
 import json
 import re
 import struct
 import zipfile
+import zlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,8 +28,8 @@ SECRET_PATTERNS = {
     'google-api-key': re.compile(r'\bAIza[0-9A-Za-z_-]{35}\b'),
 }
 TEXT_EXTENSIONS = {'.js', '.css', '.html', '.json', '.md', '.txt', '.py', '.cjs', '.yml', '.yaml'}
-EVIDENCE_STAGES = (7, 8, 9, 10, 11, 12, 13, 14, 15)
-VALIDATION_STAGE = 15
+EVIDENCE_STAGES = (7, 8, 9, 10, 11, 12, 13, 14, 15, 16)
+VALIDATION_STAGE = 16
 
 
 def valid_file(path):
@@ -38,8 +40,18 @@ def valid_file(path):
         raise ValueError('Forbidden package path: ' + str(relative))
     if not path.is_file():
         return False
-    if path.suffix in TEXT_EXTENSIONS:
+    text = None
+    if path.suffix == '.gz':
+        if relative.parts[0] != 'verification' or not path.name.endswith('.json.gz'):
+            raise ValueError('Unsupported compressed evidence path: ' + str(relative))
+        try:
+            text = gzip.decompress(path.read_bytes()).decode('utf-8')
+            json.loads(text)
+        except (OSError, EOFError, UnicodeError, ValueError, zlib.error) as error:
+            raise ValueError('Invalid compressed JSON evidence: ' + str(relative)) from error
+    elif path.suffix in TEXT_EXTENSIONS:
         text = path.read_text(errors='replace')
+    if text is not None:
         for category, pattern in SECRET_PATTERNS.items():
             if pattern.search(text):
                 raise ValueError('Credential-pattern check failed: ' + category + ' in ' + str(relative))
@@ -124,7 +136,7 @@ def included_files():
         if stage<9:continue
         review=ROOT/'verification'/('stage'+str(stage))
         files={p for p in files if not p.is_relative_to(review) or (
-            p.suffix in {'.md','.json','.png','.webp','.webm','.mp4','.sha256'} and
+            (p.suffix in {'.md','.json','.png','.jpg','.jpeg','.webp','.webm','.mp4','.sha256'} or p.name.endswith('.json.gz')) and
             not any(label in part.lower() for part in p.relative_to(review).parts for label in ['-provisional','-attempt']) and
             not any(part.lower() in {'setup','calibration'} for part in p.relative_to(review).parts))}
     return sorted((p for p in files if valid_file(p)), key=lambda p:p.relative_to(ROOT).as_posix())

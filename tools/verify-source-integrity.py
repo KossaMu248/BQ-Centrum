@@ -37,6 +37,39 @@ def replace_reviewed(text, added, original='', count=1):
 
 
 
+STAGE16_PREVIOUS = {
+    "autumn-v19.html": "84cbd3fd22a209a3ae4831e0ab906f94e905d0b54e1fe5de29c4f761c3b428df",
+    "index.html": "84cbd3fd22a209a3ae4831e0ab906f94e905d0b54e1fe5de29c4f761c3b428df",
+    "js/brawler-art.js": "042627f4a89564bce96c26a7a8499ce06d1e691c6ca168e8c7dfa37950b930ee",
+    "js/brawler.js": "83f40b2a50fa24c3534adc9b90cb1ba3ee4076133a523a3d93d2fc96c05f3294",
+    "js/game.js": "4c7bf2e905cc0ca45d9c5bc9b1d5bedbb3b069b3fe82b04eb856c83d693761fc",
+    "js/hero-rig.js": "91a818f5af58263951f686f6554b7b8927d65d1360b6e34a7909ca9b34f9ec4f",
+    "js/illustrated-kids.js": "ae3a7dd4d5409ae8562f427bc655c494f8a46ef2c1862ea2bb640449a0f03444",
+    "js/illustrated-neighbourhood.js": "71417eda5219cc410288dee15034cea96ca82d0c107e9f1cfd458dfe664609b0",
+    "js/illustrated-visits.js": "1fd3a8f60a019b1529db6859d16be51ca8b35c2bb82ada9c4ef1dedab58c9003",
+    "js/npc-motion.js": "290e13eae670e41784a0dc93b6f15dc88330a40e30a5c6e91c92f62f1cb5af07",
+    "js/street-life.js": "8547a6829602b9c2070add14e2d89083299fa3c6e01d15885fe5f6b07d46f994"
+}
+STAGE16_MANIFEST_SHA256 = '7c8f291d196d5239d31a5bece59b71732279cc5b88aac88a7e3903fc9f60befd'
+INTENTIONAL.update(STAGE16_PREVIOUS)
+
+
+def reverse_stage16_source(path, text):
+    """Undo only exact reviewed Stage16 source/entry hunks back to Stage15."""
+    raw = (ROOT / 'references/source/stage16-source-integration.json').read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == STAGE16_MANIFEST_SHA256, 'Changed Stage16 source inverse manifest'
+    spec = json.loads(raw)
+    assert spec['format'] == 1 and spec['previousProjectCommit'] == 'ffec905bf71296b63f2d38fab74a3ac20e2c3875'
+    assert set(spec['files']) == set(STAGE16_PREVIOUS), 'Unexpected Stage16 protected paths'
+    edits = spec['files'][path]
+    assert edits['previousSha256'] == STAGE16_PREVIOUS[path]
+    assert hashlib.sha256(text.encode()).hexdigest() == edits['currentSha256'], 'Unreviewed Stage16 source bytes: ' + path
+    for edit in reversed(edits['changes']):
+        text = replace_reviewed(text, edit['current'], edit['previous'])
+    assert hashlib.sha256(text.encode()).hexdigest() == STAGE16_PREVIOUS[path], 'Unexpected source edits beyond reviewed Stage16 integration: ' + path
+    return text
+
+
 STAGE14_PREVIOUS = {
     'js/hero-rig.js': 'f6412df50749c6bff95b259910421b1fb6f76c6d81a9743d424d90b9f1641dad',
     'js/npc-motion.js': 'ddc5a88e1cd653243bdd98c44fc5bf2bd97f70ada2f81c8bf7cce88d5174d766',
@@ -99,6 +132,8 @@ def reverse_stage11_rig(text):
 
 def restore_donor(path):
     text = (ROOT / path).read_text()
+    if path in STAGE16_PREVIOUS:
+        text = reverse_stage16_source(path, text)
     if path in STAGE14_PREVIOUS:
         text = reverse_stage14_source(path, text)
     if path.endswith('.html'):
@@ -292,6 +327,9 @@ assert not failures, '\n'.join(failures)
 assert (ROOT / 'index.html').read_bytes() == (ROOT / 'autumn-v19.html').read_bytes()
 manifest = json.loads((ROOT / 'autumn-version.json').read_text())
 assert manifest['source']['commit'] == 'da109213fdf24947c2ac0b85de900214cc72e44f'
-assert manifest['edition'] == 'BQ_CENTRUM_STAGE15'
+assert manifest['edition'] == 'BQ_CENTRUM_STAGE16'
+assert manifest['project'] == 'BQ-Centrum' and manifest['entry'] == 'autumn-v19.html'
+assert manifest['source']['repository'] == 'KossaMu248/BQ-Autumn'
+assert manifest['source']['branch'] == 'main' and manifest['source']['build_id'] == 'AUTUMN_RIDE_ART_V19'
 print(f'PASS: {len(HASHES)} pinned original files verified; all source assets/CSS and original protected code match;')
-print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional Centrum walking/worker/preparation additions differ.')
+print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore and optional Centrum walking/worker/preparation and reviewed Stage16 camera/NPC/rest additions differ.')

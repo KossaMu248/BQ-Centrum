@@ -1,0 +1,319 @@
+{
+  "scope": "Frozen Stage15 CPU/Canvas diagnostic, no game changes",
+  "idle": {
+    "active": false,
+    "calls": {
+      "main.save": {
+        "n": 455,
+        "total": 2.2000000001862645,
+        "max": 0.2000000000698492
+      },
+      "main.rotate": {
+        "n": 273,
+        "total": 0.09999999997671694,
+        "max": 0.09999999997671694
+      },
+      "main.drawImage": {
+        "n": 273,
+        "total": 0.9999999998835847,
+        "max": 0.40000000002328306
+      },
+      "main.restore": {
+        "n": 455,
+        "total": 1596.5999999999767,
+        "max": 43
+      },
+      "main.clip": {
+        "n": 91,
+        "total": 0.19999999995343387,
+        "max": 0.09999999997671694
+      },
+      "main.stroke": {
+        "n": 91,
+        "total": 0.5999999999767169,
+        "max": 0.10000000009313226
+      }
+    },
+    "states": [
+      {
+        "filter": "none",
+        "shadowBlur": 0,
+        "shadowColor": "rgba(0, 0, 0, 0)",
+        "shadowOffsetX": 0,
+        "shadowOffsetY": 0,
+        "globalCompositeOperation": "source-over",
+        "imageSmoothingQuality": "low",
+        "transform": {
+          "a": 1.350000023841858,
+          "b": 0,
+          "c": 0,
+          "d": 1.350000023841858,
+          "e": -5106.830892033591,
+          "f": -399.9818966049952,
+          "m11": 1.350000023841858,
+          "m12": 0,
+          "m13": 0,
+          "m14": 0,
+          "m21": 0,
+          "m22": 1.350000023841858,
+          "m23": 0,
+          "m24": 0,
+          "m31": 0,
+          "m32": 0,
+          "m33": 1,
+          "m34": 0,
+          "m41": -5106.830892033591,
+          "m42": -399.9818966049952,
+          "m43": 0,
+          "m44": 1,
+          "is2D": true,
+          "isIdentity": false
+        }
+      },
+      {
+        "filter": "none",
+        "shadowBlur": 0,
+        "shadowColor": "rgba(0, 0, 0, 0)",
+        "shadowOffsetX": 0,
+        "shadowOffsetY": 0,
+        "globalCompositeOperation": "source-over",
+        "imageSmoothingQuality": "low",
+        "transform": {
+          "a": 1.350000023841858,
+          "b": 0,
+          "c": 0,
+          "d": 1.350000023841858,
+          "e": -5107.897444786802,
+          "f": -398.11765401836055,
+          "m11": 1.350000023841858,
+          "m12": 0,
+          "m13": 0,
+          "m14": 0,
+          "m21": 0,
+          "m22": 1.350000023841858,
+          "m23": 0,
+          "m24": 0,
+          "m31": 0,
+          "m32": 0,
+          "m33": 1,
+          "m34": 0,
+          "m41": -5107.897444786802,
+          "m42": -398.11765401836055,
+          "m43": 0,
+          "m44": 1,
+          "is2D": true,
+          "isIdentity": false
+        }
+      },
+      {
+        "filter": "none",
+        "shadowBlur": 0,
+        "shadowColor": "rgba(0, 0, 0, 0)",
+        "shadowOffsetX": 0,
+        "shadowOffsetY": 0,
+        "globalCompositeOperation": "source-over",
+        "imageSmoothingQuality": "low",
+        "transform": {
+          "a": 1.350000023841858,
+          "b": 0,
+          "c": 0,
+          "d": 1.350000023841858,
+          "e": -5108.742183571252,
+          "f": -396.6410502935523,
+          "m11": 1.350000023841858,
+          "m12": 0,
+          "m13": 0,
+          "m14": 0,
+          "m21": 0,
+          "m22": 1.350000023841858,
+          "m23": 0,
+          "m24": 0,
+          "m31": 0,
+          "m32": 0,
+          "m33": 1,
+          "m34": 0,
+          "m41": -5108.742183571252,
+          "m42": -396.6410502935523,
+          "m43": 0,
+          "m44": 1,
+          "is2D": true,
+          "isIdentity": false
+        }
+      }
+    ],
+    "n": 91
+  },
+  "moving": {
+    "active": false,
+    "calls": {
+      "main.save": {
+        "n": 210,
+        "total": 1.0000000001164153,
+        "max": 0.2000000000698492
+      },
+      "main.rotate": {
+        "n": 126,
+        "total": 0.09999999997671694,
+        "max": 0.09999999997671694
+      },
+      "main.drawImage": {
+        "n": 126,
+        "total": 2.300000000046566,
+        "max": 0.7000000000698492
+      },
+      "main.restore": {
+        "n": 210,
+        "total": 686.4000000000233,
+        "max": 20.199999999953434
+      },
+      "main.clip": {
+        "n": 42,
+        "total": 0.19999999995343387,
+        "max": 0.19999999995343387
+      },
+      "main.stroke": {
+        "n": 42,
+        "total": 0.5,
+        "max": 0.19999999995343387
+      },
+      "aux.save": {
+        "n": 16400,
+        "total": 11.900000000488944,
+        "max": 0.40000000002328306
+      },
+      "aux.clip": {
+        "n": 16401,
+        "total": 22.79999999993015,
+        "max": 0.30000000004656613
+      },
+      "aux.drawImage": {
+        "n": 16401,
+        "total": 44.00000000081491,
+        "max": 0.7000000000698492
+      },
+      "aux.restore": {
+        "n": 16400,
+        "total": 9.499999999068677,
+        "max": 0.2000000000698492
+      },
+      "aux.getImageData": {
+        "n": 41,
+        "total": 279.80000000062864,
+        "max": 10.900000000023283
+      },
+      "aux.putImageData": {
+        "n": 41,
+        "total": 0.4999999998835847,
+        "max": 0.09999999997671694
+      }
+    },
+    "states": [
+      {
+        "filter": "none",
+        "shadowBlur": 0,
+        "shadowColor": "rgba(0, 0, 0, 0)",
+        "shadowOffsetX": 0,
+        "shadowOffsetY": 0,
+        "globalCompositeOperation": "source-over",
+        "imageSmoothingQuality": "low",
+        "transform": {
+          "a": 1.350000023841858,
+          "b": 0,
+          "c": 0,
+          "d": 1.350000023841858,
+          "e": -5111.9599692726115,
+          "f": -391.01600212902486,
+          "m11": 1.350000023841858,
+          "m12": 0,
+          "m13": 0,
+          "m14": 0,
+          "m21": 0,
+          "m22": 1.350000023841858,
+          "m23": 0,
+          "m24": 0,
+          "m31": 0,
+          "m32": 0,
+          "m33": 1,
+          "m34": 0,
+          "m41": -5111.9599692726115,
+          "m42": -391.01600212902486,
+          "m43": 0,
+          "m44": 1,
+          "is2D": true,
+          "isIdentity": false
+        }
+      },
+      {
+        "filter": "none",
+        "shadowBlur": 0,
+        "shadowColor": "rgba(0, 0, 0, 0)",
+        "shadowOffsetX": 0,
+        "shadowOffsetY": 0,
+        "globalCompositeOperation": "source-over",
+        "imageSmoothingQuality": "low",
+        "transform": {
+          "a": 1.350000023841858,
+          "b": 0,
+          "c": 0,
+          "d": 1.350000023841858,
+          "e": -5112.333724162025,
+          "f": -391.0276407705878,
+          "m11": 1.350000023841858,
+          "m12": 0,
+          "m13": 0,
+          "m14": 0,
+          "m21": 0,
+          "m22": 1.350000023841858,
+          "m23": 0,
+          "m24": 0,
+          "m31": 0,
+          "m32": 0,
+          "m33": 1,
+          "m34": 0,
+          "m41": -5112.333724162025,
+          "m42": -391.0276407705878,
+          "m43": 0,
+          "m44": 1,
+          "is2D": true,
+          "isIdentity": false
+        }
+      },
+      {
+        "filter": "none",
+        "shadowBlur": 0,
+        "shadowColor": "rgba(0, 0, 0, 0)",
+        "shadowOffsetX": 0,
+        "shadowOffsetY": 0,
+        "globalCompositeOperation": "source-over",
+        "imageSmoothingQuality": "low",
+        "transform": {
+          "a": 1.350000023841858,
+          "b": 0,
+          "c": 0,
+          "d": 1.350000023841858,
+          "e": -5113.3828086532085,
+          "f": -391.06027016569533,
+          "m11": 1.350000023841858,
+          "m12": 0,
+          "m13": 0,
+          "m14": 0,
+          "m21": 0,
+          "m22": 1.350000023841858,
+          "m23": 0,
+          "m24": 0,
+          "m31": 0,
+          "m32": 0,
+          "m33": 1,
+          "m34": 0,
+          "m41": -5113.3828086532085,
+          "m42": -391.06027016569533,
+          "m43": 0,
+          "m44": 1,
+          "is2D": true,
+          "isIdentity": false
+        }
+      }
+    ],
+    "n": 42
+  }
+}

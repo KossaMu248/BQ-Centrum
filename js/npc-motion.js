@@ -132,6 +132,8 @@
   function drawPose(c,{variant=0,pose='idle',x=0,y=0,height=130,face=1,alpha=1}={}){const frame=get(variant,pose);if(!frame)return false;raw(c,frame,x,y,height,face,alpha);return true;}
   function source(variant,pose){const frame=get(variant,pose);return frame?{image:frame.tile,rect:[0,0,frame.tile.width,frame.tile.height],original:publicFrame(frame)}:null;}
 
+  // Two stance excursions per cycle must match actual ground travel.
+  const walkCycleLength=(height=130)=>height*.34/.62;
   function foot(phase,h,half){const p=((phase%1)+1)%1,duty=.62;if(p<duty)return{x:half*(1-2*p/duty),y:0,angle:p>duty-.12?(p-duty+.12)*.65:0,stance:true};const t=(p-duty)/(1-duty);return{x:-half*Math.cos(Math.PI*t),y:-h*.070*Math.sin(Math.PI*t),angle:-.19*Math.sin(Math.PI*t),stance:false};}
   function triangle(c,image,source,destination){
     const [a,b,d]=source,[p,q,r]=destination,den=a.x*(b.y-d.y)+b.x*(d.y-a.y)+d.x*(a.y-b.y);if(Math.abs(den)<.0001)return;
@@ -206,9 +208,14 @@
   function preloadAll(){startWalkCache();return Promise.all([...walkBanks.keys()].map(warmVariant));}
   // Optional Centrum entry preparation: warm only the resident identities needed
   // by that scene. Native callers keep the original preloadAll contract above.
-  function preloadVariants(variants=[]){
+  function preloadVariants(variants=[],options={}){
     const selected=[...new Set(Array.isArray(variants)?variants:[])].filter(variant=>Number.isInteger(variant)&&variant>=0&&variant<profiles.length);
-    return loaded.then(()=>{startWalkCache();return Promise.all(selected.map(warmVariant));});
+    return loaded.then(()=>{
+      // Complete source poses are already installed with their original pixels.
+      // This opt-in path needs no 48-frame deformation sheets or worker bakes.
+      if(options.authoredWalk)return selected.map(variant=>!!profiles[variant]?.poses.idle);
+      startWalkCache();return Promise.all(selected.map(warmVariant));
+    });
   }
   function finishCache(){
     cacheState.complete=true;cacheState.completedMs=performance.now()-cacheState.startedAt;
@@ -274,11 +281,18 @@ onmessage=event=>{const m=event.data;if(m.type==='source'){const tile=new Offscr
     const s=h/frame.stature,flip=face*frame.sourceFace<0?-1:1,[px,py]=frame.seatPivot||frame.anchor,[sx,sy]=frame.rect;
     c.save();c.translate(x,y-seatHeight);c.rotate(Math.sin(t*.75+frame.variant)* (reading?.0035:.0018));c.scale(flip,1+.0025*Math.sin(t*1.6+frame.variant));c.drawImage(frame.tile,(sx-px)*s,(sy-py)*s,frame.tile.width*s,frame.tile.height*s);c.restore();
   }
-  function draw(c,n,x,y,height=130,scale=1){
+  const authoredWalkFrames=new WeakMap();
+  function authoredFrame(frame){
+    let adjusted=authoredWalkFrames.get(frame);
+    if(!adjusted){adjusted={...frame,anchor:[frame.anchor[0],frame.core[1]+frame.core[3]-1]};authoredWalkFrames.set(frame,adjusted);}
+    return adjusted;
+  }
+  function draw(c,n,x,y,height=130,scale=1,options={}){
     if(n.active===false||n.visible===false)return true;
     const variant=Number.isFinite(n.variant)?((n.variant%12)+12)%12:0,profile=profiles[variant],reaction=['stagger','fall','dead','down','rise'].includes(n.state);
     if(!profile?.poses.idle)return false;
-    warmVariant(variant);
+    const authoredWalk=!!options.authoredWalk&&!!profile.poses.walkA&&!!profile.poses.walkB;
+    if(!authoredWalk)warmVariant(variant);
     if(variant<9&&(reaction||n.state==='held'))return false;
     const moving=!!n.moving,aggressive=n.hostile||n.mood==='hostile'||n.mood==='aggressive',activity=n.activity||(moving?(aggressive?'run':'walk'):'idle'),face=n.face||1,h=height*profile.heightScale,t=n.age||0;
     let pose='idle',mode=activity,phase=0,details=null;
@@ -286,11 +300,22 @@ onmessage=event=>{const m=event.data;if(m.type==='source'){const tile=new Offscr
     else if(n.state==='held')pose=variant>=9?'hurt':'idle';
     else if(['sit','read','smoke','hide'].includes(activity))pose=profile.poses[activity]?activity:'idle';
     else if(['run','flee'].includes(activity)||n.running){phase=(n.distance||0)/(h*1.05);pose=((phase%1)+1)%1<.5?'runA':'runB';}
-    else if(moving||activity==='walk'){phase=(n.distance||0)/(h*.72);pose='idle';mode='walk';}
+    else if(moving||activity==='walk'){
+      phase=(n.distance||0)/walkCycleLength(h);mode='walk';
+      // Shared-unit cast has a neutral passing key. The separately authored
+      // civilian idle sheet uses different drawing units: keep its walk keys
+      // together rather than making its head change size four times a cycle.
+      const keys=variant>=9?['walkA','walkB']:['walkA','idle','walkB','idle'];
+      pose=authoredWalk?keys[Math.floor((((phase%1)+1)%1)*keys.length)]:'idle';
+    }
     else if(aggressive&&variant<9)return false;
-    const frame=get(variant,pose);if(!frame)return false;
+    const sourceFrame=get(variant,pose);if(!sourceFrame)return false;
+    const frame=authoredWalk&&mode==='walk'?authoredFrame(sourceFrame):sourceFrame;
     c.save();c.translate(x,y);c.scale(scale,scale);
-    if(mode==='walk'&&!reaction){details=cachedWalk(c,frame,phase,h,face);}
+    if(mode==='walk'&&!reaction){
+      if(authoredWalk){raw(c,frame,0,0,h,face);details={authored:true,completePose:true,sourcePose:pose,cycleLength:walkCycleLength(h),drawCalls:1};}
+      else details=cachedWalk(c,frame,phase,h,face);
+    }
     else if(!reaction&&(['run','flee'].includes(activity)||n.running)){
       const flight=-(Math.sin(((phase%1)+1)%1*Math.PI*2)**2)*h*.035,lean=(face>0?1:-1)*.055;
       c.save();c.translate(0,flight);c.rotate(lean);raw(c,frame,0,0,h,face);c.restore();
@@ -306,5 +331,5 @@ onmessage=event=>{const m=event.data;if(m.type==='source'){const tile=new Offscr
     if(n.state==='held'){/* Supporting hands/throw motion is provided by the bear rig. */}
     c.restore();lastAudit={variant,activity,pose,phase,source:frame.source,sourceRect:frame.rect,height:h,heightScale:profile.heightScale,civilian:n.civilian===true,details};return true;
   }
-  window.BearlyNpcMotion={ready,loaded,preloadAll,preloadVariants,frames,frame:(variant,pose)=>{const f=get(variant,pose);return f?publicFrame(f):null;},source,drawPose,draw,audit:motionAudit,cacheStats,diagnostics:()=>Object.fromEntries(Object.entries(atlases).map(([k,v])=>[k,{ready:v.ready,error:v.error}]))};
+  window.BearlyNpcMotion={ready,loaded,preloadAll,preloadVariants,walkCycleLength,frames,frame:(variant,pose)=>{const f=get(variant,pose);return f?publicFrame(f):null;},source,drawPose,draw,audit:motionAudit,cacheStats,diagnostics:()=>Object.fromEntries(Object.entries(atlases).map(([k,v])=>[k,{ready:v.ready,error:v.error}]))};
 })();

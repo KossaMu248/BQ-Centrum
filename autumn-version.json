@@ -1,6 +1,6 @@
 {
   "project": "BQ-Centrum",
-  "edition": "BQ_CENTRUM_STAGE15",
+  "edition": "BQ_CENTRUM_STAGE16",
   "entry": "autumn-v19.html",
   "source": {
     "repository": "KossaMu248/BQ-Autumn",
@@ -8,5 +8,5 @@
     "commit": "da109213fdf24947c2ac0b85de900214cc72e44f",
     "build_id": "AUTUMN_RIDE_ART_V19"
   },
-  "prototype": "Centrum \u2014 wider shallow camera with original character proportions"
+  "prototype": "Centrum \u2014 faster copied street rendering, wider route view and grounded source NPCs"
 }

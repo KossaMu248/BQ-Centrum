@@ -1,0 +1,80 @@
+{
+  "scope": "Peaceful authored sit/read/smoke rest only; simulation/source-data unit evidence, not rendered or device proof. Combat down/dead recovery is unchanged.",
+  "atUtc": "2026-11-05T15:38:34.201531+00:00",
+  "baseProjectCommit": "ffec905bf71296b63f2d38fab74a3ac20e2c3875",
+  "beforeHashes": {
+    "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+    "tests/centrum_npc_rest.cjs": "682bc39d7e9a2b3d375f000cdd9dcb4c2ff566947a25530d6284ae7eb19f3133",
+    "tests/npc-life.cjs": "e9616b895a47b347b9c92cc12303d3b8df71a1d022279d9ba3ccf9a2ae9deb81"
+  },
+  "checks": [
+    {
+      "command": [
+        "node",
+        "tests/centrum_npc_rest.cjs"
+      ],
+      "passed": true,
+      "elapsedSeconds": 0.242,
+      "stdout": "{\"scope\":\"Actual simulation/data unit contracts; not rendered appearance or physical-device evidence\",\"quietSeconds\":300,\"quietKinds\":[\"sit\",\"read\",\"smoke\"],\"noncontactCases\":6,\"passed\":true,\"timerOnlyMutationRejected\":true,\"offSceneSeconds\":120,\"finiteJSONSeedRoundtrip\":true,\"movingContactWakesWithoutDamage\":true,\"existingAttackAndNearbyFightWake\":true,\"combatRecoveryTraceUnchanged\":true,\"authoredPromenadeIdentities\":3,\"ordinaryIdlePatrolPreserved\":true}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "tests/npc-life.cjs"
+      ],
+      "passed": true,
+      "elapsedSeconds": 0.115,
+      "stdout": "NPC life checks passed: peaceful fear/flee/hide, witness safety, sidewalk routes, prop rests, running pursuit, schedules, stable IDs/health and combat visibility.",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "tests/brawler.cjs"
+      ],
+      "passed": true,
+      "elapsedSeconds": 0.091,
+      "stdout": "Brawler checks passed: persistent residents, witness aggression, hostile throws, staged screen impact, damage/death/recovery, attached baby and timed Apex/Madness states.",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "tests/gang-encounters.cjs"
+      ],
+      "passed": true,
+      "elapsedSeconds": 0.197,
+      "stdout": "Gang encounters passed: calm hangouts, warning/pressure, crew provocation, real cover, cycling ownership, exact weapon contacts, fire duration, shared health and bounded history.",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "tests/centrum_civilians.cjs"
+      ],
+      "passed": true,
+      "elapsedSeconds": 0.234,
+      "stdout": "PASS: sparse source civilians, fear/defeat/reload recovery, peaceful identities, held dialogue, one-time delivery walk and namespaced/denied storage.",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "js/brawler.js"
+      ],
+      "passed": true,
+      "elapsedSeconds": 0.036,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "persistenceScope": "Existing arena memory keeps actors/prop identity across visits. Authored-rest snapshot/seed JSON roundtrip uses existing fields and finite timers; no new complete street-NPC save/restore API or storage key is claimed.",
+  "afterHashes": {
+    "js/brawler.js": "b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09",
+    "tests/centrum_npc_rest.cjs": "682bc39d7e9a2b3d375f000cdd9dcb4c2ff566947a25530d6284ae7eb19f3133",
+    "tests/npc-life.cjs": "e9616b895a47b347b9c92cc12303d3b8df71a1d022279d9ba3ccf9a2ae9deb81"
+  },
+  "passed": true
+}

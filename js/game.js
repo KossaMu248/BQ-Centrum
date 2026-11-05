@@ -3,7 +3,7 @@
 
 (() => {
   'use strict';
-  window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE15';
+  window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE16';
   /* v10.58 — original-size, original-clothes actor art; only prop pixels + portraits. */
   window.BEARLY_ASSETS['v158_firecracker_hoodie_0_0']='assets/v158_firecracker_hoodie_0_0.webp';
   window.BEARLY_ASSETS['v158_firecracker_hoodie_0_3']='assets/v158_firecracker_hoodie_0_3.webp';
@@ -5901,7 +5901,8 @@ function babyFigure(expr, thrown=false, pose='idle'){
     if(window.BearlyCentrumSquare?.render(ctx,W,H))return;
     if(window.BearlyVisits?.render(ctx,W,H))return;
     ctx.clearRect(0,0,W,H);window.BearlyWorld.sky(ctx,illustratedState());
-    ctx.save();ctx.translate(W*.32,H*.22);ctx.scale(1.35,1.35);ctx.translate(-W*.32,-H*.22);ctx.translate(-cameraX+(cameraShake?(Math.random()-.5)*cameraShake:0),-cameraY+(cameraShake?(Math.random()-.5)*cameraShake*.6:0));
+    const routeFrame=window.BearlyCentrumCamera.routeFrame(W,H,!$('introOverlay').hidden);
+    ctx.save();ctx.translate(routeFrame.focusX,routeFrame.focusY+routeFrame.shiftY);ctx.scale(routeFrame.zoom,routeFrame.zoom);ctx.translate(-routeFrame.focusX,-routeFrame.focusY);ctx.translate(-cameraX+(cameraShake?(Math.random()-.5)*cameraShake:0),-cameraY+(cameraShake?(Math.random()-.5)*cameraShake*.6:0));
     groundDraw();window.BearlyCentrumLink?.renderRouteMarker(ctx,groundAt);if($('introOverlay').hidden)drawGroundedBikeShadow();if(debugSettings.particles){drawPukeSplashes();drawEffects();drawBabyPee();}autumnBikePresentation();if(debugSettings.particles)drawPukeFlow();drawVictoryCelebration();drawThrownItems();if(debugSettings.particles)drawImpactCues();drawProjectileImpactFX();
     const compositeSheet=demo.active && !!selectedSheetPose();
     if(!compositeSheet){drawBearThrown();drawSeatThrown();if(!window.BearlyVisits?.hideRoadBaby())drawBaby();drawFragments();}

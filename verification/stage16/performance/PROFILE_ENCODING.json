@@ -1,0 +1,73 @@
+{
+  "scope": "Lossless encoding of exactly five new Stage16 performance evidence files. No profile data, whitespace, timings or measurements were changed. This is artifact encoding, not another profiling run.",
+  "encoding": "gzip level 9, timestamp 0",
+  "decodedSHA256Meaning": "SHA-256 of the exact original UTF-8 JSON bytes, including original whitespace and final newline.",
+  "compressedSHA256Meaning": "SHA-256 of the delivered .json.gz bytes.",
+  "files": [
+    {
+      "profile": "before-desktop",
+      "file": "before-desktop.json.gz",
+      "encoding": "gzip",
+      "decodedEncoding": "UTF-8 JSON",
+      "decodedBytes": 6551513,
+      "compressedBytes": 401827,
+      "decodedSHA256": "cb00bbdd0da1d190f55d8884bd4def9e0e8fb0776f7fe60a48c066db9dc7a634",
+      "compressedSHA256": "217f0610290ddc635934be482b700ce50be6d3794f873fa32be5df60190d72ab",
+      "exactOriginalBytesVerified": true
+    },
+    {
+      "profile": "after-desktop",
+      "file": "after-desktop.json.gz",
+      "encoding": "gzip",
+      "decodedEncoding": "UTF-8 JSON",
+      "decodedBytes": 6650314,
+      "compressedBytes": 402307,
+      "decodedSHA256": "63ff634ebbc6ce2211f841229f6e1829078d98cdfedf964f66afdf9a9dcbb4ae",
+      "compressedSHA256": "98b9e305e9c291fb28340706cc6cf840dde0f89cc07976bad53909eb1caadf22",
+      "exactOriginalBytesVerified": true
+    },
+    {
+      "profile": "before-touch",
+      "file": "before-touch.json.gz",
+      "encoding": "gzip",
+      "decodedEncoding": "UTF-8 JSON",
+      "decodedBytes": 6600571,
+      "compressedBytes": 404718,
+      "decodedSHA256": "e4a9a6eae8eeaa4c6b88aa89dc821091c0ca624bac87b96fc277e59f9698af9d",
+      "compressedSHA256": "e69696d20ce140a19edc8f5cd2b58dc76eada07a611667733e5e36d5644abdb3",
+      "exactOriginalBytesVerified": true
+    },
+    {
+      "profile": "after-touch",
+      "file": "after-touch.json.gz",
+      "encoding": "gzip",
+      "decodedEncoding": "UTF-8 JSON",
+      "decodedBytes": 6632588,
+      "compressedBytes": 398995,
+      "decodedSHA256": "2d1f4b4b857cb7fe8963954c3bbe8987e0a67365362856f8df56bef51dc5a713",
+      "compressedSHA256": "d24b696d4eab40dd3cbf497d186d25d9803c6baa951405cdcfa577d9ac4f4f51",
+      "exactOriginalBytesVerified": true
+    },
+    {
+      "profile": "pouch-only-desktop",
+      "file": "pouch-only-desktop.json.gz",
+      "encoding": "gzip",
+      "decodedEncoding": "UTF-8 JSON",
+      "decodedBytes": 6595513,
+      "compressedBytes": 406597,
+      "decodedSHA256": "72c5934a8d002c6703c4f9d2d88c786b238de7469b8896f0eaa45c53cb784ef2",
+      "compressedSHA256": "4e6776542681e8c89a609275eb52d7d2174b62a1706b79342ca406f06705f653",
+      "exactOriginalBytesVerified": true
+    }
+  ],
+  "originalBytes": 33030499,
+  "compressedBytes": 2014444,
+  "bytesSaved": 31016055,
+  "allExactOriginalBytesVerified": true,
+  "payloadEncodingGuard": {
+    "command": "python3 tests/centrum_package_codec.py",
+    "tests": 8,
+    "passed": true,
+    "scope": "Exact-byte UTF-8 JSON acceptance, CRC corruption, malformed JSON/UTF-8, compressed secret detection, unsupported suffix/path rejection and five delivered profile/hash/reference checks. No browser or profiling was run."
+  }
+}
