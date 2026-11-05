@@ -56,19 +56,19 @@ function assertFinite(value){
 }
 function contract(code=source){
  const {api,counts,canvases}=load(code),metrics=plain(api.metrics());
- close(metrics.width,224);close(metrics.bodyHeight,70);close(metrics.seatHeight,26);close(metrics.seatPan.front,21.4);close(metrics.seatPan.rear,30.7);close(metrics.usableSeatWidth,188);close(metrics.footprintHalf,224*.55);
+ close(metrics.width,168);close(metrics.bodyHeight,70);close(metrics.seatHeight,26);close(metrics.seatPan.front,21.4);close(metrics.seatPan.rear,30.7);close(metrics.usableSeatWidth,132);close(metrics.footprintHalf,168*.55);
  const bodies=manifest.npcSources.flatMap(pack=>pack.frames).filter(frame=>[9,10,11].includes(frame.variant)&&['sit','read'].includes(frame.pose)).map(frame=>({variant:frame.variant,pose:frame.pose,width:frame.core[2]*128*(frame.variant===9?1.05:frame.variant===11?.84:1)/frame.stature}));
- assert.equal(bodies.length,6);const largest=Math.max(...bodies.map(body=>body.width)),gap=12;
- assert(metrics.usableSeatWidth>=largest*2+gap,'shared seat fits two largest original seated bodies with a real gap');
- for(const centre of [-(largest+gap)/2,(largest+gap)/2])assert(Math.abs(centre)+largest/2<=metrics.usableSeatWidth/2,'both full opaque bodies fit between arm rails');
- const report={scope:'Production vector paths/cached Canvas transforms and original NPC metadata, not pixel or gameplay acceptance',largestOpaqueSeatedWidth:largest,twoBodyGap:gap,usableSeatWidth:metrics.usableSeatWidth,paintedSeatCases:0,cachedDrawCases:0,invalidDrawCases:0};
- for(const args of [[NaN,400,224],[Infinity,400,224],[500,NaN,224],[500,400,0],[500,400,-1],[500,400,Infinity],[500,400,NaN]]){
+ assert.equal(bodies.length,6);const largest=Math.max(...bodies.map(body=>body.width)),clearance=24;
+ assert(metrics.usableSeatWidth>=largest+clearance,'compact seat fits the largest original seated body with natural side clearance');
+ assert(metrics.usableSeatWidth<largest*2,'single-user seat does not retain unused two-person width');
+ const report={scope:'Production vector paths/cached Canvas transforms and original NPC metadata, not pixel or gameplay acceptance',largestOpaqueSeatedWidth:largest,singleBodyClearance:clearance,usableSeatWidth:metrics.usableSeatWidth,paintedSeatCases:0,cachedDrawCases:0,invalidDrawCases:0};
+ for(const args of [[NaN,400,168],[Infinity,400,168],[500,NaN,168],[500,400,0],[500,400,-1],[500,400,Infinity],[500,400,NaN]]){
   const c=new Context({width:1160,height:640});assert.equal(api.draw(c,...args),false);assert.equal(c.draws.length,0);assert.equal(c.stack.length,0);assert.deepEqual(c.m,[1,0,0,1,0,0]);report.invalidDrawCases++;
  }
  assert.equal(counts.canvases,0,'invalid draws never allocate a prepared sprite');
  let afterFirst=null;
- for(const width of [224,140,280,224]){
-  const scale=width/224,measure=plain(api.metrics(width));assertFinite(measure);
+ for(const width of [168,140,224,168]){
+  const scale=width/168,measure=plain(api.metrics(width));assertFinite(measure);
   for(const key of ['width','bodyHeight','seatHeight','usableSeatWidth','footprintHalf'])close(measure[key],metrics[key]*scale);
   close(measure.seatPan.front,metrics.seatPan.front*scale);close(measure.seatPan.rear,metrics.seatPan.rear*scale);
   const target=new Context({width:1160,height:640});target.translate(18,23);target.scale(.75,.75);const before=[...target.m];
@@ -89,19 +89,19 @@ function contract(code=source){
   assert.equal(counts.canvases,afterFirst.canvases,'different output widths reuse the same prepared picture');
  }
  assert.equal(counts.canvases,1,'one bounded two-times-resolution bench canvas');
- assert(canvases[0].width*canvases[0].height*4<=1024*1024,'fixed cached artwork is bounded below1MiB');
+ assert.equal(canvases[0].width,368);assert.equal(canvases[0].height,184);assert.equal(canvases[0].width*canvases[0].height*4,270848,'narrower cached artwork has a fixed byte budget');
  assert.equal(canvases[0].context.stack.length,0,'painter also balances Canvas state');
  for(let frame=0;frame<240;frame++){
-  const c=new Context({width:1160,height:640});api.draw(c,500+frame,400,frame%2?224:280);assert.equal(c.stack.length,0);assert.equal(c.draws.length,1);report.cachedDrawCases++;
+  const c=new Context({width:1160,height:640});api.draw(c,500+frame,400,frame%2?168:224);assert.equal(c.stack.length,0);assert.equal(c.draws.length,1);report.cachedDrawCases++;
  }
  assert.equal(counts.canvases,afterFirst.canvases);assert.equal(canvases.reduce((n,c)=>n+c.context.fills.length,0),afterFirst.paintedPaths,'no per-frame vector repaint/raster work');
  assert.equal(counts.timers,0);assert.equal(counts.loops,0);assert.equal(counts.listeners,0);report.cacheCanvases=counts.canvases;report.cacheBytes=canvases[0].width*canvases[0].height*4;
- const audit=plain(api.audit());assert.equal(audit.builds,1);assert.equal(audit.draws,report.cachedDrawCases+report.paintedSeatCases);assert.equal(audit.cacheBytes,report.cacheBytes);assert.equal(audit.lastWidth,224);
+ const audit=plain(api.audit());assert.equal(audit.builds,1);assert.equal(audit.draws,report.cachedDrawCases+report.paintedSeatCases);assert.equal(audit.cacheBytes,report.cacheBytes);assert.equal(audit.lastWidth,168);
  report.passed=true;return report;
 }
 const report=contract();
 const mutations=[
- {name:'old tiny140 default bench',from:'const width=224,',to:'const width=140,'},
+ {name:'old oversized224 default bench',from:'const width=168,',to:'const width=224,'},
  {name:'old uniformly scaled196-unit seat pan',from:'{front:21.4,rear:30.7}',to:'{front:27.5*196/180,rear:39.5*196/180}'},
  {name:'per-draw vector rebuild',from:'if(canvas)return canvas;',to:'if(false)return canvas;'},
 ];

@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "scope": "Strict target-local source reconstruction and in-memory negative guards; no donor read/write, original art edit, physics, save or Git mutation.",
+  "atUtc": "2026-11-05T20:29:05.649474+00:00",
+  "previousProjectCommit": "ff5f7d676365e139ed03111e0a43555b71579c74",
+  "manifestSHA256": "0d08adfe07cbc987324d26ba64ddaf296e1f5b85a54374c639354f9a75ecd1da",
+  "protectedOriginalFiles": 944,
+  "unchangedOriginalArtworkFiles": 919,
+  "exactStage19Inverses": 6,
+  "exactStage19Hunks": 11,
+  "rejectedStage19SourceRenderLoadOrderMutations": 12,
+  "stage19ManifestTamperRejected": true,
+  "priorStage14Stage16Stage17Stage18GuardsRetained": true,
+  "unchangedCyclingSimulation": {
+    "characters": 17332,
+    "sha256": "be413cd99f320f38d94a49fdf3b93d297dfe5f5039aa977d4c20442250fc9bef"
+  },
+  "protectedRuntimeHashes": {
+    "autumn-v19.html": "f1100dbd323d64ecda8a4d85b25dac1b6588d7442c30169650f97df51f5f0818",
+    "index.html": "f1100dbd323d64ecda8a4d85b25dac1b6588d7442c30169650f97df51f5f0818",
+    "js/game.js": "03ea98523b86434921b59e33530e48738451b5e1bbf961b8703dc84cdc63ea3e",
+    "js/illustrated-neighbourhood.js": "b2a1734e4b10275ad2f5c0e51f58483d132f635be5303745ad51d72073cf8b27",
+    "js/illustrated-world.js": "451f88c440ac03ef55ebb1448f936a34aff27600cd8a25db2508b05f029bb67b",
+    "js/street-life.js": "0abf3a756f5969083a7de292be4e34a37c613d5e16617c44fb90173afabba257"
+  },
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "tools/verify-source-integrity.py"
+      ],
+      "passed": true,
+      "stdout": "PASS: 944 pinned original files verified; all source assets/CSS and original protected code match;\nonly reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest, Stage17 NPC-prop fit, Stage18 bench/peaceful-seat/opaque-eye and Stage19 compact/sparse bench additions differ.",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "tests/centrum_source_integrity.py"
+      ],
+      "passed": true,
+      "stdout": "PASS: 944 protected originals; prior Stage14/16/17/18 guards retained; 6 exact Stage19 inverses/12 rejected source/render/load-order mutations and Stage19 manifest tampering; cycling simulation block unchanged; all mutations in memory.",
+      "stderr": ""
+    }
+  ]
+}

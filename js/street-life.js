@@ -15,9 +15,9 @@
   bush.src='assets/art/autumn-verge.png';
   let cacheKey='',locals=[],gangLocals=[],furniture=[];
   const painted=new Map(),heard=new Set();let audioRequests=0,lastSoundAt=-99;
-  // A shared bench needs its own width and low seat, rather than scaling the
-  // old tall drawing down around one occupant. One geometry owns both uses.
-  const benchWidth=224;
+  // Short seats belong to a few authored rest places. Width changes preserve
+  // the existing upright back and low contact pan of the original NPC poses.
+  const benchWidth=168,benchStops=new Set(['library','greenhouse','boathouse']);
   function prepare(scenes,finish,count,gangs=[]){
     const key=finish+':'+count+':'+gangs.map(n=>n.id).join(',');if(cacheKey===key)return;
     cacheKey=key;locals=[];gangLocals=[];furniture=[];
@@ -48,14 +48,14 @@
     scenes.forEach((scene,i)=>{
       if(i<2)return;
       const base=scene.x,depth=-64-(i%2)*4;
-      const bench=prop(scene.key+'-life-bench','bench',base+scene.w*.5+120,-84);
-      const bin=prop(scene.key+'-life-bin','bin',bench.x+220,-82);
+      const pauseX=base+scene.w*.5+120,bench=benchStops.has(scene.key)?prop(scene.key+'-life-bench','bench',pauseX,-84):null;
+      const bin=prop(scene.key+'-life-bin','bin',pauseX+220,-82);
       const shrubs=[prop(scene.key+'-life-bush-left','bush',base-Math.max(700,scene.w*.5+250),-80),prop(scene.key+'-life-bush-right','bush',base+Math.max(850,scene.w*.5+580),-80)];
       const spots=[...shrubs.map(hide),hide(bin)];
       const visitor=9+i%3;
-      locals.push({id:'civilian-'+scene.key,variant:visitor,x:bench.x,depth,sidewalkDepth:depth,civilian:true,patrol:true,
+      locals.push({id:'civilian-'+scene.key,variant:visitor,x:pauseX,depth,sidewalkDepth:depth,civilian:true,patrol:true,
         routeMin:safe(base-650),routeMax:safe(base+1000),walkSpeed:visitor===11?44:52,
-        restSpots:[rest(bench,i%2?'newspaper':'bench',11+i%4),rest(bin,'smoke',8)],hideSpots:spots,
+        restSpots:[bench?rest(bench,i%2?'newspaper':'bench',11+i%4):{id:scene.key+'-life-pause',kind:'idle',x:pauseX,depth,duration:11+i%4},rest(bin,'smoke',8)],hideSpots:spots,
         schedule:{period:110+i%3*15,on:62,offset:i*17,entryX:safe(base+1000),exitX:safe(base+1000)}});
       locals.push({id:'walker-'+scene.key,variant:i%6,x:safe(base-440),depth,sidewalkDepth:depth,patrol:true,
         routeMin:safe(base-850),routeMax:safe(base+800),walkSpeed:54+i%3*3,hideSpots:spots,

@@ -39,16 +39,17 @@ async function contract(npcCode=source.npc,lifeCode=source.life){
  const {window,counts,propDraws}=await load(npcCode,lifeCode),npc=window.BearlyNpcMotion,life=window.BearlyStreetLife;
  const initialFrames=plain(npc.frames());
  const seeds=life.seeds(window.BearlyNeighbourhood.scenes,42000,12),audit=plain(life.audit()),benches=audit.props.filter(p=>p.kind==='bench'),props=new Map(audit.props.map(p=>[p.id,p]));
- assert.equal(benches.length,12,'two promenade benches plus ten original later-stop benches');
+ assert.equal(benches.length,5,'two occupied promenade seats plus three selected later landmarks');
+ assert.deepEqual(benches.map(p=>p.id).sort(),['promenade-bench-west','promenade-bench-east','library-life-bench','greenhouse-life-bench','boathouse-life-bench'].sort(),'only authored seating landmarks receive benches');
  const report={scope:'Production VM/original source metadata; mocked Canvas, not visual acceptance',seatedTransformCases:0,opaqueSoleBounds:0,maximumSoleFloorError:0,legacyAndMalformedPanCases:0,benchProps:benches.length,benchRestAssociations:0,smokingAssociations:0};
  const groundAt=x=>410+x*.003;
  for(const bench of benches){
-  close(bench.width,224);close(bench.seatHeight,26);close(bench.seatPan.front,21.4);close(bench.seatPan.rear,30.7);close(bench.footprintHalf,224*.55);
+  close(bench.width,168);close(bench.seatHeight,26);close(bench.seatPan.front,21.4);close(bench.seatPan.rear,30.7);close(bench.footprintHalf,168*.55);
   const c=new Context();life.beginFrame();life.drawProp(c,bench,groundAt,8);const submitted=propDraws.at(-1),drawn=life.audit().drawnProps[0];
-  assert.equal(submitted[1],'bench');close(submitted[2],bench.x);close(submitted[3],groundAt(bench.x)+bench.depth);close(submitted[4],224);
+  assert.equal(submitted[1],'bench');close(submitted[2],bench.x);close(submitted[3],groundAt(bench.x)+bench.depth);close(submitted[4],168);
   close(drawn.seatPanY.front,drawn.foot-bench.seatPan.front);close(drawn.seatPanY.rear,drawn.foot-bench.seatPan.rear);close(drawn.seatY,drawn.foot-bench.seatHeight);
   // The redesigned seat reserves its wider actual footprint consistently.
-  assert(life.overlaps(bench.x+122));assert(!life.overlaps(bench.x+126));
+  assert(life.overlaps(bench.x+91));assert(!life.overlaps(bench.x+95));
  }
  for(const bin of audit.props.filter(p=>p.kind==='bin')){
   life.beginFrame();life.drawProp(new Context(),bin,groundAt,8);const submitted=propDraws.at(-1),drawn=life.audit().drawnProps[0];
@@ -60,18 +61,18 @@ async function contract(npcCode=source.npc,lifeCode=source.life){
   }else if(spot.kind==='smoke'){
    const prop=props.get(spot.id);assert(prop&&prop.kind==='bin');assert.equal(spot.propKind,'bin');close(spot.propX,prop.x);close(spot.x,prop.x-70);close(spot.depth,prop.depth);report.smokingAssociations++;
    if(spot.id.endsWith('-life-bin')){
-    const related=props.get(spot.id.replace(/-bin$/,'-bench'));assert(related);close(prop.x-related.x,220);
+    const related=props.get(spot.id.replace(/-bin$/,'-bench'));if(!related)continue;close(prop.x-related.x,220);
     // A broad original smoker must fit between the wider arm and existing bin.
     const smokeFrame=npc.frame(seed.variant,'smoke'),h=128*smokeFrame.heightScale,halfBody=smokeFrame.core[2]*h/smokeFrame.stature/2;
     assert(spot.x-halfBody>related.x+related.width/2,'smoker stays clear of the redesigned right arm');
    }
   }
  }
- assert.equal(report.benchRestAssociations,14);assert.equal(report.smokingAssociations,11);
+ assert.equal(report.benchRestAssociations,7);assert.equal(report.smokingAssociations,11);
  const smoker=seeds.find(n=>n.id==='civilian-smoker');close(smoker.x,smoker.restSpots.find(s=>s.kind==='smoke').x);
  const simulation=window.BearlyBrawler.create();simulation.enter('street',seeds);
  const seatedIds=seeds.filter(n=>(n.restSpots||[]).some(s=>['bench','newspaper'].includes(s.kind)&&Math.abs(s.x-n.x)<4)).map(n=>n.id);
- assert.equal(seatedIds.length,12);
+ assert.equal(seatedIds.length,5);
  for(const id of seatedIds){const n=simulation.lookup(id);assert(n.active?['sit','read'].includes(n.activity):n.activity==='offstage','existing schedules may keep later residents offstage');assert.deepEqual(plain(n.activityProp.seatPan),props.get(n.activityProp.id).seatPan);}
  assert.equal(simulation.lookup('civilian-smoker').activity,'smoke');close(simulation.lookup('civilian-smoker').x,props.get('promenade-smoke').x-70);
  const sharedSeat=benches[0],initialCanvases=counts.canvases;
@@ -101,11 +102,11 @@ async function contract(npcCode=source.npc,lifeCode=source.life){
 }
 (async()=>{
  const report=await contract();const mutations=[
-  {name:'old single-person140bench',which:'life',from:'benchWidth=224',to:'benchWidth=140'},
-  {name:'old uniformly-scaled196bench',which:'life',from:'benchWidth=224',to:'benchWidth=196'},
+  {name:'old oversized224bench',which:'life',from:'benchWidth=168',to:'benchWidth=224'},
+  {name:'old uniformly-scaled196bench',which:'life',from:'benchWidth=168',to:'benchWidth=196'},
   {name:'old fixed38hip',which:'npc',from:'if(fitted)seatHeight=clamp(reach,seatPan.front,seatPan.rear);',to:'if(fitted)seatHeight=38;'},
   {name:'missing smoking offset',which:'life',from:"kind==='smoke'&&p.kind==='bin'?70:0",to:"kind==='smoke'&&p.kind==='bin'?0:0"},
-  {name:'crowded later-bin placement',which:'life',from:'bench.x+220',to:'bench.x+170'},
+  {name:'crowded later-bin placement',which:'life',from:'pauseX+220',to:'pauseX+170'},
  ];
  report.rejectedMutations=[];
  for(const mutation of mutations){assert(source[mutation.which].includes(mutation.from),'mutation applies to actual production code');const changed=source[mutation.which].replace(mutation.from,mutation.to);await assert.rejects(()=>contract(mutation.which==='npc'?changed:source.npc,mutation.which==='life'?changed:source.life),assert.AssertionError,mutation.name+' must fail the contract');report.rejectedMutations.push(mutation.name);}

@@ -330,12 +330,13 @@
       for(let x=Math.floor(lo/62)*62;x<hi;x+=62){const y=ground(s,x);if(y==null)continue;line(c,[[x,y-98],[x-7,y-70]],'#5b5c4a60',1);}
       for(let k=Math.floor(lo/1050);k<hi/1050;k++){const x=k*1050+780,y=ground(s,x);if(y==null||frontage(s,x,30))continue;lamp(c,x,y-91);}
       for(let k=Math.floor(lo/670);k<hi/670;k++){
-        const x=k*670+520,y=ground(s,x),type=k%3===0?'bin':'bench',width=type==='bench'?196:68;
+        // Preserve the original bin positions; benches are authored rest places.
+        if(k%3!==0)continue;
+        const x=k*670+520,y=ground(s,x),width=68;
         if(y==null||frontage(s,x,width*.5+12))continue;
-        // Activity furniture already occupies this sidewalk footprint. Avoid
-        // painting a second small bench/bin through its legs and backrest.
+        // Keep decorative bins clear of the authored activity furniture.
         if(window.BearlyStreetLife?.overlaps?.(x,width*.5+12))continue;
-        window.BearlyStreetProps?.draw(c,type,x,y-84,width,s.time);
+        window.BearlyStreetProps?.draw(c,'bin',x,y-84,width,s.time);
       }
       for(let k=Math.floor(lo/2200);k<hi/2200;k++){const x=k*2200+330,y=ground(s,x);if(y==null||frontage(s,x,95))continue;const zone=s.districtAt(x).style;parkSign(c,x,y-97,zone==='lake'?'MÄLAREN':zone==='forest'?'GRIMSTA':'HÄSSELBY',zone==='lake'?'STRANDPROMENAD':'CYKELVÄG  /  CYCLE ROUTE');}
       window.BearlyNeighbourhood.life(c,s);

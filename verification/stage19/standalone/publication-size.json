@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "scope": "Planned Git publication union: existing tracked files plus frozen payload plus current external Stage19 archive certificate/screenshots. Existing older certificates remain intact. Ignored delivery ZIP/cert backups/raw profile backups, donor inspection data and Git metadata are excluded.",
+  "files": 2281,
+  "publishedBytes": 1073416765,
+  "binaryGiBLimit": 1073741824,
+  "binaryGiBFraction": 0.999697265,
+  "bytesBelowLimit": 325059,
+  "archiveBytes": 1000295337,
+  "archiveSHA256": "fc2f33520eb3813059b839a033b23bc8cd3815e66c181607f72bda31cacad5ae",
+  "retainedStage16ProfileBytesSaved": 31016055,
+  "noOriginalAssetsPruned": true
+}

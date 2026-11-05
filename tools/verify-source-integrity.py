@@ -36,6 +36,27 @@ def replace_reviewed(text, added, original='', count=1):
     return text.replace(added, original)
 
 
+STAGE19_PREVIOUS = {'autumn-v19.html': '9ee316f87594803c6dec2a12cc3849da2dcdddc0d5b95c2b9a715223bb7a2f9b', 'index.html': '9ee316f87594803c6dec2a12cc3849da2dcdddc0d5b95c2b9a715223bb7a2f9b', 'js/game.js': '60ef1993ea5dd5112f45d24748eed8146733fcfa6a18953a16edcdbaa95674bf', 'js/illustrated-neighbourhood.js': '00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd', 'js/illustrated-world.js': 'c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d', 'js/street-life.js': 'ded03758bd6019831d41889c58b5409dd6ec2df0d1634825310f034be621c308'}
+STAGE19_MANIFEST_SHA256 = '0d08adfe07cbc987324d26ba64ddaf296e1f5b85a54374c639354f9a75ecd1da'
+INTENTIONAL.update(STAGE19_PREVIOUS)
+
+
+def reverse_stage19_source(path, text):
+    """Undo only exact reviewed compact/sparse bench and entry hunks."""
+    raw = (ROOT / 'references/source/stage19-source-integration.json').read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == STAGE19_MANIFEST_SHA256, 'Changed Stage19 source inverse manifest'
+    spec = json.loads(raw)
+    assert spec['format'] == 1 and spec['previousProjectCommit'] == 'ff5f7d676365e139ed03111e0a43555b71579c74'
+    assert set(spec['files']) == set(STAGE19_PREVIOUS), 'Unexpected Stage19 protected paths'
+    edits = spec['files'][path]
+    assert edits['previousSha256'] == STAGE19_PREVIOUS[path]
+    assert hashlib.sha256(text.encode()).hexdigest() == edits['currentSha256'], 'Unreviewed Stage19 source bytes: ' + path
+    for edit in reversed(edits['changes']):
+        text = replace_reviewed(text, edit['current'], edit['previous'])
+    assert hashlib.sha256(text.encode()).hexdigest() == STAGE19_PREVIOUS[path], 'Unexpected source edits beyond reviewed Stage19 integration: ' + path
+    return text
+
+
 STAGE18_PREVIOUS = {'autumn-v19.html': '867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb',
  'index.html': '867a52d4ecdd67cf11d893bcec073145a2cd71e02e20753769fef7a5d72e20eb',
  'js/brawler.js': 'b1678ee72b930dd0d7e15ac2a43448727bef001044477faab10da8934e7e0d09',
@@ -185,6 +206,8 @@ def reverse_stage11_rig(text):
 
 def restore_donor(path):
     text = (ROOT / path).read_text()
+    if path in STAGE19_PREVIOUS:
+        text = reverse_stage19_source(path, text)
     if path in STAGE18_PREVIOUS:
         text = reverse_stage18_source(path, text)
     if path in STAGE17_PREVIOUS:
@@ -384,9 +407,9 @@ assert not failures, '\n'.join(failures)
 assert (ROOT / 'index.html').read_bytes() == (ROOT / 'autumn-v19.html').read_bytes()
 manifest = json.loads((ROOT / 'autumn-version.json').read_text())
 assert manifest['source']['commit'] == 'da109213fdf24947c2ac0b85de900214cc72e44f'
-assert manifest['edition'] == 'BQ_CENTRUM_STAGE18'
+assert manifest['edition'] == 'BQ_CENTRUM_STAGE19'
 assert manifest['project'] == 'BQ-Centrum' and manifest['entry'] == 'autumn-v19.html'
 assert manifest['source']['repository'] == 'KossaMu248/BQ-Autumn'
 assert manifest['source']['branch'] == 'main' and manifest['source']['build_id'] == 'AUTUMN_RIDE_ART_V19'
 print(f'PASS: {len(HASHES)} pinned original files verified; all source assets/CSS and original protected code match;')
-print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest, Stage17 NPC-prop fit and Stage18 bench/peaceful-seat/opaque-eye additions differ.')
+print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest, Stage17 NPC-prop fit, Stage18 bench/peaceful-seat/opaque-eye and Stage19 compact/sparse bench additions differ.')

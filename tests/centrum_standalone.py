@@ -6,6 +6,7 @@ not claim to replay the native ride/story route tested by centrum_complete_route
 """
 import argparse
 import functools
+import gzip
 import hashlib
 import json
 import math
@@ -21,11 +22,29 @@ from urllib.parse import urlparse
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'verification/stage18/standalone'
-EXPECTED_BUILD='BQ_CENTRUM_STAGE18'
+OUT=ROOT/'verification/stage19/standalone'
+EXPECTED_BUILD='BQ_CENTRUM_STAGE19'
 WORK=OUT/'work'
 SCENES=['metro-square','shopping-arcade','service-courtyard','food-shop','bicycle-workshop']
 KEY='bq-centrum:scene-network:v1'
+
+
+def write_result_evidence(result):
+    """Losslessly store all result fields; raw bytes stay only in ignored delivery."""
+    assert not (OUT/'results.json').exists(),'Unexpected uncompressed Stage19 certificate'
+    original=(json.dumps(result,separators=(',',':'))+'\n').encode('utf-8')
+    encoded=gzip.compress(original,compresslevel=9,mtime=0)
+    assert gzip.decompress(encoded)==original,'Compressed result changed JSON bytes'
+    raw=ROOT/'delivery/stage19-standalone-raw';raw.mkdir(parents=True,exist_ok=True)
+    (raw/'results.json').write_bytes(original)
+    (OUT/'results.json.gz').write_bytes(encoded)
+    receipt={'file':'results.json.gz','encoding':'gzip level9, timestamp0','decodedEncoding':'UTF-8 compact JSON with final newline',
+             'decodedSHA256':hashlib.sha256(original).hexdigest(),'compressedSHA256':hashlib.sha256(encoded).hexdigest(),
+             'decodedBytes':len(original),'compressedBytes':len(encoded),'exactRoundtripVerified':True,
+             'scope':'Lossless encoding only. Every assertion, result field and measurement is retained; this is not another test run.'}
+    (OUT/'RESULT_ENCODING.json').write_text(json.dumps(receipt,indent=2)+'\n')
+
+
 INSTRUMENT=r'''(()=>{
  const q=window.__standaloneQA={writes:[],reads:[],listenerCounts:{},loopFrames:0,pending:0,maxPending:0,frameTimes:[],last:null,audioContexts:0};
  const get=Storage.prototype.getItem,set=Storage.prototype.setItem;
@@ -225,7 +244,7 @@ def main():
     result={'scope':'Extracted standalone delivery, clean local root and /BQ-Centrum/ repository subpath','conditions':{'browser':'system Chromium /usr/bin/chromium, headless','desktopViewport':[1280,720],'phoneEmulationViewport':[844,390],'physicalDevices':False,'sceneFixtures':'Production-factory sealed named-entrance/parking fixtures; primary native route is a separate test.'},'checks':[],'errors':[],'consoleErrors':[],'httpFailures':[],'serverHttpFailures':[],'serverOutsideSubpathRequests':[],'externalRequests':[],'outsideSubpathRequests':[],'limits':['Chromium emulation is not physical iPhone/Safari testing.','Frame times were sampled on this shared container and are not physical-device performance promises.']}
     result['testedArchiveSha256']=file_hash(package)
     runtime,manifest=extract_package(package)
-    assert json.loads((runtime/'autumn-version.json').read_text())['edition']==EXPECTED_BUILD,'Archive is not the intended Stage18 build'
+    assert json.loads((runtime/'autumn-version.json').read_text())['edition']==EXPECTED_BUILD,'Archive is not the intended Stage19 build'
     assert (runtime/'css/centrum-route.css').is_file(),'Copied-street hint stylesheet is missing'
     for entry in ['index.html','autumn-v19.html']:
         assert 'css/centrum-route.css?edition=centrum-stage16' in (runtime/entry).read_text(),'Alias omitted current route stylesheet'
@@ -298,7 +317,7 @@ def main():
               sample=metrics(page);assert sample['maxPending']<=1 and sample['loopFrames']>5
               assert all(k.startswith('bq-centrum:') for k in sample['reads']+sample['writes']),sample
               result['checks'].append({'name':label+' '+scene_id+' scene load and native bag interaction','passed':True,'health':a['health'],'hero':a['hero'],'cameraProjection':projection,'scenery':scenery,'inventory':bag,'walking':walking,'metrics':sample})
-              if scene_id=='metro-square':page.screenshot(path=str(OUT/(label+'-'+scene_id+'.jpg')),type='jpeg',quality=88)
+              if scene_id=='metro-square':page.screenshot(path=str(OUT/(label+'-'+scene_id+'.jpg')),type='jpeg',quality=65)
               context.close()
             # Active alias entry is tested separately without borrowed browser state.
             context,page=open_page(browser,base+prefix+'autumn-v19.html',touch,watch)
@@ -313,9 +332,9 @@ def main():
       result['passed']=False;result['failure']=repr(error);raise
     finally:
       for server in servers:server.shutdown()
-      # Compact encoding retains every assertion/measurement; only whitespace
-      # changes. Keep the newly published external certificate bounded in size.
-      (OUT/'results.json').write_text(json.dumps(result,separators=(',',':'))+'\n')
+      # Compact JSON retains every assertion/measurement. Gzip preserves those
+      # exact bytes while keeping this NEW external certificate small.
+      write_result_evidence(result)
       if result.get('passed'):
         audit=json.loads((OUT/'package-audit.json').read_text())
         assert audit['sha256']==result['testedArchiveSha256']==file_hash(package),'Archive changed during validation'

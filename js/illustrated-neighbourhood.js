@@ -97,8 +97,6 @@
     }
     if(b.role==='cafe'){
       if(!s.reducedMotion)steam(c,b.x+80,foot-15,s.time,.28);
-      const benchX=b.x+b.w*.65;
-      if(!window.BearlyStreetLife?.overlaps?.(benchX,53))window.BearlyStreetProps.draw(c,'bench',benchX,foot+18,82,s.time);
     }
     if(b.role==='library'||b.role==='square'){
       billboard(c,b.x+b.w*.38,foot-4,b.role==='library'?'LÄS EN STUND':'VÄLKOMMEN TILL TORGET');

@@ -1,7 +1,7 @@
 /* Project street bench. Original autumn palette; independent width and seat height. */
 (() => {
   'use strict';
-  const width=224,bodyHeight=70,usableSeatWidth=188,seatHeight=26;
+  const width=168,bodyHeight=70,usableSeatWidth=132,seatHeight=26;
   const seatPan=Object.freeze({front:21.4,rear:30.7});
   const ink='#27291f',metal='#637165',highlight='#849080';
   let canvas=null,builds=0,draws=0,lastWidth=0;
@@ -14,9 +14,10 @@
     function line(points,color,weight){c.beginPath();points.forEach((p,i)=>i?c.lineTo(...p):c.moveTo(...p));c.strokeStyle=color;c.lineWidth=weight;c.stroke();}
     function polygon(points,fill,weight=1.6){c.beginPath();points.forEach((p,i)=>i?c.lineTo(...p):c.moveTo(...p));c.closePath();c.fillStyle=fill;c.fill();c.strokeStyle=ink;c.lineWidth=weight;c.stroke();}
     function wood(y){const g=c.createLinearGradient(-98,y,98,y+7);g.addColorStop(0,'#dfad5e');g.addColorStop(.55,'#bc813e');g.addColorStop(1,'#925c2e');return g;}
-    c.save();c.fillStyle='#21382d30';c.beginPath();c.ellipse(1,2,111,5,0,0,Math.PI*2);c.fill();
+    // Shorten the slats horizontally without lowering the back or seat.
+    c.save();c.scale(width/224,1);c.fillStyle='#21382d30';c.beginPath();c.ellipse(1,2,111,5,0,0,Math.PI*2);c.fill();
     c.lineCap='round';c.lineJoin='round';
-    // Shared supports reach the floor independently of the wide slat lengths.
+    // The original floor and contact heights stay independent of seat width.
     for(const side of [-1,1]){
       const x=side*86;
       line([[x,-65],[x,-26],[x+side*8,-5],[x+side*17,-1]],ink,6);
@@ -45,16 +46,16 @@
   }
   function prepare(){
     if(canvas)return canvas;
-    canvas=document.createElement('canvas');canvas.width=480;canvas.height=184;
+    canvas=document.createElement('canvas');canvas.width=368;canvas.height=184;
     canvas.dataset.sourceAsset='centrum-street-bench';canvas.dataset.artKind='project-vector-environment';
-    const c=canvas.getContext('2d');c.scale(2,2);c.translate(120,78);paint(c);builds++;return canvas;
+    const c=canvas.getContext('2d');c.scale(2,2);c.translate(92,78);paint(c);builds++;return canvas;
   }
   function draw(c,x,y,size=width){
     if(!Number.isFinite(x)||!Number.isFinite(y)||!Number.isFinite(size)||size<=0)return false;
     const image=prepare(),scale=size/width;c.save();c.translate(x,y);c.scale(scale,scale);
-    c.drawImage(image,-120,-78,240,92);c.restore();draws++;lastWidth=size;return true;
+    c.drawImage(image,-92,-78,184,92);c.restore();draws++;lastWidth=size;return true;
   }
   function audit(){return{...metrics(),builds,draws,lastWidth,cacheBytes:canvas?canvas.width*canvas.height*4:0,
-    source:'Project-authored vector bench, original autumn wood/iron palette; no character artwork',seatPolygon:[[-102,-seatPan.rear],[102,-seatPan.rear],[108,-seatPan.front],[-108,-seatPan.front]]};}
+    source:'Project-authored short bench, original autumn wood/iron palette; no character artwork',seatPolygon:[[-102*width/224,-seatPan.rear],[102*width/224,-seatPan.rear],[108*width/224,-seatPan.front],[-108*width/224,-seatPan.front]]};}
   window.BearlyCentrumStreetBench={metrics,draw,audit};
 })();

@@ -3,7 +3,7 @@
 
 (() => {
   'use strict';
-  window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE18';
+  window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE19';
   /* v10.58 — original-size, original-clothes actor art; only prop pixels + portraits. */
   window.BEARLY_ASSETS['v158_firecracker_hoodie_0_0']='assets/v158_firecracker_hoodie_0_0.webp';
   window.BEARLY_ASSETS['v158_firecracker_hoodie_0_3']='assets/v158_firecracker_hoodie_0_3.webp';

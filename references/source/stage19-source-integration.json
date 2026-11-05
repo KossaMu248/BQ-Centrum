@@ -1,0 +1,87 @@
+{
+  "format": 1,
+  "previousProjectCommit": "ff5f7d676365e139ed03111e0a43555b71579c74",
+  "scope": "Reviewed Stage19 source/entry changes for compact occupied street benches and sparse authored furniture placement. Original artwork, NPC identities/scales, baby, camera, damage, eye repair and cycling simulation remain unchanged.",
+  "files": {
+    "autumn-v19.html": {
+      "previousSha256": "9ee316f87594803c6dec2a12cc3849da2dcdddc0d5b95c2b9a715223bb7a2f9b",
+      "currentSha256": "f1100dbd323d64ecda8a4d85b25dac1b6588d7442c30169650f97df51f5f0818",
+      "changes": [
+        {
+          "previous": "<script src=\"js/assets.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-atlas.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-props.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-world.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-neighbourhood.js?edition=centrum-stage16\"></script>\n<script src=\"js/illustrated-kids.js?edition=centrum-stage16\"></script>\n<script src=\"js/illustrated-hero.js?edition=centrum-stage18\"></script>\n<script src=\"js/fullscreen.js?edition=autumn-v19\"></script>\n",
+          "current": "<script src=\"js/assets.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-atlas.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-props.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-world.js?edition=centrum-stage19\"></script>\n<script src=\"js/illustrated-neighbourhood.js?edition=centrum-stage19\"></script>\n<script src=\"js/illustrated-kids.js?edition=centrum-stage16\"></script>\n<script src=\"js/illustrated-hero.js?edition=centrum-stage18\"></script>\n<script src=\"js/fullscreen.js?edition=autumn-v19\"></script>\n"
+        },
+        {
+          "previous": "<script src=\"js/centrum-directional-rig.js?edition=centrum-stage14\"></script>\n<script src=\"js/npc-motion.js?edition=centrum-stage17\"></script>\n<script src=\"js/brawler-art.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-street-bench.js?edition=centrum-stage18\"></script>\n<script src=\"js/street-life.js?edition=centrum-stage18\"></script>\n<script src=\"js/centrum-scenes.js?edition=centrum-stage9\"></script>\n<script src=\"js/centrum-atmosphere.js?edition=centrum-stage7\"></script>\n<script src=\"js/centrum-scenery.js?edition=centrum-stage9\"></script>\n",
+          "current": "<script src=\"js/centrum-directional-rig.js?edition=centrum-stage14\"></script>\n<script src=\"js/npc-motion.js?edition=centrum-stage17\"></script>\n<script src=\"js/brawler-art.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-street-bench.js?edition=centrum-stage19\"></script>\n<script src=\"js/street-life.js?edition=centrum-stage19\"></script>\n<script src=\"js/centrum-scenes.js?edition=centrum-stage9\"></script>\n<script src=\"js/centrum-atmosphere.js?edition=centrum-stage7\"></script>\n<script src=\"js/centrum-scenery.js?edition=centrum-stage9\"></script>\n"
+        },
+        {
+          "previous": "<script src=\"js/centrum-camera.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-square.js?edition=centrum-stage15\"></script>\n<script src=\"js/illustrated-visits.js?edition=centrum-stage16\"></script>\n<script src=\"js/game.js?edition=centrum-stage18\"></script>\n</body>\n</html>\n",
+          "current": "<script src=\"js/centrum-camera.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-square.js?edition=centrum-stage15\"></script>\n<script src=\"js/illustrated-visits.js?edition=centrum-stage16\"></script>\n<script src=\"js/game.js?edition=centrum-stage19\"></script>\n</body>\n</html>\n"
+        }
+      ]
+    },
+    "index.html": {
+      "previousSha256": "9ee316f87594803c6dec2a12cc3849da2dcdddc0d5b95c2b9a715223bb7a2f9b",
+      "currentSha256": "f1100dbd323d64ecda8a4d85b25dac1b6588d7442c30169650f97df51f5f0818",
+      "changes": [
+        {
+          "previous": "<script src=\"js/assets.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-atlas.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-props.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-world.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-neighbourhood.js?edition=centrum-stage16\"></script>\n<script src=\"js/illustrated-kids.js?edition=centrum-stage16\"></script>\n<script src=\"js/illustrated-hero.js?edition=centrum-stage18\"></script>\n<script src=\"js/fullscreen.js?edition=autumn-v19\"></script>\n",
+          "current": "<script src=\"js/assets.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-atlas.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-props.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-world.js?edition=centrum-stage19\"></script>\n<script src=\"js/illustrated-neighbourhood.js?edition=centrum-stage19\"></script>\n<script src=\"js/illustrated-kids.js?edition=centrum-stage16\"></script>\n<script src=\"js/illustrated-hero.js?edition=centrum-stage18\"></script>\n<script src=\"js/fullscreen.js?edition=autumn-v19\"></script>\n"
+        },
+        {
+          "previous": "<script src=\"js/centrum-directional-rig.js?edition=centrum-stage14\"></script>\n<script src=\"js/npc-motion.js?edition=centrum-stage17\"></script>\n<script src=\"js/brawler-art.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-street-bench.js?edition=centrum-stage18\"></script>\n<script src=\"js/street-life.js?edition=centrum-stage18\"></script>\n<script src=\"js/centrum-scenes.js?edition=centrum-stage9\"></script>\n<script src=\"js/centrum-atmosphere.js?edition=centrum-stage7\"></script>\n<script src=\"js/centrum-scenery.js?edition=centrum-stage9\"></script>\n",
+          "current": "<script src=\"js/centrum-directional-rig.js?edition=centrum-stage14\"></script>\n<script src=\"js/npc-motion.js?edition=centrum-stage17\"></script>\n<script src=\"js/brawler-art.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-street-bench.js?edition=centrum-stage19\"></script>\n<script src=\"js/street-life.js?edition=centrum-stage19\"></script>\n<script src=\"js/centrum-scenes.js?edition=centrum-stage9\"></script>\n<script src=\"js/centrum-atmosphere.js?edition=centrum-stage7\"></script>\n<script src=\"js/centrum-scenery.js?edition=centrum-stage9\"></script>\n"
+        },
+        {
+          "previous": "<script src=\"js/centrum-camera.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-square.js?edition=centrum-stage15\"></script>\n<script src=\"js/illustrated-visits.js?edition=centrum-stage16\"></script>\n<script src=\"js/game.js?edition=centrum-stage18\"></script>\n</body>\n</html>\n",
+          "current": "<script src=\"js/centrum-camera.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-square.js?edition=centrum-stage15\"></script>\n<script src=\"js/illustrated-visits.js?edition=centrum-stage16\"></script>\n<script src=\"js/game.js?edition=centrum-stage19\"></script>\n</body>\n</html>\n"
+        }
+      ]
+    },
+    "js/game.js": {
+      "previousSha256": "60ef1993ea5dd5112f45d24748eed8146733fcfa6a18953a16edcdbaa95674bf",
+      "currentSha256": "03ea98523b86434921b59e33530e48738451b5e1bbf961b8703dc84cdc63ea3e",
+      "changes": [
+        {
+          "previous": "\n(() => {\n  'use strict';\n  window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE18';\n  /* v10.58 \u2014 original-size, original-clothes actor art; only prop pixels + portraits. */\n  window.BEARLY_ASSETS['v158_firecracker_hoodie_0_0']='assets/v158_firecracker_hoodie_0_0.webp';\n  window.BEARLY_ASSETS['v158_firecracker_hoodie_0_3']='assets/v158_firecracker_hoodie_0_3.webp';\n",
+          "current": "\n(() => {\n  'use strict';\n  window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE19';\n  /* v10.58 \u2014 original-size, original-clothes actor art; only prop pixels + portraits. */\n  window.BEARLY_ASSETS['v158_firecracker_hoodie_0_0']='assets/v158_firecracker_hoodie_0_0.webp';\n  window.BEARLY_ASSETS['v158_firecracker_hoodie_0_3']='assets/v158_firecracker_hoodie_0_3.webp';\n"
+        }
+      ]
+    },
+    "js/illustrated-neighbourhood.js": {
+      "previousSha256": "00115255cb42488640474d7a3f2e13ab6a0e673351e669009681d6ce838355cd",
+      "currentSha256": "b2a1734e4b10275ad2f5c0e51f58483d132f635be5303745ad51d72073cf8b27",
+      "changes": [
+        {
+          "previous": "    }\n    if(b.role==='cafe'){\n      if(!s.reducedMotion)steam(c,b.x+80,foot-15,s.time,.28);\n      const benchX=b.x+b.w*.65;\n      if(!window.BearlyStreetLife?.overlaps?.(benchX,53))window.BearlyStreetProps.draw(c,'bench',benchX,foot+18,82,s.time);\n    }\n    if(b.role==='library'||b.role==='square'){\n      billboard(c,b.x+b.w*.38,foot-4,b.role==='library'?'L\u00c4S EN STUND':'V\u00c4LKOMMEN TILL TORGET');\n",
+          "current": "    }\n    if(b.role==='cafe'){\n      if(!s.reducedMotion)steam(c,b.x+80,foot-15,s.time,.28);\n    }\n    if(b.role==='library'||b.role==='square'){\n      billboard(c,b.x+b.w*.38,foot-4,b.role==='library'?'L\u00c4S EN STUND':'V\u00c4LKOMMEN TILL TORGET');\n"
+        }
+      ]
+    },
+    "js/illustrated-world.js": {
+      "previousSha256": "c1c98346aa37601e97bcaa1f85a255c6362a5f4e1c5a7c55e5e91dc4e1eed47d",
+      "currentSha256": "451f88c440ac03ef55ebb1448f936a34aff27600cd8a25db2508b05f029bb67b",
+      "changes": [
+        {
+          "previous": "      for(let x=Math.floor(lo/62)*62;x<hi;x+=62){const y=ground(s,x);if(y==null)continue;line(c,[[x,y-98],[x-7,y-70]],'#5b5c4a60',1);}\n      for(let k=Math.floor(lo/1050);k<hi/1050;k++){const x=k*1050+780,y=ground(s,x);if(y==null||frontage(s,x,30))continue;lamp(c,x,y-91);}\n      for(let k=Math.floor(lo/670);k<hi/670;k++){\n        const x=k*670+520,y=ground(s,x),type=k%3===0?'bin':'bench',width=type==='bench'?196:68;\n        if(y==null||frontage(s,x,width*.5+12))continue;\n        // Activity furniture already occupies this sidewalk footprint. Avoid\n        // painting a second small bench/bin through its legs and backrest.\n        if(window.BearlyStreetLife?.overlaps?.(x,width*.5+12))continue;\n        window.BearlyStreetProps?.draw(c,type,x,y-84,width,s.time);\n      }\n      for(let k=Math.floor(lo/2200);k<hi/2200;k++){const x=k*2200+330,y=ground(s,x);if(y==null||frontage(s,x,95))continue;const zone=s.districtAt(x).style;parkSign(c,x,y-97,zone==='lake'?'M\u00c4LAREN':zone==='forest'?'GRIMSTA':'H\u00c4SSELBY',zone==='lake'?'STRANDPROMENAD':'CYKELV\u00c4G  /  CYCLE ROUTE');}\n      window.BearlyNeighbourhood.life(c,s);\n",
+          "current": "      for(let x=Math.floor(lo/62)*62;x<hi;x+=62){const y=ground(s,x);if(y==null)continue;line(c,[[x,y-98],[x-7,y-70]],'#5b5c4a60',1);}\n      for(let k=Math.floor(lo/1050);k<hi/1050;k++){const x=k*1050+780,y=ground(s,x);if(y==null||frontage(s,x,30))continue;lamp(c,x,y-91);}\n      for(let k=Math.floor(lo/670);k<hi/670;k++){\n        // Preserve the original bin positions; benches are authored rest places.\n        if(k%3!==0)continue;\n        const x=k*670+520,y=ground(s,x),width=68;\n        if(y==null||frontage(s,x,width*.5+12))continue;\n        // Keep decorative bins clear of the authored activity furniture.\n        if(window.BearlyStreetLife?.overlaps?.(x,width*.5+12))continue;\n        window.BearlyStreetProps?.draw(c,'bin',x,y-84,width,s.time);\n      }\n      for(let k=Math.floor(lo/2200);k<hi/2200;k++){const x=k*2200+330,y=ground(s,x);if(y==null||frontage(s,x,95))continue;const zone=s.districtAt(x).style;parkSign(c,x,y-97,zone==='lake'?'M\u00c4LAREN':zone==='forest'?'GRIMSTA':'H\u00c4SSELBY',zone==='lake'?'STRANDPROMENAD':'CYKELV\u00c4G  /  CYCLE ROUTE');}\n      window.BearlyNeighbourhood.life(c,s);\n"
+        }
+      ]
+    },
+    "js/street-life.js": {
+      "previousSha256": "ded03758bd6019831d41889c58b5409dd6ec2df0d1634825310f034be621c308",
+      "currentSha256": "0abf3a756f5969083a7de292be4e34a37c613d5e16617c44fb90173afabba257",
+      "changes": [
+        {
+          "previous": "  bush.src='assets/art/autumn-verge.png';\n  let cacheKey='',locals=[],gangLocals=[],furniture=[];\n  const painted=new Map(),heard=new Set();let audioRequests=0,lastSoundAt=-99;\n  // A shared bench needs its own width and low seat, rather than scaling the\n  // old tall drawing down around one occupant. One geometry owns both uses.\n  const benchWidth=224;\n  function prepare(scenes,finish,count,gangs=[]){\n    const key=finish+':'+count+':'+gangs.map(n=>n.id).join(',');if(cacheKey===key)return;\n    cacheKey=key;locals=[];gangLocals=[];furniture=[];\n",
+          "current": "  bush.src='assets/art/autumn-verge.png';\n  let cacheKey='',locals=[],gangLocals=[],furniture=[];\n  const painted=new Map(),heard=new Set();let audioRequests=0,lastSoundAt=-99;\n  // Short seats belong to a few authored rest places. Width changes preserve\n  // the existing upright back and low contact pan of the original NPC poses.\n  const benchWidth=168,benchStops=new Set(['library','greenhouse','boathouse']);\n  function prepare(scenes,finish,count,gangs=[]){\n    const key=finish+':'+count+':'+gangs.map(n=>n.id).join(',');if(cacheKey===key)return;\n    cacheKey=key;locals=[];gangLocals=[];furniture=[];\n"
+        },
+        {
+          "previous": "    scenes.forEach((scene,i)=>{\n      if(i<2)return;\n      const base=scene.x,depth=-64-(i%2)*4;\n      const bench=prop(scene.key+'-life-bench','bench',base+scene.w*.5+120,-84);\n      const bin=prop(scene.key+'-life-bin','bin',bench.x+220,-82);\n      const shrubs=[prop(scene.key+'-life-bush-left','bush',base-Math.max(700,scene.w*.5+250),-80),prop(scene.key+'-life-bush-right','bush',base+Math.max(850,scene.w*.5+580),-80)];\n      const spots=[...shrubs.map(hide),hide(bin)];\n      const visitor=9+i%3;\n      locals.push({id:'civilian-'+scene.key,variant:visitor,x:bench.x,depth,sidewalkDepth:depth,civilian:true,patrol:true,\n        routeMin:safe(base-650),routeMax:safe(base+1000),walkSpeed:visitor===11?44:52,\n        restSpots:[rest(bench,i%2?'newspaper':'bench',11+i%4),rest(bin,'smoke',8)],hideSpots:spots,\n        schedule:{period:110+i%3*15,on:62,offset:i*17,entryX:safe(base+1000),exitX:safe(base+1000)}});\n      locals.push({id:'walker-'+scene.key,variant:i%6,x:safe(base-440),depth,sidewalkDepth:depth,patrol:true,\n        routeMin:safe(base-850),routeMax:safe(base+800),walkSpeed:54+i%3*3,hideSpots:spots,\n",
+          "current": "    scenes.forEach((scene,i)=>{\n      if(i<2)return;\n      const base=scene.x,depth=-64-(i%2)*4;\n      const pauseX=base+scene.w*.5+120,bench=benchStops.has(scene.key)?prop(scene.key+'-life-bench','bench',pauseX,-84):null;\n      const bin=prop(scene.key+'-life-bin','bin',pauseX+220,-82);\n      const shrubs=[prop(scene.key+'-life-bush-left','bush',base-Math.max(700,scene.w*.5+250),-80),prop(scene.key+'-life-bush-right','bush',base+Math.max(850,scene.w*.5+580),-80)];\n      const spots=[...shrubs.map(hide),hide(bin)];\n      const visitor=9+i%3;\n      locals.push({id:'civilian-'+scene.key,variant:visitor,x:pauseX,depth,sidewalkDepth:depth,civilian:true,patrol:true,\n        routeMin:safe(base-650),routeMax:safe(base+1000),walkSpeed:visitor===11?44:52,\n        restSpots:[bench?rest(bench,i%2?'newspaper':'bench',11+i%4):{id:scene.key+'-life-pause',kind:'idle',x:pauseX,depth,duration:11+i%4},rest(bin,'smoke',8)],hideSpots:spots,\n        schedule:{period:110+i%3*15,on:62,offset:i*17,entryX:safe(base+1000),exitX:safe(base+1000)}});\n      locals.push({id:'walker-'+scene.key,variant:i%6,x:safe(base-440),depth,sidewalkDepth:depth,patrol:true,\n        routeMin:safe(base-850),routeMax:safe(base+800),walkSpeed:54+i%3*3,hideSpots:spots,\n"
+        }
+      ]
+    }
+  }
+}

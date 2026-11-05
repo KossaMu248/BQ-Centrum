@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "scope": "Exact frozen payload before the single ZIP build versus delivered manifest and current worktree; external archive certificate is excluded from the payload.",
+  "archiveSha256": "fc2f33520eb3813059b839a033b23bc8cd3815e66c181607f72bda31cacad5ae",
+  "frozenFiles": 2168,
+  "archivePayloadFiles": 2168,
+  "currentAllowedFiles": 2168,
+  "drift": [],
+  "allowlistUnchanged": true
+}

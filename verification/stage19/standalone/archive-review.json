@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "scope": "The single frozen Stage19 archive; package hashes/extraction, real clean-server browser interaction matrix and final payload comparison.",
+  "archiveSha256": "fc2f33520eb3813059b839a033b23bc8cd3815e66c181607f72bda31cacad5ae",
+  "zipBytes": 1000295337,
+  "payloadBytes": 1031086308,
+  "payloadFiles": 2168,
+  "archiveFiles": 2170,
+  "exactManifestAndCRC": true,
+  "smallHTMLFiles": {
+    "autumn-v19.html": 13729,
+    "index.html": 13729
+  },
+  "forbiddenPaths": [],
+  "credentialPatternScan": "Package builder scans allowlisted text and decoded gzip JSON; eight positive/negative codec checks also passed.",
+  "requiredPreparedRuntimeAssets": 55,
+  "sourceIntegrityFromExtraction": "PASS: 944 pinned original files verified; all source assets/CSS and original protected code match;\nonly reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest, Stage17 NPC-prop fit, Stage18 bench/peaceful-seat/opaque-eye and Stage19 compact/sparse bench additions differ.",
+  "matrix": {
+    "passed": true,
+    "topLevelChecks": 28,
+    "serverPaths": [
+      "/",
+      "/BQ-Centrum/"
+    ],
+    "desktop": [
+      1280,
+      720
+    ],
+    "phoneLandscapeChromiumTouchEmulation": [
+      844,
+      390
+    ],
+    "physicalDevice": false,
+    "sceneLoadsAtUnchanged73HP": 20,
+    "cameraProjectionSamples": 36,
+    "realWalkInputSamples": 16,
+    "authoredAwayTowardAndNativeBabyChecks": 8,
+    "oneBicycleAndOriginalCarrierChecks": "Asserted at all scene arrivals and actual walking samples.",
+    "maxPendingMainRAF": 1,
+    "consoleHTTPExternalPathErrors": 0,
+    "fixtures": "Production save factory, named entrances and recorded valid parking; this extracted delivery matrix does not claim another earned story route."
+  },
+  "realGameplayFrames": [
+    {
+      "file": "root-desktop-metro-square.jpg",
+      "sha256": "8736a20bea617c027e8b0d03bc02a9872f839dae08e9579fafc61741ed7aaa19",
+      "pixels": [
+        1280,
+        720
+      ],
+      "bytes": 96542,
+      "encoding": "JPEG quality65 normal-size capture, not pixel-equivalence reference"
+    },
+    {
+      "file": "root-phone-emulation-metro-square.jpg",
+      "sha256": "fa23068a81388e73d348af40cd466ace5b59b5854df00d7e89f4ac26029cd9cd",
+      "pixels": [
+        844,
+        390
+      ],
+      "bytes": 46277,
+      "encoding": "JPEG quality65 normal-size capture, not pixel-equivalence reference"
+    },
+    {
+      "file": "subpath-desktop-metro-square.jpg",
+      "sha256": "7b90e0c0d48a7011ad8fd2ca4138136a2ea47f31db7727fe631e54276fae8b80",
+      "pixels": [
+        1280,
+        720
+      ],
+      "bytes": 96486,
+      "encoding": "JPEG quality65 normal-size capture, not pixel-equivalence reference"
+    },
+    {
+      "file": "subpath-phone-emulation-metro-square.jpg",
+      "sha256": "ff7b2fe92934f5c3661a1c7d76e9d75518fd9c9b48eccff60f3a702d4a0d6a2e",
+      "pixels": [
+        844,
+        390
+      ],
+      "bytes": 46275,
+      "encoding": "JPEG quality65 normal-size capture, not pixel-equivalence reference"
+    }
+  ],
+  "compressedProfiles": {
+    "scope": "Retained historical Stage16 traces; no Stage19 profiling claim",
+    "count": 5,
+    "allExactOriginalBytesVerified": true,
+    "bytesSaved": 31016055
+  },
+  "frozenPayloadUnchanged": true,
+  "fullDataResultEncoding": {
+    "file": "results.json.gz",
+    "encoding": "gzip level9, timestamp0",
+    "decodedEncoding": "UTF-8 compact JSON with final newline",
+    "decodedSHA256": "42b6d35e476a3c7f52d6c8706d6dca2f0dcd545ea214e2a020dfa3f1ff6b908a",
+    "compressedSHA256": "a70bbdf6393e912eb92403e52888eeaec52b50e1e82648658661952edf1330d5",
+    "decodedBytes": 425742,
+    "compressedBytes": 79983,
+    "exactRoundtripVerified": true,
+    "scope": "Lossless encoding only. Every assertion, result field and measurement is retained; this is not another test run."
+  }
+}
