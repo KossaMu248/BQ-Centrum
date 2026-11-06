@@ -213,8 +213,9 @@
     const length=Math.hypot(dx,dy);if(length){dx/=length;dy/=length;}
     // Same depth-walk starting point as visits: ease toward direction velocity.
     // Preserve side/front facing during vertical travel; never rotate the artwork.
-    const depthGait=window.BearlyCentrumDepthGait,acceleration=1000*dt;
-    vx+=clamp(dx*(depthGait?.walkSpeed||155)-vx,-acceleration,acceleration);vy+=clamp(dy*(depthGait?.depthSpeed||155)-vy,-acceleration,acceleration);
+    const depthGait=window.BearlyCentrumDepthGait;
+    const ax=(dx?(depthGait?.walkAcceleration||1600):(depthGait?.walkBraking||2400))*dt,ay=(dy?(depthGait?.walkAcceleration||1600):(depthGait?.walkBraking||2400))*dt;
+    vx+=clamp(dx*(depthGait?.walkSpeed||200)-vx,-ax,ax);vy+=clamp(dy*(depthGait?.depthSpeed||80)-vy,-ay,ay);
     if(dx)face=Math.sign(dx);
     const moved=world().move(x,y,vx*dt,vy*dt,sceneId,snapshot());hits=moved.hit;
     const travelX=moved.x-x,travelY=moved.y-y,distance=Math.hypot(travelX,travelY),gaitDistance=depthGait?.distance(travelX,travelY)??distance;

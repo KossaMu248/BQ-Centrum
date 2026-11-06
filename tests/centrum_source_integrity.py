@@ -14,12 +14,19 @@ reverse16 = verifier['reverse_stage16_source']
 reverse17 = verifier['reverse_stage17_source']
 reverse18 = verifier['reverse_stage18_source']
 reverse19 = verifier['reverse_stage19_source']
+reverse20 = verifier['reverse_stage20_source']
 checks = []
+
+
+def stage19_text(source):
+    """Normalize current Stage20 to the exact Stage19 text earlier guards reviewed."""
+    current = (ROOT / source).read_text()
+    return reverse20(source, current) if source in verifier['STAGE20_PREVIOUS'] else current
 
 
 def stage18_text(source):
     """Keep every earlier guard against the exact Stage18 version it reviewed."""
-    current = (ROOT / source).read_text()
+    current = stage19_text(source)
     return reverse19(source, current) if source in verifier['STAGE19_PREVIOUS'] else current
 
 
@@ -212,7 +219,7 @@ with patch.object(Path, 'read_bytes', modified_stage18_manifest):
 assert len(checks) == 15 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 * len(stage18_cases)
 stage19_cases = []
 for source, expected in verifier['STAGE19_PREVIOUS'].items():
-    current = (ROOT / source).read_text()
+    current = stage19_text(source)
     restored = reverse19(source, current)
     assert hashlib.sha256(restored.encode()).hexdigest() == expected
     checks.append(source + ' exact Stage19 inverse')
@@ -242,9 +249,42 @@ def modified_stage19_manifest(path):
 
 
 with patch.object(Path, 'read_bytes', modified_stage19_manifest):
-    rejected('Stage19 inverse manifest tampering', lambda: reverse19('js/game.js', (ROOT / 'js/game.js').read_text()))
+    rejected('Stage19 inverse manifest tampering', lambda: reverse19('js/game.js', stage19_text('js/game.js')))
 
 assert len(checks) == 16 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 * len(stage18_cases) + 3 * len(stage19_cases)
-print(f'PASS: 944 protected originals; prior Stage14/16/17/18 guards retained; '
-      f'{len(stage19_cases)} exact Stage19 inverses/{2 * len(stage19_cases)} rejected source/render/load-order mutations '
-      'and Stage19 manifest tampering; cycling simulation block unchanged; all mutations in memory.')
+stage20_cases = []
+for source, expected in verifier['STAGE20_PREVIOUS'].items():
+    current = (ROOT / source).read_text()
+    restored = reverse20(source, current)
+    assert hashlib.sha256(restored.encode()).hexdigest() == expected
+    checks.append(source + ' exact Stage20 inverse')
+    stage20_cases.append(source)
+    rejected(source + ' appended Stage20 unreviewed source', lambda: reverse20(source, current + '\n// unreviewed source edit\n'))
+    if source.endswith('.html'):
+        marker, replacement = '<script src=', '<script async src='
+    elif source == 'js/game.js':
+        marker, replacement = '  function update(dt){', '  function update(dt){dt*=2;'
+    else:
+        import json
+        inverse = json.loads((ROOT / 'references/source/stage20-source-integration.json').read_text())
+        candidates = [line for edit in inverse['files'][source]['changes'] for line in edit['current'].splitlines()
+                      if line.strip() and not line.lstrip().startswith(('//','/*','*')) and current.count(line) == 1]
+        assert candidates, source
+        marker = max(candidates, key=len)
+        replacement = marker + '/* unreviewed Stage20 alteration */'
+    assert current.count(marker) >= 1, (source, marker)
+    changed = current.replace(marker, replacement, 1)
+    rejected(source + ' Stage20 unreviewed native/walking path or load order', lambda: reverse20(source, changed))
+
+manifest20 = ROOT / 'references/source/stage20-source-integration.json'
+
+def modified_stage20_manifest(path):
+    return read_bytes(path) + (b'\n' if path == manifest20 else b'')
+
+with patch.object(Path, 'read_bytes', modified_stage20_manifest):
+    rejected('Stage20 inverse manifest tampering', lambda: reverse20('js/game.js', (ROOT / 'js/game.js').read_text()))
+
+assert len(checks) == 17 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 * len(stage18_cases) + 3 * len(stage19_cases) + 3 * len(stage20_cases)
+print(f'PASS: 944 protected originals; prior Stage14/16/17/18/19 guards retained; '
+      f'{len(stage20_cases)} exact Stage20 inverses/{2 * len(stage20_cases)} rejected source/walking/load-order mutations '
+      'and Stage20 manifest tampering; cycling simulation block unchanged; all mutations in memory.')

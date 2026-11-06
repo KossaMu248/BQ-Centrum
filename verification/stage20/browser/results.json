@@ -1,0 +1,131 @@
+{
+  "scope": "Stage20 actual native-input walking, controls and collision acceptance; cardinal simulation-time comparison, not a frame-rate benchmark.",
+  "passed": true,
+  "browser": "154.0.8037.57",
+  "conditions": {
+    "headless": true,
+    "physicalDevice": false,
+    "desktop": [
+      1280,
+      720
+    ],
+    "CDPTouch": [
+      844,
+      390
+    ],
+    "deviceScaleFactor": 1,
+    "noVideoOrScreenshot": true,
+    "timing": "Observed production update simulation time, wall times separate; not FPS measurement"
+  },
+  "baselineCommit": "5af70787eff81586dcbf67bc25b208fb7a63d8a5",
+  "baselineMethod": "Read-only Git HTML/JS/manifest fulfil; concurrent target edits do not change served baseline. Original assets unchanged.",
+  "receipts": {
+    "before": {
+      "path": "before/results.json",
+      "sha256": "0028ead6f6b1d3bec020a997910a31d0339154630e40a8edacc5106ae0cbbd19",
+      "bytes": 28154,
+      "harnessSHA256": "30337e5cf55712ecc081e68e3d64215fd21776152da6fdf22dce297386ca3d7b",
+      "contexts": 4,
+      "passed": true
+    },
+    "after": {
+      "path": "after/results.json",
+      "sha256": "6be1376b493bd9c40102f27015d69bb6d667b625a7d962e4a7c1ce408ddbb20d",
+      "bytes": 29386,
+      "harnessSHA256": "4b0640bda0dd734d38ac784fa8344c4ec43d5697bf0f683a0b70caf54a59d665",
+      "contexts": 4,
+      "passed": true
+    }
+  },
+  "cardinalComparison": {
+    "sourceStreet": {
+      "horizontalBefore": 120,
+      "horizontalAfter": 180,
+      "horizontalIncreasePercent": 50,
+      "depthBefore": 140,
+      "depthAfter": 140,
+      "projection": 1
+    },
+    "centrumSquare": {
+      "horizontalBefore": 130,
+      "horizontalAfter": 200,
+      "depthBefore": 52,
+      "depthAfter": 80,
+      "increasePercent": 53.846153846153854,
+      "projection": 0.75,
+      "projectedHorizontalBefore": 97.5,
+      "projectedHorizontalAfter": 150,
+      "projectedDepthBefore": 39,
+      "projectedDepthAfter": 60
+    }
+  },
+  "afterChecks": [
+    "Keyboard and actual CDP pointer-held cardinal/diagonal travel",
+    "Released inputs settle; bag and pause prevent movement",
+    "Bench-west solid blocks held down input without tunnelling",
+    "Native arcade doorway and named square from-arcade arrival",
+    "Native return to the same grounded bicycle with baby mounted",
+    "100 HP unchanged; one pending RAF; bq-centrum storage; no JS/console/HTTP errors; no runtime hash drift"
+  ],
+  "limits": [
+    "One disclosed initial original route-stop helper per context, native controls thereafter.",
+    "Before short touch diagonal observations include protocol delivery/release tails; only cardinal before/after rates are compared. After uses actual held-input event filtering.",
+    "Release-travel field includes automation-dispatch latency; it is not a mathematical braking-distance measurement.",
+    "No public screenshots/video added because presentation is unchanged and package is near its size cap.",
+    "Separate ignored native normal-size motion review: six temporal up/down frames plus a 4.594272136688232-second 1x clip. Not public delivery evidence.",
+    "Articulated painted gait remains brisk and stylised; approved away view remains oblique to retain the baby.",
+    "Not physical-phone/Safari, FPS, thermal, full-story, or new performance testing."
+  ],
+  "excludedHarnessAttempts": [
+    "setup-camera-probe-attempt/results.json: missing legacy camera probe",
+    "../browser-initial-attempt/before/results.json: remaining missing camera probe at dismount",
+    "collision-release-probe-attempt/results.json: collision hits sampled after release, corrected to sample while held; no game change"
+  ],
+  "derivedSameParkedPosition": [
+    {
+      "context": "desktop-street",
+      "parkedRouteX": 2400,
+      "remountRouteX": 2400,
+      "delta": 0,
+      "grounded": true,
+      "babyMounted": true
+    },
+    {
+      "context": "desktop-square",
+      "parkedRouteX": 11325,
+      "remountRouteX": 11325,
+      "delta": 0,
+      "grounded": true,
+      "babyMounted": true
+    },
+    {
+      "context": "touch-street",
+      "parkedRouteX": 2400,
+      "remountRouteX": 2400,
+      "delta": 0,
+      "grounded": true,
+      "babyMounted": true
+    },
+    {
+      "context": "touch-square",
+      "parkedRouteX": 11325,
+      "remountRouteX": 11325,
+      "delta": 0,
+      "grounded": true,
+      "babyMounted": true
+    }
+  ],
+  "privateMotionReview": {
+    "publicFiles": false,
+    "normalSizeDesktop": [
+      1280,
+      720
+    ],
+    "temporalFrames": 6,
+    "nativeSeconds": 4.594272136688232,
+    "playbackSpeed": 1,
+    "sha256": "0b22cbbd354959660b9c032860dc549e5cc338519f06529201c1faaa24ab4d15",
+    "location": "ignored delivery/stage20-motion-review",
+    "observation": "Brisk articulated painted gait; paired boots coherent in sampled phases, baby continuous and visible, approved frontal/oblique views retained; no observed tearing or spinning."
+  }
+}

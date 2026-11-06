@@ -5,11 +5,11 @@ const window={};
 for(const name of ['locomotion','centrum-depth-gait'])vm.runInNewContext(fs.readFileSync('js/'+name+'.js','utf8'),{window});
 const native=window.BearlyLocomotion,depth=window.BearlyCentrumDepthGait;
 const close=(a,b,e=1e-7)=>assert.ok(Math.abs(a-b)<e,`${a} differs from ${b}`);
-assert.equal(depth.depthScale,.30);assert.equal(depth.depthSpeed,52);assert.equal(depth.walkSpeed,130);assert.equal(depth.strideScale,.70);
+assert.equal(depth.depthScale,.30);assert.equal(depth.depthSpeed,80);assert.equal(depth.walkSpeed,200);assert.equal(depth.strideScale,.70);
 assert.equal(depth.distance(NaN,Infinity),0);assert.equal(depth.distance(3,0),3);
 close(depth.distance(0,.30),1);close(depth.strideDistance(.70,0),1);
 let cases=0,worstResidual=0,minimumGround=Infinity,maximumGround=-Infinity;
-const directions=[[130,0],[-130,0],[0,52],[0,-52],[130/Math.SQRT2,52/Math.SQRT2],[-130/Math.SQRT2,52/Math.SQRT2],[130/Math.SQRT2,-52/Math.SQRT2],[-130/Math.SQRT2,-52/Math.SQRT2]];
+const directions=[[200,0],[-200,0],[0,80],[0,-80],[200/Math.SQRT2,80/Math.SQRT2],[-200/Math.SQRT2,80/Math.SQRT2],[200/Math.SQRT2,-80/Math.SQRT2],[-200/Math.SQRT2,-80/Math.SQRT2]];
 for(const height of [145,200,280])for(const [vx,vy]of directions){
   const face=vx<0?-1:1,heading=depth.heading(vx,vy,face),cycle=native.cycleLength(height),d=cycle*.25,dt=1e-5;
   const a=native.pose(d,height,1),b=native.pose(d+depth.strideDistance(vx*dt,vy*dt),height,1),p=depth.project(a,heading),q=depth.project(b,heading);
@@ -28,7 +28,7 @@ for(const height of [145,200,280])for(const [vx,vy]of directions){
   worstResidual=Math.max(worstResidual,Math.hypot(residualX,residualY));close(residualX,0,2e-5);close(residualY,0,2e-5);cases++;
 }
 for(const height of [145,200,280])for(const face of [-1,1])for(const sign of [-1,1]){
-  const heading=depth.heading(0,52*sign,face),cycle=native.cycleLength(height),baseline={near:0,far:-9*height/488},radius=12*height/200;
+  const heading=depth.heading(0,depth.depthSpeed*sign,face),cycle=native.cycleLength(height),baseline={near:0,far:-9*height/488},radius=12*height/200;
   for(let step=0;step<=512;step++){
     const source=native.pose(cycle*step/512,height,1),p=depth.project(source,heading);
     for(const side of ['near','far']){
@@ -41,6 +41,6 @@ for(const height of [145,200,280])for(const face of [-1,1])for(const sign of [-1
   }
 }
 const cadence=depth.strideDistance(0,depth.depthSpeed)/native.cycleLength(200),horizontalCadence=depth.strideDistance(depth.walkSpeed,0)/native.cycleLength(200);
-assert.ok(cadence>1.5&&cadence<1.8);assert.ok(horizontalCadence>1.2&&horizontalCadence<1.5);
+assert.ok(cadence>2.6&&cadence<2.7);assert.ok(horizontalCadence>1.9&&horizontalCadence<2.1);
 close(minimumGround,-9*200/488-36*.70*.30);close(maximumGround,36*.70*.30);
 console.log(JSON.stringify({passed:true,midStanceCases:cases,worstResidualUnitsPerSecond:worstResidual,contactEnvelopeAtHeight200:[minimumGround,maximumGround],unchangedDepthRadius:12,pureDepthCyclesPerSecond:cadence,horizontalCyclesPerSecond:horizontalCadence,nativeOptOutPreserved:true}));

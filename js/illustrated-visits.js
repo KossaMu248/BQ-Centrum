@@ -275,9 +275,10 @@
       velocity+=(dir*260-velocity)*Math.min(1,dt*3);x=clamp(x+velocity*dt,110,4550);stride+=Math.abs(velocity)*dt;
       buoys.forEach((bx,i)=>{if(Math.abs(x-bx)<85&&!quests.snapshot().buoys.includes(i)){quests.act('buoy',i);setMessage(`BUOY ${i+1} CHECKED · ${quests.snapshot().buoys.length===3?'All three! Return left to the dock.':'Keep exploring the lake.'}`);}});
     }else {
-      const speed=combatState.phase==='madness'?300:combatState.phase==='apex'?235:120;
+      const pace=window.BearlyCentrumDepthGait,calm=combatState.phase!=='madness'&&combatState.phase!=='apex';
+      const speed=combatState.phase==='madness'?300:combatState.phase==='apex'?235:(pace?.sourceWalkSpeed||180);
       const horizontal=dir,diagonal=horizontal&&vertical?Math.SQRT1_2:1;
-      const target=fade>0||combatState.hp===0?0:horizontal*speed*diagonal,rate=horizontal?1200:1600;
+      const target=fade>0||combatState.hp===0?0:horizontal*speed*diagonal,rate=horizontal?(calm?(pace?.sourceWalkAcceleration||1800):1200):(calm?(pace?.sourceWalkBraking||2400):1600);
       velocity+=clamp(target-velocity,-rate*dt,rate*dt);
       const next=x+velocity*moveDt;
       if(mode!=='street'||s.road?.groundAt(next)!=null)x=clamp(next,mode==='street'?60:80,mode==='street'?s.road.finish-60:mode==='room'?1040:mode==='dock'?2250:2320);

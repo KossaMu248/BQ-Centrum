@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "scope": "The single frozen Stage20 archive; package hashes/extraction, real clean-server browser interaction matrix and final payload comparison.",
+  "archiveSha256": "96f1f6ba0bbbcb3c77d77ea645b540352dc5e2f53f8775b1971fae92df43eab5",
+  "zipBytes": 1000340895,
+  "payloadBytes": 1031239228,
+  "payloadFiles": 2180,
+  "archiveFiles": 2182,
+  "exactManifestAndCRC": true,
+  "smallHTMLFiles": {
+    "autumn-v19.html": 13729,
+    "index.html": 13729
+  },
+  "forbiddenPaths": [],
+  "credentialPatternScan": "Package builder scans allowlisted text and decoded gzip JSON; eight positive/negative codec checks also passed.",
+  "requiredPreparedRuntimeAssets": 55,
+  "sourceIntegrityFromExtraction": "PASS: 944 pinned original files verified; all source assets/CSS and original protected code match;\nonly reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest, Stage17 NPC-prop fit, Stage18 bench/peaceful-seat/opaque-eye and Stage19 compact/sparse bench and Stage20 walking-pace additions differ.",
+  "matrix": {
+    "passed": true,
+    "topLevelChecks": 28,
+    "serverPaths": [
+      "/",
+      "/BQ-Centrum/"
+    ],
+    "desktop": [
+      1280,
+      720
+    ],
+    "phoneLandscapeChromiumTouchEmulation": [
+      844,
+      390
+    ],
+    "physicalDevice": false,
+    "sceneLoadsAtUnchanged73HP": 20,
+    "cameraProjectionSamples": 36,
+    "realWalkInputSamples": 16,
+    "authoredAwayTowardAndNativeBabyChecks": 8,
+    "oneBicycleAndOriginalCarrierChecks": "Asserted at all scene arrivals and actual walking samples.",
+    "maxPendingMainRAF": 1,
+    "consoleHTTPExternalPathErrors": 0,
+    "fixtures": "Production save factory, named entrances and recorded valid parking; this extracted delivery matrix does not claim another earned story route."
+  },
+  "realGameplayFrames": [],
+  "compressedProfiles": {
+    "scope": "Retained historical Stage16 traces; no Stage20 profiling claim",
+    "count": 5,
+    "allExactOriginalBytesVerified": true,
+    "bytesSaved": 31016055
+  },
+  "frozenPayloadUnchanged": true,
+  "fullDataResultEncoding": {
+    "file": "results.json.gz",
+    "encoding": "gzip level9, timestamp0",
+    "decodedEncoding": "UTF-8 compact JSON with final newline",
+    "decodedSHA256": "c1feac7726eab4916709b0392800900cb7d9d7ab95f061762258a18b3e35f16b",
+    "compressedSHA256": "689d5287fed9c630599e54b508385c22188cc8148f0d0db80368d999c951df94",
+    "decodedBytes": 425252,
+    "compressedBytes": 79227,
+    "exactRoundtripVerified": true,
+    "scope": "Lossless encoding only. Every assertion, result field and measurement is retained; this is not another test run."
+  }
+}

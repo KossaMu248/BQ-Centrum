@@ -1,0 +1,55 @@
+{
+  "format": 1,
+  "previousProjectCommit": "5af70787eff81586dcbf67bc25b208fb7a63d8a5",
+  "scope": "Reviewed Stage20 walking pace and entry additions. Original artwork, NPC identities/scales, baby, camera, cycling simulation/damage, scenes, saves and economy remain unchanged.",
+  "files": {
+    "autumn-v19.html": {
+      "previousSha256": "f1100dbd323d64ecda8a4d85b25dac1b6588d7442c30169650f97df51f5f0818",
+      "currentSha256": "974e3d2788ad0c3c324dc891aa166ccb8e0242cce95230ec820c47962cdcc6af",
+      "changes": [
+        {
+          "previous": "<script src=\"js/weapon-effects.js?edition=autumn-v19\"></script>\n<script src=\"js/brawler.js?edition=centrum-stage18\"></script>\n<script src=\"js/baby-passenger.js?edition=autumn-v19\"></script>\n<script src=\"js/centrum-depth-gait.js?edition=centrum-stage11\"></script>\n<script src=\"js/centrum-hero-cache.js?edition=centrum-stage16\"></script>\n<script src=\"js/hero-rig.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-directional-rig.js?edition=centrum-stage14\"></script>\n",
+          "current": "<script src=\"js/weapon-effects.js?edition=autumn-v19\"></script>\n<script src=\"js/brawler.js?edition=centrum-stage18\"></script>\n<script src=\"js/baby-passenger.js?edition=autumn-v19\"></script>\n<script src=\"js/centrum-depth-gait.js?edition=centrum-stage20\"></script>\n<script src=\"js/centrum-hero-cache.js?edition=centrum-stage16\"></script>\n<script src=\"js/hero-rig.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-directional-rig.js?edition=centrum-stage14\"></script>\n"
+        },
+        {
+          "previous": "<script src=\"js/centrum-inventory.js?edition=centrum-stage15\"></script>\n<script src=\"js/centrum-story.js?edition=centrum-stage14\"></script>\n<script src=\"js/centrum-camera.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-square.js?edition=centrum-stage15\"></script>\n<script src=\"js/illustrated-visits.js?edition=centrum-stage16\"></script>\n<script src=\"js/game.js?edition=centrum-stage19\"></script>\n</body>\n</html>\n",
+          "current": "<script src=\"js/centrum-inventory.js?edition=centrum-stage15\"></script>\n<script src=\"js/centrum-story.js?edition=centrum-stage14\"></script>\n<script src=\"js/centrum-camera.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-square.js?edition=centrum-stage20\"></script>\n<script src=\"js/illustrated-visits.js?edition=centrum-stage20\"></script>\n<script src=\"js/game.js?edition=centrum-stage20\"></script>\n</body>\n</html>\n"
+        }
+      ]
+    },
+    "index.html": {
+      "previousSha256": "f1100dbd323d64ecda8a4d85b25dac1b6588d7442c30169650f97df51f5f0818",
+      "currentSha256": "974e3d2788ad0c3c324dc891aa166ccb8e0242cce95230ec820c47962cdcc6af",
+      "changes": [
+        {
+          "previous": "<script src=\"js/weapon-effects.js?edition=autumn-v19\"></script>\n<script src=\"js/brawler.js?edition=centrum-stage18\"></script>\n<script src=\"js/baby-passenger.js?edition=autumn-v19\"></script>\n<script src=\"js/centrum-depth-gait.js?edition=centrum-stage11\"></script>\n<script src=\"js/centrum-hero-cache.js?edition=centrum-stage16\"></script>\n<script src=\"js/hero-rig.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-directional-rig.js?edition=centrum-stage14\"></script>\n",
+          "current": "<script src=\"js/weapon-effects.js?edition=autumn-v19\"></script>\n<script src=\"js/brawler.js?edition=centrum-stage18\"></script>\n<script src=\"js/baby-passenger.js?edition=autumn-v19\"></script>\n<script src=\"js/centrum-depth-gait.js?edition=centrum-stage20\"></script>\n<script src=\"js/centrum-hero-cache.js?edition=centrum-stage16\"></script>\n<script src=\"js/hero-rig.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-directional-rig.js?edition=centrum-stage14\"></script>\n"
+        },
+        {
+          "previous": "<script src=\"js/centrum-inventory.js?edition=centrum-stage15\"></script>\n<script src=\"js/centrum-story.js?edition=centrum-stage14\"></script>\n<script src=\"js/centrum-camera.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-square.js?edition=centrum-stage15\"></script>\n<script src=\"js/illustrated-visits.js?edition=centrum-stage16\"></script>\n<script src=\"js/game.js?edition=centrum-stage19\"></script>\n</body>\n</html>\n",
+          "current": "<script src=\"js/centrum-inventory.js?edition=centrum-stage15\"></script>\n<script src=\"js/centrum-story.js?edition=centrum-stage14\"></script>\n<script src=\"js/centrum-camera.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-square.js?edition=centrum-stage20\"></script>\n<script src=\"js/illustrated-visits.js?edition=centrum-stage20\"></script>\n<script src=\"js/game.js?edition=centrum-stage20\"></script>\n</body>\n</html>\n"
+        }
+      ]
+    },
+    "js/game.js": {
+      "previousSha256": "03ea98523b86434921b59e33530e48738451b5e1bbf961b8703dc84cdc63ea3e",
+      "currentSha256": "e38d5830ca67225f54243835a776b067ded8f2c5c150c75d85e886eb67ba04c6",
+      "changes": [
+        {
+          "previous": "\n(() => {\n  'use strict';\n  window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE19';\n  /* v10.58 \u2014 original-size, original-clothes actor art; only prop pixels + portraits. */\n  window.BEARLY_ASSETS['v158_firecracker_hoodie_0_0']='assets/v158_firecracker_hoodie_0_0.webp';\n  window.BEARLY_ASSETS['v158_firecracker_hoodie_0_3']='assets/v158_firecracker_hoodie_0_3.webp';\n",
+          "current": "\n(() => {\n  'use strict';\n  window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE20';\n  /* v10.58 \u2014 original-size, original-clothes actor art; only prop pixels + portraits. */\n  window.BEARLY_ASSETS['v158_firecracker_hoodie_0_0']='assets/v158_firecracker_hoodie_0_0.webp';\n  window.BEARLY_ASSETS['v158_firecracker_hoodie_0_3']='assets/v158_firecracker_hoodie_0_3.webp';\n"
+        }
+      ]
+    },
+    "js/illustrated-visits.js": {
+      "previousSha256": "861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d",
+      "currentSha256": "2a45be9c2dc5c6c447a609445b157feb5fa75dc327032cf987b85b49939f93dc",
+      "changes": [
+        {
+          "previous": "      velocity+=(dir*260-velocity)*Math.min(1,dt*3);x=clamp(x+velocity*dt,110,4550);stride+=Math.abs(velocity)*dt;\n      buoys.forEach((bx,i)=>{if(Math.abs(x-bx)<85&&!quests.snapshot().buoys.includes(i)){quests.act('buoy',i);setMessage(`BUOY ${i+1} CHECKED \u00b7 ${quests.snapshot().buoys.length===3?'All three! Return left to the dock.':'Keep exploring the lake.'}`);}});\n    }else {\n      const speed=combatState.phase==='madness'?300:combatState.phase==='apex'?235:120;\n      const horizontal=dir,diagonal=horizontal&&vertical?Math.SQRT1_2:1;\n      const target=fade>0||combatState.hp===0?0:horizontal*speed*diagonal,rate=horizontal?1200:1600;\n      velocity+=clamp(target-velocity,-rate*dt,rate*dt);\n      const next=x+velocity*moveDt;\n      if(mode!=='street'||s.road?.groundAt(next)!=null)x=clamp(next,mode==='street'?60:80,mode==='street'?s.road.finish-60:mode==='room'?1040:mode==='dock'?2250:2320);\n",
+          "current": "      velocity+=(dir*260-velocity)*Math.min(1,dt*3);x=clamp(x+velocity*dt,110,4550);stride+=Math.abs(velocity)*dt;\n      buoys.forEach((bx,i)=>{if(Math.abs(x-bx)<85&&!quests.snapshot().buoys.includes(i)){quests.act('buoy',i);setMessage(`BUOY ${i+1} CHECKED \u00b7 ${quests.snapshot().buoys.length===3?'All three! Return left to the dock.':'Keep exploring the lake.'}`);}});\n    }else {\n      const pace=window.BearlyCentrumDepthGait,calm=combatState.phase!=='madness'&&combatState.phase!=='apex';\n      const speed=combatState.phase==='madness'?300:combatState.phase==='apex'?235:(pace?.sourceWalkSpeed||180);\n      const horizontal=dir,diagonal=horizontal&&vertical?Math.SQRT1_2:1;\n      const target=fade>0||combatState.hp===0?0:horizontal*speed*diagonal,rate=horizontal?(calm?(pace?.sourceWalkAcceleration||1800):1200):(calm?(pace?.sourceWalkBraking||2400):1600);\n      velocity+=clamp(target-velocity,-rate*dt,rate*dt);\n      const next=x+velocity*moveDt;\n      if(mode!=='street'||s.road?.groundAt(next)!=null)x=clamp(next,mode==='street'?60:80,mode==='street'?s.road.finish-60:mode==='room'?1040:mode==='dock'?2250:2320);\n"
+        }
+      ]
+    }
+  }
+}

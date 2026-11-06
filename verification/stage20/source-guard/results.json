@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "atUtc": "2026-11-06T04:01:00.629093+00:00",
+  "scope": "Target-local pinned original reconstruction; no donor access or file mutation by negative tests. Walking pace only; original cycling/damage block independent.",
+  "previousProjectCommit": "5af70787eff81586dcbf67bc25b208fb7a63d8a5",
+  "manifest": "references/source/stage20-source-integration.json",
+  "manifestSHA256": "bd2db17eef646ab8e7d02c7759aa205c5be322d659b410f0b0eb8b5da1de8059",
+  "protectedFiles": 4,
+  "exactInverseHunks": 6,
+  "newSourceWalkingLoadOrderMutationsRejected": 8,
+  "stage20ManifestTamperRejected": true,
+  "previousStage14_16_17_18_19GuardsRetained": true,
+  "originalFilesVerified": 944,
+  "originalArtworkFilesUnchanged": 919,
+  "cyclingUpdateCharacters": 17332,
+  "cyclingUpdateSHA256": "be413cd99f320f38d94a49fdf3b93d297dfe5f5039aa977d4c20442250fc9bef",
+  "runtimeHashes": {
+    "autumn-v19.html": "974e3d2788ad0c3c324dc891aa166ccb8e0242cce95230ec820c47962cdcc6af",
+    "index.html": "974e3d2788ad0c3c324dc891aa166ccb8e0242cce95230ec820c47962cdcc6af",
+    "js/game.js": "e38d5830ca67225f54243835a776b067ded8f2c5c150c75d85e886eb67ba04c6",
+    "js/illustrated-visits.js": "2a45be9c2dc5c6c447a609445b157feb5fa75dc327032cf987b85b49939f93dc",
+    "js/centrum-depth-gait.js": "1583551a2da89b4be611e2738efcb61e061296b6893617a57893fb2b163b49cc",
+    "js/centrum-square.js": "455fa2160eef5bf3fb90c0ffba95cd6f9cff5e159dffe35cbf5f2ca7abcb7063",
+    "autumn-version.json": "a85e9327db892839edbf11e6d015da34b786b23febb6b7c1bda5fcfdb4c56823"
+  },
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "tools/verify-source-integrity.py"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "stdout": "PASS: 944 pinned original files verified; all source assets/CSS and original protected code match;\nonly reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest, Stage17 NPC-prop fit, Stage18 bench/peaceful-seat/opaque-eye and Stage19 compact/sparse bench and Stage20 walking-pace additions differ.",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "tests/centrum_source_integrity.py"
+      ],
+      "passed": true,
+      "returnCode": 0,
+      "stdout": "PASS: 944 protected originals; prior Stage14/16/17/18/19 guards retained; 4 exact Stage20 inverses/8 rejected source/walking/load-order mutations and Stage20 manifest tampering; cycling simulation block unchanged; all mutations in memory.",
+      "stderr": ""
+    }
+  ],
+  "pythonSyntaxAndDiffChecksPassed": true
+}

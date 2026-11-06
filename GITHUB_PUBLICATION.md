@@ -78,3 +78,8 @@ The user rejected the small Stage17benches and requested redesign plus opaque ey
 ## Stage19 compact and sparse source-street benches
 
 The user requested narrower seats for the existing single-user routines and fewer repetitions. This target-only stage keeps vertical seat/back geometry and original actors, sets168overall/132usable width, retains five authored benches, removes automatic roadside/cafe bench repeats, and gives the seven benchless residents existing standing pauses. Original bin coordinates, all resident identities/routes, square furniture/camera, source art, injured-eye/occupied-seat fixes, cycling/damage, saves and economy remain. New exact certificate data is losslessly gzip-encoded with explicit decoded/delivered hashes; old proof/art are retained. Existing target main/Pages authorization persists. Actual gameplay/source/clean-package evidence is versioned understage19; publication hashes are read back outside its ZIP. Physical tests remain skipped; neither donor repository/save/deployment changes.
+
+
+## Stage20 brisk walking and precise stops
+
+The user requested faster walking and a clear next priority. This target-only pass increases ordinary foot movement while preserving camera/art/gait distance, collision sweeps, saves/health and cycling/damage. Existing specialSourceApex/Madness/water movement remains. Actual held-input desktop/touch timing and collision/door/stop checks are separate from FPS/physical claims. No new feature/area/quest; the recommended next stage is polishing the existing Billy's task loop and phone interaction clarity. Target main/Pages authorization persists; publication hashes are read back outside the ZIP, with no donor operations.
