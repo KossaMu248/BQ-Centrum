@@ -1,0 +1,1 @@
+Paused production renderer at enlarged h=320, NOT a gameplay screenshot. Captured from the target Stage21 code before repair; original art unchanged. The moving striped shorts wedge below the fixed shorts is the duplicated-material defect.

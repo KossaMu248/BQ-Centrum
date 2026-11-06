@@ -27,10 +27,11 @@ class FakeWorker{
  const sandbox={window:win,Image:class{naturalWidth=2400;naturalHeight=2400;},Uint8ClampedArray,document:{createElement:()=>({width:0,height:0,dataset:{},getContext:()=>context()})},Path2D:class{moveTo(){}quadraticCurveTo(){}lineTo(){}closePath(){}}};
  for(const n of ['locomotion','centrum-depth-gait','baby-passenger','hero-rig'])vm.runInNewContext(fs.readFileSync('js/'+n+'.js','utf8'),sandbox);
  const rig=win.BearlyHeroRig,route=rig.prepareRouteCache(),square=rig.prepareCentrumCache();assert.equal(rig.prepareRouteCache(),route);assert.equal(rig.prepareCentrumCache(),square);assert(await route);assert(await square);assert.equal(creations,1,'source and Centrum create one shared worker manager');assert.equal(jobs.length,100,'two idle carriers and48 front phases prepared for each family');
- const families=jobs.map(j=>j.gait.centrumWalk?'square':'native');assert(families.slice(0,50).every(f=>f==='native')&&families.slice(50).every(f=>f==='square'),'family warmups serialize instead of superseding each other');
+ const families=jobs.map(j=>j.gait.centrumWalk?'square':j.gait.sourceWalk?'route':'native');assert(families.slice(0,50).every(f=>f==='route')&&families.slice(50).every(f=>f==='square'),'family warmups serialize instead of superseding each other');
  for(const j of jobs.filter(j=>!j.gait.centrumWalk)){
-  const original=win.BearlyLocomotion.pose(win.BearlyLocomotion.cycleLength(280)*j.gait.phase,280,j.weight);for(const side of ['near','far'])for(const p of ['x','y','angle','shinAngle','kneeFlex','contactOffset'])assert(Math.abs(j.gait[side][p]-original[side][p])<1e-10,'native geometry is the existing source gait');
+  assert(j.gait.sourceWalk,'the route warmup opts into the explicit walking repair');
+  const original=win.BearlyCentrumDepthGait.projectSource(win.BearlyLocomotion.pose(win.BearlyLocomotion.cycleLength(280)*j.gait.phase,280,j.weight));for(const side of ['near','far'])for(const p of ['x','y','angle','shinAngle','kneeFlex','contactOffset'])assert(Math.abs(j.gait[side][p]-original[side][p])<1e-10,'route geometry matches the same projected source gait used by the live renderer');
  }
  assert.equal(rig.cacheStats().sourceWarmup.prepared,7);assert.equal(rig.cacheStats().sourceWarmup.pending,0);assert.equal(rig.cacheStats().sourceWarmup.foreground,true);
- console.log(JSON.stringify({passed:true,separateGeometryFamilies:true,hardSharedFrameAndByteBudget:true,sourceAndSquareManagerCreations:creations,serialPreparedJobs:jobs.length,sourceGeometryJobs:50,squareGeometryJobs:50,sourcePreparationOnce:true}));
+ console.log(JSON.stringify({passed:true,separateGeometryFamilies:true,hardSharedFrameAndByteBudget:true,sourceAndSquareManagerCreations:creations,serialPreparedJobs:jobs.length,sourceGeometryJobs:50,squareGeometryJobs:50,sourcePreparationOnce:true,sourceStrideScale:win.BearlyCentrumDepthGait.sourceStrideScale}));
 })().catch(e=>{console.error(e);process.exitCode=1;});

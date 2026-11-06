@@ -37,5 +37,12 @@ class FakeWorker{
  assert.equal(controller.available(),true);worker.onerror({message:'test worker failure'});assert.equal(controller.available(),false);
  assert.equal(await controller.ensure(job('after-failure')),null,'failure never leaves waiters hanging');controller.close();
  assert.equal(controller.stats().pending,0);assert.equal(controller.stats().queued,0);
+ // Same-heading fallback must also respect repaired/legacy source anatomy.
+ const familyWorker=new FakeWorker(),familyFrames=new Map();let familyBytes=0;
+ const familyController=await api.create({workerFactory:()=>familyWorker,cloneSource:()=>Promise.resolve({close(){}}),lower:[],upper:[],images:{},cache:{frames:familyFrames,limitFrames:4,limitBytes:6400,bytes:()=>familyBytes,add:f=>{familyBytes+=f.width*f.height*4;},drop:f=>{f.disposed=true;f.image.close();familyBytes-=f.width*f.height*4;}}});
+ const familyJob=(name,idle)=>{const j=job(name+(idle?':idle':':moving'),idle?0:.31,idle?0:1,idle?'idle':'horizontal');j.gait.sourceWalk=name==='route';j.gait.centrumWalk=name==='square';return j;};
+ const own={};for(const name of ['native','route','square']){const pending=familyController.ensure(familyJob(name,true));familyWorker.complete();own[name]=await pending;assert.equal(own[name].centrum.family,name);}
+ for(const name of ['native','route','square'])assert.equal(familyController.get(familyJob(name,false)),own[name],'fallback may not borrow another anatomy family');
+ assert(familyFrames.size<=4&&familyBytes<=6400);familyController.close();
  console.log('PASS: exact frame metadata, native idle/same-heading fallback, latest-only queue, bounded shared cache, disposal and failure recovery');
 })().catch(error=>{console.error(error);process.exitCode=1;});

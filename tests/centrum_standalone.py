@@ -22,8 +22,8 @@ from urllib.parse import urlparse
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'verification/stage21/standalone'
-EXPECTED_BUILD='BQ_CENTRUM_STAGE21'
+OUT=ROOT/'verification/stage22/standalone'
+EXPECTED_BUILD='BQ_CENTRUM_STAGE22'
 WORK=OUT/'work'
 SCENES=['metro-square','shopping-arcade','service-courtyard','food-shop','bicycle-workshop']
 KEY='bq-centrum:scene-network:v1'
@@ -31,11 +31,11 @@ KEY='bq-centrum:scene-network:v1'
 
 def write_result_evidence(result):
     """Losslessly store all result fields; raw bytes stay only in ignored delivery."""
-    assert not (OUT/'results.json').exists(),'Unexpected uncompressed Stage21 certificate'
+    assert not (OUT/'results.json').exists(),'Unexpected uncompressed Stage22 certificate'
     original=(json.dumps(result,separators=(',',':'))+'\n').encode('utf-8')
     encoded=gzip.compress(original,compresslevel=9,mtime=0)
     assert gzip.decompress(encoded)==original,'Compressed result changed JSON bytes'
-    raw=ROOT/'delivery/stage21-standalone-raw';raw.mkdir(parents=True,exist_ok=True)
+    raw=ROOT/'delivery/stage22-standalone-raw';raw.mkdir(parents=True,exist_ok=True)
     (raw/'results.json').write_bytes(original)
     (OUT/'results.json.gz').write_bytes(encoded)
     receipt={'file':'results.json.gz','encoding':'gzip level9, timestamp0','decodedEncoding':'UTF-8 compact JSON with final newline',
@@ -240,10 +240,10 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--package',default='delivery/BQ-Centrum-validated.zip');parser.add_argument('--keep-extracted',action='store_true');args=parser.parse_args()
     package=(ROOT/args.package).resolve();assert package.is_relative_to(ROOT)
     OUT.mkdir(parents=True,exist_ok=True)
-    result={'scope':'Extracted standalone delivery, clean local root and /BQ-Centrum/ repository subpath','conditions':{'browser':'system Chromium /usr/bin/chromium, headless','desktopViewport':[1280,720],'phoneEmulationViewport':[844,390],'physicalDevices':False,'sceneFixtures':'Production-factory sealed named-entrance/parking fixtures; primary native route is a separate test.','visualEvidence':'No new screenshots in this delivery smoke check; Stage21 actual wider-camera gameplay/input traces are separate evidence.'},'checks':[],'errors':[],'consoleErrors':[],'httpFailures':[],'serverHttpFailures':[],'serverOutsideSubpathRequests':[],'externalRequests':[],'outsideSubpathRequests':[],'limits':['Chromium emulation is not physical iPhone/Safari testing.','Frame times were sampled on this shared container and are not physical-device performance promises.']}
+    result={'scope':'Extracted standalone delivery, clean local root and /BQ-Centrum/ repository subpath','conditions':{'browser':'system Chromium /usr/bin/chromium, headless','desktopViewport':[1280,720],'phoneEmulationViewport':[844,390],'physicalDevices':False,'sceneFixtures':'Production-factory sealed named-entrance/parking fixtures; primary native route is a separate test.','visualEvidence':'No new screenshots in this delivery smoke check; Stage22 actual wider-camera gameplay/input traces are separate evidence.'},'checks':[],'errors':[],'consoleErrors':[],'httpFailures':[],'serverHttpFailures':[],'serverOutsideSubpathRequests':[],'externalRequests':[],'outsideSubpathRequests':[],'limits':['Chromium emulation is not physical iPhone/Safari testing.','Frame times were sampled on this shared container and are not physical-device performance promises.']}
     result['testedArchiveSha256']=file_hash(package)
     runtime,manifest=extract_package(package)
-    assert json.loads((runtime/'autumn-version.json').read_text())['edition']==EXPECTED_BUILD,'Archive is not the intended Stage21 build'
+    assert json.loads((runtime/'autumn-version.json').read_text())['edition']==EXPECTED_BUILD,'Archive is not the intended Stage22 build'
     assert (runtime/'css/centrum-route.css').is_file(),'Copied-street hint stylesheet is missing'
     for entry in ['index.html','autumn-v19.html']:
         assert 'css/centrum-route.css?edition=centrum-stage16' in (runtime/entry).read_text(),'Alias omitted current route stylesheet'

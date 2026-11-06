@@ -16,12 +16,19 @@ reverse18 = verifier['reverse_stage18_source']
 reverse19 = verifier['reverse_stage19_source']
 reverse20 = verifier['reverse_stage20_source']
 reverse21 = verifier['reverse_stage21_source']
+reverse22 = verifier['reverse_stage22_source']
 checks = []
+
+
+def stage21_text(source):
+    """Normalize the current renderer repair before every older guard."""
+    current = (ROOT / source).read_text()
+    return reverse22(source, current) if source in verifier['STAGE22_PREVIOUS'] else current
 
 
 def stage20_text(source):
     """Normalize current Stage21 to the exact Stage20 text earlier guards reviewed."""
-    current = (ROOT / source).read_text()
+    current = stage21_text(source)
     return reverse21(source, current) if source in verifier['STAGE21_PREVIOUS'] else current
 
 
@@ -294,7 +301,7 @@ with patch.object(Path, 'read_bytes', modified_stage20_manifest):
 assert len(checks) == 17 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 * len(stage18_cases) + 3 * len(stage19_cases) + 3 * len(stage20_cases)
 stage21_cases = []
 for source, expected in verifier['STAGE21_PREVIOUS'].items():
-    current = (ROOT / source).read_text()
+    current = stage21_text(source)
     restored = reverse21(source, current)
     assert hashlib.sha256(restored.encode()).hexdigest() == expected
     checks.append(source + ' exact Stage21 inverse')
@@ -316,9 +323,34 @@ def modified_stage21_manifest(path):
     return read_bytes(path) + (b'\n' if path == manifest21 else b'')
 
 with patch.object(Path, 'read_bytes', modified_stage21_manifest):
-    rejected('Stage21 inverse manifest tampering', lambda: reverse21('js/game.js', (ROOT / 'js/game.js').read_text()))
+    rejected('Stage21 inverse manifest tampering', lambda: reverse21('js/game.js', stage21_text('js/game.js')))
 
 assert len(checks) == 18 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 * len(stage18_cases) + 3 * len(stage19_cases) + 3 * len(stage20_cases) + 3 * len(stage21_cases)
-print(f'PASS: 944 protected originals; prior Stage14/16/17/18/19/20 guards retained; '
-      f'{len(stage21_cases)} exact Stage21 inverses/{2 * len(stage21_cases)} rejected source/culling/load-order mutations '
-      'and Stage21 manifest tampering; cycling simulation block unchanged; all mutations in memory.')
+stage22_cases = []
+for source, expected in verifier['STAGE22_PREVIOUS'].items():
+    current = (ROOT / source).read_text()
+    restored = reverse22(source, current)
+    assert hashlib.sha256(restored.encode()).hexdigest() == expected
+    checks.append(source + ' exact Stage22 inverse')
+    stage22_cases.append(source)
+    rejected(source + ' appended Stage22 unreviewed source', lambda: reverse22(source, current + '\n// unreviewed source edit\n'))
+    if source.endswith('.html'):
+        marker, replacement = '<script src=', '<script async src='
+    elif source == 'js/game.js':
+        marker, replacement = '  function update(dt){', '  function update(dt){dt*=2;'
+    else:
+        marker, replacement = 'for(const polygon of topology[side])emit(source,polygon,map);', 'for(const polygon of topology[side])emit(source,polygon,body);'
+    assert current.count(marker) >= 1, (source, marker)
+    changed = current.replace(marker, replacement, 1)
+    rejected(source + ' Stage22 unreviewed surface/physics/load-order path', lambda: reverse22(source, changed))
+
+manifest22 = ROOT / 'references/source/stage22-source-integration.json'
+def modified_stage22_manifest(path):
+    return read_bytes(path) + (b'\n' if path == manifest22 else b'')
+with patch.object(Path, 'read_bytes', modified_stage22_manifest):
+    rejected('Stage22 inverse manifest tampering', lambda: reverse22('js/game.js', (ROOT / 'js/game.js').read_text()))
+
+assert len(checks) == 19 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 * len(stage18_cases) + 3 * len(stage19_cases) + 3 * len(stage20_cases) + 3 * len(stage21_cases) + 3 * len(stage22_cases)
+print(f'PASS: 944 protected originals; all earlier guards retained; '
+      f'{len(stage22_cases)} exact Stage22 inverses/{2 * len(stage22_cases)} rejected source/surface/load-order mutations '
+      'and Stage22 manifest tampering; cycling simulation block unchanged; all mutations in memory.')

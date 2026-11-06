@@ -201,17 +201,17 @@
   }
   function surfacePose(profile,h,gait,weight){
     const s=h/profile.stature,ox=profile.origin[0],oy=profile.origin[1],pivot={x:((profile.near.hip[0]+profile.far.hip[0])*.5-ox)*s,y:(profile.pelvisY-oy)*s};
-    const direction=gait.centrumWalk?(gait.groundMotion?.y||0):0;
-    const angle=gait.roll+direction*.022*weight,cs=Math.cos(angle),sn=Math.sin(angle),shift={x:gait.sway+direction*h*.012*weight,y:gait.bob+h*.012*weight-(LOWER_HEIGHT-(oy-profile.pelvisY))*s+Math.abs(direction)*h*.0015*weight};
+    const walking=!!(gait.centrumWalk||gait.sourceWalk),direction=gait.centrumWalk?(gait.groundMotion?.y||0):0;
+    const angle=gait.roll*(walking?1.35:1)+direction*.022*weight,cs=Math.cos(angle),sn=Math.sin(angle),shift={x:gait.sway*(walking?1.6:1)+direction*h*.012*weight,y:gait.bob*(walking?1.8:1)+h*.012*weight-(LOWER_HEIGHT-(oy-profile.pelvisY))*s+Math.abs(direction)*h*.0015*weight};
     const bodyPoint=(x,y)=>({x:pivot.x+(x-pivot.x)*cs-(y-pivot.y)*sn+shift.x,y:pivot.y+(x-pivot.x)*sn+(y-pivot.y)*cs+shift.y});
     const transform=c=>{c.translate(pivot.x+shift.x,pivot.y+shift.y);c.rotate(angle);c.translate(-pivot.x,-pivot.y);};
     const pelvisPoint=(x,y)=>{const blend=smooth((y/s+oy-(profile.pelvisY-45))/45),a=(gait.pelvisRoll||0)+direction*.012*weight,dx=x-pivot.x,dy=y-pivot.y,xx=pivot.x+dx*Math.cos(a)-dy*Math.sin(a)+(gait.pelvisSway||0),yy=pivot.y+dx*Math.sin(a)+dy*Math.cos(a);return bodyPoint(x+(xx-x)*blend,y+(yy-y)*blend);};
     const track=(profile.near.sole[0]+profile.far.sole[0])*.5,legs={};
     for(const name of ['near','far']){
-      const leg=profile[name],f=gait[name],ca=Math.cos(f.angle),sa=Math.sin(f.angle),offset=f.contactOffset||0,idle=gait.centrumWalk?prepareLower(4):null,spread=idle?(idle.key.legs[1].sole[0]-idle.key.legs[0].sole[0])*idle.scale*.5*(name==='near'?-1:1):(leg.sole[0]-track)*(1-.10*weight),sole={x:(track-ox+spread)*s+f.x+offset*(1-ca),y:(leg.sole[1]-oy)*s+f.y-offset*sa};
+      const leg=profile[name],f=gait[name],footAngle=walking?clamp(f.angle,-.12,.12):f.angle,ca=Math.cos(footAngle),sa=Math.sin(footAngle),offset=f.contactOffset||0,idle=walking?prepareLower(4):null,spread=idle?(profile.far.sole[0]-profile.near.sole[0])*.5*(name==='near'?1:-1)*(1-.1*weight):(leg.sole[0]-track)*(1-.10*weight),sole={x:(track-ox+spread)*s+f.x+offset*(1-ca),y:(leg.sole[1]-oy)*s+f.y-offset*sa};
       const rigid=(x,y)=>{const xx=(x-leg.sole[0])*s,yy=(y-leg.sole[1])*s;return{x:sole.x+xx*ca-yy*sa,y:sole.y+xx*sa+yy*ca};};
       const heel=rigid(leg.sole[0]-(name==='near'?60:48),leg.sole[1]),toe=rigid(leg.sole[0]+(name==='near'?52:48),leg.sole[1]),cuff=rigid(leg.sole[0]-(name==='near'?16:13),leg.sole[1]-(name==='near'?62:58)),shinAngle=f.shinAngle||0,sc=Math.cos(shinAngle),ss=Math.sin(shinAngle),calfRigid=(x,y)=>{const xx=(x-leg.cuff[0])*s,yy=(y-leg.cuff[1])*s;return{x:cuff.x+xx*sc-yy*ss,y:cuff.y+xx*ss+yy*sc};};
-      legs[name]={sole,angle:f.angle,stance:f.stance,rigid,cuff,heel,toe,calfRigid,shinAngle,kneeFlex:f.kneeFlex||0,contact:{x:sole.x+offset*ca,y:sole.y+offset*sa}};
+      legs[name]={sole,angle:footAngle,stance:f.stance,rigid,cuff,heel,toe,calfRigid,shinAngle,kneeFlex:f.kneeFlex||0,contact:{x:sole.x+offset*ca,y:sole.y+offset*sa}};
     }
     return {s,ox,oy,pivot,angle,shift,bodyPoint,pelvisPoint,transform,legs};
   }
@@ -275,11 +275,10 @@
   }
   function centrumLowerTargets(profile,pose,gait,weight){
     const source=prepareLower(4),s=pose.s,point=p=>pose.pelvisPoint(pose.pivot.x+p.x*s,(profile.pelvisY-10-pose.oy+p.y)*s);
-    const targets=source.points.map(point),knees={},zero=foot=>({...foot,x:0,y:0,angle:0,shinAngle:0,contactOffset:0,kneeFlex:0}),neutral={...gait,centrumWalk:false,groundMotion:null,phase:0,near:zero(gait.near),far:zero(gait.far),bob:0,sway:0,roll:0,pelvisSway:0,pelvisRoll:0};
-    const reference=lowerTargets(profile,surfacePose(profile,profile.stature*s,neutral,0),neutral,0);
-    for(const [j,side]of ['near','far'].entries()){
-      const leg=source.key.legs[j],base=6+j*6,boot=centrumBoot(profile,pose,side),cuff=boot.cuff,rh=reference.targets[3+j],rk=reference.targets[base+1],rc=reference.targets[base+3];
-      const thigh=Math.hypot(rk.x-rh.x,rk.y-rh.y),shin=Math.hypot(rc.x-rk.x,rc.y-rk.y);
+    const targets=source.points.map(point),knees={};
+    for(const side of ['near','far']){
+      const j=side==='near'?1:0,leg=source.key.legs[j],base=6+j*6,boot=centrumBoot(profile,pose,side),cuff=boot.cuff,hipSource=source.key.hips[j];
+      const thigh=Math.hypot(leg.knee[0]-hipSource[0],leg.knee[1]-hipSource[1])*source.scale*s,shin=Math.hypot(leg.cuff[0]-leg.knee[0],leg.cuff[1]-leg.knee[1])*source.scale*s;
       let hip=targets[3+j],dx=cuff.x-hip.x,dy=cuff.y-hip.y,d=Math.max(.001,Math.hypot(dx,dy)),ux=dx/d,uy=dy/d;
       const pole=Math.min(thigh,shin)*.28,limit=(thigh+shin)*.999,minimum=Math.sqrt(thigh*thigh-pole*pole)+Math.sqrt(shin*shin-pole*pole),shift=d>limit?d-limit:d<minimum?d-minimum:0,hipShift=Math.abs(shift);
       if(shift){hip={x:hip.x+ux*shift,y:hip.y+uy*shift};targets[3+j]=hip;d-=shift;}
@@ -294,8 +293,12 @@
   function centrumLowerMesh(profile,pose,gait,weight){
     const source=prepareLower(4),{knees}=centrumLowerTargets(profile,pose,gait,weight),boots={near:centrumBoot(profile,pose,'near'),far:centrumBoot(profile,pose,'far')},triangles=[],calfMaps={};
     const sourcePoint=(paint,raw)=>({x:(raw[0]-paint.key.rect[0])/paint.key.rect[2]*paint.tile.width,y:(raw[1]-paint.key.rect[1])/paint.key.rect[3]*paint.tile.height});
-    const emit=(paint,raw,map)=>{const points=raw.map(p=>({source:sourcePoint(paint,p),destination:map(p)}));for(const ids of [[0,1,2],[0,2,3]]){const t=ids.map(i=>points[i]);if(paint!==source)t.image=paint.tile;triangles.push(t);}};
-    const body=raw=>{const p=source.norm(raw);return pose.pelvisPoint(pose.pivot.x+p.x*pose.s,(profile.pelvisY-10-pose.oy+p.y)*pose.s);};
+    const emit=(paint,raw,map)=>{const points=raw.map(p=>({source:sourcePoint(paint,p),destination:map(p)}));for(let i=1;i<points.length-1;i++){const t=[points[0],points[i],points[i+1]],a=t[0].source,b=t[1].source,d=t[2].source;if(Math.abs((b.x-a.x)*(d.y-a.y)-(b.y-a.y)*(d.x-a.x))<1e-9)continue;if(paint!==source)t.image=paint.tile;triangles.push(t);}};
+    const body=raw=>{const p=source.norm(raw),v=pose.pelvisPoint(pose.pivot.x+p.x*pose.s,(profile.pelvisY-10-pose.oy+p.y)*pose.s),hemWeight=smooth((raw[1]-210)/Math.max(1,hemAt(raw[0])-210)),nearWeight=clamp((raw[0]-490)/330,0,1);
+      // The waist stays attached to the jersey. Each trouser opening follows
+      // its own upper leg, and the calf uses this SAME moving hem boundary.
+      v.x+=(gait.far.x*(1-nearWeight)+gait.near.x*nearWeight)*.24*hemWeight;
+      v.y+=(gait.far.y*(1-nearWeight)+gait.near.y*nearWeight)*.15*hemWeight;return v;};
     const split=y=>y<=600?650-(y-500)*.4:y<=700?610-(y-600)*.4:570+(y-700)/3;
     // The current three-quarter view has a persistent near limb. Swing lift
     // must never move that leg behind its counterpart. Root scene depth still
@@ -305,29 +308,44 @@
     // fur belongs to the foreground limb. Keep those identities when attaching
     // them to the production profile's near/far trouser openings. The narrow
     // extra source fur column at image-right has no boot and is excluded.
+    const hem=[[170,520],[280,540],[380,580],[490,607.5],[540,620],[650,610],[820,571.75],[850,565],[1010,545],[1191,520]];
+    const hemAt=x=>{for(let i=1;i<hem.length;i++)if(x<=hem[i][0]){const [a,y]=hem[i-1],[b,z]=hem[i];return y+(z-y)*(x-a)/(b-a);}return hem.at(-1)[1];};
+    const clipHem=polygon=>{
+      // Split at every hem corner, then clip each convex strip against its line.
+      const pieces=[];
+      for(let i=1;i<hem.length;i++){const [x0,y0]=hem[i-1],[x1,y1]=hem[i],edge=p=>p.y-(y0+(y1-y0)*(p.x-x0)/(x1-x0));
+        let points=polygon.map(p=>({x:p[0],y:p[1]}));
+        for(const test of [p=>p.x-x0,p=>x1-p.x,edge]){const next=[];for(let k=0;k<points.length;k++){const a=points[k],b=points[(k+1)%points.length],da=test(a),db=test(b);if(da>=0)next.push(a);if((da>=0)!==(db>=0)){const t=da/(da-db);next.push({x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t});}}points=next;}
+        if(points.length>=3)pieces.push(points.map(p=>[p.x,p.y]));
+      }return pieces;
+    };
     const mainEdge=[[500,890],[560,890],[580,881],[600,887],[620,887],[640,888],[660,892],[680,888],[700,885],[720,878],[740,871],[760,861],[780,840],[800,819]];
     const edgeAt=y=>{for(let i=1;i<mainEdge.length;i++)if(y<=mainEdge[i][0]){const [a,x]=mainEdge[i-1],[b,z]=mainEdge[i];return x+(z-x)*(y-a)/(b-a);}return mainEdge.at(-1)[1];};
     // Paint each entire anatomical limb before the other. Grouping all
     // calves before all boots would let the rear shoe cut across near fur.
     const outlines={near:[[645,1020],[690,960],[715,900],[730,830],[745,824],[800,830],[860,826],[890,820],[900,795],[950,780],[985,805],[1025,850],[1100,930],[1276,1020]],far:[[45,800],[100,750],[170,715],[205,665],[230,660],[260,680],[310,710],[360,735],[400,735],[450,750],[500,830],[550,935],[595,1000]]};
-    for(const side of order){const j=side==='near'?0:1,textureIndex=1-j,leg=source.key.legs[textureIndex],bottom=textureIndex?800:735,a=source.norm([textureIndex?735:430,500]),b=source.norm([leg.cuff[0],bottom]),A=body([source.key.hips[j][0],500]),B={x:boots[side].cuff.x,y:boots[side].cuff.y+1.5};
-      const dx=b.x-a.x,dy=b.y-a.y,length=Math.hypot(dx,dy),ux=dx/length,uy=dy/length,xx=B.x-A.x,yy=B.y-A.y,d=Math.hypot(xx,yy);
-      const map=raw=>{const p=source.norm(raw),along=((p.x-a.x)*ux+(p.y-a.y)*uy)/length,across=((p.x-a.x)*uy-(p.y-a.y)*ux)*pose.s;return{x:A.x+xx*along+yy/d*across,y:A.y+yy*along-xx/d*across};};
+    for(const side of order){const textureIndex=side==='near'?1:0,bottom=textureIndex?800:735,B={x:boots[side].cuff.x,y:boots[side].cuff.y+1.5};
+      const endLeft=textureIndex?split(bottom):170,endRight=textureIndex?edgeAt(bottom):split(bottom),endCenter=(endLeft+endRight)*.5,bootAngle=pose.legs[side].angle,bc=Math.cos(bootAngle),bs=Math.sin(bootAngle);
+      const map=raw=>{const hemY=hemAt(raw[0]),offset=(raw[0]-endCenter)*source.scale*pose.s;
+        const target={x:B.x+offset*bc,y:B.y+offset*bs},root=body([raw[0],hemY]),blend=clamp((raw[1]-hemY)/Math.max(1,bottom-hemY),0,1);
+        return{x:root.x+(target.x-root.x)*blend,y:root.y+(target.y-root.y)*blend};};
       calfMaps[side]={map,textureIndex};
-      const rows=textureIndex?[500,...mainEdge.slice(1).map(point=>point[0])]:[500,600,700,bottom];for(let row=1;row<rows.length;row++){const y0=rows[row-1],y1=rows[row],left0=textureIndex?split(y0):170,right0=textureIndex?edgeAt(y0):split(y0),left1=textureIndex?split(y1):170,right1=textureIndex?edgeAt(y1):split(y1);emit(source,[[left0,y0],[right0,y0],[right1,y1],[left1,y1]],map);}
+      const topology=source.clothPolygons||(source.clothPolygons={});
+      if(!topology[side]){const rows=textureIndex?[500,...mainEdge.slice(1).map(point=>point[0])]:[500,600,700,bottom],polygons=[];
+        for(let row=1;row<rows.length;row++){const y0=rows[row-1],y1=rows[row],left0=textureIndex?split(y0):170,right0=textureIndex?edgeAt(y0):split(y0),left1=textureIndex?split(y1):170,right1=textureIndex?edgeAt(y1):split(y1);polygons.push(...clipHem([[left0,y0],[right0,y0],[right1,y1],[left1,y1]]));}topology[side]=polygons;}
+      for(const polygon of topology[side])emit(source,polygon,map);
       // Keep the complete native collar, tongue, heel and toe over THIS
       // calf cuff; never over the foreground calf of the other leg.
       const boot=boots[side],line=outlines[side],bootBottom=side==='near'?1179:1090;for(let i=1;i<line.length;i++)emit(boot.source,[line[i-1],line[i],[line[i][0],bootBottom],[line[i-1][0],bootBottom]],boot.point);
     }
-    // Unwarped source pants/pelvis finish the upper overlap over both calves.
-    const hem=[[170,520],[280,540],[380,580],[540,620],[650,610],[850,565],[1010,545],[1191,520]];
+    // One continuous waistband and two moving trouser hems cover the calf roots.
     for(let i=1;i<hem.length;i++)emit(source,[[hem[i-1][0],94],[hem[i][0],94],hem[i],hem[i-1]],body);
-    const rendered={};for(const [j,side]of ['near','far'].entries()){const leg=source.key.legs[j],boot=boots[side],ik=knees[side].ik;rendered[side]={hip:body(source.key.hips[j]),knee:calfMaps[side].map(source.key.legs[calfMaps[side].textureIndex].knee),cuff:boot.cuff,heel:boot.heel,toe:boot.toe,sole:boot.sole,source:{image:images[boot.source.key.image].src.split('/').pop(),pose:'fixed-native-contact-boot',bootLegIndex:j,furLegIndex:calfMaps[side].textureIndex,hip:source.key.hips[j],knee:leg.knee,cuff:boot.leg.cuff,heel:boot.leg.heel,toe:boot.leg.toe,sole:boot.leg.sole},renderedFromSource:true};}
+    const rendered={};for(const [j,side]of ['near','far'].entries()){const boot=boots[side];rendered[side]={hip:body(source.key.hips[calfMaps[side].textureIndex]),knee:calfMaps[side].map(source.key.legs[calfMaps[side].textureIndex].knee),cuff:boot.cuff,heel:boot.heel,toe:boot.toe,sole:boot.sole,source:{image:images[boot.source.key.image].src.split('/').pop(),pose:'fixed-native-contact-boot',bootLegIndex:j,furLegIndex:calfMaps[side].textureIndex,hip:source.key.hips[calfMaps[side].textureIndex],knee:source.key.legs[calfMaps[side].textureIndex].knee,cuff:boot.leg.cuff,heel:boot.leg.heel,toe:boot.leg.toe,sole:boot.leg.sole},renderedFromSource:true};}
     return{source,vertices:triangles.flatMap(t=>t),triangles,knees,rendered,bootSources:['nearContact']};
   }
   // End Centrum-only anatomy.
   function lowerTargets(profile,pose,gait,weight){
-    if(gait.centrumWalk)return centrumLowerTargets(profile,pose,gait,weight);
+    if(gait.centrumWalk||gait.sourceWalk)return centrumLowerTargets(profile,pose,gait,weight);
     const phases=[0,.25,.5,.68,1],i=phases.findIndex((v,j)=>j<4&&gait.phase>=v&&gait.phase<phases[j+1]),t=(gait.phase-phases[i])/(phases[i+1]-phases[i]),a=prepareLower(i),b=prepareLower((i+1)%4),idle=prepareLower(4),mix=(v,w)=>({x:v.x+(w.x-v.x)*t,y:v.y+(w.y-v.y)*t}),samplePoint=(j)=>{const v=mix(a.points[j],b.points[j]),z=idle.points[j];return{x:z.x+(v.x-z.x)*weight,y:z.y+(v.y-z.y)*weight};},sampleSole=(j)=>{const v=mix(a.norm(a.key.legs[j].sole),b.norm(b.key.legs[j].sole)),z=idle.norm(idle.key.legs[j].sole);return{x:z.x+(v.x-z.x)*weight,y:z.y+(v.y-z.y)*weight};};
     const s=pose.s,point=({x,y})=>pose.pelvisPoint(pose.pivot.x+x*s,(profile.pelvisY-10-pose.oy+y)*s),targets=a.points.map((_,j)=>point(samplePoint(j))),knees={};
     for(const [j,side]of ['near','far'].entries()){
@@ -338,7 +356,7 @@
     }
     return {targets,knees,key:weight<.45?4:(t<.5?i:(i+1)%4)};
   }
-  function lowerMesh(profile,pose,gait,weight){if(gait.centrumWalk)return centrumLowerMesh(profile,pose,gait,weight);const {targets,knees,key:index}=lowerTargets(profile,pose,gait,weight),source=prepareLower(index),n=source.points.length,tx=[...targets.map(p=>p.x),0,0,0],ty=[...targets.map(p=>p.y),0,0,0],cx=source.inverse.map(row=>row.reduce((v,a,i)=>v+a*tx[i],0)),cy=source.inverse.map(row=>row.reduce((v,a,i)=>v+a*ty[i],0));
+  function lowerMesh(profile,pose,gait,weight){if(gait.centrumWalk||gait.sourceWalk)return centrumLowerMesh(profile,pose,gait,weight);const {targets,knees,key:index}=lowerTargets(profile,pose,gait,weight),source=prepareLower(index),n=source.points.length,tx=[...targets.map(p=>p.x),0,0,0],ty=[...targets.map(p=>p.y),0,0,0],cx=source.inverse.map(row=>row.reduce((v,a,i)=>v+a*tx[i],0)),cy=source.inverse.map(row=>row.reduce((v,a,i)=>v+a*ty[i],0));
     const shoes=source.key.legs.map((leg,j)=>{const heel=source.norm(leg.heel),toe=source.norm(leg.toe),cuff=source.norm(leg.cuff),sole=source.norm(leg.sole),dx=toe.x-heel.x,dy=toe.y-heel.y,length=Math.hypot(dx,dy),u={x:dx/length,y:dy/length},v={x:dy/length,y:-dx/length},height=(cuff.x-heel.x)*v.x+(cuff.y-heel.y)*v.y,foot=pose.legs[j?'far':'near'],turn=clamp(foot.angle-Math.atan2(dy,dx),-.45,.45);return{heel,sole,u,v,length,height,foot,cs:Math.cos(turn),sn:Math.sin(turn)};});
     const vertices=source.mesh.map(vertex=>{const b=vertex.basis,x=b.at(-2),y=b.at(-1);let destination={x:b.reduce((sum,a,i)=>sum+a*cx[i],0),y:b.reduce((sum,a,i)=>sum+a*cy[i],0)},best=null;
       for(const shoe of shoes){const dx=x-shoe.heel.x,dy=y-shoe.heel.y,along=(dx*shoe.u.x+dy*shoe.u.y)/shoe.length,above=(dx*shoe.v.x+dy*shoe.v.y)/(shoe.height||1),edge=smooth((along+.22)/.16)*(1-smooth((along-1.04)/.18)),blend=edge*(1-smooth((above-.74)/.60));if(above<-.22||above>1.34||blend<=0)continue;const score=blend-Math.abs(above-.4)*.01;if(!best||score>best.score)best={shoe,blend,score};}
@@ -369,8 +387,8 @@
   function centrumJob(profile,name,distance,h,weight,motion){
     const phase=((distance/window.BearlyLocomotion.cycleLength(h))%1+1)%1,index=Math.round(phase*BODY_PHASES)%BODY_PHASES,steady=weight>=.999,idle=weight<=.0001;
     const effectivePhase=idle?0:steady?index/BODY_PHASES:phase,heading=motion?.y?(motion.cacheKey||'depth'):'horizontal';
-    const key=(motion?.centrumWalk?'square:':'native:')+name+':'+(idle?'idle':steady?index:effectivePhase+':'+weight)+':'+(idle?'idle':heading);
-    return{key,name,heading,profile,weight,steady,idle,gait:projectGroundGait(window.BearlyLocomotion.pose(window.BearlyLocomotion.cycleLength(BODY_HEIGHT)*effectivePhase,BODY_HEIGHT,weight),idle?(motion?.centrumWalk?{...motion,x:1,y:0}:null):motion)};
+    const key=(motion?.centrumWalk?'square:':motion?.sourceWalk?'route:':'native:')+name+':'+(idle?'idle':steady?index:effectivePhase+':'+weight)+':'+(idle?'idle':heading);
+    return{key,name,heading,profile,weight,steady,idle,gait:projectGroundGait(window.BearlyLocomotion.pose(window.BearlyLocomotion.cycleLength(BODY_HEIGHT)*effectivePhase,BODY_HEIGHT,weight),idle?(motion?.centrumWalk||motion?.sourceWalk?{...motion,x:1,y:0}:null):motion)};
   }
   function centrumDrop(frame){
     bodyCacheBytes-=frame.width*frame.height*4;frame.disposed=true;
@@ -407,12 +425,12 @@
     if(!centrumPreparePromise)centrumPreparePromise=warmRasterFamily({x:1,y:0,cacheKey:'horizontal',centrumWalk:true}).then(ready=>{if(!ready)centrumPreparePromise=null;return ready;});
     return centrumPreparePromise;
   }
-  function prepareRouteCache(){if(!routePreparePromise)routePreparePromise=warmRasterFamily(null).then(ready=>{if(!ready)routePreparePromise=null;return ready;});return routePreparePromise;}
+  function prepareRouteCache(){if(!routePreparePromise)routePreparePromise=warmRasterFamily({sourceWalk:true}).then(ready=>{if(!ready)routePreparePromise=null;return ready;});return routePreparePromise;}
   function centrumCacheStats(){return{...(centrumCache?.stats()||{ready:false,pending:0,queued:0,frames:0,bytes:0}),failure:centrumPrepareFailure||centrumCache?.stats().failure||null};}
   // End Centrum-only raster backend.
-  function projectGroundGait(gait,motion){return window.BearlyCentrumDepthGait?.project(gait,motion)||gait;}
+  function projectGroundGait(gait,motion){if(motion?.sourceWalk)return{...(window.BearlyCentrumDepthGait?.projectSource(gait)||gait),sourceWalk:true,groundMotion:{...motion}};return window.BearlyCentrumDepthGait?.project(gait,motion)||gait;}
   function bodyFrame(profile,name,distance,h,weight,groundMotion=null){
-    const phase=((distance/window.BearlyLocomotion.cycleLength(h))%1+1)%1,index=Math.round(phase*BODY_PHASES)%BODY_PHASES,steady=weight>=.999,idle=weight<=.0001,key=name+':'+(idle?'idle':index)+(groundMotion?.y?':'+groundMotion.cacheKey:'')+(groundMotion?.centrumWalk?':centrum-anatomy':'');
+    const phase=((distance/window.BearlyLocomotion.cycleLength(h))%1+1)%1,index=Math.round(phase*BODY_PHASES)%BODY_PHASES,steady=weight>=.999,idle=weight<=.0001,key=name+':'+(idle?'idle':index)+(groundMotion?.y?':'+groundMotion.cacheKey:'')+(groundMotion?.centrumWalk?':centrum-anatomy':groundMotion?.sourceWalk?':source-anatomy':'');
     if((steady||idle)&&bodyFrames.has(key)){bodyCacheHits++;const frame=bodyFrames.get(key);bodyFrames.delete(key);bodyFrames.set(key,frame);return frame;}
     const effectivePhase=steady?index/BODY_PHASES:phase,gait=projectGroundGait(window.BearlyLocomotion.pose(window.BearlyLocomotion.cycleLength(BODY_HEIGHT)*effectivePhase,BODY_HEIGHT,weight),groundMotion),frame=bakeBody(profile,name,gait,weight,!steady&&!idle);bodyCacheMisses++;
     if(steady||idle){bodyFrames.set(key,frame);bodyCacheBytes+=frame.width*frame.height*4;while(bodyCacheBytes>BODY_CACHE_LIMIT||bodyFrames.size>98){const oldest=bodyFrames.keys().next().value,evicted=bodyFrames.get(oldest);bodyCacheBytes-=evicted.width*evicted.height*4;evicted.disposed=true;if(evicted.bitmap){evicted.image.close();bodyBitmaps--;}if(evicted.canvas){evicted.canvas.width=1;evicted.canvas.height=1;}bodyFrames.delete(oldest);}}return frame;
@@ -425,13 +443,14 @@
     const action=state.hp===0?(state.defeatAge<.55?'collapse':'defeated'):state.hurt?(back?'backHurt':'frontHurt'):state.attack?'maul':state.held?'grab':null;
     if(action){const babyFace=fullPose(c,action,h,options);lastAudit={pose:action,carrier:action==='frontHurt'?'front':'back',integratedCarrier:true,babyFace,height:h,source:actions[action].image};c.restore();return true;}
     let slope=0;if(options.groundAt){const a=options.groundAt(px-18),b=options.groundAt(px+18);if(a!=null&&b!=null)slope=Math.atan2(b-a,36)*face;}c.rotate(slope);
-    const groundMotion=options.centrumCache?{x:1,y:0,cacheKey:'horizontal',...options.groundMotion,centrumWalk:true}:options.groundMotion;
-    const request=(options.centrumCache||options.routeCache)&&centrumCache?.available()?centrumJob(profile,name,options.distance||0,h,weight,groundMotion):null;
-    const frame=(request?centrumCache.get(request):null)||bodyFrame(profile,name,options.distance||0,h,weight,groundMotion),scale=h/BODY_HEIGHT;c.drawImage(frame.image,frame.left*scale,frame.top*scale,frame.width*scale,frame.height*scale);
+    const groundMotion=options.centrumCache?{x:1,y:0,cacheKey:'horizontal',...options.groundMotion,centrumWalk:true}:options.routeCache?{...options.groundMotion,sourceWalk:true}:options.groundMotion;
+    const renderDistance=(options.distance||0)/(options.routeCache?(window.BearlyCentrumDepthGait?.sourceStrideScale||1):1);
+    const request=(options.centrumCache||options.routeCache)&&centrumCache?.available()?centrumJob(profile,name,renderDistance,h,weight,groundMotion):null;
+    const frame=(request?centrumCache.get(request):null)||bodyFrame(profile,name,renderDistance,h,weight,groundMotion),scale=h/BODY_HEIGHT;c.drawImage(frame.image,frame.left*scale,frame.top*scale,frame.width*scale,frame.height*scale);
     const renderedWeight=frame.centrum?frame.weight:weight,renderedMotion=frame.centrum?frame.gait.groundMotion:(frame.gait.groundMotion||groundMotion);
     const gait=projectGroundGait(window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,renderedWeight),renderedMotion),pose=surfacePose(profile,h,gait,renderedWeight),passengerOptions=gait.centrumWalk?{...options,weight:renderedWeight,groundMotion:renderedMotion}:options;c.save();pose.transform(c);const babyFace=paintPassenger(c,images[profile.image],profile.torso,profile.origin,s,name,passengerOptions);c.restore();
     const landmarks={};for(const side of ['near','far']){const f=pose.legs[side],r=frame.rendered[side],point=v=>({x:v.x*scale,y:v.y*scale});landmarks[side]={...Object.fromEntries(['hip','knee','cuff','heel','toe','sole'].map(k=>[k,point(r[k])])),renderedFromSource:true,source:r.source,plannedSole:f.sole,plannedCuff:f.cuff,angle:f.angle,stance:f.stance,kneeFlex:f.kneeFlex,contact:f.contact,bootWidth:Math.hypot(r.toe.x-r.heel.x,r.toe.y-r.heel.y)*scale,rigidShoe:true};}
-    lastAudit={pose:'walking',carrier:name,integratedCarrier:true,babyFace,height:h,source:profile.image,sourceRect:frame.rect,lowerPose:frame.lowerPose,lowerSourceRect:frame.lowerRect,authoredLowerBody:true,stature:profile.stature,landmarks,gait,body:{pivot:pose.pivot,sway:pose.shift.x,bob:pose.shift.y,roll:pose.angle,pelvisSway:gait.pelvisSway,pelvisRoll:gait.pelvisRoll,slope,opaque:true,surfaces:1,continuous:true,triangles:frame.triangles,canonicalHeight:BODY_HEIGHT,lowerHeight:LOWER_HEIGHT,cachePhase:frame.gait.phase},cache:{frames:bodyFrames.size,hits:bodyCacheHits,misses:bodyCacheMisses}};if(gait.centrumWalk)lastAudit.anatomy={source:'fixed-native-idle',skinning:'independent-affine-source-patches',ikTargetsDiagnosticOnly:true,near:frame.knees.near.ik,far:frame.knees.far.ik};if(frame.centrum)lastAudit.raster={mode:'worker',requestedPhase:request?.gait.phase,renderedPhase:frame.gait.phase,requestedWeight:weight,renderedWeight,heading:frame.centrum.heading};c.restore();return true;
+    lastAudit={pose:'walking',carrier:name,integratedCarrier:true,babyFace,height:h,source:profile.image,sourceRect:frame.rect,lowerPose:frame.lowerPose,lowerSourceRect:frame.lowerRect,authoredLowerBody:true,stature:profile.stature,landmarks,gait,body:{pivot:pose.pivot,sway:pose.shift.x,bob:pose.shift.y,roll:pose.angle,pelvisSway:gait.pelvisSway,pelvisRoll:gait.pelvisRoll,slope,opaque:true,surfaces:1,continuous:true,triangles:frame.triangles,canonicalHeight:BODY_HEIGHT,lowerHeight:LOWER_HEIGHT,cachePhase:frame.gait.phase},cache:{frames:bodyFrames.size,hits:bodyCacheHits,misses:bodyCacheMisses}};if(gait.centrumWalk||gait.sourceWalk)lastAudit.anatomy={source:'fixed-native-idle',skinning:'single-owner-hem-bound-source-surface',ikTargetsDiagnosticOnly:true,near:frame.knees.near.ik,far:frame.knees.far.ik};if(frame.centrum)lastAudit.raster={mode:'worker',requestedPhase:request?.gait.phase,renderedPhase:frame.gait.phase,requestedWeight:weight,renderedWeight,heading:frame.centrum.heading};c.restore();return true;
   }
   let sourceWarmupPromise=null,sourceWarmupDone=0,sourceWarmupMs=0,sourceWarmupMaxMs=0;
   let sourceWarmupForeground=false,sourceWarmupSchedule=null,sourceWarmupPending=null,sourceWarmupFailure=null,sourceWarmupRetries=0;

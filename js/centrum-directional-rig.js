@@ -91,7 +91,7 @@
     const view=prepared[options.centrumView],state=options.state||{};
     if(!view||!lowerBaby||!window.BearlyBabyPassenger?.ready()||!window.BearlyHeroRig?.ready()||state.baby||state.hp===0||state.hurt||state.attack||state.held)return false;
     const scale=h/STATURE,weight=clamp(options.weight||0,0,1),native=window.BearlyLocomotion.pose(options.distance||0,h,weight),gait=window.BearlyCentrumDepthGait?.project(native,options.groundMotion)||native;
-    const bob=(gait.bob||0)*.65,roll=(gait.roll||0)*.55,sway=(gait.sway||0)*.55,legs={};let drawCalls=0;
+    const bob=(gait.bob||0)*1.8,roll=(gait.roll||0)*1.35,sway=(gait.sway||0)*1.6,legs={};let drawCalls=0;
     const pivot={x:view.origin[0],y:(view.legs.near.hip[1]+view.legs.far.hip[1])*.5},br=Math.cos(roll),bs=Math.sin(roll);
     const bodyMap=p=>({x:pivot.x+(p.x-pivot.x)*br-(p.y-pivot.y)*bs+sway/scale,y:pivot.y+(p.x-pivot.x)*bs+(p.y-pivot.y)*br+bob/scale});
     c.save();c.translate(px,py);if(face<0)c.scale(-1,1);

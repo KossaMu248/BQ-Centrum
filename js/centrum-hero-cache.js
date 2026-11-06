@@ -52,7 +52,7 @@
       if(pending)finish(pending.job,null);if(queued)finish(queued,null);pending=queued=null;
       worker?.terminate();if(workerURL){URL.revokeObjectURL(workerURL);workerURL=null;}
     }
-    const family=job=>job.gait?.centrumWalk?'square':'native';
+    const family=job=>job.gait?.centrumWalk?'square':job.gait?.sourceWalk?'route':'native';
     function slot(job){return prefix+family(job)+':'+(job.idle?job.name+':idle':job.steady?job.key:job.name+':transient:'+job.heading);}
     function touch(key,frame){map.delete(key);map.set(key,frame);return frame;}
     function exact(job){const key=slot(job),frame=map.get(key);return frame&&!frame.disposed&&frame.centrum?.key===job.key?touch(key,frame):null;}

@@ -32,7 +32,8 @@ for(const profileName of ['front','back'])for(const h of [145,200,280])for(const
    const paint=t.image?prepared:idle,raw=t.map(p=>({x:p.source.x/paint.tile.width*paint.key.rect[2]+paint.key.rect[0],y:p.source.y/paint.tile.height*paint.key.rect[3]+paint.key.rect[1]}));
    if(!t.image&&raw.some(p=>p.y<499.999))return {side:'pants',kind:'pants',raw};
    const x=raw.reduce((sum,p)=>sum+p.x,0)/3;
-   return {side:x<620?'far':'near',kind:t.image?'boot':'calf',raw};
+   const y=raw.reduce((sum,p)=>sum+p.y,0)/3,split=y<=600?650-(y-500)*.4:y<=700?610-(y-600)*.4:570+(y-700)/3;
+   return {side:x<(t.image?620:split-1e-7)?'far':'near',kind:t.image?'boot':'calf',raw};
   });
   if(!baselineOrderOnly){
    const legs=identity.filter(part=>part.side!=='pants'),sides=legs.map(part=>part.side);

@@ -87,3 +87,7 @@ The user requested faster walking and a clear next priority. This target-only pa
 ## Stage21 — Wider camera and bounded Pages artifact
 
 The authorized target main/Pages follow-up pulls Centrum and route cameras back20%, keeps all existing movement/combat/physics/art and repairs newly visible render-edge culling. The full repository was within87,125 bytes of the1GiB Pages artifact limit before this stage. Target Pages now uses the repository deployment workflow to stage the split runtime, every original asset, root attribution and source references (~256MiB), while historical test media remains in Git. No prior evidence or artwork is removed. Exact current push/deployment status is verified externally after the final frozen commit; Git history and Actions provide its identifiers without self-referential file edits. Neither donor is a destination; own Git configuration is preserved.
+
+## Stage22 — Walking layer/body repair
+
+The authorized target-only follow-up repairs duplicated trouser pixels, moving calf/hem attachment and coordinated body motion, keeping the accepted camera and physical game rules. Actual regression/browser conditions are in TEST_REPORT.md and Stage22 evidence. The clean archive certificate stays external to its ZIP; final main/Pages hashes are read back after commit. Existing runtime-only deployment waits for the automatic branch build, preserving every original asset and keeping review media in Git. Neither donor is a destination.

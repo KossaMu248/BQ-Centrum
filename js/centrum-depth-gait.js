@@ -3,7 +3,7 @@
    gameplay state. Original horizontal rendering can bypass this module. */
 (() => {
   'use strict';
-  const depthScale=.30,depthSpeed=80,walkSpeed=200,strideScale=.70,epsilon=1e-8;
+  const depthScale=.30,depthSpeed=80,walkSpeed=200,strideScale=.70,sourceStrideScale=.85,epsilon=1e-8;
   const walkAcceleration=1600,walkBraking=2400,sourceWalkSpeed=180,sourceWalkAcceleration=1800,sourceWalkBraking=2400;
   const finite=value=>typeof value==='number'&&Number.isFinite(value)?value:0;
   function distance(dx,dy){return Math.hypot(finite(dx),finite(dy)/depthScale);}
@@ -34,5 +34,9 @@
       pelvisSway:gait.pelvisSway*(walk?.55:1),pelvisRoll:gait.pelvisRoll*(walk?.55:1),
       centrumWalk:walk,groundMotion:{x,y,depthScale,cacheKey:direction.cacheKey,centrumWalk:walk},depthProjected:true};
   }
-  window.BearlyCentrumDepthGait=Object.freeze({depthScale,depthSpeed,walkSpeed,walkAcceleration,walkBraking,sourceWalkSpeed,sourceWalkAcceleration,sourceWalkBraking,strideScale,distance,strideDistance:(dx,dy)=>distance(dx,dy)/strideScale,metricDistance:distance,heading,project});
+  function projectSource(gait){
+    const foot=f=>({...f,x:f.x*sourceStrideScale,y:f.y*sourceStrideScale,contactOffset:(f.contactOffset||0)*sourceStrideScale});
+    return{...gait,near:foot(gait.near),far:foot(gait.far),sourceWalk:true};
+  }
+  window.BearlyCentrumDepthGait=Object.freeze({depthScale,depthSpeed,walkSpeed,walkAcceleration,walkBraking,sourceWalkSpeed,sourceWalkAcceleration,sourceWalkBraking,strideScale,sourceStrideScale,projectSource,distance,strideDistance:(dx,dy)=>distance(dx,dy)/strideScale,metricDistance:distance,heading,project});
 })();
