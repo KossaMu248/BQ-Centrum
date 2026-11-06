@@ -36,5 +36,8 @@
     "outsideSubpathRequests": 0
   },
   "sceneArrivalChecks": 20,
-  "projectionSamples": 20
+  "projectionSamples": 36,
+  "arrivalHealthValues": [
+    73
+  ]
 }
