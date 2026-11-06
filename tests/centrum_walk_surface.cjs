@@ -6,14 +6,14 @@ const current=fs.readFileSync('js/hero-rig.js','utf8');
 function rig(code=current){
  function context(){return new Proxy({},{get(o,k){if(k==='getImageData')return()=>({data:new Uint8ClampedArray(4)});return k in o?o[k]:()=>{};},set(o,k,v){o[k]=v;return true;}});}
  const window={},sandbox={window,Image:class{naturalWidth=2400;naturalHeight=2400;},Path2D:class{moveTo(){}quadraticCurveTo(){}lineTo(){}closePath(){}},document:{createElement:()=>({width:0,height:0,dataset:{},getContext:context})}};
- for(const n of ['locomotion','baby-passenger','centrum-depth-gait'])vm.runInNewContext(fs.readFileSync('js/'+n+'.js','utf8'),sandbox);
+ for(const n of ['locomotion','baby-passenger','centrum-depth-gait','centrum-walk-pose'])vm.runInNewContext(fs.readFileSync('js/'+n+'.js','utf8'),sandbox);
  const marker='  window.BearlyHeroRig={';assert.equal(code.split(marker).length,2);
  vm.runInNewContext(code.replace(marker,'  window.__surface={profiles,surfacePose,lowerMesh,prepareLower,projectGroundGait,centrumJob,bodyFrame};\n'+marker),sandbox);window.BearlyHeroRig.preload();return{...window.__surface,window,context};
 }
 const hem=[[170,520],[280,540],[380,580],[490,607.5],[540,620],[650,610],[820,571.75],[850,565],[1010,545],[1191,520]];
 const hemAt=x=>{for(let i=1;i<hem.length;i++)if(x<=hem[i][0])return hem[i-1][1]+(hem[i][1]-hem[i-1][1])*(x-hem[i-1][0])/(hem[i][0]-hem[i-1][0]);return hem.at(-1)[1];};
 const near=(a,b,e=1e-6)=>assert(Math.abs(a-b)<=e,`${a} != ${b}`);
-function submitted(api,profile,h,phase,weight,motion){const gait=api.projectGroundGait(api.window.BearlyLocomotion.pose(api.window.BearlyLocomotion.cycleLength(h)*phase,h,weight),motion),pose=api.surfacePose(profile,h,gait,weight),mesh=api.lowerMesh(profile,pose,gait,weight),source=api.prepareLower(4);
+function submitted(api,profile,h,phase,weight,motion){const gait=api.projectGroundGait(api.window.BearlyLocomotion.pose(api.window.BearlyLocomotion.cycleLength(h)*phase,h,weight),motion,weight),pose=api.surfacePose(profile,h,gait,weight),mesh=api.lowerMesh(profile,pose,gait,weight),source=api.prepareLower(4);
  const raw=v=>({x:v.source.x/source.tile.width*source.key.rect[2]+source.key.rect[0],y:v.source.y/source.tile.height*source.key.rect[3]+source.key.rect[1]});
  const parts=mesh.triangles.filter(t=>!t.image).map(t=>({t,raw:t.map(raw)}));return{gait,pose,mesh,source,parts};}
 function contract(code=current,dense=false){const api=rig(code),r={cases:0,calfVertices:0,hemJoins:0,worstSeamResidual:0,pelvisCases:0,sourceCases:0,cacheCases:0};
@@ -45,6 +45,10 @@ for(const [name,from,to]of [
 }
 // Rejected source-domain regression also applies to the actual previous game.
 const baseline=JSON.parse(fs.readFileSync('references/source/stage22-source-integration.json','utf8')).files['js/hero-rig.js'];let old=current;
+const stage23=JSON.parse(fs.readFileSync('references/source/stage23-source-integration.json','utf8')).files['js/hero-rig.js'];
+assert.equal(crypto.createHash('sha256').update(old).digest('hex'),stage23.currentSha256,'reviewed Stage23 renderer');
+for(const change of [...stage23.changes].reverse()){assert(old.includes(change.current));old=old.replace(change.current,change.previous);}
+assert.equal(crypto.createHash('sha256').update(old).digest('hex'),stage23.previousSha256,'exact Stage22 renderer before older inverse');
 for(const change of [...baseline.changes].reverse()){assert(old.includes(change.current));old=old.replace(change.current,change.previous);}
 assert.equal(crypto.createHash('sha256').update(old).digest('hex'),baseline.previousSha256,'exact previous renderer comes from the reviewed inverse, without Git or a donor');
 assert.throws(()=>contract(old),assert.AssertionError,'previous published renderer must expose the defect');report.previousPublishedDefectRejected=true;

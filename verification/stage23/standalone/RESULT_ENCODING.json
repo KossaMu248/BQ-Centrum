@@ -1,0 +1,11 @@
+{
+  "file": "results.json.gz",
+  "encoding": "gzip level9, timestamp0",
+  "decodedEncoding": "UTF-8 compact JSON with final newline",
+  "decodedSHA256": "ca64814df1db09595278d78a3801f805fb7f6b90a958bac2c6cf974d33977924",
+  "compressedSHA256": "924685aa55d10c27e55c3ea59a1fb2cea376e02e87ff8a21c9befcb2b81cc8fe",
+  "decodedBytes": 431142,
+  "compressedBytes": 80816,
+  "exactRoundtripVerified": true,
+  "scope": "Lossless encoding only. Every assertion, result field and measurement is retained; this is not another test run."
+}

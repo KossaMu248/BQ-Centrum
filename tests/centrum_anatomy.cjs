@@ -5,7 +5,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 function context(){const state={globalAlpha:1},stack=[];return new Proxy(state,{get(o,key){if(key==='save')return()=>stack.push({...o});if(key==='restore')return()=>Object.assign(o,stack.pop());return key in o?o[key]:()=>{};},set(o,k,v){o[k]=v;return true;}});}
 const window={},sandbox={window,Image:class{naturalWidth=2400;naturalHeight=2400;},Path2D:class{moveTo(){}quadraticCurveTo(){}lineTo(){}closePath(){}},document:{createElement:()=>({width:0,height:0,dataset:{},getContext:context})}};
-for(const name of ['locomotion','baby-passenger','centrum-depth-gait','hero-rig']){let code=fs.readFileSync('js/'+name+'.js','utf8');if(name==='hero-rig')code=code.replace('window.BearlyHeroRig={','window.__anatomyLab={surfacePose,lowerMesh,profiles};window.BearlyHeroRig={');vm.runInNewContext(code,sandbox);}
+for(const name of ['locomotion','baby-passenger','centrum-depth-gait','centrum-walk-pose','hero-rig']){let code=fs.readFileSync('js/'+name+'.js','utf8');if(name==='hero-rig')code=code.replace('window.BearlyHeroRig={','window.__anatomyLab={surfacePose,lowerMesh,profiles};window.BearlyHeroRig={');vm.runInNewContext(code,sandbox);}
 const rig=window.BearlyHeroRig,walk=window.BearlyCentrumDepthGait,gait=window.BearlyLocomotion;rig.preload();
 const report={cases:0,bootRatios:{near:[],far:[]},maxHipShift:0,maxThighError:0,maxShinError:0,sourceTriangles:0,minAreaRatio:Infinity,moods:{}};
 for(const [vx,vy]of [[130,0],[0,-52],[0,52],[92,-37],[92,37]])for(let phase=0;phase<32;phase++){

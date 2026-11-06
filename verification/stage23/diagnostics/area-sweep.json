@@ -1,0 +1,26 @@
+{
+  "scope": "Additional hard-failing actual submitted-triangle scan, using tests/centrum_walk_surface.cjs production VM fixture; geometry only, not visual proof.",
+  "phasesPerCycle": 96,
+  "carriers": [
+    "front",
+    "back"
+  ],
+  "heights": [
+    145,
+    200,
+    280
+  ],
+  "weights": [
+    0,
+    0.25,
+    1
+  ],
+  "motionFamilies": 6,
+  "cases": 10368,
+  "submittedTriangles": 2674944,
+  "minimumDestinationToSourceAreaRatio": 0.0004489701396109423,
+  "passed": true,
+  "heroSHA256": "d2016d30604a95f4aa44231910700b32e9875ed8d9fe998ccd0461d25a5b339e",
+  "poseSHA256": "99342130a26bd5a640da4e015c17b434ab202a3329273456fcabd21369518c43",
+  "scriptSHA256": "a611084ce321a6d38de8ca24f790fd8cd5d62e0f2ba7bac217bb8dd513801376"
+}

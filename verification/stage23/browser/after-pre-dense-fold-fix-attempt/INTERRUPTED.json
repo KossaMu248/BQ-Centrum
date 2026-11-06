@@ -1,0 +1,5 @@
+{
+  "accepted": false,
+  "reason": "Root withdrew runtime freeze after denser5184-case sweep exposed an additional real fold. Native after capture stopped before completion. Not final Stage23 proof.",
+  "runtimeChangesAuthorizedByRoot": true
+}

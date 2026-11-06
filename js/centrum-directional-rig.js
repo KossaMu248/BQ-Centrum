@@ -90,8 +90,8 @@
   function draw(c,px,py,h,face,options={}){
     const view=prepared[options.centrumView],state=options.state||{};
     if(!view||!lowerBaby||!window.BearlyBabyPassenger?.ready()||!window.BearlyHeroRig?.ready()||state.baby||state.hp===0||state.hurt||state.attack||state.held)return false;
-    const scale=h/STATURE,weight=clamp(options.weight||0,0,1),native=window.BearlyLocomotion.pose(options.distance||0,h,weight),gait=window.BearlyCentrumDepthGait?.project(native,options.groundMotion)||native;
-    const bob=(gait.bob||0)*1.8,roll=(gait.roll||0)*1.35,sway=(gait.sway||0)*1.6,legs={};let drawCalls=0;
+    const scale=h/STATURE,weight=clamp(options.weight||0,0,1),native=window.BearlyLocomotion.pose(options.distance||0,h,weight),gait=window.BearlyCentrumDepthGait?.project(native,options.groundMotion)||native,wp=window.BearlyCentrumWalkPose?.sample(gait,h,weight);
+    const bob=wp?(wp.chestBob+wp.pelvisDrop)*h:(gait.bob||0)*1.8,roll=wp?wp.chestLean*.35+wp.shoulderTurn+(gait.roll||0)*.35:(gait.roll||0)*1.35,sway=wp?wp.chestSway*h:(gait.sway||0)*1.6,legs={};let drawCalls=0;
     const pivot={x:view.origin[0],y:(view.legs.near.hip[1]+view.legs.far.hip[1])*.5},br=Math.cos(roll),bs=Math.sin(roll);
     const bodyMap=p=>({x:pivot.x+(p.x-pivot.x)*br-(p.y-pivot.y)*bs+sway/scale,y:pivot.y+(p.x-pivot.x)*bs+(p.y-pivot.y)*br+bob/scale});
     c.save();c.translate(px,py);if(face<0)c.scale(-1,1);
@@ -103,7 +103,7 @@
       // Keep the authored rest knee and a small outward swing bend. Squaring
       // native flex makes its added velocity zero at toe-off and landing.
       // Feet stay in their existing floor frame; no shoe scaling or leg IK.
-      const flex=clamp(f.kneeFlex||0,0,1),kneeBend=l.bendSign*STATURE*.016*flex*flex,across=l.kneeAcross+kneeBend;
+      const flex=clamp(f.kneeFlex||0,0,1),kneeBend=l.bendSign*STATURE*(wp?Math.min(.021,wp.knees[side]):.016*flex*flex),across=l.kneeAcross+kneeBend;
       const knee=point(hip.x+dxBone*l.kneeAlong+dyBone/boneLength*across,hip.y+dyBone*l.kneeAlong-dxBone/boneLength*across);
       drawPart(c,l.pants,segmentMap(l.hip,l.knee,hip,knee));drawPart(c,l.calf,segmentMap(l.knee,l.cuff,knee,cuff));drawPart(c,l.boot,rigid);drawCalls+=3;
       legs[side]={hip,knee,cuff,sole,contact:point(l.sole[0]+dx,l.sole[1]+(f.groundDepth||0)/scale),stance:f.stance,sourceFoot:side,kneeBend:kneeBend*scale};

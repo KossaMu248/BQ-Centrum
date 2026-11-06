@@ -17,12 +17,19 @@ reverse19 = verifier['reverse_stage19_source']
 reverse20 = verifier['reverse_stage20_source']
 reverse21 = verifier['reverse_stage21_source']
 reverse22 = verifier['reverse_stage22_source']
+reverse23 = verifier['reverse_stage23_source']
 checks = []
+
+
+def stage22_text(source):
+    """Normalize current articulation before every older source guard."""
+    current = (ROOT / source).read_text()
+    return reverse23(source, current) if source in verifier['STAGE23_PREVIOUS'] else current
 
 
 def stage21_text(source):
     """Normalize the current renderer repair before every older guard."""
-    current = (ROOT / source).read_text()
+    current = stage22_text(source)
     return reverse22(source, current) if source in verifier['STAGE22_PREVIOUS'] else current
 
 
@@ -328,7 +335,7 @@ with patch.object(Path, 'read_bytes', modified_stage21_manifest):
 assert len(checks) == 18 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 * len(stage18_cases) + 3 * len(stage19_cases) + 3 * len(stage20_cases) + 3 * len(stage21_cases)
 stage22_cases = []
 for source, expected in verifier['STAGE22_PREVIOUS'].items():
-    current = (ROOT / source).read_text()
+    current = stage22_text(source)
     restored = reverse22(source, current)
     assert hashlib.sha256(restored.encode()).hexdigest() == expected
     checks.append(source + ' exact Stage22 inverse')
@@ -348,9 +355,43 @@ manifest22 = ROOT / 'references/source/stage22-source-integration.json'
 def modified_stage22_manifest(path):
     return read_bytes(path) + (b'\n' if path == manifest22 else b'')
 with patch.object(Path, 'read_bytes', modified_stage22_manifest):
-    rejected('Stage22 inverse manifest tampering', lambda: reverse22('js/game.js', (ROOT / 'js/game.js').read_text()))
+    rejected('Stage22 inverse manifest tampering', lambda: reverse22('js/game.js', stage22_text('js/game.js')))
 
 assert len(checks) == 19 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 * len(stage18_cases) + 3 * len(stage19_cases) + 3 * len(stage20_cases) + 3 * len(stage21_cases) + 3 * len(stage22_cases)
+stage23_cases = []
+for source, expected in verifier['STAGE23_PREVIOUS'].items():
+    current = (ROOT / source).read_text()
+    restored = reverse23(source, current)
+    assert hashlib.sha256(restored.encode()).hexdigest() == expected
+    checks.append(source + ' exact Stage23 inverse')
+    stage23_cases.append(source)
+    rejected(source + ' appended Stage23 unreviewed source', lambda: reverse23(source, current + '\n// unreviewed source edit\n'))
+    if source.endswith('.html'):
+        marker, replacement = '<script src=', '<script async src='
+    elif source == 'js/game.js':
+        marker, replacement = '  function update(dt){', '  function update(dt){dt*=2;'
+    else:
+        marker, replacement = '  function draw(c,px,py,h,face,options={}){', '  function draw(c,px,py,h,face,options={}){h*=.5;'
+    assert current.count(marker) >= 1, (source, marker)
+    rejected(source + ' Stage23 unreviewed native/physics/load-order path', lambda: reverse23(source, current.replace(marker, replacement, 1)))
+
+# Pin both the painted knee drive and shared-leg nonfolding limit, while the
+# separate joint-motion test verifies their actual submitted geometric effects.
+for marker, replacement, label in [
+    ('(gait.walkPose?.knees[side]||0)*profile.stature*pose.s', '0', 'painted knee drive'),
+    ('bendWeight=clamp(safe,0,1);', 'bendWeight=1;', 'shared-leg positive-area limit'),
+]:
+    current = (ROOT / 'js/hero-rig.js').read_text()
+    assert current.count(marker) == 1
+    rejected('Stage23 unreviewed ' + label, lambda: reverse23('js/hero-rig.js', current.replace(marker, replacement, 1)))
+
+manifest23 = ROOT / 'references/source/stage23-source-integration.json'
+def modified_stage23_manifest(path):
+    return read_bytes(path) + (b'\n' if path == manifest23 else b'')
+with patch.object(Path, 'read_bytes', modified_stage23_manifest):
+    rejected('Stage23 inverse manifest tampering', lambda: reverse23('js/game.js', (ROOT / 'js/game.js').read_text()))
+
+assert len(checks) == 22 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 * len(stage18_cases) + 3 * len(stage19_cases) + 3 * len(stage20_cases) + 3 * len(stage21_cases) + 3 * len(stage22_cases) + 3 * len(stage23_cases)
 print(f'PASS: 944 protected originals; all earlier guards retained; '
-      f'{len(stage22_cases)} exact Stage22 inverses/{2 * len(stage22_cases)} rejected source/surface/load-order mutations '
-      'and Stage22 manifest tampering; cycling simulation block unchanged; all mutations in memory.')
+      f'{len(stage23_cases)} exact Stage23 inverses/{2 * len(stage23_cases) + 2} rejected source/articulation/load-order mutations '
+      f'and Stage23 manifest tampering; cycling simulation block unchanged; {len(checks)} total in-memory checks.')
