@@ -22,7 +22,7 @@ Additional verification passed:
 
 Instrumentation found one pending main game loop, stable input-listener registrations and no sampled duplicate baby/bicycle. Source simulation stays held while exploring. Real normal-size screenshots, phase/input/state traces and clips support the results; fixtures in secondary stress tests are explicitly distinguished from the fully earned primary route.
 
-[Compact test report](TEST_REPORT.md) · [Actual evidence](verification/stage8/README.md) · [Prior art/source comparison](verification/stage7/README.md)
+[Compact test report](TEST_REPORT.md) · [Actual evidence](https://github.com/KossaMu248/BQ-Centrum/blob/main/verification/stage8/README.md) · [Prior art/source comparison](https://github.com/KossaMu248/BQ-Centrum/blob/main/verification/stage7/README.md)
 
 ## Delivery and limits
 
@@ -47,7 +47,7 @@ The focused video has 57.14 seconds of actual walking shown at 2× (28.75 second
 
 Firefox 153 and Linux WebKit 26.5 both passed 30 root/subpath startup/scene groups with desktop/phone viewports. Firefox also passed the 15-execution native task/economy/remount run. WebKit completed 13 task/economy groups before a 35-second return timeout. A separate post-quest fixture then passed native Q→walking→same-bike remount in about 12 seconds, plus final jamb return/collision checks (five groups per engine). The original timeout cause was not captured, so no single uninterrupted WebKit full-flow pass is claimed.
 
-[Current report](TEST_REPORT.md) · [Stage9 evidence](verification/stage9/README.md) · [walking/character limits](verification/stage9/gameplay/README.md). The historical Stage 8 edge/combat results remain separate; those are not relabelled as fresh physical-device tests.
+[Current report](TEST_REPORT.md) · [Stage9 evidence](https://github.com/KossaMu248/BQ-Centrum/blob/main/verification/stage9/README.md) · [walking/character limits](https://github.com/KossaMu248/BQ-Centrum/blob/main/verification/stage9/gameplay/README.md). The historical Stage 8 edge/combat results remain separate; those are not relabelled as fresh physical-device tests.
 
 Remaining limits: source side/front silhouettes, cropped upper facades on phone cover framing, and possible far-right phone heart/bag overlap with the bear’s helmet; the baby stays visible. Physical phones/Safari were skipped; gamepads and sustained mobile/thermal performance remain untested. Linux/headless shared-CPU frame times include substantial cold/browser stalls and are no device performance guarantee. Neither donor repository/save/deployment was written. No Pages deployment or force push.
 
@@ -71,7 +71,7 @@ An earlier baseline full WebKit flow also passed. The Stage 9 timeout was not re
 
 Read-only profiling identified native source mesh baking as the main walking cost. The roughly 0.25 ms frozen-audit optimization was declined to preserve the live danger bridge for little gain. Source renderers and cache limits remain intact. The final exclusive desktop repeat passed eight invariants with one loop, bounded caches/no NPC rebakes and actual movement. Ready 1.09s, E→Square 15.09s; idle loop CPU median 3.2ms, moving 10.1–11.4ms and frame medians 16.7–33.2ms / p95 33.4ms. HUD layout has a small measured cost rather than a claimed free optimization. Final profile and responsive-gallery details are recorded in the Stage 10 evidence.
 
-[Current test report](TEST_REPORT.md) · [Stage 10 evidence](verification/stage10/README.md) · [HUD review](verification/stage10/hud/README.md) · [browser flows](verification/stage10/browsers/README.md).
+[Current test report](TEST_REPORT.md) · [Stage 10 evidence](https://github.com/KossaMu248/BQ-Centrum/blob/main/verification/stage10/README.md) · [HUD review](https://github.com/KossaMu248/BQ-Centrum/blob/main/verification/stage10/hud/README.md) · [browser flows](https://github.com/KossaMu248/BQ-Centrum/blob/main/verification/stage10/browsers/README.md).
 
 The original side/front silhouettes and some upper-façade cropping are retained presentation constraints. Cold preparation/first-direction bakes remain a measured cost, without a mobile FPS guarantee. Code inspection confirms gamepad mapping is not implemented; only keyboard/touch controls are supported. Physical testing is skipped. Target-only GitHub authorization continues; no donor repository/save, deployment or Pages configuration is changed.
 
@@ -96,7 +96,7 @@ Actual final verification:
 
 The optional raster-equivalence lab remains a **failed** check: all 12 pairs exceed its original raw-byte/2-LSB visible threshold, even after native bitmap settling. Numeric geometry matches exactly; paired 1× lab images show differences along clipped-triangle seams. No byte/pixel-equivalence claim is made, and the threshold was not loosened. Original asset hashes and the accepted normal-size gameplay likeness are separate evidence.
 
-Remaining limits: cold scene preparation around 15 seconds, brief first-heading idle fallback (~120ms extra in the recorded desktop sample), existing three-quarter silhouettes/facade cropping and synchronous fallback cost on unsupported workers. Physical-device/thermal tests remain skipped; no fresh Firefox claim. [Current report](TEST_REPORT.md) and [Stage11 evidence](verification/stage11/README.md) give actual conditions. Clean archive validation is recorded externally beside the delivery; publication remains limited to the authorized target main/Pages, with no donor/save/deployment changes.
+Remaining limits: cold scene preparation around 15 seconds, brief first-heading idle fallback (~120ms extra in the recorded desktop sample), existing three-quarter silhouettes/facade cropping and synchronous fallback cost on unsupported workers. Physical-device/thermal tests remain skipped; no fresh Firefox claim. [Current report](TEST_REPORT.md) and [Stage11 evidence](https://github.com/KossaMu248/BQ-Centrum/blob/main/verification/stage11/README.md) give actual conditions. Clean archive validation is recorded externally beside the delivery; publication remains limited to the authorized target main/Pages, with no donor/save/deployment changes.
 
 
 # Stage12 — Correct leg ownership; real angles still pending
@@ -105,7 +105,7 @@ The user found defects missed by the prior visual gate. The larger foreground co
 
 Corrected the source sampling, preserving total shoe size but assigning the production near/far proportions, matching foreground/background calf patches to their trouser openings, excluding that extra strip and keeping the current three-quarter far leg behind the near leg. Original source pixels, baby/attachment/scale, riding renderer, physics, camera/scenes, worker budget and on-demand I/menu inventory remain unchanged.
 
-Verified 19 unit suites / 35 JS syntax / 944 strict source reconstructions, plus negative mutation checks. The regression fails against the published size/order bugs and passes 240 pose / 720 lift-order / 6 baby cases after repair. Actual 26 before/after screenshots and a 10.08-second 1× walking clip supplement the math; both desktop/touch post-metadata native transfer/move/pause/I/menu/remount checks pass with 100 HP unchanged and one bicycle/passenger. No JS/HTTP errors. [Evidence](verification/stage12/README.md).
+Verified 19 unit suites / 35 JS syntax / 944 strict source reconstructions, plus negative mutation checks. The regression fails against the published size/order bugs and passes 240 pose / 720 lift-order / 6 baby cases after repair. Actual 26 before/after screenshots and a 10.08-second 1× walking clip supplement the math; both desktop/touch post-metadata native transfer/move/pause/I/menu/remount checks pass with 100 HP unchanged and one bicycle/passenger. No JS/HTTP errors. [Evidence](https://github.com/KossaMu248/BQ-Centrum/blob/main/verification/stage12/README.md).
 
 **The up/down angle request remains unimplemented.** The prior change only leaned the same source view. A renewed audit found no compatible toward/away bear artwork; new matching bear-only views require permission under the user's earlier instruction prohibiting regenerated characters. The original baby must remain untouched. The explicit artwork question is pending; no generated views or false angle-completion claim are included.
 
@@ -212,3 +212,17 @@ Actual8before/afterChromiumdesktop/CDPtouchcontexts verifycardinal/diagonalheldr
 Final34CJS/38syntax/944originals/provenance/8codecPASS. Productionmovementcontractscoverdirections, stops, hold/pause/hit-stop, realsweeps/bounds/voidfloor/config overrides/specialmodes+3regressions; activegait24stances residual<7e-10. Four source inverses/6hunks/8mutation+manifesttamper retainallpriorguards; all919art/originalcyclingblockunchanged. Exact standalone/archive/mainPagesresultsexternalafterfreeze. Physicaltesting skipped.
 
 Nextpriority: finish ONEexistingBilly's route as a complete quality bar—ride→park→shop/task→courtyard→report/reward/eat→samebike. First improve readable phoneUI/nearestaction/objective prompts, quest/shop feedback and clear entry/loading transitions; acceptance is a fresh player completing it without debug help or extra explanation while baby stays visible. Then improve civilian/hostile warnings, attack/hit/recovery readability without damage redesign. Hold new scenes/quests/economy systems until that loop feels dependable.
+
+# Stage21 — Wider view, preserved movement and fighting
+
+Implemented the user's further zoom-out request: uniform Centrum0.60 and copied route0.80,20% smaller on screen /25% more visible world width and height. Native rig200, original continuous baby/proportions/expressions/attachment, approved parent angles, brisk Stage20 movement and all five floor/solid/arrival/save coordinates remain. Title1.35 and legacy copied-room framing stay. The same compact network remains; margins are nonwalkable, not new districts or terrain. Source street fighting remains playable with original rules; peaceful Centrum does not gain a new combat system.
+
+Wider render bounds fix newly visible scenery/ramps/stars/hazards/thrown-item clipping without changing simulation/AI/damage. Corrected small-map centering to include south padding, keeping grounded feet above phone controls even when the whole scene fits. No new loop, listeners, art, economy or save schema.
+
+Actual verification:35CJS/38syntax,944 exact original reconstructions/all919 art+CSS, provenance/eight codecs, four exact source inverses/eight hunks/eight new rejected mutations+manifest tamper; all prior guards retained. Original17,332-character cycling update unchanged. New216frustum-corner/27range/6ground/3projectile cases reject three old bugs; existing camera matrices/phone head+boot assertions remain strict.
+
+Four baseline and seven accepted after browser groups cover desktop/CDPtouch native walking, diagonals, bench collisions, arcade/food-shop/named returns, reload, bag/pause/fullscreen/viewport changes and same grounded bicycle/passenger at100HP. Both native gang attacks apply original22damage, incoming damage persists, and original back/front baby calibration is checked. One loop, project-only saves, no accepted JS/console/HTTP errors or runtime drift. Helpers were corrected for discovery-dialogue dismissal, source back-carrier calibration and current walking pace; failed attempts are disclosed outside final proof. Exact south floor917.993352/918 and same-bike return pass.
+
+24new normal-size screenshots/four baselines plus7.310472seconds1×native walking are reviewed: original baby continuous/recognisable, distinct angles and coherent paired boots. Baby head phoneCSS dimensions~16×17 in Centrum/~12×13 source limit microexpression detail. Observed shared-host final-touch RAF median16.7/p9533.2ms is not a dedicated FPS claim. Keyed poses/stylised gait, old copied interiors' closer framing, compact-map margins and earlier entry/cadence limits remain. Physical devices/Safari/thermal skipped.
+
+The full repository was only87,125bytes below the1GiB Pages artifact limit at Stage20. Added runtime-only target Pages staging/deployment, retaining all original assets/source attribution while historical evidence stays in Git. Fresh-checkout staging safety passes; no old artwork/proof is pruned. Exact standalone archive and authorized main/Pages readback are generated after final freeze. Target Git configuration is preserved; neither donor nor its saves/deployment is touched.

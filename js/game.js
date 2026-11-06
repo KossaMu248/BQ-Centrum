@@ -3,7 +3,7 @@
 
 (() => {
   'use strict';
-  window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE20';
+  window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE21';
   /* v10.58 — original-size, original-clothes actor art; only prop pixels + portraits. */
   window.BEARLY_ASSETS['v158_firecracker_hoodie_0_0']='assets/v158_firecracker_hoodie_0_0.webp';
   window.BEARLY_ASSETS['v158_firecracker_hoodie_0_3']='assets/v158_firecracker_hoodie_0_3.webp';
@@ -882,8 +882,9 @@ window.BEARLY_ASSETS['v153_hud_knocked']='assets/v153_hud_knocked_2.png';
     }
   }
   function drawThrownItems(){
+    const visible=window.BearlyCentrumCamera.routeBounds({width:W,height:H,cameraX,cameraY},60);
     for(const p of projectiles){
-      if(p.x<cameraX-60||p.x>cameraX+W+60)continue;
+      if(p.x<visible.left||p.x>visible.right)continue;
       const spec=projectileArtSpec[p.kind]||projectileArtSpec.rock;
       const speed=Math.hypot(p.vx,p.vy)||1,ux=p.vx/speed,uy=p.vy/speed;
       if(debugSettings.particles){
@@ -4132,18 +4133,19 @@ window.BEARLY_ASSETS['v153_hud_knocked']='assets/v153_hud_knocked_2.png';
   }
   function groundDraw(){
     const scene=illustratedState();
+    const visible=window.BearlyCentrumCamera.routeBounds({width:W,height:H,cameraX,cameraY},100),hazardView=window.BearlyCentrumCamera.routeBounds({width:W,height:H,cameraX,cameraY},200);
     window.BearlyWorld.backstreet(ctx,scene);
     if(!window.BearlyVisits)drawGangCrews();
     window.BearlyWorld.road(ctx,scene);
     drawFinishBrakingZone();
-    for(const r of ramps)if(r.x>cameraX-100&&r.x<cameraX+W+100)drawRamp(r);
+    for(const r of ramps)if(r.x>visible.left&&r.x<visible.right)drawRamp(r);
     for(const h of hazards){
-      if(h.x<cameraX-200||h.x>cameraX+W+200)continue;
+      if(h.x<hazardView.left||h.x>hazardView.right)continue;
       const gy=groundAt(h.x);
       if(gy!==null&&!window.BearlyStreetProps.hazard(ctx,h,gy,time))drawHazard(h);
     }
     for(let i=0;i<checkpoints.length;i++)drawCheckpoint(checkpoints[i],i);
-    for(const star of stars)if(!star.got&&star.x>cameraX-100&&star.x<cameraX+W+100)drawStar(star.x,star.y+Math.sin(time*3+star.x)*5);
+    for(const star of stars)if(!star.got&&star.x>visible.left&&star.x<visible.right)drawStar(star.x,star.y+Math.sin(time*3+star.x)*5);
     drawFinish();
   }
   function drawCheckpoint(cp,i){

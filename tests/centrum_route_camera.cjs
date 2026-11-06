@@ -18,13 +18,13 @@ for(const intro of [false,true])for(const backing of [.675,.75,1])for(const shak
  const services={BearlyCentrumCamera:lens,BearlyCentrumSquare:{render:()=>false},BearlyVisits:{render:()=>false,hideRoadBaby:()=>false,overlay:noop},BearlyWorld:{sky:noop,foreground:record},BearlyCentrumLink:{renderRouteMarker:record}};
  const context={ctx,W,H,cameraX,cameraY,cameraShake:shake,rendering:{scale:backing},window:services,$:()=>({hidden:!intro}),Math:{...Math,random:()=>.5},illustratedState:()=>({}),groundAt:()=>600,smooth:()=>0,bike:{x:4500},state:'playing',debugSettings:{particles:false,foreground:true,hitboxes:false},demo:{active:false},groundDraw:record,drawGroundedBikeShadow:record,autumnBikePresentation:record,drawVictoryCelebration:record,drawThrownItems:record,drawProjectileImpactFX:record,drawBearThrown:record,drawSeatThrown:record,drawBaby:record,drawFragments:record};
  vm.runInNewContext(actualRender,context);context.render();assert(seen.length>=10);
- for(const m of seen){close(m[0]/backing,intro?1.35:1);close(m[3]/backing,intro?1.35:1);const p=lens.projectRoute({width:W,height:H,cameraX,cameraY,intro},4500,600);close((m[0]*4500+m[2]*600+m[4])/backing,p.x);close((m[1]*4500+m[3]*600+m[5])/backing,p.y);}
+ for(const m of seen){close(m[0]/backing,intro?1.35:.8);close(m[3]/backing,intro?1.35:.8);const p=lens.projectRoute({width:W,height:H,cameraX,cameraY,intro},4500,600);close((m[0]*4500+m[2]*600+m[4])/backing,p.x);close((m[1]*4500+m[3]*600+m[5])/backing,p.y);}
  assert.equal(ctx.stack.length,0);renderCases++;
 }
 const visits=fs.readFileSync('js/illustrated-visits.js','utf8'),a=visits.indexOf('  function overlay(c,W,H,road=null){'),b=visits.indexOf('  function drawRoom(c)',a);assert(a>=0&&b>a);
 for(const [cx,cy]of [[0,0],[4100,205],[12000,850]]){
  let projection;const context={land:()=>true,transition:null,mode:'street',x:4500,depth:0,combatState:{},reduced:()=>false,matchMedia:()=>({matches:false}),viewport:{width:1160,height:640},host:{style:{getPropertyValue:()=>50}},window:{BearlyCentrumCamera:lens,BearlyBrawlArt:{overlay(c,s,W,H,project){projection=project(4700,-25);}}}};
- vm.runInNewContext(visits.slice(a,b),context);context.overlay({},1160,640,{cameraX:cx,cameraY:cy,groundAt:()=>600});const p=lens.projectRoute({cameraX:cx,cameraY:cy},4700,575);close(projection.x,p.x);close(projection.y,p.y);close(projection.height,145*.88);overlays++;
+ vm.runInNewContext(visits.slice(a,b),context);context.overlay({},1160,640,{cameraX:cx,cameraY:cy,groundAt:()=>600});const p=lens.projectRoute({cameraX:cx,cameraY:cy},4700,575);close(projection.x,p.x);close(projection.y,p.y);close(projection.height,145*.88*.8);overlays++;
 }
-assert.equal(lens.zoom,.75,'Centrum keeps its accepted wider camera');assert.equal(lens.routeZoom,1);assert(lens.routeFrame(1160,640,true).shiftY===0,'source title composition must remain unchanged');
+assert.equal(lens.zoom,.6,'Centrum uses the newly requested wider camera');assert.equal(lens.routeZoom,.8);assert(lens.routeFrame(1160,640,true).shiftY===0,'source title composition must remain unchanged');
 console.log(JSON.stringify({passed:true,projections,renderCases,overlays,routeZoom:lens.routeZoom,previousRouteZoom:1.35,centumZoom:lens.zoom,titleZoom:1.35,roadAnchorPreserved:true,physicsExecuted:false}));

@@ -15,12 +15,19 @@ reverse17 = verifier['reverse_stage17_source']
 reverse18 = verifier['reverse_stage18_source']
 reverse19 = verifier['reverse_stage19_source']
 reverse20 = verifier['reverse_stage20_source']
+reverse21 = verifier['reverse_stage21_source']
 checks = []
 
 
-def stage19_text(source):
-    """Normalize current Stage20 to the exact Stage19 text earlier guards reviewed."""
+def stage20_text(source):
+    """Normalize current Stage21 to the exact Stage20 text earlier guards reviewed."""
     current = (ROOT / source).read_text()
+    return reverse21(source, current) if source in verifier['STAGE21_PREVIOUS'] else current
+
+
+def stage19_text(source):
+    """Keep every earlier guard against the exact Stage19 version it reviewed."""
+    current = stage20_text(source)
     return reverse20(source, current) if source in verifier['STAGE20_PREVIOUS'] else current
 
 
@@ -254,7 +261,7 @@ with patch.object(Path, 'read_bytes', modified_stage19_manifest):
 assert len(checks) == 16 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 * len(stage18_cases) + 3 * len(stage19_cases)
 stage20_cases = []
 for source, expected in verifier['STAGE20_PREVIOUS'].items():
-    current = (ROOT / source).read_text()
+    current = stage20_text(source)
     restored = reverse20(source, current)
     assert hashlib.sha256(restored.encode()).hexdigest() == expected
     checks.append(source + ' exact Stage20 inverse')
@@ -282,9 +289,36 @@ def modified_stage20_manifest(path):
     return read_bytes(path) + (b'\n' if path == manifest20 else b'')
 
 with patch.object(Path, 'read_bytes', modified_stage20_manifest):
-    rejected('Stage20 inverse manifest tampering', lambda: reverse20('js/game.js', (ROOT / 'js/game.js').read_text()))
+    rejected('Stage20 inverse manifest tampering', lambda: reverse20('js/game.js', stage20_text('js/game.js')))
 
 assert len(checks) == 17 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 * len(stage18_cases) + 3 * len(stage19_cases) + 3 * len(stage20_cases)
-print(f'PASS: 944 protected originals; prior Stage14/16/17/18/19 guards retained; '
-      f'{len(stage20_cases)} exact Stage20 inverses/{2 * len(stage20_cases)} rejected source/walking/load-order mutations '
-      'and Stage20 manifest tampering; cycling simulation block unchanged; all mutations in memory.')
+stage21_cases = []
+for source, expected in verifier['STAGE21_PREVIOUS'].items():
+    current = (ROOT / source).read_text()
+    restored = reverse21(source, current)
+    assert hashlib.sha256(restored.encode()).hexdigest() == expected
+    checks.append(source + ' exact Stage21 inverse')
+    stage21_cases.append(source)
+    rejected(source + ' appended Stage21 unreviewed source', lambda: reverse21(source, current + '\n// unreviewed source edit\n'))
+    if source.endswith('.html'):
+        marker, replacement = '<script src=', '<script async src='
+    elif source == 'js/game.js':
+        marker, replacement = 'if(p.x<visible.left||p.x>visible.right)continue;', 'if(p.x<cameraX-60||p.x>cameraX+W+60)continue;'
+    else:
+        marker, replacement = 'view?view.right+32:-Infinity', '-Infinity'
+    assert current.count(marker) >= 1, (source, marker)
+    changed = current.replace(marker, replacement, 1)
+    rejected(source + ' Stage21 unreviewed culling path or load order', lambda: reverse21(source, changed))
+
+manifest21 = ROOT / 'references/source/stage21-source-integration.json'
+
+def modified_stage21_manifest(path):
+    return read_bytes(path) + (b'\n' if path == manifest21 else b'')
+
+with patch.object(Path, 'read_bytes', modified_stage21_manifest):
+    rejected('Stage21 inverse manifest tampering', lambda: reverse21('js/game.js', (ROOT / 'js/game.js').read_text()))
+
+assert len(checks) == 18 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 * len(stage18_cases) + 3 * len(stage19_cases) + 3 * len(stage20_cases) + 3 * len(stage21_cases)
+print(f'PASS: 944 protected originals; prior Stage14/16/17/18/19/20 guards retained; '
+      f'{len(stage21_cases)} exact Stage21 inverses/{2 * len(stage21_cases)} rejected source/culling/load-order mutations '
+      'and Stage21 manifest tampering; cycling simulation block unchanged; all mutations in memory.')

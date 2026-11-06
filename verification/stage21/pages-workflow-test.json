@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "condition": "Fresh simulated checkout with no ignored delivery directory; actual workflow staging safety test copied unchanged and executed.",
+  "stdout": "{\"passed\": true, \"scope\": \"Pages allowlist, byte-preserving copies, cache retention, evidence/Git exclusion, output safety, symlink/secret/budget rejection\"}",
+  "toolSHA256": "063ef1fa1ef2d06670907db270fd695a8fdc42e722e9f1ce2cc80284b7539102"
+}

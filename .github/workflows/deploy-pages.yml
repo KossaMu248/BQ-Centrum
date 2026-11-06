@@ -1,0 +1,40 @@
+name: Publish playable BQ-Centrum
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the independent project
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify Pages staging boundaries
+        run: python3 tests/centrum_pages_staging.py
+      - name: Stage runtime, original assets and attribution
+        run: python3 tools/stage-pages.py --output delivery/pages-site
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload standalone site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: delivery/pages-site
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

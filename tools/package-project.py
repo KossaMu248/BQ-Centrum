@@ -28,8 +28,8 @@ SECRET_PATTERNS = {
     'google-api-key': re.compile(r'\bAIza[0-9A-Za-z_-]{35}\b'),
 }
 TEXT_EXTENSIONS = {'.js', '.css', '.html', '.json', '.md', '.txt', '.py', '.cjs', '.yml', '.yaml'}
-EVIDENCE_STAGES = (7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
-VALIDATION_STAGE = 20
+EVIDENCE_STAGES = (7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21)
+VALIDATION_STAGE = 21
 
 
 def valid_file(path):
@@ -112,7 +112,7 @@ def included_files():
     # Retain reviewable development checks, not historical donor tooling/builds.
     files.update((ROOT / 'tests').glob('*.cjs'))
     files.update((ROOT / 'tests').glob('centrum*.py'))
-    for name in ['tools/verify-source-integrity.py', 'tools/package-project.py', 'tests/wrong_entrance.py']:
+    for name in ['tools/verify-source-integrity.py', 'tools/package-project.py', 'tools/stage-pages.py', 'tests/wrong_entrance.py']:
         if (ROOT / name).is_file():
             files.add(ROOT / name)
     # Preserve source/art review and validation alongside current final evidence

@@ -1,0 +1,15 @@
+# Stage21 rendered wider-view acceptance
+
+Chromium154.0.8037.57 on Linux, headless,1280×720desktop and844×390ChromiumCDPtouch emulation at1×device scale. These are real game captures and native controls, not generated art. No physical-phone/Safari, thermal, gamepad or dedicatedFPS/CPU claim.
+
+`before/results.json` records four Stage20 comparison contexts supplied read-only from target commit246e0eb7d9ce0dc8af2d594a8a67b40b94cf92fe, with four normal-sizeJPEGs. `after/results.json` aggregates seven accepted post-change groups: five completed main contexts plus a corrected native-phone combat approach and a fresh exact south-boundary supplement. Its linked per-run reports preserve actual harness hashes and the main run's incomplete later helper outcome; they do not pretend all seven passed in one uninterrupted run. Failed/provisional attempts remain excluded.
+
+One original debug route-stop setup per context is disclosed; all subsequent movement, dismount, doors, bag, pause, fullscreen, reload and remount use playable controls. Square/source desktop and touch contexts exercise cardinal/diagonal walking, collision, visible directional frames, original baby proportions/attachment, bag/pause and the same grounded bike at100HP. Square also tests arcade→foodshop→arcade→square, first discovery dialogue, reload, viewport changes and fullscreen. The actual phone floor-boundary supplement holdsDown to within.05worldunits of918, checks head/boot clearance and returns to the same bike.
+
+Two separate authored-gang contexts use natural proximity, actual incoming hits, J/Maul touch equivalent and walking recovery. Both successful attacks apply the unchanged22damage(60→38); incoming combat health50→30 is retained. No NPC, damage, health, item or reward grant is injected. The original combat baby transfer to the back carrier retains its native78/61/507 calibration; peaceful front walking retains85/61/488.
+
+There are24post-change normal-sizeJPEGs and one7.310472second1×walkingWebM,146actual samples encoded at24fps. Encoding rate is not gameFPS. Final captures have no JS/console/HTTP errors or runtime hash drift, and submitted loops remain singular. Same-bike coordinates are checked from recorded parking/return data.
+
+The.6Centrum/.8route projections show more context while leaving floors, movement and physics unchanged. Whole compact maps retain nonwalkable mattes. Normal-size baby heads measure23.47×25.01desktop/16.21×17.27phoneCSSpixels inCentrum;21.22×22.85desktop/12.27×13.22phone on the source street. Broad likeness remains; phone source microexpressions are small. Source legacy rooms/gardens keep closer framing, and authored away/toward angles remainCentrum-only. Full campaign/economy acceptance remains historical rather than rerun here.
+
+Reproduce with `python tests/centrum_stage21_browser.py --phase before`, then `--phase after --clip`. The supplemental exact edge group is `--phase after --only-south --out verification/stage21/browser/south-boundary`. Python Playwright, systemChromium and ffmpeg(forclip) are test tools only.

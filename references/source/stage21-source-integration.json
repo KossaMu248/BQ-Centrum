@@ -1,0 +1,63 @@
+{
+  "format": 1,
+  "previousProjectCommit": "246e0eb7d9ce0dc8af2d594a8a67b40b94cf92fe",
+  "scope": "Reviewed Stage21 uniform camera and render-only wider-frustum culling/entry additions. Original artwork, baby proportions, world geometry/saves, movement, combat/damage and cycling simulation remain unchanged.",
+  "files": {
+    "autumn-v19.html": {
+      "previousSha256": "974e3d2788ad0c3c324dc891aa166ccb8e0242cce95230ec820c47962cdcc6af",
+      "currentSha256": "7e1fb53109e07f5ca44f8584db37aa14f9bb2bd9b438c8143d861e4e3166adc2",
+      "changes": [
+        {
+          "previous": "<script src=\"js/assets.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-atlas.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-props.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-world.js?edition=centrum-stage19\"></script>\n<script src=\"js/illustrated-neighbourhood.js?edition=centrum-stage19\"></script>\n<script src=\"js/illustrated-kids.js?edition=centrum-stage16\"></script>\n<script src=\"js/illustrated-hero.js?edition=centrum-stage18\"></script>\n",
+          "current": "<script src=\"js/assets.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-atlas.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-props.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-world.js?edition=centrum-stage21\"></script>\n<script src=\"js/illustrated-neighbourhood.js?edition=centrum-stage19\"></script>\n<script src=\"js/illustrated-kids.js?edition=centrum-stage16\"></script>\n<script src=\"js/illustrated-hero.js?edition=centrum-stage18\"></script>\n"
+        },
+        {
+          "previous": "<script src=\"js/centrum-economy.js?edition=centrum-stage6\"></script>\n<script src=\"js/centrum-inventory.js?edition=centrum-stage15\"></script>\n<script src=\"js/centrum-story.js?edition=centrum-stage14\"></script>\n<script src=\"js/centrum-camera.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-square.js?edition=centrum-stage20\"></script>\n<script src=\"js/illustrated-visits.js?edition=centrum-stage20\"></script>\n<script src=\"js/game.js?edition=centrum-stage20\"></script>\n</body>\n</html>\n",
+          "current": "<script src=\"js/centrum-economy.js?edition=centrum-stage6\"></script>\n<script src=\"js/centrum-inventory.js?edition=centrum-stage15\"></script>\n<script src=\"js/centrum-story.js?edition=centrum-stage14\"></script>\n<script src=\"js/centrum-camera.js?edition=centrum-stage21\"></script>\n<script src=\"js/centrum-square.js?edition=centrum-stage20\"></script>\n<script src=\"js/illustrated-visits.js?edition=centrum-stage20\"></script>\n<script src=\"js/game.js?edition=centrum-stage21\"></script>\n</body>\n</html>\n"
+        }
+      ]
+    },
+    "index.html": {
+      "previousSha256": "974e3d2788ad0c3c324dc891aa166ccb8e0242cce95230ec820c47962cdcc6af",
+      "currentSha256": "7e1fb53109e07f5ca44f8584db37aa14f9bb2bd9b438c8143d861e4e3166adc2",
+      "changes": [
+        {
+          "previous": "<script src=\"js/assets.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-atlas.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-props.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-world.js?edition=centrum-stage19\"></script>\n<script src=\"js/illustrated-neighbourhood.js?edition=centrum-stage19\"></script>\n<script src=\"js/illustrated-kids.js?edition=centrum-stage16\"></script>\n<script src=\"js/illustrated-hero.js?edition=centrum-stage18\"></script>\n",
+          "current": "<script src=\"js/assets.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-atlas.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-props.js?edition=autumn-v19\"></script>\n<script src=\"js/illustrated-world.js?edition=centrum-stage21\"></script>\n<script src=\"js/illustrated-neighbourhood.js?edition=centrum-stage19\"></script>\n<script src=\"js/illustrated-kids.js?edition=centrum-stage16\"></script>\n<script src=\"js/illustrated-hero.js?edition=centrum-stage18\"></script>\n"
+        },
+        {
+          "previous": "<script src=\"js/centrum-economy.js?edition=centrum-stage6\"></script>\n<script src=\"js/centrum-inventory.js?edition=centrum-stage15\"></script>\n<script src=\"js/centrum-story.js?edition=centrum-stage14\"></script>\n<script src=\"js/centrum-camera.js?edition=centrum-stage16\"></script>\n<script src=\"js/centrum-square.js?edition=centrum-stage20\"></script>\n<script src=\"js/illustrated-visits.js?edition=centrum-stage20\"></script>\n<script src=\"js/game.js?edition=centrum-stage20\"></script>\n</body>\n</html>\n",
+          "current": "<script src=\"js/centrum-economy.js?edition=centrum-stage6\"></script>\n<script src=\"js/centrum-inventory.js?edition=centrum-stage15\"></script>\n<script src=\"js/centrum-story.js?edition=centrum-stage14\"></script>\n<script src=\"js/centrum-camera.js?edition=centrum-stage21\"></script>\n<script src=\"js/centrum-square.js?edition=centrum-stage20\"></script>\n<script src=\"js/illustrated-visits.js?edition=centrum-stage20\"></script>\n<script src=\"js/game.js?edition=centrum-stage21\"></script>\n</body>\n</html>\n"
+        }
+      ]
+    },
+    "js/game.js": {
+      "previousSha256": "e38d5830ca67225f54243835a776b067ded8f2c5c150c75d85e886eb67ba04c6",
+      "currentSha256": "6ae19f516feb6b6f2f72196098e964d7062fbaf591d5100d3f3d709f1954dccc",
+      "changes": [
+        {
+          "previous": "\n(() => {\n  'use strict';\n  window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE20';\n  /* v10.58 \u2014 original-size, original-clothes actor art; only prop pixels + portraits. */\n  window.BEARLY_ASSETS['v158_firecracker_hoodie_0_0']='assets/v158_firecracker_hoodie_0_0.webp';\n  window.BEARLY_ASSETS['v158_firecracker_hoodie_0_3']='assets/v158_firecracker_hoodie_0_3.webp';\n",
+          "current": "\n(() => {\n  'use strict';\n  window.BEARLY_BUILD_ID='BQ_CENTRUM_STAGE21';\n  /* v10.58 \u2014 original-size, original-clothes actor art; only prop pixels + portraits. */\n  window.BEARLY_ASSETS['v158_firecracker_hoodie_0_0']='assets/v158_firecracker_hoodie_0_0.webp';\n  window.BEARLY_ASSETS['v158_firecracker_hoodie_0_3']='assets/v158_firecracker_hoodie_0_3.webp';\n"
+        },
+        {
+          "previous": "    }\n  }\n  function drawThrownItems(){\n    for(const p of projectiles){\n      if(p.x<cameraX-60||p.x>cameraX+W+60)continue;\n      const spec=projectileArtSpec[p.kind]||projectileArtSpec.rock;\n      const speed=Math.hypot(p.vx,p.vy)||1,ux=p.vx/speed,uy=p.vy/speed;\n      if(debugSettings.particles){\n",
+          "current": "    }\n  }\n  function drawThrownItems(){\n    const visible=window.BearlyCentrumCamera.routeBounds({width:W,height:H,cameraX,cameraY},60);\n    for(const p of projectiles){\n      if(p.x<visible.left||p.x>visible.right)continue;\n      const spec=projectileArtSpec[p.kind]||projectileArtSpec.rock;\n      const speed=Math.hypot(p.vx,p.vy)||1,ux=p.vx/speed,uy=p.vy/speed;\n      if(debugSettings.particles){\n"
+        },
+        {
+          "previous": "  }\n  function groundDraw(){\n    const scene=illustratedState();\n    window.BearlyWorld.backstreet(ctx,scene);\n    if(!window.BearlyVisits)drawGangCrews();\n    window.BearlyWorld.road(ctx,scene);\n    drawFinishBrakingZone();\n    for(const r of ramps)if(r.x>cameraX-100&&r.x<cameraX+W+100)drawRamp(r);\n    for(const h of hazards){\n      if(h.x<cameraX-200||h.x>cameraX+W+200)continue;\n      const gy=groundAt(h.x);\n      if(gy!==null&&!window.BearlyStreetProps.hazard(ctx,h,gy,time))drawHazard(h);\n    }\n    for(let i=0;i<checkpoints.length;i++)drawCheckpoint(checkpoints[i],i);\n    for(const star of stars)if(!star.got&&star.x>cameraX-100&&star.x<cameraX+W+100)drawStar(star.x,star.y+Math.sin(time*3+star.x)*5);\n    drawFinish();\n  }\n  function drawCheckpoint(cp,i){\n",
+          "current": "  }\n  function groundDraw(){\n    const scene=illustratedState();\n    const visible=window.BearlyCentrumCamera.routeBounds({width:W,height:H,cameraX,cameraY},100),hazardView=window.BearlyCentrumCamera.routeBounds({width:W,height:H,cameraX,cameraY},200);\n    window.BearlyWorld.backstreet(ctx,scene);\n    if(!window.BearlyVisits)drawGangCrews();\n    window.BearlyWorld.road(ctx,scene);\n    drawFinishBrakingZone();\n    for(const r of ramps)if(r.x>visible.left&&r.x<visible.right)drawRamp(r);\n    for(const h of hazards){\n      if(h.x<hazardView.left||h.x>hazardView.right)continue;\n      const gy=groundAt(h.x);\n      if(gy!==null&&!window.BearlyStreetProps.hazard(ctx,h,gy,time))drawHazard(h);\n    }\n    for(let i=0;i<checkpoints.length;i++)drawCheckpoint(checkpoints[i],i);\n    for(const star of stars)if(!star.got&&star.x>visible.left&&star.x<visible.right)drawStar(star.x,star.y+Math.sin(time*3+star.x)*5);\n    drawFinish();\n  }\n  function drawCheckpoint(cp,i){\n"
+        }
+      ]
+    },
+    "js/illustrated-world.js": {
+      "previousSha256": "451f88c440ac03ef55ebb1448f936a34aff27600cd8a25db2508b05f029bb67b",
+      "currentSha256": "fc4ae288afafb5edd1bf089f0972f3ae740ca5dcb0e9399ec6f2a772fdfeb3d5",
+      "changes": [
+        {
+          "previous": "    c.save();c.translate(x,foot);shape(c,[[-12,0],[-9,-170],[-50,-235],[-42,-240],[0,-190],[30,-247],[36,-240],[12,-167],[17,0]],'#6b5136');\n    for(let i=0;i<36;i++){const a=noise(i+seed,2)*TAU,r=Math.sqrt(noise(i+seed,4))*height*.28;ellipse(c,Math.cos(a)*r,-height*.72+Math.sin(a)*r*.7,30,25,['#8f9e3e','#b8a43c','#6b823f','#c8a449'][i%4]);}c.restore();\n  }\n  function range(s,pad=250){return [Math.max(0,s.cameraX-pad),Math.min(s.finish+1200,s.cameraX+s.W+pad)];}\n  function ground(s,x){return s.groundAt(x);}\n  function strip(c,s,top,bottom,fill,stroke=null){\n    const [lo,hi]=range(s,260);\n",
+          "current": "    c.save();c.translate(x,foot);shape(c,[[-12,0],[-9,-170],[-50,-235],[-42,-240],[0,-190],[30,-247],[36,-240],[12,-167],[17,0]],'#6b5136');\n    for(let i=0;i<36;i++){const a=noise(i+seed,2)*TAU,r=Math.sqrt(noise(i+seed,4))*height*.28;ellipse(c,Math.cos(a)*r,-height*.72+Math.sin(a)*r*.7,30,25,['#8f9e3e','#b8a43c','#6b823f','#c8a449'][i%4]);}c.restore();\n  }\n  function range(s,pad=250){\n    const view=window.BearlyCentrumCamera?.routeBounds({width:s.W,height:s.H,cameraX:s.cameraX,cameraY:s.cameraY});\n    return [Math.max(0,Math.min(s.cameraX-pad,view?view.left-32:Infinity)),Math.min(s.finish+1200,Math.max(s.cameraX+s.W+pad,view?view.right+32:-Infinity))];\n  }\n  function ground(s,x){return s.groundAt(x);}\n  function strip(c,s,top,bottom,fill,stroke=null){\n    const [lo,hi]=range(s,260);\n"
+        }
+      ]
+    }
+  }
+}

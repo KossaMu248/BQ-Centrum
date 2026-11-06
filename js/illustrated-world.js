@@ -63,7 +63,10 @@
     c.save();c.translate(x,foot);shape(c,[[-12,0],[-9,-170],[-50,-235],[-42,-240],[0,-190],[30,-247],[36,-240],[12,-167],[17,0]],'#6b5136');
     for(let i=0;i<36;i++){const a=noise(i+seed,2)*TAU,r=Math.sqrt(noise(i+seed,4))*height*.28;ellipse(c,Math.cos(a)*r,-height*.72+Math.sin(a)*r*.7,30,25,['#8f9e3e','#b8a43c','#6b823f','#c8a449'][i%4]);}c.restore();
   }
-  function range(s,pad=250){return [Math.max(0,s.cameraX-pad),Math.min(s.finish+1200,s.cameraX+s.W+pad)];}
+  function range(s,pad=250){
+    const view=window.BearlyCentrumCamera?.routeBounds({width:s.W,height:s.H,cameraX:s.cameraX,cameraY:s.cameraY});
+    return [Math.max(0,Math.min(s.cameraX-pad,view?view.left-32:Infinity)),Math.min(s.finish+1200,Math.max(s.cameraX+s.W+pad,view?view.right+32:-Infinity))];
+  }
   function ground(s,x){return s.groundAt(x);}
   function strip(c,s,top,bottom,fill,stroke=null){
     const [lo,hi]=range(s,260);

@@ -36,6 +36,27 @@ def replace_reviewed(text, added, original='', count=1):
     return text.replace(added, original)
 
 
+STAGE21_PREVIOUS = {'autumn-v19.html': '974e3d2788ad0c3c324dc891aa166ccb8e0242cce95230ec820c47962cdcc6af', 'index.html': '974e3d2788ad0c3c324dc891aa166ccb8e0242cce95230ec820c47962cdcc6af', 'js/game.js': 'e38d5830ca67225f54243835a776b067ded8f2c5c150c75d85e886eb67ba04c6', 'js/illustrated-world.js': '451f88c440ac03ef55ebb1448f936a34aff27600cd8a25db2508b05f029bb67b'}
+STAGE21_MANIFEST_SHA256 = '978ed43c5bb02624a362844aedf5e89f0661ffc10b6100c5852b6afd4cffccc6'
+INTENTIONAL.update(STAGE21_PREVIOUS)
+
+
+def reverse_stage21_source(path, text):
+    """Undo only exact reviewed camera/frustum-render and entry hunks."""
+    raw = (ROOT / 'references/source/stage21-source-integration.json').read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == STAGE21_MANIFEST_SHA256, 'Changed Stage21 source inverse manifest'
+    spec = json.loads(raw)
+    assert spec['format'] == 1 and spec['previousProjectCommit'] == '246e0eb7d9ce0dc8af2d594a8a67b40b94cf92fe'
+    assert set(spec['files']) == set(STAGE21_PREVIOUS), 'Unexpected Stage21 protected paths'
+    edits = spec['files'][path]
+    assert edits['previousSha256'] == STAGE21_PREVIOUS[path]
+    assert hashlib.sha256(text.encode()).hexdigest() == edits['currentSha256'], 'Unreviewed Stage21 source bytes: ' + path
+    for edit in reversed(edits['changes']):
+        text = replace_reviewed(text, edit['current'], edit['previous'])
+    assert hashlib.sha256(text.encode()).hexdigest() == STAGE21_PREVIOUS[path], 'Unexpected source edits beyond reviewed Stage21 integration: ' + path
+    return text
+
+
 STAGE20_PREVIOUS = {'autumn-v19.html': 'f1100dbd323d64ecda8a4d85b25dac1b6588d7442c30169650f97df51f5f0818', 'index.html': 'f1100dbd323d64ecda8a4d85b25dac1b6588d7442c30169650f97df51f5f0818', 'js/game.js': '03ea98523b86434921b59e33530e48738451b5e1bbf961b8703dc84cdc63ea3e', 'js/illustrated-visits.js': '861be8792f04df66f48162d5b8bdd6e0bb6a96349f712b92fb770a928221bc9d'}
 STAGE20_MANIFEST_SHA256 = 'bd2db17eef646ab8e7d02c7759aa205c5be322d659b410f0b0eb8b5da1de8059'
 INTENTIONAL.update(STAGE20_PREVIOUS)
@@ -227,6 +248,8 @@ def reverse_stage11_rig(text):
 
 def restore_donor(path):
     text = (ROOT / path).read_text()
+    if path in STAGE21_PREVIOUS:
+        text = reverse_stage21_source(path, text)
     if path in STAGE20_PREVIOUS:
         text = reverse_stage20_source(path, text)
     if path in STAGE19_PREVIOUS:
@@ -430,9 +453,9 @@ assert not failures, '\n'.join(failures)
 assert (ROOT / 'index.html').read_bytes() == (ROOT / 'autumn-v19.html').read_bytes()
 manifest = json.loads((ROOT / 'autumn-version.json').read_text())
 assert manifest['source']['commit'] == 'da109213fdf24947c2ac0b85de900214cc72e44f'
-assert manifest['edition'] == 'BQ_CENTRUM_STAGE20'
+assert manifest['edition'] == 'BQ_CENTRUM_STAGE21'
 assert manifest['project'] == 'BQ-Centrum' and manifest['entry'] == 'autumn-v19.html'
 assert manifest['source']['repository'] == 'KossaMu248/BQ-Autumn'
 assert manifest['source']['branch'] == 'main' and manifest['source']['build_id'] == 'AUTUMN_RIDE_ART_V19'
 print(f'PASS: {len(HASHES)} pinned original files verified; all source assets/CSS and original protected code match;')
-print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest, Stage17 NPC-prop fit, Stage18 bench/peaceful-seat/opaque-eye and Stage19 compact/sparse bench and Stage20 walking-pace additions differ.')
+print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest, Stage17 NPC-prop fit, Stage18 bench/peaceful-seat/opaque-eye, Stage19 compact/sparse bench, Stage20 walking-pace and Stage21 camera/render-frustum additions differ.')

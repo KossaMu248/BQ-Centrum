@@ -1,18 +1,18 @@
 /* Pure scene framing. World geometry/actors remain in their original units. */
 (() => {
   'use strict';
-  const frameWidth=1160,frameHeight=640,zoom=.75,routeZoom=1,legacyRouteZoom=1.35;
+  const frameWidth=1160,frameHeight=640,zoom=.60,routeZoom=.80,legacyRouteZoom=1.35;
   const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
   const finite=(v,fallback)=>Number.isFinite(v)?v:fallback;
   function axis(focus,extent,visible,fraction,padding=0){
-    return extent<=visible?(extent-visible)*.5:clamp(focus-visible*fraction,0,extent-visible+padding);
+    return extent+padding<=visible?(extent+padding-visible)*.5:clamp(focus-visible*fraction,0,extent-visible+padding);
   }
   function follow(scene,player){
     const width=frameWidth/zoom,height=frameHeight/zoom;
     // At the south edge, preserve a small clear band above touch controls.
     // This is bounded camera matte beyond the art edge, never extra floor.
     const bottomPadding=scene.floor?Math.max(0,scene.floor.bottom-(scene.radiusY||12)+80/zoom-scene.height):0;
-    const bounds={left:Math.min(0,(scene.width-width)*.5),right:Math.max(0,scene.width-width),top:Math.min(0,(scene.height-height)*.5),bottom:Math.max(0,scene.height-height+bottomPadding)};
+    const bounds={left:Math.min(0,(scene.width-width)*.5),right:Math.max(0,scene.width-width),top:Math.min(0,(scene.height+bottomPadding-height)*.5),bottom:Math.max(0,scene.height-height+bottomPadding)};
     return{x:axis(finite(player.x,0),scene.width,width,.5),y:axis(finite(player.y,0),scene.height,height,.66,bottomPadding),
       width,height,zoom,frameWidth,frameHeight,bottomPadding,bounds};
   }
@@ -28,6 +28,15 @@
     const p=routeFrame(frame.width??frameWidth,frame.height??frameHeight,!!frame.intro);
     return{x:p.focusX+p.zoom*(x-frame.cameraX-p.focusX),y:p.focusY+p.shiftY+p.zoom*(y-frame.cameraY-p.focusY)};
   }
+  function routeBounds(frame={},padding=0){
+    const width=frame.width??frameWidth,height=frame.height??frameHeight,
+      p=routeFrame(width,height,!!frame.intro),cx=finite(frame.cameraX,0),cy=finite(frame.cameraY,0);
+    // Rendering only: do not feed this wider frustum into terrain, damage or AI.
+    return{left:cx+p.focusX-p.focusX/p.zoom-padding,
+      right:cx+p.focusX+(width-p.focusX)/p.zoom+padding,
+      top:cy+p.focusY-(p.focusY+p.shiftY)/p.zoom-padding,
+      bottom:cy+p.focusY+(height-p.focusY-p.shiftY)/p.zoom+padding};
+  }
   function cover(camera,player,box){
     const scale=Math.max(finite(box.width,frameWidth)/frameWidth,finite(box.height,frameHeight)/frameHeight),
       visibleWidth=Math.min(frameWidth,box.width/scale),visibleHeight=Math.min(frameHeight,box.height/scale),
@@ -41,5 +50,5 @@
     return{panX:overflowX?cropX/overflowX*100:50,panY:overflowY?cropY/overflowY*100:50,
       cropX,cropY,visibleWidth,visibleHeight,scale};
   }
-  window.BearlyCentrumCamera=Object.freeze({zoom,routeZoom,frameWidth,frameHeight,follow,project,unproject,routeFrame,projectRoute,cover});
+  window.BearlyCentrumCamera=Object.freeze({zoom,routeZoom,frameWidth,frameHeight,follow,project,unproject,routeFrame,projectRoute,routeBounds,cover});
 })();
