@@ -1,0 +1,66 @@
+[
+  {
+    "file": "after/desktop-square-right-native-phase-strip-diagnostic.png",
+    "sha256": "5c2609bd4367a7dd7f656bcd204b06ac7290c338b1deb6d86bb6dbc14b923294",
+    "scope": "Unscaled160x120native crops of four actual gameplay phase JPEGs; diagnostic, not full screenshot or generated character.",
+    "sourceFrames": [
+      "after/desktop-square/right-phase-0.125.jpg",
+      "after/desktop-square/right-phase-0.375.jpg",
+      "after/desktop-square/right-phase-0.625.jpg",
+      "after/desktop-square/right-phase-0.875.jpg"
+    ]
+  },
+  {
+    "file": "after/desktop-square-left-native-phase-strip-diagnostic.png",
+    "sha256": "c0afc3b1de09995f58e2673717153683c4d38924ea3188666efb34ed0daaecaa",
+    "scope": "Unscaled160x120native crops of four actual gameplay phase JPEGs; diagnostic, not full screenshot or generated character.",
+    "sourceFrames": [
+      "after/desktop-square/left-phase-0.125.jpg",
+      "after/desktop-square/left-phase-0.375.jpg",
+      "after/desktop-square/left-phase-0.625.jpg",
+      "after/desktop-square/left-phase-0.875.jpg"
+    ]
+  },
+  {
+    "file": "after/desktop-street-right-native-phase-strip-diagnostic.png",
+    "sha256": "8dbc6dc522f518a199356ea20ad39d70ae343ae4cb1e7765498b55d12b5ea378",
+    "scope": "Unscaled160x120native crops of four actual gameplay phase JPEGs; diagnostic, not full screenshot or generated character.",
+    "sourceFrames": [
+      "after/desktop-street/right-phase-0.125.jpg",
+      "after/desktop-street/right-phase-0.375.jpg",
+      "after/desktop-street/right-phase-0.625.jpg",
+      "after/desktop-street/right-phase-0.875.jpg"
+    ]
+  },
+  {
+    "file": "after/desktop-street-left-native-phase-strip-diagnostic.png",
+    "sha256": "ba713d84db41a183e1e33311b62c5cd1ee16396505d12e43cbe9c8d5627881f9",
+    "scope": "Unscaled160x120native crops of four actual gameplay phase JPEGs; diagnostic, not full screenshot or generated character.",
+    "sourceFrames": [
+      "after/desktop-street/left-phase-0.125.jpg",
+      "after/desktop-street/left-phase-0.375.jpg",
+      "after/desktop-street/left-phase-0.625.jpg",
+      "after/desktop-street/left-phase-0.875.jpg"
+    ]
+  },
+  {
+    "file": "after/desktop-square-native-temporal-diagnostic.png",
+    "sha256": "3749e05dfb10854a42b4d57df5b57b58f6edefd5baf01b36049c8350d047aa5d",
+    "scope": "Sixteen chronological native160x120foot-area crops from actual1xvideo, no enlargement. Temporal diagnostic, not a full gameplay screenshot or generated art.",
+    "sourceVideo": "after/desktop-square-stride.webm",
+    "startSeconds": 0.3,
+    "sampleStepSeconds": 0.05,
+    "samples": 16,
+    "horizontalCropTrackingPixelsPerSecond": 119.96287274574382
+  },
+  {
+    "file": "after/desktop-street-native-temporal-diagnostic.png",
+    "sha256": "0180923047919a54dfe8bae3352e245b3010771dd6a23d32ae86ce432c7fe1e3",
+    "scope": "Sixteen chronological native160x120foot-area crops from actual1xvideo, no enlargement. Temporal diagnostic, not a full gameplay screenshot or generated art.",
+    "sourceVideo": "after/desktop-street-stride.webm",
+    "startSeconds": 0.3,
+    "sampleStepSeconds": 0.05,
+    "samples": 16,
+    "horizontalCropTrackingPixelsPerSecond": 6.615151654934767
+  }
+]

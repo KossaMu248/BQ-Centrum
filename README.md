@@ -29,7 +29,7 @@ python3 -m http.server 8001 --bind 127.0.0.1
 
 Open **http://127.0.0.1:8001/BQ-Centrum/**. Both `index.html` and the manifest’s `autumn-v19.html` entry are active, matching small HTML files. The clean package is checked at the root and under this subpath.
 
-Stage23 gives walking legs actual knee flex, a softer supporting leg and opposing shoulder/hip motion using the existing artwork. The original baby and pouch stay together at their native scale. Centrum keeps its wider0.60 camera and brisk200/80 movement; the copied street keeps0.80 and180. No scene, physics, combat, inventory or save rules change. [Actual results and limits](TEST_REPORT.md).
+Stage24 makes both walking legs visibly trade the lead. The old standing-foot stagger hid the smaller boot during its forward step; horizontal walking now blends onto a common travel track, retaining the standing pose and separated feet during depth movement. Shorts openings and rear-knee flex stay joined through that wider visible stride. The original baby, camera0.60/0.80, speeds and game rules remain. [Actual results and limits](TEST_REPORT.md).
 
 ## Implemented scope
 

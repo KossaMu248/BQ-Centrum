@@ -206,9 +206,11 @@
     const bodyPoint=(x,y)=>({x:pivot.x+(x-pivot.x)*cs-(y-pivot.y)*sn+shift.x,y:pivot.y+(x-pivot.x)*sn+(y-pivot.y)*cs+shift.y});
     const transform=c=>{c.translate(pivot.x+shift.x,pivot.y+shift.y);c.rotate(angle);c.translate(-pivot.x,-pivot.y);};
     const pelvisPoint=(x,y)=>{const blend=smooth((y/s+oy-(profile.pelvisY-45))/45),a=(wp?(gait.pelvisRoll||0)*.3+wp.pelvisRoll:(gait.pelvisRoll||0))+direction*.012*weight,dx=x-pivot.x,dy=y-pivot.y,xx=pivot.x+dx*Math.cos(a)-dy*Math.sin(a)+(gait.pelvisSway||0),yy=pivot.y+dx*Math.sin(a)+dy*Math.cos(a);return bodyPoint(x+(xx-x)*blend,y+(yy-y)*blend);};
+    // Keep the authored stagger at rest/depth. Horizontal strides share one
+    // travel track so the smaller rear boot can take the forward lead too.
     const track=(profile.near.sole[0]+profile.far.sole[0])*.5,legs={};
     for(const name of ['near','far']){
-      const leg=profile[name],f=gait[name],footAngle=walking?clamp(f.angle,-.12,.12):f.angle,ca=Math.cos(footAngle),sa=Math.sin(footAngle),offset=f.contactOffset||0,idle=walking?prepareLower(4):null,spread=idle?(profile.far.sole[0]-profile.near.sole[0])*.5*(name==='near'?1:-1)*(1-.1*weight):(leg.sole[0]-track)*(1-.10*weight),sole={x:(track-ox+spread)*s+f.x+offset*(1-ca),y:(leg.sole[1]-oy)*s+f.y-offset*sa};
+      const leg=profile[name],f=gait[name],footAngle=walking?clamp(f.angle,-.12,.12):f.angle,ca=Math.cos(footAngle),sa=Math.sin(footAngle),offset=f.contactOffset||0,idle=walking?prepareLower(4):null,spread=idle?(profile.far.sole[0]-profile.near.sole[0])*.5*(name==='near'?1:-1)*(1-weight*Math.abs(gait.sourceWalk?1:(gait.groundMotion?.x??1))):(leg.sole[0]-track)*(1-.10*weight),sole={x:(track-ox+spread)*s+f.x+offset*(1-ca),y:(leg.sole[1]-oy)*s+f.y-offset*sa};
       const rigid=(x,y)=>{const xx=(x-leg.sole[0])*s,yy=(y-leg.sole[1])*s;return{x:sole.x+xx*ca-yy*sa,y:sole.y+xx*sa+yy*ca};};
       const heel=rigid(leg.sole[0]-(name==='near'?60:48),leg.sole[1]),toe=rigid(leg.sole[0]+(name==='near'?52:48),leg.sole[1]),cuff=rigid(leg.sole[0]-(name==='near'?16:13),leg.sole[1]-(name==='near'?62:58)),shinAngle=f.shinAngle||0,sc=Math.cos(shinAngle),ss=Math.sin(shinAngle),calfRigid=(x,y)=>{const xx=(x-leg.cuff[0])*s,yy=(y-leg.cuff[1])*s;return{x:cuff.x+xx*sc-yy*ss,y:cuff.y+xx*ss+yy*sc};};
       legs[name]={sole,angle:footAngle,stance:f.stance,rigid,cuff,heel,toe,calfRigid,shinAngle,kneeFlex:f.kneeFlex||0,contact:{x:sole.x+offset*ca,y:sole.y+offset*sa}};
@@ -298,7 +300,12 @@
       // The waist stays attached to the jersey. Each trouser opening follows
       // its own upper leg, and the calf uses this SAME moving hem boundary.
       v.x+=(gait.far.x*(1-nearWeight)+gait.near.x*nearWeight)*.24*hemWeight;
-      v.y+=(gait.far.y*(1-nearWeight)+gait.near.y*nearWeight)*.15*hemWeight;return v;};
+      v.y+=(gait.far.y*(1-nearWeight)+gait.near.y*nearWeight)*.15*hemWeight;
+      // When the feet trade the lead, the two trouser openings turn with the
+      // thighs. Raise only the low crotch curve; otherwise its sloping edge
+      // folds a forward-swinging calf. The waist and both shared hems stay joined.
+      const opening=smooth(Math.abs(gait.near.x-gait.far.x)/(profile.stature*pose.s*.25));
+      v.y-=Math.max(0,hemAt(raw[0])-570)*source.scale*pose.s*hemWeight*weight*opening;return v;};
     const split=y=>y<=600?650-(y-500)*.4:y<=700?610-(y-600)*.4:570+(y-700)/3;
     // The current three-quarter view has a persistent near limb. Swing lift
     // must never move that leg behind its counterpart. Root scene depth still
@@ -308,7 +315,7 @@
     // fur belongs to the foreground limb. Keep those identities when attaching
     // them to the production profile's near/far trouser openings. The narrow
     // extra source fur column at image-right has no boot and is excluded.
-    const hem=[[170,520],[280,540],[380,580],[490,607.5],[540,620],[650,610],[820,571.75],[850,565],[1010,545],[1191,520]];
+    const hem=[[170,520],[280,540],[355,570],[380,580],[490,607.5],[540,620],[650,610],[820,571.75],[827.7777777777778,570],[850,565],[1010,545],[1191,520]];
     const hemAt=x=>{for(let i=1;i<hem.length;i++)if(x<=hem[i][0]){const [a,y]=hem[i-1],[b,z]=hem[i];return y+(z-y)*(x-a)/(b-a);}return hem.at(-1)[1];};
     const clipHem=polygon=>{
       // Split at every hem corner, then clip each convex strip against its line.
@@ -330,7 +337,8 @@
       const map=raw=>{const hemY=hemAt(raw[0]),offset=(raw[0]-endCenter)*source.scale*pose.s;
         const target={x:B.x+offset*bc,y:B.y+offset*bs},root=body([raw[0],hemY]),blend=clamp((raw[1]-hemY)/Math.max(1,bottom-hemY),0,1);
         const kneeY=source.key.legs[textureIndex].knee[1],knot=clamp((kneeY-hemY)/Math.max(1,bottom-hemY),.2,.8),arc=blend<knot?smooth(blend/knot):smooth((1-blend)/(1-knot));
-        const bend=Math.min((gait.walkPose?.knees[side]||0)*profile.stature*pose.s,Math.hypot(target.x-root.x,target.y-root.y)*.32);
+        // The authored rear calf is foreshortened; use its own flex gain.
+        const bend=Math.min((gait.walkPose?.knees[side]||0)*profile.stature*pose.s*(side==='far'?2.2:1),Math.hypot(target.x-root.x,target.y-root.y)*(side==='far'?.7:.32));
         return{x:root.x+(target.x-root.x)*blend+bend*arc*bendWeight,y:root.y+(target.y-root.y)*blend};};
       calfMaps[side]={map,textureIndex};
       const topology=source.clothPolygons||(source.clothPolygons={});

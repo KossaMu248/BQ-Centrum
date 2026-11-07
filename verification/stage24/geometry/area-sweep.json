@@ -1,0 +1,23 @@
+{
+  "cases": 10368,
+  "min": 0.00542123925679583,
+  "passed": true,
+  "scope": "Additional96-phase actual submitted-triangle sweep through production walk_surface VM fixture; geometry, notvisualproof.",
+  "phasesPerCycle": 96,
+  "heights": [
+    145,
+    200,
+    280
+  ],
+  "weights": [
+    0,
+    0.25,
+    1
+  ],
+  "carriers": [
+    "front",
+    "back"
+  ],
+  "motionFamilies": 6,
+  "heroSHA256": "68694c6c18af480d5bc43b8c37a20c97117f3c3958246ad4bdbb491cd177a71b"
+}

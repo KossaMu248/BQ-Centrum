@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "archive": "delivery/BQ-Centrum-validated.zip",
+  "sha256": "53a073fe2bfba7b59a47994ae1d41d0e20c18badcda88e39740945fc9e1fcebd",
+  "zipBytes": 1058151695,
+  "uncompressedBytes": 1095879201,
+  "files": 2524,
+  "htmlFiles": [
+    "autumn-v19.html",
+    "index.html"
+  ],
+  "forbiddenPaths": [],
+  "credentialPatterns": [],
+  "independentScenery": {
+    "assets/centrum/delivery-cage.png": {
+      "sha256": "969ed1af10111cf56208e6fe362b3c2788c09cf6f21cb0ea02e11d2950bcb5ac",
+      "nativePixels": [
+        2172,
+        724
+      ]
+    },
+    "assets/centrum/service-gate.png": {
+      "sha256": "570c2238cb0d0e5a339d191581313ed5071504773bd5ae4378e4a478b3fb5f68",
+      "nativePixels": [
+        1877,
+        838
+      ]
+    },
+    "assets/centrum/service-passage.png": {
+      "sha256": "65b1829a4be6e71344b30d964682d2413debf17c6b987664a6a8bfd6ac6be18b",
+      "nativePixels": [
+        912,
+        1724
+      ]
+    }
+  },
+  "approvedBearAngleArtwork": {
+    "assets/centrum/actors/bear-directions.png": {
+      "sha256": "334a329ab35f7adeae1407e1223d702c27eb1ecf1d57a35ac61477d8dce21749",
+      "nativePixels": [
+        1536,
+        1024
+      ],
+      "pngColorType": 6,
+      "alphaChannel": true,
+      "provenance": "assets/centrum/actors/PROVENANCE.md",
+      "scope": "User-approved additional bear-only views; original baby remains source artwork. Metadata validation is separate from visual/gameplay acceptance."
+    }
+  }
+}

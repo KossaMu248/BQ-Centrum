@@ -1,0 +1,7 @@
+# Alternating-stride visibility diagnostic
+
+The old fixed rest-foot stagger survived at full walking weight. Combined with fixed near-over-far paint order and unequal original boots, this made the opposite step mostly disappear. For example, the back-carrier square view shows only13% of the far boot at its forward contact in the h200 layer raster. The corrected full stride uses a shared longitudinal track; both boots become visible at their opposite contact extremes. No leg artwork or layer identities are swapped.
+
+These are paused original-source alpha-layer counts, **not gameplay screenshots**. [METHOD.json](METHOD.json) records exact renderer/source-asset hashes and reproduction procedure. [World before](before-world.json)/[after](after-world.json) and [.60/.80 projected before](before-normal.json)/[after](after-normal.json) retain every sampled count. Final production geometry is used; normal projection is a layer diagnostic, not a strict cached-frame pixel comparison. Actual gameplay evidence is separate.
+
+[Geometry contract](geometry-contract.json) records1,440 submitted-boot cases,720 blended-width checks,24 physical support-velocity checks,72 heading cases,144 isolated standing cases,90 default comparisons plus90 actual published-default/48 published-idle-contact comparisons, and four rejected mutations. The actual published Stage23 renderer is SHA-reconstructed from the reviewed24inverse and fails the new alternating-lead contract.

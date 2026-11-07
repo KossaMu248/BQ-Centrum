@@ -26,7 +26,7 @@ function contract(code=current,dense=false){const api=rig(code),r={cases:0,calfV
   }
   const topology=v.source.clothPolygons;assert(topology?.far&&topology?.near);const again=submitted(api,profile,h,phase+.01,weight,motion);assert.equal(again.source.clothPolygons,topology,'source topology is cached rather than clipped every frame');
   const top=pants.flatMap(p=>p.raw.map((q,i)=>({q,d:p.t[i].destination}))).find(p=>p.q.y<100);assert(top);const n=v.source.norm([top.q.x,top.q.y]),base=v.pose.pelvisPoint(v.pose.pivot.x+n.x*v.pose.s,(profile.pelvisY-10-v.pose.oy+n.y)*v.pose.s);near(top.d.x,base.x);near(top.d.y,base.y);
-  if(weight===1&&phase===0){let moved=false;for(const p of pants)for(let i=0;i<3;i++){const q=p.raw[i];if(q.y<500)continue;const n=v.source.norm([q.x,q.y]),base=v.pose.pelvisPoint(v.pose.pivot.x+n.x*v.pose.s,(profile.pelvisY-10-v.pose.oy+n.y)*v.pose.s);if(Math.hypot(p.t[i].destination.x-base.x,p.t[i].destination.y-base.y)>.1)moved=true;}assert(moved,'trousers follow the upper legs while their waist stays attached');r.pelvisCases++;}
+  if(weight===1&&phase===0){let moved=false;for(const p of pants)for(let i=0;i<3;i++){const q=p.raw[i];if(q.y<500)continue;const n=v.source.norm([q.x,q.y]),base=v.pose.pelvisPoint(v.pose.pivot.x+n.x*v.pose.s,(profile.pelvisY-10-v.pose.oy+n.y)*v.pose.s);if((Math.abs(v.gait.near.x-v.gait.far.x)>1e-8?Math.abs(p.t[i].destination.x-base.x):Math.hypot(p.t[i].destination.x-base.x,p.t[i].destination.y-base.y))>.1)moved=true;}assert(moved,'trousers follow the upper legs while their waist stays attached');r.pelvisCases++;}
   r.cases++;
  }
  for(const weight of [0,1]){const job=api.centrumJob(api.profiles.front,'front',30,200,weight,{sourceWalk:true});assert(job.gait.sourceWalk);assert(job.key.startsWith('route:'),'repaired route frames have their own cache keys');r.sourceCases++;}
@@ -45,6 +45,10 @@ for(const [name,from,to]of [
 }
 // Rejected source-domain regression also applies to the actual previous game.
 const baseline=JSON.parse(fs.readFileSync('references/source/stage22-source-integration.json','utf8')).files['js/hero-rig.js'];let old=current;
+const stage24=JSON.parse(fs.readFileSync('references/source/stage24-source-integration.json','utf8')).files['js/hero-rig.js'];
+assert.equal(crypto.createHash('sha256').update(old).digest('hex'),stage24.currentSha256,'reviewed Stage24 renderer');
+for(const change of [...stage24.changes].reverse()){assert(old.includes(change.current));old=old.replace(change.current,change.previous);}
+assert.equal(crypto.createHash('sha256').update(old).digest('hex'),stage24.previousSha256,'exact Stage23 renderer before older inverses');
 const stage23=JSON.parse(fs.readFileSync('references/source/stage23-source-integration.json','utf8')).files['js/hero-rig.js'];
 assert.equal(crypto.createHash('sha256').update(old).digest('hex'),stage23.currentSha256,'reviewed Stage23 renderer');
 for(const change of [...stage23.changes].reverse()){assert(old.includes(change.current));old=old.replace(change.current,change.previous);}

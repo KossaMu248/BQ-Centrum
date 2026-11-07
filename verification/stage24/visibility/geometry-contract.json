@@ -1,0 +1,132 @@
+{
+  "scope": "Actual submitted boot triangles under mocked rasterization; not a pixel, likeness, gameplay or device-performance claim",
+  "contacts": [
+    {
+      "carrier": "front",
+      "height": 145,
+      "family": "Centrum",
+      "nearContactLead": 36.4398462447301,
+      "farContactLead": -36.43984624473009,
+      "nearToeLead": 42.026439852045506,
+      "farToeLead": -29.722512627394096
+    },
+    {
+      "carrier": "front",
+      "height": 145,
+      "family": "route",
+      "nearContactLead": 44.21489126457307,
+      "farContactLead": -44.21489126457308,
+      "nearToeLead": 49.69183512577108,
+      "farToeLead": -37.31007572669768
+    },
+    {
+      "carrier": "front",
+      "height": 200,
+      "family": "Centrum",
+      "nearContactLead": 50.261856889282896,
+      "farContactLead": -50.261856889282896,
+      "nearToeLead": 57.96750324420071,
+      "farToeLead": -40.996569141233245
+    },
+    {
+      "carrier": "front",
+      "height": 200,
+      "family": "route",
+      "nearContactLead": 60.986056916652515,
+      "farContactLead": -60.986056916652515,
+      "nearToeLead": 68.54046224244289,
+      "farToeLead": -51.462173416134725
+    },
+    {
+      "carrier": "front",
+      "height": 280,
+      "family": "Centrum",
+      "nearContactLead": 70.36659964499603,
+      "farContactLead": -70.36659964499604,
+      "nearToeLead": 81.15450454188095,
+      "farToeLead": -57.395196797726534
+    },
+    {
+      "carrier": "front",
+      "height": 280,
+      "family": "route",
+      "nearContactLead": 85.38047968331352,
+      "farContactLead": -85.38047968331352,
+      "nearToeLead": 95.95664713942003,
+      "farToeLead": -72.04704278258862
+    },
+    {
+      "carrier": "back",
+      "height": 145,
+      "family": "Centrum",
+      "nearContactLead": 36.4398462447301,
+      "farContactLead": -36.43984624473009,
+      "nearToeLead": 40.75650129753915,
+      "farToeLead": -31.004215317044828
+    },
+    {
+      "carrier": "back",
+      "height": 145,
+      "family": "route",
+      "nearContactLead": 44.21489126457308,
+      "farContactLead": -44.214891264573076,
+      "nearToeLead": 48.430544382831535,
+      "farToeLead": -38.58982253947207
+    },
+    {
+      "carrier": "back",
+      "height": 200,
+      "family": "Centrum",
+      "nearContactLead": 50.261856889282896,
+      "farContactLead": -50.261856889282896,
+      "nearToeLead": 56.21586385867468,
+      "farToeLead": -42.76443492006184
+    },
+    {
+      "carrier": "back",
+      "height": 200,
+      "family": "route",
+      "nearContactLead": 60.986056916652515,
+      "farContactLead": -60.986056916652515,
+      "nearToeLead": 66.80075087287109,
+      "farToeLead": -53.22734143375455
+    },
+    {
+      "carrier": "back",
+      "height": 280,
+      "family": "Centrum",
+      "nearContactLead": 70.36659964499606,
+      "farContactLead": -70.36659964499604,
+      "nearToeLead": 78.70220940214455,
+      "farToeLead": -59.870208888086566
+    },
+    {
+      "carrier": "back",
+      "height": 280,
+      "family": "route",
+      "nearContactLead": 85.38047968331352,
+      "farContactLead": -85.38047968331352,
+      "nearToeLead": 93.52105122201951,
+      "farToeLead": -74.5182780072564
+    }
+  ],
+  "cycle": {
+    "cases": 1440,
+    "weightBlends": 720,
+    "stanceRetreat": 24,
+    "idleCases": 144,
+    "defaultCases": 90,
+    "maximumHalfCycleContactResidual": 9.237055564881302e-14
+  },
+  "headingCases": 72,
+  "rejectedRegressions": [
+    "persistent old rest-foot stagger",
+    "static far leg",
+    "both legs reuse the near phase",
+    "collapsed depth stance"
+  ],
+  "previousPublishedDefectRejected": true,
+  "publishedDefaultCases": 90,
+  "publishedIdleContactCases": 48,
+  "passed": true
+}

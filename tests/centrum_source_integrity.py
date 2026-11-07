@@ -18,12 +18,19 @@ reverse20 = verifier['reverse_stage20_source']
 reverse21 = verifier['reverse_stage21_source']
 reverse22 = verifier['reverse_stage22_source']
 reverse23 = verifier['reverse_stage23_source']
+reverse24 = verifier['reverse_stage24_source']
 checks = []
+
+
+def stage23_text(source):
+    """Normalize current walking-track repair before every older source guard."""
+    current = (ROOT / source).read_text()
+    return reverse24(source, current) if source in verifier['STAGE24_PREVIOUS'] else current
 
 
 def stage22_text(source):
     """Normalize current articulation before every older source guard."""
-    current = (ROOT / source).read_text()
+    current = stage23_text(source)
     return reverse23(source, current) if source in verifier['STAGE23_PREVIOUS'] else current
 
 
@@ -360,7 +367,7 @@ with patch.object(Path, 'read_bytes', modified_stage22_manifest):
 assert len(checks) == 19 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 * len(stage18_cases) + 3 * len(stage19_cases) + 3 * len(stage20_cases) + 3 * len(stage21_cases) + 3 * len(stage22_cases)
 stage23_cases = []
 for source, expected in verifier['STAGE23_PREVIOUS'].items():
-    current = (ROOT / source).read_text()
+    current = stage23_text(source)
     restored = reverse23(source, current)
     assert hashlib.sha256(restored.encode()).hexdigest() == expected
     checks.append(source + ' exact Stage23 inverse')
@@ -381,7 +388,7 @@ for marker, replacement, label in [
     ('(gait.walkPose?.knees[side]||0)*profile.stature*pose.s', '0', 'painted knee drive'),
     ('bendWeight=clamp(safe,0,1);', 'bendWeight=1;', 'shared-leg positive-area limit'),
 ]:
-    current = (ROOT / 'js/hero-rig.js').read_text()
+    current = stage23_text('js/hero-rig.js')
     assert current.count(marker) == 1
     rejected('Stage23 unreviewed ' + label, lambda: reverse23('js/hero-rig.js', current.replace(marker, replacement, 1)))
 
@@ -389,9 +396,44 @@ manifest23 = ROOT / 'references/source/stage23-source-integration.json'
 def modified_stage23_manifest(path):
     return read_bytes(path) + (b'\n' if path == manifest23 else b'')
 with patch.object(Path, 'read_bytes', modified_stage23_manifest):
-    rejected('Stage23 inverse manifest tampering', lambda: reverse23('js/game.js', (ROOT / 'js/game.js').read_text()))
+    rejected('Stage23 inverse manifest tampering', lambda: reverse23('js/game.js', stage23_text('js/game.js')))
 
 assert len(checks) == 22 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 * len(stage18_cases) + 3 * len(stage19_cases) + 3 * len(stage20_cases) + 3 * len(stage21_cases) + 3 * len(stage22_cases) + 3 * len(stage23_cases)
+previous_check_count = len(checks)
+stage24_cases = []
+for source, expected in verifier['STAGE24_PREVIOUS'].items():
+    current = (ROOT / source).read_text()
+    restored = reverse24(source, current)
+    assert hashlib.sha256(restored.encode()).hexdigest() == expected
+    checks.append(source + ' exact Stage24 inverse')
+    stage24_cases.append(source)
+    rejected(source + ' appended Stage24 unreviewed source', lambda: reverse24(source, current + '\n// unreviewed source edit\n'))
+    if source.endswith('.html'):
+        marker, replacement = '<script src=', '<script async src='
+    elif source == 'js/game.js':
+        marker, replacement = '  function update(dt){', '  function update(dt){dt*=2;'
+    else:
+        marker, replacement = '  function draw(c,px,py,h,face,options={}){', '  function draw(c,px,py,h,face,options={}){h*=.5;'
+    assert current.count(marker) >= 1, (source, marker)
+    rejected(source + ' Stage24 unreviewed native/physics/load-order path', lambda: reverse24(source, current.replace(marker, replacement, 1)))
+
+# These whole-file guards complement actual rendered-pixel/stride geometry tests.
+for marker, replacement, label in [
+    ('(1-weight*Math.abs(gait.sourceWalk?1:(gait.groundMotion?.x??1)))', '(1-.1*weight)', 'persistent rest stagger'),
+    ('v.y-=Math.max(0,hemAt(raw[0])-570)', 'v.y-=0*Math.max(0,hemAt(raw[0])-570)', 'trouser opening follow'),
+    ("*(side==='far'?2.2:1)", '*1', 'rear calf flex gain'),
+]:
+    current = (ROOT / 'js/hero-rig.js').read_text()
+    assert current.count(marker) == 1, marker
+    rejected('Stage24 unreviewed ' + label, lambda: reverse24('js/hero-rig.js', current.replace(marker, replacement, 1)))
+
+manifest24 = ROOT / 'references/source/stage24-source-integration.json'
+def modified_stage24_manifest(path):
+    return read_bytes(path) + (b'\n' if path == manifest24 else b'')
+with patch.object(Path, 'read_bytes', modified_stage24_manifest):
+    rejected('Stage24 inverse manifest tampering', lambda: reverse24('js/game.js', (ROOT / 'js/game.js').read_text()))
+
+assert len(checks) == previous_check_count + 3 * len(stage24_cases) + 4
 print(f'PASS: 944 protected originals; all earlier guards retained; '
-      f'{len(stage23_cases)} exact Stage23 inverses/{2 * len(stage23_cases) + 2} rejected source/articulation/load-order mutations '
-      f'and Stage23 manifest tampering; cycling simulation block unchanged; {len(checks)} total in-memory checks.')
+      f'{len(stage24_cases)} exact Stage24 inverses/{2 * len(stage24_cases) + 3} rejected source/stride/load-order mutations '
+      f'and Stage24 manifest tampering; cycling simulation block unchanged; {len(checks)} total in-memory checks.')

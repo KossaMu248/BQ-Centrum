@@ -36,6 +36,27 @@ def replace_reviewed(text, added, original='', count=1):
     return text.replace(added, original)
 
 
+STAGE24_PREVIOUS = {'autumn-v19.html': '3cc28794e395e1cebd9f461044ec21853e1cf34b9d0efa29bc41a7aeeff650ac', 'index.html': '3cc28794e395e1cebd9f461044ec21853e1cf34b9d0efa29bc41a7aeeff650ac', 'js/game.js': '76e965815ef65a60f4ba35911713c748a89d7265b8a98cd4ed4119d8c2d09db0', 'js/hero-rig.js': 'd2016d30604a95f4aa44231910700b32e9875ed8d9fe998ccd0461d25a5b339e'}
+STAGE24_MANIFEST_SHA256 = 'e0638889b4336a46c0e4825ae89682557a664f49e70adc3a71473102f87ab607'
+INTENTIONAL.update(STAGE24_PREVIOUS)
+
+
+def reverse_stage24_source(path, text):
+    """Undo only exact reviewed alternating-stride and entry hunks."""
+    raw = (ROOT / 'references/source/stage24-source-integration.json').read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == STAGE24_MANIFEST_SHA256, 'Changed Stage24 source inverse manifest'
+    spec = json.loads(raw)
+    assert spec['format'] == 1 and spec['previousProjectCommit'] == '89f996a9d506f2dca2aab50903d61eee70bb0e04'
+    assert set(spec['files']) == set(STAGE24_PREVIOUS), 'Unexpected Stage24 protected paths'
+    edits = spec['files'][path]
+    assert edits['previousSha256'] == STAGE24_PREVIOUS[path]
+    assert hashlib.sha256(text.encode()).hexdigest() == edits['currentSha256'], 'Unreviewed Stage24 source bytes: ' + path
+    for edit in reversed(edits['changes']):
+        text = replace_reviewed(text, edit['current'], edit['previous'])
+    assert hashlib.sha256(text.encode()).hexdigest() == STAGE24_PREVIOUS[path], 'Unexpected source edits beyond reviewed Stage24 integration: ' + path
+    return text
+
+
 STAGE23_PREVIOUS = {'autumn-v19.html': 'fee8841b72a1c9e8dc4c953eef6c3092e3feff10ab26f1020ee6169982cede3d', 'index.html': 'fee8841b72a1c9e8dc4c953eef6c3092e3feff10ab26f1020ee6169982cede3d', 'js/game.js': 'bdb70de92e0a87cafacfa2762a7ba99a9d75259e59a96d26bb233a69fddc6a73', 'js/hero-rig.js': 'ab8e67740f5f105b2cc2ca89465aa7dd6379bf0713a07f6495f90b7038983074'}
 STAGE23_MANIFEST_SHA256 = 'e340556eab34c3671d44ddcbb0f3e8fed5f1545a09efe137f8bbe1d2f47f2082'
 INTENTIONAL.update(STAGE23_PREVIOUS)
@@ -290,6 +311,8 @@ def reverse_stage11_rig(text):
 
 def restore_donor(path):
     text = (ROOT / path).read_text()
+    if path in STAGE24_PREVIOUS:
+        text = reverse_stage24_source(path, text)
     if path in STAGE23_PREVIOUS:
         text = reverse_stage23_source(path, text)
     if path in STAGE22_PREVIOUS:
@@ -499,9 +522,9 @@ assert not failures, '\n'.join(failures)
 assert (ROOT / 'index.html').read_bytes() == (ROOT / 'autumn-v19.html').read_bytes()
 manifest = json.loads((ROOT / 'autumn-version.json').read_text())
 assert manifest['source']['commit'] == 'da109213fdf24947c2ac0b85de900214cc72e44f'
-assert manifest['edition'] == 'BQ_CENTRUM_STAGE23'
+assert manifest['edition'] == 'BQ_CENTRUM_STAGE24'
 assert manifest['project'] == 'BQ-Centrum' and manifest['entry'] == 'autumn-v19.html'
 assert manifest['source']['repository'] == 'KossaMu248/BQ-Autumn'
 assert manifest['source']['branch'] == 'main' and manifest['source']['build_id'] == 'AUTUMN_RIDE_ART_V19'
 print(f'PASS: {len(HASHES)} pinned original files verified; all source assets/CSS and original protected code match;')
-print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest, Stage17 NPC-prop fit, Stage18 bench/peaceful-seat/opaque-eye, Stage19 compact/sparse bench, Stage20 walking-pace and Stage21 camera/render-frustum and Stage22 connected walking-surface/Stage23 articulated walking additions differ.')
+print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest, Stage17 NPC-prop fit, Stage18 bench/peaceful-seat/opaque-eye, Stage19 compact/sparse bench, Stage20 walking-pace and Stage21 camera/render-frustum and Stage22 connected walking-surface/Stage23 articulated walking/Stage24 alternating visible stride additions differ.')

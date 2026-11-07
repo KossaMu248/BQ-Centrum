@@ -1,0 +1,1058 @@
+[
+  {
+    "name": "front",
+    "route": false,
+    "phase": 0,
+    "sole": {
+      "near": {
+        "x": 28.646142544705818,
+        "y": -0.8861945124239851
+      },
+      "far": {
+        "x": -21.61571434457708,
+        "y": -5.364495492208806
+      }
+    },
+    "totalFarBootPixels": 631,
+    "farVisibleFraction": 1,
+    "layerBounds": {
+      "foreground": {
+        "left": 113,
+        "right": 200,
+        "top": 149,
+        "bottom": 229
+      },
+      "farBoot": {
+        "left": 103,
+        "right": 143,
+        "top": 202,
+        "bottom": 226
+      }
+    },
+    "foregroundRightMinusFarBootRight": 57,
+    "farPixelsCoveredByForeground": 0
+  },
+  {
+    "name": "front",
+    "route": false,
+    "phase": 0.125,
+    "sole": {
+      "near": {
+        "x": 16.08360655737705,
+        "y": 0
+      },
+      "far": {
+        "x": -18.563173839542216,
+        "y": -8.973370233988438
+      }
+    },
+    "totalFarBootPixels": 631,
+    "farVisibleFraction": 0.9904912836767037,
+    "layerBounds": {
+      "foreground": {
+        "left": 114,
+        "right": 188,
+        "top": 146,
+        "bottom": 230
+      },
+      "farBoot": {
+        "left": 106,
+        "right": 146,
+        "top": 198,
+        "bottom": 222
+      }
+    },
+    "foregroundRightMinusFarBootRight": 42,
+    "farPixelsCoveredByForeground": 6
+  },
+  {
+    "name": "front",
+    "route": false,
+    "phase": 0.25,
+    "sole": {
+      "near": {
+        "x": 3.4836065573770494,
+        "y": 0
+      },
+      "far": {
+        "x": 3.4836065573770494,
+        "y": -12.988524590163935
+      }
+    },
+    "totalFarBootPixels": 632,
+    "farVisibleFraction": 0.21360759493670886,
+    "layerBounds": {
+      "foreground": {
+        "left": 119,
+        "right": 176,
+        "top": 144,
+        "bottom": 230
+      },
+      "farBoot": {
+        "left": 127,
+        "right": 167,
+        "top": 195,
+        "bottom": 218
+      }
+    },
+    "foregroundRightMinusFarBootRight": 9,
+    "farPixelsCoveredByForeground": 497
+  },
+  {
+    "name": "front",
+    "route": false,
+    "phase": 0.375,
+    "sole": {
+      "near": {
+        "x": -9.111253290110813,
+        "y": -0.3793386998079615
+      },
+      "far": {
+        "x": 25.53360655737705,
+        "y": -8.919774590163936
+      }
+    },
+    "totalFarBootPixels": 634,
+    "farVisibleFraction": 0.8817034700315457,
+    "layerBounds": {
+      "foreground": {
+        "left": 117,
+        "right": 172,
+        "top": 147,
+        "bottom": 230
+      },
+      "farBoot": {
+        "left": 149,
+        "right": 189,
+        "top": 200,
+        "bottom": 223
+      }
+    },
+    "foregroundRightMinusFarBootRight": -17,
+    "farPixelsCoveredByForeground": 75
+  },
+  {
+    "name": "front",
+    "route": false,
+    "phase": 0.5,
+    "sole": {
+      "near": {
+        "x": -21.61571434457708,
+        "y": -1.675970902044871
+      },
+      "far": {
+        "x": 28.646142544705818,
+        "y": -4.5747191025879195
+      }
+    },
+    "totalFarBootPixels": 633,
+    "farVisibleFraction": 1,
+    "layerBounds": {
+      "foreground": {
+        "left": 105,
+        "right": 169,
+        "top": 149,
+        "bottom": 229
+      },
+      "farBoot": {
+        "left": 152,
+        "right": 192,
+        "top": 204,
+        "bottom": 227
+      }
+    },
+    "foregroundRightMinusFarBootRight": -23,
+    "farPixelsCoveredByForeground": 0
+  },
+  {
+    "name": "front",
+    "route": false,
+    "phase": 0.625,
+    "sole": {
+      "near": {
+        "x": -18.563173839542216,
+        "y": -5.284845643824504
+      },
+      "far": {
+        "x": 16.08360655737705,
+        "y": -3.6885245901639347
+      }
+    },
+    "totalFarBootPixels": 631,
+    "farVisibleFraction": 0.7543581616481775,
+    "layerBounds": {
+      "foreground": {
+        "left": 108,
+        "right": 169,
+        "top": 146,
+        "bottom": 225
+      },
+      "farBoot": {
+        "left": 140,
+        "right": 180,
+        "top": 205,
+        "bottom": 228
+      }
+    },
+    "foregroundRightMinusFarBootRight": -11,
+    "farPixelsCoveredByForeground": 155
+  },
+  {
+    "name": "front",
+    "route": false,
+    "phase": 0.75,
+    "sole": {
+      "near": {
+        "x": 3.4836065573770494,
+        "y": -9.3
+      },
+      "far": {
+        "x": 3.4836065573770494,
+        "y": -3.6885245901639347
+      }
+    },
+    "totalFarBootPixels": 636,
+    "farVisibleFraction": 0.38522012578616355,
+    "layerBounds": {
+      "foreground": {
+        "left": 118,
+        "right": 176,
+        "top": 143,
+        "bottom": 221
+      },
+      "farBoot": {
+        "left": 127,
+        "right": 167,
+        "top": 205,
+        "bottom": 228
+      }
+    },
+    "foregroundRightMinusFarBootRight": 9,
+    "farPixelsCoveredByForeground": 391
+  },
+  {
+    "name": "front",
+    "route": false,
+    "phase": 0.875,
+    "sole": {
+      "near": {
+        "x": 25.53360655737705,
+        "y": -5.23125
+      },
+      "far": {
+        "x": -9.111253290110813,
+        "y": -4.067863289971896
+      }
+    },
+    "totalFarBootPixels": 632,
+    "farVisibleFraction": 0.9636075949367089,
+    "layerBounds": {
+      "foreground": {
+        "left": 116,
+        "right": 197,
+        "top": 146,
+        "bottom": 225
+      },
+      "farBoot": {
+        "left": 115,
+        "right": 155,
+        "top": 204,
+        "bottom": 227
+      }
+    },
+    "foregroundRightMinusFarBootRight": 42,
+    "farPixelsCoveredByForeground": 23
+  },
+  {
+    "name": "front",
+    "route": true,
+    "phase": 0,
+    "sole": {
+      "near": {
+        "x": 33.99191666451384,
+        "y": -1.5263306429337218
+      },
+      "far": {
+        "x": -26.994140252138678,
+        "y": -5.7236321140755635
+      }
+    },
+    "totalFarBootPixels": 639,
+    "farVisibleFraction": 1,
+    "layerBounds": {
+      "foreground": {
+        "left": 112,
+        "right": 205,
+        "top": 149,
+        "bottom": 229
+      },
+      "farBoot": {
+        "left": 97,
+        "right": 137,
+        "top": 201,
+        "bottom": 226
+      }
+    },
+    "foregroundRightMinusFarBootRight": 68,
+    "farPixelsCoveredByForeground": 0
+  },
+  {
+    "name": "front",
+    "route": true,
+    "phase": 0.125,
+    "sole": {
+      "near": {
+        "x": 18.78360655737705,
+        "y": 0
+      },
+      "far": {
+        "x": -23.287483924596344,
+        "y": -9.682355014807973
+      }
+    },
+    "totalFarBootPixels": 635,
+    "farVisibleFraction": 1,
+    "layerBounds": {
+      "foreground": {
+        "left": 112,
+        "right": 191,
+        "top": 146,
+        "bottom": 230
+      },
+      "farBoot": {
+        "left": 101,
+        "right": 141,
+        "top": 197,
+        "bottom": 222
+      }
+    },
+    "foregroundRightMinusFarBootRight": 50,
+    "farPixelsCoveredByForeground": 0
+  },
+  {
+    "name": "front",
+    "route": true,
+    "phase": 0.25,
+    "sole": {
+      "near": {
+        "x": 3.4836065573770494,
+        "y": 0
+      },
+      "far": {
+        "x": 3.4836065573770494,
+        "y": -14.228524590163934
+      }
+    },
+    "totalFarBootPixels": 634,
+    "farVisibleFraction": 0.22870662460567823,
+    "layerBounds": {
+      "foreground": {
+        "left": 119,
+        "right": 176,
+        "top": 144,
+        "bottom": 230
+      },
+      "farBoot": {
+        "left": 127,
+        "right": 168,
+        "top": 193,
+        "bottom": 217
+      }
+    },
+    "foregroundRightMinusFarBootRight": 8,
+    "farPixelsCoveredByForeground": 489
+  },
+  {
+    "name": "front",
+    "route": true,
+    "phase": 0.375,
+    "sole": {
+      "near": {
+        "x": -11.801621627982213,
+        "y": -0.7085361608819193
+      },
+      "far": {
+        "x": 30.25860655737705,
+        "y": -9.617274590163934
+      }
+    },
+    "totalFarBootPixels": 633,
+    "farVisibleFraction": 0.9636650868878357,
+    "layerBounds": {
+      "foreground": {
+        "left": 114,
+        "right": 171,
+        "top": 147,
+        "bottom": 230
+      },
+      "farBoot": {
+        "left": 154,
+        "right": 193,
+        "top": 199,
+        "bottom": 222
+      }
+    },
+    "foregroundRightMinusFarBootRight": -22,
+    "farPixelsCoveredByForeground": 23
+  },
+  {
+    "name": "front",
+    "route": true,
+    "phase": 0.5,
+    "sole": {
+      "near": {
+        "x": -26.994140252138678,
+        "y": -2.035107523911629
+      },
+      "far": {
+        "x": 33.99191666451384,
+        "y": -5.214855233097657
+      }
+    },
+    "totalFarBootPixels": 631,
+    "farVisibleFraction": 1,
+    "layerBounds": {
+      "foreground": {
+        "left": 99,
+        "right": 168,
+        "top": 149,
+        "bottom": 229
+      },
+      "farBoot": {
+        "left": 157,
+        "right": 197,
+        "top": 204,
+        "bottom": 227
+      }
+    },
+    "foregroundRightMinusFarBootRight": -29,
+    "farPixelsCoveredByForeground": 0
+  },
+  {
+    "name": "front",
+    "route": true,
+    "phase": 0.625,
+    "sole": {
+      "near": {
+        "x": -23.287483924596344,
+        "y": -5.99383042464404
+      },
+      "far": {
+        "x": 18.78360655737705,
+        "y": -3.6885245901639347
+      }
+    },
+    "totalFarBootPixels": 638,
+    "farVisibleFraction": 0.9106583072100314,
+    "layerBounds": {
+      "foreground": {
+        "left": 103,
+        "right": 168,
+        "top": 146,
+        "bottom": 225
+      },
+      "farBoot": {
+        "left": 142,
+        "right": 182,
+        "top": 205,
+        "bottom": 228
+      }
+    },
+    "foregroundRightMinusFarBootRight": -14,
+    "farPixelsCoveredByForeground": 57
+  },
+  {
+    "name": "front",
+    "route": true,
+    "phase": 0.75,
+    "sole": {
+      "near": {
+        "x": 3.4836065573770494,
+        "y": -10.54
+      },
+      "far": {
+        "x": 3.4836065573770494,
+        "y": -3.6885245901639347
+      }
+    },
+    "totalFarBootPixels": 636,
+    "farVisibleFraction": 0.4638364779874214,
+    "layerBounds": {
+      "foreground": {
+        "left": 119,
+        "right": 176,
+        "top": 143,
+        "bottom": 220
+      },
+      "farBoot": {
+        "left": 127,
+        "right": 167,
+        "top": 205,
+        "bottom": 228
+      }
+    },
+    "foregroundRightMinusFarBootRight": 9,
+    "farPixelsCoveredByForeground": 341
+  },
+  {
+    "name": "front",
+    "route": true,
+    "phase": 0.875,
+    "sole": {
+      "near": {
+        "x": 30.25860655737705,
+        "y": -5.92875
+      },
+      "far": {
+        "x": -11.801621627982213,
+        "y": -4.397060751045854
+      }
+    },
+    "totalFarBootPixels": 633,
+    "farVisibleFraction": 1,
+    "layerBounds": {
+      "foreground": {
+        "left": 116,
+        "right": 202,
+        "top": 146,
+        "bottom": 224
+      },
+      "farBoot": {
+        "left": 112,
+        "right": 152,
+        "top": 204,
+        "bottom": 227
+      }
+    },
+    "foregroundRightMinusFarBootRight": 50,
+    "farPixelsCoveredByForeground": 0
+  },
+  {
+    "name": "back",
+    "route": false,
+    "phase": 0,
+    "sole": {
+      "near": {
+        "x": 30.68521843308814,
+        "y": -0.8861945124239851
+      },
+      "far": {
+        "x": -19.576638456194758,
+        "y": -5.620744077587277
+      }
+    },
+    "totalFarBootPixels": 650,
+    "farVisibleFraction": 1,
+    "layerBounds": {
+      "foreground": {
+        "left": 114,
+        "right": 200,
+        "top": 152,
+        "bottom": 229
+      },
+      "farBoot": {
+        "left": 104,
+        "right": 145,
+        "top": 201,
+        "bottom": 226
+      }
+    },
+    "foregroundRightMinusFarBootRight": 55,
+    "farPixelsCoveredByForeground": 0
+  },
+  {
+    "name": "back",
+    "route": false,
+    "phase": 0.125,
+    "sole": {
+      "near": {
+        "x": 18.122682445759366,
+        "y": 0
+      },
+      "far": {
+        "x": -16.5240979511599,
+        "y": -9.229618819366909
+      }
+    },
+    "totalFarBootPixels": 645,
+    "farVisibleFraction": 1,
+    "layerBounds": {
+      "foreground": {
+        "left": 115,
+        "right": 188,
+        "top": 150,
+        "bottom": 230
+      },
+      "farBoot": {
+        "left": 107,
+        "right": 148,
+        "top": 198,
+        "bottom": 222
+      }
+    },
+    "foregroundRightMinusFarBootRight": 40,
+    "farPixelsCoveredByForeground": 0
+  },
+  {
+    "name": "back",
+    "route": false,
+    "phase": 0.25,
+    "sole": {
+      "near": {
+        "x": 5.522682445759369,
+        "y": 0
+      },
+      "far": {
+        "x": 5.522682445759369,
+        "y": -13.244773175542408
+      }
+    },
+    "totalFarBootPixels": 640,
+    "farVisibleFraction": 0.28125,
+    "layerBounds": {
+      "foreground": {
+        "left": 121,
+        "right": 176,
+        "top": 147,
+        "bottom": 230
+      },
+      "farBoot": {
+        "left": 129,
+        "right": 169,
+        "top": 195,
+        "bottom": 218
+      }
+    },
+    "foregroundRightMinusFarBootRight": 7,
+    "farPixelsCoveredByForeground": 460
+  },
+  {
+    "name": "back",
+    "route": false,
+    "phase": 0.375,
+    "sole": {
+      "near": {
+        "x": -7.072177401728494,
+        "y": -0.3793386998079615
+      },
+      "far": {
+        "x": 27.572682445759366,
+        "y": -9.176023175542406
+      }
+    },
+    "totalFarBootPixels": 648,
+    "farVisibleFraction": 0.9166666666666666,
+    "layerBounds": {
+      "foreground": {
+        "left": 121,
+        "right": 171,
+        "top": 150,
+        "bottom": 230
+      },
+      "farBoot": {
+        "left": 151,
+        "right": 191,
+        "top": 199,
+        "bottom": 223
+      }
+    },
+    "foregroundRightMinusFarBootRight": -20,
+    "farPixelsCoveredByForeground": 54
+  },
+  {
+    "name": "back",
+    "route": false,
+    "phase": 0.5,
+    "sole": {
+      "near": {
+        "x": -19.576638456194758,
+        "y": -1.675970902044871
+      },
+      "far": {
+        "x": 30.68521843308814,
+        "y": -4.830967687966392
+      }
+    },
+    "totalFarBootPixels": 644,
+    "farVisibleFraction": 1,
+    "layerBounds": {
+      "foreground": {
+        "left": 109,
+        "right": 168,
+        "top": 152,
+        "bottom": 229
+      },
+      "farBoot": {
+        "left": 154,
+        "right": 194,
+        "top": 204,
+        "bottom": 227
+      }
+    },
+    "foregroundRightMinusFarBootRight": -26,
+    "farPixelsCoveredByForeground": 0
+  },
+  {
+    "name": "back",
+    "route": false,
+    "phase": 0.625,
+    "sole": {
+      "near": {
+        "x": -16.5240979511599,
+        "y": -5.284845643824504
+      },
+      "far": {
+        "x": 18.122682445759366,
+        "y": -3.9447731755424065
+      }
+    },
+    "totalFarBootPixels": 645,
+    "farVisibleFraction": 0.7968992248062016,
+    "layerBounds": {
+      "foreground": {
+        "left": 112,
+        "right": 168,
+        "top": 149,
+        "bottom": 225
+      },
+      "farBoot": {
+        "left": 141,
+        "right": 182,
+        "top": 204,
+        "bottom": 228
+      }
+    },
+    "foregroundRightMinusFarBootRight": -14,
+    "farPixelsCoveredByForeground": 131
+  },
+  {
+    "name": "back",
+    "route": false,
+    "phase": 0.75,
+    "sole": {
+      "near": {
+        "x": 5.522682445759369,
+        "y": -9.3
+      },
+      "far": {
+        "x": 5.522682445759369,
+        "y": -3.9447731755424065
+      }
+    },
+    "totalFarBootPixels": 642,
+    "farVisibleFraction": 0.3940809968847352,
+    "layerBounds": {
+      "foreground": {
+        "left": 120,
+        "right": 176,
+        "top": 146,
+        "bottom": 221
+      },
+      "farBoot": {
+        "left": 129,
+        "right": 169,
+        "top": 204,
+        "bottom": 228
+      }
+    },
+    "foregroundRightMinusFarBootRight": 7,
+    "farPixelsCoveredByForeground": 389
+  },
+  {
+    "name": "back",
+    "route": false,
+    "phase": 0.875,
+    "sole": {
+      "near": {
+        "x": 27.572682445759366,
+        "y": -5.23125
+      },
+      "far": {
+        "x": -7.072177401728494,
+        "y": -4.324111875350368
+      }
+    },
+    "totalFarBootPixels": 643,
+    "farVisibleFraction": 0.9860031104199067,
+    "layerBounds": {
+      "foreground": {
+        "left": 117,
+        "right": 197,
+        "top": 149,
+        "bottom": 225
+      },
+      "farBoot": {
+        "left": 116,
+        "right": 157,
+        "top": 204,
+        "bottom": 227
+      }
+    },
+    "foregroundRightMinusFarBootRight": 40,
+    "farPixelsCoveredByForeground": 9
+  },
+  {
+    "name": "back",
+    "route": true,
+    "phase": 0,
+    "sole": {
+      "near": {
+        "x": 36.03099255289616,
+        "y": -1.5263306429337218
+      },
+      "far": {
+        "x": -24.955064363756357,
+        "y": -5.979880699454036
+      }
+    },
+    "totalFarBootPixels": 645,
+    "farVisibleFraction": 1,
+    "layerBounds": {
+      "foreground": {
+        "left": 113,
+        "right": 205,
+        "top": 152,
+        "bottom": 229
+      },
+      "farBoot": {
+        "left": 99,
+        "right": 139,
+        "top": 201,
+        "bottom": 225
+      }
+    },
+    "foregroundRightMinusFarBootRight": 66,
+    "farPixelsCoveredByForeground": 0
+  },
+  {
+    "name": "back",
+    "route": true,
+    "phase": 0.125,
+    "sole": {
+      "near": {
+        "x": 20.82268244575937,
+        "y": 0
+      },
+      "far": {
+        "x": -21.248408036214027,
+        "y": -9.938603600186445
+      }
+    },
+    "totalFarBootPixels": 644,
+    "farVisibleFraction": 1,
+    "layerBounds": {
+      "foreground": {
+        "left": 114,
+        "right": 191,
+        "top": 150,
+        "bottom": 230
+      },
+      "farBoot": {
+        "left": 103,
+        "right": 143,
+        "top": 197,
+        "bottom": 222
+      }
+    },
+    "foregroundRightMinusFarBootRight": 48,
+    "farPixelsCoveredByForeground": 0
+  },
+  {
+    "name": "back",
+    "route": true,
+    "phase": 0.25,
+    "sole": {
+      "near": {
+        "x": 5.522682445759369,
+        "y": 0
+      },
+      "far": {
+        "x": 5.522682445759369,
+        "y": -14.484773175542406
+      }
+    },
+    "totalFarBootPixels": 654,
+    "farVisibleFraction": 0.290519877675841,
+    "layerBounds": {
+      "foreground": {
+        "left": 120,
+        "right": 176,
+        "top": 147,
+        "bottom": 230
+      },
+      "farBoot": {
+        "left": 129,
+        "right": 170,
+        "top": 193,
+        "bottom": 217
+      }
+    },
+    "foregroundRightMinusFarBootRight": 6,
+    "farPixelsCoveredByForeground": 464
+  },
+  {
+    "name": "back",
+    "route": true,
+    "phase": 0.375,
+    "sole": {
+      "near": {
+        "x": -9.762545739599894,
+        "y": -0.7085361608819193
+      },
+      "far": {
+        "x": 32.297682445759364,
+        "y": -9.873523175542406
+      }
+    },
+    "totalFarBootPixels": 647,
+    "farVisibleFraction": 0.9876352395672334,
+    "layerBounds": {
+      "foreground": {
+        "left": 118,
+        "right": 170,
+        "top": 150,
+        "bottom": 230
+      },
+      "farBoot": {
+        "left": 155,
+        "right": 196,
+        "top": 198,
+        "bottom": 222
+      }
+    },
+    "foregroundRightMinusFarBootRight": -26,
+    "farPixelsCoveredByForeground": 8
+  },
+  {
+    "name": "back",
+    "route": true,
+    "phase": 0.5,
+    "sole": {
+      "near": {
+        "x": -24.955064363756357,
+        "y": -2.035107523911629
+      },
+      "far": {
+        "x": 36.03099255289616,
+        "y": -5.471103818476128
+      }
+    },
+    "totalFarBootPixels": 646,
+    "farVisibleFraction": 1,
+    "layerBounds": {
+      "foreground": {
+        "left": 103,
+        "right": 167,
+        "top": 152,
+        "bottom": 229
+      },
+      "farBoot": {
+        "left": 159,
+        "right": 199,
+        "top": 203,
+        "bottom": 227
+      }
+    },
+    "foregroundRightMinusFarBootRight": -32,
+    "farPixelsCoveredByForeground": 0
+  },
+  {
+    "name": "back",
+    "route": true,
+    "phase": 0.625,
+    "sole": {
+      "near": {
+        "x": -21.248408036214027,
+        "y": -5.99383042464404
+      },
+      "far": {
+        "x": 20.82268244575937,
+        "y": -3.9447731755424065
+      }
+    },
+    "totalFarBootPixels": 650,
+    "farVisibleFraction": 0.94,
+    "layerBounds": {
+      "foreground": {
+        "left": 107,
+        "right": 167,
+        "top": 149,
+        "bottom": 225
+      },
+      "farBoot": {
+        "left": 144,
+        "right": 185,
+        "top": 204,
+        "bottom": 228
+      }
+    },
+    "foregroundRightMinusFarBootRight": -18,
+    "farPixelsCoveredByForeground": 39
+  },
+  {
+    "name": "back",
+    "route": true,
+    "phase": 0.75,
+    "sole": {
+      "near": {
+        "x": 5.522682445759369,
+        "y": -10.54
+      },
+      "far": {
+        "x": 5.522682445759369,
+        "y": -3.9447731755424065
+      }
+    },
+    "totalFarBootPixels": 642,
+    "farVisibleFraction": 0.470404984423676,
+    "layerBounds": {
+      "foreground": {
+        "left": 120,
+        "right": 176,
+        "top": 146,
+        "bottom": 220
+      },
+      "farBoot": {
+        "left": 129,
+        "right": 169,
+        "top": 204,
+        "bottom": 228
+      }
+    },
+    "foregroundRightMinusFarBootRight": 7,
+    "farPixelsCoveredByForeground": 340
+  },
+  {
+    "name": "back",
+    "route": true,
+    "phase": 0.875,
+    "sole": {
+      "near": {
+        "x": 32.297682445759364,
+        "y": -5.92875
+      },
+      "far": {
+        "x": -9.762545739599894,
+        "y": -4.653309336424326
+      }
+    },
+    "totalFarBootPixels": 648,
+    "farVisibleFraction": 1,
+    "layerBounds": {
+      "foreground": {
+        "left": 117,
+        "right": 202,
+        "top": 150,
+        "bottom": 224
+      },
+      "farBoot": {
+        "left": 114,
+        "right": 154,
+        "top": 203,
+        "bottom": 227
+      }
+    },
+    "foregroundRightMinusFarBootRight": 48,
+    "farPixelsCoveredByForeground": 0
+  }
+]

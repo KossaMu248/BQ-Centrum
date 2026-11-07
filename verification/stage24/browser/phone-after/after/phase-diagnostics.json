@@ -1,0 +1,66 @@
+[
+  {
+    "file": "phone-after/after/phone-square-right-native-phase-strip-diagnostic.png",
+    "sha256": "a1096893502d1650bab16ff8d9628aeac2d14c3ccdb7abf38e7d0ba38bf5e938",
+    "scope": "Unscaled160x120native crops of four actual gameplay phase JPEGs; diagnostic, not full screenshot or generated character.",
+    "sourceFrames": [
+      "phone-after/after/phone-square/right-phase-0.125.jpg",
+      "phone-after/after/phone-square/right-phase-0.375.jpg",
+      "phone-after/after/phone-square/right-phase-0.625.jpg",
+      "phone-after/after/phone-square/right-phase-0.875.jpg"
+    ]
+  },
+  {
+    "file": "phone-after/after/phone-square-left-native-phase-strip-diagnostic.png",
+    "sha256": "d2e14c110489a3b9dbd0f99072a2e8ea9bb1450d5b0ee9a5faa8f1bceda894d7",
+    "scope": "Unscaled160x120native crops of four actual gameplay phase JPEGs; diagnostic, not full screenshot or generated character.",
+    "sourceFrames": [
+      "phone-after/after/phone-square/left-phase-0.125.jpg",
+      "phone-after/after/phone-square/left-phase-0.375.jpg",
+      "phone-after/after/phone-square/left-phase-0.625.jpg",
+      "phone-after/after/phone-square/left-phase-0.875.jpg"
+    ]
+  },
+  {
+    "file": "phone-after/after/phone-street-right-native-phase-strip-diagnostic.png",
+    "sha256": "eab5a1a88f71c48c6e950bd23554969ed379fbc4ecde216de479a7853cd5f48f",
+    "scope": "Unscaled160x120native crops of four actual gameplay phase JPEGs; diagnostic, not full screenshot or generated character.",
+    "sourceFrames": [
+      "phone-after/after/phone-street/right-phase-0.125.jpg",
+      "phone-after/after/phone-street/right-phase-0.375.jpg",
+      "phone-after/after/phone-street/right-phase-0.625.jpg",
+      "phone-after/after/phone-street/right-phase-0.875.jpg"
+    ]
+  },
+  {
+    "file": "phone-after/after/phone-street-left-native-phase-strip-diagnostic.png",
+    "sha256": "40e68ed688c3356cbf469eb53ed28a1e0f8fd1867394004ccba4f82f17976e49",
+    "scope": "Unscaled160x120native crops of four actual gameplay phase JPEGs; diagnostic, not full screenshot or generated character.",
+    "sourceFrames": [
+      "phone-after/after/phone-street/left-phase-0.125.jpg",
+      "phone-after/after/phone-street/left-phase-0.375.jpg",
+      "phone-after/after/phone-street/left-phase-0.625.jpg",
+      "phone-after/after/phone-street/left-phase-0.875.jpg"
+    ]
+  },
+  {
+    "file": "phone-after/after/phone-square-native-temporal-diagnostic.png",
+    "sha256": "9b3dfbbdf41e10de38f5fd9bf20d72157bd1bbca559f770359f966f04f04da80",
+    "scope": "Sixteen chronological native160x120foot-area crops from actual1xvideo, no enlargement. Temporal diagnostic, not a full gameplay screenshot or generated art.",
+    "sourceVideo": "phone-after/after/phone-square-stride.webm",
+    "startSeconds": 0.3,
+    "sampleStepSeconds": 0.05,
+    "samples": 16,
+    "horizontalCropTrackingPixelsPerSecond": 64.61215401853836
+  },
+  {
+    "file": "phone-after/after/phone-street-native-temporal-diagnostic.png",
+    "sha256": "c226900b620d0db6d901e0d02bfeaccf4168eb90b3a0131c8344eb896c8e361a",
+    "scope": "Sixteen chronological native160x120foot-area crops from actual1xvideo, no enlargement. Temporal diagnostic, not a full gameplay screenshot or generated art.",
+    "sourceVideo": "phone-after/after/phone-street-stride.webm",
+    "startSeconds": 0.3,
+    "sampleStepSeconds": 0.05,
+    "samples": 16,
+    "horizontalCropTrackingPixelsPerSecond": 2.5132294736230434
+  }
+]

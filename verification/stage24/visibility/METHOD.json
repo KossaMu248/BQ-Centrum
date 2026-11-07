@@ -1,0 +1,57 @@
+{
+  "scope": "Paused original-art alpha-raster diagnostic, not in-game screenshots/video or physical-device testing. Geometry contract separately uses mocked Canvas.",
+  "browser": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+  "sourceBeforeSHA256": "d2016d30604a95f4aa44231910700b32e9875ed8d9fe998ccd0461d25a5b339e",
+  "sourceAfterSHA256": "68694c6c18af480d5bc43b8c37a20c97117f3c3958246ad4bdbb491cd177a71b",
+  "sourceInverse": "references/source/stage24-source-integration.json",
+  "beforeCommit": "89f996a9d506f2dca2aab50903d61eee70bb0e04",
+  "originalAssetsSHA256": {
+    "assets/art/bear-near-contact-v18.png": "98204b77df52ac8ffc50a3d967e95dbff7d39a396d6976122aaf5525ac4fd190",
+    "assets/art/bear-idle-lower-v18.png": "ea49613d5e7954e5be0b8e9d0cb6ead8aa013a371d9c67d0094fa47dad7a7cf9"
+  },
+  "casesPerRasterSnapshot": 32,
+  "carriers": [
+    "front",
+    "back"
+  ],
+  "renderFamilies": [
+    "Centrum",
+    "source route"
+  ],
+  "phases": [
+    0.0,
+    0.125,
+    0.25,
+    0.375,
+    0.5,
+    0.625,
+    0.75,
+    0.875
+  ],
+  "weight": 1,
+  "worldActorHeight": 200,
+  "worldSnapshotProjection": 1,
+  "normalSnapshotProjection": {
+    "Centrum": 0.6,
+    "source route": 0.8
+  },
+  "normalProjectedHeight": {
+    "Centrum": 120,
+    "source route": 160
+  },
+  "alphaThreshold": 127,
+  "method": [
+    "Load the exact before/final hero-rig bytes plus unchanged source locomotion/depth/pose modules in Chromium. All image requests are intercepted and fulfilled from this target filesystem; no external network or donor checkout.",
+    "Call production projectGroundGait, surfacePose and lowerMesh; use prepareLower(0) actual original boot texels and production surfaceTriangle painter.",
+    "Rasterize the actual far boot separately, then all later-painted near calf, near boot and shared shorts as foreground. Count far-boot alpha>127 pixels covered by foreground alpha>127.",
+    "World snapshot uses native h200. Normal projection scales the submitted triangles by.60 in Centrum/.80 on the copied route; these cropped layer rasters are diagnostics, not full gameplay or strict pixel identity against cached whole-body frames.",
+    "Phase0 and.5 are opposite foot-contact extremes. Geometry-contract.json verifies original boot landmarks by sampling actual submitted source triangles, exact support retreat, half-cycle symmetry, idle/default and rejected regressions."
+  ],
+  "filesSHA256": {
+    "before-world.json": "32a832db1eed71f26e25d34e44e5b18155f127a6ea3c062ed0b2254605009488",
+    "after-world.json": "a0d5075f3acae1f39b582c47a84bd86c6ccd257f603a02c0235432963c0c8a62",
+    "before-normal.json": "0a5f164db4aa1939ea66abe8d00cbc783056281caca24f15591cf693ae3b6887",
+    "after-normal.json": "c77e3a4a5ae1e53f20f21311955648f95c465f7a57b563d2f6f4ab2e1ba73787",
+    "geometry-contract.json": "b28a11938dc973d9c319de90a44bfc207825869782d87aaba2e7062b1e1baf64"
+  }
+}
