@@ -30,7 +30,10 @@ for(const profileName of ['front','back'])for(const h of [145,200,280])for(const
   const idle=api.prepareLower(4);
   const identity=mesh.triangles.map(t=>{
    const paint=t.image?prepared:idle,raw=t.map(p=>({x:p.source.x/paint.tile.width*paint.key.rect[2]+paint.key.rect[0],y:p.source.y/paint.tile.height*paint.key.rect[3]+paint.key.rect[1]}));
-   if(!t.image&&raw.some(p=>p.y<499.999))return {side:'pants',kind:'pants',raw};
+   if(!t.image&&(t.material==='pants'||(!t.material&&raw.some(p=>p.y<499.999)))){
+    if(t.material){const hem=[[170,520],[280,540],[380,580],[490,607.5],[540,620],[650,610],[820,571.75],[850,565],[1010,545],[1191,520]],at=x=>{for(let i=1;i<hem.length;i++)if(x<=hem[i][0])return hem[i-1][1]+(hem[i][1]-hem[i-1][1])*(x-hem[i-1][0])/(hem[i][0]-hem[i-1][0]);return hem.at(-1)[1];};assert(raw.every(p=>p.y<=at(p.x)+1e-6),'pants labels must agree with actual source cloth domain');}
+    return {side:'pants',kind:'pants',limb:t.limb,raw};
+   }
    const x=raw.reduce((sum,p)=>sum+p.x,0)/3;
    const y=raw.reduce((sum,p)=>sum+p.y,0)/3,split=y<=600?650-(y-500)*.4:y<=700?610-(y-600)*.4:570+(y-700)/3;
    return {side:x<(t.image?620:split-1e-7)?'far':'near',kind:t.image?'boot':'calf',raw};
@@ -39,7 +42,12 @@ for(const profileName of ['front','back'])for(const h of [145,200,280])for(const
    const legs=identity.filter(part=>part.side!=='pants'),sides=legs.map(part=>part.side);
    assert(sides.lastIndexOf('far')<sides.indexOf('near'),'complete far calf AND boot must be painted before ANY near calf or boot');
    for(const side of ['far','near']){const kinds=legs.filter(part=>part.side===side).map(part=>part.kind);assert(kinds.includes('calf')&&kinds.includes('boot'));assert(kinds.lastIndexOf('calf')<kinds.indexOf('boot'),'each native boot covers only its own calf cuff');}
-   const firstPants=identity.findIndex(part=>part.side==='pants');assert(firstPants>=0&&identity.slice(firstPants).every(part=>part.side==='pants'),'native trousers finish above both complete legs');
+   if(mesh.rigidSegments){
+    // A whole rigid thigh carries its own cloth. The separate pelvis cover
+    // stays on top; each leg's trousers must still precede its own contact boot.
+    for(const side of ['far','near']){const pants=identity.map((p,i)=>p.kind==='pants'&&p.limb===side?i:-1).filter(i=>i>=0),boot=identity.findIndex(p=>p.side===side&&p.kind==='boot');assert(pants.length&&Math.max(...pants)<boot,'each rotating trouser leg stays above its own shoe');}
+    const pelvis=identity.findIndex(p=>p.kind==='pants'&&p.limb==='pelvis');assert(pelvis>=0&&identity.slice(pelvis).every(p=>p.kind==='pants'&&p.limb==='pelvis'),'source pelvis cover finishes above the articulated legs');
+   }else{const firstPants=identity.findIndex(part=>part.side==='pants');assert(firstPants>=0&&identity.slice(firstPants).every(part=>part.side==='pants'),'native trousers finish above both complete legs');}
    // The extra source orange column starts at x893 around y600 and has no
    // matching boot. Submitted calf texels must stop inside that gap.
    for(const part of legs.filter(part=>part.kind==='calf'))for(const point of part.raw)if(point.y>=580&&point.y<=800)assert(point.x<=892.00001,'unbooted third source-fur column must not be painted as part of the calf');

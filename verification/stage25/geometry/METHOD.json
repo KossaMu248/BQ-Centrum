@@ -1,0 +1,10 @@
+{
+  "scope": "Submitted original-source material geometry. Width is perpendicular to the local limb centreline, not screen-x bounding width or occlusion. New relative-width/area/Jacobian comparisons use the accepted standing material calibration; native-source-normalized old widths are separately labelled.",
+  "beforeCommit": "a3a7da89252d75bbdadb06596fc5ff3c589d9153",
+  "beforeHeroSHA256": "68694c6c18af480d5bc43b8c37a20c97117f3c3958246ad4bdbb491cd177a71b",
+  "afterHeroSHA256": "b540a4a9689836a15b223ac18971783bb52cb0ad5f26b2d46e60500c15fbf28a",
+  "inverse": "references/source/stage25-source-integration.json",
+  "reference": "Exact Stage24 standing material is fixed once, then source thigh/shin pieces rotate without per-frame scale/shear. A separate source-fabric pelvis cover conceals attachment; bounded knee overlap reuses the same fur.",
+  "newContract": "tests/centrum_limb_volume.cjs samples actual submitted UV triangles; Jphase*inverse(Jrest) has unit singular values/determinant on shafts, plus actual painted H/K/C length checks and real destination-mutant/old24 rejection.",
+  "artwork": "No source image was changed. All919original art hashes remain exact."
+}

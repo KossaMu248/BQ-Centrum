@@ -33,9 +33,9 @@ function sample(triangles,p,message){
 }
 function submitted(api,name,h,phase,weight,motion){
  const profile=api.profiles[name],native=api.window.BearlyLocomotion,gait=api.projectGroundGait(native.pose(native.cycleLength(h)*phase,h,weight),motion,weight),pose=api.surfacePose(profile,h,gait,weight),mesh=api.lowerMesh(profile,pose,gait,weight),source=api.prepareLower(4);
- const cloth=mesh.triangles.filter(t=>!t.image),pants=cloth.filter(t=>t.some(v=>rawPoint(source,v.source).y<100)),calves=cloth.filter(t=>t.every(v=>rawPoint(source,v.source).y>=100)),joints={};
+ const cloth=mesh.triangles.filter(t=>!t.image),pants=cloth.filter(t=>t.material?t.material==='pants':t.some(v=>rawPoint(source,v.source).y<100)),calves=cloth.filter(t=>t.material?t.material==='fur':t.every(v=>rawPoint(source,v.source).y>=100)),joints={};
  for(const side of ['near','far']){const index=side==='near'?1:0,boot=api.centrumBoot(profile,pose,side);
-  joints[side]={hip:sample(pants,texturePoint(source,source.key.hips[index])),knee:sample(calves,texturePoint(source,source.key.legs[index].knee)),cuff:sample(mesh.triangles.filter(t=>t.image===boot.source.tile),texturePoint(boot.source,boot.leg.cuff),'the rigid boot cuff must be submitted')};
+  joints[side]={hip:sample(pants.filter(t=>!t.limb||t.limb===side),texturePoint(source,source.key.hips[index])),knee:sample(calves.filter(t=>!t.limb||t.limb===side),texturePoint(source,source.key.legs[index].knee)),cuff:sample(mesh.triangles.filter(t=>t.image===boot.source.tile),texturePoint(boot.source,boot.leg.cuff),'the rigid boot cuff must be submitted')};
   for(const key of ['knee','cuff'])near(distance(joints[side][key],mesh.rendered[side][key]),0,1e-6);
  }
  return{profile,gait,pose,mesh,source,pants,calves,joints};
@@ -51,32 +51,32 @@ function actualBendContract(api){
  }
  return result;
 }
-function surfaceContracts(api,zero){
- const reference=rig(heroSource,null);
- const report={cases:0,triangles:0,calfVertices:0,hemJoins:0,kneeVertexCases:0,bootCases:0,worstHemGap:0,smallestTriangleAreaRatio:Infinity,smallestUnbentAreaFraction:Infinity};
+function surfaceContracts(api){
+ const reference=rig(heroSource,null),rests=new Map();
+ const report={cases:0,triangles:0,calfVertices:0,hemJoins:0,bootCases:0,boneCases:0,worstHemGap:0,worstKneeGap:0,maxBoneLengthError:0,smallestTriangleAreaRatio:Infinity};
  const phases=[...Array.from({length:16},(_,i)=>i/16),23/48,47/48];
  for(const name of ['front','back'])for(const h of [145,200,280])for(const motion of [horizontal,route,{x:.6,y:.8,centrumWalk:true},{x:0,y:-1,centrumWalk:true}])for(const weight of [0,.35,1])for(const phase of phases){
-  const a=submitted(api,name,h,phase,weight,motion),b=submitted(zero,name,h,phase,weight,motion),footReference=submitted(reference,name,h,phase,weight,motion);
-  assert.equal(a.mesh.triangles.length,b.mesh.triangles.length,'zero knee drive preserves submitted topology');
-  for(const [index,t] of a.mesh.triangles.entries()){const sa=area(t.map(v=>v.source)),da=area(t.map(v=>v.destination)),unbent=area(b.mesh.triangles[index].map(v=>v.destination));assert(sa*da>0,`articulated source triangles must never fold: ${name} h=${h} phase=${phase} weight=${weight} motion=${JSON.stringify(motion)} sourceArea=${sa} targetArea=${da} raw=${t.image?'boot':JSON.stringify(t.map(v=>rawPoint(a.source,v.source)))}`);assert(da/unbent>=.1-1e-7,'the shared leg limit must preserve at least ten percent of every unbent triangle');report.smallestTriangleAreaRatio=Math.min(report.smallestTriangleAreaRatio,da/sa);report.smallestUnbentAreaFraction=Math.min(report.smallestUnbentAreaFraction,da/unbent);report.triangles++;}
+  const a=submitted(api,name,h,phase,weight,motion),footReference=submitted(reference,name,h,phase,weight,motion),restKey=name+':'+h;
+  if(!rests.has(restKey))rests.set(restKey,submitted(api,name,h,0,0,motion));const rest=rests.get(restKey);
+  for(const t of a.mesh.triangles){const sa=area(t.map(v=>v.source)),da=area(t.map(v=>v.destination));assert(sa*da>0,`articulated source triangles must never fold: ${name} h=${h} phase=${phase} weight=${weight} motion=${JSON.stringify(motion)} sourceArea=${sa} targetArea=${da}`);report.smallestTriangleAreaRatio=Math.min(report.smallestTriangleAreaRatio,da/sa);report.triangles++;}
+  assert(a.pants.length&&a.calves.length,'actual mesh contains both source materials');
   for(const t of a.pants)for(const v of t){const p=rawPoint(a.source,v.source);assert(p.y<=hemAt(p.x)+1e-6,'shorts texels must stay above the authored hem');}
   for(const t of a.calves)for(let i=0;i<3;i++){const p=rawPoint(a.source,t[i].source),d=t[i].destination;assert(p.y>=hemAt(p.x)-1e-6,'calf texels must remain below the authored shorts hem');report.calfVertices++;
    if(Math.abs(p.y-hemAt(p.x))>1e-6)continue;
-   let gap=Infinity;for(const pants of a.pants)for(let j=0;j<3;j++){const x=rawPoint(a.source,pants[j].source),y=rawPoint(a.source,pants[(j+1)%3].source);if(Math.abs(x.y-hemAt(x.x))>1e-6||Math.abs(y.y-hemAt(y.x))>1e-6||Math.abs(x.x-y.x)<1e-6||p.x<Math.min(x.x,y.x)-1e-6||p.x>Math.max(x.x,y.x)+1e-6)continue;const blend=(p.x-x.x)/(y.x-x.x),A=pants[j].destination,B=pants[(j+1)%3].destination;gap=Math.min(gap,distance(d,{x:A.x+(B.x-A.x)*blend,y:A.y+(B.y-A.y)*blend}));}
-   assert(gap<1e-6,'calf articulation must stay joined to submitted shorts pixels');report.worstHemGap=Math.max(report.worstHemGap,gap);report.hemJoins++;
+   let gap=Infinity;for(const pants of a.pants){if(t.limb&&pants.limb&&t.limb!==pants.limb)continue;for(let j=0;j<3;j++){const x=rawPoint(a.source,pants[j].source),y=rawPoint(a.source,pants[(j+1)%3].source);if(Math.abs(x.y-hemAt(x.x))>1e-6||Math.abs(y.y-hemAt(y.x))>1e-6||Math.abs(x.x-y.x)<1e-6||p.x<Math.min(x.x,y.x)-1e-6||p.x>Math.max(x.x,y.x)+1e-6)continue;const blend=(p.x-x.x)/(y.x-x.x),A=pants[j].destination,B=pants[(j+1)%3].destination;gap=Math.min(gap,distance(d,{x:A.x+(B.x-A.x)*blend,y:A.y+(B.y-A.y)*blend}));}}
+   assert(gap<1e-6,'calf and shorts retain the same submitted moving hem');report.worstHemGap=Math.max(report.worstHemGap,gap);report.hemJoins++;
   }
   for(const side of ['near','far']){
    for(const key of ['cuff','heel','toe','sole'])near(distance(a.mesh.rendered[side][key],footReference.mesh.rendered[side][key]),0);
    for(const key of ['contact','sole','cuff'])near(distance(a.pose.legs[side][key],footReference.pose.legs[side][key]),0);
    const bootA=a.mesh.triangles.filter(t=>t.image),bootB=footReference.mesh.triangles.filter(t=>t.image);assert.deepEqual(copy(bootA.map(t=>t.map(v=>v.destination))),copy(bootB.map(t=>t.map(v=>v.destination))),'walking articulation cannot move rigid boot triangles');report.bootCases++;
-   if(weight===1&&((side==='far'&&phase===.25)||(side==='near'&&phase===.75))){
-    const row=a.source.key.legs[side==='near'?1:0].knee[1];let displaced=0;
-    for(let n=0;n<a.calves.length;n++)for(let k=0;k<3;k++){const raw=rawPoint(a.source,a.calves[n][k].source);if(Math.abs(raw.y-row)<1e-6)displaced=Math.max(displaced,distance(a.calves[n][k].destination,b.calves[n][k].destination));}
-    assert(displaced>h*.008,'peak swing must move submitted knee-row vertices, not only landmark diagnostics');
-    assert(distance(a.joints[side].knee,b.joints[side].knee)>h*.008,'the sampled painted knee must move materially');report.kneeVertexCases++;
-   }
+   const actual=a.joints[side],original=rest.joints[side];
+   for(const [from,to]of [['hip','knee'],['knee','cuff']]){const error=Math.abs(distance(actual[from],actual[to])-distance(original[from],original[to]));near(error,0,1e-6);report.maxBoneLengthError=Math.max(report.maxBoneLengthError,error);}
+   if(weight>0){const index=side==='near'?1:0,uv=texturePoint(a.source,a.source.key.legs[index].knee),thigh=a.mesh.triangles.filter(t=>t.limb===side&&t.segment==='thigh'),shin=a.mesh.triangles.filter(t=>t.limb===side&&t.segment==='shin');assert(thigh.length&&shin.length,'walking submits both original rigid source pieces');const k1=sample(thigh,uv),k2=sample(shin,uv),gap=distance(k1,k2);near(gap,0,1e-6);near(distance(actual.knee,k1),0,1e-6);report.worstKneeGap=Math.max(report.worstKneeGap,gap);
+    const joint=a.mesh.rigidSegments?.[side];assert(joint,'painted rigid segments expose their calibrated rest/target joints');for(const point of ['hip','knee','cuff'])near(distance(joint[point],actual[point]),0,1e-6);
+   }report.boneCases++;
   }
-  if(weight===0)assert.deepEqual(copy(a.mesh.vertices),copy(b.mesh.vertices),'standing has no added articulation');report.cases++;
+  report.cases++;
  }
  return report;
 }
@@ -145,12 +145,13 @@ function directionalContracts(api,window){
  assert.equal(report.loadingAngles.length,report.swingAngles.length);for(let i=0;i<report.loadingAngles.length;i++)assert(report.loadingAngles[i].degrees-report.swingAngles[i].degrees>8,'recovery flex must exceed support flex');return report;
 }
 (async()=>{
- const api=rig(),zeroToken='(gait.walkPose?.knees[side]||0)*profile.stature*pose.s';assert(heroSource.includes(zeroToken),'find actual vertex knee drive for the zero-bend mutation');
- const zero=rig(heroSource.replace(zeroToken,'0'));
- const report={scope:'Actual submitted triangles and Canvas transforms with mocked rasterization; no likeness, pixel or visual-quality claim',peakSwing:actualBendContract(api),surface:surfaceContracts(api,zero),defaultSourceCases:defaultContracts(api),passenger:passengerContracts(),rejectedMutations:[]};
- assert.throws(()=>actualBendContract(zero),assert.AssertionError,'zero knee drive must fail actual submitted peak-swing geometry');report.rejectedMutations.push('zero calf knee drive');
- const safetyToken='if(gait.walkPose){const area=';assert(heroSource.includes(safetyToken),'find the actual shared-leg area limiter');
- assert.throws(()=>surfaceContracts(rig(heroSource.replace(safetyToken,'if(false){const area=')),zero),assert.AssertionError,'removing the shared leg limit must expose an actual folded submitted triangle');report.rejectedMutations.push('missing positive-area limit');
+ const api=rig();
+ const report={scope:'Actual submitted triangles and Canvas transforms with mocked rasterization; no likeness, pixel or visual-quality claim',peakSwing:actualBendContract(api),surface:surfaceContracts(api),defaultSourceCases:defaultContracts(api),passenger:passengerContracts(),rejectedMutations:[]};
+ const kneeToken='out=Math.sqrt(Math.max(0,L1*L1-along*along))';assert(heroSource.includes(kneeToken),'find the actual fixed-length knee solve');
+ assert.throws(()=>surfaceContracts(rig(heroSource.replace(kneeToken,'out=0'))),assert.AssertionError,'removing solved knee displacement must fail actual joint/bone geometry');report.rejectedMutations.push('zero solved knee displacement');
+ const shinToken='shin:p=>rotate(p,K0,K,shinAngle)';assert(heroSource.includes(shinToken),'find actual shin transform');
+ assert.throws(()=>surfaceContracts(rig(heroSource.replace(shinToken,'shin:p=>{const q=rotate(p,K0,K,shinAngle);return{x:2*K.x-q.x,y:q.y};}'))),assert.AssertionError,'inverted actual shin must fail submitted orientation');report.rejectedMutations.push('inverted shin transform');
+ assert.throws(()=>surfaceContracts(rig(heroSource.replace(shinToken,'shin:p=>rotate(p,K0,{x:K.x+2,y:K.y},shinAngle)'))),assert.AssertionError,'detached actual shin must fail the shared knee');report.rejectedMutations.push('detached shin knee');
  const d=await directional();report.directional=directionalContracts(d.api,d.window);
  const supportToken='wp?Math.min(.021,wp.knees[side]):.016*flex*flex';assert(directionalSource.includes(supportToken),'find real directional support/swing drive');
  const broken=await directional(directionalSource.replace(supportToken,'wp?(f.stance?0:Math.min(.021,wp.knees[side])):.016*flex*flex'));

@@ -1,0 +1,346 @@
+[
+  {
+    "name": "front",
+    "family": "route",
+    "side": "near",
+    "minRatio": 0.37043304625013634,
+    "maxRatio": 1.5016392823356295,
+    "minimumCase": {
+      "carrier": "front",
+      "family": "route",
+      "side": "near",
+      "phase": 0.5208333333333334,
+      "y": 650,
+      "width": 8.765439349467744,
+      "expected": 23.66268192916257,
+      "ratio": 0.37043304625013634,
+      "normal": {
+        "x": 0.5045009833261642,
+        "y": 0.8634111175001937
+      },
+      "sourceNormalScale": 1,
+      "boneLen": 58.93688290550792,
+      "stance": false,
+      "footX": -28.93166449332819
+    },
+    "maximumCase": {
+      "carrier": "front",
+      "family": "route",
+      "side": "near",
+      "phase": 0.020833333333333332,
+      "y": 670,
+      "width": 32.63327972636433,
+      "expected": 21.731770146294366,
+      "ratio": 1.5016392823356295,
+      "normal": {
+        "x": 0.9857919437397944,
+        "y": -0.16797096075726398
+      },
+      "sourceNormalScale": 0.8944271909999159,
+      "boneLen": 38.384580790678754,
+      "stance": true,
+      "footX": 31.44251765863559
+    }
+  },
+  {
+    "name": "front",
+    "family": "route",
+    "side": "far",
+    "minRatio": 0.47909272168922334,
+    "maxRatio": 1.1825992596464434,
+    "minimumCase": {
+      "carrier": "front",
+      "family": "route",
+      "side": "far",
+      "phase": 0.4375,
+      "y": 650,
+      "width": 10.717254916818213,
+      "expected": 22.369897165272018,
+      "ratio": 0.47909272168922334,
+      "normal": {
+        "x": 0.5380585158189519,
+        "y": -0.8429074881353864
+      },
+      "sourceNormalScale": 0.8944271909999159,
+      "boneLen": 56.77332466796325,
+      "stance": false,
+      "footX": 36.446914414787386
+    },
+    "maximumCase": {
+      "carrier": "front",
+      "family": "route",
+      "side": "far",
+      "phase": 0.9375,
+      "y": 650,
+      "width": 26.454623826017762,
+      "expected": 22.369897165272018,
+      "ratio": 1.1825992596464434,
+      "normal": {
+        "x": 0.9899484850325507,
+        "y": 0.14142841645778845
+      },
+      "sourceNormalScale": 0.8944271909999159,
+      "boneLen": 43.410829759395554,
+      "stance": true,
+      "footX": -19.34414025213868
+    }
+  },
+  {
+    "name": "front",
+    "family": "Centrum",
+    "side": "near",
+    "minRatio": 0.4497274279174672,
+    "maxRatio": 1.4584758530610664,
+    "minimumCase": {
+      "carrier": "front",
+      "family": "Centrum",
+      "side": "near",
+      "phase": 0.5208333333333334,
+      "y": 650,
+      "width": 10.641757081631415,
+      "expected": 23.66268192916257,
+      "ratio": 0.4497274279174672,
+      "normal": {
+        "x": 0.5785103251637527,
+        "y": 0.8156750601060017
+      },
+      "sourceNormalScale": 1,
+      "boneLen": 55.429348763180826,
+      "stance": false,
+      "footX": -23.211322543203735
+    },
+    "maximumCase": {
+      "carrier": "front",
+      "family": "Centrum",
+      "side": "near",
+      "phase": 0.020833333333333332,
+      "y": 670,
+      "width": 31.69526200264369,
+      "expected": 21.731770146294366,
+      "ratio": 1.4584758530610664,
+      "normal": {
+        "x": 0.9997061873578379,
+        "y": -0.024239202925331046
+      },
+      "sourceNormalScale": 0.8944271909999159,
+      "boneLen": 38.652868549560885,
+      "stance": true,
+      "footX": 26.551891148055024
+    }
+  },
+  {
+    "name": "front",
+    "family": "Centrum",
+    "side": "far",
+    "minRatio": 0.5248172292528365,
+    "maxRatio": 1.1688705890021318,
+    "minimumCase": {
+      "carrier": "front",
+      "family": "Centrum",
+      "side": "far",
+      "phase": 0.4166666666666667,
+      "y": 650,
+      "width": 11.74010744894894,
+      "expected": 22.369897165272018,
+      "ratio": 0.5248172292528365,
+      "normal": {
+        "x": 0.5860503286172664,
+        "y": -0.8102746524034884
+      },
+      "sourceNormalScale": 0.8944271909999159,
+      "boneLen": 52.31177384493234,
+      "stance": false,
+      "footX": 29.614389320994157
+    },
+    "maximumCase": {
+      "carrier": "front",
+      "family": "Centrum",
+      "side": "far",
+      "phase": 0.9791666666666666,
+      "y": 650,
+      "width": 26.147514875488625,
+      "expected": 22.369897165272018,
+      "ratio": 1.1688705890021318,
+      "normal": {
+        "x": 0.9903407094121464,
+        "y": 0.1386552533481744
+      },
+      "sourceNormalScale": 0.8944271909999159,
+      "boneLen": 43.03330304461518,
+      "stance": true,
+      "footX": -19.515714344577063
+    }
+  },
+  {
+    "name": "back",
+    "family": "route",
+    "side": "near",
+    "minRatio": 0.38926823582610015,
+    "maxRatio": 1.4702903233622309,
+    "minimumCase": {
+      "carrier": "back",
+      "family": "route",
+      "side": "near",
+      "phase": 0.5208333333333334,
+      "y": 650,
+      "width": 8.865940156500741,
+      "expected": 22.775914756274823,
+      "ratio": 0.38926823582610015,
+      "normal": {
+        "x": 0.5451263976102024,
+        "y": 0.8383538695732986
+      },
+      "sourceNormalScale": 1,
+      "boneLen": 56.05459059751797,
+      "stance": false,
+      "footX": -26.89258860494587
+    },
+    "maximumCase": {
+      "carrier": "back",
+      "family": "route",
+      "side": "near",
+      "phase": 0.041666666666666664,
+      "y": 670,
+      "width": 30.754598701275867,
+      "expected": 20.917364558957892,
+      "ratio": 1.4702903233622309,
+      "normal": {
+        "x": 0.9625954897374877,
+        "y": -0.27094265654755467
+      },
+      "sourceNormalScale": 0.8944271909999159,
+      "boneLen": 38.01840815660889,
+      "stance": true,
+      "footX": 30.966556442064366
+    }
+  },
+  {
+    "name": "back",
+    "family": "route",
+    "side": "far",
+    "minRatio": 0.42906026047619217,
+    "maxRatio": 1.1895110943305762,
+    "minimumCase": {
+      "carrier": "back",
+      "family": "route",
+      "side": "far",
+      "phase": 0.4166666666666667,
+      "y": 650,
+      "width": 9.238344271053126,
+      "expected": 21.53157754763855,
+      "ratio": 0.42906026047619217,
+      "normal": {
+        "x": 0.4881950173007153,
+        "y": -0.8727345673701452
+      },
+      "sourceNormalScale": 0.8944271909999159,
+      "boneLen": 54.11377946830648,
+      "stance": false,
+      "footX": 37.24868806150494
+    },
+    "maximumCase": {
+      "carrier": "back",
+      "family": "route",
+      "side": "far",
+      "phase": 0.9583333333333334,
+      "y": 650,
+      "width": 25.612050371355192,
+      "expected": 21.53157754763855,
+      "ratio": 1.1895110943305762,
+      "normal": {
+        "x": 0.9801290728622589,
+        "y": 0.19836078375064103
+      },
+      "sourceNormalScale": 0.8944271909999159,
+      "boneLen": 40.42457899253533,
+      "stance": true,
+      "footX": -19.855064363756377
+    }
+  },
+  {
+    "name": "back",
+    "family": "Centrum",
+    "side": "near",
+    "minRatio": 0.47637796665237075,
+    "maxRatio": 1.4495093458597288,
+    "minimumCase": {
+      "carrier": "back",
+      "family": "Centrum",
+      "side": "near",
+      "phase": 0.5208333333333334,
+      "y": 650,
+      "width": 10.849943960241927,
+      "expected": 22.775914756274823,
+      "ratio": 0.47637796665237075,
+      "normal": {
+        "x": 0.6266910166340245,
+        "y": 0.7792678420608752
+      },
+      "sourceNormalScale": 1,
+      "boneLen": 52.62790914131969,
+      "stance": false,
+      "footX": -21.172246654821418
+    },
+    "maximumCase": {
+      "carrier": "back",
+      "family": "Centrum",
+      "side": "near",
+      "phase": 0.041666666666666664,
+      "y": 670,
+      "width": 30.31991541896453,
+      "expected": 20.917364558957892,
+      "ratio": 1.4495093458597288,
+      "normal": {
+        "x": 0.9909319380645487,
+        "y": -0.13436478007140715
+      },
+      "sourceNormalScale": 0.8944271909999159,
+      "boneLen": 38.06521200328793,
+      "stance": true,
+      "footX": 26.503145615130983
+    }
+  },
+  {
+    "name": "back",
+    "family": "Centrum",
+    "side": "far",
+    "minRatio": 0.46898710313697706,
+    "maxRatio": 1.1740653717087768,
+    "minimumCase": {
+      "carrier": "back",
+      "family": "Centrum",
+      "side": "far",
+      "phase": 0.3958333333333333,
+      "y": 650,
+      "width": 10.09803218003618,
+      "expected": 21.53157754763855,
+      "ratio": 0.46898710313697706,
+      "normal": {
+        "x": 0.5346570553035301,
+        "y": -0.8450691292516596
+      },
+      "sourceNormalScale": 0.8944271909999159,
+      "boneLen": 48.987346185745196,
+      "stance": false,
+      "footX": 29.920504771423833
+    },
+    "maximumCase": {
+      "carrier": "back",
+      "family": "Centrum",
+      "side": "far",
+      "phase": 0.9791666666666666,
+      "y": 650,
+      "width": 25.279479596944604,
+      "expected": 21.53157754763855,
+      "ratio": 1.1740653717087768,
+      "normal": {
+        "x": 0.995570265671766,
+        "y": 0.09402045580749635
+      },
+      "sourceNormalScale": 0.8944271909999159,
+      "boneLen": 39.645081528686994,
+      "stance": true,
+      "footX": -17.476638456194742
+    }
+  }
+]

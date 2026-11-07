@@ -1,0 +1,22 @@
+{
+  "cases": 10368,
+  "min": 0.07516283452009155,
+  "passed": true,
+  "scope": "Additional96-phase actual submitted-triangle sweep; geometry only, not screenshots/FPS.",
+  "phasesPerCycle": 96,
+  "carriers": [
+    "front",
+    "back"
+  ],
+  "heights": [
+    145,
+    200,
+    280
+  ],
+  "weights": [
+    0,
+    0.25,
+    1
+  ],
+  "motionFamilies": 6
+}

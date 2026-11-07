@@ -18,14 +18,19 @@ function submitted(api,profile,h,phase,weight,motion){const gait=api.projectGrou
  const parts=mesh.triangles.filter(t=>!t.image).map(t=>({t,raw:t.map(raw)}));return{gait,pose,mesh,source,parts};}
 function contract(code=current,dense=false){const api=rig(code),r={cases:0,calfVertices:0,hemJoins:0,worstSeamResidual:0,pelvisCases:0,sourceCases:0,cacheCases:0};
  for(const name of ['front','back'])for(const h of [145,200,280])for(const phase of (dense?Array.from({length:48},(_,i)=>i/48):[0,.125,.25,.5,.75]))for(const weight of (dense?[0,.25,1]:[1]))for(const motion of [{x:1,y:0,centrumWalk:true},...(dense?[{x:0,y:-1,centrumWalk:true},{x:0,y:1,centrumWalk:true},{x:.6,y:.8,centrumWalk:true},{x:.6,y:-.8,centrumWalk:true}]:[]),{sourceWalk:true}]){
-  const profile=api.profiles[name],v=submitted(api,profile,h,phase,weight,motion),area=p=>(p[1].x-p[0].x)*(p[2].y-p[0].y)-(p[1].y-p[0].y)*(p[2].x-p[0].x);for(const t of v.mesh.triangles)assert(area(t.map(p=>p.source))*area(t.map(p=>p.destination))>0,'repaired source surface never folds');const pants=v.parts.filter(p=>p.raw.some(q=>q.y<100)),calves=v.parts.filter(p=>p.raw.every(q=>q.y>=100));assert(pants.length&&calves.length);
+  const profile=api.profiles[name],v=submitted(api,profile,h,phase,weight,motion),area=p=>(p[1].x-p[0].x)*(p[2].y-p[0].y)-(p[1].y-p[0].y)*(p[2].x-p[0].x);for(const t of v.mesh.triangles)assert(area(t.map(p=>p.source))*area(t.map(p=>p.destination))>0,'repaired source surface never folds');const pants=v.parts.filter(p=>p.t.material?p.t.material==='pants':p.raw.some(q=>q.y<100)),calves=v.parts.filter(p=>p.t.material?p.t.material==='fur':p.raw.every(q=>q.y>=100));assert(pants.length&&calves.length);
+  for(const p of pants)for(const q of p.raw)assert(q.y<=hemAt(q.x)+1e-6,'shorts texels stay above their authored hem');
+  const hemEdges=[];for(const c of pants)for(let j=0;j<3;j++){const a=c.raw[j],b=c.raw[(j+1)%3];if(Math.abs(a.y-hemAt(a.x))<1e-6&&Math.abs(b.y-hemAt(b.x))<1e-6&&Math.abs(a.x-b.x)>1e-6)hemEdges.push({a,b,A:c.t[j].destination,B:c.t[(j+1)%3].destination,limb:c.t.limb});}
   for(const part of calves)for(let i=0;i<3;i++){const p=part.raw[i],d=part.t[i].destination;assert(p.y>=hemAt(p.x)-1e-6,'moving calf must never repaint shorts texels');assert(Number.isFinite(d.x)&&Number.isFinite(d.y));r.calfVertices++;
    if(Math.abs(p.y-hemAt(p.x))>1e-6)continue;
-   const matches=[];for(const c of pants)for(let j=0;j<3;j++){const a=c.raw[j],b=c.raw[(j+1)%3];if(Math.abs(a.y-hemAt(a.x))>1e-6||Math.abs(b.y-hemAt(b.x))>1e-6||Math.abs(a.x-b.x)<1e-6||p.x<Math.min(a.x,b.x)-1e-6||p.x>Math.max(a.x,b.x)+1e-6)continue;const t=(p.x-a.x)/(b.x-a.x),A=c.t[j].destination,B=c.t[(j+1)%3].destination;matches.push({x:A.x+(B.x-A.x)*t,y:A.y+(B.y-A.y)*t});}
+   const matches=[];for(const {a,b,A,B,limb}of hemEdges){if(part.t.limb&&limb&&part.t.limb!==limb)continue;if(p.x<Math.min(a.x,b.x)-1e-6||p.x>Math.max(a.x,b.x)+1e-6)continue;const t=(p.x-a.x)/(b.x-a.x);matches.push({x:A.x+(B.x-A.x)*t,y:A.y+(B.y-A.y)*t});}
    assert(matches.length,'every calf root has an actual submitted pants hem');const gap=Math.min(...matches.map(q=>Math.hypot(q.x-d.x,q.y-d.y)));r.worstSeamResidual=Math.max(r.worstSeamResidual,gap);assert(gap<1e-6,'calf and pants must share their moving boundary');r.hemJoins++;
   }
   const topology=v.source.clothPolygons;assert(topology?.far&&topology?.near);const again=submitted(api,profile,h,phase+.01,weight,motion);assert.equal(again.source.clothPolygons,topology,'source topology is cached rather than clipped every frame');
-  const top=pants.flatMap(p=>p.raw.map((q,i)=>({q,d:p.t[i].destination}))).find(p=>p.q.y<100);assert(top);const n=v.source.norm([top.q.x,top.q.y]),base=v.pose.pelvisPoint(v.pose.pivot.x+n.x*v.pose.s,(profile.pelvisY-10-v.pose.oy+n.y)*v.pose.s);near(top.d.x,base.x);near(top.d.y,base.y);
+  const hasPelvis=weight>0&&pants.some(p=>p.t.segment==='pelvis'),top=(hasPelvis?pants.filter(p=>p.t.segment==='pelvis'):pants).flatMap(p=>p.raw.map((q,i)=>({q,d:p.t[i].destination}))).find(p=>hasPelvis?Math.abs(p.q.y-210)<1e-6:p.q.y<100);assert(top);// The original94 waist remains exact at rest. During walking, the
+  // separate source pelvis cover attaches at210; the rotating leg's hidden
+  // upper material is not claimed to be a stationary waist.
+  const n=v.source.norm([top.q.x,top.q.y]),base=v.pose.pelvisPoint(v.pose.pivot.x+n.x*v.pose.s,(profile.pelvisY-10-v.pose.oy+n.y)*v.pose.s);near(top.d.x,base.x);near(top.d.y,base.y);
   if(weight===1&&phase===0){let moved=false;for(const p of pants)for(let i=0;i<3;i++){const q=p.raw[i];if(q.y<500)continue;const n=v.source.norm([q.x,q.y]),base=v.pose.pelvisPoint(v.pose.pivot.x+n.x*v.pose.s,(profile.pelvisY-10-v.pose.oy+n.y)*v.pose.s);if((Math.abs(v.gait.near.x-v.gait.far.x)>1e-8?Math.abs(p.t[i].destination.x-base.x):Math.hypot(p.t[i].destination.x-base.x,p.t[i].destination.y-base.y))>.1)moved=true;}assert(moved,'trousers follow the upper legs while their waist stays attached');r.pelvisCases++;}
   r.cases++;
  }
@@ -38,13 +43,17 @@ const report=contract(current,true);report.rejectedRegressions=[];
 for(const [name,from,to]of [
  ['duplicate shorts','polygons.push(...clipHem([[left0,y0],[right0,y0],[right1,y1],[left1,y1]]))','polygons.push([[left0,y0],[right0,y0],[right1,y1],[left1,y1]])'],
  ['detached calf','blend=clamp((raw[1]-hemY)/Math.max(1,bottom-hemY),0,1)','blend=1'],
- ['rigid trousers','.24*hemWeight','.0*hemWeight'],
+ ['rigid trousers','const bone=bones[side],thigh=p=>bone.thigh(p);','const bone=bones[side],thigh=(p,r)=>body(r);'],
  ['fallback frame mixing',"groundMotion?.sourceWalk?':source-anatomy':''","groundMotion?.sourceWalk?'':''"],
  ['unrepaired route',"options.routeCache?{...options.groundMotion,sourceWalk:true}:options.groundMotion","options.routeCache?options.groundMotion:options.groundMotion"]]){
  assert(current.includes(from),name);assert.throws(()=>contract(current.replace(from,to)),assert.AssertionError,name);report.rejectedRegressions.push(name);
 }
 // Rejected source-domain regression also applies to the actual previous game.
 const baseline=JSON.parse(fs.readFileSync('references/source/stage22-source-integration.json','utf8')).files['js/hero-rig.js'];let old=current;
+const stage25=JSON.parse(fs.readFileSync('references/source/stage25-source-integration.json','utf8')).files['js/hero-rig.js'];
+assert.equal(crypto.createHash('sha256').update(old).digest('hex'),stage25.currentSha256,'reviewed Stage25 renderer');
+for(const change of [...stage25.changes].reverse()){assert(old.includes(change.current));old=old.replace(change.current,change.previous);}
+assert.equal(crypto.createHash('sha256').update(old).digest('hex'),stage25.previousSha256,'exact Stage24 renderer before older inverses');
 const stage24=JSON.parse(fs.readFileSync('references/source/stage24-source-integration.json','utf8')).files['js/hero-rig.js'];
 assert.equal(crypto.createHash('sha256').update(old).digest('hex'),stage24.currentSha256,'reviewed Stage24 renderer');
 for(const change of [...stage24.changes].reverse()){assert(old.includes(change.current));old=old.replace(change.current,change.previous);}

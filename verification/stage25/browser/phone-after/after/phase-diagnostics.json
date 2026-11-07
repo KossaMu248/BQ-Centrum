@@ -1,0 +1,834 @@
+[
+  {
+    "file": "phone-square-right-native-leg-volume-diagnostic.png",
+    "sha256": "9fd4cef430dca1c5f9d6ba8e933015710a36ce54b52bd39984d4decb7117a73d",
+    "scope": "Eight crops from unmodified actual gameplay JPEGs, phase selected after painting. Native scale.",
+    "sourceFrames": [
+      {
+        "file": "phone-square/right-phase-0.jpg",
+        "sha256": "e4fcaeab2b04e53a6c37d70228ab9f5b88e94b770bf2c9dee54a657b34853cad",
+        "box": [
+          345,
+          161,
+          465,
+          261
+        ],
+        "paintedPhase": 0.02083333333333326,
+        "targetPhase": 0
+      },
+      {
+        "file": "phone-square/right-phase-0.125.jpg",
+        "sha256": "e4fcaeab2b04e53a6c37d70228ab9f5b88e94b770bf2c9dee54a657b34853cad",
+        "box": [
+          350,
+          161,
+          470,
+          261
+        ],
+        "paintedPhase": 0.125,
+        "targetPhase": 0.125
+      },
+      {
+        "file": "phone-square/right-phase-0.25.jpg",
+        "sha256": "04e57a862a9c2f6f32cca145769e3bd597305a677b24104138357f4ab77002b0",
+        "box": [
+          310,
+          161,
+          430,
+          261
+        ],
+        "paintedPhase": 0.25,
+        "targetPhase": 0.25
+      },
+      {
+        "file": "phone-square/right-phase-0.375.jpg",
+        "sha256": "1e7dd433f3d4a8fe21eae618b76a89b2d660e1a156ab82565766ae3716c9c214",
+        "box": [
+          360,
+          161,
+          480,
+          261
+        ],
+        "paintedPhase": 0.35416666666666674,
+        "targetPhase": 0.375
+      },
+      {
+        "file": "phone-square/right-phase-0.5.jpg",
+        "sha256": "0b645a305f53c100aee22bfdb89eaaf448b704b815dd015f8d8fd421df4212f8",
+        "box": [
+          323,
+          161,
+          443,
+          261
+        ],
+        "paintedPhase": 0.5208333333333335,
+        "targetPhase": 0.5
+      },
+      {
+        "file": "phone-square/right-phase-0.625.jpg",
+        "sha256": "58c3c16d1d117ad4f2fd7d7ebd4ff69441821db08bb6874d9fc19e83e71b1a9d",
+        "box": [
+          328,
+          161,
+          448,
+          261
+        ],
+        "paintedPhase": 0.6458333333333335,
+        "targetPhase": 0.625
+      },
+      {
+        "file": "phone-square/right-phase-0.75.jpg",
+        "sha256": "087b43ca7ce34e6267e30a9260c506c9975a65db3b35c3821b2279632497a588",
+        "box": [
+          377,
+          161,
+          497,
+          261
+        ],
+        "paintedPhase": 0.75,
+        "targetPhase": 0.75
+      },
+      {
+        "file": "phone-square/right-phase-0.875.jpg",
+        "sha256": "bcf8e0c61efbf7f5f330ed55bfb4123ba6f9384204310d64d3a17a0a41b592a3",
+        "box": [
+          294,
+          161,
+          414,
+          261
+        ],
+        "paintedPhase": 0.875,
+        "targetPhase": 0.875
+      }
+    ],
+    "cropScale": 1
+  },
+  {
+    "file": "phone-square-right-enlarged-leg-volume-diagnostic.png",
+    "sha256": "1ba3f65de0a16ba4ec0a8cf1c6281445376b7576c09476301cc5031afeb003d9",
+    "scope": "Eight crops from unmodified actual gameplay JPEGs, phase selected after painting. Nearest-neighbour3x enlargement, not gameplay scale or generated art.",
+    "sourceFrames": [
+      {
+        "file": "phone-square/right-phase-0.jpg",
+        "sha256": "e4fcaeab2b04e53a6c37d70228ab9f5b88e94b770bf2c9dee54a657b34853cad",
+        "box": [
+          345,
+          161,
+          465,
+          261
+        ],
+        "paintedPhase": 0.02083333333333326,
+        "targetPhase": 0
+      },
+      {
+        "file": "phone-square/right-phase-0.125.jpg",
+        "sha256": "e4fcaeab2b04e53a6c37d70228ab9f5b88e94b770bf2c9dee54a657b34853cad",
+        "box": [
+          350,
+          161,
+          470,
+          261
+        ],
+        "paintedPhase": 0.125,
+        "targetPhase": 0.125
+      },
+      {
+        "file": "phone-square/right-phase-0.25.jpg",
+        "sha256": "04e57a862a9c2f6f32cca145769e3bd597305a677b24104138357f4ab77002b0",
+        "box": [
+          310,
+          161,
+          430,
+          261
+        ],
+        "paintedPhase": 0.25,
+        "targetPhase": 0.25
+      },
+      {
+        "file": "phone-square/right-phase-0.375.jpg",
+        "sha256": "1e7dd433f3d4a8fe21eae618b76a89b2d660e1a156ab82565766ae3716c9c214",
+        "box": [
+          360,
+          161,
+          480,
+          261
+        ],
+        "paintedPhase": 0.35416666666666674,
+        "targetPhase": 0.375
+      },
+      {
+        "file": "phone-square/right-phase-0.5.jpg",
+        "sha256": "0b645a305f53c100aee22bfdb89eaaf448b704b815dd015f8d8fd421df4212f8",
+        "box": [
+          323,
+          161,
+          443,
+          261
+        ],
+        "paintedPhase": 0.5208333333333335,
+        "targetPhase": 0.5
+      },
+      {
+        "file": "phone-square/right-phase-0.625.jpg",
+        "sha256": "58c3c16d1d117ad4f2fd7d7ebd4ff69441821db08bb6874d9fc19e83e71b1a9d",
+        "box": [
+          328,
+          161,
+          448,
+          261
+        ],
+        "paintedPhase": 0.6458333333333335,
+        "targetPhase": 0.625
+      },
+      {
+        "file": "phone-square/right-phase-0.75.jpg",
+        "sha256": "087b43ca7ce34e6267e30a9260c506c9975a65db3b35c3821b2279632497a588",
+        "box": [
+          377,
+          161,
+          497,
+          261
+        ],
+        "paintedPhase": 0.75,
+        "targetPhase": 0.75
+      },
+      {
+        "file": "phone-square/right-phase-0.875.jpg",
+        "sha256": "bcf8e0c61efbf7f5f330ed55bfb4123ba6f9384204310d64d3a17a0a41b592a3",
+        "box": [
+          294,
+          161,
+          414,
+          261
+        ],
+        "paintedPhase": 0.875,
+        "targetPhase": 0.875
+      }
+    ],
+    "cropScale": 3
+  },
+  {
+    "file": "phone-square-left-native-leg-volume-diagnostic.png",
+    "sha256": "aeac2fb2f8c0332fafdc601a01014573e2cbed4a3e5651d0cbd9da75d6c8c7b6",
+    "scope": "Eight crops from unmodified actual gameplay JPEGs, phase selected after painting. Native scale.",
+    "sourceFrames": [
+      {
+        "file": "phone-square/left-phase-0.jpg",
+        "sha256": "e3a834ee764481bbe71f2054f939ff8543b5bdef0f0dd3e9a5939739520977c1",
+        "box": [
+          356,
+          161,
+          476,
+          261
+        ],
+        "paintedPhase": 0.9791666666666665,
+        "targetPhase": 0
+      },
+      {
+        "file": "phone-square/left-phase-0.125.jpg",
+        "sha256": "aeecbb4d0b7fc6ab0eb10b3d4b2ab969a069ed6d7cd24bcbb1f2678309ad3c3e",
+        "box": [
+          304,
+          161,
+          424,
+          261
+        ],
+        "paintedPhase": 0.14583333333333326,
+        "targetPhase": 0.125
+      },
+      {
+        "file": "phone-square/left-phase-0.25.jpg",
+        "sha256": "e670504e0d620ee5893c4e8287d21ccc1aa92b58c29ca2ca9baefa719ba31457",
+        "box": [
+          210,
+          161,
+          330,
+          261
+        ],
+        "paintedPhase": 0.27083333333333326,
+        "targetPhase": 0.25
+      },
+      {
+        "file": "phone-square/left-phase-0.375.jpg",
+        "sha256": "d7da59878800eeb2cefcb845cca267b47511e2323b9a4e411308604f4b611208",
+        "box": [
+          337,
+          161,
+          457,
+          261
+        ],
+        "paintedPhase": 0.39583333333333326,
+        "targetPhase": 0.375
+      },
+      {
+        "file": "phone-square/left-phase-0.5.jpg",
+        "sha256": "d54d5fe42b8afe32aeddb46bce5d1ea7a750535f6f6fffaf3b6467abb3c963f3",
+        "box": [
+          245,
+          161,
+          365,
+          261
+        ],
+        "paintedPhase": 0.5,
+        "targetPhase": 0.5
+      },
+      {
+        "file": "phone-square/left-phase-0.625.jpg",
+        "sha256": "d946af6f0e58e2ec0be8d7a74ed02f7495d00eb9be7535b3d92c6fcfd30a63dd",
+        "box": [
+          328,
+          161,
+          448,
+          261
+        ],
+        "paintedPhase": 0.6041666666666665,
+        "targetPhase": 0.625
+      },
+      {
+        "file": "phone-square/left-phase-0.75.jpg",
+        "sha256": "2abe7873ebce12d806f4de9b01ba9b9d865f61684ef00d0b175c68ce7fa45c8a",
+        "box": [
+          320,
+          161,
+          440,
+          261
+        ],
+        "paintedPhase": 0.7708333333333335,
+        "targetPhase": 0.75
+      },
+      {
+        "file": "phone-square/left-phase-0.875.jpg",
+        "sha256": "40d0ac3236178a44f36635092ad0fd5c033a13a1325da7dc8f5b0c806789750f",
+        "box": [
+          360,
+          161,
+          480,
+          261
+        ],
+        "paintedPhase": 0.875,
+        "targetPhase": 0.875
+      }
+    ],
+    "cropScale": 1
+  },
+  {
+    "file": "phone-square-left-enlarged-leg-volume-diagnostic.png",
+    "sha256": "fd05ef0a4938a9c8b835a5e3d13a7351b178be207e2c3e8f7b5eb8403a1ce45c",
+    "scope": "Eight crops from unmodified actual gameplay JPEGs, phase selected after painting. Nearest-neighbour3x enlargement, not gameplay scale or generated art.",
+    "sourceFrames": [
+      {
+        "file": "phone-square/left-phase-0.jpg",
+        "sha256": "e3a834ee764481bbe71f2054f939ff8543b5bdef0f0dd3e9a5939739520977c1",
+        "box": [
+          356,
+          161,
+          476,
+          261
+        ],
+        "paintedPhase": 0.9791666666666665,
+        "targetPhase": 0
+      },
+      {
+        "file": "phone-square/left-phase-0.125.jpg",
+        "sha256": "aeecbb4d0b7fc6ab0eb10b3d4b2ab969a069ed6d7cd24bcbb1f2678309ad3c3e",
+        "box": [
+          304,
+          161,
+          424,
+          261
+        ],
+        "paintedPhase": 0.14583333333333326,
+        "targetPhase": 0.125
+      },
+      {
+        "file": "phone-square/left-phase-0.25.jpg",
+        "sha256": "e670504e0d620ee5893c4e8287d21ccc1aa92b58c29ca2ca9baefa719ba31457",
+        "box": [
+          210,
+          161,
+          330,
+          261
+        ],
+        "paintedPhase": 0.27083333333333326,
+        "targetPhase": 0.25
+      },
+      {
+        "file": "phone-square/left-phase-0.375.jpg",
+        "sha256": "d7da59878800eeb2cefcb845cca267b47511e2323b9a4e411308604f4b611208",
+        "box": [
+          337,
+          161,
+          457,
+          261
+        ],
+        "paintedPhase": 0.39583333333333326,
+        "targetPhase": 0.375
+      },
+      {
+        "file": "phone-square/left-phase-0.5.jpg",
+        "sha256": "d54d5fe42b8afe32aeddb46bce5d1ea7a750535f6f6fffaf3b6467abb3c963f3",
+        "box": [
+          245,
+          161,
+          365,
+          261
+        ],
+        "paintedPhase": 0.5,
+        "targetPhase": 0.5
+      },
+      {
+        "file": "phone-square/left-phase-0.625.jpg",
+        "sha256": "d946af6f0e58e2ec0be8d7a74ed02f7495d00eb9be7535b3d92c6fcfd30a63dd",
+        "box": [
+          328,
+          161,
+          448,
+          261
+        ],
+        "paintedPhase": 0.6041666666666665,
+        "targetPhase": 0.625
+      },
+      {
+        "file": "phone-square/left-phase-0.75.jpg",
+        "sha256": "2abe7873ebce12d806f4de9b01ba9b9d865f61684ef00d0b175c68ce7fa45c8a",
+        "box": [
+          320,
+          161,
+          440,
+          261
+        ],
+        "paintedPhase": 0.7708333333333335,
+        "targetPhase": 0.75
+      },
+      {
+        "file": "phone-square/left-phase-0.875.jpg",
+        "sha256": "40d0ac3236178a44f36635092ad0fd5c033a13a1325da7dc8f5b0c806789750f",
+        "box": [
+          360,
+          161,
+          480,
+          261
+        ],
+        "paintedPhase": 0.875,
+        "targetPhase": 0.875
+      }
+    ],
+    "cropScale": 3
+  },
+  {
+    "file": "phone-street-right-native-leg-volume-diagnostic.png",
+    "sha256": "a34eceb1630b1b886f95eb3faf25e68197501dfb3878d9ce152e0957c09def9e",
+    "scope": "Eight crops from unmodified actual gameplay JPEGs, phase selected after painting. Native scale.",
+    "sourceFrames": [
+      {
+        "file": "phone-street/right-phase-0.jpg",
+        "sha256": "bcf169345cab36380609c85da9026b3bbb15d3492eeb9a32c1971721f4c75fbf",
+        "box": [
+          269,
+          210,
+          389,
+          310
+        ],
+        "paintedPhase": 0.9791666666666665,
+        "targetPhase": 0
+      },
+      {
+        "file": "phone-street/right-phase-0.125.jpg",
+        "sha256": "a592edfa54ed32e1cca7e44ce1abeb126ec42e7edc3e5a0e28aa707135e71755",
+        "box": [
+          269,
+          210,
+          389,
+          310
+        ],
+        "paintedPhase": 0.10416666666666674,
+        "targetPhase": 0.125
+      },
+      {
+        "file": "phone-street/right-phase-0.25.jpg",
+        "sha256": "dcaa6947ad37ef6bb45b38448c25162ec931fd06923b9b4f0c21d3167036a18c",
+        "box": [
+          269,
+          210,
+          389,
+          310
+        ],
+        "paintedPhase": 0.25,
+        "targetPhase": 0.25
+      },
+      {
+        "file": "phone-street/right-phase-0.375.jpg",
+        "sha256": "cac73f9c519b7b18738d3aa6d1544574217deb769b8f07bb53bbb9b64aa74f42",
+        "box": [
+          269,
+          210,
+          389,
+          310
+        ],
+        "paintedPhase": 0.35416666666666674,
+        "targetPhase": 0.375
+      },
+      {
+        "file": "phone-street/right-phase-0.5.jpg",
+        "sha256": "0544bd50b402016fa9ef9c87ed929cc5d0aa25cabd089a75e1ce2583e52c2a48",
+        "box": [
+          269,
+          210,
+          389,
+          310
+        ],
+        "paintedPhase": 0.4791666666666665,
+        "targetPhase": 0.5
+      },
+      {
+        "file": "phone-street/right-phase-0.625.jpg",
+        "sha256": "0108c094d3c7c711fd40b291acf57334367c4aca944a76724628010ec7ad5e6c",
+        "box": [
+          269,
+          210,
+          389,
+          310
+        ],
+        "paintedPhase": 0.625,
+        "targetPhase": 0.625
+      },
+      {
+        "file": "phone-street/right-phase-0.75.jpg",
+        "sha256": "9acc539cde4557febcdd627143cc1af8f739485f9b3c4e3774c052bbf8313c72",
+        "box": [
+          269,
+          211,
+          389,
+          311
+        ],
+        "paintedPhase": 0.75,
+        "targetPhase": 0.75
+      },
+      {
+        "file": "phone-street/right-phase-0.875.jpg",
+        "sha256": "c80deb070c0ef052fff19a6f96a97fd1cc51739f8ef105a06441cefe850b5899",
+        "box": [
+          269,
+          210,
+          389,
+          310
+        ],
+        "paintedPhase": 0.8541666666666665,
+        "targetPhase": 0.875
+      }
+    ],
+    "cropScale": 1
+  },
+  {
+    "file": "phone-street-right-enlarged-leg-volume-diagnostic.png",
+    "sha256": "ebf39cdeef97c7497d1c5e8ba84412d1f0df6e177e645cb11da30b4a967026fa",
+    "scope": "Eight crops from unmodified actual gameplay JPEGs, phase selected after painting. Nearest-neighbour3x enlargement, not gameplay scale or generated art.",
+    "sourceFrames": [
+      {
+        "file": "phone-street/right-phase-0.jpg",
+        "sha256": "bcf169345cab36380609c85da9026b3bbb15d3492eeb9a32c1971721f4c75fbf",
+        "box": [
+          269,
+          210,
+          389,
+          310
+        ],
+        "paintedPhase": 0.9791666666666665,
+        "targetPhase": 0
+      },
+      {
+        "file": "phone-street/right-phase-0.125.jpg",
+        "sha256": "a592edfa54ed32e1cca7e44ce1abeb126ec42e7edc3e5a0e28aa707135e71755",
+        "box": [
+          269,
+          210,
+          389,
+          310
+        ],
+        "paintedPhase": 0.10416666666666674,
+        "targetPhase": 0.125
+      },
+      {
+        "file": "phone-street/right-phase-0.25.jpg",
+        "sha256": "dcaa6947ad37ef6bb45b38448c25162ec931fd06923b9b4f0c21d3167036a18c",
+        "box": [
+          269,
+          210,
+          389,
+          310
+        ],
+        "paintedPhase": 0.25,
+        "targetPhase": 0.25
+      },
+      {
+        "file": "phone-street/right-phase-0.375.jpg",
+        "sha256": "cac73f9c519b7b18738d3aa6d1544574217deb769b8f07bb53bbb9b64aa74f42",
+        "box": [
+          269,
+          210,
+          389,
+          310
+        ],
+        "paintedPhase": 0.35416666666666674,
+        "targetPhase": 0.375
+      },
+      {
+        "file": "phone-street/right-phase-0.5.jpg",
+        "sha256": "0544bd50b402016fa9ef9c87ed929cc5d0aa25cabd089a75e1ce2583e52c2a48",
+        "box": [
+          269,
+          210,
+          389,
+          310
+        ],
+        "paintedPhase": 0.4791666666666665,
+        "targetPhase": 0.5
+      },
+      {
+        "file": "phone-street/right-phase-0.625.jpg",
+        "sha256": "0108c094d3c7c711fd40b291acf57334367c4aca944a76724628010ec7ad5e6c",
+        "box": [
+          269,
+          210,
+          389,
+          310
+        ],
+        "paintedPhase": 0.625,
+        "targetPhase": 0.625
+      },
+      {
+        "file": "phone-street/right-phase-0.75.jpg",
+        "sha256": "9acc539cde4557febcdd627143cc1af8f739485f9b3c4e3774c052bbf8313c72",
+        "box": [
+          269,
+          211,
+          389,
+          311
+        ],
+        "paintedPhase": 0.75,
+        "targetPhase": 0.75
+      },
+      {
+        "file": "phone-street/right-phase-0.875.jpg",
+        "sha256": "c80deb070c0ef052fff19a6f96a97fd1cc51739f8ef105a06441cefe850b5899",
+        "box": [
+          269,
+          210,
+          389,
+          310
+        ],
+        "paintedPhase": 0.8541666666666665,
+        "targetPhase": 0.875
+      }
+    ],
+    "cropScale": 3
+  },
+  {
+    "file": "phone-street-left-native-leg-volume-diagnostic.png",
+    "sha256": "ed591514c2c8921a7723a733d3642961cd0155c320f486f243f8e93a6d230291",
+    "scope": "Eight crops from unmodified actual gameplay JPEGs, phase selected after painting. Native scale.",
+    "sourceFrames": [
+      {
+        "file": "phone-street/left-phase-0.jpg",
+        "sha256": "c16c3b94d32d6be7ed282a56f5b3dd6997d3f4d21016db46bf8ef6bebe2e8e08",
+        "box": [
+          246,
+          210,
+          366,
+          310
+        ],
+        "paintedPhase": 0.02083333333333326,
+        "targetPhase": 0
+      },
+      {
+        "file": "phone-street/left-phase-0.125.jpg",
+        "sha256": "c16c3b94d32d6be7ed282a56f5b3dd6997d3f4d21016db46bf8ef6bebe2e8e08",
+        "box": [
+          246,
+          210,
+          366,
+          310
+        ],
+        "paintedPhase": 0.10416666666666674,
+        "targetPhase": 0.125
+      },
+      {
+        "file": "phone-street/left-phase-0.25.jpg",
+        "sha256": "b0655dd802b3ac82ba1447dcb6bf867799c5d7fa58eb3d4d9f9c9c08319afb15",
+        "box": [
+          246,
+          210,
+          366,
+          310
+        ],
+        "paintedPhase": 0.22916666666666674,
+        "targetPhase": 0.25
+      },
+      {
+        "file": "phone-street/left-phase-0.375.jpg",
+        "sha256": "6471ea126c2398fa2139c202b6cdb455be9f95bbb5ed8e34457e327dc2bf51a1",
+        "box": [
+          246,
+          210,
+          366,
+          310
+        ],
+        "paintedPhase": 0.35416666666666674,
+        "targetPhase": 0.375
+      },
+      {
+        "file": "phone-street/left-phase-0.5.jpg",
+        "sha256": "7763c3b09d98c55bdecb1518adcc2b5f5a34c6e58f4a6b7f09da237d9122fc18",
+        "box": [
+          246,
+          210,
+          366,
+          310
+        ],
+        "paintedPhase": 0.4791666666666665,
+        "targetPhase": 0.5
+      },
+      {
+        "file": "phone-street/left-phase-0.625.jpg",
+        "sha256": "53ed727e90225a3e1b2e6011149cfcb8d56fa0793a2169fdd920897c9db9dfb2",
+        "box": [
+          246,
+          209,
+          366,
+          309
+        ],
+        "paintedPhase": 0.625,
+        "targetPhase": 0.625
+      },
+      {
+        "file": "phone-street/left-phase-0.75.jpg",
+        "sha256": "9841d29e0c01fb403ab0cdf7d962101479ecab311cff195ae8fa925867034597",
+        "box": [
+          246,
+          209,
+          366,
+          309
+        ],
+        "paintedPhase": 0.7708333333333335,
+        "targetPhase": 0.75
+      },
+      {
+        "file": "phone-street/left-phase-0.875.jpg",
+        "sha256": "9841d29e0c01fb403ab0cdf7d962101479ecab311cff195ae8fa925867034597",
+        "box": [
+          246,
+          209,
+          366,
+          309
+        ],
+        "paintedPhase": 0.8541666666666665,
+        "targetPhase": 0.875
+      }
+    ],
+    "cropScale": 1
+  },
+  {
+    "file": "phone-street-left-enlarged-leg-volume-diagnostic.png",
+    "sha256": "231895f8b4ca89b874dfb1be829e7503b52436a95fe3c8ffd6449c7c9ef82e09",
+    "scope": "Eight crops from unmodified actual gameplay JPEGs, phase selected after painting. Nearest-neighbour3x enlargement, not gameplay scale or generated art.",
+    "sourceFrames": [
+      {
+        "file": "phone-street/left-phase-0.jpg",
+        "sha256": "c16c3b94d32d6be7ed282a56f5b3dd6997d3f4d21016db46bf8ef6bebe2e8e08",
+        "box": [
+          246,
+          210,
+          366,
+          310
+        ],
+        "paintedPhase": 0.02083333333333326,
+        "targetPhase": 0
+      },
+      {
+        "file": "phone-street/left-phase-0.125.jpg",
+        "sha256": "c16c3b94d32d6be7ed282a56f5b3dd6997d3f4d21016db46bf8ef6bebe2e8e08",
+        "box": [
+          246,
+          210,
+          366,
+          310
+        ],
+        "paintedPhase": 0.10416666666666674,
+        "targetPhase": 0.125
+      },
+      {
+        "file": "phone-street/left-phase-0.25.jpg",
+        "sha256": "b0655dd802b3ac82ba1447dcb6bf867799c5d7fa58eb3d4d9f9c9c08319afb15",
+        "box": [
+          246,
+          210,
+          366,
+          310
+        ],
+        "paintedPhase": 0.22916666666666674,
+        "targetPhase": 0.25
+      },
+      {
+        "file": "phone-street/left-phase-0.375.jpg",
+        "sha256": "6471ea126c2398fa2139c202b6cdb455be9f95bbb5ed8e34457e327dc2bf51a1",
+        "box": [
+          246,
+          210,
+          366,
+          310
+        ],
+        "paintedPhase": 0.35416666666666674,
+        "targetPhase": 0.375
+      },
+      {
+        "file": "phone-street/left-phase-0.5.jpg",
+        "sha256": "7763c3b09d98c55bdecb1518adcc2b5f5a34c6e58f4a6b7f09da237d9122fc18",
+        "box": [
+          246,
+          210,
+          366,
+          310
+        ],
+        "paintedPhase": 0.4791666666666665,
+        "targetPhase": 0.5
+      },
+      {
+        "file": "phone-street/left-phase-0.625.jpg",
+        "sha256": "53ed727e90225a3e1b2e6011149cfcb8d56fa0793a2169fdd920897c9db9dfb2",
+        "box": [
+          246,
+          209,
+          366,
+          309
+        ],
+        "paintedPhase": 0.625,
+        "targetPhase": 0.625
+      },
+      {
+        "file": "phone-street/left-phase-0.75.jpg",
+        "sha256": "9841d29e0c01fb403ab0cdf7d962101479ecab311cff195ae8fa925867034597",
+        "box": [
+          246,
+          209,
+          366,
+          309
+        ],
+        "paintedPhase": 0.7708333333333335,
+        "targetPhase": 0.75
+      },
+      {
+        "file": "phone-street/left-phase-0.875.jpg",
+        "sha256": "9841d29e0c01fb403ab0cdf7d962101479ecab311cff195ae8fa925867034597",
+        "box": [
+          246,
+          209,
+          366,
+          309
+        ],
+        "paintedPhase": 0.8541666666666665,
+        "targetPhase": 0.875
+      }
+    ],
+    "cropScale": 3
+  }
+]

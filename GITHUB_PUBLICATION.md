@@ -102,3 +102,7 @@ This authorized target-only follow-up replaces straight calf interpolation with 
 ## Stage24 — Visible alternating strides
 
 The authorized target-only fix removes the walking fore/aft rest stagger that hid the second boot. Both original feet now visibly trade leads, with safe shared hems and rear-calf flex. Camera, speed, source physics/damage, baby, scenes and saves remain. Actual repeated-cycle desktop/CDP-touch evidence and strict source/geometry tests are recorded under Stage24; the exact package/publication receipt is external to the ZIP it certifies. Prior compact-catalog limitations remain independently checked; no hosting settings or workflow change is made. Neither donor is a destination and own Git configuration is preserved.
+
+## Stage25 — Fixed-volume articulated leg material
+
+The authorized target-only repair replaces walking shaft shear with rigid original-rest-art thigh/shin pieces and fixed painted joints. Original baby, boots, standing/default/action/transfer/boat, camera, speeds, source physics and saves remain. Real worker-ready desktop/CDP-touch motion and strict source/material/bone tests are recorded under Stage25. Exact archive/publication receipts remain external to the ZIP they validate. Compact-catalog status is checked separately; no hosting settings/workflow change, donor destination or Git-configuration change is made.

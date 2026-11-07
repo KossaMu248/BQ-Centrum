@@ -1,0 +1,43 @@
+{
+  "scope": "Derived exact-package receipt after full standalone validation; not a new gameplay run. No certificate is embedded in the ZIP it validates.",
+  "atUtc": "2026-11-07T15:47:47.731391+00:00",
+  "passed": true,
+  "archive": "delivery/BQ-Centrum-validated.zip",
+  "sha256": "3f76ee7306c9fbba06cdc8d660276a982d8679be86edb55bbcb397aa10106142",
+  "zipBytes": 1093436764,
+  "archiveEntries": 2730,
+  "payloadFilesComparedToCurrentTree": 2728,
+  "payloadDrift": [],
+  "standaloneTopLevelChecks": 28,
+  "conditions": {
+    "browser": "system Chromium /usr/bin/chromium, headless",
+    "desktopViewport": [
+      1280,
+      720
+    ],
+    "phoneEmulationViewport": [
+      844,
+      390
+    ],
+    "physicalDevices": false,
+    "sceneFixtures": "Production-factory sealed named-entrance/parking fixtures; primary native route is a separate test.",
+    "visualEvidence": "No new screenshots in this delivery smoke check; Stage25 actual rigid-limb gameplay/input traces are separate evidence.",
+    "browserVersion": "154.0.8037.57",
+    "systemPathFirefoxExecutable": null,
+    "engineScope": "This archive run uses system Chromium only; Firefox and Linux WebKit evidence is separate."
+  },
+  "errorCounts": {
+    "errors": 0,
+    "consoleErrors": 0,
+    "httpFailures": 0,
+    "serverHttpFailures": 0,
+    "serverOutsideSubpathRequests": 0,
+    "externalRequests": 0,
+    "outsideSubpathRequests": 0
+  },
+  "sceneArrivalChecks": 20,
+  "projectionSamples": 36,
+  "arrivalHealthValues": [
+    73
+  ]
+}

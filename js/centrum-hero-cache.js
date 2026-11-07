@@ -7,7 +7,7 @@
     'use strict';
     const BODY_HEIGHT=280,LOWER_HEIGHT=190,clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
     const smooth=t=>{t=clamp(t,0,1);return t*t*(3-2*t);};
-    const bodyNow=()=>performance.now(),lowerPrepared=new Map(),upperPrepared=new Map(),bodyScratch=new Map();
+    const bodyNow=()=>performance.now(),lowerPrepared=new Map(),upperPrepared=new Map(),bodyScratch=new Map(),centrumMaterialCache=new Map();
     let images={},bodyBuildMs=0,maxBodyBuildMs=0,transientBuilds=0,bodyBitmaps=0,bitmapFailures=0;
     const window={},output=new OffscreenCanvas(1,1);
     output.dataset={};
@@ -34,7 +34,7 @@
     };
   }
   function workerSource(functions){
-    const names=['surfacePose',...(functions.centrumLowerTargets?['centrumBoot','centrumLowerTargets','centrumLowerMesh']:[]),'lowerTargets','lowerMesh','surfaceTriangle','bakeBody'];
+    const names=['surfacePose',...(functions.centrumLowerTargets?['centrumBoot','centrumLowerTargets','centrumLowerMaterial','centrumLowerMesh']:[]),'lowerTargets','lowerMesh','surfaceTriangle','bakeBody'];
     for(const name of names)if(typeof functions[name]!=='function')throw Error('Missing source rig function '+name);
     return '('+workerEnvironment.toString().replace('/* SOURCE_RIG_FUNCTIONS */',names.map(name=>functions[name].toString()).join('\n'))+')();';
   }

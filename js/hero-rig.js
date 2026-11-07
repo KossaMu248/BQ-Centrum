@@ -292,7 +292,7 @@
     }
     return{targets,knees,key:4};
   }
-  function centrumLowerMesh(profile,pose,gait,weight){
+  function centrumLowerMaterial(profile,pose,gait,weight){
     const source=prepareLower(4),{knees}=centrumLowerTargets(profile,pose,gait,weight),boots={near:centrumBoot(profile,pose,'near'),far:centrumBoot(profile,pose,'far')},triangles=[],calfMaps={};
     const sourcePoint=(paint,raw)=>({x:(raw[0]-paint.key.rect[0])/paint.key.rect[2]*paint.tile.width,y:(raw[1]-paint.key.rect[1])/paint.key.rect[3]*paint.tile.height});
     const emit=(paint,raw,map)=>{const points=raw.map(p=>({source:sourcePoint(paint,p),destination:map(p)}));for(let i=1;i<points.length-1;i++){const t=[points[0],points[i],points[i+1]],a=t[0].source,b=t[1].source,d=t[2].source;if(Math.abs((b.x-a.x)*(d.y-a.y)-(b.y-a.y)*(d.x-a.x))<1e-9)continue;if(paint!==source)t.image=paint.tile;triangles.push(t);}};
@@ -364,6 +364,75 @@
     const rendered={};for(const [j,side]of ['near','far'].entries()){const boot=boots[side];rendered[side]={hip:body(source.key.hips[calfMaps[side].textureIndex]),knee:calfMaps[side].sample(source.key.legs[calfMaps[side].textureIndex].knee),cuff:boot.cuff,heel:boot.heel,toe:boot.toe,sole:boot.sole,source:{image:images[boot.source.key.image].src.split('/').pop(),pose:'fixed-native-contact-boot',bootLegIndex:j,furLegIndex:calfMaps[side].textureIndex,hip:source.key.hips[calfMaps[side].textureIndex],knee:source.key.legs[calfMaps[side].textureIndex].knee,cuff:boot.leg.cuff,heel:boot.leg.heel,toe:boot.leg.toe,sole:boot.leg.sole},renderedFromSource:true};}
     return{source,vertices:triangles.flatMap(t=>t),triangles,knees,rendered,bootSources:['nearContact']};
   }
+  // Rest-art pieces rotate around fixed-length joints. A separate source-fabric
+  // pelvis cover conceals their attachment; no limb shaft is interpolated.
+  const centrumMaterialCache=new Map();
+  function centrumLowerMesh(profile,pose,gait,weight){
+    const source=prepareLower(4),height=profile.stature*pose.s,key=profile.image+':'+height;
+    let rest=centrumMaterialCache.get(key);
+    if(!rest){
+      const zeroFoot={x:0,y:0,angle:0,shinAngle:0,kneeFlex:0,contactOffset:0,stance:true},zero={...gait,phase:0,near:{...zeroFoot},far:{...zeroFoot},bob:0,sway:0,roll:0,pelvisSway:0,pelvisRoll:0,walkPose:null,groundMotion:{x:1,y:0}};
+      const restPose=surfacePose(profile,height,zero,0),mesh=centrumLowerMaterial(profile,restPose,zero,0);
+      const segments={};for(const side of ['near','far']){const r=mesh.rendered[side],length=(a,b)=>Math.hypot(b.x-a.x,b.y-a.y),thigh=length(r.hip,r.knee),shin=length(r.knee,r.cuff);segments[side]={rest:{hip:r.hip,knee:r.knee,cuff:r.cuff},target:{hip:r.hip,knee:r.knee,cuff:r.cuff},hip:r.hip,knee:r.knee,cuff:r.cuff,thigh,shin,hipShift:0,thighAngle:0,shinAngle:0};mesh.knees[side]={...r.knee,ik:{hip:r.hip,knee:r.knee,cuff:r.cuff,thigh,shin,hipShift:0,bootWidth:length(r.heel,r.toe)}};}mesh.rigidSegments=segments;
+      rest={mesh,pose:restPose};centrumMaterialCache.set(key,rest);
+    }
+    if(weight<=1e-7)return rest.mesh;
+    const triangles=[],rigidSegments={},bones={},boots={near:centrumBoot(profile,pose,'near'),far:centrumBoot(profile,pose,'far')};
+    const normRaw=v=>[v.source.x/source.tile.width*source.key.rect[2]+source.key.rect[0],v.source.y/source.tile.height*source.key.rect[3]+source.key.rect[1]];
+    const sourceUV=raw=>({x:(raw[0]-source.key.rect[0])/source.key.rect[2]*source.tile.width,y:(raw[1]-source.key.rect[1])/source.key.rect[3]*source.tile.height});
+    const dist=(a,b)=>Math.hypot(b.x-a.x,b.y-a.y),rotate=(p,pivot,target,angle)=>{const x=p.x-pivot.x,y=p.y-pivot.y,c=Math.cos(angle),s=Math.sin(angle);return{x:target.x+x*c-y*s,y:target.y+x*s+y*c};};
+    const body=raw=>{const p=source.norm(raw);return pose.pelvisPoint(pose.pivot.x+p.x*pose.s,(profile.pelvisY-10-pose.oy+p.y)*pose.s);};
+    for(const side of ['far','near']){
+      const r=rest.mesh.rendered[side],j=side==='near'?1:0,H0=r.hip,K0=r.knee,C0=r.cuff,L1=dist(H0,K0),L2=dist(K0,C0),C=boots[side].cuff,desired=body(source.key.hips[j]);
+      const dx=C.x-desired.x,dy=C.y-desired.y,distance=Math.max(1e-9,Math.hypot(dx,dy)),ux=dx/distance,uy=dy/distance;
+      let reach=clamp(distance,Math.abs(L1-L2)+1e-6,L1+L2),pole=1;
+      // A barely reversed authored rest knee changes branch only through full
+      // extension. This keeps start/stop continuous without shrinking a bone.
+      const rx=C0.x-H0.x,ry=C0.y-H0.y,rd=Math.hypot(rx,ry),restPole=((K0.x-H0.x)*ry-(K0.y-H0.y)*rx)/rd;
+      if(restPole<0&&weight<.1){const t=weight/.1;reach+=(L1+L2-reach)*smooth(1-Math.abs(2*t-1));pole=t<.5?-1:1;}
+      const shift=distance-reach,H={x:desired.x+ux*shift,y:desired.y+uy*shift},along=(L1*L1-L2*L2+reach*reach)/(2*reach),out=Math.sqrt(Math.max(0,L1*L1-along*along)),K={x:H.x+ux*along+uy*out*pole,y:H.y+uy*along-ux*out*pole};
+      const thighAngle=Math.atan2(K.y-H.y,K.x-H.x)-Math.atan2(K0.y-H0.y,K0.x-H0.x),shinAngle=Math.atan2(C.y-K.y,C.x-K.x)-Math.atan2(C0.y-K0.y,C0.x-K0.x);
+      bones[side]={H0,K0,C0,H,K,C,thigh:p=>rotate(p,H0,H,thighAngle),shin:p=>rotate(p,K0,K,shinAngle)};
+      rigidSegments[side]={rest:{hip:H0,knee:K0,cuff:C0},target:{hip:H,knee:K,cuff:C},hip:H,knee:K,cuff:C,thigh:L1,shin:L2,hipShift:Math.abs(shift),thighAngle,shinAngle,waistCoverRaw:[210,315,490],kneeRow:source.key.legs[j].knee[1]};
+    }
+    const blendVertex=(a,b,t)=>({source:{x:a.source.x+(b.source.x-a.source.x)*t,y:a.source.y+(b.source.y-a.source.y)*t},rest:{x:a.rest.x+(b.rest.x-a.rest.x)*t,y:a.rest.y+(b.rest.y-a.rest.y)*t}});
+    const clip=(polygon,test)=>{const next=[];for(let i=0;i<polygon.length;i++){const a=polygon[i],b=polygon[(i+1)%polygon.length],da=test(a),db=test(b);if(da>=-1e-9)next.push(a);if((da>=0)!==(db>=0))next.push(blendVertex(a,b,da/(da-db)));}return next;};
+    const raw=v=>normRaw(v),split=y=>y<=600?650-(y-500)*.4:y<=700?610-(y-600)*.4:570+(y-700)/3;
+    const emit=(polygon,map,side,segment,material)=>{if(polygon.length<3)return;const points=polygon.map(v=>({source:v.source,destination:map(v.rest,raw(v))}));for(let i=1;i<points.length-1;i++){const t=[points[0],points[i],points[i+1]],a=t[0].source,b=t[1].source,c=t[2].source;if(Math.abs((b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x))<1e-8)continue;t.limb=side;t.segment=segment;t.material=material;triangles.push(t);}};
+    if(!rest.pieces){
+      rest.pieces={far:[],near:[],pelvis:[],boots:{far:[],near:[]}};
+      const reference=rest.mesh.triangles.filter(t=>!t.image).map(t=>({vertices:t.map(v=>({source:v.source,rest:v.destination})),material:t.some(v=>normRaw(v)[1]<100)?'pants':'fur'}));
+      for(const side of ['far','near']){const j=side==='near'?1:0,knee=source.key.legs[j].knee[1],shinStart=Math.max(knee-50,621);
+        for(const segment of ['shin','thigh'])for(const item of reference){
+          if(segment==='shin'&&item.material!=='fur')continue;
+          for(const [low,high]of [[94,210],[210,315],[315,500],[500,600],[600,700],[700,1300]]){
+            let polygon=clip(item.vertices,v=>raw(v)[1]-low);polygon=clip(polygon,v=>high-raw(v)[1]);if(polygon.length<3)continue;
+            polygon=clip(polygon,v=>side==='near'?raw(v)[0]-split(raw(v)[1]):split(raw(v)[1])-raw(v)[0]);
+            polygon=clip(polygon,v=>segment==='thigh'?knee+50-raw(v)[1]:raw(v)[1]-shinStart);
+            if(polygon.length>=3)rest.pieces[side].push({polygon,segment,material:item.material});
+          }
+        }
+      }
+      // The intact source waist and a small black crotch cover conceal the two
+      // rotating roots. Both end above all hems and never scale a leg.
+      for(const item of reference)if(item.material==='pants')for(const [low,high]of [[210,315],[315,490]]){
+        let polygon=clip(item.vertices,v=>raw(v)[1]-low);polygon=clip(polygon,v=>high-raw(v)[1]);
+        polygon=clip(polygon,v=>raw(v)[0]-(split(raw(v)[1])-70));polygon=clip(polygon,v=>split(raw(v)[1])+70-raw(v)[0]);
+        if(polygon.length>=3)rest.pieces.pelvis.push(polygon);
+      }
+      const paint=prepareLower(0),rr=v=>[v.source.x/paint.tile.width*paint.key.rect[2]+paint.key.rect[0],v.source.y/paint.tile.height*paint.key.rect[3]+paint.key.rect[1]];
+      for(const t of rest.mesh.triangles)if(t.image===paint.tile){const side=t.reduce((sum,v)=>sum+rr(v)[0],0)/3>620?'near':'far';rest.pieces.boots[side].push(t.map(v=>({source:v.source,raw:rr(v)})));}
+    }
+    for(const side of ['far','near']){
+      const bone=bones[side],thigh=p=>bone.thigh(p);
+      for(const part of rest.pieces[side])emit(part.polygon,part.segment==='thigh'?thigh:p=>bone.shin(p),side,part.segment,part.material);
+      for(const t of rest.pieces.boots[side]){const out=t.map(v=>({source:v.source,destination:boots[side].point(v.raw)}));out.image=prepareLower(0).tile;out.limb=side;out.segment='boot';out.material='boot';triangles.push(out);}
+    }
+    for(const polygon of rest.pieces.pelvis)emit(polygon,(p,r)=>body(r),'pelvis','pelvis','pants');
+    const sample=(p,side)=>{const q=sourceUV(p);for(const t of triangles){if(t.image||t.limb!==side)continue;const [a,b,c]=t.map(v=>v.source),den=(b.y-c.y)*(a.x-c.x)+(c.x-b.x)*(a.y-c.y);if(Math.abs(den)<1e-9)continue;const u=((b.y-c.y)*(q.x-c.x)+(c.x-b.x)*(q.y-c.y))/den,v=((c.y-a.y)*(q.x-c.x)+(a.x-c.x)*(q.y-c.y))/den,w=1-u-v;if(Math.min(u,v,w)>=-1e-7)return{x:u*t[0].destination.x+v*t[1].destination.x+w*t[2].destination.x,y:u*t[0].destination.y+v*t[1].destination.y+w*t[2].destination.y};}return null;};
+    const rendered={},knees={};for(const side of ['near','far']){const boot=boots[side],j=side==='near'?1:0,b=rigidSegments[side];rendered[side]={...rest.mesh.rendered[side],hip:sample(source.key.hips[j],side)||b.hip,knee:sample(source.key.legs[j].knee,side)||b.knee,cuff:boot.cuff,heel:boot.heel,toe:boot.toe,sole:boot.sole};knees[side]={...b.knee,ik:{hip:b.hip,knee:b.knee,cuff:b.cuff,thigh:b.thigh,shin:b.shin,hipShift:b.hipShift,bootWidth:dist(boot.toe,boot.heel)}};}
+    return{source,vertices:triangles.flatMap(t=>t),triangles,knees,rendered,rigidSegments,bootSources:['nearContact']};
+  }
   // End Centrum-only anatomy.
   function lowerTargets(profile,pose,gait,weight){
     if(gait.centrumWalk||gait.sourceWalk)return centrumLowerTargets(profile,pose,gait,weight);
@@ -399,7 +468,7 @@
     // Flatten the recorded mesh into pixels once. Reusing a canvas whose display
     // list still contains every clipped triangle can replay that work on draw.
     const pixels=c.getImageData(0,0,canvas.width,canvas.height);c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,canvas.width,canvas.height);c.putImageData(pixels,0,0);
-    const frame={canvas,image:canvas,width:canvas.width,height:canvas.height,left,top,gait,weight,triangles:triangles.length+upperTriangles.length,rect:upper.rect,lowerPose:lower.source.key.name,lowerRect:lower.source.key.rect,knees:lower.knees,rendered:lower.rendered,disposed:false,pending:false,bitmap:false};
+    const frame={canvas,image:canvas,width:canvas.width,height:canvas.height,left,top,gait,weight,triangles:triangles.length+upperTriangles.length,rect:upper.rect,lowerPose:lower.source.key.name,lowerRect:lower.source.key.rect,knees:lower.knees,rendered:lower.rendered,rigidSegments:lower.rigidSegments,disposed:false,pending:false,bitmap:false};
     if(!scratch&&window.createImageBitmap){frame.pending=true;const attribution={...canvas.dataset};window.createImageBitmap(canvas).then(bitmap=>{frame.pending=false;if(frame.disposed){bitmap.close();return;}bitmap.dataset=attribution;frame.image=bitmap;frame.bitmap=true;bodyBitmaps++;canvas.width=1;canvas.height=1;frame.canvas=null;}).catch(()=>{frame.pending=false;bitmapFailures++;});}
     const buildMs=bodyNow()-buildStart;bodyBuildMs+=buildMs;maxBodyBuildMs=Math.max(maxBodyBuildMs,buildMs);return frame;
   }
@@ -423,7 +492,7 @@
     centrumManagerPromise=warmupSources({foreground:true}).then(async()=>{
       const lower=lowerKeys.map((_,index)=>({index,...prepareLower(index)}));
       const upper=['front','back'].map(name=>({name,...upperSource(profiles[name],name)}));
-      centrumCache=await window.BearlyCentrumHeroCache.create({functions:{surfacePose,centrumBoot,centrumLowerTargets,centrumLowerMesh,lowerTargets,lowerMesh,surfaceTriangle,bakeBody},lower,upper,
+      centrumCache=await window.BearlyCentrumHeroCache.create({functions:{surfacePose,centrumBoot,centrumLowerTargets,centrumLowerMaterial,centrumLowerMesh,lowerTargets,lowerMesh,surfaceTriangle,bakeBody},lower,upper,
         images:Object.fromEntries(Object.entries(images).map(([key,image])=>[key,{src:image.src}])),
         cache:{frames:bodyFrames,limitFrames:98,limitBytes:BODY_CACHE_LIMIT,bytes:()=>bodyCacheBytes,
           add:frame=>{bodyCacheBytes+=frame.width*frame.height*4;bodyBitmaps++;},drop:centrumDrop}});
@@ -471,7 +540,7 @@
     const renderedWeight=frame.centrum?frame.weight:weight,renderedMotion=frame.centrum?frame.gait.groundMotion:(frame.gait.groundMotion||groundMotion);
     const gait=projectGroundGait(window.BearlyLocomotion.pose(frame.gait.phase*window.BearlyLocomotion.cycleLength(h),h,renderedWeight),renderedMotion,renderedWeight),pose=surfacePose(profile,h,gait,renderedWeight),passengerOptions=gait.centrumWalk?{...options,weight:renderedWeight,groundMotion:renderedMotion}:options;c.save();pose.transform(c);const babyFace=paintPassenger(c,images[profile.image],profile.torso,profile.origin,s,name,passengerOptions);c.restore();
     const landmarks={};for(const side of ['near','far']){const f=pose.legs[side],r=frame.rendered[side],point=v=>({x:v.x*scale,y:v.y*scale});landmarks[side]={...Object.fromEntries(['hip','knee','cuff','heel','toe','sole'].map(k=>[k,point(r[k])])),renderedFromSource:true,source:r.source,plannedSole:f.sole,plannedCuff:f.cuff,angle:f.angle,stance:f.stance,kneeFlex:f.kneeFlex,contact:f.contact,bootWidth:Math.hypot(r.toe.x-r.heel.x,r.toe.y-r.heel.y)*scale,rigidShoe:true};}
-    lastAudit={pose:'walking',carrier:name,integratedCarrier:true,babyFace,height:h,source:profile.image,sourceRect:frame.rect,lowerPose:frame.lowerPose,lowerSourceRect:frame.lowerRect,authoredLowerBody:true,stature:profile.stature,landmarks,gait,body:{pivot:pose.pivot,sway:pose.shift.x,bob:pose.shift.y,roll:pose.angle,pelvisSway:gait.pelvisSway,pelvisRoll:gait.pelvisRoll,slope,opaque:true,surfaces:1,continuous:true,triangles:frame.triangles,canonicalHeight:BODY_HEIGHT,lowerHeight:LOWER_HEIGHT,cachePhase:frame.gait.phase},cache:{frames:bodyFrames.size,hits:bodyCacheHits,misses:bodyCacheMisses}};if(gait.centrumWalk||gait.sourceWalk)lastAudit.anatomy={source:'fixed-native-idle',skinning:'knee-driven-single-owner-surface',ikTargetsDiagnosticOnly:true,near:frame.knees.near.ik,far:frame.knees.far.ik};if(frame.centrum)lastAudit.raster={mode:'worker',requestedPhase:request?.gait.phase,renderedPhase:frame.gait.phase,requestedWeight:weight,renderedWeight,heading:frame.centrum.heading};c.restore();return true;
+    lastAudit={pose:'walking',carrier:name,integratedCarrier:true,babyFace,height:h,source:profile.image,sourceRect:frame.rect,lowerPose:frame.lowerPose,lowerSourceRect:frame.lowerRect,authoredLowerBody:true,stature:profile.stature,landmarks,gait,body:{pivot:pose.pivot,sway:pose.shift.x,bob:pose.shift.y,roll:pose.angle,pelvisSway:gait.pelvisSway,pelvisRoll:gait.pelvisRoll,slope,opaque:true,surfaces:1,continuous:true,triangles:frame.triangles,canonicalHeight:BODY_HEIGHT,lowerHeight:LOWER_HEIGHT,cachePhase:frame.gait.phase},cache:{frames:bodyFrames.size,hits:bodyCacheHits,misses:bodyCacheMisses}};if(gait.centrumWalk||gait.sourceWalk)lastAudit.anatomy={source:'fixed-native-idle',skinning:'rigid-rest-art-segments',ikTargetsDiagnosticOnly:false,segments:frame.rigidSegments,near:frame.knees.near.ik,far:frame.knees.far.ik};if(frame.centrum)lastAudit.raster={mode:'worker',requestedPhase:request?.gait.phase,renderedPhase:frame.gait.phase,requestedWeight:weight,renderedWeight,heading:frame.centrum.heading};c.restore();return true;
   }
   let sourceWarmupPromise=null,sourceWarmupDone=0,sourceWarmupMs=0,sourceWarmupMaxMs=0;
   let sourceWarmupForeground=false,sourceWarmupSchedule=null,sourceWarmupPending=null,sourceWarmupFailure=null,sourceWarmupRetries=0;

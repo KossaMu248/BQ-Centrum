@@ -1,0 +1,157 @@
+{
+  "scope": "Baseline actual painted landmark-distance variation only. Knee-to-sole includes rigid boot, not anatomical shin length. These lengths do not measure cross-section width or prove slimming independently.",
+  "groups": [
+    {
+      "label": "desktop-square",
+      "direction": "right",
+      "h": 200,
+      "paintedLandmarkDistances": {
+        "near": {
+          "paintedHipToKneeMin": 27.69936098533368,
+          "paintedHipToKneeMax": 35.23925120412048,
+          "kneeToSoleMin": 31.23808911996248,
+          "kneeToSoleMax": 35.343694829602214
+        },
+        "far": {
+          "paintedHipToKneeMin": 28.138707520393897,
+          "paintedHipToKneeMax": 34.047864035274486,
+          "kneeToSoleMin": 28.170669855372367,
+          "kneeToSoleMax": 41.50958078760554
+        }
+      }
+    },
+    {
+      "label": "desktop-square",
+      "direction": "left",
+      "h": 200,
+      "paintedLandmarkDistances": {
+        "near": {
+          "paintedHipToKneeMin": 27.69936098533368,
+          "paintedHipToKneeMax": 35.23925120412048,
+          "kneeToSoleMin": 31.23808911996248,
+          "kneeToSoleMax": 35.343694829602214
+        },
+        "far": {
+          "paintedHipToKneeMin": 28.138707520393897,
+          "paintedHipToKneeMax": 34.047864035274486,
+          "kneeToSoleMin": 28.170669855372367,
+          "kneeToSoleMax": 41.50958078760554
+        }
+      }
+    },
+    {
+      "label": "desktop-street",
+      "direction": "right",
+      "h": 145,
+      "paintedLandmarkDistances": {
+        "near": {
+          "paintedHipToKneeMin": 19.555948942373888,
+          "paintedHipToKneeMax": 26.858309040995444,
+          "kneeToSoleMin": 22.242888336068045,
+          "kneeToSoleMax": 25.661892683075944
+        },
+        "far": {
+          "paintedHipToKneeMin": 19.96596478768992,
+          "paintedHipToKneeMax": 25.566689228880637,
+          "kneeToSoleMin": 20.052159775911303,
+          "kneeToSoleMax": 31.42751859600564
+        }
+      }
+    },
+    {
+      "label": "desktop-street",
+      "direction": "left",
+      "h": 145,
+      "paintedLandmarkDistances": {
+        "near": {
+          "paintedHipToKneeMin": 19.555948942373888,
+          "paintedHipToKneeMax": 26.858309040995444,
+          "kneeToSoleMin": 22.242888336068045,
+          "kneeToSoleMax": 25.654660711129544
+        },
+        "far": {
+          "paintedHipToKneeMin": 20.10354198489263,
+          "paintedHipToKneeMax": 25.566689228880637,
+          "kneeToSoleMin": 20.052159775911303,
+          "kneeToSoleMax": 31.42751859600564
+        }
+      }
+    },
+    {
+      "label": "phone-square",
+      "direction": "right",
+      "h": 200,
+      "paintedLandmarkDistances": {
+        "near": {
+          "paintedHipToKneeMin": 27.69936098533368,
+          "paintedHipToKneeMax": 35.23925120412048,
+          "kneeToSoleMin": 31.23808911996248,
+          "kneeToSoleMax": 35.343694829602214
+        },
+        "far": {
+          "paintedHipToKneeMin": 28.138707520393897,
+          "paintedHipToKneeMax": 34.047864035274486,
+          "kneeToSoleMin": 28.170669855372367,
+          "kneeToSoleMax": 41.50958078760554
+        }
+      }
+    },
+    {
+      "label": "phone-square",
+      "direction": "left",
+      "h": 200,
+      "paintedLandmarkDistances": {
+        "near": {
+          "paintedHipToKneeMin": 27.69936098533368,
+          "paintedHipToKneeMax": 35.23925120412048,
+          "kneeToSoleMin": 31.23808911996248,
+          "kneeToSoleMax": 35.343694829602214
+        },
+        "far": {
+          "paintedHipToKneeMin": 28.138707520393897,
+          "paintedHipToKneeMax": 34.047864035274486,
+          "kneeToSoleMin": 28.170669855372367,
+          "kneeToSoleMax": 41.50958078760554
+        }
+      }
+    },
+    {
+      "label": "phone-street",
+      "direction": "right",
+      "h": 145,
+      "paintedLandmarkDistances": {
+        "near": {
+          "paintedHipToKneeMin": 19.555948942373888,
+          "paintedHipToKneeMax": 26.858309040995444,
+          "kneeToSoleMin": 22.242888336068045,
+          "kneeToSoleMax": 25.661892683075944
+        },
+        "far": {
+          "paintedHipToKneeMin": 19.96596478768992,
+          "paintedHipToKneeMax": 25.54634174165426,
+          "kneeToSoleMin": 20.052159775911303,
+          "kneeToSoleMax": 31.42751859600564
+        }
+      }
+    },
+    {
+      "label": "phone-street",
+      "direction": "left",
+      "h": 145,
+      "paintedLandmarkDistances": {
+        "near": {
+          "paintedHipToKneeMin": 19.556411387732492,
+          "paintedHipToKneeMax": 26.858309040995444,
+          "kneeToSoleMin": 22.242888336068045,
+          "kneeToSoleMax": 25.661892683075944
+        },
+        "far": {
+          "paintedHipToKneeMin": 19.96596478768992,
+          "paintedHipToKneeMax": 25.566689228880637,
+          "kneeToSoleMin": 20.052159775911303,
+          "kneeToSoleMax": 31.42751859600564
+        }
+      }
+    }
+  ]
+}

@@ -88,6 +88,10 @@ assert(fs.existsSync(inverse),'reviewed inverse is required to reject the actual
 report.previousPublishedDefectRejected=false;
 {
  const spec=JSON.parse(fs.readFileSync(inverse,'utf8')).files['js/hero-rig.js'];assert(spec,'reviewed current source inverse includes walking renderer');let restored=source;
+ const latest=JSON.parse(fs.readFileSync('references/source/stage25-source-integration.json','utf8')).files['js/hero-rig.js'];
+ assert.equal(crypto.createHash('sha256').update(restored).digest('hex'),latest.currentSha256,'reviewed Stage25 renderer before stride-history inverse');
+ for(const edit of [...latest.changes].reverse()){assert.equal(restored.split(edit.current).length,2);restored=restored.replace(edit.current,edit.previous);}
+ assert.equal(crypto.createHash('sha256').update(restored).digest('hex'),latest.previousSha256,'exact Stage24 renderer before stride-history inverse');
  assert.equal(crypto.createHash('sha256').update(restored).digest('hex'),spec.currentSha256,'new renderer matches reviewed inverse');
  for(const edit of [...spec.changes].reverse()){assert.equal(restored.split(edit.current).length,2);restored=restored.replace(edit.current,edit.previous);}
  assert.equal(crypto.createHash('sha256').update(restored).digest('hex'),spec.previousSha256);

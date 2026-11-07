@@ -1,21 +1,22 @@
 /* Optional Square source-pixel anatomy contracts. Canvas is mocked; this tests
-   actual affine source quads/triangle orientation, not visual appearance. IK
-   metrics are explicitly diagnostic, not painted calf joints. */
+   actual affine source quads/triangle orientation, not visual appearance. Rest-calibrated
+   joint metrics now drive the actual rigid pieces and are checked against paint. */
 'use strict';
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 function context(){const state={globalAlpha:1},stack=[];return new Proxy(state,{get(o,key){if(key==='save')return()=>stack.push({...o});if(key==='restore')return()=>Object.assign(o,stack.pop());return key in o?o[key]:()=>{};},set(o,k,v){o[k]=v;return true;}});}
 const window={},sandbox={window,Image:class{naturalWidth=2400;naturalHeight=2400;},Path2D:class{moveTo(){}quadraticCurveTo(){}lineTo(){}closePath(){}},document:{createElement:()=>({width:0,height:0,dataset:{},getContext:context})}};
 for(const name of ['locomotion','baby-passenger','centrum-depth-gait','centrum-walk-pose','hero-rig']){let code=fs.readFileSync('js/'+name+'.js','utf8');if(name==='hero-rig')code=code.replace('window.BearlyHeroRig={','window.__anatomyLab={surfacePose,lowerMesh,profiles};window.BearlyHeroRig={');vm.runInNewContext(code,sandbox);}
 const rig=window.BearlyHeroRig,walk=window.BearlyCentrumDepthGait,gait=window.BearlyLocomotion;rig.preload();
+const nearPoint=(a,b)=>assert(Math.hypot(a.x-b.x,a.y-b.y)<1e-6,'published joints must be the actual painted joints');
 const report={cases:0,bootRatios:{near:[],far:[]},maxHipShift:0,maxThighError:0,maxShinError:0,sourceTriangles:0,minAreaRatio:Infinity,moods:{}};
 for(const [vx,vy]of [[130,0],[0,-52],[0,52],[92,-37],[92,37]])for(let phase=0;phase<32;phase++){
  const direction=walk.heading(vx,vy,1);rig.draw(context(),0,0,200,1,{centrumCache:true,state:{hp:100},weight:1,distance:gait.cycleLength(200)*phase/32,groundMotion:direction});
- const a=rig.audit();assert.equal(a.lowerPose,'idle');assert.equal(a.anatomy.source,'fixed-native-idle');assert.equal(a.anatomy.ikTargetsDiagnosticOnly,true);
+ const a=rig.audit();assert.equal(a.lowerPose,'idle');assert.equal(a.anatomy.source,'fixed-native-idle');assert.equal(a.anatomy.ikTargetsDiagnosticOnly,false);assert.equal(a.anatomy.skinning,'rigid-rest-art-segments');
  const lab=window.__anatomyLab,profile=lab.profiles.front,pose=lab.surfacePose(profile,200,a.gait,1),mesh=lab.lowerMesh(profile,pose,a.gait,1),area=p=>(p[1].x-p[0].x)*(p[2].y-p[0].y)-(p[1].y-p[0].y)*(p[2].x-p[0].x);
  for(const triangle of mesh.triangles){const sourceArea=area(triangle.map(v=>v.source)),destinationArea=area(triangle.map(v=>v.destination));assert(sourceArea*destinationArea>0,'a painted source triangle cannot reverse/fold');report.minAreaRatio=Math.min(report.minAreaRatio,destinationArea/sourceArea);report.sourceTriangles++;}
  for(const side of ['near','far']){const joint=a.anatomy[side],leg=a.landmarks[side],scale=200/280;
   const thigh=Math.hypot(joint.knee.x-joint.hip.x,joint.knee.y-joint.hip.y),shin=Math.hypot(joint.cuff.x-joint.knee.x,joint.cuff.y-joint.knee.y);
-  report.maxThighError=Math.max(report.maxThighError,Math.abs(thigh-joint.thigh)*scale);report.maxShinError=Math.max(report.maxShinError,Math.abs(shin-joint.shin)*scale);
+  report.maxThighError=Math.max(report.maxThighError,Math.abs(thigh-joint.thigh)*scale);report.maxShinError=Math.max(report.maxShinError,Math.abs(shin-joint.shin)*scale);for(const key of ['hip','knee','cuff']){nearPoint(leg[key],{x:joint[key].x*scale,y:joint[key].y*scale});}
   report.maxHipShift=Math.max(report.maxHipShift,joint.hipShift*scale);report.bootRatios[side].push(leg.bootWidth/(joint.bootWidth*scale));
   assert(a.babyFace.continuousUpperBody&&a.babyFace.originalCollar);assert.equal(leg.rigidShoe,true);
  }

@@ -19,12 +19,19 @@ reverse21 = verifier['reverse_stage21_source']
 reverse22 = verifier['reverse_stage22_source']
 reverse23 = verifier['reverse_stage23_source']
 reverse24 = verifier['reverse_stage24_source']
+reverse25 = verifier['reverse_stage25_source']
 checks = []
+
+
+def stage24_text(source):
+    """Normalize the rigid-limb integration before all earlier source guards."""
+    current = (ROOT / source).read_text()
+    return reverse25(source, current) if source in verifier['STAGE25_PREVIOUS'] else current
 
 
 def stage23_text(source):
     """Normalize current walking-track repair before every older source guard."""
-    current = (ROOT / source).read_text()
+    current = stage24_text(source)
     return reverse24(source, current) if source in verifier['STAGE24_PREVIOUS'] else current
 
 
@@ -402,7 +409,7 @@ assert len(checks) == 22 + 3 * len(stage16_cases) + 3 * len(stage17_cases) + 3 *
 previous_check_count = len(checks)
 stage24_cases = []
 for source, expected in verifier['STAGE24_PREVIOUS'].items():
-    current = (ROOT / source).read_text()
+    current = stage24_text(source)
     restored = reverse24(source, current)
     assert hashlib.sha256(restored.encode()).hexdigest() == expected
     checks.append(source + ' exact Stage24 inverse')
@@ -423,7 +430,7 @@ for marker, replacement, label in [
     ('v.y-=Math.max(0,hemAt(raw[0])-570)', 'v.y-=0*Math.max(0,hemAt(raw[0])-570)', 'trouser opening follow'),
     ("*(side==='far'?2.2:1)", '*1', 'rear calf flex gain'),
 ]:
-    current = (ROOT / 'js/hero-rig.js').read_text()
+    current = stage24_text('js/hero-rig.js')
     assert current.count(marker) == 1, marker
     rejected('Stage24 unreviewed ' + label, lambda: reverse24('js/hero-rig.js', current.replace(marker, replacement, 1)))
 
@@ -431,9 +438,46 @@ manifest24 = ROOT / 'references/source/stage24-source-integration.json'
 def modified_stage24_manifest(path):
     return read_bytes(path) + (b'\n' if path == manifest24 else b'')
 with patch.object(Path, 'read_bytes', modified_stage24_manifest):
-    rejected('Stage24 inverse manifest tampering', lambda: reverse24('js/game.js', (ROOT / 'js/game.js').read_text()))
+    rejected('Stage24 inverse manifest tampering', lambda: reverse24('js/game.js', stage24_text('js/game.js')))
 
 assert len(checks) == previous_check_count + 3 * len(stage24_cases) + 4
+previous_check_count = len(checks)
+stage25_cases = []
+for source, expected in verifier['STAGE25_PREVIOUS'].items():
+    current = (ROOT / source).read_text()
+    restored = reverse25(source, current)
+    assert hashlib.sha256(restored.encode()).hexdigest() == expected
+    checks.append(source + ' exact Stage25 inverse')
+    stage25_cases.append(source)
+    rejected(source + ' appended Stage25 unreviewed source', lambda: reverse25(source, current + '\n// unreviewed source edit\n'))
+    if source.endswith('.html'):
+        marker, replacement = '<script src=', '<script async src='
+    elif source == 'js/game.js':
+        marker, replacement = '  function update(dt){', '  function update(dt){dt*=2;'
+    else:
+        marker, replacement = '  function draw(c,px,py,h,face,options={}){', '  function draw(c,px,py,h,face,options={}){h*=.5;'
+    assert current.count(marker) >= 1, (source, marker)
+    rejected(source + ' Stage25 unreviewed native/physics/load-order path', lambda: reverse25(source, current.replace(marker, replacement, 1)))
+
+# Exact integration guards complement the actual shaft-volume and painted-bone
+# contracts. These mutations stay in memory; no donor or game state is edited.
+for marker, replacement, label in [
+    ('shin:p=>rotate(p,K0,K,shinAngle)', 'shin:p=>rotate({x:K0.x+(p.x-K0.x)*.5,y:p.y},K0,K,shinAngle)', 'rigid shin volume'),
+    ('let reach=clamp(distance,Math.abs(L1-L2)+1e-6,L1+L2),pole=1;', 'let reach=distance,pole=1;', 'fixed source bone reach'),
+    ('const bone=bones[side],thigh=p=>bone.thigh(p);', 'const bone=bones[side],thigh=(p,r)=>body(r);', 'moving whole thigh'),
+    ('centrumLowerTargets,centrumLowerMaterial,centrumLowerMesh', 'centrumLowerTargets,centrumLowerMesh', 'serialized material dependency'),
+]:
+    current = (ROOT / 'js/hero-rig.js').read_text()
+    assert current.count(marker) == 1, marker
+    rejected('Stage25 unreviewed ' + label, lambda: reverse25('js/hero-rig.js', current.replace(marker, replacement, 1)))
+
+manifest25 = ROOT / 'references/source/stage25-source-integration.json'
+def modified_stage25_manifest(path):
+    return read_bytes(path) + (b'\n' if path == manifest25 else b'')
+with patch.object(Path, 'read_bytes', modified_stage25_manifest):
+    rejected('Stage25 inverse manifest tampering', lambda: reverse25('js/game.js', (ROOT / 'js/game.js').read_text()))
+
+assert len(checks) == previous_check_count + 3 * len(stage25_cases) + 5
 print(f'PASS: 944 protected originals; all earlier guards retained; '
-      f'{len(stage24_cases)} exact Stage24 inverses/{2 * len(stage24_cases) + 3} rejected source/stride/load-order mutations '
-      f'and Stage24 manifest tampering; cycling simulation block unchanged; {len(checks)} total in-memory checks.')
+      f'{len(stage25_cases)} exact Stage25 inverses/{2 * len(stage25_cases) + 4} rejected source/rig/load-order mutations '
+      f'and Stage25 manifest tampering; cycling simulation block unchanged; {len(checks)} total in-memory checks.')

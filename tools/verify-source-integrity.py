@@ -36,6 +36,27 @@ def replace_reviewed(text, added, original='', count=1):
     return text.replace(added, original)
 
 
+STAGE25_PREVIOUS = {'autumn-v19.html': 'c6d62b4681c3f66f954d3a6550c7854faf39179d1dcfe93f27e1e8ee372ce5b2', 'index.html': 'c6d62b4681c3f66f954d3a6550c7854faf39179d1dcfe93f27e1e8ee372ce5b2', 'js/game.js': '2bcbf1e7e89859821659924c1f760e9221406dcfd53316629dbc76888f8a95a9', 'js/hero-rig.js': '68694c6c18af480d5bc43b8c37a20c97117f3c3958246ad4bdbb491cd177a71b'}
+STAGE25_MANIFEST_SHA256 = '60f1cb4797ec9fd3e4d8a96fe767518a35f8cf1bfa40bcf070e1766d7c4e5bfb'
+INTENTIONAL.update(STAGE25_PREVIOUS)
+
+
+def reverse_stage25_source(path, text):
+    """Undo only exact reviewed rigid-limb and entry hunks."""
+    raw = (ROOT / 'references/source/stage25-source-integration.json').read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == STAGE25_MANIFEST_SHA256, 'Changed Stage25 source inverse manifest'
+    spec = json.loads(raw)
+    assert spec['format'] == 1 and spec['previousProjectCommit'] == 'a3a7da89252d75bbdadb06596fc5ff3c589d9153'
+    assert set(spec['files']) == set(STAGE25_PREVIOUS), 'Unexpected Stage25 protected paths'
+    edits = spec['files'][path]
+    assert edits['previousSha256'] == STAGE25_PREVIOUS[path]
+    assert hashlib.sha256(text.encode()).hexdigest() == edits['currentSha256'], 'Unreviewed Stage25 source bytes: ' + path
+    for edit in reversed(edits['changes']):
+        text = replace_reviewed(text, edit['current'], edit['previous'])
+    assert hashlib.sha256(text.encode()).hexdigest() == STAGE25_PREVIOUS[path], 'Unexpected source edits beyond reviewed Stage25 integration: ' + path
+    return text
+
+
 STAGE24_PREVIOUS = {'autumn-v19.html': '3cc28794e395e1cebd9f461044ec21853e1cf34b9d0efa29bc41a7aeeff650ac', 'index.html': '3cc28794e395e1cebd9f461044ec21853e1cf34b9d0efa29bc41a7aeeff650ac', 'js/game.js': '76e965815ef65a60f4ba35911713c748a89d7265b8a98cd4ed4119d8c2d09db0', 'js/hero-rig.js': 'd2016d30604a95f4aa44231910700b32e9875ed8d9fe998ccd0461d25a5b339e'}
 STAGE24_MANIFEST_SHA256 = 'e0638889b4336a46c0e4825ae89682557a664f49e70adc3a71473102f87ab607'
 INTENTIONAL.update(STAGE24_PREVIOUS)
@@ -311,6 +332,8 @@ def reverse_stage11_rig(text):
 
 def restore_donor(path):
     text = (ROOT / path).read_text()
+    if path in STAGE25_PREVIOUS:
+        text = reverse_stage25_source(path, text)
     if path in STAGE24_PREVIOUS:
         text = reverse_stage24_source(path, text)
     if path in STAGE23_PREVIOUS:
@@ -522,9 +545,9 @@ assert not failures, '\n'.join(failures)
 assert (ROOT / 'index.html').read_bytes() == (ROOT / 'autumn-v19.html').read_bytes()
 manifest = json.loads((ROOT / 'autumn-version.json').read_text())
 assert manifest['source']['commit'] == 'da109213fdf24947c2ac0b85de900214cc72e44f'
-assert manifest['edition'] == 'BQ_CENTRUM_STAGE24'
+assert manifest['edition'] == 'BQ_CENTRUM_STAGE25'
 assert manifest['project'] == 'BQ-Centrum' and manifest['entry'] == 'autumn-v19.html'
 assert manifest['source']['repository'] == 'KossaMu248/BQ-Autumn'
 assert manifest['source']['branch'] == 'main' and manifest['source']['build_id'] == 'AUTUMN_RIDE_ART_V19'
 print(f'PASS: {len(HASHES)} pinned original files verified; all source assets/CSS and original protected code match;')
-print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest, Stage17 NPC-prop fit, Stage18 bench/peaceful-seat/opaque-eye, Stage19 compact/sparse bench, Stage20 walking-pace and Stage21 camera/render-frustum and Stage22 connected walking-surface/Stage23 articulated walking/Stage24 alternating visible stride additions differ.')
+print('only reviewed identity/save, scene hooks, parking/economy bridge, pickup destination, action/state-restore, optional Centrum walking/worker/preparation, Stage16 camera/NPC/rest, Stage17 NPC-prop fit, Stage18 bench/peaceful-seat/opaque-eye, Stage19 compact/sparse bench, Stage20 walking-pace and Stage21 camera/render-frustum and Stage22 connected walking-surface/Stage23 articulated walking/Stage24 alternating visible stride/Stage25 rigid limb additions differ.')
