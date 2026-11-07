@@ -1,0 +1,649 @@
+{
+  "atUtc": "2026-11-07T15:51:30.113881+00:00",
+  "scope": "External target main/Pages readback of the tested Stage25 fixed-volume articulated walking implementation. All71 actual code/document/selected-original-art downloads match; runtime-only catalog equals the frozen1006-file staging manifest and retainsall919 original asset hashes. Not a new interaction, physical-device or FPS test.",
+  "localCommit": "9da12bf52601b3d18cdf6680923aa0a052ae16a1",
+  "remoteCommit": "9da12bf52601b3d18cdf6680923aa0a052ae16a1",
+  "pagesRun": {
+    "conclusion": "success",
+    "databaseId": 42388185150,
+    "headSha": "9da12bf52601b3d18cdf6680923aa0a052ae16a1",
+    "name": "Publish playable BQ-Centrum",
+    "status": "completed",
+    "url": "https://github.com/KossaMu248/BQ-Centrum/actions/runs/42388185150"
+  },
+  "otherRuns": [
+    {
+      "conclusion": "success",
+      "databaseId": 42388185150,
+      "headSha": "9da12bf52601b3d18cdf6680923aa0a052ae16a1",
+      "name": "Publish playable BQ-Centrum",
+      "status": "completed",
+      "url": "https://github.com/KossaMu248/BQ-Centrum/actions/runs/42388185150"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42388184599,
+      "headSha": "9da12bf52601b3d18cdf6680923aa0a052ae16a1",
+      "name": "pages build and deployment",
+      "status": "completed",
+      "url": "https://github.com/KossaMu248/BQ-Centrum/actions/runs/42388184599"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42327693106,
+      "headSha": "a3a7da89252d75bbdadb06596fc5ff3c589d9153",
+      "name": "Publish playable BQ-Centrum",
+      "status": "completed",
+      "url": "https://github.com/KossaMu248/BQ-Centrum/actions/runs/42327693106"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42327692813,
+      "headSha": "a3a7da89252d75bbdadb06596fc5ff3c589d9153",
+      "name": "pages build and deployment",
+      "status": "completed",
+      "url": "https://github.com/KossaMu248/BQ-Centrum/actions/runs/42327692813"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42327288600,
+      "headSha": "7715553218d0842aaf21a1e201912bfbdf74fa15",
+      "name": "Publish playable BQ-Centrum",
+      "status": "completed",
+      "url": "https://github.com/KossaMu248/BQ-Centrum/actions/runs/42327288600"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42327288297,
+      "headSha": "7715553218d0842aaf21a1e201912bfbdf74fa15",
+      "name": "pages build and deployment",
+      "status": "completed",
+      "url": "https://github.com/KossaMu248/BQ-Centrum/actions/runs/42327288297"
+    }
+  ],
+  "url": "https://kossamu248.github.io/BQ-Centrum/?v=stage25",
+  "checks": [
+    {
+      "file": "AGENTS.md",
+      "status": 200,
+      "bytes": 14804,
+      "expectedSHA256": "932973dab014750fad220068a16d6ec77fe159e167810608fa00541efc2695eb",
+      "observedSHA256": "932973dab014750fad220068a16d6ec77fe159e167810608fa00541efc2695eb",
+      "passed": true
+    },
+    {
+      "file": "GITHUB_PUBLICATION.md",
+      "status": 200,
+      "bytes": 17126,
+      "expectedSHA256": "05c358d0a04c3ae4086105a9a434f31566e573c868ba08d242271ec2a9ef402c",
+      "observedSHA256": "05c358d0a04c3ae4086105a9a434f31566e573c868ba08d242271ec2a9ef402c",
+      "passed": true
+    },
+    {
+      "file": "PROGRESS.md",
+      "status": 200,
+      "bytes": 57349,
+      "expectedSHA256": "a4c0ce276438954349aaeb556966c5f1a70de1c8344f42305a67d48184d0a5a6",
+      "observedSHA256": "a4c0ce276438954349aaeb556966c5f1a70de1c8344f42305a67d48184d0a5a6",
+      "passed": true
+    },
+    {
+      "file": "README.md",
+      "status": 200,
+      "bytes": 16463,
+      "expectedSHA256": "eaac8df1e187e360a856b1781f700fdeeea8b9e8360d7d1714e2905a8cc77c3c",
+      "observedSHA256": "eaac8df1e187e360a856b1781f700fdeeea8b9e8360d7d1714e2905a8cc77c3c",
+      "passed": true
+    },
+    {
+      "file": "SOURCE_BASELINE.md",
+      "status": 200,
+      "bytes": 56236,
+      "expectedSHA256": "cf0813a426f440272ce48a1d2d3aec1edc0c776624b71a4c6d894d562c67c8c2",
+      "observedSHA256": "cf0813a426f440272ce48a1d2d3aec1edc0c776624b71a4c6d894d562c67c8c2",
+      "passed": true
+    },
+    {
+      "file": "TEST_REPORT.md",
+      "status": 200,
+      "bytes": 6358,
+      "expectedSHA256": "d740774f6ee0a476eb21c0becd879b96099392fcaeca1d105dc5626151308e22",
+      "observedSHA256": "d740774f6ee0a476eb21c0becd879b96099392fcaeca1d105dc5626151308e22",
+      "passed": true
+    },
+    {
+      "file": "assets/art/back-carrier-v11.png",
+      "status": 200,
+      "bytes": 2044069,
+      "expectedSHA256": "a4a74fd46d6a138ede03c9dc201e0e78ebc085fc6effcae827f4d7e269099d0b",
+      "observedSHA256": "a4a74fd46d6a138ede03c9dc201e0e78ebc085fc6effcae827f4d7e269099d0b",
+      "passed": true
+    },
+    {
+      "file": "assets/art/front-carrier-v7.png",
+      "status": 200,
+      "bytes": 2552584,
+      "expectedSHA256": "3ebe5734b486736887c674f4676eb69f24aad260a94c26457b57688676c5ebd6",
+      "observedSHA256": "3ebe5734b486736887c674f4676eb69f24aad260a94c26457b57688676c5ebd6",
+      "passed": true
+    },
+    {
+      "file": "assets/art/matched-legs-v11.png",
+      "status": 200,
+      "bytes": 1226859,
+      "expectedSHA256": "f456036e628d74f7d86e8ec7b5469e67d19be64f9f5957b6f7a2938c60c3bd67",
+      "observedSHA256": "f456036e628d74f7d86e8ec7b5469e67d19be64f9f5957b6f7a2938c60c3bd67",
+      "passed": true
+    },
+    {
+      "file": "assets/baby_pose_brace.webp",
+      "status": 200,
+      "bytes": 5392,
+      "expectedSHA256": "e0a172d980ca27bae9bf82d37d8ab97935f78bc5862c12c250e29c2604329478",
+      "observedSHA256": "e0a172d980ca27bae9bf82d37d8ab97935f78bc5862c12c250e29c2604329478",
+      "passed": true
+    },
+    {
+      "file": "assets/baby_pose_idle.webp",
+      "status": 200,
+      "bytes": 5084,
+      "expectedSHA256": "a27d4ea977d35d89ac927ca371eb66c5e366b096b1eb057e8552853f14578823",
+      "observedSHA256": "a27d4ea977d35d89ac927ca371eb66c5e366b096b1eb057e8552853f14578823",
+      "passed": true
+    },
+    {
+      "file": "assets/baby_pose_laugh.webp",
+      "status": 200,
+      "bytes": 5240,
+      "expectedSHA256": "4decc347ee84105fb22f47ad945d8cfa0612672360fdbd0ce879661981d6793e",
+      "observedSHA256": "4decc347ee84105fb22f47ad945d8cfa0612672360fdbd0ce879661981d6793e",
+      "passed": true
+    },
+    {
+      "file": "assets/baby_pose_leanBack.webp",
+      "status": 200,
+      "bytes": 5390,
+      "expectedSHA256": "a0dd21135d421463620860444ebee2c862e2d659b1e19be6031ebbde88c53360",
+      "observedSHA256": "a0dd21135d421463620860444ebee2c862e2d659b1e19be6031ebbde88c53360",
+      "passed": true
+    },
+    {
+      "file": "assets/baby_pose_leanForward.webp",
+      "status": 200,
+      "bytes": 5088,
+      "expectedSHA256": "4cfba1def3c14c567751d598a04a653c4f1e81159317341d3e0b68be6e79b92b",
+      "observedSHA256": "4cfba1def3c14c567751d598a04a653c4f1e81159317341d3e0b68be6e79b92b",
+      "passed": true
+    },
+    {
+      "file": "assets/baby_pose_point.webp",
+      "status": 200,
+      "bytes": 4978,
+      "expectedSHA256": "4dc3514feaf2dd70e002a25a34ef7c0707e725e6580ab61cc94e68a5b6ed2a2c",
+      "observedSHA256": "4dc3514feaf2dd70e002a25a34ef7c0707e725e6580ab61cc94e68a5b6ed2a2c",
+      "passed": true
+    },
+    {
+      "file": "assets/baby_pose_sick.webp",
+      "status": 200,
+      "bytes": 11474,
+      "expectedSHA256": "2e1f1c4bd3c51b6919638f1135a33bea36a0cf0c886ac71478340ed910b6c22f",
+      "observedSHA256": "2e1f1c4bd3c51b6919638f1135a33bea36a0cf0c886ac71478340ed910b6c22f",
+      "passed": true
+    },
+    {
+      "file": "assets/baby_pose_terror.webp",
+      "status": 200,
+      "bytes": 5904,
+      "expectedSHA256": "ad1faf6677a2fcb674887c42feaa4498af724b97ed2a848bb6e3df046a5ac9ea",
+      "observedSHA256": "ad1faf6677a2fcb674887c42feaa4498af724b97ed2a848bb6e3df046a5ac9ea",
+      "passed": true
+    },
+    {
+      "file": "assets/cache/hero-cycling-v19/manifest.json",
+      "status": 200,
+      "bytes": 7233,
+      "expectedSHA256": "ed28f804c330d11186f40ec4b4527ac4edbccfd8d9f794d2d05dec5db1878263",
+      "observedSHA256": "ed28f804c330d11186f40ec4b4527ac4edbccfd8d9f794d2d05dec5db1878263",
+      "passed": true
+    },
+    {
+      "file": "assets/centrum/actors/bear-directions.png",
+      "status": 200,
+      "bytes": 2086458,
+      "expectedSHA256": "334a329ab35f7adeae1407e1223d702c27eb1ecf1d57a35ac61477d8dce21749",
+      "observedSHA256": "334a329ab35f7adeae1407e1223d702c27eb1ecf1d57a35ac61477d8dce21749",
+      "passed": true
+    },
+    {
+      "file": "assets/v151_baby_pose_excited.png",
+      "status": 200,
+      "bytes": 24118,
+      "expectedSHA256": "90b655b42abd70a1e3ec7dd9f758988c4a1d26aaa91b2565ceeb58ca723e3e0b",
+      "observedSHA256": "90b655b42abd70a1e3ec7dd9f758988c4a1d26aaa91b2565ceeb58ca723e3e0b",
+      "passed": true
+    },
+    {
+      "file": "assets/v151_baby_pose_sick.png",
+      "status": 200,
+      "bytes": 20488,
+      "expectedSHA256": "32dc7d3bbd707101c0ff82cf6ef6e359702bc6adec0de91132b59514e2caf426",
+      "observedSHA256": "32dc7d3bbd707101c0ff82cf6ef6e359702bc6adec0de91132b59514e2caf426",
+      "passed": true
+    },
+    {
+      "file": "autumn-v19.html",
+      "status": 200,
+      "bytes": 13801,
+      "expectedSHA256": "ec795d9ff4ee7b6d2a3bd536d603c7a5cce02f089e47df5dc49ebe63d2aea710",
+      "observedSHA256": "ec795d9ff4ee7b6d2a3bd536d603c7a5cce02f089e47df5dc49ebe63d2aea710",
+      "passed": true
+    },
+    {
+      "file": "autumn-version.json",
+      "status": 200,
+      "bytes": 339,
+      "expectedSHA256": "9030c18b81ebc94421e7039cb0d7f41fc5a8968104e27bcf963d66408d7e837e",
+      "observedSHA256": "9030c18b81ebc94421e7039cb0d7f41fc5a8968104e27bcf963d66408d7e837e",
+      "passed": true
+    },
+    {
+      "file": "css/centrum-inventory.css",
+      "status": 200,
+      "bytes": 4751,
+      "expectedSHA256": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+      "observedSHA256": "9ba01090b3d4ed425c5f7c94c054b58b3b694666eef92a5f6ec03a4e905edc2b",
+      "passed": true
+    },
+    {
+      "file": "css/centrum-link.css",
+      "status": 200,
+      "bytes": 490,
+      "expectedSHA256": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+      "observedSHA256": "b2fc85df9e89eba6a38f80964bead47afd34c5c43d9ec931a84123df6678eff9",
+      "passed": true
+    },
+    {
+      "file": "css/centrum-route.css",
+      "status": 200,
+      "bytes": 311,
+      "expectedSHA256": "892e1ec5ac28ae0a551d45b276974888e6db3f227635487e45c761e1553d1e5f",
+      "observedSHA256": "892e1ec5ac28ae0a551d45b276974888e6db3f227635487e45c761e1553d1e5f",
+      "passed": true
+    },
+    {
+      "file": "css/centrum-square.css",
+      "status": 200,
+      "bytes": 5697,
+      "expectedSHA256": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+      "observedSHA256": "7a44619f06910b84157b8d387dc6e9cc386ad9da543a1ad83fb0cc47fe1a9c3c",
+      "passed": true
+    },
+    {
+      "file": "css/centrum-story.css",
+      "status": 200,
+      "bytes": 2869,
+      "expectedSHA256": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+      "observedSHA256": "5596efcb571764bc0b1e52b0681d1fe2447d00f49fdc416a2387eebecc219367",
+      "passed": true
+    },
+    {
+      "file": "css/game.css",
+      "status": 200,
+      "bytes": 42168,
+      "expectedSHA256": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+      "observedSHA256": "c19d01848b540f6ad992433a957674f88deabcbb95467ba3a1fe6939a783d85b",
+      "passed": true
+    },
+    {
+      "file": "css/illustrated.css",
+      "status": 200,
+      "bytes": 34477,
+      "expectedSHA256": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+      "observedSHA256": "4d6212418e24127c561749d09dbbf31ada43f2470249dd830d375b104de0a53a",
+      "passed": true
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "bytes": 13801,
+      "expectedSHA256": "ec795d9ff4ee7b6d2a3bd536d603c7a5cce02f089e47df5dc49ebe63d2aea710",
+      "observedSHA256": "ec795d9ff4ee7b6d2a3bd536d603c7a5cce02f089e47df5dc49ebe63d2aea710",
+      "passed": true
+    },
+    {
+      "file": "js/assets.js",
+      "status": 200,
+      "bytes": 39886,
+      "expectedSHA256": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+      "observedSHA256": "44e8a9560ef6b0c846c133f19516ca8ba9ecc38180cc0643569875cacaaf1540",
+      "passed": true
+    },
+    {
+      "file": "js/autumn-quests.js",
+      "status": 200,
+      "bytes": 2460,
+      "expectedSHA256": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+      "observedSHA256": "29634def98970e48e00579b0a2bba3d5effd7b378160ae5f3575c58e36d7803d",
+      "passed": true
+    },
+    {
+      "file": "js/baby-passenger.js",
+      "status": 200,
+      "bytes": 7812,
+      "expectedSHA256": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+      "observedSHA256": "baebb60f3ec354eecc03fd41c4a5275bddd7e6d4f33ca53ec82e6e8ca730fb2a",
+      "passed": true
+    },
+    {
+      "file": "js/brawler-art.js",
+      "status": 200,
+      "bytes": 16358,
+      "expectedSHA256": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+      "observedSHA256": "526e87581c238f03a31aec13ab0ba5842a8157e474f43dfee6c0b163be9aa1d7",
+      "passed": true
+    },
+    {
+      "file": "js/brawler.js",
+      "status": 200,
+      "bytes": 27109,
+      "expectedSHA256": "048adfc03134d2aa94cf32169efcd9e6e164391800386d40d3f29b41dd2b2028",
+      "observedSHA256": "048adfc03134d2aa94cf32169efcd9e6e164391800386d40d3f29b41dd2b2028",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-atmosphere.js",
+      "status": 200,
+      "bytes": 2182,
+      "expectedSHA256": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+      "observedSHA256": "ba2d16c708e63f27ca2a4201e9abb55acd295fd6936cf5aae7285a5732646bae",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-balance.js",
+      "status": 200,
+      "bytes": 260,
+      "expectedSHA256": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+      "observedSHA256": "bae5e6c5b28216a0477fd3250659d58c0f1f135213d5e32c775bb9b5aa267d5a",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-camera.js",
+      "status": 200,
+      "bytes": 3665,
+      "expectedSHA256": "1847e204959f22f3b793f01fcad4a8439772bb5d03234ad3cdb8321edb6c257b",
+      "observedSHA256": "1847e204959f22f3b793f01fcad4a8439772bb5d03234ad3cdb8321edb6c257b",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-civilians.js",
+      "status": 200,
+      "bytes": 9915,
+      "expectedSHA256": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+      "observedSHA256": "711597b07d35072531e5b70067dbb95fae5d4b9b1953606c55b4f4c0a87e18b5",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-depth-gait.js",
+      "status": 200,
+      "bytes": 3057,
+      "expectedSHA256": "8ba149807e060680055b89ea6670ec96362b035ac5aee43735c5450b4e5cf21b",
+      "observedSHA256": "8ba149807e060680055b89ea6670ec96362b035ac5aee43735c5450b4e5cf21b",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-directional-rig.js",
+      "status": 200,
+      "bytes": 14445,
+      "expectedSHA256": "af7db797359e0d30755ffbee7d16be807de0584e5bd78014cc25a92a57245e2d",
+      "observedSHA256": "af7db797359e0d30755ffbee7d16be807de0584e5bd78014cc25a92a57245e2d",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-economy.js",
+      "status": 200,
+      "bytes": 7741,
+      "expectedSHA256": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+      "observedSHA256": "3c69d37f1aa0dab34904fc063dacb8e1a8b5f01b38e4f8f2d035d6785a437bc1",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-hero-cache.js",
+      "status": 200,
+      "bytes": 9666,
+      "expectedSHA256": "4916f15fe35a23fa19485759ec9db1ca958410b6a140721eada405e975031556",
+      "observedSHA256": "4916f15fe35a23fa19485759ec9db1ca958410b6a140721eada405e975031556",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-inventory.js",
+      "status": 200,
+      "bytes": 22278,
+      "expectedSHA256": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+      "observedSHA256": "716b4c7a5ba8eb24e297256a97ae75bd23bfde5608851931f8910a8c53ee949f",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-link.js",
+      "status": 200,
+      "bytes": 8700,
+      "expectedSHA256": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+      "observedSHA256": "f1b9d8d3875457b6f0c19f8659b86cddf3f4415879f65d6f7454041eb070acd8",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-parking-save.js",
+      "status": 200,
+      "bytes": 5197,
+      "expectedSHA256": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+      "observedSHA256": "2eefb4067adb651185f879b4c8df3b75fd69a06c7efbf266a81951e5bc8ac1cb",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-save.js",
+      "status": 200,
+      "bytes": 21160,
+      "expectedSHA256": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+      "observedSHA256": "1b58b769750f564743e160fc67a1fc129a54e171b4ece6ebcc818a61266e14da",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-scenery.js",
+      "status": 200,
+      "bytes": 4142,
+      "expectedSHA256": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+      "observedSHA256": "cb6e36b1fc97aa7a685973300e2e2df7c928d20c08090bdd1e786b10d62a740e",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-scenes.js",
+      "status": 200,
+      "bytes": 6831,
+      "expectedSHA256": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+      "observedSHA256": "c264bf782017111a38c957d48f9b857d001da476d7f3dc485bb19342ab3c1c15",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-square-world.js",
+      "status": 200,
+      "bytes": 12398,
+      "expectedSHA256": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+      "observedSHA256": "983b2c3f802931d10f8352450e8b987a6ade69f1e43dc04cf394088759c070ba",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-square.js",
+      "status": 200,
+      "bytes": 26134,
+      "expectedSHA256": "455fa2160eef5bf3fb90c0ffba95cd6f9cff5e159dffe35cbf5f2ca7abcb7063",
+      "observedSHA256": "455fa2160eef5bf3fb90c0ffba95cd6f9cff5e159dffe35cbf5f2ca7abcb7063",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-story.js",
+      "status": 200,
+      "bytes": 15395,
+      "expectedSHA256": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+      "observedSHA256": "32e48c28efacee574885654fee269643915e91da926959f867b7f3870e96a742",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-street-bench.js",
+      "status": 200,
+      "bytes": 3996,
+      "expectedSHA256": "651e5181d81fafbfe39a79fa28c7026d999fe8e7b590953926b0c7f7ebddb09b",
+      "observedSHA256": "651e5181d81fafbfe39a79fa28c7026d999fe8e7b590953926b0c7f7ebddb09b",
+      "passed": true
+    },
+    {
+      "file": "js/centrum-walk-pose.js",
+      "status": 200,
+      "bytes": 1772,
+      "expectedSHA256": "99342130a26bd5a640da4e015c17b434ab202a3329273456fcabd21369518c43",
+      "observedSHA256": "99342130a26bd5a640da4e015c17b434ab202a3329273456fcabd21369518c43",
+      "passed": true
+    },
+    {
+      "file": "js/fullscreen.js",
+      "status": 200,
+      "bytes": 2488,
+      "expectedSHA256": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+      "observedSHA256": "64fe9efa93c0f24c7f0217db284a2b717dc64c56061bcdf36c24f22b25b9dee0",
+      "passed": true
+    },
+    {
+      "file": "js/game.js",
+      "status": 200,
+      "bytes": 408672,
+      "expectedSHA256": "a55a888872bf1c5b8267375f669df66dee773087f7844cec0bc8bfafe1a36119",
+      "observedSHA256": "a55a888872bf1c5b8267375f669df66dee773087f7844cec0bc8bfafe1a36119",
+      "passed": true
+    },
+    {
+      "file": "js/hero-rig.js",
+      "status": 200,
+      "bytes": 69146,
+      "expectedSHA256": "b540a4a9689836a15b223ac18971783bb52cb0ad5f26b2d46e60500c15fbf28a",
+      "observedSHA256": "b540a4a9689836a15b223ac18971783bb52cb0ad5f26b2d46e60500c15fbf28a",
+      "passed": true
+    },
+    {
+      "file": "js/illustrated-atlas.js",
+      "status": 200,
+      "bytes": 5624,
+      "expectedSHA256": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+      "observedSHA256": "8b66b2ca3818c779661cf7867b2c6cb81a6e14ec0526aa7300a912a1abf897bd",
+      "passed": true
+    },
+    {
+      "file": "js/illustrated-hero.js",
+      "status": 200,
+      "bytes": 4695,
+      "expectedSHA256": "ac91804b0afd366308c41ba2e53173fee649c5399acdc725c0bf64ac9072ee93",
+      "observedSHA256": "ac91804b0afd366308c41ba2e53173fee649c5399acdc725c0bf64ac9072ee93",
+      "passed": true
+    },
+    {
+      "file": "js/illustrated-kids.js",
+      "status": 200,
+      "bytes": 14995,
+      "expectedSHA256": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+      "observedSHA256": "375ed3aca2e2c5e07c8ada6e6448c70ce4f120ae1d58fb79f8499095168c8fd0",
+      "passed": true
+    },
+    {
+      "file": "js/illustrated-neighbourhood.js",
+      "status": 200,
+      "bytes": 11870,
+      "expectedSHA256": "b2a1734e4b10275ad2f5c0e51f58483d132f635be5303745ad51d72073cf8b27",
+      "observedSHA256": "b2a1734e4b10275ad2f5c0e51f58483d132f635be5303745ad51d72073cf8b27",
+      "passed": true
+    },
+    {
+      "file": "js/illustrated-props.js",
+      "status": 200,
+      "bytes": 19797,
+      "expectedSHA256": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+      "observedSHA256": "2e38bc7fb55df3caf111f11257b8f6fe4e51b0ee79e0f011acbf6d8dd55acf3e",
+      "passed": true
+    },
+    {
+      "file": "js/illustrated-visits.js",
+      "status": 200,
+      "bytes": 53497,
+      "expectedSHA256": "2a45be9c2dc5c6c447a609445b157feb5fa75dc327032cf987b85b49939f93dc",
+      "observedSHA256": "2a45be9c2dc5c6c447a609445b157feb5fa75dc327032cf987b85b49939f93dc",
+      "passed": true
+    },
+    {
+      "file": "js/illustrated-world.js",
+      "status": 200,
+      "bytes": 33222,
+      "expectedSHA256": "fc4ae288afafb5edd1bf089f0972f3ae740ca5dcb0e9399ec6f2a772fdfeb3d5",
+      "observedSHA256": "fc4ae288afafb5edd1bf089f0972f3ae740ca5dcb0e9399ec6f2a772fdfeb3d5",
+      "passed": true
+    },
+    {
+      "file": "js/locomotion.js",
+      "status": 200,
+      "bytes": 2559,
+      "expectedSHA256": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+      "observedSHA256": "1024600c4bb9b3919f957d55a8686b057d4a72132bc7ef9457a5b853eefeaf0d",
+      "passed": true
+    },
+    {
+      "file": "js/npc-motion.js",
+      "status": 200,
+      "bytes": 33339,
+      "expectedSHA256": "f4111c327656ae3131a58547fbce9b7ac6865cd4af8907545fe94cd8d08d637a",
+      "observedSHA256": "f4111c327656ae3131a58547fbce9b7ac6865cd4af8907545fe94cd8d08d637a",
+      "passed": true
+    },
+    {
+      "file": "js/street-life.js",
+      "status": 200,
+      "bytes": 9858,
+      "expectedSHA256": "0abf3a756f5969083a7de292be4e34a37c613d5e16617c44fb90173afabba257",
+      "observedSHA256": "0abf3a756f5969083a7de292be4e34a37c613d5e16617c44fb90173afabba257",
+      "passed": true
+    },
+    {
+      "file": "js/weapon-effects.js",
+      "status": 200,
+      "bytes": 9793,
+      "expectedSHA256": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+      "observedSHA256": "7b4a4a0fb309bb0f1b281142b06785a5cd0a47bb1b079ce1808debbcedc3bb9f",
+      "passed": true
+    },
+    {
+      "file": "js/wrong-entrance-quest.js",
+      "status": 200,
+      "bytes": 12189,
+      "expectedSHA256": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d",
+      "observedSHA256": "bc8092f0923dbfc331083c14cd7fca6d2493873b48c679fe752ebd3b5687433d",
+      "passed": true
+    },
+    {
+      "file": "references/source/stage25-source-integration.json",
+      "status": 200,
+      "bytes": 26952,
+      "expectedSHA256": "60f1cb4797ec9fd3e4d8a96fe767518a35f8cf1bfa40bcf070e1766d7c4e5bfb",
+      "observedSHA256": "60f1cb4797ec9fd3e4d8a96fe767518a35f8cf1bfa40bcf070e1766d7c4e5bfb",
+      "passed": true
+    }
+  ],
+  "pagesManifest": {
+    "passed": true,
+    "fileCount": 1006,
+    "payloadBytes": 268605480,
+    "all919OriginalAssetHashesInPublishedMetadata": true,
+    "scope": "All asset hashes are metadata checks, selected actual character downloads are separately byte-checked."
+  },
+  "gitConfigPreserved": true,
+  "trackedWorktreeClean": true,
+  "archiveSHA256": "3f76ee7306c9fbba06cdc8d660276a982d8679be86edb55bbcb397aa10106142",
+  "donorOperations": "No donor repository, save key or deployment changed; all original-source verification uses the target-local pinned baseline.",
+  "runtimeVerified": true,
+  "compactArtifactVerified": true,
+  "passed": true
+}
